@@ -1,0 +1,6 @@
+source;share/yahboom_M3Pro_DepthCam/hook/pythonpath.ps1
+source;share/yahboom_M3Pro_DepthCam/hook/pythonpath.dsv
+source;share/yahboom_M3Pro_DepthCam/hook/pythonpath.sh
+source;share/yahboom_M3Pro_DepthCam/hook/ament_prefix_path.ps1
+source;share/yahboom_M3Pro_DepthCam/hook/ament_prefix_path.dsv
+source;share/yahboom_M3Pro_DepthCam/hook/ament_prefix_path.sh

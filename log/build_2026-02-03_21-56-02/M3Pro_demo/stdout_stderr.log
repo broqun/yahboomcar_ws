@@ -1,0 +1,239 @@
+running egg_info
+creating ../../build/M3Pro_demo/M3Pro_demo.egg-info
+writing ../../build/M3Pro_demo/M3Pro_demo.egg-info/PKG-INFO
+writing dependency_links to ../../build/M3Pro_demo/M3Pro_demo.egg-info/dependency_links.txt
+writing entry points to ../../build/M3Pro_demo/M3Pro_demo.egg-info/entry_points.txt
+writing requirements to ../../build/M3Pro_demo/M3Pro_demo.egg-info/requires.txt
+writing top-level names to ../../build/M3Pro_demo/M3Pro_demo.egg-info/top_level.txt
+writing manifest file '../../build/M3Pro_demo/M3Pro_demo.egg-info/SOURCES.txt'
+reading manifest file '../../build/M3Pro_demo/M3Pro_demo.egg-info/SOURCES.txt'
+writing manifest file '../../build/M3Pro_demo/M3Pro_demo.egg-info/SOURCES.txt'
+running build
+running build_py
+creating /var/robotic/yahboomcar_ws/build/M3Pro_demo/build
+creating /var/robotic/yahboomcar_ws/build/M3Pro_demo/build/lib
+creating /var/robotic/yahboomcar_ws/build/M3Pro_demo/build/lib/M3Pro_demo
+copying M3Pro_demo/grasp_transport.py -> /var/robotic/yahboomcar_ws/build/M3Pro_demo/build/lib/M3Pro_demo
+copying M3Pro_demo/KCF_follow_desktop.py -> /var/robotic/yahboomcar_ws/build/M3Pro_demo/build/lib/M3Pro_demo
+copying M3Pro_demo/apriltag_follow_2D.py -> /var/robotic/yahboomcar_ws/build/M3Pro_demo/build/lib/M3Pro_demo
+copying M3Pro_demo/grasp_joint5.py -> /var/robotic/yahboomcar_ws/build/M3Pro_demo/build/lib/M3Pro_demo
+copying M3Pro_demo/color_transport.py -> /var/robotic/yahboomcar_ws/build/M3Pro_demo/build/lib/M3Pro_demo
+copying M3Pro_demo/apriltag_list.py -> /var/robotic/yahboomcar_ws/build/M3Pro_demo/build/lib/M3Pro_demo
+copying M3Pro_demo/follow_common.py -> /var/robotic/yahboomcar_ws/build/M3Pro_demo/build/lib/M3Pro_demo
+copying M3Pro_demo/apriltag_detect-Copy1.py -> /var/robotic/yahboomcar_ws/build/M3Pro_demo/build/lib/M3Pro_demo
+copying M3Pro_demo/Dofbot_Track.py -> /var/robotic/yahboomcar_ws/build/M3Pro_demo/build/lib/M3Pro_demo
+copying M3Pro_demo/grasp.py -> /var/robotic/yahboomcar_ws/build/M3Pro_demo/build/lib/M3Pro_demo
+copying M3Pro_demo/X5Plus_adjust-Copy1.py -> /var/robotic/yahboomcar_ws/build/M3Pro_demo/build/lib/M3Pro_demo
+copying M3Pro_demo/compute_joint5.py -> /var/robotic/yahboomcar_ws/build/M3Pro_demo/build/lib/M3Pro_demo
+copying M3Pro_demo/apriltag_track_desktop_no_arm.py -> /var/robotic/yahboomcar_ws/build/M3Pro_demo/build/lib/M3Pro_demo
+copying M3Pro_demo/media_library.py -> /var/robotic/yahboomcar_ws/build/M3Pro_demo/build/lib/M3Pro_demo
+copying M3Pro_demo/aruco_track.py -> /var/robotic/yahboomcar_ws/build/M3Pro_demo/build/lib/M3Pro_demo
+copying M3Pro_demo/arm_offset.py -> /var/robotic/yahboomcar_ws/build/M3Pro_demo/build/lib/M3Pro_demo
+copying M3Pro_demo/apriltag_rotation.py -> /var/robotic/yahboomcar_ws/build/M3Pro_demo/build/lib/M3Pro_demo
+copying M3Pro_demo/Robot_PID.py -> /var/robotic/yahboomcar_ws/build/M3Pro_demo/build/lib/M3Pro_demo
+copying M3Pro_demo/mediapipe_gesture.py -> /var/robotic/yahboomcar_ws/build/M3Pro_demo/build/lib/M3Pro_demo
+copying M3Pro_demo/grasp_desktop.py -> /var/robotic/yahboomcar_ws/build/M3Pro_demo/build/lib/M3Pro_demo
+copying M3Pro_demo/apriltag_track_desktop_onceTrack.py -> /var/robotic/yahboomcar_ws/build/M3Pro_demo/build/lib/M3Pro_demo
+copying M3Pro_demo/PID.py -> /var/robotic/yahboomcar_ws/build/M3Pro_demo/build/lib/M3Pro_demo
+copying M3Pro_demo/Gesture_Moving.py -> /var/robotic/yahboomcar_ws/build/M3Pro_demo/build/lib/M3Pro_demo
+copying M3Pro_demo/apriltag_track.py -> /var/robotic/yahboomcar_ws/build/M3Pro_demo/build/lib/M3Pro_demo
+copying M3Pro_demo/Robot_Move.py -> /var/robotic/yahboomcar_ws/build/M3Pro_demo/build/lib/M3Pro_demo
+copying M3Pro_demo/KCF_track.py -> /var/robotic/yahboomcar_ws/build/M3Pro_demo/build/lib/M3Pro_demo
+copying M3Pro_demo/mediapipe_detect.py -> /var/robotic/yahboomcar_ws/build/M3Pro_demo/build/lib/M3Pro_demo
+copying M3Pro_demo/apriltag_transport.py -> /var/robotic/yahboomcar_ws/build/M3Pro_demo/build/lib/M3Pro_demo
+copying M3Pro_demo/apriltag_track-Pose[0].py -> /var/robotic/yahboomcar_ws/build/M3Pro_demo/build/lib/M3Pro_demo
+copying M3Pro_demo/apriltag_follow_3D_V1.py -> /var/robotic/yahboomcar_ws/build/M3Pro_demo/build/lib/M3Pro_demo
+copying M3Pro_demo/color_list.py -> /var/robotic/yahboomcar_ws/build/M3Pro_demo/build/lib/M3Pro_demo
+copying M3Pro_demo/apriltag_track_desktop.py -> /var/robotic/yahboomcar_ws/build/M3Pro_demo/build/lib/M3Pro_demo
+copying M3Pro_demo/follow_line.py -> /var/robotic/yahboomcar_ws/build/M3Pro_demo/build/lib/M3Pro_demo
+copying M3Pro_demo/apriltag_track-Circle.py -> /var/robotic/yahboomcar_ws/build/M3Pro_demo/build/lib/M3Pro_demo
+copying M3Pro_demo/Get_OdomInfo.py -> /var/robotic/yahboomcar_ws/build/M3Pro_demo/build/lib/M3Pro_demo
+copying M3Pro_demo/KCF_track-Copy1.py -> /var/robotic/yahboomcar_ws/build/M3Pro_demo/build/lib/M3Pro_demo
+copying M3Pro_demo/apriltag_follow.py -> /var/robotic/yahboomcar_ws/build/M3Pro_demo/build/lib/M3Pro_demo
+copying M3Pro_demo/color_follow.py -> /var/robotic/yahboomcar_ws/build/M3Pro_demo/build/lib/M3Pro_demo
+copying M3Pro_demo/apriltag_identify.py -> /var/robotic/yahboomcar_ws/build/M3Pro_demo/build/lib/M3Pro_demo
+copying M3Pro_demo/color_track_desktop.py -> /var/robotic/yahboomcar_ws/build/M3Pro_demo/build/lib/M3Pro_demo
+copying M3Pro_demo/__init__.py -> /var/robotic/yahboomcar_ws/build/M3Pro_demo/build/lib/M3Pro_demo
+copying M3Pro_demo/apriltagHeight_gesture.py -> /var/robotic/yahboomcar_ws/build/M3Pro_demo/build/lib/M3Pro_demo
+copying M3Pro_demo/shape_recognize.py -> /var/robotic/yahboomcar_ws/build/M3Pro_demo/build/lib/M3Pro_demo
+copying M3Pro_demo/apriltagID_gesture.py -> /var/robotic/yahboomcar_ws/build/M3Pro_demo/build/lib/M3Pro_demo
+copying M3Pro_demo/apriltagDist_gesture.py -> /var/robotic/yahboomcar_ws/build/M3Pro_demo/build/lib/M3Pro_demo
+copying M3Pro_demo/vutils.py -> /var/robotic/yahboomcar_ws/build/M3Pro_demo/build/lib/M3Pro_demo
+copying M3Pro_demo/KCF_follow.py -> /var/robotic/yahboomcar_ws/build/M3Pro_demo/build/lib/M3Pro_demo
+copying M3Pro_demo/test_mediapipe.py -> /var/robotic/yahboomcar_ws/build/M3Pro_demo/build/lib/M3Pro_demo
+copying M3Pro_demo/volume_calculations.py -> /var/robotic/yahboomcar_ws/build/M3Pro_demo/build/lib/M3Pro_demo
+copying M3Pro_demo/color_common.py -> /var/robotic/yahboomcar_ws/build/M3Pro_demo/build/lib/M3Pro_demo
+copying M3Pro_demo/apriltag_track-distance.py -> /var/robotic/yahboomcar_ws/build/M3Pro_demo/build/lib/M3Pro_demo
+copying M3Pro_demo/apriltag_transport_V2.py -> /var/robotic/yahboomcar_ws/build/M3Pro_demo/build/lib/M3Pro_demo
+copying M3Pro_demo/color_track.py -> /var/robotic/yahboomcar_ws/build/M3Pro_demo/build/lib/M3Pro_demo
+copying M3Pro_demo/color_recognize.py -> /var/robotic/yahboomcar_ws/build/M3Pro_demo/build/lib/M3Pro_demo
+copying M3Pro_demo/M3Pro_Dancing.py -> /var/robotic/yahboomcar_ws/build/M3Pro_demo/build/lib/M3Pro_demo
+copying M3Pro_demo/estimate_volume.py -> /var/robotic/yahboomcar_ws/build/M3Pro_demo/build/lib/M3Pro_demo
+copying M3Pro_demo/apriltag_detect.py -> /var/robotic/yahboomcar_ws/build/M3Pro_demo/build/lib/M3Pro_demo
+copying M3Pro_demo/compute_pose.py -> /var/robotic/yahboomcar_ws/build/M3Pro_demo/build/lib/M3Pro_demo
+running install
+running install_lib
+creating /var/robotic/yahboomcar_ws/install/M3Pro_demo/lib/python3.10/site-packages/M3Pro_demo
+copying /var/robotic/yahboomcar_ws/build/M3Pro_demo/build/lib/M3Pro_demo/grasp_transport.py -> /var/robotic/yahboomcar_ws/install/M3Pro_demo/lib/python3.10/site-packages/M3Pro_demo
+copying /var/robotic/yahboomcar_ws/build/M3Pro_demo/build/lib/M3Pro_demo/KCF_follow_desktop.py -> /var/robotic/yahboomcar_ws/install/M3Pro_demo/lib/python3.10/site-packages/M3Pro_demo
+copying /var/robotic/yahboomcar_ws/build/M3Pro_demo/build/lib/M3Pro_demo/apriltag_follow_2D.py -> /var/robotic/yahboomcar_ws/install/M3Pro_demo/lib/python3.10/site-packages/M3Pro_demo
+copying /var/robotic/yahboomcar_ws/build/M3Pro_demo/build/lib/M3Pro_demo/grasp_joint5.py -> /var/robotic/yahboomcar_ws/install/M3Pro_demo/lib/python3.10/site-packages/M3Pro_demo
+copying /var/robotic/yahboomcar_ws/build/M3Pro_demo/build/lib/M3Pro_demo/color_transport.py -> /var/robotic/yahboomcar_ws/install/M3Pro_demo/lib/python3.10/site-packages/M3Pro_demo
+copying /var/robotic/yahboomcar_ws/build/M3Pro_demo/build/lib/M3Pro_demo/apriltag_list.py -> /var/robotic/yahboomcar_ws/install/M3Pro_demo/lib/python3.10/site-packages/M3Pro_demo
+copying /var/robotic/yahboomcar_ws/build/M3Pro_demo/build/lib/M3Pro_demo/follow_common.py -> /var/robotic/yahboomcar_ws/install/M3Pro_demo/lib/python3.10/site-packages/M3Pro_demo
+copying /var/robotic/yahboomcar_ws/build/M3Pro_demo/build/lib/M3Pro_demo/apriltag_detect-Copy1.py -> /var/robotic/yahboomcar_ws/install/M3Pro_demo/lib/python3.10/site-packages/M3Pro_demo
+copying /var/robotic/yahboomcar_ws/build/M3Pro_demo/build/lib/M3Pro_demo/Dofbot_Track.py -> /var/robotic/yahboomcar_ws/install/M3Pro_demo/lib/python3.10/site-packages/M3Pro_demo
+copying /var/robotic/yahboomcar_ws/build/M3Pro_demo/build/lib/M3Pro_demo/grasp.py -> /var/robotic/yahboomcar_ws/install/M3Pro_demo/lib/python3.10/site-packages/M3Pro_demo
+copying /var/robotic/yahboomcar_ws/build/M3Pro_demo/build/lib/M3Pro_demo/X5Plus_adjust-Copy1.py -> /var/robotic/yahboomcar_ws/install/M3Pro_demo/lib/python3.10/site-packages/M3Pro_demo
+copying /var/robotic/yahboomcar_ws/build/M3Pro_demo/build/lib/M3Pro_demo/compute_joint5.py -> /var/robotic/yahboomcar_ws/install/M3Pro_demo/lib/python3.10/site-packages/M3Pro_demo
+copying /var/robotic/yahboomcar_ws/build/M3Pro_demo/build/lib/M3Pro_demo/apriltag_track_desktop_no_arm.py -> /var/robotic/yahboomcar_ws/install/M3Pro_demo/lib/python3.10/site-packages/M3Pro_demo
+copying /var/robotic/yahboomcar_ws/build/M3Pro_demo/build/lib/M3Pro_demo/media_library.py -> /var/robotic/yahboomcar_ws/install/M3Pro_demo/lib/python3.10/site-packages/M3Pro_demo
+copying /var/robotic/yahboomcar_ws/build/M3Pro_demo/build/lib/M3Pro_demo/aruco_track.py -> /var/robotic/yahboomcar_ws/install/M3Pro_demo/lib/python3.10/site-packages/M3Pro_demo
+copying /var/robotic/yahboomcar_ws/build/M3Pro_demo/build/lib/M3Pro_demo/arm_offset.py -> /var/robotic/yahboomcar_ws/install/M3Pro_demo/lib/python3.10/site-packages/M3Pro_demo
+copying /var/robotic/yahboomcar_ws/build/M3Pro_demo/build/lib/M3Pro_demo/apriltag_rotation.py -> /var/robotic/yahboomcar_ws/install/M3Pro_demo/lib/python3.10/site-packages/M3Pro_demo
+copying /var/robotic/yahboomcar_ws/build/M3Pro_demo/build/lib/M3Pro_demo/Robot_PID.py -> /var/robotic/yahboomcar_ws/install/M3Pro_demo/lib/python3.10/site-packages/M3Pro_demo
+copying /var/robotic/yahboomcar_ws/build/M3Pro_demo/build/lib/M3Pro_demo/mediapipe_gesture.py -> /var/robotic/yahboomcar_ws/install/M3Pro_demo/lib/python3.10/site-packages/M3Pro_demo
+copying /var/robotic/yahboomcar_ws/build/M3Pro_demo/build/lib/M3Pro_demo/grasp_desktop.py -> /var/robotic/yahboomcar_ws/install/M3Pro_demo/lib/python3.10/site-packages/M3Pro_demo
+copying /var/robotic/yahboomcar_ws/build/M3Pro_demo/build/lib/M3Pro_demo/apriltag_track_desktop_onceTrack.py -> /var/robotic/yahboomcar_ws/install/M3Pro_demo/lib/python3.10/site-packages/M3Pro_demo
+copying /var/robotic/yahboomcar_ws/build/M3Pro_demo/build/lib/M3Pro_demo/PID.py -> /var/robotic/yahboomcar_ws/install/M3Pro_demo/lib/python3.10/site-packages/M3Pro_demo
+copying /var/robotic/yahboomcar_ws/build/M3Pro_demo/build/lib/M3Pro_demo/Gesture_Moving.py -> /var/robotic/yahboomcar_ws/install/M3Pro_demo/lib/python3.10/site-packages/M3Pro_demo
+copying /var/robotic/yahboomcar_ws/build/M3Pro_demo/build/lib/M3Pro_demo/apriltag_track.py -> /var/robotic/yahboomcar_ws/install/M3Pro_demo/lib/python3.10/site-packages/M3Pro_demo
+copying /var/robotic/yahboomcar_ws/build/M3Pro_demo/build/lib/M3Pro_demo/Robot_Move.py -> /var/robotic/yahboomcar_ws/install/M3Pro_demo/lib/python3.10/site-packages/M3Pro_demo
+copying /var/robotic/yahboomcar_ws/build/M3Pro_demo/build/lib/M3Pro_demo/KCF_track.py -> /var/robotic/yahboomcar_ws/install/M3Pro_demo/lib/python3.10/site-packages/M3Pro_demo
+copying /var/robotic/yahboomcar_ws/build/M3Pro_demo/build/lib/M3Pro_demo/mediapipe_detect.py -> /var/robotic/yahboomcar_ws/install/M3Pro_demo/lib/python3.10/site-packages/M3Pro_demo
+copying /var/robotic/yahboomcar_ws/build/M3Pro_demo/build/lib/M3Pro_demo/apriltag_transport.py -> /var/robotic/yahboomcar_ws/install/M3Pro_demo/lib/python3.10/site-packages/M3Pro_demo
+copying /var/robotic/yahboomcar_ws/build/M3Pro_demo/build/lib/M3Pro_demo/apriltag_track-Pose[0].py -> /var/robotic/yahboomcar_ws/install/M3Pro_demo/lib/python3.10/site-packages/M3Pro_demo
+copying /var/robotic/yahboomcar_ws/build/M3Pro_demo/build/lib/M3Pro_demo/apriltag_follow_3D_V1.py -> /var/robotic/yahboomcar_ws/install/M3Pro_demo/lib/python3.10/site-packages/M3Pro_demo
+copying /var/robotic/yahboomcar_ws/build/M3Pro_demo/build/lib/M3Pro_demo/color_list.py -> /var/robotic/yahboomcar_ws/install/M3Pro_demo/lib/python3.10/site-packages/M3Pro_demo
+copying /var/robotic/yahboomcar_ws/build/M3Pro_demo/build/lib/M3Pro_demo/apriltag_track_desktop.py -> /var/robotic/yahboomcar_ws/install/M3Pro_demo/lib/python3.10/site-packages/M3Pro_demo
+copying /var/robotic/yahboomcar_ws/build/M3Pro_demo/build/lib/M3Pro_demo/follow_line.py -> /var/robotic/yahboomcar_ws/install/M3Pro_demo/lib/python3.10/site-packages/M3Pro_demo
+copying /var/robotic/yahboomcar_ws/build/M3Pro_demo/build/lib/M3Pro_demo/apriltag_track-Circle.py -> /var/robotic/yahboomcar_ws/install/M3Pro_demo/lib/python3.10/site-packages/M3Pro_demo
+copying /var/robotic/yahboomcar_ws/build/M3Pro_demo/build/lib/M3Pro_demo/Get_OdomInfo.py -> /var/robotic/yahboomcar_ws/install/M3Pro_demo/lib/python3.10/site-packages/M3Pro_demo
+copying /var/robotic/yahboomcar_ws/build/M3Pro_demo/build/lib/M3Pro_demo/KCF_track-Copy1.py -> /var/robotic/yahboomcar_ws/install/M3Pro_demo/lib/python3.10/site-packages/M3Pro_demo
+copying /var/robotic/yahboomcar_ws/build/M3Pro_demo/build/lib/M3Pro_demo/apriltag_follow.py -> /var/robotic/yahboomcar_ws/install/M3Pro_demo/lib/python3.10/site-packages/M3Pro_demo
+copying /var/robotic/yahboomcar_ws/build/M3Pro_demo/build/lib/M3Pro_demo/color_follow.py -> /var/robotic/yahboomcar_ws/install/M3Pro_demo/lib/python3.10/site-packages/M3Pro_demo
+copying /var/robotic/yahboomcar_ws/build/M3Pro_demo/build/lib/M3Pro_demo/apriltag_identify.py -> /var/robotic/yahboomcar_ws/install/M3Pro_demo/lib/python3.10/site-packages/M3Pro_demo
+copying /var/robotic/yahboomcar_ws/build/M3Pro_demo/build/lib/M3Pro_demo/color_track_desktop.py -> /var/robotic/yahboomcar_ws/install/M3Pro_demo/lib/python3.10/site-packages/M3Pro_demo
+copying /var/robotic/yahboomcar_ws/build/M3Pro_demo/build/lib/M3Pro_demo/__init__.py -> /var/robotic/yahboomcar_ws/install/M3Pro_demo/lib/python3.10/site-packages/M3Pro_demo
+copying /var/robotic/yahboomcar_ws/build/M3Pro_demo/build/lib/M3Pro_demo/apriltagHeight_gesture.py -> /var/robotic/yahboomcar_ws/install/M3Pro_demo/lib/python3.10/site-packages/M3Pro_demo
+copying /var/robotic/yahboomcar_ws/build/M3Pro_demo/build/lib/M3Pro_demo/shape_recognize.py -> /var/robotic/yahboomcar_ws/install/M3Pro_demo/lib/python3.10/site-packages/M3Pro_demo
+copying /var/robotic/yahboomcar_ws/build/M3Pro_demo/build/lib/M3Pro_demo/apriltagID_gesture.py -> /var/robotic/yahboomcar_ws/install/M3Pro_demo/lib/python3.10/site-packages/M3Pro_demo
+copying /var/robotic/yahboomcar_ws/build/M3Pro_demo/build/lib/M3Pro_demo/apriltagDist_gesture.py -> /var/robotic/yahboomcar_ws/install/M3Pro_demo/lib/python3.10/site-packages/M3Pro_demo
+copying /var/robotic/yahboomcar_ws/build/M3Pro_demo/build/lib/M3Pro_demo/vutils.py -> /var/robotic/yahboomcar_ws/install/M3Pro_demo/lib/python3.10/site-packages/M3Pro_demo
+copying /var/robotic/yahboomcar_ws/build/M3Pro_demo/build/lib/M3Pro_demo/KCF_follow.py -> /var/robotic/yahboomcar_ws/install/M3Pro_demo/lib/python3.10/site-packages/M3Pro_demo
+copying /var/robotic/yahboomcar_ws/build/M3Pro_demo/build/lib/M3Pro_demo/test_mediapipe.py -> /var/robotic/yahboomcar_ws/install/M3Pro_demo/lib/python3.10/site-packages/M3Pro_demo
+copying /var/robotic/yahboomcar_ws/build/M3Pro_demo/build/lib/M3Pro_demo/volume_calculations.py -> /var/robotic/yahboomcar_ws/install/M3Pro_demo/lib/python3.10/site-packages/M3Pro_demo
+copying /var/robotic/yahboomcar_ws/build/M3Pro_demo/build/lib/M3Pro_demo/color_common.py -> /var/robotic/yahboomcar_ws/install/M3Pro_demo/lib/python3.10/site-packages/M3Pro_demo
+copying /var/robotic/yahboomcar_ws/build/M3Pro_demo/build/lib/M3Pro_demo/apriltag_track-distance.py -> /var/robotic/yahboomcar_ws/install/M3Pro_demo/lib/python3.10/site-packages/M3Pro_demo
+copying /var/robotic/yahboomcar_ws/build/M3Pro_demo/build/lib/M3Pro_demo/apriltag_transport_V2.py -> /var/robotic/yahboomcar_ws/install/M3Pro_demo/lib/python3.10/site-packages/M3Pro_demo
+copying /var/robotic/yahboomcar_ws/build/M3Pro_demo/build/lib/M3Pro_demo/color_track.py -> /var/robotic/yahboomcar_ws/install/M3Pro_demo/lib/python3.10/site-packages/M3Pro_demo
+copying /var/robotic/yahboomcar_ws/build/M3Pro_demo/build/lib/M3Pro_demo/color_recognize.py -> /var/robotic/yahboomcar_ws/install/M3Pro_demo/lib/python3.10/site-packages/M3Pro_demo
+copying /var/robotic/yahboomcar_ws/build/M3Pro_demo/build/lib/M3Pro_demo/M3Pro_Dancing.py -> /var/robotic/yahboomcar_ws/install/M3Pro_demo/lib/python3.10/site-packages/M3Pro_demo
+copying /var/robotic/yahboomcar_ws/build/M3Pro_demo/build/lib/M3Pro_demo/estimate_volume.py -> /var/robotic/yahboomcar_ws/install/M3Pro_demo/lib/python3.10/site-packages/M3Pro_demo
+copying /var/robotic/yahboomcar_ws/build/M3Pro_demo/build/lib/M3Pro_demo/apriltag_detect.py -> /var/robotic/yahboomcar_ws/install/M3Pro_demo/lib/python3.10/site-packages/M3Pro_demo
+copying /var/robotic/yahboomcar_ws/build/M3Pro_demo/build/lib/M3Pro_demo/compute_pose.py -> /var/robotic/yahboomcar_ws/install/M3Pro_demo/lib/python3.10/site-packages/M3Pro_demo
+byte-compiling /var/robotic/yahboomcar_ws/install/M3Pro_demo/lib/python3.10/site-packages/M3Pro_demo/grasp_transport.py to grasp_transport.cpython-310.pyc
+byte-compiling /var/robotic/yahboomcar_ws/install/M3Pro_demo/lib/python3.10/site-packages/M3Pro_demo/KCF_follow_desktop.py to KCF_follow_desktop.cpython-310.pyc
+byte-compiling /var/robotic/yahboomcar_ws/install/M3Pro_demo/lib/python3.10/site-packages/M3Pro_demo/apriltag_follow_2D.py to apriltag_follow_2D.cpython-310.pyc
+byte-compiling /var/robotic/yahboomcar_ws/install/M3Pro_demo/lib/python3.10/site-packages/M3Pro_demo/grasp_joint5.py to grasp_joint5.cpython-310.pyc
+byte-compiling /var/robotic/yahboomcar_ws/install/M3Pro_demo/lib/python3.10/site-packages/M3Pro_demo/color_transport.py to color_transport.cpython-310.pyc
+byte-compiling /var/robotic/yahboomcar_ws/install/M3Pro_demo/lib/python3.10/site-packages/M3Pro_demo/apriltag_list.py to apriltag_list.cpython-310.pyc
+byte-compiling /var/robotic/yahboomcar_ws/install/M3Pro_demo/lib/python3.10/site-packages/M3Pro_demo/follow_common.py to follow_common.cpython-310.pyc
+byte-compiling /var/robotic/yahboomcar_ws/install/M3Pro_demo/lib/python3.10/site-packages/M3Pro_demo/apriltag_detect-Copy1.py to apriltag_detect-Copy1.cpython-310.pyc
+byte-compiling /var/robotic/yahboomcar_ws/install/M3Pro_demo/lib/python3.10/site-packages/M3Pro_demo/Dofbot_Track.py to Dofbot_Track.cpython-310.pyc
+byte-compiling /var/robotic/yahboomcar_ws/install/M3Pro_demo/lib/python3.10/site-packages/M3Pro_demo/grasp.py to grasp.cpython-310.pyc
+byte-compiling /var/robotic/yahboomcar_ws/install/M3Pro_demo/lib/python3.10/site-packages/M3Pro_demo/X5Plus_adjust-Copy1.py to X5Plus_adjust-Copy1.cpython-310.pyc
+byte-compiling /var/robotic/yahboomcar_ws/install/M3Pro_demo/lib/python3.10/site-packages/M3Pro_demo/compute_joint5.py to compute_joint5.cpython-310.pyc
+byte-compiling /var/robotic/yahboomcar_ws/install/M3Pro_demo/lib/python3.10/site-packages/M3Pro_demo/apriltag_track_desktop_no_arm.py to apriltag_track_desktop_no_arm.cpython-310.pyc
+byte-compiling /var/robotic/yahboomcar_ws/install/M3Pro_demo/lib/python3.10/site-packages/M3Pro_demo/media_library.py to media_library.cpython-310.pyc
+byte-compiling /var/robotic/yahboomcar_ws/install/M3Pro_demo/lib/python3.10/site-packages/M3Pro_demo/aruco_track.py to aruco_track.cpython-310.pyc
+byte-compiling /var/robotic/yahboomcar_ws/install/M3Pro_demo/lib/python3.10/site-packages/M3Pro_demo/arm_offset.py to arm_offset.cpython-310.pyc
+byte-compiling /var/robotic/yahboomcar_ws/install/M3Pro_demo/lib/python3.10/site-packages/M3Pro_demo/apriltag_rotation.py to apriltag_rotation.cpython-310.pyc
+byte-compiling /var/robotic/yahboomcar_ws/install/M3Pro_demo/lib/python3.10/site-packages/M3Pro_demo/Robot_PID.py to Robot_PID.cpython-310.pyc
+byte-compiling /var/robotic/yahboomcar_ws/install/M3Pro_demo/lib/python3.10/site-packages/M3Pro_demo/mediapipe_gesture.py to mediapipe_gesture.cpython-310.pyc
+byte-compiling /var/robotic/yahboomcar_ws/install/M3Pro_demo/lib/python3.10/site-packages/M3Pro_demo/grasp_desktop.py to grasp_desktop.cpython-310.pyc
+byte-compiling /var/robotic/yahboomcar_ws/install/M3Pro_demo/lib/python3.10/site-packages/M3Pro_demo/apriltag_track_desktop_onceTrack.py to apriltag_track_desktop_onceTrack.cpython-310.pyc
+byte-compiling /var/robotic/yahboomcar_ws/install/M3Pro_demo/lib/python3.10/site-packages/M3Pro_demo/PID.py to PID.cpython-310.pyc
+byte-compiling /var/robotic/yahboomcar_ws/install/M3Pro_demo/lib/python3.10/site-packages/M3Pro_demo/Gesture_Moving.py to Gesture_Moving.cpython-310.pyc
+byte-compiling /var/robotic/yahboomcar_ws/install/M3Pro_demo/lib/python3.10/site-packages/M3Pro_demo/apriltag_track.py to apriltag_track.cpython-310.pyc
+byte-compiling /var/robotic/yahboomcar_ws/install/M3Pro_demo/lib/python3.10/site-packages/M3Pro_demo/Robot_Move.py to Robot_Move.cpython-310.pyc
+byte-compiling /var/robotic/yahboomcar_ws/install/M3Pro_demo/lib/python3.10/site-packages/M3Pro_demo/KCF_track.py to KCF_track.cpython-310.pyc
+byte-compiling /var/robotic/yahboomcar_ws/install/M3Pro_demo/lib/python3.10/site-packages/M3Pro_demo/mediapipe_detect.py to mediapipe_detect.cpython-310.pyc
+byte-compiling /var/robotic/yahboomcar_ws/install/M3Pro_demo/lib/python3.10/site-packages/M3Pro_demo/apriltag_transport.py to apriltag_transport.cpython-310.pyc
+byte-compiling /var/robotic/yahboomcar_ws/install/M3Pro_demo/lib/python3.10/site-packages/M3Pro_demo/apriltag_track-Pose[0].py to apriltag_track-Pose[0].cpython-310.pyc
+byte-compiling /var/robotic/yahboomcar_ws/install/M3Pro_demo/lib/python3.10/site-packages/M3Pro_demo/apriltag_follow_3D_V1.py to apriltag_follow_3D_V1.cpython-310.pyc
+byte-compiling /var/robotic/yahboomcar_ws/install/M3Pro_demo/lib/python3.10/site-packages/M3Pro_demo/color_list.py to color_list.cpython-310.pyc
+byte-compiling /var/robotic/yahboomcar_ws/install/M3Pro_demo/lib/python3.10/site-packages/M3Pro_demo/apriltag_track_desktop.py to apriltag_track_desktop.cpython-310.pyc
+byte-compiling /var/robotic/yahboomcar_ws/install/M3Pro_demo/lib/python3.10/site-packages/M3Pro_demo/follow_line.py to follow_line.cpython-310.pyc
+byte-compiling /var/robotic/yahboomcar_ws/install/M3Pro_demo/lib/python3.10/site-packages/M3Pro_demo/apriltag_track-Circle.py to apriltag_track-Circle.cpython-310.pyc
+byte-compiling /var/robotic/yahboomcar_ws/install/M3Pro_demo/lib/python3.10/site-packages/M3Pro_demo/Get_OdomInfo.py to Get_OdomInfo.cpython-310.pyc
+byte-compiling /var/robotic/yahboomcar_ws/install/M3Pro_demo/lib/python3.10/site-packages/M3Pro_demo/KCF_track-Copy1.py to KCF_track-Copy1.cpython-310.pyc
+byte-compiling /var/robotic/yahboomcar_ws/install/M3Pro_demo/lib/python3.10/site-packages/M3Pro_demo/apriltag_follow.py to apriltag_follow.cpython-310.pyc
+byte-compiling /var/robotic/yahboomcar_ws/install/M3Pro_demo/lib/python3.10/site-packages/M3Pro_demo/color_follow.py to color_follow.cpython-310.pyc
+byte-compiling /var/robotic/yahboomcar_ws/install/M3Pro_demo/lib/python3.10/site-packages/M3Pro_demo/apriltag_identify.py to apriltag_identify.cpython-310.pyc
+byte-compiling /var/robotic/yahboomcar_ws/install/M3Pro_demo/lib/python3.10/site-packages/M3Pro_demo/color_track_desktop.py to color_track_desktop.cpython-310.pyc
+byte-compiling /var/robotic/yahboomcar_ws/install/M3Pro_demo/lib/python3.10/site-packages/M3Pro_demo/__init__.py to __init__.cpython-310.pyc
+byte-compiling /var/robotic/yahboomcar_ws/install/M3Pro_demo/lib/python3.10/site-packages/M3Pro_demo/apriltagHeight_gesture.py to apriltagHeight_gesture.cpython-310.pyc
+byte-compiling /var/robotic/yahboomcar_ws/install/M3Pro_demo/lib/python3.10/site-packages/M3Pro_demo/shape_recognize.py to shape_recognize.cpython-310.pyc
+byte-compiling /var/robotic/yahboomcar_ws/install/M3Pro_demo/lib/python3.10/site-packages/M3Pro_demo/apriltagID_gesture.py to apriltagID_gesture.cpython-310.pyc
+byte-compiling /var/robotic/yahboomcar_ws/install/M3Pro_demo/lib/python3.10/site-packages/M3Pro_demo/apriltagDist_gesture.py to apriltagDist_gesture.cpython-310.pyc
+byte-compiling /var/robotic/yahboomcar_ws/install/M3Pro_demo/lib/python3.10/site-packages/M3Pro_demo/vutils.py to vutils.cpython-310.pyc
+byte-compiling /var/robotic/yahboomcar_ws/install/M3Pro_demo/lib/python3.10/site-packages/M3Pro_demo/KCF_follow.py to KCF_follow.cpython-310.pyc
+byte-compiling /var/robotic/yahboomcar_ws/install/M3Pro_demo/lib/python3.10/site-packages/M3Pro_demo/test_mediapipe.py to test_mediapipe.cpython-310.pyc
+byte-compiling /var/robotic/yahboomcar_ws/install/M3Pro_demo/lib/python3.10/site-packages/M3Pro_demo/volume_calculations.py to volume_calculations.cpython-310.pyc
+byte-compiling /var/robotic/yahboomcar_ws/install/M3Pro_demo/lib/python3.10/site-packages/M3Pro_demo/color_common.py to color_common.cpython-310.pyc
+byte-compiling /var/robotic/yahboomcar_ws/install/M3Pro_demo/lib/python3.10/site-packages/M3Pro_demo/apriltag_track-distance.py to apriltag_track-distance.cpython-310.pyc
+byte-compiling /var/robotic/yahboomcar_ws/install/M3Pro_demo/lib/python3.10/site-packages/M3Pro_demo/apriltag_transport_V2.py to apriltag_transport_V2.cpython-310.pyc
+byte-compiling /var/robotic/yahboomcar_ws/install/M3Pro_demo/lib/python3.10/site-packages/M3Pro_demo/color_track.py to color_track.cpython-310.pyc
+byte-compiling /var/robotic/yahboomcar_ws/install/M3Pro_demo/lib/python3.10/site-packages/M3Pro_demo/color_recognize.py to color_recognize.cpython-310.pyc
+byte-compiling /var/robotic/yahboomcar_ws/install/M3Pro_demo/lib/python3.10/site-packages/M3Pro_demo/M3Pro_Dancing.py to M3Pro_Dancing.cpython-310.pyc
+byte-compiling /var/robotic/yahboomcar_ws/install/M3Pro_demo/lib/python3.10/site-packages/M3Pro_demo/estimate_volume.py to estimate_volume.cpython-310.pyc
+byte-compiling /var/robotic/yahboomcar_ws/install/M3Pro_demo/lib/python3.10/site-packages/M3Pro_demo/apriltag_detect.py to apriltag_detect.cpython-310.pyc
+byte-compiling /var/robotic/yahboomcar_ws/install/M3Pro_demo/lib/python3.10/site-packages/M3Pro_demo/compute_pose.py to compute_pose.cpython-310.pyc
+running install_data
+creating /var/robotic/yahboomcar_ws/install/M3Pro_demo/share/ament_index
+creating /var/robotic/yahboomcar_ws/install/M3Pro_demo/share/ament_index/resource_index
+creating /var/robotic/yahboomcar_ws/install/M3Pro_demo/share/ament_index/resource_index/packages
+copying resource/M3Pro_demo -> /var/robotic/yahboomcar_ws/install/M3Pro_demo/share/ament_index/resource_index/packages
+copying package.xml -> /var/robotic/yahboomcar_ws/install/M3Pro_demo/share/M3Pro_demo
+creating /var/robotic/yahboomcar_ws/install/M3Pro_demo/share/M3Pro_demo/launch
+copying launch/camera_arm_kin.launch.py -> /var/robotic/yahboomcar_ws/install/M3Pro_demo/share/M3Pro_demo/launch
+running install_egg_info
+Copying ../../build/M3Pro_demo/M3Pro_demo.egg-info to /var/robotic/yahboomcar_ws/install/M3Pro_demo/lib/python3.10/site-packages/M3Pro_demo-0.0.0-py3.10.egg-info
+running install_scripts
+Installing Gesture_Moving script to /var/robotic/yahboomcar_ws/install/M3Pro_demo/lib/M3Pro_demo
+Installing KCF_follow script to /var/robotic/yahboomcar_ws/install/M3Pro_demo/lib/M3Pro_demo
+Installing KCF_follow_desktop script to /var/robotic/yahboomcar_ws/install/M3Pro_demo/lib/M3Pro_demo
+Installing KCF_track script to /var/robotic/yahboomcar_ws/install/M3Pro_demo/lib/M3Pro_demo
+Installing M3Pro_Dancing script to /var/robotic/yahboomcar_ws/install/M3Pro_demo/lib/M3Pro_demo
+Installing apriltagDist_gesture script to /var/robotic/yahboomcar_ws/install/M3Pro_demo/lib/M3Pro_demo
+Installing apriltagHeight_gesture script to /var/robotic/yahboomcar_ws/install/M3Pro_demo/lib/M3Pro_demo
+Installing apriltagID_gesture script to /var/robotic/yahboomcar_ws/install/M3Pro_demo/lib/M3Pro_demo
+Installing apriltag_detect script to /var/robotic/yahboomcar_ws/install/M3Pro_demo/lib/M3Pro_demo
+Installing apriltag_follow script to /var/robotic/yahboomcar_ws/install/M3Pro_demo/lib/M3Pro_demo
+Installing apriltag_follow_2D script to /var/robotic/yahboomcar_ws/install/M3Pro_demo/lib/M3Pro_demo
+Installing apriltag_list script to /var/robotic/yahboomcar_ws/install/M3Pro_demo/lib/M3Pro_demo
+Installing apriltag_rotation script to /var/robotic/yahboomcar_ws/install/M3Pro_demo/lib/M3Pro_demo
+Installing apriltag_track script to /var/robotic/yahboomcar_ws/install/M3Pro_demo/lib/M3Pro_demo
+Installing apriltag_track_desktop script to /var/robotic/yahboomcar_ws/install/M3Pro_demo/lib/M3Pro_demo
+Installing apriltag_transport script to /var/robotic/yahboomcar_ws/install/M3Pro_demo/lib/M3Pro_demo
+Installing apriltag_transport_V2 script to /var/robotic/yahboomcar_ws/install/M3Pro_demo/lib/M3Pro_demo
+Installing arm_offset script to /var/robotic/yahboomcar_ws/install/M3Pro_demo/lib/M3Pro_demo
+Installing color_follow script to /var/robotic/yahboomcar_ws/install/M3Pro_demo/lib/M3Pro_demo
+Installing color_list script to /var/robotic/yahboomcar_ws/install/M3Pro_demo/lib/M3Pro_demo
+Installing color_recognize script to /var/robotic/yahboomcar_ws/install/M3Pro_demo/lib/M3Pro_demo
+Installing color_track script to /var/robotic/yahboomcar_ws/install/M3Pro_demo/lib/M3Pro_demo
+Installing color_track_desktop script to /var/robotic/yahboomcar_ws/install/M3Pro_demo/lib/M3Pro_demo
+Installing color_transport script to /var/robotic/yahboomcar_ws/install/M3Pro_demo/lib/M3Pro_demo
+Installing estimate_volume script to /var/robotic/yahboomcar_ws/install/M3Pro_demo/lib/M3Pro_demo
+Installing follow_line script to /var/robotic/yahboomcar_ws/install/M3Pro_demo/lib/M3Pro_demo
+Installing grasp script to /var/robotic/yahboomcar_ws/install/M3Pro_demo/lib/M3Pro_demo
+Installing grasp_desktop script to /var/robotic/yahboomcar_ws/install/M3Pro_demo/lib/M3Pro_demo
+Installing grasp_joint5 script to /var/robotic/yahboomcar_ws/install/M3Pro_demo/lib/M3Pro_demo
+Installing grasp_transport script to /var/robotic/yahboomcar_ws/install/M3Pro_demo/lib/M3Pro_demo
+Installing mediapipe_detect script to /var/robotic/yahboomcar_ws/install/M3Pro_demo/lib/M3Pro_demo
+Installing mediapipe_gesture script to /var/robotic/yahboomcar_ws/install/M3Pro_demo/lib/M3Pro_demo
+Installing shape_recognize script to /var/robotic/yahboomcar_ws/install/M3Pro_demo/lib/M3Pro_demo
+Installing test_mediapipe script to /var/robotic/yahboomcar_ws/install/M3Pro_demo/lib/M3Pro_demo
+Installing volume_calculations script to /var/robotic/yahboomcar_ws/install/M3Pro_demo/lib/M3Pro_demo
+writing list of installed files to '/var/robotic/yahboomcar_ws/build/M3Pro_demo/install.log'

@@ -1,0 +1,48 @@
+[0.006s] Invoking command in '/var/robotic/yahboomcar_ws/build/MoveIt_demo': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --build /var/robotic/yahboomcar_ws/build/MoveIt_demo -- -j2 -l2
+[0.047s] [35m[1mConsolidate compiler generated dependencies of target set_target_joints[0m
+[0.050s] [35m[1mConsolidate compiler generated dependencies of target set_target_position[0m
+[0.087s] [ 14%] Built target set_target_position
+[0.090s] [ 28%] Built target set_target_joints
+[0.098s] [35m[1mConsolidate compiler generated dependencies of target random_move[0m
+[0.113s] [35m[1mConsolidate compiler generated dependencies of target cartesian_path[0m
+[0.117s] [ 42%] Built target random_move
+[0.126s] [35m[1mConsolidate compiler generated dependencies of target multi_track_motion[0m
+[0.173s] [ 57%] Built target multi_track_motion
+[0.181s] [ 71%] Built target cartesian_path
+[0.199s] [35m[1mConsolidate compiler generated dependencies of target obstacle_avoidance[0m
+[0.204s] [35m[1mConsolidate compiler generated dependencies of target set_scene[0m
+[0.232s] [ 85%] Built target obstacle_avoidance
+[0.233s] [100%] Built target set_scene
+[0.243s] Invoked command in '/var/robotic/yahboomcar_ws/build/MoveIt_demo' returned '0': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --build /var/robotic/yahboomcar_ws/build/MoveIt_demo -- -j2 -l2
+[0.253s] Invoking command in '/var/robotic/yahboomcar_ws/build/MoveIt_demo': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --install /var/robotic/yahboomcar_ws/build/MoveIt_demo
+[0.256s] -- Install configuration: ""
+[0.256s] -- Installing: /var/robotic/yahboomcar_ws/install/MoveIt_demo/lib/MoveIt_demo/set_target_joints
+[0.257s] -- Set runtime path of "/var/robotic/yahboomcar_ws/install/MoveIt_demo/lib/MoveIt_demo/set_target_joints" to ""
+[0.257s] -- Installing: /var/robotic/yahboomcar_ws/install/MoveIt_demo/lib/MoveIt_demo/set_target_position
+[0.258s] -- Set runtime path of "/var/robotic/yahboomcar_ws/install/MoveIt_demo/lib/MoveIt_demo/set_target_position" to ""
+[0.259s] -- Installing: /var/robotic/yahboomcar_ws/install/MoveIt_demo/lib/MoveIt_demo/cartesian_path
+[0.260s] -- Set runtime path of "/var/robotic/yahboomcar_ws/install/MoveIt_demo/lib/MoveIt_demo/cartesian_path" to ""
+[0.260s] -- Installing: /var/robotic/yahboomcar_ws/install/MoveIt_demo/lib/MoveIt_demo/multi_track_motion
+[0.260s] -- Set runtime path of "/var/robotic/yahboomcar_ws/install/MoveIt_demo/lib/MoveIt_demo/multi_track_motion" to ""
+[0.260s] -- Installing: /var/robotic/yahboomcar_ws/install/MoveIt_demo/lib/MoveIt_demo/random_move
+[0.261s] -- Set runtime path of "/var/robotic/yahboomcar_ws/install/MoveIt_demo/lib/MoveIt_demo/random_move" to ""
+[0.261s] -- Installing: /var/robotic/yahboomcar_ws/install/MoveIt_demo/lib/MoveIt_demo/obstacle_avoidance
+[0.262s] -- Set runtime path of "/var/robotic/yahboomcar_ws/install/MoveIt_demo/lib/MoveIt_demo/obstacle_avoidance" to ""
+[0.262s] -- Installing: /var/robotic/yahboomcar_ws/install/MoveIt_demo/lib/MoveIt_demo/set_scene
+[0.263s] -- Set runtime path of "/var/robotic/yahboomcar_ws/install/MoveIt_demo/lib/MoveIt_demo/set_scene" to ""
+[0.263s] -- Installing: /var/robotic/yahboomcar_ws/install/MoveIt_demo/share/ament_index/resource_index/package_run_dependencies/MoveIt_demo
+[0.263s] -- Installing: /var/robotic/yahboomcar_ws/install/MoveIt_demo/share/ament_index/resource_index/parent_prefix_path/MoveIt_demo
+[0.263s] -- Installing: /var/robotic/yahboomcar_ws/install/MoveIt_demo/share/MoveIt_demo/environment/ament_prefix_path.sh
+[0.263s] -- Installing: /var/robotic/yahboomcar_ws/install/MoveIt_demo/share/MoveIt_demo/environment/ament_prefix_path.dsv
+[0.263s] -- Installing: /var/robotic/yahboomcar_ws/install/MoveIt_demo/share/MoveIt_demo/environment/path.sh
+[0.263s] -- Installing: /var/robotic/yahboomcar_ws/install/MoveIt_demo/share/MoveIt_demo/environment/path.dsv
+[0.264s] -- Installing: /var/robotic/yahboomcar_ws/install/MoveIt_demo/share/MoveIt_demo/local_setup.bash
+[0.264s] -- Installing: /var/robotic/yahboomcar_ws/install/MoveIt_demo/share/MoveIt_demo/local_setup.sh
+[0.264s] -- Installing: /var/robotic/yahboomcar_ws/install/MoveIt_demo/share/MoveIt_demo/local_setup.zsh
+[0.264s] -- Installing: /var/robotic/yahboomcar_ws/install/MoveIt_demo/share/MoveIt_demo/local_setup.dsv
+[0.264s] -- Installing: /var/robotic/yahboomcar_ws/install/MoveIt_demo/share/MoveIt_demo/package.dsv
+[0.264s] -- Installing: /var/robotic/yahboomcar_ws/install/MoveIt_demo/share/ament_index/resource_index/packages/MoveIt_demo
+[0.264s] -- Installing: /var/robotic/yahboomcar_ws/install/MoveIt_demo/share/MoveIt_demo/cmake/MoveIt_demoConfig.cmake
+[0.264s] -- Installing: /var/robotic/yahboomcar_ws/install/MoveIt_demo/share/MoveIt_demo/cmake/MoveIt_demoConfig-version.cmake
+[0.266s] -- Installing: /var/robotic/yahboomcar_ws/install/MoveIt_demo/share/MoveIt_demo/package.xml
+[0.266s] Invoked command in '/var/robotic/yahboomcar_ws/build/MoveIt_demo' returned '0': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --install /var/robotic/yahboomcar_ws/build/MoveIt_demo

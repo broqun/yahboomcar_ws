@@ -1,0 +1,30 @@
+[ 14%] Built target set_target_position
+[ 28%] Built target set_target_joints
+[ 42%] Built target cartesian_path
+[ 57%] Built target random_move
+[ 71%] Built target obstacle_avoidance
+[ 85%] Built target multi_track_motion
+[100%] Built target set_scene
+-- Install configuration: ""
+-- Up-to-date: /var/robotic/yahboomcar_ws/install/MoveIt_demo/lib/MoveIt_demo/set_target_joints
+-- Up-to-date: /var/robotic/yahboomcar_ws/install/MoveIt_demo/lib/MoveIt_demo/set_target_position
+-- Up-to-date: /var/robotic/yahboomcar_ws/install/MoveIt_demo/lib/MoveIt_demo/cartesian_path
+-- Up-to-date: /var/robotic/yahboomcar_ws/install/MoveIt_demo/lib/MoveIt_demo/multi_track_motion
+-- Up-to-date: /var/robotic/yahboomcar_ws/install/MoveIt_demo/lib/MoveIt_demo/random_move
+-- Up-to-date: /var/robotic/yahboomcar_ws/install/MoveIt_demo/lib/MoveIt_demo/obstacle_avoidance
+-- Up-to-date: /var/robotic/yahboomcar_ws/install/MoveIt_demo/lib/MoveIt_demo/set_scene
+-- Up-to-date: /var/robotic/yahboomcar_ws/install/MoveIt_demo/share/ament_index/resource_index/package_run_dependencies/MoveIt_demo
+-- Up-to-date: /var/robotic/yahboomcar_ws/install/MoveIt_demo/share/ament_index/resource_index/parent_prefix_path/MoveIt_demo
+-- Up-to-date: /var/robotic/yahboomcar_ws/install/MoveIt_demo/share/MoveIt_demo/environment/ament_prefix_path.sh
+-- Up-to-date: /var/robotic/yahboomcar_ws/install/MoveIt_demo/share/MoveIt_demo/environment/ament_prefix_path.dsv
+-- Up-to-date: /var/robotic/yahboomcar_ws/install/MoveIt_demo/share/MoveIt_demo/environment/path.sh
+-- Up-to-date: /var/robotic/yahboomcar_ws/install/MoveIt_demo/share/MoveIt_demo/environment/path.dsv
+-- Up-to-date: /var/robotic/yahboomcar_ws/install/MoveIt_demo/share/MoveIt_demo/local_setup.bash
+-- Up-to-date: /var/robotic/yahboomcar_ws/install/MoveIt_demo/share/MoveIt_demo/local_setup.sh
+-- Up-to-date: /var/robotic/yahboomcar_ws/install/MoveIt_demo/share/MoveIt_demo/local_setup.zsh
+-- Up-to-date: /var/robotic/yahboomcar_ws/install/MoveIt_demo/share/MoveIt_demo/local_setup.dsv
+-- Installing: /var/robotic/yahboomcar_ws/install/MoveIt_demo/share/MoveIt_demo/package.dsv
+-- Up-to-date: /var/robotic/yahboomcar_ws/install/MoveIt_demo/share/ament_index/resource_index/packages/MoveIt_demo
+-- Up-to-date: /var/robotic/yahboomcar_ws/install/MoveIt_demo/share/MoveIt_demo/cmake/MoveIt_demoConfig.cmake
+-- Up-to-date: /var/robotic/yahboomcar_ws/install/MoveIt_demo/share/MoveIt_demo/cmake/MoveIt_demoConfig-version.cmake
+-- Up-to-date: /var/robotic/yahboomcar_ws/install/MoveIt_demo/share/MoveIt_demo/package.xml

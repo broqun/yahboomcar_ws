@@ -1,0 +1,14 @@
+{
+	"backtraceGraph" : 
+	{
+		"commands" : [],
+		"files" : [],
+		"nodes" : []
+	},
+	"installers" : [],
+	"paths" : 
+	{
+		"build" : "pkg_interfaces__py",
+		"source" : "/var/robotic/yahboomcar_ws/build/pkg_interfaces/pkg_interfaces__py"
+	}
+}

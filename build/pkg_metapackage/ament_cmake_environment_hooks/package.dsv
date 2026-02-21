@@ -1,0 +1,4 @@
+source;share/pkg_metapackage/local_setup.bash
+source;share/pkg_metapackage/local_setup.dsv
+source;share/pkg_metapackage/local_setup.sh
+source;share/pkg_metapackage/local_setup.zsh

@@ -1,0 +1,43 @@
+running egg_info
+creating build/yahboom_M3Pro_DepthCam/yahboom_M3Pro_DepthCam.egg-info
+writing build/yahboom_M3Pro_DepthCam/yahboom_M3Pro_DepthCam.egg-info/PKG-INFO
+writing dependency_links to build/yahboom_M3Pro_DepthCam/yahboom_M3Pro_DepthCam.egg-info/dependency_links.txt
+writing entry points to build/yahboom_M3Pro_DepthCam/yahboom_M3Pro_DepthCam.egg-info/entry_points.txt
+writing requirements to build/yahboom_M3Pro_DepthCam/yahboom_M3Pro_DepthCam.egg-info/requires.txt
+writing top-level names to build/yahboom_M3Pro_DepthCam/yahboom_M3Pro_DepthCam.egg-info/top_level.txt
+writing manifest file 'build/yahboom_M3Pro_DepthCam/yahboom_M3Pro_DepthCam.egg-info/SOURCES.txt'
+reading manifest file 'build/yahboom_M3Pro_DepthCam/yahboom_M3Pro_DepthCam.egg-info/SOURCES.txt'
+writing manifest file 'build/yahboom_M3Pro_DepthCam/yahboom_M3Pro_DepthCam.egg-info/SOURCES.txt'
+running build
+running build_py
+creating /home/jetson/yahboomcar_ws/src/yahboom_M3Pro_DepthCam/build/yahboom_M3Pro_DepthCam/build
+creating /home/jetson/yahboomcar_ws/src/yahboom_M3Pro_DepthCam/build/yahboom_M3Pro_DepthCam/build/lib
+creating /home/jetson/yahboomcar_ws/src/yahboom_M3Pro_DepthCam/build/yahboom_M3Pro_DepthCam/build/lib/yahboom_M3Pro_DepthCam
+copying yahboom_M3Pro_DepthCam/GetDepthColor.py -> /home/jetson/yahboomcar_ws/src/yahboom_M3Pro_DepthCam/build/yahboom_M3Pro_DepthCam/build/lib/yahboom_M3Pro_DepthCam
+copying yahboom_M3Pro_DepthCam/__init__.py -> /home/jetson/yahboomcar_ws/src/yahboom_M3Pro_DepthCam/build/yahboom_M3Pro_DepthCam/build/lib/yahboom_M3Pro_DepthCam
+copying yahboom_M3Pro_DepthCam/Measure_Distance.py -> /home/jetson/yahboomcar_ws/src/yahboom_M3Pro_DepthCam/build/yahboom_M3Pro_DepthCam/build/lib/yahboom_M3Pro_DepthCam
+copying yahboom_M3Pro_DepthCam/Edge_Detection.py -> /home/jetson/yahboomcar_ws/src/yahboom_M3Pro_DepthCam/build/yahboom_M3Pro_DepthCam/build/lib/yahboom_M3Pro_DepthCam
+running install
+running install_lib
+creating /home/jetson/yahboomcar_ws/src/yahboom_M3Pro_DepthCam/install/yahboom_M3Pro_DepthCam/lib/python3.10/site-packages/yahboom_M3Pro_DepthCam
+copying /home/jetson/yahboomcar_ws/src/yahboom_M3Pro_DepthCam/build/yahboom_M3Pro_DepthCam/build/lib/yahboom_M3Pro_DepthCam/GetDepthColor.py -> /home/jetson/yahboomcar_ws/src/yahboom_M3Pro_DepthCam/install/yahboom_M3Pro_DepthCam/lib/python3.10/site-packages/yahboom_M3Pro_DepthCam
+copying /home/jetson/yahboomcar_ws/src/yahboom_M3Pro_DepthCam/build/yahboom_M3Pro_DepthCam/build/lib/yahboom_M3Pro_DepthCam/__init__.py -> /home/jetson/yahboomcar_ws/src/yahboom_M3Pro_DepthCam/install/yahboom_M3Pro_DepthCam/lib/python3.10/site-packages/yahboom_M3Pro_DepthCam
+copying /home/jetson/yahboomcar_ws/src/yahboom_M3Pro_DepthCam/build/yahboom_M3Pro_DepthCam/build/lib/yahboom_M3Pro_DepthCam/Measure_Distance.py -> /home/jetson/yahboomcar_ws/src/yahboom_M3Pro_DepthCam/install/yahboom_M3Pro_DepthCam/lib/python3.10/site-packages/yahboom_M3Pro_DepthCam
+copying /home/jetson/yahboomcar_ws/src/yahboom_M3Pro_DepthCam/build/yahboom_M3Pro_DepthCam/build/lib/yahboom_M3Pro_DepthCam/Edge_Detection.py -> /home/jetson/yahboomcar_ws/src/yahboom_M3Pro_DepthCam/install/yahboom_M3Pro_DepthCam/lib/python3.10/site-packages/yahboom_M3Pro_DepthCam
+byte-compiling /home/jetson/yahboomcar_ws/src/yahboom_M3Pro_DepthCam/install/yahboom_M3Pro_DepthCam/lib/python3.10/site-packages/yahboom_M3Pro_DepthCam/GetDepthColor.py to GetDepthColor.cpython-310.pyc
+byte-compiling /home/jetson/yahboomcar_ws/src/yahboom_M3Pro_DepthCam/install/yahboom_M3Pro_DepthCam/lib/python3.10/site-packages/yahboom_M3Pro_DepthCam/__init__.py to __init__.cpython-310.pyc
+byte-compiling /home/jetson/yahboomcar_ws/src/yahboom_M3Pro_DepthCam/install/yahboom_M3Pro_DepthCam/lib/python3.10/site-packages/yahboom_M3Pro_DepthCam/Measure_Distance.py to Measure_Distance.cpython-310.pyc
+byte-compiling /home/jetson/yahboomcar_ws/src/yahboom_M3Pro_DepthCam/install/yahboom_M3Pro_DepthCam/lib/python3.10/site-packages/yahboom_M3Pro_DepthCam/Edge_Detection.py to Edge_Detection.cpython-310.pyc
+running install_data
+creating /home/jetson/yahboomcar_ws/src/yahboom_M3Pro_DepthCam/install/yahboom_M3Pro_DepthCam/share/ament_index
+creating /home/jetson/yahboomcar_ws/src/yahboom_M3Pro_DepthCam/install/yahboom_M3Pro_DepthCam/share/ament_index/resource_index
+creating /home/jetson/yahboomcar_ws/src/yahboom_M3Pro_DepthCam/install/yahboom_M3Pro_DepthCam/share/ament_index/resource_index/packages
+copying resource/yahboom_M3Pro_DepthCam -> /home/jetson/yahboomcar_ws/src/yahboom_M3Pro_DepthCam/install/yahboom_M3Pro_DepthCam/share/ament_index/resource_index/packages
+copying package.xml -> /home/jetson/yahboomcar_ws/src/yahboom_M3Pro_DepthCam/install/yahboom_M3Pro_DepthCam/share/yahboom_M3Pro_DepthCam
+running install_egg_info
+Copying build/yahboom_M3Pro_DepthCam/yahboom_M3Pro_DepthCam.egg-info to /home/jetson/yahboomcar_ws/src/yahboom_M3Pro_DepthCam/install/yahboom_M3Pro_DepthCam/lib/python3.10/site-packages/yahboom_M3Pro_DepthCam-0.0.0-py3.10.egg-info
+running install_scripts
+Installing GetDepthColor script to /home/jetson/yahboomcar_ws/src/yahboom_M3Pro_DepthCam/install/yahboom_M3Pro_DepthCam/lib/yahboom_M3Pro_DepthCam
+Installing Measure_Distance script to /home/jetson/yahboomcar_ws/src/yahboom_M3Pro_DepthCam/install/yahboom_M3Pro_DepthCam/lib/yahboom_M3Pro_DepthCam
+Installing edge_detection script to /home/jetson/yahboomcar_ws/src/yahboom_M3Pro_DepthCam/install/yahboom_M3Pro_DepthCam/lib/yahboom_M3Pro_DepthCam
+writing list of installed files to '/home/jetson/yahboomcar_ws/src/yahboom_M3Pro_DepthCam/build/yahboom_M3Pro_DepthCam/install.log'

@@ -1,0 +1,8 @@
+{
+  "package_name": "pkg_interfaces",
+  "non_idl_tuples": [
+    "/var/robotic/yahboomcar_ws/src/pkg_interfaces:action/Progress.action",
+    "/var/robotic/yahboomcar_ws/src/pkg_interfaces:msg/Person.msg",
+    "/var/robotic/yahboomcar_ws/src/pkg_interfaces:srv/Add.srv"
+  ]
+}

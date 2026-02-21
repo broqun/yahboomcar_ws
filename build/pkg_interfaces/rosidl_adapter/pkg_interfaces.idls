@@ -1,0 +1,3 @@
+/var/robotic/yahboomcar_ws/build/pkg_interfaces/rosidl_adapter/pkg_interfaces:action/Progress.idl
+/var/robotic/yahboomcar_ws/build/pkg_interfaces/rosidl_adapter/pkg_interfaces:msg/Person.idl
+/var/robotic/yahboomcar_ws/build/pkg_interfaces/rosidl_adapter/pkg_interfaces:srv/Add.idl

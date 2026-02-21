@@ -1,0 +1,4 @@
+[console_scripts]
+client_demo = pkg_service.client_demo:main
+server_demo = pkg_service.server_demo:main
+

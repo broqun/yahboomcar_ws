@@ -1,0 +1,618 @@
+[0.057s] DEBUG:colcon:Command line arguments: ['/usr/bin/colcon', 'build']
+[0.058s] DEBUG:colcon:Parsed command line arguments: Namespace(log_base=None, log_level=None, verb_name='build', build_base='build', install_base='install', merge_install=False, symlink_install=False, test_result_base=None, continue_on_error=False, executor='parallel', parallel_workers=2, event_handlers=None, ignore_user_meta=False, metas=['./colcon.meta'], base_paths=['.'], packages_ignore=None, packages_ignore_regex=None, paths=None, packages_up_to=None, packages_up_to_regex=None, packages_above=None, packages_above_and_dependencies=None, packages_above_depth=None, packages_select_by_dep=None, packages_skip_by_dep=None, packages_skip_up_to=None, packages_select_build_failed=False, packages_skip_build_finished=False, packages_select_test_failures=False, packages_skip_test_passed=False, packages_select=None, packages_skip=None, packages_select_regex=None, packages_skip_regex=None, packages_start=None, packages_end=None, allow_overriding=[], cmake_args=None, cmake_target=None, cmake_target_skip_unavailable=False, cmake_clean_cache=False, cmake_clean_first=False, cmake_force_configure=False, ament_cmake_args=None, catkin_cmake_args=None, catkin_skip_building_tests=False, verb_parser=<colcon_defaults.argument_parser.defaults.DefaultArgumentsDecorator object at 0x748ac6527820>, verb_extension=<colcon_core.verb.build.BuildVerb object at 0x748ac66dc490>, main=<bound method BuildVerb.main of <colcon_core.verb.build.BuildVerb object at 0x748ac66dc490>>)
+[0.140s] Level 1:colcon.colcon_core.package_discovery:discover_packages(colcon_meta) check parameters
+[0.140s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) check parameters
+[0.140s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) check parameters
+[0.140s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) check parameters
+[0.140s] Level 1:colcon.colcon_core.package_discovery:discover_packages(colcon_meta) discover
+[0.140s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) discover
+[0.140s] INFO:colcon.colcon_core.package_discovery:Crawling recursively for packages in '/var/robotic/yahboomcar_ws'
+[0.140s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['ignore', 'ignore_ament_install']
+[0.140s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'ignore'
+[0.140s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'ignore_ament_install'
+[0.140s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['colcon_pkg']
+[0.140s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'colcon_pkg'
+[0.141s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['colcon_meta']
+[0.141s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'colcon_meta'
+[0.141s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['ros']
+[0.141s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'ros'
+[0.147s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['cmake', 'python']
+[0.147s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'cmake'
+[0.147s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'python'
+[0.147s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['python_setup_py']
+[0.147s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'python_setup_py'
+[0.148s] Level 1:colcon.colcon_core.package_identification:_identify(build) by extensions ['ignore', 'ignore_ament_install']
+[0.148s] Level 1:colcon.colcon_core.package_identification:_identify(build) by extension 'ignore'
+[0.148s] Level 1:colcon.colcon_core.package_identification:_identify(build) ignored
+[0.148s] Level 1:colcon.colcon_core.package_identification:_identify(install) by extensions ['ignore', 'ignore_ament_install']
+[0.148s] Level 1:colcon.colcon_core.package_identification:_identify(install) by extension 'ignore'
+[0.148s] Level 1:colcon.colcon_core.package_identification:_identify(install) ignored
+[0.148s] Level 1:colcon.colcon_core.package_identification:_identify(log) by extensions ['ignore', 'ignore_ament_install']
+[0.148s] Level 1:colcon.colcon_core.package_identification:_identify(log) by extension 'ignore'
+[0.148s] Level 1:colcon.colcon_core.package_identification:_identify(log) ignored
+[0.148s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['ignore', 'ignore_ament_install']
+[0.148s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'ignore'
+[0.148s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'ignore_ament_install'
+[0.148s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['colcon_pkg']
+[0.148s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'colcon_pkg'
+[0.148s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['colcon_meta']
+[0.148s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'colcon_meta'
+[0.148s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['ros']
+[0.148s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'ros'
+[0.148s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['cmake', 'python']
+[0.148s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'cmake'
+[0.148s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'python'
+[0.148s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['python_setup_py']
+[0.148s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'python_setup_py'
+[0.148s] Level 1:colcon.colcon_core.package_identification:_identify(src/M3Pro_MoveIt_demo) by extensions ['ignore', 'ignore_ament_install']
+[0.149s] Level 1:colcon.colcon_core.package_identification:_identify(src/M3Pro_MoveIt_demo) by extension 'ignore'
+[0.149s] Level 1:colcon.colcon_core.package_identification:_identify(src/M3Pro_MoveIt_demo) by extension 'ignore_ament_install'
+[0.149s] Level 1:colcon.colcon_core.package_identification:_identify(src/M3Pro_MoveIt_demo) by extensions ['colcon_pkg']
+[0.149s] Level 1:colcon.colcon_core.package_identification:_identify(src/M3Pro_MoveIt_demo) by extension 'colcon_pkg'
+[0.149s] Level 1:colcon.colcon_core.package_identification:_identify(src/M3Pro_MoveIt_demo) by extensions ['colcon_meta']
+[0.149s] Level 1:colcon.colcon_core.package_identification:_identify(src/M3Pro_MoveIt_demo) by extension 'colcon_meta'
+[0.149s] Level 1:colcon.colcon_core.package_identification:_identify(src/M3Pro_MoveIt_demo) by extensions ['ros']
+[0.149s] Level 1:colcon.colcon_core.package_identification:_identify(src/M3Pro_MoveIt_demo) by extension 'ros'
+[0.150s] DEBUG:colcon.colcon_core.package_identification:Package 'src/M3Pro_MoveIt_demo' with type 'ros.ament_python' and name 'M3Pro_MoveIt_demo'
+[0.150s] Level 1:colcon.colcon_core.package_identification:_identify(src/M3Pro_config) by extensions ['ignore', 'ignore_ament_install']
+[0.151s] Level 1:colcon.colcon_core.package_identification:_identify(src/M3Pro_config) by extension 'ignore'
+[0.151s] Level 1:colcon.colcon_core.package_identification:_identify(src/M3Pro_config) by extension 'ignore_ament_install'
+[0.151s] Level 1:colcon.colcon_core.package_identification:_identify(src/M3Pro_config) by extensions ['colcon_pkg']
+[0.151s] Level 1:colcon.colcon_core.package_identification:_identify(src/M3Pro_config) by extension 'colcon_pkg'
+[0.151s] Level 1:colcon.colcon_core.package_identification:_identify(src/M3Pro_config) by extensions ['colcon_meta']
+[0.151s] Level 1:colcon.colcon_core.package_identification:_identify(src/M3Pro_config) by extension 'colcon_meta'
+[0.151s] Level 1:colcon.colcon_core.package_identification:_identify(src/M3Pro_config) by extensions ['ros']
+[0.151s] Level 1:colcon.colcon_core.package_identification:_identify(src/M3Pro_config) by extension 'ros'
+[0.151s] DEBUG:colcon.colcon_core.package_identification:Package 'src/M3Pro_config' with type 'ros.ament_cmake' and name 'M3Pro_config'
+[0.152s] Level 1:colcon.colcon_core.package_identification:_identify(src/M3Pro_demo) by extensions ['ignore', 'ignore_ament_install']
+[0.152s] Level 1:colcon.colcon_core.package_identification:_identify(src/M3Pro_demo) by extension 'ignore'
+[0.152s] Level 1:colcon.colcon_core.package_identification:_identify(src/M3Pro_demo) by extension 'ignore_ament_install'
+[0.152s] Level 1:colcon.colcon_core.package_identification:_identify(src/M3Pro_demo) by extensions ['colcon_pkg']
+[0.152s] Level 1:colcon.colcon_core.package_identification:_identify(src/M3Pro_demo) by extension 'colcon_pkg'
+[0.152s] Level 1:colcon.colcon_core.package_identification:_identify(src/M3Pro_demo) by extensions ['colcon_meta']
+[0.152s] Level 1:colcon.colcon_core.package_identification:_identify(src/M3Pro_demo) by extension 'colcon_meta'
+[0.152s] Level 1:colcon.colcon_core.package_identification:_identify(src/M3Pro_demo) by extensions ['ros']
+[0.152s] Level 1:colcon.colcon_core.package_identification:_identify(src/M3Pro_demo) by extension 'ros'
+[0.152s] DEBUG:colcon.colcon_core.package_identification:Package 'src/M3Pro_demo' with type 'ros.ament_python' and name 'M3Pro_demo'
+[0.152s] Level 1:colcon.colcon_core.package_identification:_identify(src/MoveIt_demo) by extensions ['ignore', 'ignore_ament_install']
+[0.152s] Level 1:colcon.colcon_core.package_identification:_identify(src/MoveIt_demo) by extension 'ignore'
+[0.152s] Level 1:colcon.colcon_core.package_identification:_identify(src/MoveIt_demo) by extension 'ignore_ament_install'
+[0.152s] Level 1:colcon.colcon_core.package_identification:_identify(src/MoveIt_demo) by extensions ['colcon_pkg']
+[0.152s] Level 1:colcon.colcon_core.package_identification:_identify(src/MoveIt_demo) by extension 'colcon_pkg'
+[0.153s] Level 1:colcon.colcon_core.package_identification:_identify(src/MoveIt_demo) by extensions ['colcon_meta']
+[0.153s] Level 1:colcon.colcon_core.package_identification:_identify(src/MoveIt_demo) by extension 'colcon_meta'
+[0.153s] Level 1:colcon.colcon_core.package_identification:_identify(src/MoveIt_demo) by extensions ['ros']
+[0.153s] Level 1:colcon.colcon_core.package_identification:_identify(src/MoveIt_demo) by extension 'ros'
+[0.153s] DEBUG:colcon.colcon_core.package_identification:Package 'src/MoveIt_demo' with type 'ros.ament_cmake' and name 'MoveIt_demo'
+[0.153s] Level 1:colcon.colcon_core.package_identification:_identify(src/OrbbecSDK_ROS2) by extensions ['ignore', 'ignore_ament_install']
+[0.153s] Level 1:colcon.colcon_core.package_identification:_identify(src/OrbbecSDK_ROS2) by extension 'ignore'
+[0.153s] Level 1:colcon.colcon_core.package_identification:_identify(src/OrbbecSDK_ROS2) by extension 'ignore_ament_install'
+[0.153s] Level 1:colcon.colcon_core.package_identification:_identify(src/OrbbecSDK_ROS2) by extensions ['colcon_pkg']
+[0.153s] Level 1:colcon.colcon_core.package_identification:_identify(src/OrbbecSDK_ROS2) by extension 'colcon_pkg'
+[0.153s] Level 1:colcon.colcon_core.package_identification:_identify(src/OrbbecSDK_ROS2) by extensions ['colcon_meta']
+[0.153s] Level 1:colcon.colcon_core.package_identification:_identify(src/OrbbecSDK_ROS2) by extension 'colcon_meta'
+[0.153s] Level 1:colcon.colcon_core.package_identification:_identify(src/OrbbecSDK_ROS2) by extensions ['ros']
+[0.153s] Level 1:colcon.colcon_core.package_identification:_identify(src/OrbbecSDK_ROS2) by extension 'ros'
+[0.153s] Level 1:colcon.colcon_core.package_identification:_identify(src/OrbbecSDK_ROS2) by extensions ['cmake', 'python']
+[0.154s] Level 1:colcon.colcon_core.package_identification:_identify(src/OrbbecSDK_ROS2) by extension 'cmake'
+[0.154s] Level 1:colcon.colcon_core.package_identification:_identify(src/OrbbecSDK_ROS2) by extension 'python'
+[0.154s] Level 1:colcon.colcon_core.package_identification:_identify(src/OrbbecSDK_ROS2) by extensions ['python_setup_py']
+[0.154s] Level 1:colcon.colcon_core.package_identification:_identify(src/OrbbecSDK_ROS2) by extension 'python_setup_py'
+[0.154s] Level 1:colcon.colcon_core.package_identification:_identify(src/arm_driver) by extensions ['ignore', 'ignore_ament_install']
+[0.154s] Level 1:colcon.colcon_core.package_identification:_identify(src/arm_driver) by extension 'ignore'
+[0.154s] Level 1:colcon.colcon_core.package_identification:_identify(src/arm_driver) by extension 'ignore_ament_install'
+[0.154s] Level 1:colcon.colcon_core.package_identification:_identify(src/arm_driver) by extensions ['colcon_pkg']
+[0.154s] Level 1:colcon.colcon_core.package_identification:_identify(src/arm_driver) by extension 'colcon_pkg'
+[0.154s] Level 1:colcon.colcon_core.package_identification:_identify(src/arm_driver) by extensions ['colcon_meta']
+[0.154s] Level 1:colcon.colcon_core.package_identification:_identify(src/arm_driver) by extension 'colcon_meta'
+[0.154s] Level 1:colcon.colcon_core.package_identification:_identify(src/arm_driver) by extensions ['ros']
+[0.154s] Level 1:colcon.colcon_core.package_identification:_identify(src/arm_driver) by extension 'ros'
+[0.154s] DEBUG:colcon.colcon_core.package_identification:Package 'src/arm_driver' with type 'ros.ament_python' and name 'arm_driver'
+[0.154s] Level 1:colcon.colcon_core.package_identification:_identify(src/arm_interface) by extensions ['ignore', 'ignore_ament_install']
+[0.154s] Level 1:colcon.colcon_core.package_identification:_identify(src/arm_interface) by extension 'ignore'
+[0.154s] Level 1:colcon.colcon_core.package_identification:_identify(src/arm_interface) by extension 'ignore_ament_install'
+[0.154s] Level 1:colcon.colcon_core.package_identification:_identify(src/arm_interface) by extensions ['colcon_pkg']
+[0.154s] Level 1:colcon.colcon_core.package_identification:_identify(src/arm_interface) by extension 'colcon_pkg'
+[0.154s] Level 1:colcon.colcon_core.package_identification:_identify(src/arm_interface) by extensions ['colcon_meta']
+[0.154s] Level 1:colcon.colcon_core.package_identification:_identify(src/arm_interface) by extension 'colcon_meta'
+[0.154s] Level 1:colcon.colcon_core.package_identification:_identify(src/arm_interface) by extensions ['ros']
+[0.154s] Level 1:colcon.colcon_core.package_identification:_identify(src/arm_interface) by extension 'ros'
+[0.155s] DEBUG:colcon.colcon_core.package_identification:Package 'src/arm_interface' with type 'ros.ament_cmake' and name 'arm_interface'
+[0.155s] Level 1:colcon.colcon_core.package_identification:_identify(src/arm_kin) by extensions ['ignore', 'ignore_ament_install']
+[0.155s] Level 1:colcon.colcon_core.package_identification:_identify(src/arm_kin) by extension 'ignore'
+[0.155s] Level 1:colcon.colcon_core.package_identification:_identify(src/arm_kin) by extension 'ignore_ament_install'
+[0.155s] Level 1:colcon.colcon_core.package_identification:_identify(src/arm_kin) by extensions ['colcon_pkg']
+[0.155s] Level 1:colcon.colcon_core.package_identification:_identify(src/arm_kin) by extension 'colcon_pkg'
+[0.155s] Level 1:colcon.colcon_core.package_identification:_identify(src/arm_kin) by extensions ['colcon_meta']
+[0.155s] Level 1:colcon.colcon_core.package_identification:_identify(src/arm_kin) by extension 'colcon_meta'
+[0.155s] Level 1:colcon.colcon_core.package_identification:_identify(src/arm_kin) by extensions ['ros']
+[0.156s] Level 1:colcon.colcon_core.package_identification:_identify(src/arm_kin) by extension 'ros'
+[0.156s] DEBUG:colcon.colcon_core.package_identification:Package 'src/arm_kin' with type 'ros.ament_cmake' and name 'arm_kin'
+[0.156s] Level 1:colcon.colcon_core.package_identification:_identify(src/arm_msgs) by extensions ['ignore', 'ignore_ament_install']
+[0.156s] Level 1:colcon.colcon_core.package_identification:_identify(src/arm_msgs) by extension 'ignore'
+[0.156s] Level 1:colcon.colcon_core.package_identification:_identify(src/arm_msgs) by extension 'ignore_ament_install'
+[0.156s] Level 1:colcon.colcon_core.package_identification:_identify(src/arm_msgs) by extensions ['colcon_pkg']
+[0.156s] Level 1:colcon.colcon_core.package_identification:_identify(src/arm_msgs) by extension 'colcon_pkg'
+[0.156s] Level 1:colcon.colcon_core.package_identification:_identify(src/arm_msgs) by extensions ['colcon_meta']
+[0.156s] Level 1:colcon.colcon_core.package_identification:_identify(src/arm_msgs) by extension 'colcon_meta'
+[0.156s] Level 1:colcon.colcon_core.package_identification:_identify(src/arm_msgs) by extensions ['ros']
+[0.156s] Level 1:colcon.colcon_core.package_identification:_identify(src/arm_msgs) by extension 'ros'
+[0.157s] DEBUG:colcon.colcon_core.package_identification:Package 'src/arm_msgs' with type 'ros.ament_cmake' and name 'arm_msgs'
+[0.157s] Level 1:colcon.colcon_core.package_identification:_identify(src/test_config) by extensions ['ignore', 'ignore_ament_install']
+[0.157s] Level 1:colcon.colcon_core.package_identification:_identify(src/test_config) by extension 'ignore'
+[0.157s] Level 1:colcon.colcon_core.package_identification:_identify(src/test_config) by extension 'ignore_ament_install'
+[0.157s] Level 1:colcon.colcon_core.package_identification:_identify(src/test_config) by extensions ['colcon_pkg']
+[0.157s] Level 1:colcon.colcon_core.package_identification:_identify(src/test_config) by extension 'colcon_pkg'
+[0.157s] Level 1:colcon.colcon_core.package_identification:_identify(src/test_config) by extensions ['colcon_meta']
+[0.157s] Level 1:colcon.colcon_core.package_identification:_identify(src/test_config) by extension 'colcon_meta'
+[0.157s] Level 1:colcon.colcon_core.package_identification:_identify(src/test_config) by extensions ['ros']
+[0.157s] Level 1:colcon.colcon_core.package_identification:_identify(src/test_config) by extension 'ros'
+[0.157s] DEBUG:colcon.colcon_core.package_identification:Package 'src/test_config' with type 'ros.ament_cmake' and name 'test_config'
+[0.158s] Level 1:colcon.colcon_core.package_identification:_identify(src/test_moveit_config) by extensions ['ignore', 'ignore_ament_install']
+[0.158s] Level 1:colcon.colcon_core.package_identification:_identify(src/test_moveit_config) by extension 'ignore'
+[0.158s] Level 1:colcon.colcon_core.package_identification:_identify(src/test_moveit_config) by extension 'ignore_ament_install'
+[0.158s] Level 1:colcon.colcon_core.package_identification:_identify(src/test_moveit_config) by extensions ['colcon_pkg']
+[0.158s] Level 1:colcon.colcon_core.package_identification:_identify(src/test_moveit_config) by extension 'colcon_pkg'
+[0.158s] Level 1:colcon.colcon_core.package_identification:_identify(src/test_moveit_config) by extensions ['colcon_meta']
+[0.158s] Level 1:colcon.colcon_core.package_identification:_identify(src/test_moveit_config) by extension 'colcon_meta'
+[0.158s] Level 1:colcon.colcon_core.package_identification:_identify(src/test_moveit_config) by extensions ['ros']
+[0.158s] Level 1:colcon.colcon_core.package_identification:_identify(src/test_moveit_config) by extension 'ros'
+[0.158s] DEBUG:colcon.colcon_core.package_identification:Package 'src/test_moveit_config' with type 'ros.ament_cmake' and name 'test_moveit_config'
+[0.158s] Level 1:colcon.colcon_core.package_identification:_identify(src/yahboom_M3Pro_DepthCam) by extensions ['ignore', 'ignore_ament_install']
+[0.158s] Level 1:colcon.colcon_core.package_identification:_identify(src/yahboom_M3Pro_DepthCam) by extension 'ignore'
+[0.158s] Level 1:colcon.colcon_core.package_identification:_identify(src/yahboom_M3Pro_DepthCam) by extension 'ignore_ament_install'
+[0.158s] Level 1:colcon.colcon_core.package_identification:_identify(src/yahboom_M3Pro_DepthCam) by extensions ['colcon_pkg']
+[0.158s] Level 1:colcon.colcon_core.package_identification:_identify(src/yahboom_M3Pro_DepthCam) by extension 'colcon_pkg'
+[0.159s] Level 1:colcon.colcon_core.package_identification:_identify(src/yahboom_M3Pro_DepthCam) by extensions ['colcon_meta']
+[0.159s] Level 1:colcon.colcon_core.package_identification:_identify(src/yahboom_M3Pro_DepthCam) by extension 'colcon_meta'
+[0.159s] Level 1:colcon.colcon_core.package_identification:_identify(src/yahboom_M3Pro_DepthCam) by extensions ['ros']
+[0.159s] Level 1:colcon.colcon_core.package_identification:_identify(src/yahboom_M3Pro_DepthCam) by extension 'ros'
+[0.159s] DEBUG:colcon.colcon_core.package_identification:Package 'src/yahboom_M3Pro_DepthCam' with type 'ros.ament_python' and name 'yahboom_M3Pro_DepthCam'
+[0.159s] Level 1:colcon.colcon_core.package_identification:_identify(src/yahboom_M3Pro_description) by extensions ['ignore', 'ignore_ament_install']
+[0.159s] Level 1:colcon.colcon_core.package_identification:_identify(src/yahboom_M3Pro_description) by extension 'ignore'
+[0.159s] Level 1:colcon.colcon_core.package_identification:_identify(src/yahboom_M3Pro_description) by extension 'ignore_ament_install'
+[0.159s] Level 1:colcon.colcon_core.package_identification:_identify(src/yahboom_M3Pro_description) by extensions ['colcon_pkg']
+[0.159s] Level 1:colcon.colcon_core.package_identification:_identify(src/yahboom_M3Pro_description) by extension 'colcon_pkg'
+[0.159s] Level 1:colcon.colcon_core.package_identification:_identify(src/yahboom_M3Pro_description) by extensions ['colcon_meta']
+[0.159s] Level 1:colcon.colcon_core.package_identification:_identify(src/yahboom_M3Pro_description) by extension 'colcon_meta'
+[0.159s] Level 1:colcon.colcon_core.package_identification:_identify(src/yahboom_M3Pro_description) by extensions ['ros']
+[0.159s] Level 1:colcon.colcon_core.package_identification:_identify(src/yahboom_M3Pro_description) by extension 'ros'
+[0.160s] DEBUG:colcon.colcon_core.package_identification:Package 'src/yahboom_M3Pro_description' with type 'ros.ament_python' and name 'yahboom_M3Pro_description'
+[0.160s] Level 1:colcon.colcon_core.package_identification:_identify(src/yahboom_M3Pro_laser) by extensions ['ignore', 'ignore_ament_install']
+[0.160s] Level 1:colcon.colcon_core.package_identification:_identify(src/yahboom_M3Pro_laser) by extension 'ignore'
+[0.160s] Level 1:colcon.colcon_core.package_identification:_identify(src/yahboom_M3Pro_laser) by extension 'ignore_ament_install'
+[0.160s] Level 1:colcon.colcon_core.package_identification:_identify(src/yahboom_M3Pro_laser) by extensions ['colcon_pkg']
+[0.160s] Level 1:colcon.colcon_core.package_identification:_identify(src/yahboom_M3Pro_laser) by extension 'colcon_pkg'
+[0.160s] Level 1:colcon.colcon_core.package_identification:_identify(src/yahboom_M3Pro_laser) by extensions ['colcon_meta']
+[0.160s] Level 1:colcon.colcon_core.package_identification:_identify(src/yahboom_M3Pro_laser) by extension 'colcon_meta'
+[0.160s] Level 1:colcon.colcon_core.package_identification:_identify(src/yahboom_M3Pro_laser) by extensions ['ros']
+[0.160s] Level 1:colcon.colcon_core.package_identification:_identify(src/yahboom_M3Pro_laser) by extension 'ros'
+[0.160s] DEBUG:colcon.colcon_core.package_identification:Package 'src/yahboom_M3Pro_laser' with type 'ros.ament_python' and name 'yahboom_M3Pro_laser'
+[0.160s] Level 1:colcon.colcon_core.package_identification:_identify(src/yahboom_yolov8) by extensions ['ignore', 'ignore_ament_install']
+[0.160s] Level 1:colcon.colcon_core.package_identification:_identify(src/yahboom_yolov8) by extension 'ignore'
+[0.160s] Level 1:colcon.colcon_core.package_identification:_identify(src/yahboom_yolov8) by extension 'ignore_ament_install'
+[0.160s] Level 1:colcon.colcon_core.package_identification:_identify(src/yahboom_yolov8) by extensions ['colcon_pkg']
+[0.160s] Level 1:colcon.colcon_core.package_identification:_identify(src/yahboom_yolov8) by extension 'colcon_pkg'
+[0.160s] Level 1:colcon.colcon_core.package_identification:_identify(src/yahboom_yolov8) by extensions ['colcon_meta']
+[0.161s] Level 1:colcon.colcon_core.package_identification:_identify(src/yahboom_yolov8) by extension 'colcon_meta'
+[0.161s] Level 1:colcon.colcon_core.package_identification:_identify(src/yahboom_yolov8) by extensions ['ros']
+[0.161s] Level 1:colcon.colcon_core.package_identification:_identify(src/yahboom_yolov8) by extension 'ros'
+[0.161s] DEBUG:colcon.colcon_core.package_identification:Package 'src/yahboom_yolov8' with type 'ros.ament_python' and name 'yahboom_yolov8'
+[0.161s] Level 1:colcon.colcon_core.package_identification:_identify(src/yahboomcar_ctrl) by extensions ['ignore', 'ignore_ament_install']
+[0.161s] Level 1:colcon.colcon_core.package_identification:_identify(src/yahboomcar_ctrl) by extension 'ignore'
+[0.161s] Level 1:colcon.colcon_core.package_identification:_identify(src/yahboomcar_ctrl) by extension 'ignore_ament_install'
+[0.161s] Level 1:colcon.colcon_core.package_identification:_identify(src/yahboomcar_ctrl) by extensions ['colcon_pkg']
+[0.161s] Level 1:colcon.colcon_core.package_identification:_identify(src/yahboomcar_ctrl) by extension 'colcon_pkg'
+[0.161s] Level 1:colcon.colcon_core.package_identification:_identify(src/yahboomcar_ctrl) by extensions ['colcon_meta']
+[0.161s] Level 1:colcon.colcon_core.package_identification:_identify(src/yahboomcar_ctrl) by extension 'colcon_meta'
+[0.161s] Level 1:colcon.colcon_core.package_identification:_identify(src/yahboomcar_ctrl) by extensions ['ros']
+[0.161s] Level 1:colcon.colcon_core.package_identification:_identify(src/yahboomcar_ctrl) by extension 'ros'
+[0.161s] DEBUG:colcon.colcon_core.package_identification:Package 'src/yahboomcar_ctrl' with type 'ros.ament_python' and name 'yahboomcar_ctrl'
+[0.162s] Level 1:colcon.colcon_core.package_identification:_identify(src/yahboomcar_mediapipe) by extensions ['ignore', 'ignore_ament_install']
+[0.162s] Level 1:colcon.colcon_core.package_identification:_identify(src/yahboomcar_mediapipe) by extension 'ignore'
+[0.162s] Level 1:colcon.colcon_core.package_identification:_identify(src/yahboomcar_mediapipe) by extension 'ignore_ament_install'
+[0.162s] Level 1:colcon.colcon_core.package_identification:_identify(src/yahboomcar_mediapipe) by extensions ['colcon_pkg']
+[0.162s] Level 1:colcon.colcon_core.package_identification:_identify(src/yahboomcar_mediapipe) by extension 'colcon_pkg'
+[0.162s] Level 1:colcon.colcon_core.package_identification:_identify(src/yahboomcar_mediapipe) by extensions ['colcon_meta']
+[0.162s] Level 1:colcon.colcon_core.package_identification:_identify(src/yahboomcar_mediapipe) by extension 'colcon_meta'
+[0.162s] Level 1:colcon.colcon_core.package_identification:_identify(src/yahboomcar_mediapipe) by extensions ['ros']
+[0.162s] Level 1:colcon.colcon_core.package_identification:_identify(src/yahboomcar_mediapipe) by extension 'ros'
+[0.162s] DEBUG:colcon.colcon_core.package_identification:Package 'src/yahboomcar_mediapipe' with type 'ros.ament_python' and name 'yahboomcar_mediapipe'
+[0.162s] Level 1:colcon.colcon_core.package_identification:_identify(src/yahboomcar_msgs) by extensions ['ignore', 'ignore_ament_install']
+[0.162s] Level 1:colcon.colcon_core.package_identification:_identify(src/yahboomcar_msgs) by extension 'ignore'
+[0.162s] Level 1:colcon.colcon_core.package_identification:_identify(src/yahboomcar_msgs) by extension 'ignore_ament_install'
+[0.162s] Level 1:colcon.colcon_core.package_identification:_identify(src/yahboomcar_msgs) by extensions ['colcon_pkg']
+[0.162s] Level 1:colcon.colcon_core.package_identification:_identify(src/yahboomcar_msgs) by extension 'colcon_pkg'
+[0.162s] Level 1:colcon.colcon_core.package_identification:_identify(src/yahboomcar_msgs) by extensions ['colcon_meta']
+[0.162s] Level 1:colcon.colcon_core.package_identification:_identify(src/yahboomcar_msgs) by extension 'colcon_meta'
+[0.162s] Level 1:colcon.colcon_core.package_identification:_identify(src/yahboomcar_msgs) by extensions ['ros']
+[0.162s] Level 1:colcon.colcon_core.package_identification:_identify(src/yahboomcar_msgs) by extension 'ros'
+[0.163s] DEBUG:colcon.colcon_core.package_identification:Package 'src/yahboomcar_msgs' with type 'ros.ament_cmake' and name 'yahboomcar_msgs'
+[0.163s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) using defaults
+[0.163s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) discover
+[0.163s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) using defaults
+[0.163s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) discover
+[0.163s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) using defaults
+[0.183s] Level 1:colcon.colcon_core.package_discovery:discover_packages(prefix_path) check parameters
+[0.183s] Level 1:colcon.colcon_core.package_discovery:discover_packages(prefix_path) discover
+[0.185s] DEBUG:colcon.colcon_installed_package_information.package_discovery:Found 326 installed packages in /opt/ros/humble
+[0.186s] Level 1:colcon.colcon_core.package_discovery:discover_packages(prefix_path) using defaults
+[0.208s] Level 5:colcon.colcon_core.verb:set package 'M3Pro_MoveIt_demo' build argument 'cmake_args' from command line to 'None'
+[0.208s] Level 5:colcon.colcon_core.verb:set package 'M3Pro_MoveIt_demo' build argument 'cmake_target' from command line to 'None'
+[0.208s] Level 5:colcon.colcon_core.verb:set package 'M3Pro_MoveIt_demo' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[0.208s] Level 5:colcon.colcon_core.verb:set package 'M3Pro_MoveIt_demo' build argument 'cmake_clean_cache' from command line to 'False'
+[0.208s] Level 5:colcon.colcon_core.verb:set package 'M3Pro_MoveIt_demo' build argument 'cmake_clean_first' from command line to 'False'
+[0.208s] Level 5:colcon.colcon_core.verb:set package 'M3Pro_MoveIt_demo' build argument 'cmake_force_configure' from command line to 'False'
+[0.208s] Level 5:colcon.colcon_core.verb:set package 'M3Pro_MoveIt_demo' build argument 'ament_cmake_args' from command line to 'None'
+[0.208s] Level 5:colcon.colcon_core.verb:set package 'M3Pro_MoveIt_demo' build argument 'catkin_cmake_args' from command line to 'None'
+[0.208s] Level 5:colcon.colcon_core.verb:set package 'M3Pro_MoveIt_demo' build argument 'catkin_skip_building_tests' from command line to 'False'
+[0.208s] DEBUG:colcon.colcon_core.verb:Building package 'M3Pro_MoveIt_demo' with the following arguments: {'ament_cmake_args': None, 'build_base': '/var/robotic/yahboomcar_ws/build/M3Pro_MoveIt_demo', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/var/robotic/yahboomcar_ws/install/M3Pro_MoveIt_demo', 'merge_install': False, 'path': '/var/robotic/yahboomcar_ws/src/M3Pro_MoveIt_demo', 'symlink_install': False, 'test_result_base': None}
+[0.208s] Level 5:colcon.colcon_core.verb:set package 'M3Pro_demo' build argument 'cmake_args' from command line to 'None'
+[0.208s] Level 5:colcon.colcon_core.verb:set package 'M3Pro_demo' build argument 'cmake_target' from command line to 'None'
+[0.208s] Level 5:colcon.colcon_core.verb:set package 'M3Pro_demo' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[0.208s] Level 5:colcon.colcon_core.verb:set package 'M3Pro_demo' build argument 'cmake_clean_cache' from command line to 'False'
+[0.208s] Level 5:colcon.colcon_core.verb:set package 'M3Pro_demo' build argument 'cmake_clean_first' from command line to 'False'
+[0.209s] Level 5:colcon.colcon_core.verb:set package 'M3Pro_demo' build argument 'cmake_force_configure' from command line to 'False'
+[0.209s] Level 5:colcon.colcon_core.verb:set package 'M3Pro_demo' build argument 'ament_cmake_args' from command line to 'None'
+[0.209s] Level 5:colcon.colcon_core.verb:set package 'M3Pro_demo' build argument 'catkin_cmake_args' from command line to 'None'
+[0.209s] Level 5:colcon.colcon_core.verb:set package 'M3Pro_demo' build argument 'catkin_skip_building_tests' from command line to 'False'
+[0.209s] DEBUG:colcon.colcon_core.verb:Building package 'M3Pro_demo' with the following arguments: {'ament_cmake_args': None, 'build_base': '/var/robotic/yahboomcar_ws/build/M3Pro_demo', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/var/robotic/yahboomcar_ws/install/M3Pro_demo', 'merge_install': False, 'path': '/var/robotic/yahboomcar_ws/src/M3Pro_demo', 'symlink_install': False, 'test_result_base': None}
+[0.209s] Level 5:colcon.colcon_core.verb:set package 'MoveIt_demo' build argument 'cmake_args' from command line to 'None'
+[0.209s] Level 5:colcon.colcon_core.verb:set package 'MoveIt_demo' build argument 'cmake_target' from command line to 'None'
+[0.209s] Level 5:colcon.colcon_core.verb:set package 'MoveIt_demo' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[0.209s] Level 5:colcon.colcon_core.verb:set package 'MoveIt_demo' build argument 'cmake_clean_cache' from command line to 'False'
+[0.209s] Level 5:colcon.colcon_core.verb:set package 'MoveIt_demo' build argument 'cmake_clean_first' from command line to 'False'
+[0.209s] Level 5:colcon.colcon_core.verb:set package 'MoveIt_demo' build argument 'cmake_force_configure' from command line to 'False'
+[0.209s] Level 5:colcon.colcon_core.verb:set package 'MoveIt_demo' build argument 'ament_cmake_args' from command line to 'None'
+[0.209s] Level 5:colcon.colcon_core.verb:set package 'MoveIt_demo' build argument 'catkin_cmake_args' from command line to 'None'
+[0.209s] Level 5:colcon.colcon_core.verb:set package 'MoveIt_demo' build argument 'catkin_skip_building_tests' from command line to 'False'
+[0.209s] DEBUG:colcon.colcon_core.verb:Building package 'MoveIt_demo' with the following arguments: {'ament_cmake_args': None, 'build_base': '/var/robotic/yahboomcar_ws/build/MoveIt_demo', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/var/robotic/yahboomcar_ws/install/MoveIt_demo', 'merge_install': False, 'path': '/var/robotic/yahboomcar_ws/src/MoveIt_demo', 'symlink_install': False, 'test_result_base': None}
+[0.209s] Level 5:colcon.colcon_core.verb:set package 'arm_driver' build argument 'cmake_args' from command line to 'None'
+[0.209s] Level 5:colcon.colcon_core.verb:set package 'arm_driver' build argument 'cmake_target' from command line to 'None'
+[0.209s] Level 5:colcon.colcon_core.verb:set package 'arm_driver' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[0.209s] Level 5:colcon.colcon_core.verb:set package 'arm_driver' build argument 'cmake_clean_cache' from command line to 'False'
+[0.209s] Level 5:colcon.colcon_core.verb:set package 'arm_driver' build argument 'cmake_clean_first' from command line to 'False'
+[0.209s] Level 5:colcon.colcon_core.verb:set package 'arm_driver' build argument 'cmake_force_configure' from command line to 'False'
+[0.209s] Level 5:colcon.colcon_core.verb:set package 'arm_driver' build argument 'ament_cmake_args' from command line to 'None'
+[0.209s] Level 5:colcon.colcon_core.verb:set package 'arm_driver' build argument 'catkin_cmake_args' from command line to 'None'
+[0.209s] Level 5:colcon.colcon_core.verb:set package 'arm_driver' build argument 'catkin_skip_building_tests' from command line to 'False'
+[0.209s] DEBUG:colcon.colcon_core.verb:Building package 'arm_driver' with the following arguments: {'ament_cmake_args': None, 'build_base': '/var/robotic/yahboomcar_ws/build/arm_driver', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/var/robotic/yahboomcar_ws/install/arm_driver', 'merge_install': False, 'path': '/var/robotic/yahboomcar_ws/src/arm_driver', 'symlink_install': False, 'test_result_base': None}
+[0.209s] Level 5:colcon.colcon_core.verb:set package 'arm_interface' build argument 'cmake_args' from command line to 'None'
+[0.209s] Level 5:colcon.colcon_core.verb:set package 'arm_interface' build argument 'cmake_target' from command line to 'None'
+[0.209s] Level 5:colcon.colcon_core.verb:set package 'arm_interface' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[0.209s] Level 5:colcon.colcon_core.verb:set package 'arm_interface' build argument 'cmake_clean_cache' from command line to 'False'
+[0.209s] Level 5:colcon.colcon_core.verb:set package 'arm_interface' build argument 'cmake_clean_first' from command line to 'False'
+[0.209s] Level 5:colcon.colcon_core.verb:set package 'arm_interface' build argument 'cmake_force_configure' from command line to 'False'
+[0.209s] Level 5:colcon.colcon_core.verb:set package 'arm_interface' build argument 'ament_cmake_args' from command line to 'None'
+[0.209s] Level 5:colcon.colcon_core.verb:set package 'arm_interface' build argument 'catkin_cmake_args' from command line to 'None'
+[0.209s] Level 5:colcon.colcon_core.verb:set package 'arm_interface' build argument 'catkin_skip_building_tests' from command line to 'False'
+[0.209s] DEBUG:colcon.colcon_core.verb:Building package 'arm_interface' with the following arguments: {'ament_cmake_args': None, 'build_base': '/var/robotic/yahboomcar_ws/build/arm_interface', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/var/robotic/yahboomcar_ws/install/arm_interface', 'merge_install': False, 'path': '/var/robotic/yahboomcar_ws/src/arm_interface', 'symlink_install': False, 'test_result_base': None}
+[0.209s] Level 5:colcon.colcon_core.verb:set package 'arm_kin' build argument 'cmake_args' from command line to 'None'
+[0.209s] Level 5:colcon.colcon_core.verb:set package 'arm_kin' build argument 'cmake_target' from command line to 'None'
+[0.210s] Level 5:colcon.colcon_core.verb:set package 'arm_kin' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[0.210s] Level 5:colcon.colcon_core.verb:set package 'arm_kin' build argument 'cmake_clean_cache' from command line to 'False'
+[0.210s] Level 5:colcon.colcon_core.verb:set package 'arm_kin' build argument 'cmake_clean_first' from command line to 'False'
+[0.210s] Level 5:colcon.colcon_core.verb:set package 'arm_kin' build argument 'cmake_force_configure' from command line to 'False'
+[0.210s] Level 5:colcon.colcon_core.verb:set package 'arm_kin' build argument 'ament_cmake_args' from command line to 'None'
+[0.210s] Level 5:colcon.colcon_core.verb:set package 'arm_kin' build argument 'catkin_cmake_args' from command line to 'None'
+[0.210s] Level 5:colcon.colcon_core.verb:set package 'arm_kin' build argument 'catkin_skip_building_tests' from command line to 'False'
+[0.210s] DEBUG:colcon.colcon_core.verb:Building package 'arm_kin' with the following arguments: {'ament_cmake_args': None, 'build_base': '/var/robotic/yahboomcar_ws/build/arm_kin', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/var/robotic/yahboomcar_ws/install/arm_kin', 'merge_install': False, 'path': '/var/robotic/yahboomcar_ws/src/arm_kin', 'symlink_install': False, 'test_result_base': None}
+[0.210s] Level 5:colcon.colcon_core.verb:set package 'arm_msgs' build argument 'cmake_args' from command line to 'None'
+[0.210s] Level 5:colcon.colcon_core.verb:set package 'arm_msgs' build argument 'cmake_target' from command line to 'None'
+[0.210s] Level 5:colcon.colcon_core.verb:set package 'arm_msgs' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[0.210s] Level 5:colcon.colcon_core.verb:set package 'arm_msgs' build argument 'cmake_clean_cache' from command line to 'False'
+[0.210s] Level 5:colcon.colcon_core.verb:set package 'arm_msgs' build argument 'cmake_clean_first' from command line to 'False'
+[0.210s] Level 5:colcon.colcon_core.verb:set package 'arm_msgs' build argument 'cmake_force_configure' from command line to 'False'
+[0.210s] Level 5:colcon.colcon_core.verb:set package 'arm_msgs' build argument 'ament_cmake_args' from command line to 'None'
+[0.210s] Level 5:colcon.colcon_core.verb:set package 'arm_msgs' build argument 'catkin_cmake_args' from command line to 'None'
+[0.210s] Level 5:colcon.colcon_core.verb:set package 'arm_msgs' build argument 'catkin_skip_building_tests' from command line to 'False'
+[0.210s] DEBUG:colcon.colcon_core.verb:Building package 'arm_msgs' with the following arguments: {'ament_cmake_args': None, 'build_base': '/var/robotic/yahboomcar_ws/build/arm_msgs', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/var/robotic/yahboomcar_ws/install/arm_msgs', 'merge_install': False, 'path': '/var/robotic/yahboomcar_ws/src/arm_msgs', 'symlink_install': False, 'test_result_base': None}
+[0.210s] Level 5:colcon.colcon_core.verb:set package 'test_config' build argument 'cmake_args' from command line to 'None'
+[0.210s] Level 5:colcon.colcon_core.verb:set package 'test_config' build argument 'cmake_target' from command line to 'None'
+[0.210s] Level 5:colcon.colcon_core.verb:set package 'test_config' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[0.210s] Level 5:colcon.colcon_core.verb:set package 'test_config' build argument 'cmake_clean_cache' from command line to 'False'
+[0.210s] Level 5:colcon.colcon_core.verb:set package 'test_config' build argument 'cmake_clean_first' from command line to 'False'
+[0.210s] Level 5:colcon.colcon_core.verb:set package 'test_config' build argument 'cmake_force_configure' from command line to 'False'
+[0.210s] Level 5:colcon.colcon_core.verb:set package 'test_config' build argument 'ament_cmake_args' from command line to 'None'
+[0.210s] Level 5:colcon.colcon_core.verb:set package 'test_config' build argument 'catkin_cmake_args' from command line to 'None'
+[0.210s] Level 5:colcon.colcon_core.verb:set package 'test_config' build argument 'catkin_skip_building_tests' from command line to 'False'
+[0.210s] DEBUG:colcon.colcon_core.verb:Building package 'test_config' with the following arguments: {'ament_cmake_args': None, 'build_base': '/var/robotic/yahboomcar_ws/build/test_config', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/var/robotic/yahboomcar_ws/install/test_config', 'merge_install': False, 'path': '/var/robotic/yahboomcar_ws/src/test_config', 'symlink_install': False, 'test_result_base': None}
+[0.210s] Level 5:colcon.colcon_core.verb:set package 'yahboom_M3Pro_DepthCam' build argument 'cmake_args' from command line to 'None'
+[0.210s] Level 5:colcon.colcon_core.verb:set package 'yahboom_M3Pro_DepthCam' build argument 'cmake_target' from command line to 'None'
+[0.210s] Level 5:colcon.colcon_core.verb:set package 'yahboom_M3Pro_DepthCam' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[0.210s] Level 5:colcon.colcon_core.verb:set package 'yahboom_M3Pro_DepthCam' build argument 'cmake_clean_cache' from command line to 'False'
+[0.210s] Level 5:colcon.colcon_core.verb:set package 'yahboom_M3Pro_DepthCam' build argument 'cmake_clean_first' from command line to 'False'
+[0.210s] Level 5:colcon.colcon_core.verb:set package 'yahboom_M3Pro_DepthCam' build argument 'cmake_force_configure' from command line to 'False'
+[0.210s] Level 5:colcon.colcon_core.verb:set package 'yahboom_M3Pro_DepthCam' build argument 'ament_cmake_args' from command line to 'None'
+[0.210s] Level 5:colcon.colcon_core.verb:set package 'yahboom_M3Pro_DepthCam' build argument 'catkin_cmake_args' from command line to 'None'
+[0.210s] Level 5:colcon.colcon_core.verb:set package 'yahboom_M3Pro_DepthCam' build argument 'catkin_skip_building_tests' from command line to 'False'
+[0.210s] DEBUG:colcon.colcon_core.verb:Building package 'yahboom_M3Pro_DepthCam' with the following arguments: {'ament_cmake_args': None, 'build_base': '/var/robotic/yahboomcar_ws/build/yahboom_M3Pro_DepthCam', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/var/robotic/yahboomcar_ws/install/yahboom_M3Pro_DepthCam', 'merge_install': False, 'path': '/var/robotic/yahboomcar_ws/src/yahboom_M3Pro_DepthCam', 'symlink_install': False, 'test_result_base': None}
+[0.210s] Level 5:colcon.colcon_core.verb:set package 'yahboom_M3Pro_description' build argument 'cmake_args' from command line to 'None'
+[0.211s] Level 5:colcon.colcon_core.verb:set package 'yahboom_M3Pro_description' build argument 'cmake_target' from command line to 'None'
+[0.211s] Level 5:colcon.colcon_core.verb:set package 'yahboom_M3Pro_description' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[0.211s] Level 5:colcon.colcon_core.verb:set package 'yahboom_M3Pro_description' build argument 'cmake_clean_cache' from command line to 'False'
+[0.211s] Level 5:colcon.colcon_core.verb:set package 'yahboom_M3Pro_description' build argument 'cmake_clean_first' from command line to 'False'
+[0.211s] Level 5:colcon.colcon_core.verb:set package 'yahboom_M3Pro_description' build argument 'cmake_force_configure' from command line to 'False'
+[0.211s] Level 5:colcon.colcon_core.verb:set package 'yahboom_M3Pro_description' build argument 'ament_cmake_args' from command line to 'None'
+[0.211s] Level 5:colcon.colcon_core.verb:set package 'yahboom_M3Pro_description' build argument 'catkin_cmake_args' from command line to 'None'
+[0.211s] Level 5:colcon.colcon_core.verb:set package 'yahboom_M3Pro_description' build argument 'catkin_skip_building_tests' from command line to 'False'
+[0.211s] DEBUG:colcon.colcon_core.verb:Building package 'yahboom_M3Pro_description' with the following arguments: {'ament_cmake_args': None, 'build_base': '/var/robotic/yahboomcar_ws/build/yahboom_M3Pro_description', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/var/robotic/yahboomcar_ws/install/yahboom_M3Pro_description', 'merge_install': False, 'path': '/var/robotic/yahboomcar_ws/src/yahboom_M3Pro_description', 'symlink_install': False, 'test_result_base': None}
+[0.211s] Level 5:colcon.colcon_core.verb:set package 'yahboom_M3Pro_laser' build argument 'cmake_args' from command line to 'None'
+[0.211s] Level 5:colcon.colcon_core.verb:set package 'yahboom_M3Pro_laser' build argument 'cmake_target' from command line to 'None'
+[0.211s] Level 5:colcon.colcon_core.verb:set package 'yahboom_M3Pro_laser' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[0.211s] Level 5:colcon.colcon_core.verb:set package 'yahboom_M3Pro_laser' build argument 'cmake_clean_cache' from command line to 'False'
+[0.211s] Level 5:colcon.colcon_core.verb:set package 'yahboom_M3Pro_laser' build argument 'cmake_clean_first' from command line to 'False'
+[0.211s] Level 5:colcon.colcon_core.verb:set package 'yahboom_M3Pro_laser' build argument 'cmake_force_configure' from command line to 'False'
+[0.211s] Level 5:colcon.colcon_core.verb:set package 'yahboom_M3Pro_laser' build argument 'ament_cmake_args' from command line to 'None'
+[0.211s] Level 5:colcon.colcon_core.verb:set package 'yahboom_M3Pro_laser' build argument 'catkin_cmake_args' from command line to 'None'
+[0.211s] Level 5:colcon.colcon_core.verb:set package 'yahboom_M3Pro_laser' build argument 'catkin_skip_building_tests' from command line to 'False'
+[0.211s] DEBUG:colcon.colcon_core.verb:Building package 'yahboom_M3Pro_laser' with the following arguments: {'ament_cmake_args': None, 'build_base': '/var/robotic/yahboomcar_ws/build/yahboom_M3Pro_laser', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/var/robotic/yahboomcar_ws/install/yahboom_M3Pro_laser', 'merge_install': False, 'path': '/var/robotic/yahboomcar_ws/src/yahboom_M3Pro_laser', 'symlink_install': False, 'test_result_base': None}
+[0.211s] Level 5:colcon.colcon_core.verb:set package 'yahboom_yolov8' build argument 'cmake_args' from command line to 'None'
+[0.211s] Level 5:colcon.colcon_core.verb:set package 'yahboom_yolov8' build argument 'cmake_target' from command line to 'None'
+[0.211s] Level 5:colcon.colcon_core.verb:set package 'yahboom_yolov8' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[0.211s] Level 5:colcon.colcon_core.verb:set package 'yahboom_yolov8' build argument 'cmake_clean_cache' from command line to 'False'
+[0.211s] Level 5:colcon.colcon_core.verb:set package 'yahboom_yolov8' build argument 'cmake_clean_first' from command line to 'False'
+[0.211s] Level 5:colcon.colcon_core.verb:set package 'yahboom_yolov8' build argument 'cmake_force_configure' from command line to 'False'
+[0.211s] Level 5:colcon.colcon_core.verb:set package 'yahboom_yolov8' build argument 'ament_cmake_args' from command line to 'None'
+[0.211s] Level 5:colcon.colcon_core.verb:set package 'yahboom_yolov8' build argument 'catkin_cmake_args' from command line to 'None'
+[0.211s] Level 5:colcon.colcon_core.verb:set package 'yahboom_yolov8' build argument 'catkin_skip_building_tests' from command line to 'False'
+[0.211s] DEBUG:colcon.colcon_core.verb:Building package 'yahboom_yolov8' with the following arguments: {'ament_cmake_args': None, 'build_base': '/var/robotic/yahboomcar_ws/build/yahboom_yolov8', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/var/robotic/yahboomcar_ws/install/yahboom_yolov8', 'merge_install': False, 'path': '/var/robotic/yahboomcar_ws/src/yahboom_yolov8', 'symlink_install': False, 'test_result_base': None}
+[0.211s] Level 5:colcon.colcon_core.verb:set package 'yahboomcar_ctrl' build argument 'cmake_args' from command line to 'None'
+[0.211s] Level 5:colcon.colcon_core.verb:set package 'yahboomcar_ctrl' build argument 'cmake_target' from command line to 'None'
+[0.211s] Level 5:colcon.colcon_core.verb:set package 'yahboomcar_ctrl' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[0.211s] Level 5:colcon.colcon_core.verb:set package 'yahboomcar_ctrl' build argument 'cmake_clean_cache' from command line to 'False'
+[0.211s] Level 5:colcon.colcon_core.verb:set package 'yahboomcar_ctrl' build argument 'cmake_clean_first' from command line to 'False'
+[0.211s] Level 5:colcon.colcon_core.verb:set package 'yahboomcar_ctrl' build argument 'cmake_force_configure' from command line to 'False'
+[0.211s] Level 5:colcon.colcon_core.verb:set package 'yahboomcar_ctrl' build argument 'ament_cmake_args' from command line to 'None'
+[0.211s] Level 5:colcon.colcon_core.verb:set package 'yahboomcar_ctrl' build argument 'catkin_cmake_args' from command line to 'None'
+[0.211s] Level 5:colcon.colcon_core.verb:set package 'yahboomcar_ctrl' build argument 'catkin_skip_building_tests' from command line to 'False'
+[0.211s] DEBUG:colcon.colcon_core.verb:Building package 'yahboomcar_ctrl' with the following arguments: {'ament_cmake_args': None, 'build_base': '/var/robotic/yahboomcar_ws/build/yahboomcar_ctrl', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/var/robotic/yahboomcar_ws/install/yahboomcar_ctrl', 'merge_install': False, 'path': '/var/robotic/yahboomcar_ws/src/yahboomcar_ctrl', 'symlink_install': False, 'test_result_base': None}
+[0.212s] Level 5:colcon.colcon_core.verb:set package 'yahboomcar_mediapipe' build argument 'cmake_args' from command line to 'None'
+[0.212s] Level 5:colcon.colcon_core.verb:set package 'yahboomcar_mediapipe' build argument 'cmake_target' from command line to 'None'
+[0.212s] Level 5:colcon.colcon_core.verb:set package 'yahboomcar_mediapipe' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[0.212s] Level 5:colcon.colcon_core.verb:set package 'yahboomcar_mediapipe' build argument 'cmake_clean_cache' from command line to 'False'
+[0.212s] Level 5:colcon.colcon_core.verb:set package 'yahboomcar_mediapipe' build argument 'cmake_clean_first' from command line to 'False'
+[0.212s] Level 5:colcon.colcon_core.verb:set package 'yahboomcar_mediapipe' build argument 'cmake_force_configure' from command line to 'False'
+[0.212s] Level 5:colcon.colcon_core.verb:set package 'yahboomcar_mediapipe' build argument 'ament_cmake_args' from command line to 'None'
+[0.212s] Level 5:colcon.colcon_core.verb:set package 'yahboomcar_mediapipe' build argument 'catkin_cmake_args' from command line to 'None'
+[0.212s] Level 5:colcon.colcon_core.verb:set package 'yahboomcar_mediapipe' build argument 'catkin_skip_building_tests' from command line to 'False'
+[0.212s] DEBUG:colcon.colcon_core.verb:Building package 'yahboomcar_mediapipe' with the following arguments: {'ament_cmake_args': None, 'build_base': '/var/robotic/yahboomcar_ws/build/yahboomcar_mediapipe', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/var/robotic/yahboomcar_ws/install/yahboomcar_mediapipe', 'merge_install': False, 'path': '/var/robotic/yahboomcar_ws/src/yahboomcar_mediapipe', 'symlink_install': False, 'test_result_base': None}
+[0.212s] Level 5:colcon.colcon_core.verb:set package 'yahboomcar_msgs' build argument 'cmake_args' from command line to 'None'
+[0.212s] Level 5:colcon.colcon_core.verb:set package 'yahboomcar_msgs' build argument 'cmake_target' from command line to 'None'
+[0.212s] Level 5:colcon.colcon_core.verb:set package 'yahboomcar_msgs' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[0.212s] Level 5:colcon.colcon_core.verb:set package 'yahboomcar_msgs' build argument 'cmake_clean_cache' from command line to 'False'
+[0.212s] Level 5:colcon.colcon_core.verb:set package 'yahboomcar_msgs' build argument 'cmake_clean_first' from command line to 'False'
+[0.212s] Level 5:colcon.colcon_core.verb:set package 'yahboomcar_msgs' build argument 'cmake_force_configure' from command line to 'False'
+[0.212s] Level 5:colcon.colcon_core.verb:set package 'yahboomcar_msgs' build argument 'ament_cmake_args' from command line to 'None'
+[0.212s] Level 5:colcon.colcon_core.verb:set package 'yahboomcar_msgs' build argument 'catkin_cmake_args' from command line to 'None'
+[0.212s] Level 5:colcon.colcon_core.verb:set package 'yahboomcar_msgs' build argument 'catkin_skip_building_tests' from command line to 'False'
+[0.212s] DEBUG:colcon.colcon_core.verb:Building package 'yahboomcar_msgs' with the following arguments: {'ament_cmake_args': None, 'build_base': '/var/robotic/yahboomcar_ws/build/yahboomcar_msgs', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/var/robotic/yahboomcar_ws/install/yahboomcar_msgs', 'merge_install': False, 'path': '/var/robotic/yahboomcar_ws/src/yahboomcar_msgs', 'symlink_install': False, 'test_result_base': None}
+[0.212s] Level 5:colcon.colcon_core.verb:set package 'M3Pro_config' build argument 'cmake_args' from command line to 'None'
+[0.212s] Level 5:colcon.colcon_core.verb:set package 'M3Pro_config' build argument 'cmake_target' from command line to 'None'
+[0.212s] Level 5:colcon.colcon_core.verb:set package 'M3Pro_config' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[0.212s] Level 5:colcon.colcon_core.verb:set package 'M3Pro_config' build argument 'cmake_clean_cache' from command line to 'False'
+[0.212s] Level 5:colcon.colcon_core.verb:set package 'M3Pro_config' build argument 'cmake_clean_first' from command line to 'False'
+[0.212s] Level 5:colcon.colcon_core.verb:set package 'M3Pro_config' build argument 'cmake_force_configure' from command line to 'False'
+[0.212s] Level 5:colcon.colcon_core.verb:set package 'M3Pro_config' build argument 'ament_cmake_args' from command line to 'None'
+[0.212s] Level 5:colcon.colcon_core.verb:set package 'M3Pro_config' build argument 'catkin_cmake_args' from command line to 'None'
+[0.212s] Level 5:colcon.colcon_core.verb:set package 'M3Pro_config' build argument 'catkin_skip_building_tests' from command line to 'False'
+[0.212s] DEBUG:colcon.colcon_core.verb:Building package 'M3Pro_config' with the following arguments: {'ament_cmake_args': None, 'build_base': '/var/robotic/yahboomcar_ws/build/M3Pro_config', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/var/robotic/yahboomcar_ws/install/M3Pro_config', 'merge_install': False, 'path': '/var/robotic/yahboomcar_ws/src/M3Pro_config', 'symlink_install': False, 'test_result_base': None}
+[0.212s] Level 5:colcon.colcon_core.verb:set package 'test_moveit_config' build argument 'cmake_args' from command line to 'None'
+[0.212s] Level 5:colcon.colcon_core.verb:set package 'test_moveit_config' build argument 'cmake_target' from command line to 'None'
+[0.212s] Level 5:colcon.colcon_core.verb:set package 'test_moveit_config' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[0.212s] Level 5:colcon.colcon_core.verb:set package 'test_moveit_config' build argument 'cmake_clean_cache' from command line to 'False'
+[0.212s] Level 5:colcon.colcon_core.verb:set package 'test_moveit_config' build argument 'cmake_clean_first' from command line to 'False'
+[0.212s] Level 5:colcon.colcon_core.verb:set package 'test_moveit_config' build argument 'cmake_force_configure' from command line to 'False'
+[0.212s] Level 5:colcon.colcon_core.verb:set package 'test_moveit_config' build argument 'ament_cmake_args' from command line to 'None'
+[0.212s] Level 5:colcon.colcon_core.verb:set package 'test_moveit_config' build argument 'catkin_cmake_args' from command line to 'None'
+[0.212s] Level 5:colcon.colcon_core.verb:set package 'test_moveit_config' build argument 'catkin_skip_building_tests' from command line to 'False'
+[0.212s] DEBUG:colcon.colcon_core.verb:Building package 'test_moveit_config' with the following arguments: {'ament_cmake_args': None, 'build_base': '/var/robotic/yahboomcar_ws/build/test_moveit_config', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/var/robotic/yahboomcar_ws/install/test_moveit_config', 'merge_install': False, 'path': '/var/robotic/yahboomcar_ws/src/test_moveit_config', 'symlink_install': False, 'test_result_base': None}
+[0.212s] INFO:colcon.colcon_core.executor:Executing jobs using 'parallel' executor
+[0.213s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:run_until_complete
+[0.213s] INFO:colcon.colcon_ros.task.ament_python.build:Building ROS package in '/var/robotic/yahboomcar_ws/src/yahboom_M3Pro_description' with build type 'ament_python'
+[0.213s] Level 1:colcon.colcon_core.shell:create_environment_hook('yahboom_M3Pro_description', 'ament_prefix_path')
+[0.215s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_core.shell.bat': Not used on non-Windows systems
+[0.215s] INFO:colcon.colcon_core.shell:Creating environment hook '/var/robotic/yahboomcar_ws/install/yahboom_M3Pro_description/share/yahboom_M3Pro_description/hook/ament_prefix_path.ps1'
+[0.215s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/var/robotic/yahboomcar_ws/install/yahboom_M3Pro_description/share/yahboom_M3Pro_description/hook/ament_prefix_path.dsv'
+[0.216s] INFO:colcon.colcon_core.shell:Creating environment hook '/var/robotic/yahboomcar_ws/install/yahboom_M3Pro_description/share/yahboom_M3Pro_description/hook/ament_prefix_path.sh'
+[0.216s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[0.216s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[0.218s] INFO:colcon.colcon_ros.task.ament_python.build:Building ROS package in '/var/robotic/yahboomcar_ws/src/M3Pro_MoveIt_demo' with build type 'ament_python'
+[0.218s] Level 1:colcon.colcon_core.shell:create_environment_hook('M3Pro_MoveIt_demo', 'ament_prefix_path')
+[0.218s] INFO:colcon.colcon_core.shell:Creating environment hook '/var/robotic/yahboomcar_ws/install/M3Pro_MoveIt_demo/share/M3Pro_MoveIt_demo/hook/ament_prefix_path.ps1'
+[0.218s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/var/robotic/yahboomcar_ws/install/M3Pro_MoveIt_demo/share/M3Pro_MoveIt_demo/hook/ament_prefix_path.dsv'
+[0.219s] INFO:colcon.colcon_core.shell:Creating environment hook '/var/robotic/yahboomcar_ws/install/M3Pro_MoveIt_demo/share/M3Pro_MoveIt_demo/hook/ament_prefix_path.sh'
+[0.220s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[0.220s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[0.349s] INFO:colcon.colcon_core.task.python.build:Building Python package in '/var/robotic/yahboomcar_ws/src/yahboom_M3Pro_description'
+[0.349s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[0.349s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[0.476s] INFO:colcon.colcon_core.task.python.build:Building Python package in '/var/robotic/yahboomcar_ws/src/M3Pro_MoveIt_demo'
+[0.476s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[0.476s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[0.665s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/var/robotic/yahboomcar_ws/src/yahboom_M3Pro_description': PYTHONPATH=/var/robotic/yahboomcar_ws/build/yahboom_M3Pro_description/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/var/robotic/yahboomcar_ws/install/yahboom_M3Pro_description/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/yahboom_M3Pro_description build --build-base /var/robotic/yahboomcar_ws/build/yahboom_M3Pro_description/build install --record /var/robotic/yahboomcar_ws/build/yahboom_M3Pro_description/install.log --single-version-externally-managed install_data
+[0.675s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/var/robotic/yahboomcar_ws/src/M3Pro_MoveIt_demo': PYTHONPATH=/var/robotic/yahboomcar_ws/build/M3Pro_MoveIt_demo/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/var/robotic/yahboomcar_ws/install/M3Pro_MoveIt_demo/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/M3Pro_MoveIt_demo build --build-base /var/robotic/yahboomcar_ws/build/M3Pro_MoveIt_demo/build install --record /var/robotic/yahboomcar_ws/build/M3Pro_MoveIt_demo/install.log --single-version-externally-managed install_data
+[0.823s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/var/robotic/yahboomcar_ws/src/yahboom_M3Pro_description' returned '0': PYTHONPATH=/var/robotic/yahboomcar_ws/build/yahboom_M3Pro_description/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/var/robotic/yahboomcar_ws/install/yahboom_M3Pro_description/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/yahboom_M3Pro_description build --build-base /var/robotic/yahboomcar_ws/build/yahboom_M3Pro_description/build install --record /var/robotic/yahboomcar_ws/build/yahboom_M3Pro_description/install.log --single-version-externally-managed install_data
+[0.824s] Level 1:colcon.colcon_core.environment:checking '/var/robotic/yahboomcar_ws/install/yahboom_M3Pro_description' for CMake module files
+[0.825s] Level 1:colcon.colcon_core.environment:checking '/var/robotic/yahboomcar_ws/install/yahboom_M3Pro_description' for CMake config files
+[0.826s] Level 1:colcon.colcon_core.environment:checking '/var/robotic/yahboomcar_ws/install/yahboom_M3Pro_description/lib'
+[0.826s] Level 1:colcon.colcon_core.environment:checking '/var/robotic/yahboomcar_ws/install/yahboom_M3Pro_description/bin'
+[0.826s] Level 1:colcon.colcon_core.environment:checking '/var/robotic/yahboomcar_ws/install/yahboom_M3Pro_description/lib/pkgconfig/yahboom_M3Pro_description.pc'
+[0.826s] Level 1:colcon.colcon_core.environment:checking '/var/robotic/yahboomcar_ws/install/yahboom_M3Pro_description/lib/python3.10/site-packages'
+[0.826s] Level 1:colcon.colcon_core.shell:create_environment_hook('yahboom_M3Pro_description', 'pythonpath')
+[0.826s] INFO:colcon.colcon_core.shell:Creating environment hook '/var/robotic/yahboomcar_ws/install/yahboom_M3Pro_description/share/yahboom_M3Pro_description/hook/pythonpath.ps1'
+[0.827s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/var/robotic/yahboomcar_ws/install/yahboom_M3Pro_description/share/yahboom_M3Pro_description/hook/pythonpath.dsv'
+[0.827s] INFO:colcon.colcon_core.shell:Creating environment hook '/var/robotic/yahboomcar_ws/install/yahboom_M3Pro_description/share/yahboom_M3Pro_description/hook/pythonpath.sh'
+[0.828s] Level 1:colcon.colcon_core.environment:checking '/var/robotic/yahboomcar_ws/install/yahboom_M3Pro_description/bin'
+[0.828s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(yahboom_M3Pro_description)
+[0.828s] INFO:colcon.colcon_core.shell:Creating package script '/var/robotic/yahboomcar_ws/install/yahboom_M3Pro_description/share/yahboom_M3Pro_description/package.ps1'
+[0.829s] INFO:colcon.colcon_core.shell:Creating package descriptor '/var/robotic/yahboomcar_ws/install/yahboom_M3Pro_description/share/yahboom_M3Pro_description/package.dsv'
+[0.829s] INFO:colcon.colcon_core.shell:Creating package script '/var/robotic/yahboomcar_ws/install/yahboom_M3Pro_description/share/yahboom_M3Pro_description/package.sh'
+[0.830s] INFO:colcon.colcon_core.shell:Creating package script '/var/robotic/yahboomcar_ws/install/yahboom_M3Pro_description/share/yahboom_M3Pro_description/package.bash'
+[0.831s] INFO:colcon.colcon_core.shell:Creating package script '/var/robotic/yahboomcar_ws/install/yahboom_M3Pro_description/share/yahboom_M3Pro_description/package.zsh'
+[0.833s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/var/robotic/yahboomcar_ws/install/yahboom_M3Pro_description/share/colcon-core/packages/yahboom_M3Pro_description)
+[0.833s] INFO:colcon.colcon_ros.task.ament_python.build:Building ROS package in '/var/robotic/yahboomcar_ws/src/M3Pro_demo' with build type 'ament_python'
+[0.834s] Level 1:colcon.colcon_core.shell:create_environment_hook('M3Pro_demo', 'ament_prefix_path')
+[0.834s] INFO:colcon.colcon_core.shell:Creating environment hook '/var/robotic/yahboomcar_ws/install/M3Pro_demo/share/M3Pro_demo/hook/ament_prefix_path.ps1'
+[0.834s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/var/robotic/yahboomcar_ws/install/M3Pro_demo/share/M3Pro_demo/hook/ament_prefix_path.dsv'
+[0.836s] INFO:colcon.colcon_core.shell:Creating environment hook '/var/robotic/yahboomcar_ws/install/M3Pro_demo/share/M3Pro_demo/hook/ament_prefix_path.sh'
+[0.837s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[0.837s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[0.840s] Level 1:colcon.colcon_core.environment:checking '/var/robotic/yahboomcar_ws/install/M3Pro_MoveIt_demo' for CMake module files
+[0.840s] Level 1:colcon.colcon_core.environment:checking '/var/robotic/yahboomcar_ws/install/M3Pro_MoveIt_demo' for CMake config files
+[0.841s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/var/robotic/yahboomcar_ws/src/M3Pro_MoveIt_demo' returned '0': PYTHONPATH=/var/robotic/yahboomcar_ws/build/M3Pro_MoveIt_demo/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/var/robotic/yahboomcar_ws/install/M3Pro_MoveIt_demo/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/M3Pro_MoveIt_demo build --build-base /var/robotic/yahboomcar_ws/build/M3Pro_MoveIt_demo/build install --record /var/robotic/yahboomcar_ws/build/M3Pro_MoveIt_demo/install.log --single-version-externally-managed install_data
+[0.843s] Level 1:colcon.colcon_core.environment:checking '/var/robotic/yahboomcar_ws/install/M3Pro_MoveIt_demo/lib'
+[0.843s] Level 1:colcon.colcon_core.environment:checking '/var/robotic/yahboomcar_ws/install/M3Pro_MoveIt_demo/bin'
+[0.843s] Level 1:colcon.colcon_core.environment:checking '/var/robotic/yahboomcar_ws/install/M3Pro_MoveIt_demo/lib/pkgconfig/M3Pro_MoveIt_demo.pc'
+[0.845s] Level 1:colcon.colcon_core.environment:checking '/var/robotic/yahboomcar_ws/install/M3Pro_MoveIt_demo/lib/python3.10/site-packages'
+[0.845s] Level 1:colcon.colcon_core.shell:create_environment_hook('M3Pro_MoveIt_demo', 'pythonpath')
+[0.845s] INFO:colcon.colcon_core.shell:Creating environment hook '/var/robotic/yahboomcar_ws/install/M3Pro_MoveIt_demo/share/M3Pro_MoveIt_demo/hook/pythonpath.ps1'
+[0.848s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/var/robotic/yahboomcar_ws/install/M3Pro_MoveIt_demo/share/M3Pro_MoveIt_demo/hook/pythonpath.dsv'
+[0.848s] INFO:colcon.colcon_core.shell:Creating environment hook '/var/robotic/yahboomcar_ws/install/M3Pro_MoveIt_demo/share/M3Pro_MoveIt_demo/hook/pythonpath.sh'
+[0.850s] Level 1:colcon.colcon_core.environment:checking '/var/robotic/yahboomcar_ws/install/M3Pro_MoveIt_demo/bin'
+[0.850s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(M3Pro_MoveIt_demo)
+[0.850s] INFO:colcon.colcon_core.shell:Creating package script '/var/robotic/yahboomcar_ws/install/M3Pro_MoveIt_demo/share/M3Pro_MoveIt_demo/package.ps1'
+[0.851s] INFO:colcon.colcon_core.shell:Creating package descriptor '/var/robotic/yahboomcar_ws/install/M3Pro_MoveIt_demo/share/M3Pro_MoveIt_demo/package.dsv'
+[0.852s] INFO:colcon.colcon_core.shell:Creating package script '/var/robotic/yahboomcar_ws/install/M3Pro_MoveIt_demo/share/M3Pro_MoveIt_demo/package.sh'
+[0.852s] INFO:colcon.colcon_core.shell:Creating package script '/var/robotic/yahboomcar_ws/install/M3Pro_MoveIt_demo/share/M3Pro_MoveIt_demo/package.bash'
+[0.853s] INFO:colcon.colcon_core.shell:Creating package script '/var/robotic/yahboomcar_ws/install/M3Pro_MoveIt_demo/share/M3Pro_MoveIt_demo/package.zsh'
+[0.853s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/var/robotic/yahboomcar_ws/install/M3Pro_MoveIt_demo/share/colcon-core/packages/M3Pro_MoveIt_demo)
+[0.854s] INFO:colcon.colcon_ros.task.ament_cmake.build:Building ROS package in '/var/robotic/yahboomcar_ws/src/MoveIt_demo' with build type 'ament_cmake'
+[0.854s] INFO:colcon.colcon_cmake.task.cmake.build:Building CMake package in '/var/robotic/yahboomcar_ws/src/MoveIt_demo'
+[0.854s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[0.854s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[0.990s] INFO:colcon.colcon_core.task.python.build:Building Python package in '/var/robotic/yahboomcar_ws/src/M3Pro_demo'
+[0.990s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[0.990s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[0.996s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/var/robotic/yahboomcar_ws/build/MoveIt_demo': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --build /var/robotic/yahboomcar_ws/build/MoveIt_demo -- -j2 -l2
+[1.173s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/var/robotic/yahboomcar_ws/build/MoveIt_demo' returned '0': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --build /var/robotic/yahboomcar_ws/build/MoveIt_demo -- -j2 -l2
+[1.179s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/var/robotic/yahboomcar_ws/build/MoveIt_demo': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --install /var/robotic/yahboomcar_ws/build/MoveIt_demo
+[1.193s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(MoveIt_demo)
+[1.194s] Level 1:colcon.colcon_core.environment:checking '/var/robotic/yahboomcar_ws/install/MoveIt_demo' for CMake module files
+[1.195s] Level 1:colcon.colcon_core.environment:checking '/var/robotic/yahboomcar_ws/install/MoveIt_demo' for CMake config files
+[1.194s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/var/robotic/yahboomcar_ws/build/MoveIt_demo' returned '0': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --install /var/robotic/yahboomcar_ws/build/MoveIt_demo
+[1.195s] Level 1:colcon.colcon_core.shell:create_environment_hook('MoveIt_demo', 'cmake_prefix_path')
+[1.195s] INFO:colcon.colcon_core.shell:Creating environment hook '/var/robotic/yahboomcar_ws/install/MoveIt_demo/share/MoveIt_demo/hook/cmake_prefix_path.ps1'
+[1.196s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/var/robotic/yahboomcar_ws/install/MoveIt_demo/share/MoveIt_demo/hook/cmake_prefix_path.dsv'
+[1.196s] INFO:colcon.colcon_core.shell:Creating environment hook '/var/robotic/yahboomcar_ws/install/MoveIt_demo/share/MoveIt_demo/hook/cmake_prefix_path.sh'
+[1.197s] Level 1:colcon.colcon_core.environment:checking '/var/robotic/yahboomcar_ws/install/MoveIt_demo/lib'
+[1.197s] Level 1:colcon.colcon_core.environment:checking '/var/robotic/yahboomcar_ws/install/MoveIt_demo/bin'
+[1.197s] Level 1:colcon.colcon_core.environment:checking '/var/robotic/yahboomcar_ws/install/MoveIt_demo/lib/pkgconfig/MoveIt_demo.pc'
+[1.197s] Level 1:colcon.colcon_core.environment:checking '/var/robotic/yahboomcar_ws/install/MoveIt_demo/lib/python3.10/site-packages'
+[1.198s] Level 1:colcon.colcon_core.environment:checking '/var/robotic/yahboomcar_ws/install/MoveIt_demo/bin'
+[1.198s] INFO:colcon.colcon_core.shell:Creating package script '/var/robotic/yahboomcar_ws/install/MoveIt_demo/share/MoveIt_demo/package.ps1'
+[1.198s] INFO:colcon.colcon_core.shell:Creating package descriptor '/var/robotic/yahboomcar_ws/install/MoveIt_demo/share/MoveIt_demo/package.dsv'
+[1.199s] INFO:colcon.colcon_core.shell:Creating package script '/var/robotic/yahboomcar_ws/install/MoveIt_demo/share/MoveIt_demo/package.sh'
+[1.199s] INFO:colcon.colcon_core.shell:Creating package script '/var/robotic/yahboomcar_ws/install/MoveIt_demo/share/MoveIt_demo/package.bash'
+[1.200s] INFO:colcon.colcon_core.shell:Creating package script '/var/robotic/yahboomcar_ws/install/MoveIt_demo/share/MoveIt_demo/package.zsh'
+[1.200s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/var/robotic/yahboomcar_ws/install/MoveIt_demo/share/colcon-core/packages/MoveIt_demo)
+[1.201s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(MoveIt_demo)
+[1.201s] Level 1:colcon.colcon_core.environment:checking '/var/robotic/yahboomcar_ws/install/MoveIt_demo' for CMake module files
+[1.201s] Level 1:colcon.colcon_core.environment:checking '/var/robotic/yahboomcar_ws/install/MoveIt_demo' for CMake config files
+[1.201s] Level 1:colcon.colcon_core.shell:create_environment_hook('MoveIt_demo', 'cmake_prefix_path')
+[1.202s] INFO:colcon.colcon_core.shell:Creating environment hook '/var/robotic/yahboomcar_ws/install/MoveIt_demo/share/MoveIt_demo/hook/cmake_prefix_path.ps1'
+[1.202s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/var/robotic/yahboomcar_ws/install/MoveIt_demo/share/MoveIt_demo/hook/cmake_prefix_path.dsv'
+[1.202s] INFO:colcon.colcon_core.shell:Creating environment hook '/var/robotic/yahboomcar_ws/install/MoveIt_demo/share/MoveIt_demo/hook/cmake_prefix_path.sh'
+[1.203s] Level 1:colcon.colcon_core.environment:checking '/var/robotic/yahboomcar_ws/install/MoveIt_demo/lib'
+[1.203s] Level 1:colcon.colcon_core.environment:checking '/var/robotic/yahboomcar_ws/install/MoveIt_demo/bin'
+[1.203s] Level 1:colcon.colcon_core.environment:checking '/var/robotic/yahboomcar_ws/install/MoveIt_demo/lib/pkgconfig/MoveIt_demo.pc'
+[1.203s] Level 1:colcon.colcon_core.environment:checking '/var/robotic/yahboomcar_ws/install/MoveIt_demo/lib/python3.10/site-packages'
+[1.204s] Level 1:colcon.colcon_core.environment:checking '/var/robotic/yahboomcar_ws/install/MoveIt_demo/bin'
+[1.204s] INFO:colcon.colcon_core.shell:Creating package script '/var/robotic/yahboomcar_ws/install/MoveIt_demo/share/MoveIt_demo/package.ps1'
+[1.205s] INFO:colcon.colcon_core.shell:Creating package descriptor '/var/robotic/yahboomcar_ws/install/MoveIt_demo/share/MoveIt_demo/package.dsv'
+[1.205s] INFO:colcon.colcon_core.shell:Creating package script '/var/robotic/yahboomcar_ws/install/MoveIt_demo/share/MoveIt_demo/package.sh'
+[1.206s] INFO:colcon.colcon_core.shell:Creating package script '/var/robotic/yahboomcar_ws/install/MoveIt_demo/share/MoveIt_demo/package.bash'
+[1.207s] INFO:colcon.colcon_core.shell:Creating package script '/var/robotic/yahboomcar_ws/install/MoveIt_demo/share/MoveIt_demo/package.zsh'
+[1.207s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/var/robotic/yahboomcar_ws/install/MoveIt_demo/share/colcon-core/packages/MoveIt_demo)
+[1.208s] INFO:colcon.colcon_ros.task.ament_python.build:Building ROS package in '/var/robotic/yahboomcar_ws/src/arm_driver' with build type 'ament_python'
+[1.208s] Level 1:colcon.colcon_core.shell:create_environment_hook('arm_driver', 'ament_prefix_path')
+[1.208s] INFO:colcon.colcon_core.shell:Creating environment hook '/var/robotic/yahboomcar_ws/install/arm_driver/share/arm_driver/hook/ament_prefix_path.ps1'
+[1.209s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/var/robotic/yahboomcar_ws/install/arm_driver/share/arm_driver/hook/ament_prefix_path.dsv'
+[1.209s] INFO:colcon.colcon_core.shell:Creating environment hook '/var/robotic/yahboomcar_ws/install/arm_driver/share/arm_driver/hook/ament_prefix_path.sh'
+[1.210s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[1.210s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[1.343s] INFO:colcon.colcon_core.task.python.build:Building Python package in '/var/robotic/yahboomcar_ws/src/arm_driver'
+[1.344s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[1.344s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[1.349s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/var/robotic/yahboomcar_ws/src/M3Pro_demo': PYTHONPATH=/var/robotic/yahboomcar_ws/build/M3Pro_demo/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/var/robotic/yahboomcar_ws/install/M3Pro_demo/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/M3Pro_demo build --build-base /var/robotic/yahboomcar_ws/build/M3Pro_demo/build install --record /var/robotic/yahboomcar_ws/build/M3Pro_demo/install.log --single-version-externally-managed install_data
+[1.531s] Level 1:colcon.colcon_core.environment:checking '/var/robotic/yahboomcar_ws/install/M3Pro_demo' for CMake module files
+[1.532s] Level 1:colcon.colcon_core.environment:checking '/var/robotic/yahboomcar_ws/install/M3Pro_demo' for CMake config files
+[1.532s] Level 1:colcon.colcon_core.environment:checking '/var/robotic/yahboomcar_ws/install/M3Pro_demo/lib'
+[1.531s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/var/robotic/yahboomcar_ws/src/M3Pro_demo' returned '0': PYTHONPATH=/var/robotic/yahboomcar_ws/build/M3Pro_demo/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/var/robotic/yahboomcar_ws/install/M3Pro_demo/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/M3Pro_demo build --build-base /var/robotic/yahboomcar_ws/build/M3Pro_demo/build install --record /var/robotic/yahboomcar_ws/build/M3Pro_demo/install.log --single-version-externally-managed install_data
+[1.532s] Level 1:colcon.colcon_core.environment:checking '/var/robotic/yahboomcar_ws/install/M3Pro_demo/bin'
+[1.532s] Level 1:colcon.colcon_core.environment:checking '/var/robotic/yahboomcar_ws/install/M3Pro_demo/lib/pkgconfig/M3Pro_demo.pc'
+[1.532s] Level 1:colcon.colcon_core.environment:checking '/var/robotic/yahboomcar_ws/install/M3Pro_demo/lib/python3.10/site-packages'
+[1.532s] Level 1:colcon.colcon_core.shell:create_environment_hook('M3Pro_demo', 'pythonpath')
+[1.532s] INFO:colcon.colcon_core.shell:Creating environment hook '/var/robotic/yahboomcar_ws/install/M3Pro_demo/share/M3Pro_demo/hook/pythonpath.ps1'
+[1.533s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/var/robotic/yahboomcar_ws/install/M3Pro_demo/share/M3Pro_demo/hook/pythonpath.dsv'
+[1.534s] INFO:colcon.colcon_core.shell:Creating environment hook '/var/robotic/yahboomcar_ws/install/M3Pro_demo/share/M3Pro_demo/hook/pythonpath.sh'
+[1.534s] Level 1:colcon.colcon_core.environment:checking '/var/robotic/yahboomcar_ws/install/M3Pro_demo/bin'
+[1.534s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(M3Pro_demo)
+[1.534s] INFO:colcon.colcon_core.shell:Creating package script '/var/robotic/yahboomcar_ws/install/M3Pro_demo/share/M3Pro_demo/package.ps1'
+[1.535s] INFO:colcon.colcon_core.shell:Creating package descriptor '/var/robotic/yahboomcar_ws/install/M3Pro_demo/share/M3Pro_demo/package.dsv'
+[1.535s] INFO:colcon.colcon_core.shell:Creating package script '/var/robotic/yahboomcar_ws/install/M3Pro_demo/share/M3Pro_demo/package.sh'
+[1.536s] INFO:colcon.colcon_core.shell:Creating package script '/var/robotic/yahboomcar_ws/install/M3Pro_demo/share/M3Pro_demo/package.bash'
+[1.536s] INFO:colcon.colcon_core.shell:Creating package script '/var/robotic/yahboomcar_ws/install/M3Pro_demo/share/M3Pro_demo/package.zsh'
+[1.536s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/var/robotic/yahboomcar_ws/install/M3Pro_demo/share/colcon-core/packages/M3Pro_demo)
+[1.537s] INFO:colcon.colcon_ros.task.ament_cmake.build:Building ROS package in '/var/robotic/yahboomcar_ws/src/arm_interface' with build type 'ament_cmake'
+[1.537s] INFO:colcon.colcon_cmake.task.cmake.build:Building CMake package in '/var/robotic/yahboomcar_ws/src/arm_interface'
+[1.537s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[1.537s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[1.544s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/var/robotic/yahboomcar_ws/src/arm_driver': PYTHONPATH=/var/robotic/yahboomcar_ws/build/arm_driver/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/var/robotic/yahboomcar_ws/install/arm_driver/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/arm_driver build --build-base /var/robotic/yahboomcar_ws/build/arm_driver/build install --record /var/robotic/yahboomcar_ws/build/arm_driver/install.log --single-version-externally-managed install_data
+[1.545s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/var/robotic/yahboomcar_ws/build/arm_interface': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --build /var/robotic/yahboomcar_ws/build/arm_interface -- -j2 -l2
+[1.699s] Level 1:colcon.colcon_core.environment:checking '/var/robotic/yahboomcar_ws/install/arm_driver' for CMake module files
+[1.700s] Level 1:colcon.colcon_core.environment:checking '/var/robotic/yahboomcar_ws/install/arm_driver' for CMake config files
+[1.700s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/var/robotic/yahboomcar_ws/src/arm_driver' returned '0': PYTHONPATH=/var/robotic/yahboomcar_ws/build/arm_driver/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/var/robotic/yahboomcar_ws/install/arm_driver/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/arm_driver build --build-base /var/robotic/yahboomcar_ws/build/arm_driver/build install --record /var/robotic/yahboomcar_ws/build/arm_driver/install.log --single-version-externally-managed install_data
+[1.700s] Level 1:colcon.colcon_core.environment:checking '/var/robotic/yahboomcar_ws/install/arm_driver/lib'
+[1.700s] Level 1:colcon.colcon_core.environment:checking '/var/robotic/yahboomcar_ws/install/arm_driver/bin'
+[1.701s] Level 1:colcon.colcon_core.environment:checking '/var/robotic/yahboomcar_ws/install/arm_driver/lib/pkgconfig/arm_driver.pc'
+[1.701s] Level 1:colcon.colcon_core.environment:checking '/var/robotic/yahboomcar_ws/install/arm_driver/lib/python3.10/site-packages'
+[1.701s] Level 1:colcon.colcon_core.shell:create_environment_hook('arm_driver', 'pythonpath')
+[1.701s] INFO:colcon.colcon_core.shell:Creating environment hook '/var/robotic/yahboomcar_ws/install/arm_driver/share/arm_driver/hook/pythonpath.ps1'
+[1.701s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/var/robotic/yahboomcar_ws/install/arm_driver/share/arm_driver/hook/pythonpath.dsv'
+[1.702s] INFO:colcon.colcon_core.shell:Creating environment hook '/var/robotic/yahboomcar_ws/install/arm_driver/share/arm_driver/hook/pythonpath.sh'
+[1.702s] Level 1:colcon.colcon_core.environment:checking '/var/robotic/yahboomcar_ws/install/arm_driver/bin'
+[1.702s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(arm_driver)
+[1.702s] INFO:colcon.colcon_core.shell:Creating package script '/var/robotic/yahboomcar_ws/install/arm_driver/share/arm_driver/package.ps1'
+[1.702s] INFO:colcon.colcon_core.shell:Creating package descriptor '/var/robotic/yahboomcar_ws/install/arm_driver/share/arm_driver/package.dsv'
+[1.703s] INFO:colcon.colcon_core.shell:Creating package script '/var/robotic/yahboomcar_ws/install/arm_driver/share/arm_driver/package.sh'
+[1.703s] INFO:colcon.colcon_core.shell:Creating package script '/var/robotic/yahboomcar_ws/install/arm_driver/share/arm_driver/package.bash'
+[1.703s] INFO:colcon.colcon_core.shell:Creating package script '/var/robotic/yahboomcar_ws/install/arm_driver/share/arm_driver/package.zsh'
+[1.703s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/var/robotic/yahboomcar_ws/install/arm_driver/share/colcon-core/packages/arm_driver)
+[1.704s] INFO:colcon.colcon_ros.task.ament_cmake.build:Building ROS package in '/var/robotic/yahboomcar_ws/src/arm_kin' with build type 'ament_cmake'
+[1.704s] INFO:colcon.colcon_cmake.task.cmake.build:Building CMake package in '/var/robotic/yahboomcar_ws/src/arm_kin'
+[1.704s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[1.704s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[1.711s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/var/robotic/yahboomcar_ws/build/arm_kin': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --build /var/robotic/yahboomcar_ws/build/arm_kin -- -j2 -l2
+[1.803s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/var/robotic/yahboomcar_ws/build/arm_kin' returned '2': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --build /var/robotic/yahboomcar_ws/build/arm_kin -- -j2 -l2
+[1.803s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(arm_kin)
+[1.803s] Level 1:colcon.colcon_core.environment:checking '/var/robotic/yahboomcar_ws/install/arm_kin' for CMake module files
+[1.804s] Level 1:colcon.colcon_core.environment:checking '/var/robotic/yahboomcar_ws/install/arm_kin' for CMake config files
+[1.804s] Level 1:colcon.colcon_core.environment:checking '/var/robotic/yahboomcar_ws/install/arm_kin/bin'
+[1.804s] Level 1:colcon.colcon_core.environment:checking '/var/robotic/yahboomcar_ws/install/arm_kin/lib/pkgconfig/arm_kin.pc'
+[1.804s] Level 1:colcon.colcon_core.environment:checking '/var/robotic/yahboomcar_ws/install/arm_kin/lib/python3.10/site-packages'
+[1.804s] Level 1:colcon.colcon_core.environment:checking '/var/robotic/yahboomcar_ws/install/arm_kin/bin'
+[1.804s] INFO:colcon.colcon_core.shell:Creating package script '/var/robotic/yahboomcar_ws/install/arm_kin/share/arm_kin/package.ps1'
+[1.805s] INFO:colcon.colcon_core.shell:Creating package descriptor '/var/robotic/yahboomcar_ws/install/arm_kin/share/arm_kin/package.dsv'
+[1.805s] INFO:colcon.colcon_core.shell:Creating package script '/var/robotic/yahboomcar_ws/install/arm_kin/share/arm_kin/package.sh'
+[1.806s] INFO:colcon.colcon_core.shell:Creating package script '/var/robotic/yahboomcar_ws/install/arm_kin/share/arm_kin/package.bash'
+[1.806s] INFO:colcon.colcon_core.shell:Creating package script '/var/robotic/yahboomcar_ws/install/arm_kin/share/arm_kin/package.zsh'
+[1.806s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/var/robotic/yahboomcar_ws/install/arm_kin/share/colcon-core/packages/arm_kin)
+[2.704s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:closing loop
+[2.704s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:loop closed
+[2.704s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:run_until_complete finished with '2'
+[2.704s] DEBUG:colcon.colcon_core.event_reactor:joining thread
+[2.707s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_notification.desktop_notification.terminal_notifier': Not used on non-Darwin systems
+[2.707s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_notification.desktop_notification.win32': Not used on non-Windows systems
+[2.707s] INFO:colcon.colcon_notification.desktop_notification:Sending desktop notification using 'notify2'
+[2.716s] DEBUG:colcon.colcon_core.event_reactor:joined thread
+[2.716s] INFO:colcon.colcon_core.shell:Creating prefix script '/var/robotic/yahboomcar_ws/install/local_setup.ps1'
+[2.717s] INFO:colcon.colcon_core.shell:Creating prefix util module '/var/robotic/yahboomcar_ws/install/_local_setup_util_ps1.py'
+[2.718s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/var/robotic/yahboomcar_ws/install/setup.ps1'
+[2.718s] INFO:colcon.colcon_core.shell:Creating prefix script '/var/robotic/yahboomcar_ws/install/local_setup.sh'
+[2.719s] INFO:colcon.colcon_core.shell:Creating prefix util module '/var/robotic/yahboomcar_ws/install/_local_setup_util_sh.py'
+[2.719s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/var/robotic/yahboomcar_ws/install/setup.sh'
+[2.720s] INFO:colcon.colcon_core.shell:Creating prefix script '/var/robotic/yahboomcar_ws/install/local_setup.bash'
+[2.720s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/var/robotic/yahboomcar_ws/install/setup.bash'
+[2.721s] INFO:colcon.colcon_core.shell:Creating prefix script '/var/robotic/yahboomcar_ws/install/local_setup.zsh'
+[2.721s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/var/robotic/yahboomcar_ws/install/setup.zsh'

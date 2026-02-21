@@ -1,0 +1,48 @@
+[0.000000] (-) TimerEvent: {}
+[0.000872] (-) JobUnselected: {'identifier': 'M3Pro_MoveIt_demo'}
+[0.000908] (-) JobUnselected: {'identifier': 'M3Pro_config'}
+[0.000928] (-) JobUnselected: {'identifier': 'M3Pro_demo'}
+[0.000947] (-) JobUnselected: {'identifier': 'MoveIt_demo'}
+[0.000965] (-) JobUnselected: {'identifier': 'arm_driver'}
+[0.000985] (-) JobUnselected: {'identifier': 'arm_interface'}
+[0.001003] (-) JobUnselected: {'identifier': 'arm_kin'}
+[0.001022] (-) JobUnselected: {'identifier': 'arm_msgs'}
+[0.001040] (-) JobUnselected: {'identifier': 'pkg_helloworld_cpp'}
+[0.001059] (-) JobUnselected: {'identifier': 'test_config'}
+[0.001077] (-) JobUnselected: {'identifier': 'test_moveit_config'}
+[0.001096] (-) JobUnselected: {'identifier': 'yahboom_M3Pro_DepthCam'}
+[0.001114] (-) JobUnselected: {'identifier': 'yahboom_M3Pro_description'}
+[0.001133] (-) JobUnselected: {'identifier': 'yahboom_M3Pro_laser'}
+[0.001152] (-) JobUnselected: {'identifier': 'yahboom_yolov8'}
+[0.001170] (-) JobUnselected: {'identifier': 'yahboomcar_ctrl'}
+[0.001188] (-) JobUnselected: {'identifier': 'yahboomcar_mediapipe'}
+[0.001207] (-) JobUnselected: {'identifier': 'yahboomcar_msgs'}
+[0.001227] (pkg_helloworld_py) JobQueued: {'identifier': 'pkg_helloworld_py', 'dependencies': OrderedDict()}
+[0.001248] (pkg_helloworld_py) JobStarted: {'identifier': 'pkg_helloworld_py'}
+[0.100405] (-) TimerEvent: {}
+[0.200663] (-) TimerEvent: {}
+[0.300899] (-) TimerEvent: {}
+[0.314962] (pkg_helloworld_py) Command: {'cmd': ['/usr/bin/python3', '-W', 'ignore:setup.py install is deprecated', '-W', 'ignore:easy_install command is deprecated', 'setup.py', 'egg_info', '--egg-base', '../../build/pkg_helloworld_py', 'build', '--build-base', '/var/robotic/yahboomcar_ws/build/pkg_helloworld_py/build', 'install', '--record', '/var/robotic/yahboomcar_ws/build/pkg_helloworld_py/install.log', '--single-version-externally-managed', 'install_data'], 'cwd': '/var/robotic/yahboomcar_ws/src/pkg_helloworld_py', 'env': {'GJS_DEBUG_TOPICS': 'JS ERROR;JS LOG', 'LESSOPEN': '| /usr/bin/lesspipe %s', 'LANGUAGE': 'en_US', 'USER': 'spen', 'LC_TIME': 'en_US.UTF-8', 'XDG_SESSION_TYPE': 'wayland', 'SHLVL': '1', 'LD_LIBRARY_PATH': '/usr/lib/x86_64-linux-gnu/gazebo-11/plugins:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib', 'HOME': '/home/spen', 'OLDPWD': '/var/robotic/yahboomcar_ws', 'DESKTOP_SESSION': 'ubuntu', 'GIO_LAUNCHED_DESKTOP_FILE': '/usr/share/applications/terminator.desktop', 'ROS_PYTHON_VERSION': '3', 'GNOME_SHELL_SESSION_MODE': 'ubuntu', 'GTK_MODULES': 'gail:atk-bridge', 'LC_MONETARY': 'en_US.UTF-8', 'MANAGERPID': '1053', 'SYSTEMD_EXEC_PID': '1327', 'DBUS_SESSION_BUS_ADDRESS': 'unix:path=/run/user/1000/bus', 'COLORTERM': 'truecolor', 'TERMINATOR_DBUS_NAME': 'net.tenshu.Terminator25ef4b219e3b005583550f2b0f9f990c3', 'GIO_LAUNCHED_DESKTOP_FILE_PID': '3400', 'IM_CONFIG_PHASE': '1', 'WAYLAND_DISPLAY': 'wayland-0', 'COLCON_PREFIX_PATH': '/var/robotic/yahboomcar_ws/src/install', 'ROS_DISTRO': 'humble', 'LOGNAME': 'spen', 'JOURNAL_STREAM': '8:20435', '_': '/usr/bin/colcon', 'ROS_VERSION': '2', 'XDG_SESSION_CLASS': 'user', 'USERNAME': 'spen', 'TERM': 'xterm-256color', 'GNOME_DESKTOP_SESSION_ID': 'this-is-deprecated', 'ROS_LOCALHOST_ONLY': '0', 'PATH': '/opt/ros/humble/bin:/home/spen/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin', 'SESSION_MANAGER': 'local/ubuntu2204-vm:@/tmp/.ICE-unix/1299,unix/ubuntu2204-vm:/tmp/.ICE-unix/1299', 'INVOCATION_ID': 'ec0b2b1d990d4a79b7ae194271bb365e', 'PAPERSIZE': 'letter', 'XDG_MENU_PREFIX': 'gnome-', 'LC_ADDRESS': 'en_US.UTF-8', 'GNOME_SETUP_DISPLAY': ':1', 'XDG_RUNTIME_DIR': '/run/user/1000', 'DISPLAY': ':0', 'TERMINATOR_DBUS_PATH': '/net/tenshu/Terminator2', 'LANG': 'en_US.UTF-8', 'XDG_CURRENT_DESKTOP': 'ubuntu:GNOME', 'IBUS_DISABLE_SNOOPER': '1', 'LC_TELEPHONE': 'en_US.UTF-8', 'XMODIFIERS': '@im=ibus', 'XDG_SESSION_DESKTOP': 'ubuntu', 'XAUTHORITY': '/run/user/1000/.mutter-Xwaylandauth.XL2KK3', 'LS_COLORS': 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:', 'SSH_AGENT_LAUNCHER': 'gnome-keyring', 'SSH_AUTH_SOCK': '/run/user/1000/keyring/ssh', 'AMENT_PREFIX_PATH': '/var/robotic/yahboomcar_ws/src/install/pkg_helloworld_py:/var/robotic/yahboomcar_ws/src/install/pkg_helloworld_cpp:/opt/ros/humble', 'SHELL': '/bin/bash', 'LC_NAME': 'en_US.UTF-8', 'TERMINATOR_UUID': 'urn:uuid:6138df83-8016-4663-86c5-bdf9eebbc2ee', 'QT_ACCESSIBILITY': '1', 'GDMSESSION': 'ubuntu', 'LESSCLOSE': '/usr/bin/lesspipe %s %s', 'LC_MEASUREMENT': 'en_US.UTF-8', 'GJS_DEBUG_OUTPUT': 'stderr', 'LC_IDENTIFICATION': 'en_US.UTF-8', 'QT_IM_MODULE': 'ibus', 'PWD': '/var/robotic/yahboomcar_ws/build/pkg_helloworld_py', 'XDG_CONFIG_DIRS': '/etc/xdg/xdg-ubuntu:/etc/xdg', 'XDG_DATA_DIRS': '/usr/share/ubuntu:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop', 'PYTHONPATH': '/var/robotic/yahboomcar_ws/build/pkg_helloworld_py/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/var/robotic/yahboomcar_ws/install/pkg_helloworld_py/lib/python3.10/site-packages:/var/robotic/yahboomcar_ws/src/install/pkg_helloworld_py/lib/python3.10/site-packages:/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages', 'LC_NUMERIC': 'en_US.UTF-8', 'LC_PAPER': 'en_US.UTF-8', 'COLCON': '1', 'VTE_VERSION': '6800', 'CMAKE_PREFIX_PATH': '/var/robotic/yahboomcar_ws/src/install/pkg_helloworld_cpp'}, 'shell': False}
+[0.401006] (-) TimerEvent: {}
+[0.455047] (pkg_helloworld_py) StdoutLine: {'line': b'running egg_info\n'}
+[0.455765] (pkg_helloworld_py) StdoutLine: {'line': b'writing ../../build/pkg_helloworld_py/pkg_helloworld_py.egg-info/PKG-INFO\n'}
+[0.456150] (pkg_helloworld_py) StdoutLine: {'line': b'writing dependency_links to ../../build/pkg_helloworld_py/pkg_helloworld_py.egg-info/dependency_links.txt\n'}
+[0.456464] (pkg_helloworld_py) StdoutLine: {'line': b'writing entry points to ../../build/pkg_helloworld_py/pkg_helloworld_py.egg-info/entry_points.txt\n'}
+[0.456528] (pkg_helloworld_py) StdoutLine: {'line': b'writing requirements to ../../build/pkg_helloworld_py/pkg_helloworld_py.egg-info/requires.txt\n'}
+[0.456560] (pkg_helloworld_py) StdoutLine: {'line': b'writing top-level names to ../../build/pkg_helloworld_py/pkg_helloworld_py.egg-info/top_level.txt\n'}
+[0.457421] (pkg_helloworld_py) StdoutLine: {'line': b"reading manifest file '../../build/pkg_helloworld_py/pkg_helloworld_py.egg-info/SOURCES.txt'\n"}
+[0.457982] (pkg_helloworld_py) StdoutLine: {'line': b"writing manifest file '../../build/pkg_helloworld_py/pkg_helloworld_py.egg-info/SOURCES.txt'\n"}
+[0.458044] (pkg_helloworld_py) StdoutLine: {'line': b'running build\n'}
+[0.458082] (pkg_helloworld_py) StdoutLine: {'line': b'running build_py\n'}
+[0.458761] (pkg_helloworld_py) StdoutLine: {'line': b'running install\n'}
+[0.458837] (pkg_helloworld_py) StdoutLine: {'line': b'running install_lib\n'}
+[0.458868] (pkg_helloworld_py) StdoutLine: {'line': b'running install_data\n'}
+[0.458896] (pkg_helloworld_py) StdoutLine: {'line': b'running install_egg_info\n'}
+[0.460277] (pkg_helloworld_py) StdoutLine: {'line': b"removing '/var/robotic/yahboomcar_ws/install/pkg_helloworld_py/lib/python3.10/site-packages/pkg_helloworld_py-0.0.0-py3.10.egg-info' (and everything under it)\n"}
+[0.461634] (pkg_helloworld_py) StdoutLine: {'line': b'Copying ../../build/pkg_helloworld_py/pkg_helloworld_py.egg-info to /var/robotic/yahboomcar_ws/install/pkg_helloworld_py/lib/python3.10/site-packages/pkg_helloworld_py-0.0.0-py3.10.egg-info\n'}
+[0.461697] (pkg_helloworld_py) StdoutLine: {'line': b'running install_scripts\n'}
+[0.472967] (pkg_helloworld_py) StdoutLine: {'line': b'Installing helloworld script to /var/robotic/yahboomcar_ws/install/pkg_helloworld_py/lib/pkg_helloworld_py\n'}
+[0.473511] (pkg_helloworld_py) StdoutLine: {'line': b"writing list of installed files to '/var/robotic/yahboomcar_ws/build/pkg_helloworld_py/install.log'\n"}
+[0.486539] (pkg_helloworld_py) CommandEnded: {'returncode': 0}
+[0.492479] (pkg_helloworld_py) JobEnded: {'identifier': 'pkg_helloworld_py', 'rc': 0}
+[0.493024] (-) EventReactorShutdown: {}

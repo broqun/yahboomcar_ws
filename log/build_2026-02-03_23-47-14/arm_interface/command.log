@@ -1,0 +1,4 @@
+Invoking command in '/var/robotic/yahboomcar_ws/build/arm_interface': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --build /var/robotic/yahboomcar_ws/build/arm_interface -- -j2 -l2
+Invoked command in '/var/robotic/yahboomcar_ws/build/arm_interface' returned '0': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --build /var/robotic/yahboomcar_ws/build/arm_interface -- -j2 -l2
+Invoking command in '/var/robotic/yahboomcar_ws/build/arm_interface': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --install /var/robotic/yahboomcar_ws/build/arm_interface
+Invoked command in '/var/robotic/yahboomcar_ws/build/arm_interface' returned '0': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --install /var/robotic/yahboomcar_ws/build/arm_interface

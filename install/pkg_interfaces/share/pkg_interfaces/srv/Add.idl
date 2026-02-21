@@ -1,0 +1,17 @@
+// generated from rosidl_adapter/resource/srv.idl.em
+// with input from pkg_interfaces/srv/Add.srv
+// generated code does not contain a copyright notice
+
+
+module pkg_interfaces {
+  module srv {
+    struct Add_Request {
+      int32 num1;
+
+      int32 num2;
+    };
+    struct Add_Response {
+      int32 sum;
+    };
+  };
+};

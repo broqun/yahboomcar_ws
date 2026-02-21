@@ -1,0 +1,55 @@
+[0.339s] Invoking command in '/var/robotic/yahboomcar_ws/src/M3Pro_demo': PYTHONPATH=/var/robotic/yahboomcar_ws/build/M3Pro_demo/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/var/robotic/yahboomcar_ws/install/M3Pro_demo/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/M3Pro_demo build --build-base /var/robotic/yahboomcar_ws/build/M3Pro_demo/build install --record /var/robotic/yahboomcar_ws/build/M3Pro_demo/install.log --single-version-externally-managed install_data
+[0.456s] running egg_info
+[0.456s] writing ../../build/M3Pro_demo/M3Pro_demo.egg-info/PKG-INFO
+[0.456s] writing dependency_links to ../../build/M3Pro_demo/M3Pro_demo.egg-info/dependency_links.txt
+[0.456s] writing entry points to ../../build/M3Pro_demo/M3Pro_demo.egg-info/entry_points.txt
+[0.456s] writing requirements to ../../build/M3Pro_demo/M3Pro_demo.egg-info/requires.txt
+[0.457s] writing top-level names to ../../build/M3Pro_demo/M3Pro_demo.egg-info/top_level.txt
+[0.459s] reading manifest file '../../build/M3Pro_demo/M3Pro_demo.egg-info/SOURCES.txt'
+[0.459s] writing manifest file '../../build/M3Pro_demo/M3Pro_demo.egg-info/SOURCES.txt'
+[0.459s] running build
+[0.459s] running build_py
+[0.461s] running install
+[0.461s] running install_lib
+[0.463s] running install_data
+[0.463s] running install_egg_info
+[0.464s] removing '/var/robotic/yahboomcar_ws/install/M3Pro_demo/lib/python3.10/site-packages/M3Pro_demo-0.0.0-py3.10.egg-info' (and everything under it)
+[0.466s] Copying ../../build/M3Pro_demo/M3Pro_demo.egg-info to /var/robotic/yahboomcar_ws/install/M3Pro_demo/lib/python3.10/site-packages/M3Pro_demo-0.0.0-py3.10.egg-info
+[0.466s] running install_scripts
+[0.476s] Installing Gesture_Moving script to /var/robotic/yahboomcar_ws/install/M3Pro_demo/lib/M3Pro_demo
+[0.477s] Installing KCF_follow script to /var/robotic/yahboomcar_ws/install/M3Pro_demo/lib/M3Pro_demo
+[0.477s] Installing KCF_follow_desktop script to /var/robotic/yahboomcar_ws/install/M3Pro_demo/lib/M3Pro_demo
+[0.478s] Installing KCF_track script to /var/robotic/yahboomcar_ws/install/M3Pro_demo/lib/M3Pro_demo
+[0.478s] Installing M3Pro_Dancing script to /var/robotic/yahboomcar_ws/install/M3Pro_demo/lib/M3Pro_demo
+[0.478s] Installing apriltagDist_gesture script to /var/robotic/yahboomcar_ws/install/M3Pro_demo/lib/M3Pro_demo
+[0.478s] Installing apriltagHeight_gesture script to /var/robotic/yahboomcar_ws/install/M3Pro_demo/lib/M3Pro_demo
+[0.478s] Installing apriltagID_gesture script to /var/robotic/yahboomcar_ws/install/M3Pro_demo/lib/M3Pro_demo
+[0.478s] Installing apriltag_detect script to /var/robotic/yahboomcar_ws/install/M3Pro_demo/lib/M3Pro_demo
+[0.478s] Installing apriltag_follow script to /var/robotic/yahboomcar_ws/install/M3Pro_demo/lib/M3Pro_demo
+[0.478s] Installing apriltag_follow_2D script to /var/robotic/yahboomcar_ws/install/M3Pro_demo/lib/M3Pro_demo
+[0.478s] Installing apriltag_list script to /var/robotic/yahboomcar_ws/install/M3Pro_demo/lib/M3Pro_demo
+[0.478s] Installing apriltag_rotation script to /var/robotic/yahboomcar_ws/install/M3Pro_demo/lib/M3Pro_demo
+[0.481s] Installing apriltag_track script to /var/robotic/yahboomcar_ws/install/M3Pro_demo/lib/M3Pro_demo
+[0.482s] Installing apriltag_track_desktop script to /var/robotic/yahboomcar_ws/install/M3Pro_demo/lib/M3Pro_demo
+[0.482s] Installing apriltag_transport script to /var/robotic/yahboomcar_ws/install/M3Pro_demo/lib/M3Pro_demo
+[0.482s] Installing apriltag_transport_V2 script to /var/robotic/yahboomcar_ws/install/M3Pro_demo/lib/M3Pro_demo
+[0.482s] Installing arm_offset script to /var/robotic/yahboomcar_ws/install/M3Pro_demo/lib/M3Pro_demo
+[0.482s] Installing color_follow script to /var/robotic/yahboomcar_ws/install/M3Pro_demo/lib/M3Pro_demo
+[0.482s] Installing color_list script to /var/robotic/yahboomcar_ws/install/M3Pro_demo/lib/M3Pro_demo
+[0.482s] Installing color_recognize script to /var/robotic/yahboomcar_ws/install/M3Pro_demo/lib/M3Pro_demo
+[0.483s] Installing color_track script to /var/robotic/yahboomcar_ws/install/M3Pro_demo/lib/M3Pro_demo
+[0.483s] Installing color_track_desktop script to /var/robotic/yahboomcar_ws/install/M3Pro_demo/lib/M3Pro_demo
+[0.483s] Installing color_transport script to /var/robotic/yahboomcar_ws/install/M3Pro_demo/lib/M3Pro_demo
+[0.483s] Installing estimate_volume script to /var/robotic/yahboomcar_ws/install/M3Pro_demo/lib/M3Pro_demo
+[0.483s] Installing follow_line script to /var/robotic/yahboomcar_ws/install/M3Pro_demo/lib/M3Pro_demo
+[0.483s] Installing grasp script to /var/robotic/yahboomcar_ws/install/M3Pro_demo/lib/M3Pro_demo
+[0.483s] Installing grasp_desktop script to /var/robotic/yahboomcar_ws/install/M3Pro_demo/lib/M3Pro_demo
+[0.483s] Installing grasp_joint5 script to /var/robotic/yahboomcar_ws/install/M3Pro_demo/lib/M3Pro_demo
+[0.483s] Installing grasp_transport script to /var/robotic/yahboomcar_ws/install/M3Pro_demo/lib/M3Pro_demo
+[0.483s] Installing mediapipe_detect script to /var/robotic/yahboomcar_ws/install/M3Pro_demo/lib/M3Pro_demo
+[0.483s] Installing mediapipe_gesture script to /var/robotic/yahboomcar_ws/install/M3Pro_demo/lib/M3Pro_demo
+[0.483s] Installing shape_recognize script to /var/robotic/yahboomcar_ws/install/M3Pro_demo/lib/M3Pro_demo
+[0.483s] Installing test_mediapipe script to /var/robotic/yahboomcar_ws/install/M3Pro_demo/lib/M3Pro_demo
+[0.483s] Installing volume_calculations script to /var/robotic/yahboomcar_ws/install/M3Pro_demo/lib/M3Pro_demo
+[0.483s] writing list of installed files to '/var/robotic/yahboomcar_ws/build/M3Pro_demo/install.log'
+[0.495s] Invoked command in '/var/robotic/yahboomcar_ws/src/M3Pro_demo' returned '0': PYTHONPATH=/var/robotic/yahboomcar_ws/build/M3Pro_demo/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/var/robotic/yahboomcar_ws/install/M3Pro_demo/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/M3Pro_demo build --build-base /var/robotic/yahboomcar_ws/build/M3Pro_demo/build install --record /var/robotic/yahboomcar_ws/build/M3Pro_demo/install.log --single-version-externally-managed install_data

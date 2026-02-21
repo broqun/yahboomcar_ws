@@ -1,0 +1,383 @@
+[0.000000] (-) TimerEvent: {}
+[0.000430] (-) JobUnselected: {'identifier': 'M3Pro_MoveIt_demo'}
+[0.000771] (-) JobUnselected: {'identifier': 'M3Pro_config'}
+[0.000855] (-) JobUnselected: {'identifier': 'M3Pro_demo'}
+[0.000953] (-) JobUnselected: {'identifier': 'MoveIt_demo'}
+[0.001028] (-) JobUnselected: {'identifier': 'arm_driver'}
+[0.001098] (-) JobUnselected: {'identifier': 'arm_interface'}
+[0.001118] (-) JobUnselected: {'identifier': 'arm_kin'}
+[0.001137] (-) JobUnselected: {'identifier': 'arm_msgs'}
+[0.001155] (-) JobUnselected: {'identifier': 'pkg_action'}
+[0.001174] (-) JobUnselected: {'identifier': 'pkg_helloworld_cpp'}
+[0.001193] (-) JobUnselected: {'identifier': 'pkg_helloworld_py'}
+[0.001301] (-) JobUnselected: {'identifier': 'pkg_service'}
+[0.001319] (-) JobUnselected: {'identifier': 'pkg_topic'}
+[0.001338] (-) JobUnselected: {'identifier': 'test_config'}
+[0.001356] (-) JobUnselected: {'identifier': 'test_moveit_config'}
+[0.001375] (-) JobUnselected: {'identifier': 'yahboom_M3Pro_DepthCam'}
+[0.001394] (-) JobUnselected: {'identifier': 'yahboom_M3Pro_description'}
+[0.001412] (-) JobUnselected: {'identifier': 'yahboom_M3Pro_laser'}
+[0.001431] (-) JobUnselected: {'identifier': 'yahboom_yolov8'}
+[0.001449] (-) JobUnselected: {'identifier': 'yahboomcar_ctrl'}
+[0.001468] (-) JobUnselected: {'identifier': 'yahboomcar_mediapipe'}
+[0.001486] (-) JobUnselected: {'identifier': 'yahboomcar_msgs'}
+[0.001506] (pkg_interfaces) JobQueued: {'identifier': 'pkg_interfaces', 'dependencies': OrderedDict()}
+[0.001527] (pkg_interfaces) JobStarted: {'identifier': 'pkg_interfaces'}
+[0.007152] (pkg_interfaces) JobProgress: {'identifier': 'pkg_interfaces', 'progress': 'cmake'}
+[0.007555] (pkg_interfaces) JobProgress: {'identifier': 'pkg_interfaces', 'progress': 'build'}
+[0.008167] (pkg_interfaces) Command: {'cmd': ['/usr/bin/cmake', '--build', '/var/robotic/yahboomcar_ws/build/pkg_interfaces', '--', '-j2', '-l2'], 'cwd': '/var/robotic/yahboomcar_ws/build/pkg_interfaces', 'env': OrderedDict([('GJS_DEBUG_TOPICS', 'JS ERROR;JS LOG'), ('LESSOPEN', '| /usr/bin/lesspipe %s'), ('LANGUAGE', 'en_US'), ('USER', 'spen'), ('LC_TIME', 'en_US.UTF-8'), ('XDG_SESSION_TYPE', 'wayland'), ('SHLVL', '1'), ('LD_LIBRARY_PATH', '/var/robotic/yahboomcar_ws/install/pkg_interfaces/lib:/var/robotic/yahboomcar_ws/install/arm_interface/lib:/usr/lib/x86_64-linux-gnu/gazebo-11/plugins:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib'), ('HOME', '/home/spen'), ('OLDPWD', '/home/spen'), ('DESKTOP_SESSION', 'ubuntu'), ('GIO_LAUNCHED_DESKTOP_FILE', '/usr/share/applications/terminator.desktop'), ('ROS_PYTHON_VERSION', '3'), ('GNOME_SHELL_SESSION_MODE', 'ubuntu'), ('GTK_MODULES', 'gail:atk-bridge'), ('LC_MONETARY', 'en_US.UTF-8'), ('MANAGERPID', '1130'), ('SYSTEMD_EXEC_PID', '1298'), ('DBUS_SESSION_BUS_ADDRESS', 'unix:path=/run/user/1000/bus'), ('COLORTERM', 'truecolor'), ('TERMINATOR_DBUS_NAME', 'net.tenshu.Terminator25ef4b219e3b005583550f2b0f9f990c3'), ('GIO_LAUNCHED_DESKTOP_FILE_PID', '5955'), ('IM_CONFIG_PHASE', '1'), ('WAYLAND_DISPLAY', 'wayland-0'), ('COLCON_PREFIX_PATH', '/var/robotic/yahboomcar_ws/install'), ('ROS_DISTRO', 'humble'), ('LOGNAME', 'spen'), ('JOURNAL_STREAM', '8:20675'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('XDG_SESSION_CLASS', 'user'), ('USERNAME', 'spen'), ('TERM', 'xterm-256color'), ('GNOME_DESKTOP_SESSION_ID', 'this-is-deprecated'), ('ROS_LOCALHOST_ONLY', '0'), ('PATH', '/opt/ros/humble/bin:/home/spen/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin'), ('SESSION_MANAGER', 'local/ubuntu2204-vm:@/tmp/.ICE-unix/1275,unix/ubuntu2204-vm:/tmp/.ICE-unix/1275'), ('INVOCATION_ID', '6c617067c6624f51a1d7bd7c39c554f0'), ('PAPERSIZE', 'letter'), ('XDG_MENU_PREFIX', 'gnome-'), ('LC_ADDRESS', 'en_US.UTF-8'), ('GNOME_SETUP_DISPLAY', ':1'), ('XDG_RUNTIME_DIR', '/run/user/1000'), ('DISPLAY', ':0'), ('TERMINATOR_DBUS_PATH', '/net/tenshu/Terminator2'), ('LANG', 'en_US.UTF-8'), ('XDG_CURRENT_DESKTOP', 'ubuntu:GNOME'), ('IBUS_DISABLE_SNOOPER', '1'), ('LC_TELEPHONE', 'en_US.UTF-8'), ('XMODIFIERS', '@im=ibus'), ('XDG_SESSION_DESKTOP', 'ubuntu'), ('XAUTHORITY', '/run/user/1000/.mutter-Xwaylandauth.TBYSK3'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('SSH_AGENT_LAUNCHER', 'gnome-keyring'), ('SSH_AUTH_SOCK', '/run/user/1000/keyring/ssh'), ('AMENT_PREFIX_PATH', '/var/robotic/yahboomcar_ws/install/yahboom_M3Pro_description:/var/robotic/yahboomcar_ws/install/pkg_topic:/var/robotic/yahboomcar_ws/install/pkg_service:/var/robotic/yahboomcar_ws/install/pkg_action:/var/robotic/yahboomcar_ws/install/pkg_interfaces:/var/robotic/yahboomcar_ws/install/pkg_helloworld_py:/var/robotic/yahboomcar_ws/install/arm_kin:/var/robotic/yahboomcar_ws/install/arm_interface:/var/robotic/yahboomcar_ws/install/arm_driver:/var/robotic/yahboomcar_ws/install/MoveIt_demo:/var/robotic/yahboomcar_ws/install/M3Pro_demo:/var/robotic/yahboomcar_ws/install/M3Pro_MoveIt_demo:/opt/ros/humble'), ('SHELL', '/bin/bash'), ('LC_NAME', 'en_US.UTF-8'), ('TERMINATOR_UUID', 'urn:uuid:ad5cead2-834a-450c-9b23-62b1144af51f'), ('QT_ACCESSIBILITY', '1'), ('GDMSESSION', 'ubuntu'), ('LESSCLOSE', '/usr/bin/lesspipe %s %s'), ('LC_MEASUREMENT', 'en_US.UTF-8'), ('GJS_DEBUG_OUTPUT', 'stderr'), ('LC_IDENTIFICATION', 'en_US.UTF-8'), ('QT_IM_MODULE', 'ibus'), ('PWD', '/var/robotic/yahboomcar_ws/build/pkg_interfaces'), ('XDG_CONFIG_DIRS', '/etc/xdg/xdg-ubuntu:/etc/xdg'), ('XDG_DATA_DIRS', '/usr/share/ubuntu:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop'), ('PYTHONPATH', '/var/robotic/yahboomcar_ws/install/yahboom_M3Pro_description/lib/python3.10/site-packages:/var/robotic/yahboomcar_ws/install/pkg_topic/lib/python3.10/site-packages:/var/robotic/yahboomcar_ws/install/pkg_service/lib/python3.10/site-packages:/var/robotic/yahboomcar_ws/install/pkg_action/lib/python3.10/site-packages:/var/robotic/yahboomcar_ws/install/pkg_interfaces/local/lib/python3.10/dist-packages:/var/robotic/yahboomcar_ws/install/pkg_helloworld_py/lib/python3.10/site-packages:/var/robotic/yahboomcar_ws/install/arm_interface/local/lib/python3.10/dist-packages:/var/robotic/yahboomcar_ws/install/arm_driver/lib/python3.10/site-packages:/var/robotic/yahboomcar_ws/install/M3Pro_demo/lib/python3.10/site-packages:/var/robotic/yahboomcar_ws/install/M3Pro_MoveIt_demo/lib/python3.10/site-packages:/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('LC_NUMERIC', 'en_US.UTF-8'), ('LC_PAPER', 'en_US.UTF-8'), ('COLCON', '1'), ('VTE_VERSION', '6800'), ('CMAKE_PREFIX_PATH', '/var/robotic/yahboomcar_ws/install/pkg_interfaces:/var/robotic/yahboomcar_ws/install/arm_kin:/var/robotic/yahboomcar_ws/install/arm_interface:/var/robotic/yahboomcar_ws/install/MoveIt_demo:/var/robotic/yahboomcar_ws/install/yahboom_M3Pro_description:/var/robotic/yahboomcar_ws/install/pkg_topic:/var/robotic/yahboomcar_ws/install/pkg_service:/var/robotic/yahboomcar_ws/install/pkg_action:/var/robotic/yahboomcar_ws/install/pkg_helloworld_py:/var/robotic/yahboomcar_ws/install/arm_driver:/var/robotic/yahboomcar_ws/install/M3Pro_demo:/var/robotic/yahboomcar_ws/install/M3Pro_MoveIt_demo:/opt/ros/humble')]), 'shell': False}
+[0.025414] (pkg_interfaces) StdoutLine: {'line': b'-- Found ament_cmake: 1.3.12 (/opt/ros/humble/share/ament_cmake/cmake)\n'}
+[0.099804] (-) TimerEvent: {}
+[0.100058] (pkg_interfaces) StdoutLine: {'line': b'-- Found rosidl_default_generators: 1.2.0 (/opt/ros/humble/share/rosidl_default_generators/cmake)\n'}
+[0.101173] (pkg_interfaces) StdoutLine: {'line': b'-- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c\n'}
+[0.102557] (pkg_interfaces) StdoutLine: {'line': b'-- Found rosidl_adapter: 3.1.8 (/opt/ros/humble/share/rosidl_adapter/cmake)\n'}
+[0.120143] (pkg_interfaces) StdoutLine: {'line': b'-- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp\n'}
+[0.200792] (-) TimerEvent: {}
+[0.301101] (-) TimerEvent: {}
+[0.305570] (pkg_interfaces) StdoutLine: {'line': b'-- Found ament_cmake_ros: 0.10.0 (/opt/ros/humble/share/ament_cmake_ros/cmake)\n'}
+[0.401203] (-) TimerEvent: {}
+[0.415768] (pkg_interfaces) StdoutLine: {'line': b'-- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c\n'}
+[0.501315] (-) TimerEvent: {}
+[0.571795] (pkg_interfaces) StdoutLine: {'line': b'-- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp\n'}
+[0.586050] (pkg_interfaces) StdoutLine: {'line': b'-- Found python_cmake_module: 0.10.0 (/opt/ros/humble/share/python_cmake_module/cmake)\n'}
+[0.600881] (pkg_interfaces) StdoutLine: {'line': b'-- Using PYTHON_EXECUTABLE: /usr/bin/python3\n'}
+[0.601835] (-) TimerEvent: {}
+[0.601997] (pkg_interfaces) StdoutLine: {'line': b'-- Using PYTHON_INCLUDE_DIRS: /usr/include/python3.10\n'}
+[0.602259] (pkg_interfaces) StdoutLine: {'line': b'-- Using PYTHON_LIBRARIES: /usr/lib/x86_64-linux-gnu/libpython3.10.so\n'}
+[0.612346] (pkg_interfaces) StdoutLine: {'line': b'-- Found ament_lint_auto: 0.12.14 (/opt/ros/humble/share/ament_lint_auto/cmake)\n'}
+[0.618641] (pkg_interfaces) StdoutLine: {'line': b"-- Added test 'lint_cmake' to check CMake code style\n"}
+[0.618710] (pkg_interfaces) StdoutLine: {'line': b"-- Added test 'xmllint' to check XML markup files\n"}
+[0.618758] (pkg_interfaces) StdoutLine: {'line': b'-- Configuring done\n'}
+[0.642729] (pkg_interfaces) StdoutLine: {'line': b'-- Generating done\n'}
+[0.650787] (pkg_interfaces) StdoutLine: {'line': b'-- Build files have been written to: /var/robotic/yahboomcar_ws/build/pkg_interfaces\n'}
+[0.666943] (pkg_interfaces) StdoutLine: {'line': b'[  2%] \x1b[34m\x1b[1mGenerating C code for ROS interfaces\x1b[0m\n'}
+[0.676056] (pkg_interfaces) StdoutLine: {'line': b'[  4%] \x1b[34m\x1b[1mGenerating C++ code for ROS interfaces\x1b[0m\n'}
+[0.702774] (-) TimerEvent: {}
+[0.804768] (-) TimerEvent: {}
+[0.905387] (-) TimerEvent: {}
+[0.975931] (pkg_interfaces) StdoutLine: {'line': b'\x1b[35m\x1b[1mConsolidate compiler generated dependencies of target pkg_interfaces__rosidl_generator_c\x1b[0m\n'}
+[0.984764] (pkg_interfaces) StdoutLine: {'line': b'[  6%] \x1b[32mBuilding C object CMakeFiles/pkg_interfaces__rosidl_generator_c.dir/rosidl_generator_c/pkg_interfaces/action/detail/progress__functions.c.o\x1b[0m\n'}
+[0.987634] (pkg_interfaces) StdoutLine: {'line': b'[  6%] Built target pkg_interfaces__cpp\n'}
+[0.993092] (pkg_interfaces) StdoutLine: {'line': b'[  8%] \x1b[32mBuilding C object CMakeFiles/pkg_interfaces__rosidl_generator_c.dir/rosidl_generator_c/pkg_interfaces/msg/detail/person__functions.c.o\x1b[0m\n'}
+[1.005471] (-) TimerEvent: {}
+[1.020298] (pkg_interfaces) StdoutLine: {'line': b'[ 10%] \x1b[32mBuilding C object CMakeFiles/pkg_interfaces__rosidl_generator_c.dir/rosidl_generator_c/pkg_interfaces/srv/detail/add__functions.c.o\x1b[0m\n'}
+[1.056818] (pkg_interfaces) StdoutLine: {'line': b'[ 12%] \x1b[32m\x1b[1mLinking C shared library libpkg_interfaces__rosidl_generator_c.so\x1b[0m\n'}
+[1.066895] (pkg_interfaces) StdoutLine: {'line': b'[ 12%] Built target ament_cmake_python_copy_pkg_interfaces\n'}
+[1.073267] (pkg_interfaces) StdoutLine: {'line': b'[ 14%] \x1b[34m\x1b[1mGenerating C++ type support dispatch for ROS interfaces\x1b[0m\n'}
+[1.081943] (pkg_interfaces) StdoutLine: {'line': b'[ 14%] Built target pkg_interfaces__rosidl_generator_c\n'}
+[1.089001] (pkg_interfaces) StdoutLine: {'line': b'[ 17%] \x1b[34m\x1b[1mGenerating C++ type support for eProsima Fast-RTPS\x1b[0m\n'}
+[1.105542] (-) TimerEvent: {}
+[1.206764] (-) TimerEvent: {}
+[1.230855] (pkg_interfaces) StdoutLine: {'line': b'\x1b[35m\x1b[1mConsolidate compiler generated dependencies of target pkg_interfaces__rosidl_typesupport_cpp\x1b[0m\n'}
+[1.245833] (pkg_interfaces) StdoutLine: {'line': b'[ 19%] \x1b[32mBuilding CXX object CMakeFiles/pkg_interfaces__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/pkg_interfaces/action/progress__type_support.cpp.o\x1b[0m\n'}
+[1.306881] (-) TimerEvent: {}
+[1.324870] (pkg_interfaces) StdoutLine: {'line': b'\x1b[35m\x1b[1mConsolidate compiler generated dependencies of target pkg_interfaces__rosidl_typesupport_fastrtps_cpp\x1b[0m\n'}
+[1.339248] (pkg_interfaces) StdoutLine: {'line': b'[ 21%] \x1b[32mBuilding CXX object CMakeFiles/pkg_interfaces__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/pkg_interfaces/action/detail/dds_fastrtps/progress__type_support.cpp.o\x1b[0m\n'}
+[1.406979] (-) TimerEvent: {}
+[1.459010] (pkg_interfaces) StdoutLine: {'line': b'[ 23%] \x1b[32mBuilding CXX object CMakeFiles/pkg_interfaces__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/pkg_interfaces/msg/person__type_support.cpp.o\x1b[0m\n'}
+[1.507080] (-) TimerEvent: {}
+[1.605689] (pkg_interfaces) StdoutLine: {'line': b'[ 25%] \x1b[32mBuilding CXX object CMakeFiles/pkg_interfaces__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/pkg_interfaces/srv/add__type_support.cpp.o\x1b[0m\n'}
+[1.607882] (-) TimerEvent: {}
+[1.647278] (pkg_interfaces) StdoutLine: {'line': b'[ 27%] \x1b[32mBuilding CXX object CMakeFiles/pkg_interfaces__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/pkg_interfaces/msg/detail/dds_fastrtps/person__type_support.cpp.o\x1b[0m\n'}
+[1.707985] (-) TimerEvent: {}
+[1.738111] (pkg_interfaces) StdoutLine: {'line': b'[ 29%] \x1b[32m\x1b[1mLinking CXX shared library libpkg_interfaces__rosidl_typesupport_cpp.so\x1b[0m\n'}
+[1.766650] (pkg_interfaces) StdoutLine: {'line': b'[ 29%] Built target pkg_interfaces__rosidl_typesupport_cpp\n'}
+[1.774228] (pkg_interfaces) StdoutLine: {'line': b'[ 31%] \x1b[34m\x1b[1mGenerating C++ introspection for ROS interfaces\x1b[0m\n'}
+[1.808076] (-) TimerEvent: {}
+[1.839834] (pkg_interfaces) StdoutLine: {'line': b'[ 34%] \x1b[32mBuilding CXX object CMakeFiles/pkg_interfaces__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/pkg_interfaces/srv/detail/dds_fastrtps/add__type_support.cpp.o\x1b[0m\n'}
+[1.908170] (-) TimerEvent: {}
+[1.976514] (pkg_interfaces) StdoutLine: {'line': b'\x1b[35m\x1b[1mConsolidate compiler generated dependencies of target pkg_interfaces__rosidl_typesupport_introspection_cpp\x1b[0m\n'}
+[1.986978] (pkg_interfaces) StdoutLine: {'line': b'[ 36%] \x1b[32mBuilding CXX object CMakeFiles/pkg_interfaces__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/pkg_interfaces/action/detail/progress__type_support.cpp.o\x1b[0m\n'}
+[2.009785] (-) TimerEvent: {}
+[2.029263] (pkg_interfaces) StdoutLine: {'line': b'[ 38%] \x1b[32m\x1b[1mLinking CXX shared library libpkg_interfaces__rosidl_typesupport_fastrtps_cpp.so\x1b[0m\n'}
+[2.076297] (pkg_interfaces) StdoutLine: {'line': b'[ 38%] Built target pkg_interfaces__rosidl_typesupport_fastrtps_cpp\n'}
+[2.109872] (-) TimerEvent: {}
+[2.210109] (-) TimerEvent: {}
+[2.211904] (pkg_interfaces) StdoutLine: {'line': b'running egg_info\n'}
+[2.212499] (pkg_interfaces) StdoutLine: {'line': b'writing pkg_interfaces.egg-info/PKG-INFO\n'}
+[2.213208] (pkg_interfaces) StdoutLine: {'line': b'writing dependency_links to pkg_interfaces.egg-info/dependency_links.txt\n'}
+[2.213289] (pkg_interfaces) StdoutLine: {'line': b'writing top-level names to pkg_interfaces.egg-info/top_level.txt\n'}
+[2.214330] (pkg_interfaces) StdoutLine: {'line': b"reading manifest file 'pkg_interfaces.egg-info/SOURCES.txt'\n"}
+[2.214699] (pkg_interfaces) StdoutLine: {'line': b"writing manifest file 'pkg_interfaces.egg-info/SOURCES.txt'\n"}
+[2.229474] (pkg_interfaces) StdoutLine: {'line': b'[ 38%] Built target ament_cmake_python_build_pkg_interfaces_egg\n'}
+[2.237810] (pkg_interfaces) StdoutLine: {'line': b'[ 40%] \x1b[34m\x1b[1mGenerating C type support for eProsima Fast-RTPS\x1b[0m\n'}
+[2.310204] (-) TimerEvent: {}
+[2.318978] (pkg_interfaces) StdoutLine: {'line': b'[ 42%] \x1b[32mBuilding CXX object CMakeFiles/pkg_interfaces__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/pkg_interfaces/msg/detail/person__type_support.cpp.o\x1b[0m\n'}
+[2.410290] (-) TimerEvent: {}
+[2.469865] (pkg_interfaces) StdoutLine: {'line': b'\x1b[35m\x1b[1mConsolidate compiler generated dependencies of target pkg_interfaces__rosidl_typesupport_fastrtps_c\x1b[0m\n'}
+[2.477611] (pkg_interfaces) StdoutLine: {'line': b'[ 44%] \x1b[32mBuilding CXX object CMakeFiles/pkg_interfaces__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/pkg_interfaces/action/detail/progress__type_support_c.cpp.o\x1b[0m\n'}
+[2.506396] (pkg_interfaces) StdoutLine: {'line': b'[ 46%] \x1b[32mBuilding CXX object CMakeFiles/pkg_interfaces__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/pkg_interfaces/srv/detail/add__type_support.cpp.o\x1b[0m\n'}
+[2.510361] (-) TimerEvent: {}
+[2.610598] (-) TimerEvent: {}
+[2.660207] (pkg_interfaces) StdoutLine: {'line': b'[ 48%] \x1b[32mBuilding CXX object CMakeFiles/pkg_interfaces__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/pkg_interfaces/msg/detail/person__type_support_c.cpp.o\x1b[0m\n'}
+[2.683284] (pkg_interfaces) StdoutLine: {'line': b'[ 51%] \x1b[32m\x1b[1mLinking CXX shared library libpkg_interfaces__rosidl_typesupport_introspection_cpp.so\x1b[0m\n'}
+[2.710705] (-) TimerEvent: {}
+[2.728638] (pkg_interfaces) StdoutLine: {'line': b'[ 51%] Built target pkg_interfaces__rosidl_typesupport_introspection_cpp\n'}
+[2.734383] (pkg_interfaces) StdoutLine: {'line': b'[ 53%] \x1b[32mBuilding CXX object CMakeFiles/pkg_interfaces__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/pkg_interfaces/srv/detail/add__type_support_c.cpp.o\x1b[0m\n'}
+[2.810826] (-) TimerEvent: {}
+[2.821637] (pkg_interfaces) StdoutLine: {'line': b'[ 55%] \x1b[34m\x1b[1mGenerating C introspection for ROS interfaces\x1b[0m\n'}
+[2.901717] (pkg_interfaces) StdoutLine: {'line': b'[ 57%] \x1b[32m\x1b[1mLinking CXX shared library libpkg_interfaces__rosidl_typesupport_fastrtps_c.so\x1b[0m\n'}
+[2.910891] (-) TimerEvent: {}
+[2.948244] (pkg_interfaces) StdoutLine: {'line': b'[ 57%] Built target pkg_interfaces__rosidl_typesupport_fastrtps_c\n'}
+[2.956848] (pkg_interfaces) StdoutLine: {'line': b'[ 59%] \x1b[34m\x1b[1mGenerating C type support dispatch for ROS interfaces\x1b[0m\n'}
+[3.010985] (-) TimerEvent: {}
+[3.036303] (pkg_interfaces) StdoutLine: {'line': b'\x1b[35m\x1b[1mConsolidate compiler generated dependencies of target pkg_interfaces__rosidl_typesupport_introspection_c\x1b[0m\n'}
+[3.044060] (pkg_interfaces) StdoutLine: {'line': b'[ 61%] \x1b[32mBuilding C object CMakeFiles/pkg_interfaces__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/pkg_interfaces/action/detail/progress__type_support.c.o\x1b[0m\n'}
+[3.072831] (pkg_interfaces) StdoutLine: {'line': b'[ 63%] \x1b[32mBuilding C object CMakeFiles/pkg_interfaces__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/pkg_interfaces/msg/detail/person__type_support.c.o\x1b[0m\n'}
+[3.093828] (pkg_interfaces) StdoutLine: {'line': b'[ 65%] \x1b[32mBuilding C object CMakeFiles/pkg_interfaces__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/pkg_interfaces/srv/detail/add__type_support.c.o\x1b[0m\n'}
+[3.111083] (-) TimerEvent: {}
+[3.113189] (pkg_interfaces) StdoutLine: {'line': b'[ 68%] \x1b[32m\x1b[1mLinking C shared library libpkg_interfaces__rosidl_typesupport_introspection_c.so\x1b[0m\n'}
+[3.115755] (pkg_interfaces) StdoutLine: {'line': b'\x1b[35m\x1b[1mConsolidate compiler generated dependencies of target pkg_interfaces__rosidl_typesupport_c\x1b[0m\n'}
+[3.123690] (pkg_interfaces) StdoutLine: {'line': b'[ 70%] \x1b[32mBuilding CXX object CMakeFiles/pkg_interfaces__rosidl_typesupport_c.dir/rosidl_typesupport_c/pkg_interfaces/action/progress__type_support.cpp.o\x1b[0m\n'}
+[3.132461] (pkg_interfaces) StdoutLine: {'line': b'[ 70%] Built target pkg_interfaces__rosidl_typesupport_introspection_c\n'}
+[3.138003] (pkg_interfaces) StdoutLine: {'line': b'[ 72%] \x1b[32mBuilding CXX object CMakeFiles/pkg_interfaces__rosidl_typesupport_c.dir/rosidl_typesupport_c/pkg_interfaces/msg/person__type_support.cpp.o\x1b[0m\n'}
+[3.155813] (pkg_interfaces) StdoutLine: {'line': b'[ 74%] \x1b[32mBuilding CXX object CMakeFiles/pkg_interfaces__rosidl_typesupport_c.dir/rosidl_typesupport_c/pkg_interfaces/srv/add__type_support.cpp.o\x1b[0m\n'}
+[3.175973] (pkg_interfaces) StdoutLine: {'line': b'[ 76%] \x1b[32m\x1b[1mLinking CXX shared library libpkg_interfaces__rosidl_typesupport_c.so\x1b[0m\n'}
+[3.202062] (pkg_interfaces) StdoutLine: {'line': b'[ 76%] Built target pkg_interfaces__rosidl_typesupport_c\n'}
+[3.211191] (-) TimerEvent: {}
+[3.215400] (pkg_interfaces) StdoutLine: {'line': b'[ 76%] Built target pkg_interfaces\n'}
+[3.228822] (pkg_interfaces) StdoutLine: {'line': b'[ 78%] \x1b[34m\x1b[1mGenerating Python code for ROS interfaces\x1b[0m\n'}
+[3.311282] (-) TimerEvent: {}
+[3.411551] (-) TimerEvent: {}
+[3.511856] (-) TimerEvent: {}
+[3.612742] (-) TimerEvent: {}
+[3.668887] (pkg_interfaces) StdoutLine: {'line': b'[ 78%] Built target pkg_interfaces__py\n'}
+[3.676757] (pkg_interfaces) StdoutLine: {'line': b'\x1b[35m\x1b[1mConsolidate compiler generated dependencies of target pkg_interfaces__rosidl_generator_py\x1b[0m\n'}
+[3.684793] (pkg_interfaces) StdoutLine: {'line': b'[ 80%] \x1b[32mBuilding C object CMakeFiles/pkg_interfaces__rosidl_generator_py.dir/rosidl_generator_py/pkg_interfaces/action/_progress_s.c.o\x1b[0m\n'}
+[3.685148] (pkg_interfaces) StdoutLine: {'line': b'[ 82%] \x1b[32mBuilding C object CMakeFiles/pkg_interfaces__rosidl_generator_py.dir/rosidl_generator_py/pkg_interfaces/msg/_person_s.c.o\x1b[0m\n'}
+[3.712784] (-) TimerEvent: {}
+[3.741827] (pkg_interfaces) StdoutLine: {'line': b'[ 85%] \x1b[32mBuilding C object CMakeFiles/pkg_interfaces__rosidl_generator_py.dir/rosidl_generator_py/pkg_interfaces/srv/_add_s.c.o\x1b[0m\n'}
+[3.799849] (pkg_interfaces) StdoutLine: {'line': b'[ 87%] \x1b[32m\x1b[1mLinking C shared library rosidl_generator_py/pkg_interfaces/libpkg_interfaces__rosidl_generator_py.so\x1b[0m\n'}
+[3.812872] (-) TimerEvent: {}
+[3.825536] (pkg_interfaces) StdoutLine: {'line': b'[ 87%] Built target pkg_interfaces__rosidl_generator_py\n'}
+[3.835174] (pkg_interfaces) StdoutLine: {'line': b'\x1b[35m\x1b[1mConsolidate compiler generated dependencies of target pkg_interfaces__rosidl_typesupport_fastrtps_c__pyext\x1b[0m\n'}
+[3.835441] (pkg_interfaces) StdoutLine: {'line': b'\x1b[35m\x1b[1mConsolidate compiler generated dependencies of target pkg_interfaces__rosidl_typesupport_introspection_c__pyext\x1b[0m\n'}
+[3.842130] (pkg_interfaces) StdoutLine: {'line': b'[ 89%] \x1b[32mBuilding C object CMakeFiles/pkg_interfaces__rosidl_typesupport_fastrtps_c__pyext.dir/rosidl_generator_py/pkg_interfaces/_pkg_interfaces_s.ep.rosidl_typesupport_fastrtps_c.c.o\x1b[0m\n'}
+[3.842365] (pkg_interfaces) StdoutLine: {'line': b'[ 91%] \x1b[32mBuilding C object CMakeFiles/pkg_interfaces__rosidl_typesupport_introspection_c__pyext.dir/rosidl_generator_py/pkg_interfaces/_pkg_interfaces_s.ep.rosidl_typesupport_introspection_c.c.o\x1b[0m\n'}
+[3.911213] (pkg_interfaces) StdoutLine: {'line': b'[ 93%] \x1b[32m\x1b[1mLinking C shared library rosidl_generator_py/pkg_interfaces/pkg_interfaces_s__rosidl_typesupport_introspection_c.cpython-310-x86_64-linux-gnu.so\x1b[0m\n'}
+[3.912504] (pkg_interfaces) StdoutLine: {'line': b'[ 95%] \x1b[32m\x1b[1mLinking C shared library rosidl_generator_py/pkg_interfaces/pkg_interfaces_s__rosidl_typesupport_fastrtps_c.cpython-310-x86_64-linux-gnu.so\x1b[0m\n'}
+[3.912986] (-) TimerEvent: {}
+[3.936834] (pkg_interfaces) StdoutLine: {'line': b'[ 95%] Built target pkg_interfaces__rosidl_typesupport_introspection_c__pyext\n'}
+[3.940812] (pkg_interfaces) StdoutLine: {'line': b'[ 95%] Built target pkg_interfaces__rosidl_typesupport_fastrtps_c__pyext\n'}
+[3.945212] (pkg_interfaces) StdoutLine: {'line': b'\x1b[35m\x1b[1mConsolidate compiler generated dependencies of target pkg_interfaces__rosidl_typesupport_c__pyext\x1b[0m\n'}
+[3.952274] (pkg_interfaces) StdoutLine: {'line': b'[ 97%] \x1b[32mBuilding C object CMakeFiles/pkg_interfaces__rosidl_typesupport_c__pyext.dir/rosidl_generator_py/pkg_interfaces/_pkg_interfaces_s.ep.rosidl_typesupport_c.c.o\x1b[0m\n'}
+[4.013799] (-) TimerEvent: {}
+[4.027656] (pkg_interfaces) StdoutLine: {'line': b'[100%] \x1b[32m\x1b[1mLinking C shared library rosidl_generator_py/pkg_interfaces/pkg_interfaces_s__rosidl_typesupport_c.cpython-310-x86_64-linux-gnu.so\x1b[0m\n'}
+[4.054257] (pkg_interfaces) StdoutLine: {'line': b'[100%] Built target pkg_interfaces__rosidl_typesupport_c__pyext\n'}
+[4.062247] (pkg_interfaces) CommandEnded: {'returncode': 0}
+[4.063009] (pkg_interfaces) JobProgress: {'identifier': 'pkg_interfaces', 'progress': 'install'}
+[4.067903] (pkg_interfaces) Command: {'cmd': ['/usr/bin/cmake', '--install', '/var/robotic/yahboomcar_ws/build/pkg_interfaces'], 'cwd': '/var/robotic/yahboomcar_ws/build/pkg_interfaces', 'env': OrderedDict([('GJS_DEBUG_TOPICS', 'JS ERROR;JS LOG'), ('LESSOPEN', '| /usr/bin/lesspipe %s'), ('LANGUAGE', 'en_US'), ('USER', 'spen'), ('LC_TIME', 'en_US.UTF-8'), ('XDG_SESSION_TYPE', 'wayland'), ('SHLVL', '1'), ('LD_LIBRARY_PATH', '/var/robotic/yahboomcar_ws/install/pkg_interfaces/lib:/var/robotic/yahboomcar_ws/install/arm_interface/lib:/usr/lib/x86_64-linux-gnu/gazebo-11/plugins:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib'), ('HOME', '/home/spen'), ('OLDPWD', '/home/spen'), ('DESKTOP_SESSION', 'ubuntu'), ('GIO_LAUNCHED_DESKTOP_FILE', '/usr/share/applications/terminator.desktop'), ('ROS_PYTHON_VERSION', '3'), ('GNOME_SHELL_SESSION_MODE', 'ubuntu'), ('GTK_MODULES', 'gail:atk-bridge'), ('LC_MONETARY', 'en_US.UTF-8'), ('MANAGERPID', '1130'), ('SYSTEMD_EXEC_PID', '1298'), ('DBUS_SESSION_BUS_ADDRESS', 'unix:path=/run/user/1000/bus'), ('COLORTERM', 'truecolor'), ('TERMINATOR_DBUS_NAME', 'net.tenshu.Terminator25ef4b219e3b005583550f2b0f9f990c3'), ('GIO_LAUNCHED_DESKTOP_FILE_PID', '5955'), ('IM_CONFIG_PHASE', '1'), ('WAYLAND_DISPLAY', 'wayland-0'), ('COLCON_PREFIX_PATH', '/var/robotic/yahboomcar_ws/install'), ('ROS_DISTRO', 'humble'), ('LOGNAME', 'spen'), ('JOURNAL_STREAM', '8:20675'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('XDG_SESSION_CLASS', 'user'), ('USERNAME', 'spen'), ('TERM', 'xterm-256color'), ('GNOME_DESKTOP_SESSION_ID', 'this-is-deprecated'), ('ROS_LOCALHOST_ONLY', '0'), ('PATH', '/opt/ros/humble/bin:/home/spen/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin'), ('SESSION_MANAGER', 'local/ubuntu2204-vm:@/tmp/.ICE-unix/1275,unix/ubuntu2204-vm:/tmp/.ICE-unix/1275'), ('INVOCATION_ID', '6c617067c6624f51a1d7bd7c39c554f0'), ('PAPERSIZE', 'letter'), ('XDG_MENU_PREFIX', 'gnome-'), ('LC_ADDRESS', 'en_US.UTF-8'), ('GNOME_SETUP_DISPLAY', ':1'), ('XDG_RUNTIME_DIR', '/run/user/1000'), ('DISPLAY', ':0'), ('TERMINATOR_DBUS_PATH', '/net/tenshu/Terminator2'), ('LANG', 'en_US.UTF-8'), ('XDG_CURRENT_DESKTOP', 'ubuntu:GNOME'), ('IBUS_DISABLE_SNOOPER', '1'), ('LC_TELEPHONE', 'en_US.UTF-8'), ('XMODIFIERS', '@im=ibus'), ('XDG_SESSION_DESKTOP', 'ubuntu'), ('XAUTHORITY', '/run/user/1000/.mutter-Xwaylandauth.TBYSK3'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('SSH_AGENT_LAUNCHER', 'gnome-keyring'), ('SSH_AUTH_SOCK', '/run/user/1000/keyring/ssh'), ('AMENT_PREFIX_PATH', '/var/robotic/yahboomcar_ws/install/yahboom_M3Pro_description:/var/robotic/yahboomcar_ws/install/pkg_topic:/var/robotic/yahboomcar_ws/install/pkg_service:/var/robotic/yahboomcar_ws/install/pkg_action:/var/robotic/yahboomcar_ws/install/pkg_interfaces:/var/robotic/yahboomcar_ws/install/pkg_helloworld_py:/var/robotic/yahboomcar_ws/install/arm_kin:/var/robotic/yahboomcar_ws/install/arm_interface:/var/robotic/yahboomcar_ws/install/arm_driver:/var/robotic/yahboomcar_ws/install/MoveIt_demo:/var/robotic/yahboomcar_ws/install/M3Pro_demo:/var/robotic/yahboomcar_ws/install/M3Pro_MoveIt_demo:/opt/ros/humble'), ('SHELL', '/bin/bash'), ('LC_NAME', 'en_US.UTF-8'), ('TERMINATOR_UUID', 'urn:uuid:ad5cead2-834a-450c-9b23-62b1144af51f'), ('QT_ACCESSIBILITY', '1'), ('GDMSESSION', 'ubuntu'), ('LESSCLOSE', '/usr/bin/lesspipe %s %s'), ('LC_MEASUREMENT', 'en_US.UTF-8'), ('GJS_DEBUG_OUTPUT', 'stderr'), ('LC_IDENTIFICATION', 'en_US.UTF-8'), ('QT_IM_MODULE', 'ibus'), ('PWD', '/var/robotic/yahboomcar_ws/build/pkg_interfaces'), ('XDG_CONFIG_DIRS', '/etc/xdg/xdg-ubuntu:/etc/xdg'), ('XDG_DATA_DIRS', '/usr/share/ubuntu:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop'), ('PYTHONPATH', '/var/robotic/yahboomcar_ws/install/yahboom_M3Pro_description/lib/python3.10/site-packages:/var/robotic/yahboomcar_ws/install/pkg_topic/lib/python3.10/site-packages:/var/robotic/yahboomcar_ws/install/pkg_service/lib/python3.10/site-packages:/var/robotic/yahboomcar_ws/install/pkg_action/lib/python3.10/site-packages:/var/robotic/yahboomcar_ws/install/pkg_interfaces/local/lib/python3.10/dist-packages:/var/robotic/yahboomcar_ws/install/pkg_helloworld_py/lib/python3.10/site-packages:/var/robotic/yahboomcar_ws/install/arm_interface/local/lib/python3.10/dist-packages:/var/robotic/yahboomcar_ws/install/arm_driver/lib/python3.10/site-packages:/var/robotic/yahboomcar_ws/install/M3Pro_demo/lib/python3.10/site-packages:/var/robotic/yahboomcar_ws/install/M3Pro_MoveIt_demo/lib/python3.10/site-packages:/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('LC_NUMERIC', 'en_US.UTF-8'), ('LC_PAPER', 'en_US.UTF-8'), ('COLCON', '1'), ('VTE_VERSION', '6800'), ('CMAKE_PREFIX_PATH', '/var/robotic/yahboomcar_ws/install/pkg_interfaces:/var/robotic/yahboomcar_ws/install/arm_kin:/var/robotic/yahboomcar_ws/install/arm_interface:/var/robotic/yahboomcar_ws/install/MoveIt_demo:/var/robotic/yahboomcar_ws/install/yahboom_M3Pro_description:/var/robotic/yahboomcar_ws/install/pkg_topic:/var/robotic/yahboomcar_ws/install/pkg_service:/var/robotic/yahboomcar_ws/install/pkg_action:/var/robotic/yahboomcar_ws/install/pkg_helloworld_py:/var/robotic/yahboomcar_ws/install/arm_driver:/var/robotic/yahboomcar_ws/install/M3Pro_demo:/var/robotic/yahboomcar_ws/install/M3Pro_MoveIt_demo:/opt/ros/humble')]), 'shell': False}
+[4.072736] (pkg_interfaces) StdoutLine: {'line': b'-- Install configuration: ""\n'}
+[4.073270] (pkg_interfaces) StdoutLine: {'line': b'-- Installing: /var/robotic/yahboomcar_ws/install/pkg_interfaces/share/ament_index/resource_index/rosidl_interfaces/pkg_interfaces\n'}
+[4.073314] (pkg_interfaces) StdoutLine: {'line': b'-- Up-to-date: /var/robotic/yahboomcar_ws/install/pkg_interfaces/include/pkg_interfaces/pkg_interfaces\n'}
+[4.073346] (pkg_interfaces) StdoutLine: {'line': b'-- Installing: /var/robotic/yahboomcar_ws/install/pkg_interfaces/include/pkg_interfaces/pkg_interfaces/srv\n'}
+[4.073374] (pkg_interfaces) StdoutLine: {'line': b'-- Installing: /var/robotic/yahboomcar_ws/install/pkg_interfaces/include/pkg_interfaces/pkg_interfaces/srv/add.h\n'}
+[4.073404] (pkg_interfaces) StdoutLine: {'line': b'-- Installing: /var/robotic/yahboomcar_ws/install/pkg_interfaces/include/pkg_interfaces/pkg_interfaces/srv/detail\n'}
+[4.073432] (pkg_interfaces) StdoutLine: {'line': b'-- Installing: /var/robotic/yahboomcar_ws/install/pkg_interfaces/include/pkg_interfaces/pkg_interfaces/srv/detail/add__struct.h\n'}
+[4.073459] (pkg_interfaces) StdoutLine: {'line': b'-- Installing: /var/robotic/yahboomcar_ws/install/pkg_interfaces/include/pkg_interfaces/pkg_interfaces/srv/detail/add__functions.c\n'}
+[4.073487] (pkg_interfaces) StdoutLine: {'line': b'-- Installing: /var/robotic/yahboomcar_ws/install/pkg_interfaces/include/pkg_interfaces/pkg_interfaces/srv/detail/add__type_support.h\n'}
+[4.073514] (pkg_interfaces) StdoutLine: {'line': b'-- Installing: /var/robotic/yahboomcar_ws/install/pkg_interfaces/include/pkg_interfaces/pkg_interfaces/srv/detail/add__functions.h\n'}
+[4.074762] (pkg_interfaces) StdoutLine: {'line': b'-- Up-to-date: /var/robotic/yahboomcar_ws/install/pkg_interfaces/include/pkg_interfaces/pkg_interfaces/action\n'}
+[4.074838] (pkg_interfaces) StdoutLine: {'line': b'-- Up-to-date: /var/robotic/yahboomcar_ws/install/pkg_interfaces/include/pkg_interfaces/pkg_interfaces/action/detail\n'}
+[4.074900] (pkg_interfaces) StdoutLine: {'line': b'-- Installing: /var/robotic/yahboomcar_ws/install/pkg_interfaces/include/pkg_interfaces/pkg_interfaces/action/detail/progress__functions.c\n'}
+[4.074934] (pkg_interfaces) StdoutLine: {'line': b'-- Installing: /var/robotic/yahboomcar_ws/install/pkg_interfaces/include/pkg_interfaces/pkg_interfaces/action/detail/progress__type_support.h\n'}
+[4.074995] (pkg_interfaces) StdoutLine: {'line': b'-- Installing: /var/robotic/yahboomcar_ws/install/pkg_interfaces/include/pkg_interfaces/pkg_interfaces/action/detail/progress__functions.h\n'}
+[4.075024] (pkg_interfaces) StdoutLine: {'line': b'-- Installing: /var/robotic/yahboomcar_ws/install/pkg_interfaces/include/pkg_interfaces/pkg_interfaces/action/detail/progress__struct.h\n'}
+[4.075059] (pkg_interfaces) StdoutLine: {'line': b'-- Installing: /var/robotic/yahboomcar_ws/install/pkg_interfaces/include/pkg_interfaces/pkg_interfaces/action/progress.h\n'}
+[4.075090] (pkg_interfaces) StdoutLine: {'line': b'-- Up-to-date: /var/robotic/yahboomcar_ws/install/pkg_interfaces/include/pkg_interfaces/pkg_interfaces/msg\n'}
+[4.075152] (pkg_interfaces) StdoutLine: {'line': b'-- Installing: /var/robotic/yahboomcar_ws/install/pkg_interfaces/include/pkg_interfaces/pkg_interfaces/msg/person.h\n'}
+[4.075180] (pkg_interfaces) StdoutLine: {'line': b'-- Up-to-date: /var/robotic/yahboomcar_ws/install/pkg_interfaces/include/pkg_interfaces/pkg_interfaces/msg/rosidl_generator_c__visibility_control.h\n'}
+[4.075214] (pkg_interfaces) StdoutLine: {'line': b'-- Up-to-date: /var/robotic/yahboomcar_ws/install/pkg_interfaces/include/pkg_interfaces/pkg_interfaces/msg/detail\n'}
+[4.075244] (pkg_interfaces) StdoutLine: {'line': b'-- Installing: /var/robotic/yahboomcar_ws/install/pkg_interfaces/include/pkg_interfaces/pkg_interfaces/msg/detail/person__functions.c\n'}
+[4.075271] (pkg_interfaces) StdoutLine: {'line': b'-- Installing: /var/robotic/yahboomcar_ws/install/pkg_interfaces/include/pkg_interfaces/pkg_interfaces/msg/detail/person__type_support.h\n'}
+[4.075298] (pkg_interfaces) StdoutLine: {'line': b'-- Installing: /var/robotic/yahboomcar_ws/install/pkg_interfaces/include/pkg_interfaces/pkg_interfaces/msg/detail/person__struct.h\n'}
+[4.077805] (pkg_interfaces) StdoutLine: {'line': b'-- Installing: /var/robotic/yahboomcar_ws/install/pkg_interfaces/include/pkg_interfaces/pkg_interfaces/msg/detail/person__functions.h\n'}
+[4.077844] (pkg_interfaces) StdoutLine: {'line': b'-- Up-to-date: /var/robotic/yahboomcar_ws/install/pkg_interfaces/share/pkg_interfaces/environment/library_path.sh\n'}
+[4.077872] (pkg_interfaces) StdoutLine: {'line': b'-- Installing: /var/robotic/yahboomcar_ws/install/pkg_interfaces/share/pkg_interfaces/environment/library_path.dsv\n'}
+[4.077899] (pkg_interfaces) StdoutLine: {'line': b'-- Installing: /var/robotic/yahboomcar_ws/install/pkg_interfaces/lib/libpkg_interfaces__rosidl_generator_c.so\n'}
+[4.077927] (pkg_interfaces) StdoutLine: {'line': b'-- Set runtime path of "/var/robotic/yahboomcar_ws/install/pkg_interfaces/lib/libpkg_interfaces__rosidl_generator_c.so" to ""\n'}
+[4.077954] (pkg_interfaces) StdoutLine: {'line': b'-- Up-to-date: /var/robotic/yahboomcar_ws/install/pkg_interfaces/include/pkg_interfaces/pkg_interfaces\n'}
+[4.077981] (pkg_interfaces) StdoutLine: {'line': b'-- Up-to-date: /var/robotic/yahboomcar_ws/install/pkg_interfaces/include/pkg_interfaces/pkg_interfaces/srv\n'}
+[4.078008] (pkg_interfaces) StdoutLine: {'line': b'-- Up-to-date: /var/robotic/yahboomcar_ws/install/pkg_interfaces/include/pkg_interfaces/pkg_interfaces/srv/detail\n'}
+[4.078089] (pkg_interfaces) StdoutLine: {'line': b'-- Installing: /var/robotic/yahboomcar_ws/install/pkg_interfaces/include/pkg_interfaces/pkg_interfaces/srv/detail/add__rosidl_typesupport_fastrtps_c.h\n'}
+[4.078133] (pkg_interfaces) StdoutLine: {'line': b'-- Up-to-date: /var/robotic/yahboomcar_ws/install/pkg_interfaces/include/pkg_interfaces/pkg_interfaces/action\n'}
+[4.078163] (pkg_interfaces) StdoutLine: {'line': b'-- Up-to-date: /var/robotic/yahboomcar_ws/install/pkg_interfaces/include/pkg_interfaces/pkg_interfaces/action/detail\n'}
+[4.078191] (pkg_interfaces) StdoutLine: {'line': b'-- Installing: /var/robotic/yahboomcar_ws/install/pkg_interfaces/include/pkg_interfaces/pkg_interfaces/action/detail/progress__rosidl_typesupport_fastrtps_c.h\n'}
+[4.078249] (pkg_interfaces) StdoutLine: {'line': b'-- Up-to-date: /var/robotic/yahboomcar_ws/install/pkg_interfaces/include/pkg_interfaces/pkg_interfaces/msg\n'}
+[4.078281] (pkg_interfaces) StdoutLine: {'line': b'-- Up-to-date: /var/robotic/yahboomcar_ws/install/pkg_interfaces/include/pkg_interfaces/pkg_interfaces/msg/detail\n'}
+[4.078430] (pkg_interfaces) StdoutLine: {'line': b'-- Installing: /var/robotic/yahboomcar_ws/install/pkg_interfaces/include/pkg_interfaces/pkg_interfaces/msg/detail/person__rosidl_typesupport_fastrtps_c.h\n'}
+[4.078471] (pkg_interfaces) StdoutLine: {'line': b'-- Up-to-date: /var/robotic/yahboomcar_ws/install/pkg_interfaces/include/pkg_interfaces/pkg_interfaces/msg/rosidl_typesupport_fastrtps_c__visibility_control.h\n'}
+[4.078499] (pkg_interfaces) StdoutLine: {'line': b'-- Installing: /var/robotic/yahboomcar_ws/install/pkg_interfaces/lib/libpkg_interfaces__rosidl_typesupport_fastrtps_c.so\n'}
+[4.078527] (pkg_interfaces) StdoutLine: {'line': b'-- Set runtime path of "/var/robotic/yahboomcar_ws/install/pkg_interfaces/lib/libpkg_interfaces__rosidl_typesupport_fastrtps_c.so" to ""\n'}
+[4.078554] (pkg_interfaces) StdoutLine: {'line': b'-- Up-to-date: /var/robotic/yahboomcar_ws/install/pkg_interfaces/include/pkg_interfaces/pkg_interfaces\n'}
+[4.078580] (pkg_interfaces) StdoutLine: {'line': b'-- Up-to-date: /var/robotic/yahboomcar_ws/install/pkg_interfaces/include/pkg_interfaces/pkg_interfaces/srv\n'}
+[4.078611] (pkg_interfaces) StdoutLine: {'line': b'-- Up-to-date: /var/robotic/yahboomcar_ws/install/pkg_interfaces/include/pkg_interfaces/pkg_interfaces/srv/detail\n'}
+[4.078638] (pkg_interfaces) StdoutLine: {'line': b'-- Installing: /var/robotic/yahboomcar_ws/install/pkg_interfaces/include/pkg_interfaces/pkg_interfaces/srv/detail/add__type_support.c\n'}
+[4.078664] (pkg_interfaces) StdoutLine: {'line': b'-- Installing: /var/robotic/yahboomcar_ws/install/pkg_interfaces/include/pkg_interfaces/pkg_interfaces/srv/detail/add__rosidl_typesupport_introspection_c.h\n'}
+[4.078690] (pkg_interfaces) StdoutLine: {'line': b'-- Up-to-date: /var/robotic/yahboomcar_ws/install/pkg_interfaces/include/pkg_interfaces/pkg_interfaces/action\n'}
+[4.078716] (pkg_interfaces) StdoutLine: {'line': b'-- Up-to-date: /var/robotic/yahboomcar_ws/install/pkg_interfaces/include/pkg_interfaces/pkg_interfaces/action/detail\n'}
+[4.078871] (pkg_interfaces) StdoutLine: {'line': b'-- Installing: /var/robotic/yahboomcar_ws/install/pkg_interfaces/include/pkg_interfaces/pkg_interfaces/action/detail/progress__type_support.c\n'}
+[4.078905] (pkg_interfaces) StdoutLine: {'line': b'-- Installing: /var/robotic/yahboomcar_ws/install/pkg_interfaces/include/pkg_interfaces/pkg_interfaces/action/detail/progress__rosidl_typesupport_introspection_c.h\n'}
+[4.078934] (pkg_interfaces) StdoutLine: {'line': b'-- Up-to-date: /var/robotic/yahboomcar_ws/install/pkg_interfaces/include/pkg_interfaces/pkg_interfaces/msg\n'}
+[4.078961] (pkg_interfaces) StdoutLine: {'line': b'-- Up-to-date: /var/robotic/yahboomcar_ws/install/pkg_interfaces/include/pkg_interfaces/pkg_interfaces/msg/detail\n'}
+[4.078990] (pkg_interfaces) StdoutLine: {'line': b'-- Installing: /var/robotic/yahboomcar_ws/install/pkg_interfaces/include/pkg_interfaces/pkg_interfaces/msg/detail/person__rosidl_typesupport_introspection_c.h\n'}
+[4.079018] (pkg_interfaces) StdoutLine: {'line': b'-- Installing: /var/robotic/yahboomcar_ws/install/pkg_interfaces/include/pkg_interfaces/pkg_interfaces/msg/detail/person__type_support.c\n'}
+[4.079046] (pkg_interfaces) StdoutLine: {'line': b'-- Up-to-date: /var/robotic/yahboomcar_ws/install/pkg_interfaces/include/pkg_interfaces/pkg_interfaces/msg/rosidl_typesupport_introspection_c__visibility_control.h\n'}
+[4.079076] (pkg_interfaces) StdoutLine: {'line': b'-- Installing: /var/robotic/yahboomcar_ws/install/pkg_interfaces/lib/libpkg_interfaces__rosidl_typesupport_introspection_c.so\n'}
+[4.079103] (pkg_interfaces) StdoutLine: {'line': b'-- Set runtime path of "/var/robotic/yahboomcar_ws/install/pkg_interfaces/lib/libpkg_interfaces__rosidl_typesupport_introspection_c.so" to ""\n'}
+[4.079130] (pkg_interfaces) StdoutLine: {'line': b'-- Installing: /var/robotic/yahboomcar_ws/install/pkg_interfaces/lib/libpkg_interfaces__rosidl_typesupport_c.so\n'}
+[4.079156] (pkg_interfaces) StdoutLine: {'line': b'-- Set runtime path of "/var/robotic/yahboomcar_ws/install/pkg_interfaces/lib/libpkg_interfaces__rosidl_typesupport_c.so" to ""\n'}
+[4.079183] (pkg_interfaces) StdoutLine: {'line': b'-- Up-to-date: /var/robotic/yahboomcar_ws/install/pkg_interfaces/include/pkg_interfaces/pkg_interfaces\n'}
+[4.079210] (pkg_interfaces) StdoutLine: {'line': b'-- Up-to-date: /var/robotic/yahboomcar_ws/install/pkg_interfaces/include/pkg_interfaces/pkg_interfaces/srv\n'}
+[4.079236] (pkg_interfaces) StdoutLine: {'line': b'-- Installing: /var/robotic/yahboomcar_ws/install/pkg_interfaces/include/pkg_interfaces/pkg_interfaces/srv/add.hpp\n'}
+[4.079263] (pkg_interfaces) StdoutLine: {'line': b'-- Up-to-date: /var/robotic/yahboomcar_ws/install/pkg_interfaces/include/pkg_interfaces/pkg_interfaces/srv/detail\n'}
+[4.079289] (pkg_interfaces) StdoutLine: {'line': b'-- Installing: /var/robotic/yahboomcar_ws/install/pkg_interfaces/include/pkg_interfaces/pkg_interfaces/srv/detail/add__type_support.hpp\n'}
+[4.079315] (pkg_interfaces) StdoutLine: {'line': b'-- Installing: /var/robotic/yahboomcar_ws/install/pkg_interfaces/include/pkg_interfaces/pkg_interfaces/srv/detail/add__builder.hpp\n'}
+[4.079343] (pkg_interfaces) StdoutLine: {'line': b'-- Installing: /var/robotic/yahboomcar_ws/install/pkg_interfaces/include/pkg_interfaces/pkg_interfaces/srv/detail/add__traits.hpp\n'}
+[4.079369] (pkg_interfaces) StdoutLine: {'line': b'-- Installing: /var/robotic/yahboomcar_ws/install/pkg_interfaces/include/pkg_interfaces/pkg_interfaces/srv/detail/add__struct.hpp\n'}
+[4.079396] (pkg_interfaces) StdoutLine: {'line': b'-- Up-to-date: /var/robotic/yahboomcar_ws/install/pkg_interfaces/include/pkg_interfaces/pkg_interfaces/action\n'}
+[4.079423] (pkg_interfaces) StdoutLine: {'line': b'-- Up-to-date: /var/robotic/yahboomcar_ws/install/pkg_interfaces/include/pkg_interfaces/pkg_interfaces/action/detail\n'}
+[4.079450] (pkg_interfaces) StdoutLine: {'line': b'-- Installing: /var/robotic/yahboomcar_ws/install/pkg_interfaces/include/pkg_interfaces/pkg_interfaces/action/detail/progress__traits.hpp\n'}
+[4.079476] (pkg_interfaces) StdoutLine: {'line': b'-- Installing: /var/robotic/yahboomcar_ws/install/pkg_interfaces/include/pkg_interfaces/pkg_interfaces/action/detail/progress__type_support.hpp\n'}
+[4.079503] (pkg_interfaces) StdoutLine: {'line': b'-- Installing: /var/robotic/yahboomcar_ws/install/pkg_interfaces/include/pkg_interfaces/pkg_interfaces/action/detail/progress__struct.hpp\n'}
+[4.079529] (pkg_interfaces) StdoutLine: {'line': b'-- Installing: /var/robotic/yahboomcar_ws/install/pkg_interfaces/include/pkg_interfaces/pkg_interfaces/action/detail/progress__builder.hpp\n'}
+[4.079556] (pkg_interfaces) StdoutLine: {'line': b'-- Installing: /var/robotic/yahboomcar_ws/install/pkg_interfaces/include/pkg_interfaces/pkg_interfaces/action/progress.hpp\n'}
+[4.079583] (pkg_interfaces) StdoutLine: {'line': b'-- Up-to-date: /var/robotic/yahboomcar_ws/install/pkg_interfaces/include/pkg_interfaces/pkg_interfaces/msg\n'}
+[4.079610] (pkg_interfaces) StdoutLine: {'line': b'-- Installing: /var/robotic/yahboomcar_ws/install/pkg_interfaces/include/pkg_interfaces/pkg_interfaces/msg/person.hpp\n'}
+[4.079637] (pkg_interfaces) StdoutLine: {'line': b'-- Up-to-date: /var/robotic/yahboomcar_ws/install/pkg_interfaces/include/pkg_interfaces/pkg_interfaces/msg/detail\n'}
+[4.079664] (pkg_interfaces) StdoutLine: {'line': b'-- Installing: /var/robotic/yahboomcar_ws/install/pkg_interfaces/include/pkg_interfaces/pkg_interfaces/msg/detail/person__traits.hpp\n'}
+[4.079690] (pkg_interfaces) StdoutLine: {'line': b'-- Installing: /var/robotic/yahboomcar_ws/install/pkg_interfaces/include/pkg_interfaces/pkg_interfaces/msg/detail/person__builder.hpp\n'}
+[4.079716] (pkg_interfaces) StdoutLine: {'line': b'-- Installing: /var/robotic/yahboomcar_ws/install/pkg_interfaces/include/pkg_interfaces/pkg_interfaces/msg/detail/person__struct.hpp\n'}
+[4.081826] (pkg_interfaces) StdoutLine: {'line': b'-- Installing: /var/robotic/yahboomcar_ws/install/pkg_interfaces/include/pkg_interfaces/pkg_interfaces/msg/detail/person__type_support.hpp\n'}
+[4.081859] (pkg_interfaces) StdoutLine: {'line': b'-- Up-to-date: /var/robotic/yahboomcar_ws/install/pkg_interfaces/include/pkg_interfaces/pkg_interfaces/msg/rosidl_generator_cpp__visibility_control.hpp\n'}
+[4.081902] (pkg_interfaces) StdoutLine: {'line': b'-- Up-to-date: /var/robotic/yahboomcar_ws/install/pkg_interfaces/include/pkg_interfaces/pkg_interfaces\n'}
+[4.081930] (pkg_interfaces) StdoutLine: {'line': b'-- Up-to-date: /var/robotic/yahboomcar_ws/install/pkg_interfaces/include/pkg_interfaces/pkg_interfaces/srv\n'}
+[4.081958] (pkg_interfaces) StdoutLine: {'line': b'-- Up-to-date: /var/robotic/yahboomcar_ws/install/pkg_interfaces/include/pkg_interfaces/pkg_interfaces/srv/detail\n'}
+[4.081988] (pkg_interfaces) StdoutLine: {'line': b'-- Installing: /var/robotic/yahboomcar_ws/install/pkg_interfaces/include/pkg_interfaces/pkg_interfaces/srv/detail/add__rosidl_typesupport_fastrtps_cpp.hpp\n'}
+[4.082016] (pkg_interfaces) StdoutLine: {'line': b'-- Installing: /var/robotic/yahboomcar_ws/install/pkg_interfaces/include/pkg_interfaces/pkg_interfaces/srv/detail/dds_fastrtps\n'}
+[4.082058] (pkg_interfaces) StdoutLine: {'line': b'-- Up-to-date: /var/robotic/yahboomcar_ws/install/pkg_interfaces/include/pkg_interfaces/pkg_interfaces/action\n'}
+[4.082090] (pkg_interfaces) StdoutLine: {'line': b'-- Up-to-date: /var/robotic/yahboomcar_ws/install/pkg_interfaces/include/pkg_interfaces/pkg_interfaces/action/detail\n'}
+[4.082118] (pkg_interfaces) StdoutLine: {'line': b'-- Installing: /var/robotic/yahboomcar_ws/install/pkg_interfaces/include/pkg_interfaces/pkg_interfaces/action/detail/progress__rosidl_typesupport_fastrtps_cpp.hpp\n'}
+[4.082147] (pkg_interfaces) StdoutLine: {'line': b'-- Up-to-date: /var/robotic/yahboomcar_ws/install/pkg_interfaces/include/pkg_interfaces/pkg_interfaces/action/detail/dds_fastrtps\n'}
+[4.082174] (pkg_interfaces) StdoutLine: {'line': b'-- Up-to-date: /var/robotic/yahboomcar_ws/install/pkg_interfaces/include/pkg_interfaces/pkg_interfaces/msg\n'}
+[4.082201] (pkg_interfaces) StdoutLine: {'line': b'-- Up-to-date: /var/robotic/yahboomcar_ws/install/pkg_interfaces/include/pkg_interfaces/pkg_interfaces/msg/detail\n'}
+[4.082228] (pkg_interfaces) StdoutLine: {'line': b'-- Up-to-date: /var/robotic/yahboomcar_ws/install/pkg_interfaces/include/pkg_interfaces/pkg_interfaces/msg/detail/dds_fastrtps\n'}
+[4.082255] (pkg_interfaces) StdoutLine: {'line': b'-- Installing: /var/robotic/yahboomcar_ws/install/pkg_interfaces/include/pkg_interfaces/pkg_interfaces/msg/detail/person__rosidl_typesupport_fastrtps_cpp.hpp\n'}
+[4.082282] (pkg_interfaces) StdoutLine: {'line': b'-- Up-to-date: /var/robotic/yahboomcar_ws/install/pkg_interfaces/include/pkg_interfaces/pkg_interfaces/msg/rosidl_typesupport_fastrtps_cpp__visibility_control.h\n'}
+[4.082309] (pkg_interfaces) StdoutLine: {'line': b'-- Installing: /var/robotic/yahboomcar_ws/install/pkg_interfaces/lib/libpkg_interfaces__rosidl_typesupport_fastrtps_cpp.so\n'}
+[4.082336] (pkg_interfaces) StdoutLine: {'line': b'-- Set runtime path of "/var/robotic/yahboomcar_ws/install/pkg_interfaces/lib/libpkg_interfaces__rosidl_typesupport_fastrtps_cpp.so" to ""\n'}
+[4.082362] (pkg_interfaces) StdoutLine: {'line': b'-- Up-to-date: /var/robotic/yahboomcar_ws/install/pkg_interfaces/include/pkg_interfaces/pkg_interfaces\n'}
+[4.082389] (pkg_interfaces) StdoutLine: {'line': b'-- Up-to-date: /var/robotic/yahboomcar_ws/install/pkg_interfaces/include/pkg_interfaces/pkg_interfaces/srv\n'}
+[4.082415] (pkg_interfaces) StdoutLine: {'line': b'-- Up-to-date: /var/robotic/yahboomcar_ws/install/pkg_interfaces/include/pkg_interfaces/pkg_interfaces/srv/detail\n'}
+[4.082442] (pkg_interfaces) StdoutLine: {'line': b'-- Installing: /var/robotic/yahboomcar_ws/install/pkg_interfaces/include/pkg_interfaces/pkg_interfaces/srv/detail/add__rosidl_typesupport_introspection_cpp.hpp\n'}
+[4.082470] (pkg_interfaces) StdoutLine: {'line': b'-- Installing: /var/robotic/yahboomcar_ws/install/pkg_interfaces/include/pkg_interfaces/pkg_interfaces/srv/detail/add__type_support.cpp\n'}
+[4.082496] (pkg_interfaces) StdoutLine: {'line': b'-- Up-to-date: /var/robotic/yahboomcar_ws/install/pkg_interfaces/include/pkg_interfaces/pkg_interfaces/action\n'}
+[4.082522] (pkg_interfaces) StdoutLine: {'line': b'-- Up-to-date: /var/robotic/yahboomcar_ws/install/pkg_interfaces/include/pkg_interfaces/pkg_interfaces/action/detail\n'}
+[4.082549] (pkg_interfaces) StdoutLine: {'line': b'-- Installing: /var/robotic/yahboomcar_ws/install/pkg_interfaces/include/pkg_interfaces/pkg_interfaces/action/detail/progress__type_support.cpp\n'}
+[4.082575] (pkg_interfaces) StdoutLine: {'line': b'-- Installing: /var/robotic/yahboomcar_ws/install/pkg_interfaces/include/pkg_interfaces/pkg_interfaces/action/detail/progress__rosidl_typesupport_introspection_cpp.hpp\n'}
+[4.082601] (pkg_interfaces) StdoutLine: {'line': b'-- Up-to-date: /var/robotic/yahboomcar_ws/install/pkg_interfaces/include/pkg_interfaces/pkg_interfaces/msg\n'}
+[4.082627] (pkg_interfaces) StdoutLine: {'line': b'-- Up-to-date: /var/robotic/yahboomcar_ws/install/pkg_interfaces/include/pkg_interfaces/pkg_interfaces/msg/detail\n'}
+[4.082654] (pkg_interfaces) StdoutLine: {'line': b'-- Installing: /var/robotic/yahboomcar_ws/install/pkg_interfaces/include/pkg_interfaces/pkg_interfaces/msg/detail/person__type_support.cpp\n'}
+[4.082682] (pkg_interfaces) StdoutLine: {'line': b'-- Installing: /var/robotic/yahboomcar_ws/install/pkg_interfaces/include/pkg_interfaces/pkg_interfaces/msg/detail/person__rosidl_typesupport_introspection_cpp.hpp\n'}
+[4.082709] (pkg_interfaces) StdoutLine: {'line': b'-- Installing: /var/robotic/yahboomcar_ws/install/pkg_interfaces/lib/libpkg_interfaces__rosidl_typesupport_introspection_cpp.so\n'}
+[4.084427] (pkg_interfaces) StdoutLine: {'line': b'-- Set runtime path of "/var/robotic/yahboomcar_ws/install/pkg_interfaces/lib/libpkg_interfaces__rosidl_typesupport_introspection_cpp.so" to ""\n'}
+[4.084463] (pkg_interfaces) StdoutLine: {'line': b'-- Installing: /var/robotic/yahboomcar_ws/install/pkg_interfaces/lib/libpkg_interfaces__rosidl_typesupport_cpp.so\n'}
+[4.084493] (pkg_interfaces) StdoutLine: {'line': b'-- Set runtime path of "/var/robotic/yahboomcar_ws/install/pkg_interfaces/lib/libpkg_interfaces__rosidl_typesupport_cpp.so" to ""\n'}
+[4.084521] (pkg_interfaces) StdoutLine: {'line': b'-- Up-to-date: /var/robotic/yahboomcar_ws/install/pkg_interfaces/share/pkg_interfaces/environment/pythonpath.sh\n'}
+[4.084547] (pkg_interfaces) StdoutLine: {'line': b'-- Installing: /var/robotic/yahboomcar_ws/install/pkg_interfaces/share/pkg_interfaces/environment/pythonpath.dsv\n'}
+[4.084575] (pkg_interfaces) StdoutLine: {'line': b'-- Up-to-date: /var/robotic/yahboomcar_ws/install/pkg_interfaces/local/lib/python3.10/dist-packages/pkg_interfaces-0.0.0-py3.10.egg-info\n'}
+[4.084604] (pkg_interfaces) StdoutLine: {'line': b'-- Installing: /var/robotic/yahboomcar_ws/install/pkg_interfaces/local/lib/python3.10/dist-packages/pkg_interfaces-0.0.0-py3.10.egg-info/SOURCES.txt\n'}
+[4.084631] (pkg_interfaces) StdoutLine: {'line': b'-- Installing: /var/robotic/yahboomcar_ws/install/pkg_interfaces/local/lib/python3.10/dist-packages/pkg_interfaces-0.0.0-py3.10.egg-info/top_level.txt\n'}
+[4.084658] (pkg_interfaces) StdoutLine: {'line': b'-- Installing: /var/robotic/yahboomcar_ws/install/pkg_interfaces/local/lib/python3.10/dist-packages/pkg_interfaces-0.0.0-py3.10.egg-info/PKG-INFO\n'}
+[4.084685] (pkg_interfaces) StdoutLine: {'line': b'-- Installing: /var/robotic/yahboomcar_ws/install/pkg_interfaces/local/lib/python3.10/dist-packages/pkg_interfaces-0.0.0-py3.10.egg-info/dependency_links.txt\n'}
+[4.084712] (pkg_interfaces) StdoutLine: {'line': b'-- Up-to-date: /var/robotic/yahboomcar_ws/install/pkg_interfaces/local/lib/python3.10/dist-packages/pkg_interfaces\n'}
+[4.084746] (pkg_interfaces) StdoutLine: {'line': b'-- Installing: /var/robotic/yahboomcar_ws/install/pkg_interfaces/local/lib/python3.10/dist-packages/pkg_interfaces/srv\n'}
+[4.084774] (pkg_interfaces) StdoutLine: {'line': b'-- Installing: /var/robotic/yahboomcar_ws/install/pkg_interfaces/local/lib/python3.10/dist-packages/pkg_interfaces/srv/_add.py\n'}
+[4.084800] (pkg_interfaces) StdoutLine: {'line': b'-- Installing: /var/robotic/yahboomcar_ws/install/pkg_interfaces/local/lib/python3.10/dist-packages/pkg_interfaces/srv/_add_s.c\n'}
+[4.084827] (pkg_interfaces) StdoutLine: {'line': b'-- Installing: /var/robotic/yahboomcar_ws/install/pkg_interfaces/local/lib/python3.10/dist-packages/pkg_interfaces/srv/__init__.py\n'}
+[4.084854] (pkg_interfaces) StdoutLine: {'line': b'-- Installing: /var/robotic/yahboomcar_ws/install/pkg_interfaces/local/lib/python3.10/dist-packages/pkg_interfaces/pkg_interfaces_s__rosidl_typesupport_c.cpython-310-x86_64-linux-gnu.so\n'}
+[4.084881] (pkg_interfaces) StdoutLine: {'line': b'-- Up-to-date: /var/robotic/yahboomcar_ws/install/pkg_interfaces/local/lib/python3.10/dist-packages/pkg_interfaces/action\n'}
+[4.084907] (pkg_interfaces) StdoutLine: {'line': b'-- Installing: /var/robotic/yahboomcar_ws/install/pkg_interfaces/local/lib/python3.10/dist-packages/pkg_interfaces/action/_progress.py\n'}
+[4.084934] (pkg_interfaces) StdoutLine: {'line': b'-- Installing: /var/robotic/yahboomcar_ws/install/pkg_interfaces/local/lib/python3.10/dist-packages/pkg_interfaces/action/_progress_s.c\n'}
+[4.084961] (pkg_interfaces) StdoutLine: {'line': b'-- Installing: /var/robotic/yahboomcar_ws/install/pkg_interfaces/local/lib/python3.10/dist-packages/pkg_interfaces/action/__init__.py\n'}
+[4.084990] (pkg_interfaces) StdoutLine: {'line': b'-- Installing: /var/robotic/yahboomcar_ws/install/pkg_interfaces/local/lib/python3.10/dist-packages/pkg_interfaces/pkg_interfaces_s__rosidl_typesupport_introspection_c.cpython-310-x86_64-linux-gnu.so\n'}
+[4.085016] (pkg_interfaces) StdoutLine: {'line': b'-- Installing: /var/robotic/yahboomcar_ws/install/pkg_interfaces/local/lib/python3.10/dist-packages/pkg_interfaces/_pkg_interfaces_s.ep.rosidl_typesupport_introspection_c.c\n'}
+[4.085044] (pkg_interfaces) StdoutLine: {'line': b'-- Installing: /var/robotic/yahboomcar_ws/install/pkg_interfaces/local/lib/python3.10/dist-packages/pkg_interfaces/_pkg_interfaces_s.ep.rosidl_typesupport_c.c\n'}
+[4.085071] (pkg_interfaces) StdoutLine: {'line': b'-- Installing: /var/robotic/yahboomcar_ws/install/pkg_interfaces/local/lib/python3.10/dist-packages/pkg_interfaces/libpkg_interfaces__rosidl_generator_py.so\n'}
+[4.085097] (pkg_interfaces) StdoutLine: {'line': b'-- Installing: /var/robotic/yahboomcar_ws/install/pkg_interfaces/local/lib/python3.10/dist-packages/pkg_interfaces/__init__.py\n'}
+[4.085123] (pkg_interfaces) StdoutLine: {'line': b'-- Installing: /var/robotic/yahboomcar_ws/install/pkg_interfaces/local/lib/python3.10/dist-packages/pkg_interfaces/_pkg_interfaces_s.ep.rosidl_typesupport_fastrtps_c.c\n'}
+[4.085149] (pkg_interfaces) StdoutLine: {'line': b'-- Installing: /var/robotic/yahboomcar_ws/install/pkg_interfaces/local/lib/python3.10/dist-packages/pkg_interfaces/pkg_interfaces_s__rosidl_typesupport_fastrtps_c.cpython-310-x86_64-linux-gnu.so\n'}
+[4.085175] (pkg_interfaces) StdoutLine: {'line': b'-- Up-to-date: /var/robotic/yahboomcar_ws/install/pkg_interfaces/local/lib/python3.10/dist-packages/pkg_interfaces/msg\n'}
+[4.085201] (pkg_interfaces) StdoutLine: {'line': b'-- Installing: /var/robotic/yahboomcar_ws/install/pkg_interfaces/local/lib/python3.10/dist-packages/pkg_interfaces/msg/_person.py\n'}
+[4.085233] (pkg_interfaces) StdoutLine: {'line': b'-- Installing: /var/robotic/yahboomcar_ws/install/pkg_interfaces/local/lib/python3.10/dist-packages/pkg_interfaces/msg/__init__.py\n'}
+[4.085259] (pkg_interfaces) StdoutLine: {'line': b'-- Installing: /var/robotic/yahboomcar_ws/install/pkg_interfaces/local/lib/python3.10/dist-packages/pkg_interfaces/msg/_person_s.c\n'}
+[4.113813] (pkg_interfaces) StdoutLine: {'line': b"Listing '/var/robotic/yahboomcar_ws/install/pkg_interfaces/local/lib/python3.10/dist-packages/pkg_interfaces'...\n"}
+[4.113922] (-) TimerEvent: {}
+[4.113996] (pkg_interfaces) StdoutLine: {'line': b"Compiling '/var/robotic/yahboomcar_ws/install/pkg_interfaces/local/lib/python3.10/dist-packages/pkg_interfaces/__init__.py'...\n"}
+[4.114098] (pkg_interfaces) StdoutLine: {'line': b"Listing '/var/robotic/yahboomcar_ws/install/pkg_interfaces/local/lib/python3.10/dist-packages/pkg_interfaces/action'...\n"}
+[4.114129] (pkg_interfaces) StdoutLine: {'line': b"Compiling '/var/robotic/yahboomcar_ws/install/pkg_interfaces/local/lib/python3.10/dist-packages/pkg_interfaces/action/__init__.py'...\n"}
+[4.114158] (pkg_interfaces) StdoutLine: {'line': b"Compiling '/var/robotic/yahboomcar_ws/install/pkg_interfaces/local/lib/python3.10/dist-packages/pkg_interfaces/action/_progress.py'...\n"}
+[4.114185] (pkg_interfaces) StdoutLine: {'line': b"Listing '/var/robotic/yahboomcar_ws/install/pkg_interfaces/local/lib/python3.10/dist-packages/pkg_interfaces/msg'...\n"}
+[4.114213] (pkg_interfaces) StdoutLine: {'line': b"Compiling '/var/robotic/yahboomcar_ws/install/pkg_interfaces/local/lib/python3.10/dist-packages/pkg_interfaces/msg/__init__.py'...\n"}
+[4.114240] (pkg_interfaces) StdoutLine: {'line': b"Compiling '/var/robotic/yahboomcar_ws/install/pkg_interfaces/local/lib/python3.10/dist-packages/pkg_interfaces/msg/_person.py'...\n"}
+[4.114276] (pkg_interfaces) StdoutLine: {'line': b"Listing '/var/robotic/yahboomcar_ws/install/pkg_interfaces/local/lib/python3.10/dist-packages/pkg_interfaces/srv'...\n"}
+[4.114311] (pkg_interfaces) StdoutLine: {'line': b"Compiling '/var/robotic/yahboomcar_ws/install/pkg_interfaces/local/lib/python3.10/dist-packages/pkg_interfaces/srv/__init__.py'...\n"}
+[4.114338] (pkg_interfaces) StdoutLine: {'line': b"Compiling '/var/robotic/yahboomcar_ws/install/pkg_interfaces/local/lib/python3.10/dist-packages/pkg_interfaces/srv/_add.py'...\n"}
+[4.114364] (pkg_interfaces) StdoutLine: {'line': b'-- Installing: /var/robotic/yahboomcar_ws/install/pkg_interfaces/local/lib/python3.10/dist-packages/pkg_interfaces/pkg_interfaces_s__rosidl_typesupport_fastrtps_c.cpython-310-x86_64-linux-gnu.so\n'}
+[4.114406] (pkg_interfaces) StdoutLine: {'line': b'-- Set runtime path of "/var/robotic/yahboomcar_ws/install/pkg_interfaces/local/lib/python3.10/dist-packages/pkg_interfaces/pkg_interfaces_s__rosidl_typesupport_fastrtps_c.cpython-310-x86_64-linux-gnu.so" to ""\n'}
+[4.114436] (pkg_interfaces) StdoutLine: {'line': b'-- Installing: /var/robotic/yahboomcar_ws/install/pkg_interfaces/local/lib/python3.10/dist-packages/pkg_interfaces/pkg_interfaces_s__rosidl_typesupport_introspection_c.cpython-310-x86_64-linux-gnu.so\n'}
+[4.114463] (pkg_interfaces) StdoutLine: {'line': b'-- Set runtime path of "/var/robotic/yahboomcar_ws/install/pkg_interfaces/local/lib/python3.10/dist-packages/pkg_interfaces/pkg_interfaces_s__rosidl_typesupport_introspection_c.cpython-310-x86_64-linux-gnu.so" to ""\n'}
+[4.114490] (pkg_interfaces) StdoutLine: {'line': b'-- Installing: /var/robotic/yahboomcar_ws/install/pkg_interfaces/local/lib/python3.10/dist-packages/pkg_interfaces/pkg_interfaces_s__rosidl_typesupport_c.cpython-310-x86_64-linux-gnu.so\n'}
+[4.114518] (pkg_interfaces) StdoutLine: {'line': b'-- Set runtime path of "/var/robotic/yahboomcar_ws/install/pkg_interfaces/local/lib/python3.10/dist-packages/pkg_interfaces/pkg_interfaces_s__rosidl_typesupport_c.cpython-310-x86_64-linux-gnu.so" to ""\n'}
+[4.114544] (pkg_interfaces) StdoutLine: {'line': b'-- Installing: /var/robotic/yahboomcar_ws/install/pkg_interfaces/lib/libpkg_interfaces__rosidl_generator_py.so\n'}
+[4.114697] (pkg_interfaces) StdoutLine: {'line': b'-- Set runtime path of "/var/robotic/yahboomcar_ws/install/pkg_interfaces/lib/libpkg_interfaces__rosidl_generator_py.so" to ""\n'}
+[4.114748] (pkg_interfaces) StdoutLine: {'line': b'-- Up-to-date: /var/robotic/yahboomcar_ws/install/pkg_interfaces/share/pkg_interfaces/action/Progress.idl\n'}
+[4.114790] (pkg_interfaces) StdoutLine: {'line': b'-- Up-to-date: /var/robotic/yahboomcar_ws/install/pkg_interfaces/share/pkg_interfaces/msg/Person.idl\n'}
+[4.116828] (pkg_interfaces) StdoutLine: {'line': b'-- Installing: /var/robotic/yahboomcar_ws/install/pkg_interfaces/share/pkg_interfaces/srv/Add.idl\n'}
+[4.116867] (pkg_interfaces) StdoutLine: {'line': b'-- Up-to-date: /var/robotic/yahboomcar_ws/install/pkg_interfaces/share/pkg_interfaces/action/Progress.action\n'}
+[4.116896] (pkg_interfaces) StdoutLine: {'line': b'-- Up-to-date: /var/robotic/yahboomcar_ws/install/pkg_interfaces/share/pkg_interfaces/msg/Person.msg\n'}
+[4.116925] (pkg_interfaces) StdoutLine: {'line': b'-- Installing: /var/robotic/yahboomcar_ws/install/pkg_interfaces/share/pkg_interfaces/srv/Add.srv\n'}
+[4.116953] (pkg_interfaces) StdoutLine: {'line': b'-- Installing: /var/robotic/yahboomcar_ws/install/pkg_interfaces/share/pkg_interfaces/srv/Add_Request.msg\n'}
+[4.116980] (pkg_interfaces) StdoutLine: {'line': b'-- Installing: /var/robotic/yahboomcar_ws/install/pkg_interfaces/share/pkg_interfaces/srv/Add_Response.msg\n'}
+[4.117011] (pkg_interfaces) StdoutLine: {'line': b'-- Up-to-date: /var/robotic/yahboomcar_ws/install/pkg_interfaces/share/ament_index/resource_index/package_run_dependencies/pkg_interfaces\n'}
+[4.117045] (pkg_interfaces) StdoutLine: {'line': b'-- Up-to-date: /var/robotic/yahboomcar_ws/install/pkg_interfaces/share/ament_index/resource_index/parent_prefix_path/pkg_interfaces\n'}
+[4.117073] (pkg_interfaces) StdoutLine: {'line': b'-- Up-to-date: /var/robotic/yahboomcar_ws/install/pkg_interfaces/share/pkg_interfaces/environment/ament_prefix_path.sh\n'}
+[4.117100] (pkg_interfaces) StdoutLine: {'line': b'-- Installing: /var/robotic/yahboomcar_ws/install/pkg_interfaces/share/pkg_interfaces/environment/ament_prefix_path.dsv\n'}
+[4.117128] (pkg_interfaces) StdoutLine: {'line': b'-- Up-to-date: /var/robotic/yahboomcar_ws/install/pkg_interfaces/share/pkg_interfaces/environment/path.sh\n'}
+[4.117155] (pkg_interfaces) StdoutLine: {'line': b'-- Installing: /var/robotic/yahboomcar_ws/install/pkg_interfaces/share/pkg_interfaces/environment/path.dsv\n'}
+[4.117181] (pkg_interfaces) StdoutLine: {'line': b'-- Up-to-date: /var/robotic/yahboomcar_ws/install/pkg_interfaces/share/pkg_interfaces/local_setup.bash\n'}
+[4.117207] (pkg_interfaces) StdoutLine: {'line': b'-- Up-to-date: /var/robotic/yahboomcar_ws/install/pkg_interfaces/share/pkg_interfaces/local_setup.sh\n'}
+[4.117233] (pkg_interfaces) StdoutLine: {'line': b'-- Up-to-date: /var/robotic/yahboomcar_ws/install/pkg_interfaces/share/pkg_interfaces/local_setup.zsh\n'}
+[4.117259] (pkg_interfaces) StdoutLine: {'line': b'-- Installing: /var/robotic/yahboomcar_ws/install/pkg_interfaces/share/pkg_interfaces/local_setup.dsv\n'}
+[4.117286] (pkg_interfaces) StdoutLine: {'line': b'-- Installing: /var/robotic/yahboomcar_ws/install/pkg_interfaces/share/pkg_interfaces/package.dsv\n'}
+[4.117312] (pkg_interfaces) StdoutLine: {'line': b'-- Up-to-date: /var/robotic/yahboomcar_ws/install/pkg_interfaces/share/ament_index/resource_index/packages/pkg_interfaces\n'}
+[4.117368] (pkg_interfaces) StdoutLine: {'line': b'-- Up-to-date: /var/robotic/yahboomcar_ws/install/pkg_interfaces/share/pkg_interfaces/cmake/export_pkg_interfaces__rosidl_generator_cExport.cmake\n'}
+[4.117443] (pkg_interfaces) StdoutLine: {'line': b'-- Up-to-date: /var/robotic/yahboomcar_ws/install/pkg_interfaces/share/pkg_interfaces/cmake/export_pkg_interfaces__rosidl_generator_cExport-noconfig.cmake\n'}
+[4.117471] (pkg_interfaces) StdoutLine: {'line': b'-- Up-to-date: /var/robotic/yahboomcar_ws/install/pkg_interfaces/share/pkg_interfaces/cmake/export_pkg_interfaces__rosidl_typesupport_fastrtps_cExport.cmake\n'}
+[4.117499] (pkg_interfaces) StdoutLine: {'line': b'-- Up-to-date: /var/robotic/yahboomcar_ws/install/pkg_interfaces/share/pkg_interfaces/cmake/export_pkg_interfaces__rosidl_typesupport_fastrtps_cExport-noconfig.cmake\n'}
+[4.117525] (pkg_interfaces) StdoutLine: {'line': b'-- Up-to-date: /var/robotic/yahboomcar_ws/install/pkg_interfaces/share/pkg_interfaces/cmake/pkg_interfaces__rosidl_typesupport_introspection_cExport.cmake\n'}
+[4.117552] (pkg_interfaces) StdoutLine: {'line': b'-- Up-to-date: /var/robotic/yahboomcar_ws/install/pkg_interfaces/share/pkg_interfaces/cmake/pkg_interfaces__rosidl_typesupport_introspection_cExport-noconfig.cmake\n'}
+[4.117608] (pkg_interfaces) StdoutLine: {'line': b'-- Up-to-date: /var/robotic/yahboomcar_ws/install/pkg_interfaces/share/pkg_interfaces/cmake/pkg_interfaces__rosidl_typesupport_cExport.cmake\n'}
+[4.117637] (pkg_interfaces) StdoutLine: {'line': b'-- Up-to-date: /var/robotic/yahboomcar_ws/install/pkg_interfaces/share/pkg_interfaces/cmake/pkg_interfaces__rosidl_typesupport_cExport-noconfig.cmake\n'}
+[4.117710] (pkg_interfaces) StdoutLine: {'line': b'-- Up-to-date: /var/robotic/yahboomcar_ws/install/pkg_interfaces/share/pkg_interfaces/cmake/export_pkg_interfaces__rosidl_generator_cppExport.cmake\n'}
+[4.117809] (pkg_interfaces) StdoutLine: {'line': b'-- Up-to-date: /var/robotic/yahboomcar_ws/install/pkg_interfaces/share/pkg_interfaces/cmake/export_pkg_interfaces__rosidl_typesupport_fastrtps_cppExport.cmake\n'}
+[4.117843] (pkg_interfaces) StdoutLine: {'line': b'-- Up-to-date: /var/robotic/yahboomcar_ws/install/pkg_interfaces/share/pkg_interfaces/cmake/export_pkg_interfaces__rosidl_typesupport_fastrtps_cppExport-noconfig.cmake\n'}
+[4.117872] (pkg_interfaces) StdoutLine: {'line': b'-- Up-to-date: /var/robotic/yahboomcar_ws/install/pkg_interfaces/share/pkg_interfaces/cmake/pkg_interfaces__rosidl_typesupport_introspection_cppExport.cmake\n'}
+[4.117899] (pkg_interfaces) StdoutLine: {'line': b'-- Up-to-date: /var/robotic/yahboomcar_ws/install/pkg_interfaces/share/pkg_interfaces/cmake/pkg_interfaces__rosidl_typesupport_introspection_cppExport-noconfig.cmake\n'}
+[4.117932] (pkg_interfaces) StdoutLine: {'line': b'-- Up-to-date: /var/robotic/yahboomcar_ws/install/pkg_interfaces/share/pkg_interfaces/cmake/pkg_interfaces__rosidl_typesupport_cppExport.cmake\n'}
+[4.117961] (pkg_interfaces) StdoutLine: {'line': b'-- Up-to-date: /var/robotic/yahboomcar_ws/install/pkg_interfaces/share/pkg_interfaces/cmake/pkg_interfaces__rosidl_typesupport_cppExport-noconfig.cmake\n'}
+[4.117989] (pkg_interfaces) StdoutLine: {'line': b'-- Up-to-date: /var/robotic/yahboomcar_ws/install/pkg_interfaces/share/pkg_interfaces/cmake/export_pkg_interfaces__rosidl_generator_pyExport.cmake\n'}
+[4.118019] (pkg_interfaces) StdoutLine: {'line': b'-- Up-to-date: /var/robotic/yahboomcar_ws/install/pkg_interfaces/share/pkg_interfaces/cmake/export_pkg_interfaces__rosidl_generator_pyExport-noconfig.cmake\n'}
+[4.118047] (pkg_interfaces) StdoutLine: {'line': b'-- Installing: /var/robotic/yahboomcar_ws/install/pkg_interfaces/share/pkg_interfaces/cmake/rosidl_cmake-extras.cmake\n'}
+[4.118073] (pkg_interfaces) StdoutLine: {'line': b'-- Up-to-date: /var/robotic/yahboomcar_ws/install/pkg_interfaces/share/pkg_interfaces/cmake/ament_cmake_export_dependencies-extras.cmake\n'}
+[4.118103] (pkg_interfaces) StdoutLine: {'line': b'-- Up-to-date: /var/robotic/yahboomcar_ws/install/pkg_interfaces/share/pkg_interfaces/cmake/ament_cmake_export_include_directories-extras.cmake\n'}
+[4.118130] (pkg_interfaces) StdoutLine: {'line': b'-- Up-to-date: /var/robotic/yahboomcar_ws/install/pkg_interfaces/share/pkg_interfaces/cmake/ament_cmake_export_libraries-extras.cmake\n'}
+[4.118157] (pkg_interfaces) StdoutLine: {'line': b'-- Up-to-date: /var/robotic/yahboomcar_ws/install/pkg_interfaces/share/pkg_interfaces/cmake/ament_cmake_export_targets-extras.cmake\n'}
+[4.118183] (pkg_interfaces) StdoutLine: {'line': b'-- Up-to-date: /var/robotic/yahboomcar_ws/install/pkg_interfaces/share/pkg_interfaces/cmake/rosidl_cmake_export_typesupport_targets-extras.cmake\n'}
+[4.118210] (pkg_interfaces) StdoutLine: {'line': b'-- Up-to-date: /var/robotic/yahboomcar_ws/install/pkg_interfaces/share/pkg_interfaces/cmake/rosidl_cmake_export_typesupport_libraries-extras.cmake\n'}
+[4.118236] (pkg_interfaces) StdoutLine: {'line': b'-- Up-to-date: /var/robotic/yahboomcar_ws/install/pkg_interfaces/share/pkg_interfaces/cmake/pkg_interfacesConfig.cmake\n'}
+[4.118262] (pkg_interfaces) StdoutLine: {'line': b'-- Up-to-date: /var/robotic/yahboomcar_ws/install/pkg_interfaces/share/pkg_interfaces/cmake/pkg_interfacesConfig-version.cmake\n'}
+[4.118288] (pkg_interfaces) StdoutLine: {'line': b'-- Up-to-date: /var/robotic/yahboomcar_ws/install/pkg_interfaces/share/pkg_interfaces/package.xml\n'}
+[4.120822] (pkg_interfaces) CommandEnded: {'returncode': 0}
+[4.130950] (pkg_interfaces) JobEnded: {'identifier': 'pkg_interfaces', 'rc': 0}
+[4.131399] (-) EventReactorShutdown: {}

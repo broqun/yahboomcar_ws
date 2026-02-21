@@ -1,0 +1,44 @@
+[35m[1mConsolidate compiler generated dependencies of target set_target_joints[0m
+[35m[1mConsolidate compiler generated dependencies of target set_target_position[0m
+[ 14%] Built target set_target_position
+[ 28%] Built target set_target_joints
+[35m[1mConsolidate compiler generated dependencies of target random_move[0m
+[35m[1mConsolidate compiler generated dependencies of target cartesian_path[0m
+[ 42%] Built target random_move
+[35m[1mConsolidate compiler generated dependencies of target multi_track_motion[0m
+[ 57%] Built target multi_track_motion
+[ 71%] Built target cartesian_path
+[35m[1mConsolidate compiler generated dependencies of target obstacle_avoidance[0m
+[35m[1mConsolidate compiler generated dependencies of target set_scene[0m
+[ 85%] Built target obstacle_avoidance
+[100%] Built target set_scene
+-- Install configuration: ""
+-- Installing: /var/robotic/yahboomcar_ws/install/MoveIt_demo/lib/MoveIt_demo/set_target_joints
+-- Set runtime path of "/var/robotic/yahboomcar_ws/install/MoveIt_demo/lib/MoveIt_demo/set_target_joints" to ""
+-- Installing: /var/robotic/yahboomcar_ws/install/MoveIt_demo/lib/MoveIt_demo/set_target_position
+-- Set runtime path of "/var/robotic/yahboomcar_ws/install/MoveIt_demo/lib/MoveIt_demo/set_target_position" to ""
+-- Installing: /var/robotic/yahboomcar_ws/install/MoveIt_demo/lib/MoveIt_demo/cartesian_path
+-- Set runtime path of "/var/robotic/yahboomcar_ws/install/MoveIt_demo/lib/MoveIt_demo/cartesian_path" to ""
+-- Installing: /var/robotic/yahboomcar_ws/install/MoveIt_demo/lib/MoveIt_demo/multi_track_motion
+-- Set runtime path of "/var/robotic/yahboomcar_ws/install/MoveIt_demo/lib/MoveIt_demo/multi_track_motion" to ""
+-- Installing: /var/robotic/yahboomcar_ws/install/MoveIt_demo/lib/MoveIt_demo/random_move
+-- Set runtime path of "/var/robotic/yahboomcar_ws/install/MoveIt_demo/lib/MoveIt_demo/random_move" to ""
+-- Installing: /var/robotic/yahboomcar_ws/install/MoveIt_demo/lib/MoveIt_demo/obstacle_avoidance
+-- Set runtime path of "/var/robotic/yahboomcar_ws/install/MoveIt_demo/lib/MoveIt_demo/obstacle_avoidance" to ""
+-- Installing: /var/robotic/yahboomcar_ws/install/MoveIt_demo/lib/MoveIt_demo/set_scene
+-- Set runtime path of "/var/robotic/yahboomcar_ws/install/MoveIt_demo/lib/MoveIt_demo/set_scene" to ""
+-- Installing: /var/robotic/yahboomcar_ws/install/MoveIt_demo/share/ament_index/resource_index/package_run_dependencies/MoveIt_demo
+-- Installing: /var/robotic/yahboomcar_ws/install/MoveIt_demo/share/ament_index/resource_index/parent_prefix_path/MoveIt_demo
+-- Installing: /var/robotic/yahboomcar_ws/install/MoveIt_demo/share/MoveIt_demo/environment/ament_prefix_path.sh
+-- Installing: /var/robotic/yahboomcar_ws/install/MoveIt_demo/share/MoveIt_demo/environment/ament_prefix_path.dsv
+-- Installing: /var/robotic/yahboomcar_ws/install/MoveIt_demo/share/MoveIt_demo/environment/path.sh
+-- Installing: /var/robotic/yahboomcar_ws/install/MoveIt_demo/share/MoveIt_demo/environment/path.dsv
+-- Installing: /var/robotic/yahboomcar_ws/install/MoveIt_demo/share/MoveIt_demo/local_setup.bash
+-- Installing: /var/robotic/yahboomcar_ws/install/MoveIt_demo/share/MoveIt_demo/local_setup.sh
+-- Installing: /var/robotic/yahboomcar_ws/install/MoveIt_demo/share/MoveIt_demo/local_setup.zsh
+-- Installing: /var/robotic/yahboomcar_ws/install/MoveIt_demo/share/MoveIt_demo/local_setup.dsv
+-- Installing: /var/robotic/yahboomcar_ws/install/MoveIt_demo/share/MoveIt_demo/package.dsv
+-- Installing: /var/robotic/yahboomcar_ws/install/MoveIt_demo/share/ament_index/resource_index/packages/MoveIt_demo
+-- Installing: /var/robotic/yahboomcar_ws/install/MoveIt_demo/share/MoveIt_demo/cmake/MoveIt_demoConfig.cmake
+-- Installing: /var/robotic/yahboomcar_ws/install/MoveIt_demo/share/MoveIt_demo/cmake/MoveIt_demoConfig-version.cmake
+-- Installing: /var/robotic/yahboomcar_ws/install/MoveIt_demo/share/MoveIt_demo/package.xml

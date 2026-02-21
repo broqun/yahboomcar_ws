@@ -1,0 +1,4 @@
+/var/robotic/yahboomcar_ws/src/arm_kin/src/kin_srv.cpp: In function ‘int main(int, char**)’:
+/var/robotic/yahboomcar_ws/src/arm_kin/src/kin_srv.cpp:175:43: warning: ignoring return value of ‘rcutils_ret_t rcutils_logging_set_logger_level(const char*, int)’ declared with attribute ‘warn_unused_result’ [-Wunused-result]
+  175 |     (void)rcutils_logging_set_logger_level("kdl_parser", RCUTILS_LOG_SEVERITY_ERROR);
+      |           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

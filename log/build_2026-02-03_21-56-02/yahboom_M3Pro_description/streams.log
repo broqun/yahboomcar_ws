@@ -1,0 +1,58 @@
+[0.604s] Invoking command in '/var/robotic/yahboomcar_ws/src/yahboom_M3Pro_description': PYTHONPATH=/var/robotic/yahboomcar_ws/build/yahboom_M3Pro_description/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/var/robotic/yahboomcar_ws/install/yahboom_M3Pro_description/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/yahboom_M3Pro_description build --build-base /var/robotic/yahboomcar_ws/build/yahboom_M3Pro_description/build install --record /var/robotic/yahboomcar_ws/build/yahboom_M3Pro_description/install.log --single-version-externally-managed install_data
+[0.726s] running egg_info
+[0.727s] creating ../../build/yahboom_M3Pro_description/yahboom_M3Pro_description.egg-info
+[0.727s] writing ../../build/yahboom_M3Pro_description/yahboom_M3Pro_description.egg-info/PKG-INFO
+[0.727s] writing dependency_links to ../../build/yahboom_M3Pro_description/yahboom_M3Pro_description.egg-info/dependency_links.txt
+[0.727s] writing entry points to ../../build/yahboom_M3Pro_description/yahboom_M3Pro_description.egg-info/entry_points.txt
+[0.727s] writing requirements to ../../build/yahboom_M3Pro_description/yahboom_M3Pro_description.egg-info/requires.txt
+[0.727s] writing top-level names to ../../build/yahboom_M3Pro_description/yahboom_M3Pro_description.egg-info/top_level.txt
+[0.727s] writing manifest file '../../build/yahboom_M3Pro_description/yahboom_M3Pro_description.egg-info/SOURCES.txt'
+[0.727s] reading manifest file '../../build/yahboom_M3Pro_description/yahboom_M3Pro_description.egg-info/SOURCES.txt'
+[0.727s] writing manifest file '../../build/yahboom_M3Pro_description/yahboom_M3Pro_description.egg-info/SOURCES.txt'
+[0.727s] running build
+[0.727s] running build_py
+[0.727s] creating /var/robotic/yahboomcar_ws/build/yahboom_M3Pro_description/build
+[0.727s] creating /var/robotic/yahboomcar_ws/build/yahboom_M3Pro_description/build/lib
+[0.727s] creating /var/robotic/yahboomcar_ws/build/yahboom_M3Pro_description/build/lib/yahboom_M3Pro_description
+[0.727s] copying yahboom_M3Pro_description/__init__.py -> /var/robotic/yahboomcar_ws/build/yahboom_M3Pro_description/build/lib/yahboom_M3Pro_description
+[0.727s] running install
+[0.727s] running install_lib
+[0.728s] creating /var/robotic/yahboomcar_ws/install/yahboom_M3Pro_description/lib/python3.10/site-packages/yahboom_M3Pro_description
+[0.728s] copying /var/robotic/yahboomcar_ws/build/yahboom_M3Pro_description/build/lib/yahboom_M3Pro_description/__init__.py -> /var/robotic/yahboomcar_ws/install/yahboom_M3Pro_description/lib/python3.10/site-packages/yahboom_M3Pro_description
+[0.728s] byte-compiling /var/robotic/yahboomcar_ws/install/yahboom_M3Pro_description/lib/python3.10/site-packages/yahboom_M3Pro_description/__init__.py to __init__.cpython-310.pyc
+[0.728s] running install_data
+[0.728s] creating /var/robotic/yahboomcar_ws/install/yahboom_M3Pro_description/share/ament_index
+[0.729s] creating /var/robotic/yahboomcar_ws/install/yahboom_M3Pro_description/share/ament_index/resource_index
+[0.729s] creating /var/robotic/yahboomcar_ws/install/yahboom_M3Pro_description/share/ament_index/resource_index/packages
+[0.729s] copying resource/yahboom_M3Pro_description -> /var/robotic/yahboomcar_ws/install/yahboom_M3Pro_description/share/ament_index/resource_index/packages
+[0.729s] copying package.xml -> /var/robotic/yahboomcar_ws/install/yahboom_M3Pro_description/share/yahboom_M3Pro_description
+[0.729s] creating /var/robotic/yahboomcar_ws/install/yahboom_M3Pro_description/share/yahboom_M3Pro_description/urdf
+[0.729s] copying urdf/M3Pro.urdf -> /var/robotic/yahboomcar_ws/install/yahboom_M3Pro_description/share/yahboom_M3Pro_description/urdf
+[0.729s] creating /var/robotic/yahboomcar_ws/install/yahboom_M3Pro_description/share/yahboom_M3Pro_description/meshes
+[0.729s] copying meshes/base_link.STL -> /var/robotic/yahboomcar_ws/install/yahboom_M3Pro_description/share/yahboom_M3Pro_description/meshes
+[0.733s] copying meshes/arm2.STL -> /var/robotic/yahboomcar_ws/install/yahboom_M3Pro_description/share/yahboom_M3Pro_description/meshes
+[0.736s] copying meshes/Gripping.STL -> /var/robotic/yahboomcar_ws/install/yahboom_M3Pro_description/share/yahboom_M3Pro_description/meshes
+[0.736s] copying meshes/lwheel2.STL -> /var/robotic/yahboomcar_ws/install/yahboom_M3Pro_description/share/yahboom_M3Pro_description/meshes
+[0.737s] copying meshes/DCW2.STL -> /var/robotic/yahboomcar_ws/install/yahboom_M3Pro_description/share/yahboom_M3Pro_description/meshes
+[0.737s] copying meshes/rwheel2.STL -> /var/robotic/yahboomcar_ws/install/yahboom_M3Pro_description/share/yahboom_M3Pro_description/meshes
+[0.739s] copying meshes/arm3.STL -> /var/robotic/yahboomcar_ws/install/yahboom_M3Pro_description/share/yahboom_M3Pro_description/meshes
+[0.748s] copying meshes/arm_base_Link.STL -> /var/robotic/yahboomcar_ws/install/yahboom_M3Pro_description/share/yahboom_M3Pro_description/meshes
+[0.748s] copying meshes/arm5.STL -> /var/robotic/yahboomcar_ws/install/yahboom_M3Pro_description/share/yahboom_M3Pro_description/meshes
+[0.758s] copying meshes/Camera.STL -> /var/robotic/yahboomcar_ws/install/yahboom_M3Pro_description/share/yahboom_M3Pro_description/meshes
+[0.758s] copying meshes/llink3.STL -> /var/robotic/yahboomcar_ws/install/yahboom_M3Pro_description/share/yahboom_M3Pro_description/meshes
+[0.758s] copying meshes/llink2.STL -> /var/robotic/yahboomcar_ws/install/yahboom_M3Pro_description/share/yahboom_M3Pro_description/meshes
+[0.758s] copying meshes/arm4.STL -> /var/robotic/yahboomcar_ws/install/yahboom_M3Pro_description/share/yahboom_M3Pro_description/meshes
+[0.762s] copying meshes/llink1.STL -> /var/robotic/yahboomcar_ws/install/yahboom_M3Pro_description/share/yahboom_M3Pro_description/meshes
+[0.764s] copying meshes/rlink1.STL -> /var/robotic/yahboomcar_ws/install/yahboom_M3Pro_description/share/yahboom_M3Pro_description/meshes
+[0.767s] copying meshes/rlink3.STL -> /var/robotic/yahboomcar_ws/install/yahboom_M3Pro_description/share/yahboom_M3Pro_description/meshes
+[0.769s] copying meshes/arm1.STL -> /var/robotic/yahboomcar_ws/install/yahboom_M3Pro_description/share/yahboom_M3Pro_description/meshes
+[0.784s] copying meshes/rlink2.STL -> /var/robotic/yahboomcar_ws/install/yahboom_M3Pro_description/share/yahboom_M3Pro_description/meshes
+[0.784s] copying meshes/rwheel1.STL -> /var/robotic/yahboomcar_ws/install/yahboom_M3Pro_description/share/yahboom_M3Pro_description/meshes
+[0.790s] copying meshes/lwheel1.STL -> /var/robotic/yahboomcar_ws/install/yahboom_M3Pro_description/share/yahboom_M3Pro_description/meshes
+[0.793s] creating /var/robotic/yahboomcar_ws/install/yahboom_M3Pro_description/share/yahboom_M3Pro_description/launch
+[0.793s] copying launch/display_launch.py -> /var/robotic/yahboomcar_ws/install/yahboom_M3Pro_description/share/yahboom_M3Pro_description/launch
+[0.793s] running install_egg_info
+[0.794s] Copying ../../build/yahboom_M3Pro_description/yahboom_M3Pro_description.egg-info to /var/robotic/yahboomcar_ws/install/yahboom_M3Pro_description/lib/python3.10/site-packages/yahboom_M3Pro_description-0.0.0-py3.10.egg-info
+[0.794s] running install_scripts
+[0.812s] writing list of installed files to '/var/robotic/yahboomcar_ws/build/yahboom_M3Pro_description/install.log'
+[0.917s] Invoked command in '/var/robotic/yahboomcar_ws/src/yahboom_M3Pro_description' returned '0': PYTHONPATH=/var/robotic/yahboomcar_ws/build/yahboom_M3Pro_description/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/var/robotic/yahboomcar_ws/install/yahboom_M3Pro_description/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/yahboom_M3Pro_description build --build-base /var/robotic/yahboomcar_ws/build/yahboom_M3Pro_description/build install --record /var/robotic/yahboomcar_ws/build/yahboom_M3Pro_description/install.log --single-version-externally-managed install_data

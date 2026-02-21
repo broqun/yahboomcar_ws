@@ -1,0 +1,15 @@
+/var/robotic/yahboomcar_ws/install/pkg_metapackage/share/ament_index/resource_index/package_run_dependencies/pkg_metapackage
+/var/robotic/yahboomcar_ws/install/pkg_metapackage/share/ament_index/resource_index/parent_prefix_path/pkg_metapackage
+/var/robotic/yahboomcar_ws/install/pkg_metapackage/share/pkg_metapackage/environment/ament_prefix_path.sh
+/var/robotic/yahboomcar_ws/install/pkg_metapackage/share/pkg_metapackage/environment/ament_prefix_path.dsv
+/var/robotic/yahboomcar_ws/install/pkg_metapackage/share/pkg_metapackage/environment/path.sh
+/var/robotic/yahboomcar_ws/install/pkg_metapackage/share/pkg_metapackage/environment/path.dsv
+/var/robotic/yahboomcar_ws/install/pkg_metapackage/share/pkg_metapackage/local_setup.bash
+/var/robotic/yahboomcar_ws/install/pkg_metapackage/share/pkg_metapackage/local_setup.sh
+/var/robotic/yahboomcar_ws/install/pkg_metapackage/share/pkg_metapackage/local_setup.zsh
+/var/robotic/yahboomcar_ws/install/pkg_metapackage/share/pkg_metapackage/local_setup.dsv
+/var/robotic/yahboomcar_ws/install/pkg_metapackage/share/pkg_metapackage/package.dsv
+/var/robotic/yahboomcar_ws/install/pkg_metapackage/share/ament_index/resource_index/packages/pkg_metapackage
+/var/robotic/yahboomcar_ws/install/pkg_metapackage/share/pkg_metapackage/cmake/pkg_metapackageConfig.cmake
+/var/robotic/yahboomcar_ws/install/pkg_metapackage/share/pkg_metapackage/cmake/pkg_metapackageConfig-version.cmake
+/var/robotic/yahboomcar_ws/install/pkg_metapackage/share/pkg_metapackage/package.xml

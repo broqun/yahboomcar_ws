@@ -1,0 +1,1100 @@
+[0.000000] (-) TimerEvent: {}
+[0.000612] (M3Pro_MoveIt_demo) JobQueued: {'identifier': 'M3Pro_MoveIt_demo', 'dependencies': OrderedDict()}
+[0.000720] (M3Pro_demo) JobQueued: {'identifier': 'M3Pro_demo', 'dependencies': OrderedDict()}
+[0.000748] (MoveIt_demo) JobQueued: {'identifier': 'MoveIt_demo', 'dependencies': OrderedDict()}
+[0.000767] (arm_driver) JobQueued: {'identifier': 'arm_driver', 'dependencies': OrderedDict()}
+[0.000786] (arm_interface) JobQueued: {'identifier': 'arm_interface', 'dependencies': OrderedDict()}
+[0.000806] (arm_kin) JobQueued: {'identifier': 'arm_kin', 'dependencies': OrderedDict()}
+[0.000825] (arm_msgs) JobQueued: {'identifier': 'arm_msgs', 'dependencies': OrderedDict()}
+[0.000843] (test_config) JobQueued: {'identifier': 'test_config', 'dependencies': OrderedDict()}
+[0.000862] (yahboom_M3Pro_DepthCam) JobQueued: {'identifier': 'yahboom_M3Pro_DepthCam', 'dependencies': OrderedDict()}
+[0.000881] (yahboom_M3Pro_description) JobQueued: {'identifier': 'yahboom_M3Pro_description', 'dependencies': OrderedDict()}
+[0.000900] (yahboom_M3Pro_laser) JobQueued: {'identifier': 'yahboom_M3Pro_laser', 'dependencies': OrderedDict()}
+[0.000919] (yahboom_yolov8) JobQueued: {'identifier': 'yahboom_yolov8', 'dependencies': OrderedDict()}
+[0.000938] (yahboomcar_ctrl) JobQueued: {'identifier': 'yahboomcar_ctrl', 'dependencies': OrderedDict()}
+[0.000957] (yahboomcar_mediapipe) JobQueued: {'identifier': 'yahboomcar_mediapipe', 'dependencies': OrderedDict()}
+[0.000976] (yahboomcar_msgs) JobQueued: {'identifier': 'yahboomcar_msgs', 'dependencies': OrderedDict()}
+[0.000995] (M3Pro_config) JobQueued: {'identifier': 'M3Pro_config', 'dependencies': OrderedDict([('yahboom_M3Pro_description', '/var/robotic/yahboomcar_ws/install/yahboom_M3Pro_description')])}
+[0.001016] (test_moveit_config) JobQueued: {'identifier': 'test_moveit_config', 'dependencies': OrderedDict([('yahboom_M3Pro_description', '/var/robotic/yahboomcar_ws/install/yahboom_M3Pro_description')])}
+[0.001036] (yahboom_M3Pro_description) JobStarted: {'identifier': 'yahboom_M3Pro_description'}
+[0.005264] (M3Pro_MoveIt_demo) JobStarted: {'identifier': 'M3Pro_MoveIt_demo'}
+[0.099857] (-) TimerEvent: {}
+[0.202320] (-) TimerEvent: {}
+[0.303226] (-) TimerEvent: {}
+[0.403479] (-) TimerEvent: {}
+[0.454159] (M3Pro_MoveIt_demo) Command: {'cmd': ['/usr/bin/python3', '-W', 'ignore:setup.py install is deprecated', '-W', 'ignore:easy_install command is deprecated', 'setup.py', 'egg_info', '--egg-base', '../../build/M3Pro_MoveIt_demo', 'build', '--build-base', '/var/robotic/yahboomcar_ws/build/M3Pro_MoveIt_demo/build', 'install', '--record', '/var/robotic/yahboomcar_ws/build/M3Pro_MoveIt_demo/install.log', '--single-version-externally-managed', 'install_data'], 'cwd': '/var/robotic/yahboomcar_ws/src/M3Pro_MoveIt_demo', 'env': {'LESSOPEN': '| /usr/bin/lesspipe %s', 'LANGUAGE': 'en_US', 'USER': 'spen', 'SSH_CLIENT': '192.168.50.35 2820 22', 'LC_TIME': 'en_US.UTF-8', 'XDG_SESSION_TYPE': 'tty', 'GIT_ASKPASS': '/home/spen/.cursor-server/bin/linux-x64/4f2b772756b8f609e1354b3063de282ccbe7a690/extensions/git/dist/askpass.sh', 'SHLVL': '1', 'LD_LIBRARY_PATH': '/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib', 'BROWSER': '/home/spen/.cursor-server/bin/linux-x64/4f2b772756b8f609e1354b3063de282ccbe7a690/bin/helpers/browser.sh', 'MOTD_SHOWN': 'pam', 'HOME': '/home/spen', 'OLDPWD': '/home/spen/.cursor-server/bin/linux-x64/4f2b772756b8f609e1354b3063de282ccbe7a690', 'TERM_PROGRAM_VERSION': '2.4.27', 'VSCODE_IPC_HOOK_CLI': '/run/user/1000/vscode-ipc-50b4a07e-7b17-454b-8d88-90ad3090bd75.sock', 'ROS_PYTHON_VERSION': '3', 'VSCODE_GIT_ASKPASS_MAIN': '/home/spen/.cursor-server/bin/linux-x64/4f2b772756b8f609e1354b3063de282ccbe7a690/extensions/git/dist/askpass-main.js', 'LC_MONETARY': 'en_US.UTF-8', 'VSCODE_GIT_ASKPASS_NODE': '/home/spen/.cursor-server/bin/linux-x64/4f2b772756b8f609e1354b3063de282ccbe7a690/node', 'DBUS_SESSION_BUS_ADDRESS': 'unix:path=/run/user/1000/bus', 'COLORTERM': 'truecolor', 'ROS_DISTRO': 'humble', 'LOGNAME': 'spen', '_': '/usr/bin/colcon', 'ROS_VERSION': '2', 'XDG_SESSION_CLASS': 'user', 'TERM': 'xterm-256color', 'XDG_SESSION_ID': '8', 'ROS_LOCALHOST_ONLY': '0', 'PATH': '/home/spen/.cursor-server/bin/linux-x64/4f2b772756b8f609e1354b3063de282ccbe7a690/bin/remote-cli:/opt/ros/humble/bin:/home/spen/.cursor-server/bin/linux-x64/4f2b772756b8f609e1354b3063de282ccbe7a690/bin/remote-cli:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin', 'PAPERSIZE': 'letter', 'LC_ADDRESS': 'en_US.UTF-8', 'XDG_RUNTIME_DIR': '/run/user/1000', 'LANG': 'en_US.UTF-8', 'LC_TELEPHONE': 'en_US.UTF-8', 'LS_COLORS': 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:', 'VSCODE_GIT_IPC_HANDLE': '/run/user/1000/vscode-git-a8fce10363.sock', 'TERM_PROGRAM': 'vscode', 'AMENT_PREFIX_PATH': '/opt/ros/humble', 'SHELL': '/bin/bash', 'LC_NAME': 'en_US.UTF-8', 'LESSCLOSE': '/usr/bin/lesspipe %s %s', 'LC_MEASUREMENT': 'en_US.UTF-8', 'LC_IDENTIFICATION': 'en_US.UTF-8', 'VSCODE_GIT_IPC_AUTH_TOKEN': '12381cb96a4198e15888f3cee39506696f5f33a2c3f050a6049636ed37cdff8b', 'VSCODE_GIT_ASKPASS_EXTRA_ARGS': '', 'PWD': '/var/robotic/yahboomcar_ws/build/M3Pro_MoveIt_demo', 'SSH_CONNECTION': '192.168.50.35 2820 192.168.50.88 22', 'XDG_DATA_DIRS': '/usr/share/gnome:/usr/local/share:/usr/share:/var/lib/snapd/desktop', 'PYTHONPATH': '/var/robotic/yahboomcar_ws/build/M3Pro_MoveIt_demo/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/var/robotic/yahboomcar_ws/install/M3Pro_MoveIt_demo/lib/python3.10/site-packages:/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages', 'LC_NUMERIC': 'en_US.UTF-8', 'LC_PAPER': 'en_US.UTF-8', 'COLCON': '1'}, 'shell': False}
+[0.469935] (yahboom_M3Pro_description) Command: {'cmd': ['/usr/bin/python3', '-W', 'ignore:setup.py install is deprecated', '-W', 'ignore:easy_install command is deprecated', 'setup.py', 'egg_info', '--egg-base', '../../build/yahboom_M3Pro_description', 'build', '--build-base', '/var/robotic/yahboomcar_ws/build/yahboom_M3Pro_description/build', 'install', '--record', '/var/robotic/yahboomcar_ws/build/yahboom_M3Pro_description/install.log', '--single-version-externally-managed', 'install_data'], 'cwd': '/var/robotic/yahboomcar_ws/src/yahboom_M3Pro_description', 'env': {'LESSOPEN': '| /usr/bin/lesspipe %s', 'LANGUAGE': 'en_US', 'USER': 'spen', 'SSH_CLIENT': '192.168.50.35 2820 22', 'LC_TIME': 'en_US.UTF-8', 'XDG_SESSION_TYPE': 'tty', 'GIT_ASKPASS': '/home/spen/.cursor-server/bin/linux-x64/4f2b772756b8f609e1354b3063de282ccbe7a690/extensions/git/dist/askpass.sh', 'SHLVL': '1', 'LD_LIBRARY_PATH': '/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib', 'BROWSER': '/home/spen/.cursor-server/bin/linux-x64/4f2b772756b8f609e1354b3063de282ccbe7a690/bin/helpers/browser.sh', 'MOTD_SHOWN': 'pam', 'HOME': '/home/spen', 'OLDPWD': '/home/spen/.cursor-server/bin/linux-x64/4f2b772756b8f609e1354b3063de282ccbe7a690', 'TERM_PROGRAM_VERSION': '2.4.27', 'VSCODE_IPC_HOOK_CLI': '/run/user/1000/vscode-ipc-50b4a07e-7b17-454b-8d88-90ad3090bd75.sock', 'ROS_PYTHON_VERSION': '3', 'VSCODE_GIT_ASKPASS_MAIN': '/home/spen/.cursor-server/bin/linux-x64/4f2b772756b8f609e1354b3063de282ccbe7a690/extensions/git/dist/askpass-main.js', 'LC_MONETARY': 'en_US.UTF-8', 'VSCODE_GIT_ASKPASS_NODE': '/home/spen/.cursor-server/bin/linux-x64/4f2b772756b8f609e1354b3063de282ccbe7a690/node', 'DBUS_SESSION_BUS_ADDRESS': 'unix:path=/run/user/1000/bus', 'COLORTERM': 'truecolor', 'ROS_DISTRO': 'humble', 'LOGNAME': 'spen', '_': '/usr/bin/colcon', 'ROS_VERSION': '2', 'XDG_SESSION_CLASS': 'user', 'TERM': 'xterm-256color', 'XDG_SESSION_ID': '8', 'ROS_LOCALHOST_ONLY': '0', 'PATH': '/home/spen/.cursor-server/bin/linux-x64/4f2b772756b8f609e1354b3063de282ccbe7a690/bin/remote-cli:/opt/ros/humble/bin:/home/spen/.cursor-server/bin/linux-x64/4f2b772756b8f609e1354b3063de282ccbe7a690/bin/remote-cli:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin', 'PAPERSIZE': 'letter', 'LC_ADDRESS': 'en_US.UTF-8', 'XDG_RUNTIME_DIR': '/run/user/1000', 'LANG': 'en_US.UTF-8', 'LC_TELEPHONE': 'en_US.UTF-8', 'LS_COLORS': 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:', 'VSCODE_GIT_IPC_HANDLE': '/run/user/1000/vscode-git-a8fce10363.sock', 'TERM_PROGRAM': 'vscode', 'AMENT_PREFIX_PATH': '/opt/ros/humble', 'SHELL': '/bin/bash', 'LC_NAME': 'en_US.UTF-8', 'LESSCLOSE': '/usr/bin/lesspipe %s %s', 'LC_MEASUREMENT': 'en_US.UTF-8', 'LC_IDENTIFICATION': 'en_US.UTF-8', 'VSCODE_GIT_IPC_AUTH_TOKEN': '12381cb96a4198e15888f3cee39506696f5f33a2c3f050a6049636ed37cdff8b', 'VSCODE_GIT_ASKPASS_EXTRA_ARGS': '', 'PWD': '/var/robotic/yahboomcar_ws/build/yahboom_M3Pro_description', 'SSH_CONNECTION': '192.168.50.35 2820 192.168.50.88 22', 'XDG_DATA_DIRS': '/usr/share/gnome:/usr/local/share:/usr/share:/var/lib/snapd/desktop', 'PYTHONPATH': '/var/robotic/yahboomcar_ws/build/yahboom_M3Pro_description/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/var/robotic/yahboomcar_ws/install/yahboom_M3Pro_description/lib/python3.10/site-packages:/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages', 'LC_NUMERIC': 'en_US.UTF-8', 'LC_PAPER': 'en_US.UTF-8', 'COLCON': '1'}, 'shell': False}
+[0.503571] (-) TimerEvent: {}
+[0.573941] (M3Pro_MoveIt_demo) StdoutLine: {'line': b'running egg_info\n'}
+[0.574330] (M3Pro_MoveIt_demo) StdoutLine: {'line': b'writing ../../build/M3Pro_MoveIt_demo/M3Pro_MoveIt_demo.egg-info/PKG-INFO\n'}
+[0.574567] (M3Pro_MoveIt_demo) StdoutLine: {'line': b'writing dependency_links to ../../build/M3Pro_MoveIt_demo/M3Pro_MoveIt_demo.egg-info/dependency_links.txt\n'}
+[0.574812] (M3Pro_MoveIt_demo) StdoutLine: {'line': b'writing entry points to ../../build/M3Pro_MoveIt_demo/M3Pro_MoveIt_demo.egg-info/entry_points.txt\n'}
+[0.575042] (M3Pro_MoveIt_demo) StdoutLine: {'line': b'writing requirements to ../../build/M3Pro_MoveIt_demo/M3Pro_MoveIt_demo.egg-info/requires.txt\n'}
+[0.575259] (M3Pro_MoveIt_demo) StdoutLine: {'line': b'writing top-level names to ../../build/M3Pro_MoveIt_demo/M3Pro_MoveIt_demo.egg-info/top_level.txt\n'}
+[0.576022] (M3Pro_MoveIt_demo) StdoutLine: {'line': b"reading manifest file '../../build/M3Pro_MoveIt_demo/M3Pro_MoveIt_demo.egg-info/SOURCES.txt'\n"}
+[0.576579] (M3Pro_MoveIt_demo) StdoutLine: {'line': b"writing manifest file '../../build/M3Pro_MoveIt_demo/M3Pro_MoveIt_demo.egg-info/SOURCES.txt'\n"}
+[0.576823] (M3Pro_MoveIt_demo) StdoutLine: {'line': b'running build\n'}
+[0.576861] (M3Pro_MoveIt_demo) StdoutLine: {'line': b'running build_py\n'}
+[0.577063] (M3Pro_MoveIt_demo) StdoutLine: {'line': b'running install\n'}
+[0.577237] (M3Pro_MoveIt_demo) StdoutLine: {'line': b'running install_lib\n'}
+[0.577810] (M3Pro_MoveIt_demo) StdoutLine: {'line': b'running install_data\n'}
+[0.577994] (M3Pro_MoveIt_demo) StdoutLine: {'line': b'running install_egg_info\n'}
+[0.578852] (M3Pro_MoveIt_demo) StdoutLine: {'line': b"removing '/var/robotic/yahboomcar_ws/install/M3Pro_MoveIt_demo/lib/python3.10/site-packages/M3Pro_MoveIt_demo-0.0.0-py3.10.egg-info' (and everything under it)\n"}
+[0.580257] (M3Pro_MoveIt_demo) StdoutLine: {'line': b'Copying ../../build/M3Pro_MoveIt_demo/M3Pro_MoveIt_demo.egg-info to /var/robotic/yahboomcar_ws/install/M3Pro_MoveIt_demo/lib/python3.10/site-packages/M3Pro_MoveIt_demo-0.0.0-py3.10.egg-info\n'}
+[0.580687] (M3Pro_MoveIt_demo) StdoutLine: {'line': b'running install_scripts\n'}
+[0.591384] (M3Pro_MoveIt_demo) StdoutLine: {'line': b'Installing SimulationToMachine script to /var/robotic/yahboomcar_ws/install/M3Pro_MoveIt_demo/lib/M3Pro_MoveIt_demo\n'}
+[0.591985] (M3Pro_MoveIt_demo) StdoutLine: {'line': b'Installing random_move script to /var/robotic/yahboomcar_ws/install/M3Pro_MoveIt_demo/lib/M3Pro_MoveIt_demo\n'}
+[0.594116] (M3Pro_MoveIt_demo) StdoutLine: {'line': b"writing list of installed files to '/var/robotic/yahboomcar_ws/build/M3Pro_MoveIt_demo/install.log'\n"}
+[0.598482] (yahboom_M3Pro_description) StdoutLine: {'line': b'running egg_info\n'}
+[0.599578] (yahboom_M3Pro_description) StdoutLine: {'line': b'writing ../../build/yahboom_M3Pro_description/yahboom_M3Pro_description.egg-info/PKG-INFO\n'}
+[0.600147] (yahboom_M3Pro_description) StdoutLine: {'line': b'writing dependency_links to ../../build/yahboom_M3Pro_description/yahboom_M3Pro_description.egg-info/dependency_links.txt\n'}
+[0.602331] (yahboom_M3Pro_description) StdoutLine: {'line': b'writing entry points to ../../build/yahboom_M3Pro_description/yahboom_M3Pro_description.egg-info/entry_points.txt\n'}
+[0.602535] (yahboom_M3Pro_description) StdoutLine: {'line': b'writing requirements to ../../build/yahboom_M3Pro_description/yahboom_M3Pro_description.egg-info/requires.txt\n'}
+[0.602684] (yahboom_M3Pro_description) StdoutLine: {'line': b'writing top-level names to ../../build/yahboom_M3Pro_description/yahboom_M3Pro_description.egg-info/top_level.txt\n'}
+[0.603005] (yahboom_M3Pro_description) StdoutLine: {'line': b"reading manifest file '../../build/yahboom_M3Pro_description/yahboom_M3Pro_description.egg-info/SOURCES.txt'\n"}
+[0.603632] (-) TimerEvent: {}
+[0.604111] (M3Pro_MoveIt_demo) CommandEnded: {'returncode': 0}
+[0.605110] (yahboom_M3Pro_description) StdoutLine: {'line': b"writing manifest file '../../build/yahboom_M3Pro_description/yahboom_M3Pro_description.egg-info/SOURCES.txt'\n"}
+[0.605974] (yahboom_M3Pro_description) StdoutLine: {'line': b'running build\n'}
+[0.607233] (yahboom_M3Pro_description) StdoutLine: {'line': b'running build_py\n'}
+[0.607798] (yahboom_M3Pro_description) StdoutLine: {'line': b'running install\n'}
+[0.607889] (yahboom_M3Pro_description) StdoutLine: {'line': b'running install_lib\n'}
+[0.611288] (yahboom_M3Pro_description) StdoutLine: {'line': b'running install_data\n'}
+[0.611817] (yahboom_M3Pro_description) StdoutLine: {'line': b'running install_egg_info\n'}
+[0.614862] (yahboom_M3Pro_description) StdoutLine: {'line': b"removing '/var/robotic/yahboomcar_ws/install/yahboom_M3Pro_description/lib/python3.10/site-packages/yahboom_M3Pro_description-0.0.0-py3.10.egg-info' (and everything under it)\n"}
+[0.614914] (M3Pro_MoveIt_demo) JobEnded: {'identifier': 'M3Pro_MoveIt_demo', 'rc': 0}
+[0.618255] (M3Pro_demo) JobStarted: {'identifier': 'M3Pro_demo'}
+[0.618354] (yahboom_M3Pro_description) StdoutLine: {'line': b'Copying ../../build/yahboom_M3Pro_description/yahboom_M3Pro_description.egg-info to /var/robotic/yahboomcar_ws/install/yahboom_M3Pro_description/lib/python3.10/site-packages/yahboom_M3Pro_description-0.0.0-py3.10.egg-info\n'}
+[0.620122] (yahboom_M3Pro_description) StdoutLine: {'line': b'running install_scripts\n'}
+[0.627922] (yahboom_M3Pro_description) StdoutLine: {'line': b"writing list of installed files to '/var/robotic/yahboomcar_ws/build/yahboom_M3Pro_description/install.log'\n"}
+[0.703732] (-) TimerEvent: {}
+[0.747334] (yahboom_M3Pro_description) CommandEnded: {'returncode': 0}
+[0.752049] (yahboom_M3Pro_description) JobEnded: {'identifier': 'yahboom_M3Pro_description', 'rc': 0}
+[0.752557] (MoveIt_demo) JobStarted: {'identifier': 'MoveIt_demo'}
+[0.758141] (MoveIt_demo) JobProgress: {'identifier': 'MoveIt_demo', 'progress': 'cmake'}
+[0.761426] (MoveIt_demo) Command: {'cmd': ['/usr/bin/cmake', '/var/robotic/yahboomcar_ws/src/MoveIt_demo', '-DCMAKE_INSTALL_PREFIX=/var/robotic/yahboomcar_ws/install/MoveIt_demo'], 'cwd': '/var/robotic/yahboomcar_ws/build/MoveIt_demo', 'env': OrderedDict([('LESSOPEN', '| /usr/bin/lesspipe %s'), ('LANGUAGE', 'en_US'), ('USER', 'spen'), ('SSH_CLIENT', '192.168.50.35 2820 22'), ('LC_TIME', 'en_US.UTF-8'), ('XDG_SESSION_TYPE', 'tty'), ('GIT_ASKPASS', '/home/spen/.cursor-server/bin/linux-x64/4f2b772756b8f609e1354b3063de282ccbe7a690/extensions/git/dist/askpass.sh'), ('SHLVL', '1'), ('LD_LIBRARY_PATH', '/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib'), ('BROWSER', '/home/spen/.cursor-server/bin/linux-x64/4f2b772756b8f609e1354b3063de282ccbe7a690/bin/helpers/browser.sh'), ('MOTD_SHOWN', 'pam'), ('HOME', '/home/spen'), ('OLDPWD', '/home/spen/.cursor-server/bin/linux-x64/4f2b772756b8f609e1354b3063de282ccbe7a690'), ('TERM_PROGRAM_VERSION', '2.4.27'), ('VSCODE_IPC_HOOK_CLI', '/run/user/1000/vscode-ipc-50b4a07e-7b17-454b-8d88-90ad3090bd75.sock'), ('ROS_PYTHON_VERSION', '3'), ('VSCODE_GIT_ASKPASS_MAIN', '/home/spen/.cursor-server/bin/linux-x64/4f2b772756b8f609e1354b3063de282ccbe7a690/extensions/git/dist/askpass-main.js'), ('LC_MONETARY', 'en_US.UTF-8'), ('VSCODE_GIT_ASKPASS_NODE', '/home/spen/.cursor-server/bin/linux-x64/4f2b772756b8f609e1354b3063de282ccbe7a690/node'), ('DBUS_SESSION_BUS_ADDRESS', 'unix:path=/run/user/1000/bus'), ('COLORTERM', 'truecolor'), ('ROS_DISTRO', 'humble'), ('LOGNAME', 'spen'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('XDG_SESSION_CLASS', 'user'), ('TERM', 'xterm-256color'), ('XDG_SESSION_ID', '8'), ('ROS_LOCALHOST_ONLY', '0'), ('PATH', '/home/spen/.cursor-server/bin/linux-x64/4f2b772756b8f609e1354b3063de282ccbe7a690/bin/remote-cli:/opt/ros/humble/bin:/home/spen/.cursor-server/bin/linux-x64/4f2b772756b8f609e1354b3063de282ccbe7a690/bin/remote-cli:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin'), ('PAPERSIZE', 'letter'), ('LC_ADDRESS', 'en_US.UTF-8'), ('XDG_RUNTIME_DIR', '/run/user/1000'), ('LANG', 'en_US.UTF-8'), ('LC_TELEPHONE', 'en_US.UTF-8'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('VSCODE_GIT_IPC_HANDLE', '/run/user/1000/vscode-git-a8fce10363.sock'), ('TERM_PROGRAM', 'vscode'), ('AMENT_PREFIX_PATH', '/opt/ros/humble'), ('SHELL', '/bin/bash'), ('LC_NAME', 'en_US.UTF-8'), ('LESSCLOSE', '/usr/bin/lesspipe %s %s'), ('LC_MEASUREMENT', 'en_US.UTF-8'), ('LC_IDENTIFICATION', 'en_US.UTF-8'), ('VSCODE_GIT_IPC_AUTH_TOKEN', '12381cb96a4198e15888f3cee39506696f5f33a2c3f050a6049636ed37cdff8b'), ('VSCODE_GIT_ASKPASS_EXTRA_ARGS', ''), ('PWD', '/var/robotic/yahboomcar_ws/build/MoveIt_demo'), ('SSH_CONNECTION', '192.168.50.35 2820 192.168.50.88 22'), ('XDG_DATA_DIRS', '/usr/share/gnome:/usr/local/share:/usr/share:/var/lib/snapd/desktop'), ('PYTHONPATH', '/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('LC_NUMERIC', 'en_US.UTF-8'), ('LC_PAPER', 'en_US.UTF-8'), ('COLCON', '1'), ('CMAKE_PREFIX_PATH', '/opt/ros/humble')]), 'shell': False}
+[0.783484] (MoveIt_demo) StdoutLine: {'line': b'-- Found ament_cmake: 1.3.12 (/opt/ros/humble/share/ament_cmake/cmake)\n'}
+[0.805666] (-) TimerEvent: {}
+[0.891996] (MoveIt_demo) StdoutLine: {'line': b'-- Found rclcpp: 16.0.17 (/opt/ros/humble/share/rclcpp/cmake)\n'}
+[0.905762] (-) TimerEvent: {}
+[0.906874] (MoveIt_demo) StdoutLine: {'line': b'-- Found rosidl_generator_c: 3.1.8 (/opt/ros/humble/share/rosidl_generator_c/cmake)\n'}
+[0.909238] (MoveIt_demo) StdoutLine: {'line': b'-- Found rosidl_adapter: 3.1.8 (/opt/ros/humble/share/rosidl_adapter/cmake)\n'}
+[0.912434] (MoveIt_demo) StdoutLine: {'line': b'-- Found rosidl_generator_cpp: 3.1.8 (/opt/ros/humble/share/rosidl_generator_cpp/cmake)\n'}
+[0.918617] (MoveIt_demo) StdoutLine: {'line': b'-- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c\n'}
+[0.925925] (MoveIt_demo) StdoutLine: {'line': b'-- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp\n'}
+[0.944256] (MoveIt_demo) StdoutLine: {'line': b'-- Found rmw_implementation_cmake: 6.1.2 (/opt/ros/humble/share/rmw_implementation_cmake/cmake)\n'}
+[0.944789] (MoveIt_demo) StdoutLine: {'line': b'-- Found rmw_fastrtps_cpp: 6.2.9 (/opt/ros/humble/share/rmw_fastrtps_cpp/cmake)\n'}
+[0.984695] (M3Pro_demo) Command: {'cmd': ['/usr/bin/python3', '-W', 'ignore:setup.py install is deprecated', '-W', 'ignore:easy_install command is deprecated', 'setup.py', 'egg_info', '--egg-base', '../../build/M3Pro_demo', 'build', '--build-base', '/var/robotic/yahboomcar_ws/build/M3Pro_demo/build', 'install', '--record', '/var/robotic/yahboomcar_ws/build/M3Pro_demo/install.log', '--single-version-externally-managed', 'install_data'], 'cwd': '/var/robotic/yahboomcar_ws/src/M3Pro_demo', 'env': {'LESSOPEN': '| /usr/bin/lesspipe %s', 'LANGUAGE': 'en_US', 'USER': 'spen', 'SSH_CLIENT': '192.168.50.35 2820 22', 'LC_TIME': 'en_US.UTF-8', 'XDG_SESSION_TYPE': 'tty', 'GIT_ASKPASS': '/home/spen/.cursor-server/bin/linux-x64/4f2b772756b8f609e1354b3063de282ccbe7a690/extensions/git/dist/askpass.sh', 'SHLVL': '1', 'LD_LIBRARY_PATH': '/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib', 'BROWSER': '/home/spen/.cursor-server/bin/linux-x64/4f2b772756b8f609e1354b3063de282ccbe7a690/bin/helpers/browser.sh', 'MOTD_SHOWN': 'pam', 'HOME': '/home/spen', 'OLDPWD': '/home/spen/.cursor-server/bin/linux-x64/4f2b772756b8f609e1354b3063de282ccbe7a690', 'TERM_PROGRAM_VERSION': '2.4.27', 'VSCODE_IPC_HOOK_CLI': '/run/user/1000/vscode-ipc-50b4a07e-7b17-454b-8d88-90ad3090bd75.sock', 'ROS_PYTHON_VERSION': '3', 'VSCODE_GIT_ASKPASS_MAIN': '/home/spen/.cursor-server/bin/linux-x64/4f2b772756b8f609e1354b3063de282ccbe7a690/extensions/git/dist/askpass-main.js', 'LC_MONETARY': 'en_US.UTF-8', 'VSCODE_GIT_ASKPASS_NODE': '/home/spen/.cursor-server/bin/linux-x64/4f2b772756b8f609e1354b3063de282ccbe7a690/node', 'DBUS_SESSION_BUS_ADDRESS': 'unix:path=/run/user/1000/bus', 'COLORTERM': 'truecolor', 'ROS_DISTRO': 'humble', 'LOGNAME': 'spen', '_': '/usr/bin/colcon', 'ROS_VERSION': '2', 'XDG_SESSION_CLASS': 'user', 'TERM': 'xterm-256color', 'XDG_SESSION_ID': '8', 'ROS_LOCALHOST_ONLY': '0', 'PATH': '/home/spen/.cursor-server/bin/linux-x64/4f2b772756b8f609e1354b3063de282ccbe7a690/bin/remote-cli:/opt/ros/humble/bin:/home/spen/.cursor-server/bin/linux-x64/4f2b772756b8f609e1354b3063de282ccbe7a690/bin/remote-cli:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin', 'PAPERSIZE': 'letter', 'LC_ADDRESS': 'en_US.UTF-8', 'XDG_RUNTIME_DIR': '/run/user/1000', 'LANG': 'en_US.UTF-8', 'LC_TELEPHONE': 'en_US.UTF-8', 'LS_COLORS': 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:', 'VSCODE_GIT_IPC_HANDLE': '/run/user/1000/vscode-git-a8fce10363.sock', 'TERM_PROGRAM': 'vscode', 'AMENT_PREFIX_PATH': '/opt/ros/humble', 'SHELL': '/bin/bash', 'LC_NAME': 'en_US.UTF-8', 'LESSCLOSE': '/usr/bin/lesspipe %s %s', 'LC_MEASUREMENT': 'en_US.UTF-8', 'LC_IDENTIFICATION': 'en_US.UTF-8', 'VSCODE_GIT_IPC_AUTH_TOKEN': '12381cb96a4198e15888f3cee39506696f5f33a2c3f050a6049636ed37cdff8b', 'VSCODE_GIT_ASKPASS_EXTRA_ARGS': '', 'PWD': '/var/robotic/yahboomcar_ws/build/M3Pro_demo', 'SSH_CONNECTION': '192.168.50.35 2820 192.168.50.88 22', 'XDG_DATA_DIRS': '/usr/share/gnome:/usr/local/share:/usr/share:/var/lib/snapd/desktop', 'PYTHONPATH': '/var/robotic/yahboomcar_ws/build/M3Pro_demo/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/var/robotic/yahboomcar_ws/install/M3Pro_demo/lib/python3.10/site-packages:/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages', 'LC_NUMERIC': 'en_US.UTF-8', 'LC_PAPER': 'en_US.UTF-8', 'COLCON': '1'}, 'shell': False}
+[1.005420] (MoveIt_demo) StdoutLine: {'line': b"-- Using RMW implementation 'rmw_fastrtps_cpp' as default\n"}
+[1.006219] (-) TimerEvent: {}
+[1.034200] (MoveIt_demo) StdoutLine: {'line': b'-- Found moveit_ros_planning_interface: 2.5.9 (/opt/ros/humble/share/moveit_ros_planning_interface/cmake)\n'}
+[1.040324] (MoveIt_demo) StdoutLine: {'line': b'-- Found Boost: /usr/lib/x86_64-linux-gnu/cmake/Boost-1.74.0/BoostConfig.cmake (found version "1.74.0") found components: date_time filesystem program_options system thread \n'}
+[1.106251] (M3Pro_demo) StdoutLine: {'line': b'running egg_info\n'}
+[1.106388] (-) TimerEvent: {}
+[1.106585] (M3Pro_demo) StdoutLine: {'line': b'writing ../../build/M3Pro_demo/M3Pro_demo.egg-info/PKG-INFO\n'}
+[1.106967] (M3Pro_demo) StdoutLine: {'line': b'writing dependency_links to ../../build/M3Pro_demo/M3Pro_demo.egg-info/dependency_links.txt\n'}
+[1.107366] (M3Pro_demo) StdoutLine: {'line': b'writing entry points to ../../build/M3Pro_demo/M3Pro_demo.egg-info/entry_points.txt\n'}
+[1.107590] (M3Pro_demo) StdoutLine: {'line': b'writing requirements to ../../build/M3Pro_demo/M3Pro_demo.egg-info/requires.txt\n'}
+[1.107806] (M3Pro_demo) StdoutLine: {'line': b'writing top-level names to ../../build/M3Pro_demo/M3Pro_demo.egg-info/top_level.txt\n'}
+[1.109104] (M3Pro_demo) StdoutLine: {'line': b"reading manifest file '../../build/M3Pro_demo/M3Pro_demo.egg-info/SOURCES.txt'\n"}
+[1.110040] (M3Pro_demo) StdoutLine: {'line': b"writing manifest file '../../build/M3Pro_demo/M3Pro_demo.egg-info/SOURCES.txt'\n"}
+[1.110325] (M3Pro_demo) StdoutLine: {'line': b'running build\n'}
+[1.111266] (M3Pro_demo) StdoutLine: {'line': b'running build_py\n'}
+[1.112371] (M3Pro_demo) StdoutLine: {'line': b'running install\n'}
+[1.112609] (M3Pro_demo) StdoutLine: {'line': b'running install_lib\n'}
+[1.114924] (M3Pro_demo) StdoutLine: {'line': b'running install_data\n'}
+[1.114988] (M3Pro_demo) StdoutLine: {'line': b'running install_egg_info\n'}
+[1.115900] (M3Pro_demo) StdoutLine: {'line': b"removing '/var/robotic/yahboomcar_ws/install/M3Pro_demo/lib/python3.10/site-packages/M3Pro_demo-0.0.0-py3.10.egg-info' (and everything under it)\n"}
+[1.122027] (M3Pro_demo) StdoutLine: {'line': b'Copying ../../build/M3Pro_demo/M3Pro_demo.egg-info to /var/robotic/yahboomcar_ws/install/M3Pro_demo/lib/python3.10/site-packages/M3Pro_demo-0.0.0-py3.10.egg-info\n'}
+[1.122110] (M3Pro_demo) StdoutLine: {'line': b'running install_scripts\n'}
+[1.122174] (MoveIt_demo) StdoutLine: {'line': b'-- Found Boost: /usr/lib/x86_64-linux-gnu/cmake/Boost-1.74.0/BoostConfig.cmake (found version "1.74.0") found components: chrono date_time filesystem iostreams program_options regex serialization system thread \n'}
+[1.130059] (M3Pro_demo) StdoutLine: {'line': b'Installing Gesture_Moving script to /var/robotic/yahboomcar_ws/install/M3Pro_demo/lib/M3Pro_demo\n'}
+[1.130460] (M3Pro_demo) StdoutLine: {'line': b'Installing KCF_follow script to /var/robotic/yahboomcar_ws/install/M3Pro_demo/lib/M3Pro_demo\n'}
+[1.130709] (M3Pro_demo) StdoutLine: {'line': b'Installing KCF_follow_desktop script to /var/robotic/yahboomcar_ws/install/M3Pro_demo/lib/M3Pro_demo\n'}
+[1.130981] (M3Pro_demo) StdoutLine: {'line': b'Installing KCF_track script to /var/robotic/yahboomcar_ws/install/M3Pro_demo/lib/M3Pro_demo\n'}
+[1.131201] (M3Pro_demo) StdoutLine: {'line': b'Installing M3Pro_Dancing script to /var/robotic/yahboomcar_ws/install/M3Pro_demo/lib/M3Pro_demo\n'}
+[1.131444] (M3Pro_demo) StdoutLine: {'line': b'Installing apriltagDist_gesture script to /var/robotic/yahboomcar_ws/install/M3Pro_demo/lib/M3Pro_demo\n'}
+[1.131685] (M3Pro_demo) StdoutLine: {'line': b'Installing apriltagHeight_gesture script to /var/robotic/yahboomcar_ws/install/M3Pro_demo/lib/M3Pro_demo\n'}
+[1.131938] (M3Pro_demo) StdoutLine: {'line': b'Installing apriltagID_gesture script to /var/robotic/yahboomcar_ws/install/M3Pro_demo/lib/M3Pro_demo\n'}
+[1.132035] (M3Pro_demo) StdoutLine: {'line': b'Installing apriltag_detect script to /var/robotic/yahboomcar_ws/install/M3Pro_demo/lib/M3Pro_demo\n'}
+[1.132449] (M3Pro_demo) StdoutLine: {'line': b'Installing apriltag_follow script to /var/robotic/yahboomcar_ws/install/M3Pro_demo/lib/M3Pro_demo\n'}
+[1.132675] (M3Pro_demo) StdoutLine: {'line': b'Installing apriltag_follow_2D script to /var/robotic/yahboomcar_ws/install/M3Pro_demo/lib/M3Pro_demo\n'}
+[1.133039] (M3Pro_demo) StdoutLine: {'line': b'Installing apriltag_list script to /var/robotic/yahboomcar_ws/install/M3Pro_demo/lib/M3Pro_demo\n'}
+[1.133418] (M3Pro_demo) StdoutLine: {'line': b'Installing apriltag_rotation script to /var/robotic/yahboomcar_ws/install/M3Pro_demo/lib/M3Pro_demo\n'}
+[1.133753] (M3Pro_demo) StdoutLine: {'line': b'Installing apriltag_track script to /var/robotic/yahboomcar_ws/install/M3Pro_demo/lib/M3Pro_demo\n'}
+[1.133821] (M3Pro_demo) StdoutLine: {'line': b'Installing apriltag_track_desktop script to /var/robotic/yahboomcar_ws/install/M3Pro_demo/lib/M3Pro_demo\n'}
+[1.134038] (M3Pro_demo) StdoutLine: {'line': b'Installing apriltag_transport script to /var/robotic/yahboomcar_ws/install/M3Pro_demo/lib/M3Pro_demo\n'}
+[1.134363] (M3Pro_demo) StdoutLine: {'line': b'Installing apriltag_transport_V2 script to /var/robotic/yahboomcar_ws/install/M3Pro_demo/lib/M3Pro_demo\n'}
+[1.134751] (M3Pro_demo) StdoutLine: {'line': b'Installing arm_offset script to /var/robotic/yahboomcar_ws/install/M3Pro_demo/lib/M3Pro_demo\n'}
+[1.135112] (M3Pro_demo) StdoutLine: {'line': b'Installing color_follow script to /var/robotic/yahboomcar_ws/install/M3Pro_demo/lib/M3Pro_demo\n'}
+[1.135188] (M3Pro_demo) StdoutLine: {'line': b'Installing color_list script to /var/robotic/yahboomcar_ws/install/M3Pro_demo/lib/M3Pro_demo\n'}
+[1.135440] (M3Pro_demo) StdoutLine: {'line': b'Installing color_recognize script to /var/robotic/yahboomcar_ws/install/M3Pro_demo/lib/M3Pro_demo\n'}
+[1.135795] (M3Pro_demo) StdoutLine: {'line': b'Installing color_track script to /var/robotic/yahboomcar_ws/install/M3Pro_demo/lib/M3Pro_demo\n'}
+[1.135875] (M3Pro_demo) StdoutLine: {'line': b'Installing color_track_desktop script to /var/robotic/yahboomcar_ws/install/M3Pro_demo/lib/M3Pro_demo\n'}
+[1.136071] (M3Pro_demo) StdoutLine: {'line': b'Installing color_transport script to /var/robotic/yahboomcar_ws/install/M3Pro_demo/lib/M3Pro_demo\n'}
+[1.136327] (M3Pro_demo) StdoutLine: {'line': b'Installing estimate_volume script to /var/robotic/yahboomcar_ws/install/M3Pro_demo/lib/M3Pro_demo\n'}
+[1.136643] (M3Pro_demo) StdoutLine: {'line': b'Installing follow_line script to /var/robotic/yahboomcar_ws/install/M3Pro_demo/lib/M3Pro_demo\n'}
+[1.136842] (M3Pro_demo) StdoutLine: {'line': b'Installing grasp script to /var/robotic/yahboomcar_ws/install/M3Pro_demo/lib/M3Pro_demo\n'}
+[1.136919] (M3Pro_demo) StdoutLine: {'line': b'Installing grasp_desktop script to /var/robotic/yahboomcar_ws/install/M3Pro_demo/lib/M3Pro_demo\n'}
+[1.137136] (MoveIt_demo) StdoutLine: {'line': b'-- Found parameter_traits: 0.6.0 (/opt/ros/humble/share/parameter_traits/cmake)\n'}
+[1.137389] (M3Pro_demo) StdoutLine: {'line': b'Installing grasp_joint5 script to /var/robotic/yahboomcar_ws/install/M3Pro_demo/lib/M3Pro_demo\n'}
+[1.137434] (M3Pro_demo) StdoutLine: {'line': b'Installing grasp_transport script to /var/robotic/yahboomcar_ws/install/M3Pro_demo/lib/M3Pro_demo\n'}
+[1.137649] (M3Pro_demo) StdoutLine: {'line': b'Installing mediapipe_detect script to /var/robotic/yahboomcar_ws/install/M3Pro_demo/lib/M3Pro_demo\n'}
+[1.137896] (M3Pro_demo) StdoutLine: {'line': b'Installing mediapipe_gesture script to /var/robotic/yahboomcar_ws/install/M3Pro_demo/lib/M3Pro_demo\n'}
+[1.138014] (M3Pro_demo) StdoutLine: {'line': b'Installing shape_recognize script to /var/robotic/yahboomcar_ws/install/M3Pro_demo/lib/M3Pro_demo\n'}
+[1.138316] (M3Pro_demo) StdoutLine: {'line': b'Installing test_mediapipe script to /var/robotic/yahboomcar_ws/install/M3Pro_demo/lib/M3Pro_demo\n'}
+[1.138688] (M3Pro_demo) StdoutLine: {'line': b'Installing volume_calculations script to /var/robotic/yahboomcar_ws/install/M3Pro_demo/lib/M3Pro_demo\n'}
+[1.139383] (M3Pro_demo) StdoutLine: {'line': b"writing list of installed files to '/var/robotic/yahboomcar_ws/build/M3Pro_demo/install.log'\n"}
+[1.141755] (MoveIt_demo) StdoutLine: {'line': b'-- Found rclcpp_lifecycle: 16.0.17 (/opt/ros/humble/share/rclcpp_lifecycle/cmake)\n'}
+[1.151482] (M3Pro_demo) CommandEnded: {'returncode': 0}
+[1.153502] (MoveIt_demo) StdoutLine: {'line': b'-- Found Boost: /usr/lib/x86_64-linux-gnu/cmake/Boost-1.74.0/BoostConfig.cmake (found version "1.74.0") found components: filesystem \n'}
+[1.157363] (M3Pro_demo) JobEnded: {'identifier': 'M3Pro_demo', 'rc': 0}
+[1.157865] (arm_driver) JobStarted: {'identifier': 'arm_driver'}
+[1.177121] (MoveIt_demo) StdoutLine: {'line': b'-- library: /usr/lib/x86_64-linux-gnu/libcurl.so\n'}
+[1.191523] (MoveIt_demo) StdoutLine: {'line': b'-- Ensuring Eigen3 include directory is part of orocos-kdl CMake target\n'}
+[1.206480] (-) TimerEvent: {}
+[1.252649] (MoveIt_demo) StdoutLine: {'line': b'-- Found Boost: /usr/lib/x86_64-linux-gnu/cmake/Boost-1.74.0/BoostConfig.cmake (found version "1.74.0") found components: system filesystem date_time program_options thread chrono \n'}
+[1.267206] (MoveIt_demo) StdoutLine: {'line': b'-- Found Boost: /usr/lib/x86_64-linux-gnu/cmake/Boost-1.74.0/BoostConfig.cmake (found version "1.74.0") found components: thread system filesystem regex date_time program_options \n'}
+[1.278339] (MoveIt_demo) StdoutLine: {'line': b'-- Found Boost: /usr/lib/x86_64-linux-gnu/cmake/Boost-1.74.0/BoostConfig.cmake (found version "1.74.0") found components: system filesystem date_time program_options thread \n'}
+[1.292334] (MoveIt_demo) StdoutLine: {'line': b'-- Found graph_msgs: 0.2.0 (/opt/ros/humble/share/graph_msgs/cmake)\n'}
+[1.300103] (MoveIt_demo) StdoutLine: {'line': b'-- Found moveit_visual_tools: 4.1.2 (/opt/ros/humble/share/moveit_visual_tools/cmake)\n'}
+[1.306550] (-) TimerEvent: {}
+[1.343071] (MoveIt_demo) StdoutLine: {'line': b"-- Setting assimp_DIR to: '/opt/ros/humble/share/rviz_assimp_vendor/cmake/../../../opt/rviz_assimp_vendor/lib/cmake/assimp-4.1'\n"}
+[1.349719] (MoveIt_demo) StdoutLine: {'line': b"-- Setting OGRE_DIR to: '/opt/ros/humble/share/rviz_ogre_vendor/cmake/../../../opt/rviz_ogre_vendor/lib/OGRE/cmake'\n"}
+[1.351835] (MoveIt_demo) StdoutLine: {'line': b'-- Found OGRE\n'}
+[1.352084] (MoveIt_demo) StdoutLine: {'line': b'--   static     : OFF\n'}
+[1.352257] (MoveIt_demo) StdoutLine: {'line': b'--   components : HLMS;MeshLodGenerator;Overlay;Paging;Property;RTShaderSystem;Terrain;Volume\n'}
+[1.352360] (MoveIt_demo) StdoutLine: {'line': b'--   plugins    : Plugin_BSPSceneManager;Plugin_OctreeSceneManager;Plugin_PCZSceneManager;Plugin_ParticleFX;RenderSystem_GL;RenderSystem_GL3Plus;Codec_STBI\n'}
+[1.352397] (MoveIt_demo) StdoutLine: {'line': b'--   media      : /opt/ros/humble/opt/rviz_ogre_vendor/share/OGRE/Media\n'}
+[1.353981] (MoveIt_demo) StdoutLine: {'line': b'-- OGRE_LIBRARIES: OgreHLMS;OgreMeshLodGenerator;OgreOverlay;OgrePaging;OgreProperty;OgreRTShaderSystem;OgreTerrain;OgreVolume;OgreMain\n'}
+[1.354148] (MoveIt_demo) StdoutLine: {'line': b'-- OGRE_LIBRARY_DIRS: /opt/ros/humble/opt/rviz_ogre_vendor/lib\n'}
+[1.354344] (MoveIt_demo) StdoutLine: {'line': b'-- OGRE_PLUGINS: Plugin_BSPSceneManager;Plugin_OctreeSceneManager;Plugin_PCZSceneManager;Plugin_ParticleFX;RenderSystem_GL;RenderSystem_GL3Plus;Codec_STBI\n'}
+[1.354481] (MoveIt_demo) StdoutLine: {'line': b'-- OGRE_PLUGIN_DIR: /opt/ros/humble/opt/rviz_ogre_vendor/lib/OGRE\n'}
+[1.354612] (MoveIt_demo) StdoutLine: {'line': b'-- rviz_ogre_vendor::OgreOverlay for IMPORTED_LOCATION_RELEASE: /opt/ros/humble/opt/rviz_ogre_vendor/lib/libOgreOverlay.so\n'}
+[1.354750] (MoveIt_demo) StdoutLine: {'line': b'-- rviz_ogre_vendor::OgreOverlay for IMPORTED_LOCATION_DEBUG: /opt/ros/humble/opt/rviz_ogre_vendor/lib/libOgreOverlay.so\n'}
+[1.354882] (MoveIt_demo) StdoutLine: {'line': b'-- rviz_ogre_vendor::OgreMain for IMPORTED_LOCATION_RELEASE: /opt/ros/humble/opt/rviz_ogre_vendor/lib/libOgreMain.so\n'}
+[1.354933] (MoveIt_demo) StdoutLine: {'line': b'-- rviz_ogre_vendor::OgreMain for IMPORTED_LOCATION_DEBUG: /opt/ros/humble/opt/rviz_ogre_vendor/lib/libOgreMain.so\n'}
+[1.354962] (MoveIt_demo) StdoutLine: {'line': b'-- Could not find freeimage library\n'}
+[1.365924] (MoveIt_demo) StdoutLine: {'line': b'-- Found ZLIB: /usr/lib/x86_64-linux-gnu/libz.so (found version "1.2.11") \n'}
+[1.370417] (MoveIt_demo) StdoutLine: {'line': b'-- Found OpenGL: /usr/lib/x86_64-linux-gnu/libOpenGL.so   \n'}
+[1.406655] (-) TimerEvent: {}
+[1.432873] (MoveIt_demo) StdoutLine: {'line': b'-- Found X11: /usr/include   \n'}
+[1.433571] (MoveIt_demo) StdoutLine: {'line': b'-- Looking for XOpenDisplay in /usr/lib/x86_64-linux-gnu/libX11.so;/usr/lib/x86_64-linux-gnu/libXext.so\n'}
+[1.469273] (arm_driver) Command: {'cmd': ['/usr/bin/python3', '-W', 'ignore:setup.py install is deprecated', '-W', 'ignore:easy_install command is deprecated', 'setup.py', 'egg_info', '--egg-base', '../../build/arm_driver', 'build', '--build-base', '/var/robotic/yahboomcar_ws/build/arm_driver/build', 'install', '--record', '/var/robotic/yahboomcar_ws/build/arm_driver/install.log', '--single-version-externally-managed', 'install_data'], 'cwd': '/var/robotic/yahboomcar_ws/src/arm_driver', 'env': {'LESSOPEN': '| /usr/bin/lesspipe %s', 'LANGUAGE': 'en_US', 'USER': 'spen', 'SSH_CLIENT': '192.168.50.35 2820 22', 'LC_TIME': 'en_US.UTF-8', 'XDG_SESSION_TYPE': 'tty', 'GIT_ASKPASS': '/home/spen/.cursor-server/bin/linux-x64/4f2b772756b8f609e1354b3063de282ccbe7a690/extensions/git/dist/askpass.sh', 'SHLVL': '1', 'LD_LIBRARY_PATH': '/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib', 'BROWSER': '/home/spen/.cursor-server/bin/linux-x64/4f2b772756b8f609e1354b3063de282ccbe7a690/bin/helpers/browser.sh', 'MOTD_SHOWN': 'pam', 'HOME': '/home/spen', 'OLDPWD': '/home/spen/.cursor-server/bin/linux-x64/4f2b772756b8f609e1354b3063de282ccbe7a690', 'TERM_PROGRAM_VERSION': '2.4.27', 'VSCODE_IPC_HOOK_CLI': '/run/user/1000/vscode-ipc-50b4a07e-7b17-454b-8d88-90ad3090bd75.sock', 'ROS_PYTHON_VERSION': '3', 'VSCODE_GIT_ASKPASS_MAIN': '/home/spen/.cursor-server/bin/linux-x64/4f2b772756b8f609e1354b3063de282ccbe7a690/extensions/git/dist/askpass-main.js', 'LC_MONETARY': 'en_US.UTF-8', 'VSCODE_GIT_ASKPASS_NODE': '/home/spen/.cursor-server/bin/linux-x64/4f2b772756b8f609e1354b3063de282ccbe7a690/node', 'DBUS_SESSION_BUS_ADDRESS': 'unix:path=/run/user/1000/bus', 'COLORTERM': 'truecolor', 'ROS_DISTRO': 'humble', 'LOGNAME': 'spen', '_': '/usr/bin/colcon', 'ROS_VERSION': '2', 'XDG_SESSION_CLASS': 'user', 'TERM': 'xterm-256color', 'XDG_SESSION_ID': '8', 'ROS_LOCALHOST_ONLY': '0', 'PATH': '/home/spen/.cursor-server/bin/linux-x64/4f2b772756b8f609e1354b3063de282ccbe7a690/bin/remote-cli:/opt/ros/humble/bin:/home/spen/.cursor-server/bin/linux-x64/4f2b772756b8f609e1354b3063de282ccbe7a690/bin/remote-cli:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin', 'PAPERSIZE': 'letter', 'LC_ADDRESS': 'en_US.UTF-8', 'XDG_RUNTIME_DIR': '/run/user/1000', 'LANG': 'en_US.UTF-8', 'LC_TELEPHONE': 'en_US.UTF-8', 'LS_COLORS': 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:', 'VSCODE_GIT_IPC_HANDLE': '/run/user/1000/vscode-git-a8fce10363.sock', 'TERM_PROGRAM': 'vscode', 'AMENT_PREFIX_PATH': '/opt/ros/humble', 'SHELL': '/bin/bash', 'LC_NAME': 'en_US.UTF-8', 'LESSCLOSE': '/usr/bin/lesspipe %s %s', 'LC_MEASUREMENT': 'en_US.UTF-8', 'LC_IDENTIFICATION': 'en_US.UTF-8', 'VSCODE_GIT_IPC_AUTH_TOKEN': '12381cb96a4198e15888f3cee39506696f5f33a2c3f050a6049636ed37cdff8b', 'VSCODE_GIT_ASKPASS_EXTRA_ARGS': '', 'PWD': '/var/robotic/yahboomcar_ws/build/arm_driver', 'SSH_CONNECTION': '192.168.50.35 2820 192.168.50.88 22', 'XDG_DATA_DIRS': '/usr/share/gnome:/usr/local/share:/usr/share:/var/lib/snapd/desktop', 'PYTHONPATH': '/var/robotic/yahboomcar_ws/build/arm_driver/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/var/robotic/yahboomcar_ws/install/arm_driver/lib/python3.10/site-packages:/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages', 'LC_NUMERIC': 'en_US.UTF-8', 'LC_PAPER': 'en_US.UTF-8', 'COLCON': '1'}, 'shell': False}
+[1.488855] (MoveIt_demo) StdoutLine: {'line': b'-- Looking for XOpenDisplay in /usr/lib/x86_64-linux-gnu/libX11.so;/usr/lib/x86_64-linux-gnu/libXext.so - found\n'}
+[1.489245] (MoveIt_demo) StdoutLine: {'line': b'-- Looking for gethostbyname\n'}
+[1.508231] (-) TimerEvent: {}
+[1.539015] (MoveIt_demo) StdoutLine: {'line': b'-- Looking for gethostbyname - found\n'}
+[1.539326] (MoveIt_demo) StdoutLine: {'line': b'-- Looking for connect\n'}
+[1.585739] (arm_driver) StdoutLine: {'line': b'running egg_info\n'}
+[1.586081] (arm_driver) StdoutLine: {'line': b'writing ../../build/arm_driver/arm_driver.egg-info/PKG-INFO\n'}
+[1.586543] (arm_driver) StdoutLine: {'line': b'writing dependency_links to ../../build/arm_driver/arm_driver.egg-info/dependency_links.txt\n'}
+[1.586617] (arm_driver) StdoutLine: {'line': b'writing entry points to ../../build/arm_driver/arm_driver.egg-info/entry_points.txt\n'}
+[1.586988] (arm_driver) StdoutLine: {'line': b'writing requirements to ../../build/arm_driver/arm_driver.egg-info/requires.txt\n'}
+[1.587071] (arm_driver) StdoutLine: {'line': b'writing top-level names to ../../build/arm_driver/arm_driver.egg-info/top_level.txt\n'}
+[1.589439] (arm_driver) StdoutLine: {'line': b"reading manifest file '../../build/arm_driver/arm_driver.egg-info/SOURCES.txt'\n"}
+[1.589487] (arm_driver) StdoutLine: {'line': b"writing manifest file '../../build/arm_driver/arm_driver.egg-info/SOURCES.txt'\n"}
+[1.589516] (arm_driver) StdoutLine: {'line': b'running build\n'}
+[1.589544] (arm_driver) StdoutLine: {'line': b'running build_py\n'}
+[1.589570] (arm_driver) StdoutLine: {'line': b'running install\n'}
+[1.589597] (arm_driver) StdoutLine: {'line': b'running install_lib\n'}
+[1.589623] (arm_driver) StdoutLine: {'line': b'running install_data\n'}
+[1.589650] (arm_driver) StdoutLine: {'line': b'running install_egg_info\n'}
+[1.590090] (arm_driver) StdoutLine: {'line': b"removing '/var/robotic/yahboomcar_ws/install/arm_driver/lib/python3.10/site-packages/arm_driver-0.0.0-py3.10.egg-info' (and everything under it)\n"}
+[1.591174] (arm_driver) StdoutLine: {'line': b'Copying ../../build/arm_driver/arm_driver.egg-info to /var/robotic/yahboomcar_ws/install/arm_driver/lib/python3.10/site-packages/arm_driver-0.0.0-py3.10.egg-info\n'}
+[1.591239] (arm_driver) StdoutLine: {'line': b'running install_scripts\n'}
+[1.592546] (MoveIt_demo) StdoutLine: {'line': b'-- Looking for connect - found\n'}
+[1.593732] (MoveIt_demo) StdoutLine: {'line': b'-- Looking for remove\n'}
+[1.602259] (arm_driver) StdoutLine: {'line': b'Installing arm_driver script to /var/robotic/yahboomcar_ws/install/arm_driver/lib/arm_driver\n'}
+[1.602854] (arm_driver) StdoutLine: {'line': b"writing list of installed files to '/var/robotic/yahboomcar_ws/build/arm_driver/install.log'\n"}
+[1.608411] (-) TimerEvent: {}
+[1.615099] (arm_driver) CommandEnded: {'returncode': 0}
+[1.619771] (arm_driver) JobEnded: {'identifier': 'arm_driver', 'rc': 0}
+[1.620927] (arm_interface) JobStarted: {'identifier': 'arm_interface'}
+[1.624176] (arm_interface) JobProgress: {'identifier': 'arm_interface', 'progress': 'cmake'}
+[1.624357] (arm_interface) JobProgress: {'identifier': 'arm_interface', 'progress': 'build'}
+[1.626340] (arm_interface) Command: {'cmd': ['/usr/bin/cmake', '--build', '/var/robotic/yahboomcar_ws/build/arm_interface', '--', '-j2', '-l2'], 'cwd': '/var/robotic/yahboomcar_ws/build/arm_interface', 'env': OrderedDict([('LESSOPEN', '| /usr/bin/lesspipe %s'), ('LANGUAGE', 'en_US'), ('USER', 'spen'), ('SSH_CLIENT', '192.168.50.35 2820 22'), ('LC_TIME', 'en_US.UTF-8'), ('XDG_SESSION_TYPE', 'tty'), ('GIT_ASKPASS', '/home/spen/.cursor-server/bin/linux-x64/4f2b772756b8f609e1354b3063de282ccbe7a690/extensions/git/dist/askpass.sh'), ('SHLVL', '1'), ('LD_LIBRARY_PATH', '/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib'), ('BROWSER', '/home/spen/.cursor-server/bin/linux-x64/4f2b772756b8f609e1354b3063de282ccbe7a690/bin/helpers/browser.sh'), ('MOTD_SHOWN', 'pam'), ('HOME', '/home/spen'), ('OLDPWD', '/home/spen/.cursor-server/bin/linux-x64/4f2b772756b8f609e1354b3063de282ccbe7a690'), ('TERM_PROGRAM_VERSION', '2.4.27'), ('VSCODE_IPC_HOOK_CLI', '/run/user/1000/vscode-ipc-50b4a07e-7b17-454b-8d88-90ad3090bd75.sock'), ('ROS_PYTHON_VERSION', '3'), ('VSCODE_GIT_ASKPASS_MAIN', '/home/spen/.cursor-server/bin/linux-x64/4f2b772756b8f609e1354b3063de282ccbe7a690/extensions/git/dist/askpass-main.js'), ('LC_MONETARY', 'en_US.UTF-8'), ('VSCODE_GIT_ASKPASS_NODE', '/home/spen/.cursor-server/bin/linux-x64/4f2b772756b8f609e1354b3063de282ccbe7a690/node'), ('DBUS_SESSION_BUS_ADDRESS', 'unix:path=/run/user/1000/bus'), ('COLORTERM', 'truecolor'), ('ROS_DISTRO', 'humble'), ('LOGNAME', 'spen'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('XDG_SESSION_CLASS', 'user'), ('TERM', 'xterm-256color'), ('XDG_SESSION_ID', '8'), ('ROS_LOCALHOST_ONLY', '0'), ('PATH', '/home/spen/.cursor-server/bin/linux-x64/4f2b772756b8f609e1354b3063de282ccbe7a690/bin/remote-cli:/opt/ros/humble/bin:/home/spen/.cursor-server/bin/linux-x64/4f2b772756b8f609e1354b3063de282ccbe7a690/bin/remote-cli:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin'), ('PAPERSIZE', 'letter'), ('LC_ADDRESS', 'en_US.UTF-8'), ('XDG_RUNTIME_DIR', '/run/user/1000'), ('LANG', 'en_US.UTF-8'), ('LC_TELEPHONE', 'en_US.UTF-8'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('VSCODE_GIT_IPC_HANDLE', '/run/user/1000/vscode-git-a8fce10363.sock'), ('TERM_PROGRAM', 'vscode'), ('AMENT_PREFIX_PATH', '/opt/ros/humble'), ('SHELL', '/bin/bash'), ('LC_NAME', 'en_US.UTF-8'), ('LESSCLOSE', '/usr/bin/lesspipe %s %s'), ('LC_MEASUREMENT', 'en_US.UTF-8'), ('LC_IDENTIFICATION', 'en_US.UTF-8'), ('VSCODE_GIT_IPC_AUTH_TOKEN', '12381cb96a4198e15888f3cee39506696f5f33a2c3f050a6049636ed37cdff8b'), ('VSCODE_GIT_ASKPASS_EXTRA_ARGS', ''), ('PWD', '/var/robotic/yahboomcar_ws/build/arm_interface'), ('SSH_CONNECTION', '192.168.50.35 2820 192.168.50.88 22'), ('XDG_DATA_DIRS', '/usr/share/gnome:/usr/local/share:/usr/share:/var/lib/snapd/desktop'), ('PYTHONPATH', '/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('LC_NUMERIC', 'en_US.UTF-8'), ('LC_PAPER', 'en_US.UTF-8'), ('COLCON', '1'), ('CMAKE_PREFIX_PATH', '/opt/ros/humble')]), 'shell': False}
+[1.659302] (MoveIt_demo) StdoutLine: {'line': b'-- Looking for remove - found\n'}
+[1.661418] (MoveIt_demo) StdoutLine: {'line': b'-- Looking for shmat\n'}
+[1.663675] (arm_interface) StdoutLine: {'line': b'[  1%] \x1b[34m\x1b[1mGenerating C++ code for ROS interfaces\x1b[0m\n'}
+[1.666312] (arm_interface) StdoutLine: {'line': b'[  2%] \x1b[34m\x1b[1mGenerating C code for ROS interfaces\x1b[0m\n'}
+[1.708499] (-) TimerEvent: {}
+[1.749272] (MoveIt_demo) StdoutLine: {'line': b'-- Looking for shmat - found\n'}
+[1.749392] (MoveIt_demo) StdoutLine: {'line': b'-- Looking for IceConnectionNumber in ICE\n'}
+[1.808585] (-) TimerEvent: {}
+[1.842729] (MoveIt_demo) StdoutLine: {'line': b'-- Looking for IceConnectionNumber in ICE - found\n'}
+[1.908673] (-) TimerEvent: {}
+[1.984262] (MoveIt_demo) StdoutLine: {'line': b'-- Found ament_lint_auto: 0.12.14 (/opt/ros/humble/share/ament_lint_auto/cmake)\n'}
+[2.008767] (-) TimerEvent: {}
+[2.052257] (MoveIt_demo) StderrLine: {'line': b'WARNING: Package name "MoveIt_demo" does not follow the naming conventions. It should start with a lower case letter and only contain lower case letters, digits, underscores, and dashes.\n'}
+[2.087293] (MoveIt_demo) StdoutLine: {'line': b"-- Added test 'cppcheck' to perform static code analysis on C / C++ code\n"}
+[2.087416] (MoveIt_demo) StdoutLine: {'line': b'-- Configured cppcheck include dirs: \n'}
+[2.087449] (MoveIt_demo) StdoutLine: {'line': b'-- Configured cppcheck exclude dirs and/or files: \n'}
+[2.088168] (MoveIt_demo) StdoutLine: {'line': b"-- Added test 'lint_cmake' to check CMake code style\n"}
+[2.089993] (MoveIt_demo) StdoutLine: {'line': b"-- Added test 'uncrustify' to check C / C++ code style\n"}
+[2.090102] (MoveIt_demo) StdoutLine: {'line': b'-- Configured uncrustify additional arguments: \n'}
+[2.090543] (MoveIt_demo) StdoutLine: {'line': b"-- Added test 'xmllint' to check XML markup files\n"}
+[2.093383] (MoveIt_demo) StdoutLine: {'line': b'-- Configuring done\n'}
+[2.108858] (-) TimerEvent: {}
+[2.209246] (-) TimerEvent: {}
+[2.278304] (MoveIt_demo) StdoutLine: {'line': b'-- Generating done\n'}
+[2.302002] (MoveIt_demo) StdoutLine: {'line': b'-- Build files have been written to: /var/robotic/yahboomcar_ws/build/MoveIt_demo\n'}
+[2.310165] (-) TimerEvent: {}
+[2.313308] (MoveIt_demo) CommandEnded: {'returncode': 0}
+[2.313625] (MoveIt_demo) JobProgress: {'identifier': 'MoveIt_demo', 'progress': 'build'}
+[2.313661] (MoveIt_demo) Command: {'cmd': ['/usr/bin/cmake', '--build', '/var/robotic/yahboomcar_ws/build/MoveIt_demo', '--', '-j2', '-l2'], 'cwd': '/var/robotic/yahboomcar_ws/build/MoveIt_demo', 'env': OrderedDict([('LESSOPEN', '| /usr/bin/lesspipe %s'), ('LANGUAGE', 'en_US'), ('USER', 'spen'), ('SSH_CLIENT', '192.168.50.35 2820 22'), ('LC_TIME', 'en_US.UTF-8'), ('XDG_SESSION_TYPE', 'tty'), ('GIT_ASKPASS', '/home/spen/.cursor-server/bin/linux-x64/4f2b772756b8f609e1354b3063de282ccbe7a690/extensions/git/dist/askpass.sh'), ('SHLVL', '1'), ('LD_LIBRARY_PATH', '/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib'), ('BROWSER', '/home/spen/.cursor-server/bin/linux-x64/4f2b772756b8f609e1354b3063de282ccbe7a690/bin/helpers/browser.sh'), ('MOTD_SHOWN', 'pam'), ('HOME', '/home/spen'), ('OLDPWD', '/home/spen/.cursor-server/bin/linux-x64/4f2b772756b8f609e1354b3063de282ccbe7a690'), ('TERM_PROGRAM_VERSION', '2.4.27'), ('VSCODE_IPC_HOOK_CLI', '/run/user/1000/vscode-ipc-50b4a07e-7b17-454b-8d88-90ad3090bd75.sock'), ('ROS_PYTHON_VERSION', '3'), ('VSCODE_GIT_ASKPASS_MAIN', '/home/spen/.cursor-server/bin/linux-x64/4f2b772756b8f609e1354b3063de282ccbe7a690/extensions/git/dist/askpass-main.js'), ('LC_MONETARY', 'en_US.UTF-8'), ('VSCODE_GIT_ASKPASS_NODE', '/home/spen/.cursor-server/bin/linux-x64/4f2b772756b8f609e1354b3063de282ccbe7a690/node'), ('DBUS_SESSION_BUS_ADDRESS', 'unix:path=/run/user/1000/bus'), ('COLORTERM', 'truecolor'), ('ROS_DISTRO', 'humble'), ('LOGNAME', 'spen'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('XDG_SESSION_CLASS', 'user'), ('TERM', 'xterm-256color'), ('XDG_SESSION_ID', '8'), ('ROS_LOCALHOST_ONLY', '0'), ('PATH', '/home/spen/.cursor-server/bin/linux-x64/4f2b772756b8f609e1354b3063de282ccbe7a690/bin/remote-cli:/opt/ros/humble/bin:/home/spen/.cursor-server/bin/linux-x64/4f2b772756b8f609e1354b3063de282ccbe7a690/bin/remote-cli:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin'), ('PAPERSIZE', 'letter'), ('LC_ADDRESS', 'en_US.UTF-8'), ('XDG_RUNTIME_DIR', '/run/user/1000'), ('LANG', 'en_US.UTF-8'), ('LC_TELEPHONE', 'en_US.UTF-8'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('VSCODE_GIT_IPC_HANDLE', '/run/user/1000/vscode-git-a8fce10363.sock'), ('TERM_PROGRAM', 'vscode'), ('AMENT_PREFIX_PATH', '/opt/ros/humble'), ('SHELL', '/bin/bash'), ('LC_NAME', 'en_US.UTF-8'), ('LESSCLOSE', '/usr/bin/lesspipe %s %s'), ('LC_MEASUREMENT', 'en_US.UTF-8'), ('LC_IDENTIFICATION', 'en_US.UTF-8'), ('VSCODE_GIT_IPC_AUTH_TOKEN', '12381cb96a4198e15888f3cee39506696f5f33a2c3f050a6049636ed37cdff8b'), ('VSCODE_GIT_ASKPASS_EXTRA_ARGS', ''), ('PWD', '/var/robotic/yahboomcar_ws/build/MoveIt_demo'), ('SSH_CONNECTION', '192.168.50.35 2820 192.168.50.88 22'), ('XDG_DATA_DIRS', '/usr/share/gnome:/usr/local/share:/usr/share:/var/lib/snapd/desktop'), ('PYTHONPATH', '/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('LC_NUMERIC', 'en_US.UTF-8'), ('LC_PAPER', 'en_US.UTF-8'), ('COLCON', '1'), ('CMAKE_PREFIX_PATH', '/opt/ros/humble')]), 'shell': False}
+[2.367105] (MoveIt_demo) StdoutLine: {'line': b'[  7%] \x1b[32mBuilding CXX object CMakeFiles/set_target_joints.dir/src/set_target_joints.cpp.o\x1b[0m\n'}
+[2.374290] (MoveIt_demo) StdoutLine: {'line': b'[ 14%] \x1b[32mBuilding CXX object CMakeFiles/set_target_position.dir/src/set_target_position.cpp.o\x1b[0m\n'}
+[2.376895] (arm_interface) StdoutLine: {'line': b'[  2%] Built target arm_interface__cpp\n'}
+[2.400233] (arm_interface) StdoutLine: {'line': b'[  2%] Built target ament_cmake_python_copy_arm_interface\n'}
+[2.410243] (-) TimerEvent: {}
+[2.420210] (arm_interface) StdoutLine: {'line': b'[  3%] \x1b[34m\x1b[1mGenerating C++ type support dispatch for ROS interfaces\x1b[0m\n'}
+[2.510833] (-) TimerEvent: {}
+[2.558792] (arm_interface) StdoutLine: {'line': b'[  4%] \x1b[32mBuilding C object CMakeFiles/arm_interface__rosidl_generator_c.dir/rosidl_generator_c/arm_interface/srv/detail/arm_kinemarics__functions.c.o\x1b[0m\n'}
+[2.610853] (-) TimerEvent: {}
+[2.659733] (arm_interface) StdoutLine: {'line': b'[  5%] \x1b[32mBuilding C object CMakeFiles/arm_interface__rosidl_generator_c.dir/rosidl_generator_c/arm_interface/msg/detail/arm_joint__functions.c.o\x1b[0m\n'}
+[2.710952] (-) TimerEvent: {}
+[2.732310] (arm_interface) StdoutLine: {'line': b'[  6%] \x1b[32mBuilding C object CMakeFiles/arm_interface__rosidl_generator_c.dir/rosidl_generator_c/arm_interface/msg/detail/april_tag_info__functions.c.o\x1b[0m\n'}
+[2.775887] (arm_interface) StdoutLine: {'line': b'[  7%] \x1b[32mBuilding C object CMakeFiles/arm_interface__rosidl_generator_c.dir/rosidl_generator_c/arm_interface/msg/detail/center_xy__functions.c.o\x1b[0m\n'}
+[2.801229] (arm_interface) StdoutLine: {'line': b'[  8%] \x1b[32mBuilding CXX object CMakeFiles/arm_interface__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/arm_interface/srv/arm_kinemarics__type_support.cpp.o\x1b[0m\n'}
+[2.811039] (-) TimerEvent: {}
+[2.822429] (arm_interface) StdoutLine: {'line': b'[  9%] \x1b[32mBuilding C object CMakeFiles/arm_interface__rosidl_generator_c.dir/rosidl_generator_c/arm_interface/msg/detail/shape_info__functions.c.o\x1b[0m\n'}
+[2.886474] (arm_interface) StdoutLine: {'line': b'[ 10%] \x1b[32mBuilding C object CMakeFiles/arm_interface__rosidl_generator_c.dir/rosidl_generator_c/arm_interface/msg/detail/yolov5_detect__functions.c.o\x1b[0m\n'}
+[2.917961] (-) TimerEvent: {}
+[2.945997] (arm_interface) StdoutLine: {'line': b'[ 11%] \x1b[32mBuilding C object CMakeFiles/arm_interface__rosidl_generator_c.dir/rosidl_generator_c/arm_interface/msg/detail/position__functions.c.o\x1b[0m\n'}
+[3.002222] (arm_interface) StdoutLine: {'line': b'[ 12%] \x1b[32mBuilding C object CMakeFiles/arm_interface__rosidl_generator_c.dir/rosidl_generator_c/arm_interface/msg/detail/cur_joints__functions.c.o\x1b[0m\n'}
+[3.019227] (-) TimerEvent: {}
+[3.063876] (arm_interface) StdoutLine: {'line': b'[ 13%] \x1b[32mBuilding C object CMakeFiles/arm_interface__rosidl_generator_c.dir/rosidl_generator_c/arm_interface/msg/detail/target_xy_roll__functions.c.o\x1b[0m\n'}
+[3.066515] (arm_interface) StdoutLine: {'line': b'[ 14%] \x1b[32mBuilding CXX object CMakeFiles/arm_interface__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/arm_interface/msg/arm_joint__type_support.cpp.o\x1b[0m\n'}
+[3.117277] (arm_interface) StdoutLine: {'line': b'[ 15%] \x1b[32m\x1b[1mLinking C shared library libarm_interface__rosidl_generator_c.so\x1b[0m\n'}
+[3.119312] (-) TimerEvent: {}
+[3.154261] (arm_interface) StdoutLine: {'line': b'[ 15%] Built target arm_interface__rosidl_generator_c\n'}
+[3.169767] (arm_interface) StdoutLine: {'line': b'[ 16%] \x1b[34m\x1b[1mGenerating C++ type support for eProsima Fast-RTPS\x1b[0m\n'}
+[3.220104] (-) TimerEvent: {}
+[3.320613] (-) TimerEvent: {}
+[3.345275] (arm_interface) StdoutLine: {'line': b'[ 17%] \x1b[32mBuilding CXX object CMakeFiles/arm_interface__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/arm_interface/msg/april_tag_info__type_support.cpp.o\x1b[0m\n'}
+[3.420723] (-) TimerEvent: {}
+[3.521666] (-) TimerEvent: {}
+[3.623608] (-) TimerEvent: {}
+[3.691338] (arm_interface) StdoutLine: {'line': b'[ 18%] \x1b[32mBuilding CXX object CMakeFiles/arm_interface__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/arm_interface/msg/center_xy__type_support.cpp.o\x1b[0m\n'}
+[3.723704] (-) TimerEvent: {}
+[3.824225] (-) TimerEvent: {}
+[3.861469] (arm_interface) StdoutLine: {'line': b'[ 20%] \x1b[32mBuilding CXX object CMakeFiles/arm_interface__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/arm_interface/srv/detail/dds_fastrtps/arm_kinemarics__type_support.cpp.o\x1b[0m\n'}
+[3.924962] (-) TimerEvent: {}
+[4.025448] (-) TimerEvent: {}
+[4.086270] (arm_interface) StdoutLine: {'line': b'[ 21%] \x1b[32mBuilding CXX object CMakeFiles/arm_interface__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/arm_interface/msg/shape_info__type_support.cpp.o\x1b[0m\n'}
+[4.126235] (-) TimerEvent: {}
+[4.226811] (-) TimerEvent: {}
+[4.330346] (-) TimerEvent: {}
+[4.419652] (arm_interface) StdoutLine: {'line': b'[ 22%] \x1b[32mBuilding CXX object CMakeFiles/arm_interface__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/arm_interface/msg/detail/dds_fastrtps/arm_joint__type_support.cpp.o\x1b[0m\n'}
+[4.431236] (-) TimerEvent: {}
+[4.530187] (arm_interface) StdoutLine: {'line': b'[ 23%] \x1b[32mBuilding CXX object CMakeFiles/arm_interface__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/arm_interface/msg/yolov5_detect__type_support.cpp.o\x1b[0m\n'}
+[4.531326] (-) TimerEvent: {}
+[4.631815] (-) TimerEvent: {}
+[4.732357] (-) TimerEvent: {}
+[4.833648] (-) TimerEvent: {}
+[4.889983] (arm_interface) StdoutLine: {'line': b'[ 24%] \x1b[32mBuilding CXX object CMakeFiles/arm_interface__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/arm_interface/msg/position__type_support.cpp.o\x1b[0m\n'}
+[4.933739] (-) TimerEvent: {}
+[4.948952] (arm_interface) StdoutLine: {'line': b'[ 25%] \x1b[32mBuilding CXX object CMakeFiles/arm_interface__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/arm_interface/msg/detail/dds_fastrtps/april_tag_info__type_support.cpp.o\x1b[0m\n'}
+[5.034837] (-) TimerEvent: {}
+[5.135087] (-) TimerEvent: {}
+[5.238239] (-) TimerEvent: {}
+[5.338560] (-) TimerEvent: {}
+[5.411385] (arm_interface) StdoutLine: {'line': b'[ 26%] \x1b[32mBuilding CXX object CMakeFiles/arm_interface__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/arm_interface/msg/cur_joints__type_support.cpp.o\x1b[0m\n'}
+[5.438659] (-) TimerEvent: {}
+[5.538925] (-) TimerEvent: {}
+[5.583401] (arm_interface) StdoutLine: {'line': b'[ 27%] \x1b[32mBuilding CXX object CMakeFiles/arm_interface__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/arm_interface/msg/detail/dds_fastrtps/center_xy__type_support.cpp.o\x1b[0m\n'}
+[5.641237] (-) TimerEvent: {}
+[5.741550] (-) TimerEvent: {}
+[5.755012] (arm_interface) StdoutLine: {'line': b'[ 28%] \x1b[32mBuilding CXX object CMakeFiles/arm_interface__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/arm_interface/msg/target_xy_roll__type_support.cpp.o\x1b[0m\n'}
+[5.841659] (-) TimerEvent: {}
+[5.942320] (-) TimerEvent: {}
+[6.042822] (-) TimerEvent: {}
+[6.144759] (-) TimerEvent: {}
+[6.167277] (arm_interface) StdoutLine: {'line': b'[ 29%] \x1b[32m\x1b[1mLinking CXX shared library libarm_interface__rosidl_typesupport_cpp.so\x1b[0m\n'}
+[6.230339] (arm_interface) StdoutLine: {'line': b'[ 29%] Built target arm_interface__rosidl_typesupport_cpp\n'}
+[6.244885] (-) TimerEvent: {}
+[6.248315] (arm_interface) StdoutLine: {'line': b'[ 30%] \x1b[34m\x1b[1mGenerating C introspection for ROS interfaces\x1b[0m\n'}
+[6.337923] (arm_interface) StdoutLine: {'line': b'[ 31%] \x1b[32mBuilding CXX object CMakeFiles/arm_interface__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/arm_interface/msg/detail/dds_fastrtps/shape_info__type_support.cpp.o\x1b[0m\n'}
+[6.345014] (-) TimerEvent: {}
+[6.447231] (-) TimerEvent: {}
+[6.547466] (-) TimerEvent: {}
+[6.647697] (-) TimerEvent: {}
+[6.747971] (-) TimerEvent: {}
+[6.848212] (-) TimerEvent: {}
+[6.859757] (arm_interface) StdoutLine: {'line': b'[ 32%] \x1b[32mBuilding CXX object CMakeFiles/arm_interface__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/arm_interface/msg/detail/dds_fastrtps/yolov5_detect__type_support.cpp.o\x1b[0m\n'}
+[6.950269] (-) TimerEvent: {}
+[7.016961] (arm_interface) StdoutLine: {'line': b'[ 33%] \x1b[32mBuilding C object CMakeFiles/arm_interface__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/arm_interface/srv/detail/arm_kinemarics__type_support.c.o\x1b[0m\n'}
+[7.052249] (-) TimerEvent: {}
+[7.106146] (arm_interface) StdoutLine: {'line': b'[ 34%] \x1b[32mBuilding C object CMakeFiles/arm_interface__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/arm_interface/msg/detail/arm_joint__type_support.c.o\x1b[0m\n'}
+[7.152344] (-) TimerEvent: {}
+[7.251802] (arm_interface) StdoutLine: {'line': b'[ 35%] \x1b[32mBuilding C object CMakeFiles/arm_interface__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/arm_interface/msg/detail/april_tag_info__type_support.c.o\x1b[0m\n'}
+[7.253213] (-) TimerEvent: {}
+[7.318891] (arm_interface) StdoutLine: {'line': b'[ 36%] \x1b[32mBuilding C object CMakeFiles/arm_interface__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/arm_interface/msg/detail/center_xy__type_support.c.o\x1b[0m\n'}
+[7.353340] (-) TimerEvent: {}
+[7.367212] (arm_interface) StdoutLine: {'line': b'[ 37%] \x1b[32mBuilding C object CMakeFiles/arm_interface__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/arm_interface/msg/detail/shape_info__type_support.c.o\x1b[0m\n'}
+[7.447437] (arm_interface) StdoutLine: {'line': b'[ 38%] \x1b[32mBuilding C object CMakeFiles/arm_interface__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/arm_interface/msg/detail/yolov5_detect__type_support.c.o\x1b[0m\n'}
+[7.453426] (-) TimerEvent: {}
+[7.527858] (arm_interface) StdoutLine: {'line': b'[ 40%] \x1b[32mBuilding C object CMakeFiles/arm_interface__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/arm_interface/msg/detail/position__type_support.c.o\x1b[0m\n'}
+[7.553532] (-) TimerEvent: {}
+[7.565933] (arm_interface) StdoutLine: {'line': b'[ 41%] \x1b[32mBuilding C object CMakeFiles/arm_interface__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/arm_interface/msg/detail/cur_joints__type_support.c.o\x1b[0m\n'}
+[7.594097] (arm_interface) StdoutLine: {'line': b'[ 42%] \x1b[32mBuilding C object CMakeFiles/arm_interface__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/arm_interface/msg/detail/target_xy_roll__type_support.c.o\x1b[0m\n'}
+[7.617225] (arm_interface) StdoutLine: {'line': b'[ 43%] \x1b[32m\x1b[1mLinking C shared library libarm_interface__rosidl_typesupport_introspection_c.so\x1b[0m\n'}
+[7.653632] (-) TimerEvent: {}
+[7.674815] (arm_interface) StdoutLine: {'line': b'[ 43%] Built target arm_interface__rosidl_typesupport_introspection_c\n'}
+[7.676999] (arm_interface) StdoutLine: {'line': b'[ 44%] \x1b[32mBuilding CXX object CMakeFiles/arm_interface__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/arm_interface/msg/detail/dds_fastrtps/position__type_support.cpp.o\x1b[0m\n'}
+[7.692356] (arm_interface) StdoutLine: {'line': b'[ 45%] \x1b[34m\x1b[1mGenerating C type support dispatch for ROS interfaces\x1b[0m\n'}
+[7.753723] (-) TimerEvent: {}
+[7.853966] (-) TimerEvent: {}
+[7.954201] (-) TimerEvent: {}
+[8.056229] (-) TimerEvent: {}
+[8.156484] (-) TimerEvent: {}
+[8.197296] (arm_interface) StdoutLine: {'line': b'[ 46%] \x1b[32mBuilding CXX object CMakeFiles/arm_interface__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/arm_interface/msg/detail/dds_fastrtps/cur_joints__type_support.cpp.o\x1b[0m\n'}
+[8.225589] (arm_interface) StdoutLine: {'line': b'[ 47%] \x1b[32mBuilding CXX object CMakeFiles/arm_interface__rosidl_typesupport_c.dir/rosidl_typesupport_c/arm_interface/srv/arm_kinemarics__type_support.cpp.o\x1b[0m\n'}
+[8.256586] (-) TimerEvent: {}
+[8.279597] (arm_interface) StdoutLine: {'line': b'[ 48%] \x1b[32mBuilding CXX object CMakeFiles/arm_interface__rosidl_typesupport_c.dir/rosidl_typesupport_c/arm_interface/msg/arm_joint__type_support.cpp.o\x1b[0m\n'}
+[8.326635] (arm_interface) StdoutLine: {'line': b'[ 49%] \x1b[32mBuilding CXX object CMakeFiles/arm_interface__rosidl_typesupport_c.dir/rosidl_typesupport_c/arm_interface/msg/april_tag_info__type_support.cpp.o\x1b[0m\n'}
+[8.356784] (-) TimerEvent: {}
+[8.377877] (arm_interface) StdoutLine: {'line': b'[ 50%] \x1b[32mBuilding CXX object CMakeFiles/arm_interface__rosidl_typesupport_c.dir/rosidl_typesupport_c/arm_interface/msg/center_xy__type_support.cpp.o\x1b[0m\n'}
+[8.422560] (arm_interface) StdoutLine: {'line': b'[ 51%] \x1b[32mBuilding CXX object CMakeFiles/arm_interface__rosidl_typesupport_c.dir/rosidl_typesupport_c/arm_interface/msg/shape_info__type_support.cpp.o\x1b[0m\n'}
+[8.457250] (-) TimerEvent: {}
+[8.468469] (arm_interface) StdoutLine: {'line': b'[ 52%] \x1b[32mBuilding CXX object CMakeFiles/arm_interface__rosidl_typesupport_c.dir/rosidl_typesupport_c/arm_interface/msg/yolov5_detect__type_support.cpp.o\x1b[0m\n'}
+[8.525400] (arm_interface) StdoutLine: {'line': b'[ 53%] \x1b[32mBuilding CXX object CMakeFiles/arm_interface__rosidl_typesupport_c.dir/rosidl_typesupport_c/arm_interface/msg/position__type_support.cpp.o\x1b[0m\n'}
+[8.558254] (-) TimerEvent: {}
+[8.566009] (arm_interface) StdoutLine: {'line': b'[ 54%] \x1b[32mBuilding CXX object CMakeFiles/arm_interface__rosidl_typesupport_c.dir/rosidl_typesupport_c/arm_interface/msg/cur_joints__type_support.cpp.o\x1b[0m\n'}
+[8.609392] (arm_interface) StdoutLine: {'line': b'[ 55%] \x1b[32mBuilding CXX object CMakeFiles/arm_interface__rosidl_typesupport_c.dir/rosidl_typesupport_c/arm_interface/msg/target_xy_roll__type_support.cpp.o\x1b[0m\n'}
+[8.652178] (arm_interface) StdoutLine: {'line': b'[ 56%] \x1b[32m\x1b[1mLinking CXX shared library libarm_interface__rosidl_typesupport_c.so\x1b[0m\n'}
+[8.660233] (-) TimerEvent: {}
+[8.713711] (arm_interface) StdoutLine: {'line': b'[ 56%] Built target arm_interface__rosidl_typesupport_c\n'}
+[8.731096] (arm_interface) StdoutLine: {'line': b'[ 57%] \x1b[34m\x1b[1mGenerating C++ introspection for ROS interfaces\x1b[0m\n'}
+[8.760343] (-) TimerEvent: {}
+[8.863246] (-) TimerEvent: {}
+[8.892924] (arm_interface) StdoutLine: {'line': b'[ 58%] \x1b[32mBuilding CXX object CMakeFiles/arm_interface__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/arm_interface/msg/detail/dds_fastrtps/target_xy_roll__type_support.cpp.o\x1b[0m\n'}
+[8.963339] (-) TimerEvent: {}
+[9.063885] (-) TimerEvent: {}
+[9.164339] (-) TimerEvent: {}
+[9.264775] (-) TimerEvent: {}
+[9.365226] (-) TimerEvent: {}
+[9.413668] (arm_interface) StdoutLine: {'line': b'[ 60%] \x1b[32m\x1b[1mLinking CXX shared library libarm_interface__rosidl_typesupport_fastrtps_cpp.so\x1b[0m\n'}
+[9.465349] (-) TimerEvent: {}
+[9.546785] (arm_interface) StdoutLine: {'line': b'[ 60%] Built target arm_interface__rosidl_typesupport_fastrtps_cpp\n'}
+[9.565454] (-) TimerEvent: {}
+[9.574277] (arm_interface) StdoutLine: {'line': b'[ 61%] \x1b[32mBuilding CXX object CMakeFiles/arm_interface__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/arm_interface/srv/detail/arm_kinemarics__type_support.cpp.o\x1b[0m\n'}
+[9.668236] (-) TimerEvent: {}
+[9.770233] (-) TimerEvent: {}
+[9.850337] (arm_interface) StdoutLine: {'line': b'running egg_info\n'}
+[9.853582] (arm_interface) StdoutLine: {'line': b'creating arm_interface.egg-info\n'}
+[9.857112] (arm_interface) StdoutLine: {'line': b'writing arm_interface.egg-info/PKG-INFO\n'}
+[9.857217] (arm_interface) StdoutLine: {'line': b'writing dependency_links to arm_interface.egg-info/dependency_links.txt\n'}
+[9.857254] (arm_interface) StdoutLine: {'line': b'writing top-level names to arm_interface.egg-info/top_level.txt\n'}
+[9.857283] (arm_interface) StdoutLine: {'line': b"writing manifest file 'arm_interface.egg-info/SOURCES.txt'\n"}
+[9.861245] (arm_interface) StdoutLine: {'line': b"reading manifest file 'arm_interface.egg-info/SOURCES.txt'\n"}
+[9.861333] (arm_interface) StdoutLine: {'line': b"writing manifest file 'arm_interface.egg-info/SOURCES.txt'\n"}
+[9.870319] (-) TimerEvent: {}
+[9.913266] (arm_interface) StdoutLine: {'line': b'[ 61%] Built target ament_cmake_python_build_arm_interface_egg\n'}
+[9.933285] (arm_interface) StdoutLine: {'line': b'[ 62%] \x1b[32mBuilding CXX object CMakeFiles/arm_interface__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/arm_interface/msg/detail/arm_joint__type_support.cpp.o\x1b[0m\n'}
+[9.970424] (-) TimerEvent: {}
+[10.070776] (-) TimerEvent: {}
+[10.139391] (arm_interface) StdoutLine: {'line': b'[ 63%] \x1b[32mBuilding CXX object CMakeFiles/arm_interface__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/arm_interface/msg/detail/april_tag_info__type_support.cpp.o\x1b[0m\n'}
+[10.172243] (-) TimerEvent: {}
+[10.274241] (-) TimerEvent: {}
+[10.374500] (-) TimerEvent: {}
+[10.474762] (-) TimerEvent: {}
+[10.567289] (arm_interface) StdoutLine: {'line': b'[ 64%] \x1b[32mBuilding CXX object CMakeFiles/arm_interface__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/arm_interface/msg/detail/center_xy__type_support.cpp.o\x1b[0m\n'}
+[10.574859] (-) TimerEvent: {}
+[10.675115] (-) TimerEvent: {}
+[10.775407] (-) TimerEvent: {}
+[10.826857] (arm_interface) StdoutLine: {'line': b'[ 65%] \x1b[32mBuilding CXX object CMakeFiles/arm_interface__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/arm_interface/msg/detail/shape_info__type_support.cpp.o\x1b[0m\n'}
+[10.877254] (-) TimerEvent: {}
+[10.953985] (arm_interface) StdoutLine: {'line': b'[ 66%] \x1b[32mBuilding CXX object CMakeFiles/arm_interface__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/arm_interface/msg/detail/yolov5_detect__type_support.cpp.o\x1b[0m\n'}
+[10.977343] (-) TimerEvent: {}
+[11.077802] (-) TimerEvent: {}
+[11.178251] (-) TimerEvent: {}
+[11.279640] (-) TimerEvent: {}
+[11.298085] (arm_interface) StdoutLine: {'line': b'[ 67%] \x1b[32mBuilding CXX object CMakeFiles/arm_interface__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/arm_interface/msg/detail/position__type_support.cpp.o\x1b[0m\n'}
+[11.380258] (-) TimerEvent: {}
+[11.465301] (arm_interface) StdoutLine: {'line': b'[ 68%] \x1b[32mBuilding CXX object CMakeFiles/arm_interface__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/arm_interface/msg/detail/cur_joints__type_support.cpp.o\x1b[0m\n'}
+[11.484240] (-) TimerEvent: {}
+[11.586245] (-) TimerEvent: {}
+[11.671202] (arm_interface) StdoutLine: {'line': b'[ 69%] \x1b[32mBuilding CXX object CMakeFiles/arm_interface__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/arm_interface/msg/detail/target_xy_roll__type_support.cpp.o\x1b[0m\n'}
+[11.686331] (-) TimerEvent: {}
+[11.788238] (-) TimerEvent: {}
+[11.888714] (-) TimerEvent: {}
+[11.989214] (-) TimerEvent: {}
+[12.091242] (-) TimerEvent: {}
+[12.191743] (-) TimerEvent: {}
+[12.292301] (-) TimerEvent: {}
+[12.318776] (arm_interface) StdoutLine: {'line': b'[ 70%] \x1b[34m\x1b[1mGenerating C type support for eProsima Fast-RTPS\x1b[0m\n'}
+[12.343879] (arm_interface) StdoutLine: {'line': b'[ 71%] \x1b[32m\x1b[1mLinking CXX shared library libarm_interface__rosidl_typesupport_introspection_cpp.so\x1b[0m\n'}
+[12.393237] (-) TimerEvent: {}
+[12.440386] (arm_interface) StdoutLine: {'line': b'[ 71%] Built target arm_interface__rosidl_typesupport_introspection_cpp\n'}
+[12.493333] (-) TimerEvent: {}
+[12.595231] (-) TimerEvent: {}
+[12.695682] (-) TimerEvent: {}
+[12.772871] (arm_interface) StdoutLine: {'line': b'[ 72%] \x1b[32mBuilding CXX object CMakeFiles/arm_interface__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/arm_interface/msg/detail/arm_joint__type_support_c.cpp.o\x1b[0m\n'}
+[12.773003] (arm_interface) StdoutLine: {'line': b'[ 73%] \x1b[32mBuilding CXX object CMakeFiles/arm_interface__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/arm_interface/srv/detail/arm_kinemarics__type_support_c.cpp.o\x1b[0m\n'}
+[12.797238] (-) TimerEvent: {}
+[12.899238] (-) TimerEvent: {}
+[12.999494] (-) TimerEvent: {}
+[13.099757] (-) TimerEvent: {}
+[13.197954] (arm_interface) StdoutLine: {'line': b'[ 74%] \x1b[32mBuilding CXX object CMakeFiles/arm_interface__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/arm_interface/msg/detail/april_tag_info__type_support_c.cpp.o\x1b[0m\n'}
+[13.199835] (-) TimerEvent: {}
+[13.300059] (-) TimerEvent: {}
+[13.307733] (arm_interface) StdoutLine: {'line': b'[ 75%] \x1b[32mBuilding CXX object CMakeFiles/arm_interface__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/arm_interface/msg/detail/center_xy__type_support_c.cpp.o\x1b[0m\n'}
+[13.400166] (-) TimerEvent: {}
+[13.500448] (-) TimerEvent: {}
+[13.602240] (-) TimerEvent: {}
+[13.654766] (arm_interface) StdoutLine: {'line': b'[ 76%] \x1b[32mBuilding CXX object CMakeFiles/arm_interface__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/arm_interface/msg/detail/shape_info__type_support_c.cpp.o\x1b[0m\n'}
+[13.702341] (-) TimerEvent: {}
+[13.727970] (arm_interface) StdoutLine: {'line': b'[ 77%] \x1b[32mBuilding CXX object CMakeFiles/arm_interface__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/arm_interface/msg/detail/yolov5_detect__type_support_c.cpp.o\x1b[0m\n'}
+[13.804236] (-) TimerEvent: {}
+[13.906240] (-) TimerEvent: {}
+[14.006728] (-) TimerEvent: {}
+[14.043401] (arm_interface) StdoutLine: {'line': b'[ 78%] \x1b[32mBuilding CXX object CMakeFiles/arm_interface__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/arm_interface/msg/detail/position__type_support_c.cpp.o\x1b[0m\n'}
+[14.107093] (-) TimerEvent: {}
+[14.207357] (-) TimerEvent: {}
+[14.240297] (arm_interface) StdoutLine: {'line': b'[ 80%] \x1b[32mBuilding CXX object CMakeFiles/arm_interface__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/arm_interface/msg/detail/cur_joints__type_support_c.cpp.o\x1b[0m\n'}
+[14.307472] (-) TimerEvent: {}
+[14.320287] (arm_interface) StdoutLine: {'line': b'[ 81%] \x1b[32mBuilding CXX object CMakeFiles/arm_interface__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/arm_interface/msg/detail/target_xy_roll__type_support_c.cpp.o\x1b[0m\n'}
+[14.407578] (-) TimerEvent: {}
+[14.455242] (MoveIt_demo) StdoutLine: {'line': b'[ 21%] \x1b[32m\x1b[1mLinking CXX executable set_target_position\x1b[0m\n'}
+[14.507680] (-) TimerEvent: {}
+[14.607944] (-) TimerEvent: {}
+[14.656653] (arm_interface) StdoutLine: {'line': b'[ 82%] \x1b[32m\x1b[1mLinking CXX shared library libarm_interface__rosidl_typesupport_fastrtps_c.so\x1b[0m\n'}
+[14.708050] (-) TimerEvent: {}
+[14.709964] (arm_interface) StdoutLine: {'line': b'[ 82%] Built target arm_interface__rosidl_typesupport_fastrtps_c\n'}
+[14.725258] (arm_interface) StdoutLine: {'line': b'[ 82%] Built target arm_interface\n'}
+[14.744324] (arm_interface) StdoutLine: {'line': b'[ 83%] \x1b[34m\x1b[1mGenerating Python code for ROS interfaces\x1b[0m\n'}
+[14.808148] (-) TimerEvent: {}
+[14.908403] (-) TimerEvent: {}
+[15.008621] (-) TimerEvent: {}
+[15.037232] (MoveIt_demo) StdoutLine: {'line': b'[ 21%] Built target set_target_position\n'}
+[15.049632] (MoveIt_demo) StdoutLine: {'line': b'[ 28%] \x1b[32mBuilding CXX object CMakeFiles/random_move.dir/src/random_move.cpp.o\x1b[0m\n'}
+[15.108716] (-) TimerEvent: {}
+[15.208965] (-) TimerEvent: {}
+[15.309213] (-) TimerEvent: {}
+[15.412234] (-) TimerEvent: {}
+[15.512487] (-) TimerEvent: {}
+[15.556174] (arm_interface) StdoutLine: {'line': b'[ 83%] Built target arm_interface__py\n'}
+[15.588830] (arm_interface) StdoutLine: {'line': b'[ 84%] \x1b[32mBuilding C object CMakeFiles/arm_interface__rosidl_generator_py.dir/rosidl_generator_py/arm_interface/srv/_arm_kinemarics_s.c.o\x1b[0m\n'}
+[15.589790] (arm_interface) StdoutLine: {'line': b'[ 85%] \x1b[32mBuilding C object CMakeFiles/arm_interface__rosidl_generator_py.dir/rosidl_generator_py/arm_interface/msg/_arm_joint_s.c.o\x1b[0m\n'}
+[15.614249] (-) TimerEvent: {}
+[15.714533] (-) TimerEvent: {}
+[15.792782] (arm_interface) StdoutLine: {'line': b'[ 86%] \x1b[32mBuilding C object CMakeFiles/arm_interface__rosidl_generator_py.dir/rosidl_generator_py/arm_interface/msg/_center_xy_s.c.o\x1b[0m\n'}
+[15.792967] (arm_interface) StdoutLine: {'line': b'[ 87%] \x1b[32mBuilding C object CMakeFiles/arm_interface__rosidl_generator_py.dir/rosidl_generator_py/arm_interface/msg/_april_tag_info_s.c.o\x1b[0m\n'}
+[15.814628] (-) TimerEvent: {}
+[15.911073] (arm_interface) StdoutLine: {'line': b'[ 88%] \x1b[32mBuilding C object CMakeFiles/arm_interface__rosidl_generator_py.dir/rosidl_generator_py/arm_interface/msg/_shape_info_s.c.o\x1b[0m\n'}
+[15.914706] (-) TimerEvent: {}
+[15.923993] (arm_interface) StdoutLine: {'line': b'[ 89%] \x1b[32mBuilding C object CMakeFiles/arm_interface__rosidl_generator_py.dir/rosidl_generator_py/arm_interface/msg/_yolov5_detect_s.c.o\x1b[0m\n'}
+[16.015434] (-) TimerEvent: {}
+[16.031557] (arm_interface) StdoutLine: {'line': b'[ 90%] \x1b[32mBuilding C object CMakeFiles/arm_interface__rosidl_generator_py.dir/rosidl_generator_py/arm_interface/msg/_position_s.c.o\x1b[0m\n'}
+[16.046049] (arm_interface) StdoutLine: {'line': b'[ 91%] \x1b[32mBuilding C object CMakeFiles/arm_interface__rosidl_generator_py.dir/rosidl_generator_py/arm_interface/msg/_cur_joints_s.c.o\x1b[0m\n'}
+[16.115548] (-) TimerEvent: {}
+[16.122414] (arm_interface) StdoutLine: {'line': b'[ 92%] \x1b[32mBuilding C object CMakeFiles/arm_interface__rosidl_generator_py.dir/rosidl_generator_py/arm_interface/msg/_target_xy_roll_s.c.o\x1b[0m\n'}
+[16.217238] (-) TimerEvent: {}
+[16.248800] (arm_interface) StdoutLine: {'line': b'[ 93%] \x1b[32m\x1b[1mLinking C shared library rosidl_generator_py/arm_interface/libarm_interface__rosidl_generator_py.so\x1b[0m\n'}
+[16.310692] (arm_interface) StdoutLine: {'line': b'[ 93%] Built target arm_interface__rosidl_generator_py\n'}
+[16.318244] (-) TimerEvent: {}
+[16.346997] (arm_interface) StdoutLine: {'line': b'[ 94%] \x1b[32mBuilding C object CMakeFiles/arm_interface__rosidl_typesupport_fastrtps_c__pyext.dir/rosidl_generator_py/arm_interface/_arm_interface_s.ep.rosidl_typesupport_fastrtps_c.c.o\x1b[0m\n'}
+[16.349392] (arm_interface) StdoutLine: {'line': b'[ 95%] \x1b[32mBuilding C object CMakeFiles/arm_interface__rosidl_typesupport_introspection_c__pyext.dir/rosidl_generator_py/arm_interface/_arm_interface_s.ep.rosidl_typesupport_introspection_c.c.o\x1b[0m\n'}
+[16.420245] (-) TimerEvent: {}
+[16.486795] (arm_interface) StdoutLine: {'line': b'[ 96%] \x1b[32m\x1b[1mLinking C shared library rosidl_generator_py/arm_interface/arm_interface_s__rosidl_typesupport_fastrtps_c.cpython-310-x86_64-linux-gnu.so\x1b[0m\n'}
+[16.490810] (arm_interface) StdoutLine: {'line': b'[ 97%] \x1b[32m\x1b[1mLinking C shared library rosidl_generator_py/arm_interface/arm_interface_s__rosidl_typesupport_introspection_c.cpython-310-x86_64-linux-gnu.so\x1b[0m\n'}
+[16.521244] (-) TimerEvent: {}
+[16.543723] (arm_interface) StdoutLine: {'line': b'[ 97%] Built target arm_interface__rosidl_typesupport_fastrtps_c__pyext\n'}
+[16.546332] (arm_interface) StdoutLine: {'line': b'[ 97%] Built target arm_interface__rosidl_typesupport_introspection_c__pyext\n'}
+[16.575306] (arm_interface) StdoutLine: {'line': b'[ 98%] \x1b[32mBuilding C object CMakeFiles/arm_interface__rosidl_typesupport_c__pyext.dir/rosidl_generator_py/arm_interface/_arm_interface_s.ep.rosidl_typesupport_c.c.o\x1b[0m\n'}
+[16.621344] (-) TimerEvent: {}
+[16.693760] (arm_interface) StdoutLine: {'line': b'[100%] \x1b[32m\x1b[1mLinking C shared library rosidl_generator_py/arm_interface/arm_interface_s__rosidl_typesupport_c.cpython-310-x86_64-linux-gnu.so\x1b[0m\n'}
+[16.721586] (-) TimerEvent: {}
+[16.727789] (arm_interface) StdoutLine: {'line': b'[100%] Built target arm_interface__rosidl_typesupport_c__pyext\n'}
+[16.751313] (arm_interface) CommandEnded: {'returncode': 0}
+[16.753519] (arm_interface) JobProgress: {'identifier': 'arm_interface', 'progress': 'install'}
+[16.764908] (arm_interface) Command: {'cmd': ['/usr/bin/cmake', '--install', '/var/robotic/yahboomcar_ws/build/arm_interface'], 'cwd': '/var/robotic/yahboomcar_ws/build/arm_interface', 'env': OrderedDict([('LESSOPEN', '| /usr/bin/lesspipe %s'), ('LANGUAGE', 'en_US'), ('USER', 'spen'), ('SSH_CLIENT', '192.168.50.35 2820 22'), ('LC_TIME', 'en_US.UTF-8'), ('XDG_SESSION_TYPE', 'tty'), ('GIT_ASKPASS', '/home/spen/.cursor-server/bin/linux-x64/4f2b772756b8f609e1354b3063de282ccbe7a690/extensions/git/dist/askpass.sh'), ('SHLVL', '1'), ('LD_LIBRARY_PATH', '/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib'), ('BROWSER', '/home/spen/.cursor-server/bin/linux-x64/4f2b772756b8f609e1354b3063de282ccbe7a690/bin/helpers/browser.sh'), ('MOTD_SHOWN', 'pam'), ('HOME', '/home/spen'), ('OLDPWD', '/home/spen/.cursor-server/bin/linux-x64/4f2b772756b8f609e1354b3063de282ccbe7a690'), ('TERM_PROGRAM_VERSION', '2.4.27'), ('VSCODE_IPC_HOOK_CLI', '/run/user/1000/vscode-ipc-50b4a07e-7b17-454b-8d88-90ad3090bd75.sock'), ('ROS_PYTHON_VERSION', '3'), ('VSCODE_GIT_ASKPASS_MAIN', '/home/spen/.cursor-server/bin/linux-x64/4f2b772756b8f609e1354b3063de282ccbe7a690/extensions/git/dist/askpass-main.js'), ('LC_MONETARY', 'en_US.UTF-8'), ('VSCODE_GIT_ASKPASS_NODE', '/home/spen/.cursor-server/bin/linux-x64/4f2b772756b8f609e1354b3063de282ccbe7a690/node'), ('DBUS_SESSION_BUS_ADDRESS', 'unix:path=/run/user/1000/bus'), ('COLORTERM', 'truecolor'), ('ROS_DISTRO', 'humble'), ('LOGNAME', 'spen'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('XDG_SESSION_CLASS', 'user'), ('TERM', 'xterm-256color'), ('XDG_SESSION_ID', '8'), ('ROS_LOCALHOST_ONLY', '0'), ('PATH', '/home/spen/.cursor-server/bin/linux-x64/4f2b772756b8f609e1354b3063de282ccbe7a690/bin/remote-cli:/opt/ros/humble/bin:/home/spen/.cursor-server/bin/linux-x64/4f2b772756b8f609e1354b3063de282ccbe7a690/bin/remote-cli:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin'), ('PAPERSIZE', 'letter'), ('LC_ADDRESS', 'en_US.UTF-8'), ('XDG_RUNTIME_DIR', '/run/user/1000'), ('LANG', 'en_US.UTF-8'), ('LC_TELEPHONE', 'en_US.UTF-8'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('VSCODE_GIT_IPC_HANDLE', '/run/user/1000/vscode-git-a8fce10363.sock'), ('TERM_PROGRAM', 'vscode'), ('AMENT_PREFIX_PATH', '/opt/ros/humble'), ('SHELL', '/bin/bash'), ('LC_NAME', 'en_US.UTF-8'), ('LESSCLOSE', '/usr/bin/lesspipe %s %s'), ('LC_MEASUREMENT', 'en_US.UTF-8'), ('LC_IDENTIFICATION', 'en_US.UTF-8'), ('VSCODE_GIT_IPC_AUTH_TOKEN', '12381cb96a4198e15888f3cee39506696f5f33a2c3f050a6049636ed37cdff8b'), ('VSCODE_GIT_ASKPASS_EXTRA_ARGS', ''), ('PWD', '/var/robotic/yahboomcar_ws/build/arm_interface'), ('SSH_CONNECTION', '192.168.50.35 2820 192.168.50.88 22'), ('XDG_DATA_DIRS', '/usr/share/gnome:/usr/local/share:/usr/share:/var/lib/snapd/desktop'), ('PYTHONPATH', '/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('LC_NUMERIC', 'en_US.UTF-8'), ('LC_PAPER', 'en_US.UTF-8'), ('COLCON', '1'), ('CMAKE_PREFIX_PATH', '/opt/ros/humble')]), 'shell': False}
+[16.779492] (arm_interface) StdoutLine: {'line': b'-- Install configuration: ""\n'}
+[16.780661] (arm_interface) StdoutLine: {'line': b'-- Installing: /var/robotic/yahboomcar_ws/install/arm_interface/share/ament_index/resource_index/rosidl_interfaces/arm_interface\n'}
+[16.780758] (arm_interface) StdoutLine: {'line': b'-- Installing: /var/robotic/yahboomcar_ws/install/arm_interface/include/arm_interface/arm_interface\n'}
+[16.780790] (arm_interface) StdoutLine: {'line': b'-- Installing: /var/robotic/yahboomcar_ws/install/arm_interface/include/arm_interface/arm_interface/srv\n'}
+[16.780820] (arm_interface) StdoutLine: {'line': b'-- Installing: /var/robotic/yahboomcar_ws/install/arm_interface/include/arm_interface/arm_interface/srv/detail\n'}
+[16.780848] (arm_interface) StdoutLine: {'line': b'-- Installing: /var/robotic/yahboomcar_ws/install/arm_interface/include/arm_interface/arm_interface/srv/detail/arm_kinemarics__functions.h\n'}
+[16.780875] (arm_interface) StdoutLine: {'line': b'-- Installing: /var/robotic/yahboomcar_ws/install/arm_interface/include/arm_interface/arm_interface/srv/detail/arm_kinemarics__functions.c\n'}
+[16.780902] (arm_interface) StdoutLine: {'line': b'-- Installing: /var/robotic/yahboomcar_ws/install/arm_interface/include/arm_interface/arm_interface/srv/detail/arm_kinemarics__struct.h\n'}
+[16.780929] (arm_interface) StdoutLine: {'line': b'-- Installing: /var/robotic/yahboomcar_ws/install/arm_interface/include/arm_interface/arm_interface/srv/detail/arm_kinemarics__type_support.h\n'}
+[16.780955] (arm_interface) StdoutLine: {'line': b'-- Installing: /var/robotic/yahboomcar_ws/install/arm_interface/include/arm_interface/arm_interface/srv/arm_kinemarics.h\n'}
+[16.780982] (arm_interface) StdoutLine: {'line': b'-- Installing: /var/robotic/yahboomcar_ws/install/arm_interface/include/arm_interface/arm_interface/msg\n'}
+[16.781008] (arm_interface) StdoutLine: {'line': b'-- Installing: /var/robotic/yahboomcar_ws/install/arm_interface/include/arm_interface/arm_interface/msg/target_xy_roll.h\n'}
+[16.781034] (arm_interface) StdoutLine: {'line': b'-- Installing: /var/robotic/yahboomcar_ws/install/arm_interface/include/arm_interface/arm_interface/msg/yolov5_detect.h\n'}
+[16.781059] (arm_interface) StdoutLine: {'line': b'-- Installing: /var/robotic/yahboomcar_ws/install/arm_interface/include/arm_interface/arm_interface/msg/arm_joint.h\n'}
+[16.781085] (arm_interface) StdoutLine: {'line': b'-- Installing: /var/robotic/yahboomcar_ws/install/arm_interface/include/arm_interface/arm_interface/msg/rosidl_generator_c__visibility_control.h\n'}
+[16.781111] (arm_interface) StdoutLine: {'line': b'-- Installing: /var/robotic/yahboomcar_ws/install/arm_interface/include/arm_interface/arm_interface/msg/detail\n'}
+[16.781137] (arm_interface) StdoutLine: {'line': b'-- Installing: /var/robotic/yahboomcar_ws/install/arm_interface/include/arm_interface/arm_interface/msg/detail/yolov5_detect__struct.h\n'}
+[16.781186] (arm_interface) StdoutLine: {'line': b'-- Installing: /var/robotic/yahboomcar_ws/install/arm_interface/include/arm_interface/arm_interface/msg/detail/april_tag_info__functions.c\n'}
+[16.781218] (arm_interface) StdoutLine: {'line': b'-- Installing: /var/robotic/yahboomcar_ws/install/arm_interface/include/arm_interface/arm_interface/msg/detail/yolov5_detect__functions.c\n'}
+[16.781504] (arm_interface) StdoutLine: {'line': b'-- Installing: /var/robotic/yahboomcar_ws/install/arm_interface/include/arm_interface/arm_interface/msg/detail/center_xy__functions.c\n'}
+[16.781544] (arm_interface) StdoutLine: {'line': b'-- Installing: /var/robotic/yahboomcar_ws/install/arm_interface/include/arm_interface/arm_interface/msg/detail/target_xy_roll__type_support.h\n'}
+[16.781572] (arm_interface) StdoutLine: {'line': b'-- Installing: /var/robotic/yahboomcar_ws/install/arm_interface/include/arm_interface/arm_interface/msg/detail/cur_joints__functions.c\n'}
+[16.781600] (arm_interface) StdoutLine: {'line': b'-- Installing: /var/robotic/yahboomcar_ws/install/arm_interface/include/arm_interface/arm_interface/msg/detail/position__type_support.h\n'}
+[16.781817] (arm_interface) StdoutLine: {'line': b'-- Installing: /var/robotic/yahboomcar_ws/install/arm_interface/include/arm_interface/arm_interface/msg/detail/arm_joint__struct.h\n'}
+[16.781852] (arm_interface) StdoutLine: {'line': b'-- Installing: /var/robotic/yahboomcar_ws/install/arm_interface/include/arm_interface/arm_interface/msg/detail/april_tag_info__functions.h\n'}
+[16.781880] (arm_interface) StdoutLine: {'line': b'-- Installing: /var/robotic/yahboomcar_ws/install/arm_interface/include/arm_interface/arm_interface/msg/detail/shape_info__functions.h\n'}
+[16.782021] (arm_interface) StdoutLine: {'line': b'-- Installing: /var/robotic/yahboomcar_ws/install/arm_interface/include/arm_interface/arm_interface/msg/detail/arm_joint__type_support.h\n'}
+[16.782052] (arm_interface) StdoutLine: {'line': b'-- Installing: /var/robotic/yahboomcar_ws/install/arm_interface/include/arm_interface/arm_interface/msg/detail/position__functions.c\n'}
+[16.782262] (arm_interface) StdoutLine: {'line': b'-- Installing: /var/robotic/yahboomcar_ws/install/arm_interface/include/arm_interface/arm_interface/msg/detail/target_xy_roll__functions.h\n'}
+[16.782301] (arm_interface) StdoutLine: {'line': b'-- Installing: /var/robotic/yahboomcar_ws/install/arm_interface/include/arm_interface/arm_interface/msg/detail/yolov5_detect__type_support.h\n'}
+[16.782328] (arm_interface) StdoutLine: {'line': b'-- Installing: /var/robotic/yahboomcar_ws/install/arm_interface/include/arm_interface/arm_interface/msg/detail/april_tag_info__type_support.h\n'}
+[16.782375] (arm_interface) StdoutLine: {'line': b'-- Installing: /var/robotic/yahboomcar_ws/install/arm_interface/include/arm_interface/arm_interface/msg/detail/shape_info__functions.c\n'}
+[16.785652] (arm_interface) StdoutLine: {'line': b'-- Installing: /var/robotic/yahboomcar_ws/install/arm_interface/include/arm_interface/arm_interface/msg/detail/yolov5_detect__functions.h\n'}
+[16.785755] (arm_interface) StdoutLine: {'line': b'-- Installing: /var/robotic/yahboomcar_ws/install/arm_interface/include/arm_interface/arm_interface/msg/detail/position__struct.h\n'}
+[16.785792] (arm_interface) StdoutLine: {'line': b'-- Installing: /var/robotic/yahboomcar_ws/install/arm_interface/include/arm_interface/arm_interface/msg/detail/center_xy__type_support.h\n'}
+[16.785821] (arm_interface) StdoutLine: {'line': b'-- Installing: /var/robotic/yahboomcar_ws/install/arm_interface/include/arm_interface/arm_interface/msg/detail/target_xy_roll__struct.h\n'}
+[16.785848] (arm_interface) StdoutLine: {'line': b'-- Installing: /var/robotic/yahboomcar_ws/install/arm_interface/include/arm_interface/arm_interface/msg/detail/center_xy__functions.h\n'}
+[16.785875] (arm_interface) StdoutLine: {'line': b'-- Installing: /var/robotic/yahboomcar_ws/install/arm_interface/include/arm_interface/arm_interface/msg/detail/cur_joints__type_support.h\n'}
+[16.785901] (arm_interface) StdoutLine: {'line': b'-- Installing: /var/robotic/yahboomcar_ws/install/arm_interface/include/arm_interface/arm_interface/msg/detail/position__functions.h\n'}
+[16.785927] (arm_interface) StdoutLine: {'line': b'-- Installing: /var/robotic/yahboomcar_ws/install/arm_interface/include/arm_interface/arm_interface/msg/detail/april_tag_info__struct.h\n'}
+[16.785953] (arm_interface) StdoutLine: {'line': b'-- Installing: /var/robotic/yahboomcar_ws/install/arm_interface/include/arm_interface/arm_interface/msg/detail/shape_info__struct.h\n'}
+[16.785979] (arm_interface) StdoutLine: {'line': b'-- Installing: /var/robotic/yahboomcar_ws/install/arm_interface/include/arm_interface/arm_interface/msg/detail/arm_joint__functions.c\n'}
+[16.786005] (arm_interface) StdoutLine: {'line': b'-- Installing: /var/robotic/yahboomcar_ws/install/arm_interface/include/arm_interface/arm_interface/msg/detail/shape_info__type_support.h\n'}
+[16.786033] (arm_interface) StdoutLine: {'line': b'-- Installing: /var/robotic/yahboomcar_ws/install/arm_interface/include/arm_interface/arm_interface/msg/detail/target_xy_roll__functions.c\n'}
+[16.786058] (arm_interface) StdoutLine: {'line': b'-- Installing: /var/robotic/yahboomcar_ws/install/arm_interface/include/arm_interface/arm_interface/msg/detail/cur_joints__functions.h\n'}
+[16.786084] (arm_interface) StdoutLine: {'line': b'-- Installing: /var/robotic/yahboomcar_ws/install/arm_interface/include/arm_interface/arm_interface/msg/detail/center_xy__struct.h\n'}
+[16.786110] (arm_interface) StdoutLine: {'line': b'-- Installing: /var/robotic/yahboomcar_ws/install/arm_interface/include/arm_interface/arm_interface/msg/detail/arm_joint__functions.h\n'}
+[16.786136] (arm_interface) StdoutLine: {'line': b'-- Installing: /var/robotic/yahboomcar_ws/install/arm_interface/include/arm_interface/arm_interface/msg/detail/cur_joints__struct.h\n'}
+[16.786163] (arm_interface) StdoutLine: {'line': b'-- Installing: /var/robotic/yahboomcar_ws/install/arm_interface/include/arm_interface/arm_interface/msg/april_tag_info.h\n'}
+[16.786206] (arm_interface) StdoutLine: {'line': b'-- Installing: /var/robotic/yahboomcar_ws/install/arm_interface/include/arm_interface/arm_interface/msg/shape_info.h\n'}
+[16.786234] (arm_interface) StdoutLine: {'line': b'-- Installing: /var/robotic/yahboomcar_ws/install/arm_interface/include/arm_interface/arm_interface/msg/center_xy.h\n'}
+[16.786260] (arm_interface) StdoutLine: {'line': b'-- Installing: /var/robotic/yahboomcar_ws/install/arm_interface/include/arm_interface/arm_interface/msg/position.h\n'}
+[16.786286] (arm_interface) StdoutLine: {'line': b'-- Installing: /var/robotic/yahboomcar_ws/install/arm_interface/include/arm_interface/arm_interface/msg/cur_joints.h\n'}
+[16.786448] (arm_interface) StdoutLine: {'line': b'-- Installing: /var/robotic/yahboomcar_ws/install/arm_interface/share/arm_interface/environment/library_path.sh\n'}
+[16.786482] (arm_interface) StdoutLine: {'line': b'-- Installing: /var/robotic/yahboomcar_ws/install/arm_interface/share/arm_interface/environment/library_path.dsv\n'}
+[16.787098] (arm_interface) StdoutLine: {'line': b'-- Installing: /var/robotic/yahboomcar_ws/install/arm_interface/lib/libarm_interface__rosidl_generator_c.so\n'}
+[16.788794] (arm_interface) StdoutLine: {'line': b'-- Set runtime path of "/var/robotic/yahboomcar_ws/install/arm_interface/lib/libarm_interface__rosidl_generator_c.so" to ""\n'}
+[16.788874] (arm_interface) StdoutLine: {'line': b'-- Up-to-date: /var/robotic/yahboomcar_ws/install/arm_interface/include/arm_interface/arm_interface\n'}
+[16.788906] (arm_interface) StdoutLine: {'line': b'-- Up-to-date: /var/robotic/yahboomcar_ws/install/arm_interface/include/arm_interface/arm_interface/srv\n'}
+[16.788934] (arm_interface) StdoutLine: {'line': b'-- Up-to-date: /var/robotic/yahboomcar_ws/install/arm_interface/include/arm_interface/arm_interface/srv/detail\n'}
+[16.788961] (arm_interface) StdoutLine: {'line': b'-- Installing: /var/robotic/yahboomcar_ws/install/arm_interface/include/arm_interface/arm_interface/srv/detail/arm_kinemarics__rosidl_typesupport_fastrtps_c.h\n'}
+[16.788988] (arm_interface) StdoutLine: {'line': b'-- Up-to-date: /var/robotic/yahboomcar_ws/install/arm_interface/include/arm_interface/arm_interface/msg\n'}
+[16.789015] (arm_interface) StdoutLine: {'line': b'-- Up-to-date: /var/robotic/yahboomcar_ws/install/arm_interface/include/arm_interface/arm_interface/msg/detail\n'}
+[16.789040] (arm_interface) StdoutLine: {'line': b'-- Installing: /var/robotic/yahboomcar_ws/install/arm_interface/include/arm_interface/arm_interface/msg/detail/shape_info__rosidl_typesupport_fastrtps_c.h\n'}
+[16.789088] (arm_interface) StdoutLine: {'line': b'-- Installing: /var/robotic/yahboomcar_ws/install/arm_interface/include/arm_interface/arm_interface/msg/detail/center_xy__rosidl_typesupport_fastrtps_c.h\n'}
+[16.789204] (arm_interface) StdoutLine: {'line': b'-- Installing: /var/robotic/yahboomcar_ws/install/arm_interface/include/arm_interface/arm_interface/msg/detail/april_tag_info__rosidl_typesupport_fastrtps_c.h\n'}
+[16.789324] (arm_interface) StdoutLine: {'line': b'-- Installing: /var/robotic/yahboomcar_ws/install/arm_interface/include/arm_interface/arm_interface/msg/detail/arm_joint__rosidl_typesupport_fastrtps_c.h\n'}
+[16.789544] (arm_interface) StdoutLine: {'line': b'-- Installing: /var/robotic/yahboomcar_ws/install/arm_interface/include/arm_interface/arm_interface/msg/detail/target_xy_roll__rosidl_typesupport_fastrtps_c.h\n'}
+[16.792376] (arm_interface) StdoutLine: {'line': b'-- Installing: /var/robotic/yahboomcar_ws/install/arm_interface/include/arm_interface/arm_interface/msg/detail/yolov5_detect__rosidl_typesupport_fastrtps_c.h\n'}
+[16.792478] (arm_interface) StdoutLine: {'line': b'-- Installing: /var/robotic/yahboomcar_ws/install/arm_interface/include/arm_interface/arm_interface/msg/detail/position__rosidl_typesupport_fastrtps_c.h\n'}
+[16.792509] (arm_interface) StdoutLine: {'line': b'-- Installing: /var/robotic/yahboomcar_ws/install/arm_interface/include/arm_interface/arm_interface/msg/detail/cur_joints__rosidl_typesupport_fastrtps_c.h\n'}
+[16.792537] (arm_interface) StdoutLine: {'line': b'-- Installing: /var/robotic/yahboomcar_ws/install/arm_interface/include/arm_interface/arm_interface/msg/rosidl_typesupport_fastrtps_c__visibility_control.h\n'}
+[16.792564] (arm_interface) StdoutLine: {'line': b'-- Installing: /var/robotic/yahboomcar_ws/install/arm_interface/lib/libarm_interface__rosidl_typesupport_fastrtps_c.so\n'}
+[16.792591] (arm_interface) StdoutLine: {'line': b'-- Set runtime path of "/var/robotic/yahboomcar_ws/install/arm_interface/lib/libarm_interface__rosidl_typesupport_fastrtps_c.so" to ""\n'}
+[16.792627] (arm_interface) StdoutLine: {'line': b'-- Up-to-date: /var/robotic/yahboomcar_ws/install/arm_interface/include/arm_interface/arm_interface\n'}
+[16.792665] (arm_interface) StdoutLine: {'line': b'-- Up-to-date: /var/robotic/yahboomcar_ws/install/arm_interface/include/arm_interface/arm_interface/srv\n'}
+[16.792693] (arm_interface) StdoutLine: {'line': b'-- Up-to-date: /var/robotic/yahboomcar_ws/install/arm_interface/include/arm_interface/arm_interface/srv/detail\n'}
+[16.792720] (arm_interface) StdoutLine: {'line': b'-- Installing: /var/robotic/yahboomcar_ws/install/arm_interface/include/arm_interface/arm_interface/srv/detail/arm_kinemarics__type_support.hpp\n'}
+[16.792751] (arm_interface) StdoutLine: {'line': b'-- Installing: /var/robotic/yahboomcar_ws/install/arm_interface/include/arm_interface/arm_interface/srv/detail/arm_kinemarics__struct.hpp\n'}
+[16.793323] (arm_interface) StdoutLine: {'line': b'-- Installing: /var/robotic/yahboomcar_ws/install/arm_interface/include/arm_interface/arm_interface/srv/detail/arm_kinemarics__traits.hpp\n'}
+[16.793380] (arm_interface) StdoutLine: {'line': b'-- Installing: /var/robotic/yahboomcar_ws/install/arm_interface/include/arm_interface/arm_interface/srv/detail/arm_kinemarics__builder.hpp\n'}
+[16.793410] (arm_interface) StdoutLine: {'line': b'-- Installing: /var/robotic/yahboomcar_ws/install/arm_interface/include/arm_interface/arm_interface/srv/arm_kinemarics.hpp\n'}
+[16.793438] (arm_interface) StdoutLine: {'line': b'-- Up-to-date: /var/robotic/yahboomcar_ws/install/arm_interface/include/arm_interface/arm_interface/msg\n'}
+[16.793465] (arm_interface) StdoutLine: {'line': b'-- Installing: /var/robotic/yahboomcar_ws/install/arm_interface/include/arm_interface/arm_interface/msg/cur_joints.hpp\n'}
+[16.793491] (arm_interface) StdoutLine: {'line': b'-- Installing: /var/robotic/yahboomcar_ws/install/arm_interface/include/arm_interface/arm_interface/msg/target_xy_roll.hpp\n'}
+[16.793516] (arm_interface) StdoutLine: {'line': b'-- Installing: /var/robotic/yahboomcar_ws/install/arm_interface/include/arm_interface/arm_interface/msg/arm_joint.hpp\n'}
+[16.793543] (arm_interface) StdoutLine: {'line': b'-- Up-to-date: /var/robotic/yahboomcar_ws/install/arm_interface/include/arm_interface/arm_interface/msg/detail\n'}
+[16.793568] (arm_interface) StdoutLine: {'line': b'-- Installing: /var/robotic/yahboomcar_ws/install/arm_interface/include/arm_interface/arm_interface/msg/detail/center_xy__builder.hpp\n'}
+[16.793698] (arm_interface) StdoutLine: {'line': b'-- Installing: /var/robotic/yahboomcar_ws/install/arm_interface/include/arm_interface/arm_interface/msg/detail/shape_info__struct.hpp\n'}
+[16.793753] (arm_interface) StdoutLine: {'line': b'-- Installing: /var/robotic/yahboomcar_ws/install/arm_interface/include/arm_interface/arm_interface/msg/detail/center_xy__type_support.hpp\n'}
+[16.793856] (arm_interface) StdoutLine: {'line': b'-- Installing: /var/robotic/yahboomcar_ws/install/arm_interface/include/arm_interface/arm_interface/msg/detail/arm_joint__struct.hpp\n'}
+[16.793996] (arm_interface) StdoutLine: {'line': b'-- Installing: /var/robotic/yahboomcar_ws/install/arm_interface/include/arm_interface/arm_interface/msg/detail/target_xy_roll__struct.hpp\n'}
+[16.796063] (arm_interface) StdoutLine: {'line': b'-- Installing: /var/robotic/yahboomcar_ws/install/arm_interface/include/arm_interface/arm_interface/msg/detail/center_xy__traits.hpp\n'}
+[16.796148] (arm_interface) StdoutLine: {'line': b'-- Installing: /var/robotic/yahboomcar_ws/install/arm_interface/include/arm_interface/arm_interface/msg/detail/cur_joints__struct.hpp\n'}
+[16.796193] (arm_interface) StdoutLine: {'line': b'-- Installing: /var/robotic/yahboomcar_ws/install/arm_interface/include/arm_interface/arm_interface/msg/detail/april_tag_info__type_support.hpp\n'}
+[16.796224] (arm_interface) StdoutLine: {'line': b'-- Installing: /var/robotic/yahboomcar_ws/install/arm_interface/include/arm_interface/arm_interface/msg/detail/arm_joint__builder.hpp\n'}
+[16.796251] (arm_interface) StdoutLine: {'line': b'-- Installing: /var/robotic/yahboomcar_ws/install/arm_interface/include/arm_interface/arm_interface/msg/detail/position__struct.hpp\n'}
+[16.796281] (arm_interface) StdoutLine: {'line': b'-- Installing: /var/robotic/yahboomcar_ws/install/arm_interface/include/arm_interface/arm_interface/msg/detail/yolov5_detect__builder.hpp\n'}
+[16.796307] (arm_interface) StdoutLine: {'line': b'-- Installing: /var/robotic/yahboomcar_ws/install/arm_interface/include/arm_interface/arm_interface/msg/detail/position__builder.hpp\n'}
+[16.796349] (arm_interface) StdoutLine: {'line': b'-- Installing: /var/robotic/yahboomcar_ws/install/arm_interface/include/arm_interface/arm_interface/msg/detail/arm_joint__type_support.hpp\n'}
+[16.796379] (arm_interface) StdoutLine: {'line': b'-- Installing: /var/robotic/yahboomcar_ws/install/arm_interface/include/arm_interface/arm_interface/msg/detail/position__traits.hpp\n'}
+[16.796405] (arm_interface) StdoutLine: {'line': b'-- Installing: /var/robotic/yahboomcar_ws/install/arm_interface/include/arm_interface/arm_interface/msg/detail/yolov5_detect__type_support.hpp\n'}
+[16.796433] (arm_interface) StdoutLine: {'line': b'-- Installing: /var/robotic/yahboomcar_ws/install/arm_interface/include/arm_interface/arm_interface/msg/detail/target_xy_roll__type_support.hpp\n'}
+[16.796459] (arm_interface) StdoutLine: {'line': b'-- Installing: /var/robotic/yahboomcar_ws/install/arm_interface/include/arm_interface/arm_interface/msg/detail/yolov5_detect__struct.hpp\n'}
+[16.796486] (arm_interface) StdoutLine: {'line': b'-- Installing: /var/robotic/yahboomcar_ws/install/arm_interface/include/arm_interface/arm_interface/msg/detail/shape_info__traits.hpp\n'}
+[16.796776] (arm_interface) StdoutLine: {'line': b'-- Installing: /var/robotic/yahboomcar_ws/install/arm_interface/include/arm_interface/arm_interface/msg/detail/target_xy_roll__traits.hpp\n'}
+[16.796828] (arm_interface) StdoutLine: {'line': b'-- Installing: /var/robotic/yahboomcar_ws/install/arm_interface/include/arm_interface/arm_interface/msg/detail/target_xy_roll__builder.hpp\n'}
+[16.796858] (arm_interface) StdoutLine: {'line': b'-- Installing: /var/robotic/yahboomcar_ws/install/arm_interface/include/arm_interface/arm_interface/msg/detail/cur_joints__builder.hpp\n'}
+[16.796886] (arm_interface) StdoutLine: {'line': b'-- Installing: /var/robotic/yahboomcar_ws/install/arm_interface/include/arm_interface/arm_interface/msg/detail/april_tag_info__traits.hpp\n'}
+[16.796931] (arm_interface) StdoutLine: {'line': b'-- Installing: /var/robotic/yahboomcar_ws/install/arm_interface/include/arm_interface/arm_interface/msg/detail/cur_joints__type_support.hpp\n'}
+[16.797280] (arm_interface) StdoutLine: {'line': b'-- Installing: /var/robotic/yahboomcar_ws/install/arm_interface/include/arm_interface/arm_interface/msg/detail/yolov5_detect__traits.hpp\n'}
+[16.797338] (arm_interface) StdoutLine: {'line': b'-- Installing: /var/robotic/yahboomcar_ws/install/arm_interface/include/arm_interface/arm_interface/msg/detail/center_xy__struct.hpp\n'}
+[16.797440] (arm_interface) StdoutLine: {'line': b'-- Installing: /var/robotic/yahboomcar_ws/install/arm_interface/include/arm_interface/arm_interface/msg/detail/position__type_support.hpp\n'}
+[16.798734] (arm_interface) StdoutLine: {'line': b'-- Installing: /var/robotic/yahboomcar_ws/install/arm_interface/include/arm_interface/arm_interface/msg/detail/cur_joints__traits.hpp\n'}
+[16.798806] (arm_interface) StdoutLine: {'line': b'-- Installing: /var/robotic/yahboomcar_ws/install/arm_interface/include/arm_interface/arm_interface/msg/detail/april_tag_info__struct.hpp\n'}
+[16.798836] (arm_interface) StdoutLine: {'line': b'-- Installing: /var/robotic/yahboomcar_ws/install/arm_interface/include/arm_interface/arm_interface/msg/detail/shape_info__builder.hpp\n'}
+[16.798863] (arm_interface) StdoutLine: {'line': b'-- Installing: /var/robotic/yahboomcar_ws/install/arm_interface/include/arm_interface/arm_interface/msg/detail/shape_info__type_support.hpp\n'}
+[16.798889] (arm_interface) StdoutLine: {'line': b'-- Installing: /var/robotic/yahboomcar_ws/install/arm_interface/include/arm_interface/arm_interface/msg/detail/arm_joint__traits.hpp\n'}
+[16.798915] (arm_interface) StdoutLine: {'line': b'-- Installing: /var/robotic/yahboomcar_ws/install/arm_interface/include/arm_interface/arm_interface/msg/detail/april_tag_info__builder.hpp\n'}
+[16.798941] (arm_interface) StdoutLine: {'line': b'-- Installing: /var/robotic/yahboomcar_ws/install/arm_interface/include/arm_interface/arm_interface/msg/position.hpp\n'}
+[16.798968] (arm_interface) StdoutLine: {'line': b'-- Installing: /var/robotic/yahboomcar_ws/install/arm_interface/include/arm_interface/arm_interface/msg/yolov5_detect.hpp\n'}
+[16.799122] (arm_interface) StdoutLine: {'line': b'-- Installing: /var/robotic/yahboomcar_ws/install/arm_interface/include/arm_interface/arm_interface/msg/center_xy.hpp\n'}
+[16.799156] (arm_interface) StdoutLine: {'line': b'-- Installing: /var/robotic/yahboomcar_ws/install/arm_interface/include/arm_interface/arm_interface/msg/shape_info.hpp\n'}
+[16.799209] (arm_interface) StdoutLine: {'line': b'-- Installing: /var/robotic/yahboomcar_ws/install/arm_interface/include/arm_interface/arm_interface/msg/rosidl_generator_cpp__visibility_control.hpp\n'}
+[16.799307] (arm_interface) StdoutLine: {'line': b'-- Installing: /var/robotic/yahboomcar_ws/install/arm_interface/include/arm_interface/arm_interface/msg/april_tag_info.hpp\n'}
+[16.802697] (arm_interface) StdoutLine: {'line': b'-- Up-to-date: /var/robotic/yahboomcar_ws/install/arm_interface/include/arm_interface/arm_interface\n'}
+[16.802800] (arm_interface) StdoutLine: {'line': b'-- Up-to-date: /var/robotic/yahboomcar_ws/install/arm_interface/include/arm_interface/arm_interface/srv\n'}
+[16.802832] (arm_interface) StdoutLine: {'line': b'-- Up-to-date: /var/robotic/yahboomcar_ws/install/arm_interface/include/arm_interface/arm_interface/srv/detail\n'}
+[16.802879] (arm_interface) StdoutLine: {'line': b'-- Installing: /var/robotic/yahboomcar_ws/install/arm_interface/include/arm_interface/arm_interface/srv/detail/arm_kinemarics__rosidl_typesupport_fastrtps_cpp.hpp\n'}
+[16.802914] (arm_interface) StdoutLine: {'line': b'-- Installing: /var/robotic/yahboomcar_ws/install/arm_interface/include/arm_interface/arm_interface/srv/detail/dds_fastrtps\n'}
+[16.802943] (arm_interface) StdoutLine: {'line': b'-- Up-to-date: /var/robotic/yahboomcar_ws/install/arm_interface/include/arm_interface/arm_interface/msg\n'}
+[16.802970] (arm_interface) StdoutLine: {'line': b'-- Up-to-date: /var/robotic/yahboomcar_ws/install/arm_interface/include/arm_interface/arm_interface/msg/detail\n'}
+[16.802998] (arm_interface) StdoutLine: {'line': b'-- Installing: /var/robotic/yahboomcar_ws/install/arm_interface/include/arm_interface/arm_interface/msg/detail/april_tag_info__rosidl_typesupport_fastrtps_cpp.hpp\n'}
+[16.803025] (arm_interface) StdoutLine: {'line': b'-- Installing: /var/robotic/yahboomcar_ws/install/arm_interface/include/arm_interface/arm_interface/msg/detail/arm_joint__rosidl_typesupport_fastrtps_cpp.hpp\n'}
+[16.803052] (arm_interface) StdoutLine: {'line': b'-- Installing: /var/robotic/yahboomcar_ws/install/arm_interface/include/arm_interface/arm_interface/msg/detail/target_xy_roll__rosidl_typesupport_fastrtps_cpp.hpp\n'}
+[16.803079] (arm_interface) StdoutLine: {'line': b'-- Installing: /var/robotic/yahboomcar_ws/install/arm_interface/include/arm_interface/arm_interface/msg/detail/shape_info__rosidl_typesupport_fastrtps_cpp.hpp\n'}
+[16.803105] (arm_interface) StdoutLine: {'line': b'-- Installing: /var/robotic/yahboomcar_ws/install/arm_interface/include/arm_interface/arm_interface/msg/detail/position__rosidl_typesupport_fastrtps_cpp.hpp\n'}
+[16.803131] (arm_interface) StdoutLine: {'line': b'-- Installing: /var/robotic/yahboomcar_ws/install/arm_interface/include/arm_interface/arm_interface/msg/detail/center_xy__rosidl_typesupport_fastrtps_cpp.hpp\n'}
+[16.803157] (arm_interface) StdoutLine: {'line': b'-- Installing: /var/robotic/yahboomcar_ws/install/arm_interface/include/arm_interface/arm_interface/msg/detail/cur_joints__rosidl_typesupport_fastrtps_cpp.hpp\n'}
+[16.803190] (arm_interface) StdoutLine: {'line': b'-- Installing: /var/robotic/yahboomcar_ws/install/arm_interface/include/arm_interface/arm_interface/msg/detail/dds_fastrtps\n'}
+[16.803221] (arm_interface) StdoutLine: {'line': b'-- Installing: /var/robotic/yahboomcar_ws/install/arm_interface/include/arm_interface/arm_interface/msg/detail/yolov5_detect__rosidl_typesupport_fastrtps_cpp.hpp\n'}
+[16.803247] (arm_interface) StdoutLine: {'line': b'-- Installing: /var/robotic/yahboomcar_ws/install/arm_interface/include/arm_interface/arm_interface/msg/rosidl_typesupport_fastrtps_cpp__visibility_control.h\n'}
+[16.803272] (arm_interface) StdoutLine: {'line': b'-- Installing: /var/robotic/yahboomcar_ws/install/arm_interface/lib/libarm_interface__rosidl_typesupport_fastrtps_cpp.so\n'}
+[16.803298] (arm_interface) StdoutLine: {'line': b'-- Set runtime path of "/var/robotic/yahboomcar_ws/install/arm_interface/lib/libarm_interface__rosidl_typesupport_fastrtps_cpp.so" to ""\n'}
+[16.803324] (arm_interface) StdoutLine: {'line': b'-- Up-to-date: /var/robotic/yahboomcar_ws/install/arm_interface/include/arm_interface/arm_interface\n'}
+[16.803350] (arm_interface) StdoutLine: {'line': b'-- Up-to-date: /var/robotic/yahboomcar_ws/install/arm_interface/include/arm_interface/arm_interface/srv\n'}
+[16.803375] (arm_interface) StdoutLine: {'line': b'-- Up-to-date: /var/robotic/yahboomcar_ws/install/arm_interface/include/arm_interface/arm_interface/srv/detail\n'}
+[16.803719] (arm_interface) StdoutLine: {'line': b'-- Installing: /var/robotic/yahboomcar_ws/install/arm_interface/include/arm_interface/arm_interface/srv/detail/arm_kinemarics__type_support.c\n'}
+[16.803760] (arm_interface) StdoutLine: {'line': b'-- Installing: /var/robotic/yahboomcar_ws/install/arm_interface/include/arm_interface/arm_interface/srv/detail/arm_kinemarics__rosidl_typesupport_introspection_c.h\n'}
+[16.803789] (arm_interface) StdoutLine: {'line': b'-- Up-to-date: /var/robotic/yahboomcar_ws/install/arm_interface/include/arm_interface/arm_interface/msg\n'}
+[16.803845] (arm_interface) StdoutLine: {'line': b'-- Up-to-date: /var/robotic/yahboomcar_ws/install/arm_interface/include/arm_interface/arm_interface/msg/detail\n'}
+[16.803874] (arm_interface) StdoutLine: {'line': b'-- Installing: /var/robotic/yahboomcar_ws/install/arm_interface/include/arm_interface/arm_interface/msg/detail/target_xy_roll__type_support.c\n'}
+[16.803921] (arm_interface) StdoutLine: {'line': b'-- Installing: /var/robotic/yahboomcar_ws/install/arm_interface/include/arm_interface/arm_interface/msg/detail/arm_joint__type_support.c\n'}
+[16.804229] (arm_interface) StdoutLine: {'line': b'-- Installing: /var/robotic/yahboomcar_ws/install/arm_interface/include/arm_interface/arm_interface/msg/detail/arm_joint__rosidl_typesupport_introspection_c.h\n'}
+[16.807833] (arm_interface) StdoutLine: {'line': b'-- Installing: /var/robotic/yahboomcar_ws/install/arm_interface/include/arm_interface/arm_interface/msg/detail/cur_joints__type_support.c\n'}
+[16.807947] (arm_interface) StdoutLine: {'line': b'-- Installing: /var/robotic/yahboomcar_ws/install/arm_interface/include/arm_interface/arm_interface/msg/detail/position__type_support.c\n'}
+[16.807981] (arm_interface) StdoutLine: {'line': b'-- Installing: /var/robotic/yahboomcar_ws/install/arm_interface/include/arm_interface/arm_interface/msg/detail/shape_info__type_support.c\n'}
+[16.808014] (arm_interface) StdoutLine: {'line': b'-- Installing: /var/robotic/yahboomcar_ws/install/arm_interface/include/arm_interface/arm_interface/msg/detail/target_xy_roll__rosidl_typesupport_introspection_c.h\n'}
+[16.808043] (arm_interface) StdoutLine: {'line': b'-- Installing: /var/robotic/yahboomcar_ws/install/arm_interface/include/arm_interface/arm_interface/msg/detail/position__rosidl_typesupport_introspection_c.h\n'}
+[16.808070] (arm_interface) StdoutLine: {'line': b'-- Installing: /var/robotic/yahboomcar_ws/install/arm_interface/include/arm_interface/arm_interface/msg/detail/shape_info__rosidl_typesupport_introspection_c.h\n'}
+[16.808096] (arm_interface) StdoutLine: {'line': b'-- Installing: /var/robotic/yahboomcar_ws/install/arm_interface/include/arm_interface/arm_interface/msg/detail/april_tag_info__type_support.c\n'}
+[16.808122] (arm_interface) StdoutLine: {'line': b'-- Installing: /var/robotic/yahboomcar_ws/install/arm_interface/include/arm_interface/arm_interface/msg/detail/yolov5_detect__rosidl_typesupport_introspection_c.h\n'}
+[16.808150] (arm_interface) StdoutLine: {'line': b'-- Installing: /var/robotic/yahboomcar_ws/install/arm_interface/include/arm_interface/arm_interface/msg/detail/center_xy__type_support.c\n'}
+[16.808176] (arm_interface) StdoutLine: {'line': b'-- Installing: /var/robotic/yahboomcar_ws/install/arm_interface/include/arm_interface/arm_interface/msg/detail/april_tag_info__rosidl_typesupport_introspection_c.h\n'}
+[16.808328] (arm_interface) StdoutLine: {'line': b'-- Installing: /var/robotic/yahboomcar_ws/install/arm_interface/include/arm_interface/arm_interface/msg/detail/yolov5_detect__type_support.c\n'}
+[16.808358] (arm_interface) StdoutLine: {'line': b'-- Installing: /var/robotic/yahboomcar_ws/install/arm_interface/include/arm_interface/arm_interface/msg/detail/center_xy__rosidl_typesupport_introspection_c.h\n'}
+[16.808407] (arm_interface) StdoutLine: {'line': b'-- Installing: /var/robotic/yahboomcar_ws/install/arm_interface/include/arm_interface/arm_interface/msg/detail/cur_joints__rosidl_typesupport_introspection_c.h\n'}
+[16.808441] (arm_interface) StdoutLine: {'line': b'-- Installing: /var/robotic/yahboomcar_ws/install/arm_interface/include/arm_interface/arm_interface/msg/rosidl_typesupport_introspection_c__visibility_control.h\n'}
+[16.808469] (arm_interface) StdoutLine: {'line': b'-- Installing: /var/robotic/yahboomcar_ws/install/arm_interface/lib/libarm_interface__rosidl_typesupport_introspection_c.so\n'}
+[16.808496] (arm_interface) StdoutLine: {'line': b'-- Set runtime path of "/var/robotic/yahboomcar_ws/install/arm_interface/lib/libarm_interface__rosidl_typesupport_introspection_c.so" to ""\n'}
+[16.808523] (arm_interface) StdoutLine: {'line': b'-- Installing: /var/robotic/yahboomcar_ws/install/arm_interface/lib/libarm_interface__rosidl_typesupport_c.so\n'}
+[16.808550] (arm_interface) StdoutLine: {'line': b'-- Set runtime path of "/var/robotic/yahboomcar_ws/install/arm_interface/lib/libarm_interface__rosidl_typesupport_c.so" to ""\n'}
+[16.808577] (arm_interface) StdoutLine: {'line': b'-- Up-to-date: /var/robotic/yahboomcar_ws/install/arm_interface/include/arm_interface/arm_interface\n'}
+[16.808629] (arm_interface) StdoutLine: {'line': b'-- Up-to-date: /var/robotic/yahboomcar_ws/install/arm_interface/include/arm_interface/arm_interface/srv\n'}
+[16.808700] (arm_interface) StdoutLine: {'line': b'-- Up-to-date: /var/robotic/yahboomcar_ws/install/arm_interface/include/arm_interface/arm_interface/srv/detail\n'}
+[16.808771] (arm_interface) StdoutLine: {'line': b'-- Installing: /var/robotic/yahboomcar_ws/install/arm_interface/include/arm_interface/arm_interface/srv/detail/arm_kinemarics__rosidl_typesupport_introspection_cpp.hpp\n'}
+[16.808896] (arm_interface) StdoutLine: {'line': b'-- Installing: /var/robotic/yahboomcar_ws/install/arm_interface/include/arm_interface/arm_interface/srv/detail/arm_kinemarics__type_support.cpp\n'}
+[16.811007] (arm_interface) StdoutLine: {'line': b'-- Up-to-date: /var/robotic/yahboomcar_ws/install/arm_interface/include/arm_interface/arm_interface/msg\n'}
+[16.811313] (arm_interface) StdoutLine: {'line': b'-- Up-to-date: /var/robotic/yahboomcar_ws/install/arm_interface/include/arm_interface/arm_interface/msg/detail\n'}
+[16.811344] (arm_interface) StdoutLine: {'line': b'-- Installing: /var/robotic/yahboomcar_ws/install/arm_interface/include/arm_interface/arm_interface/msg/detail/shape_info__type_support.cpp\n'}
+[16.811372] (arm_interface) StdoutLine: {'line': b'-- Installing: /var/robotic/yahboomcar_ws/install/arm_interface/include/arm_interface/arm_interface/msg/detail/cur_joints__type_support.cpp\n'}
+[16.811398] (arm_interface) StdoutLine: {'line': b'-- Installing: /var/robotic/yahboomcar_ws/install/arm_interface/include/arm_interface/arm_interface/msg/detail/position__type_support.cpp\n'}
+[16.811424] (arm_interface) StdoutLine: {'line': b'-- Installing: /var/robotic/yahboomcar_ws/install/arm_interface/include/arm_interface/arm_interface/msg/detail/april_tag_info__rosidl_typesupport_introspection_cpp.hpp\n'}
+[16.811451] (arm_interface) StdoutLine: {'line': b'-- Installing: /var/robotic/yahboomcar_ws/install/arm_interface/include/arm_interface/arm_interface/msg/detail/arm_joint__rosidl_typesupport_introspection_cpp.hpp\n'}
+[16.811477] (arm_interface) StdoutLine: {'line': b'-- Installing: /var/robotic/yahboomcar_ws/install/arm_interface/include/arm_interface/arm_interface/msg/detail/center_xy__type_support.cpp\n'}
+[16.811515] (arm_interface) StdoutLine: {'line': b'-- Installing: /var/robotic/yahboomcar_ws/install/arm_interface/include/arm_interface/arm_interface/msg/detail/center_xy__rosidl_typesupport_introspection_cpp.hpp\n'}
+[16.811550] (arm_interface) StdoutLine: {'line': b'-- Installing: /var/robotic/yahboomcar_ws/install/arm_interface/include/arm_interface/arm_interface/msg/detail/yolov5_detect__rosidl_typesupport_introspection_cpp.hpp\n'}
+[16.811577] (arm_interface) StdoutLine: {'line': b'-- Installing: /var/robotic/yahboomcar_ws/install/arm_interface/include/arm_interface/arm_interface/msg/detail/arm_joint__type_support.cpp\n'}
+[16.811604] (arm_interface) StdoutLine: {'line': b'-- Installing: /var/robotic/yahboomcar_ws/install/arm_interface/include/arm_interface/arm_interface/msg/detail/position__rosidl_typesupport_introspection_cpp.hpp\n'}
+[16.811631] (arm_interface) StdoutLine: {'line': b'-- Installing: /var/robotic/yahboomcar_ws/install/arm_interface/include/arm_interface/arm_interface/msg/detail/cur_joints__rosidl_typesupport_introspection_cpp.hpp\n'}
+[16.811659] (arm_interface) StdoutLine: {'line': b'-- Installing: /var/robotic/yahboomcar_ws/install/arm_interface/include/arm_interface/arm_interface/msg/detail/april_tag_info__type_support.cpp\n'}
+[16.811997] (arm_interface) StdoutLine: {'line': b'-- Installing: /var/robotic/yahboomcar_ws/install/arm_interface/include/arm_interface/arm_interface/msg/detail/shape_info__rosidl_typesupport_introspection_cpp.hpp\n'}
+[16.812040] (arm_interface) StdoutLine: {'line': b'-- Installing: /var/robotic/yahboomcar_ws/install/arm_interface/include/arm_interface/arm_interface/msg/detail/yolov5_detect__type_support.cpp\n'}
+[16.812068] (arm_interface) StdoutLine: {'line': b'-- Installing: /var/robotic/yahboomcar_ws/install/arm_interface/include/arm_interface/arm_interface/msg/detail/target_xy_roll__type_support.cpp\n'}
+[16.812096] (arm_interface) StdoutLine: {'line': b'-- Installing: /var/robotic/yahboomcar_ws/install/arm_interface/include/arm_interface/arm_interface/msg/detail/target_xy_roll__rosidl_typesupport_introspection_cpp.hpp\n'}
+[16.812142] (arm_interface) StdoutLine: {'line': b'-- Installing: /var/robotic/yahboomcar_ws/install/arm_interface/lib/libarm_interface__rosidl_typesupport_introspection_cpp.so\n'}
+[16.813565] (arm_interface) StdoutLine: {'line': b'-- Set runtime path of "/var/robotic/yahboomcar_ws/install/arm_interface/lib/libarm_interface__rosidl_typesupport_introspection_cpp.so" to ""\n'}
+[16.813636] (arm_interface) StdoutLine: {'line': b'-- Installing: /var/robotic/yahboomcar_ws/install/arm_interface/lib/libarm_interface__rosidl_typesupport_cpp.so\n'}
+[16.813681] (arm_interface) StdoutLine: {'line': b'-- Set runtime path of "/var/robotic/yahboomcar_ws/install/arm_interface/lib/libarm_interface__rosidl_typesupport_cpp.so" to ""\n'}
+[16.813765] (arm_interface) StdoutLine: {'line': b'-- Installing: /var/robotic/yahboomcar_ws/install/arm_interface/share/arm_interface/environment/pythonpath.sh\n'}
+[16.813936] (arm_interface) StdoutLine: {'line': b'-- Installing: /var/robotic/yahboomcar_ws/install/arm_interface/share/arm_interface/environment/pythonpath.dsv\n'}
+[16.814124] (arm_interface) StdoutLine: {'line': b'-- Installing: /var/robotic/yahboomcar_ws/install/arm_interface/local/lib/python3.10/dist-packages/arm_interface-0.0.0-py3.10.egg-info\n'}
+[16.817622] (arm_interface) StdoutLine: {'line': b'-- Installing: /var/robotic/yahboomcar_ws/install/arm_interface/local/lib/python3.10/dist-packages/arm_interface-0.0.0-py3.10.egg-info/SOURCES.txt\n'}
+[16.817747] (arm_interface) StdoutLine: {'line': b'-- Installing: /var/robotic/yahboomcar_ws/install/arm_interface/local/lib/python3.10/dist-packages/arm_interface-0.0.0-py3.10.egg-info/top_level.txt\n'}
+[16.817779] (arm_interface) StdoutLine: {'line': b'-- Installing: /var/robotic/yahboomcar_ws/install/arm_interface/local/lib/python3.10/dist-packages/arm_interface-0.0.0-py3.10.egg-info/PKG-INFO\n'}
+[16.817807] (arm_interface) StdoutLine: {'line': b'-- Installing: /var/robotic/yahboomcar_ws/install/arm_interface/local/lib/python3.10/dist-packages/arm_interface-0.0.0-py3.10.egg-info/dependency_links.txt\n'}
+[16.817834] (arm_interface) StdoutLine: {'line': b'-- Installing: /var/robotic/yahboomcar_ws/install/arm_interface/local/lib/python3.10/dist-packages/arm_interface\n'}
+[16.817862] (arm_interface) StdoutLine: {'line': b'-- Installing: /var/robotic/yahboomcar_ws/install/arm_interface/local/lib/python3.10/dist-packages/arm_interface/srv\n'}
+[16.817888] (arm_interface) StdoutLine: {'line': b'-- Installing: /var/robotic/yahboomcar_ws/install/arm_interface/local/lib/python3.10/dist-packages/arm_interface/srv/__init__.py\n'}
+[16.817915] (arm_interface) StdoutLine: {'line': b'-- Installing: /var/robotic/yahboomcar_ws/install/arm_interface/local/lib/python3.10/dist-packages/arm_interface/srv/_arm_kinemarics_s.c\n'}
+[16.817941] (arm_interface) StdoutLine: {'line': b'-- Installing: /var/robotic/yahboomcar_ws/install/arm_interface/local/lib/python3.10/dist-packages/arm_interface/srv/_arm_kinemarics.py\n'}
+[16.817967] (arm_interface) StdoutLine: {'line': b'-- Installing: /var/robotic/yahboomcar_ws/install/arm_interface/local/lib/python3.10/dist-packages/arm_interface/arm_interface_s__rosidl_typesupport_introspection_c.cpython-310-x86_64-linux-gnu.so\n'}
+[16.817994] (arm_interface) StdoutLine: {'line': b'-- Installing: /var/robotic/yahboomcar_ws/install/arm_interface/local/lib/python3.10/dist-packages/arm_interface/arm_interface_s__rosidl_typesupport_c.cpython-310-x86_64-linux-gnu.so\n'}
+[16.818021] (arm_interface) StdoutLine: {'line': b'-- Installing: /var/robotic/yahboomcar_ws/install/arm_interface/local/lib/python3.10/dist-packages/arm_interface/arm_interface_s__rosidl_typesupport_fastrtps_c.cpython-310-x86_64-linux-gnu.so\n'}
+[16.818048] (arm_interface) StdoutLine: {'line': b'-- Installing: /var/robotic/yahboomcar_ws/install/arm_interface/local/lib/python3.10/dist-packages/arm_interface/_arm_interface_s.ep.rosidl_typesupport_c.c\n'}
+[16.818079] (arm_interface) StdoutLine: {'line': b'-- Installing: /var/robotic/yahboomcar_ws/install/arm_interface/local/lib/python3.10/dist-packages/arm_interface/__init__.py\n'}
+[16.818106] (arm_interface) StdoutLine: {'line': b'-- Installing: /var/robotic/yahboomcar_ws/install/arm_interface/local/lib/python3.10/dist-packages/arm_interface/_arm_interface_s.ep.rosidl_typesupport_fastrtps_c.c\n'}
+[16.818133] (arm_interface) StdoutLine: {'line': b'-- Installing: /var/robotic/yahboomcar_ws/install/arm_interface/local/lib/python3.10/dist-packages/arm_interface/msg\n'}
+[16.818159] (arm_interface) StdoutLine: {'line': b'-- Installing: /var/robotic/yahboomcar_ws/install/arm_interface/local/lib/python3.10/dist-packages/arm_interface/msg/_yolov5_detect_s.c\n'}
+[16.818192] (arm_interface) StdoutLine: {'line': b'-- Installing: /var/robotic/yahboomcar_ws/install/arm_interface/local/lib/python3.10/dist-packages/arm_interface/msg/_center_xy.py\n'}
+[16.818220] (arm_interface) StdoutLine: {'line': b'-- Installing: /var/robotic/yahboomcar_ws/install/arm_interface/local/lib/python3.10/dist-packages/arm_interface/msg/_yolov5_detect.py\n'}
+[16.818247] (arm_interface) StdoutLine: {'line': b'-- Installing: /var/robotic/yahboomcar_ws/install/arm_interface/local/lib/python3.10/dist-packages/arm_interface/msg/_shape_info.py\n'}
+[16.818936] (arm_interface) StdoutLine: {'line': b'-- Installing: /var/robotic/yahboomcar_ws/install/arm_interface/local/lib/python3.10/dist-packages/arm_interface/msg/_arm_joint_s.c\n'}
+[16.818992] (arm_interface) StdoutLine: {'line': b'-- Installing: /var/robotic/yahboomcar_ws/install/arm_interface/local/lib/python3.10/dist-packages/arm_interface/msg/_shape_info_s.c\n'}
+[16.819021] (arm_interface) StdoutLine: {'line': b'-- Installing: /var/robotic/yahboomcar_ws/install/arm_interface/local/lib/python3.10/dist-packages/arm_interface/msg/_position.py\n'}
+[16.819049] (arm_interface) StdoutLine: {'line': b'-- Installing: /var/robotic/yahboomcar_ws/install/arm_interface/local/lib/python3.10/dist-packages/arm_interface/msg/_april_tag_info.py\n'}
+[16.819075] (arm_interface) StdoutLine: {'line': b'-- Installing: /var/robotic/yahboomcar_ws/install/arm_interface/local/lib/python3.10/dist-packages/arm_interface/msg/_april_tag_info_s.c\n'}
+[16.819102] (arm_interface) StdoutLine: {'line': b'-- Installing: /var/robotic/yahboomcar_ws/install/arm_interface/local/lib/python3.10/dist-packages/arm_interface/msg/_target_xy_roll_s.c\n'}
+[16.819128] (arm_interface) StdoutLine: {'line': b'-- Installing: /var/robotic/yahboomcar_ws/install/arm_interface/local/lib/python3.10/dist-packages/arm_interface/msg/__init__.py\n'}
+[16.819153] (arm_interface) StdoutLine: {'line': b'-- Installing: /var/robotic/yahboomcar_ws/install/arm_interface/local/lib/python3.10/dist-packages/arm_interface/msg/_position_s.c\n'}
+[16.819179] (arm_interface) StdoutLine: {'line': b'-- Installing: /var/robotic/yahboomcar_ws/install/arm_interface/local/lib/python3.10/dist-packages/arm_interface/msg/_arm_joint.py\n'}
+[16.819388] (arm_interface) StdoutLine: {'line': b'-- Installing: /var/robotic/yahboomcar_ws/install/arm_interface/local/lib/python3.10/dist-packages/arm_interface/msg/_cur_joints.py\n'}
+[16.819416] (arm_interface) StdoutLine: {'line': b'-- Installing: /var/robotic/yahboomcar_ws/install/arm_interface/local/lib/python3.10/dist-packages/arm_interface/msg/_center_xy_s.c\n'}
+[16.819443] (arm_interface) StdoutLine: {'line': b'-- Installing: /var/robotic/yahboomcar_ws/install/arm_interface/local/lib/python3.10/dist-packages/arm_interface/msg/_target_xy_roll.py\n'}
+[16.819470] (arm_interface) StdoutLine: {'line': b'-- Installing: /var/robotic/yahboomcar_ws/install/arm_interface/local/lib/python3.10/dist-packages/arm_interface/msg/_cur_joints_s.c\n'}
+[16.819513] (arm_interface) StdoutLine: {'line': b'-- Installing: /var/robotic/yahboomcar_ws/install/arm_interface/local/lib/python3.10/dist-packages/arm_interface/libarm_interface__rosidl_generator_py.so\n'}
+[16.821772] (arm_interface) StdoutLine: {'line': b'-- Installing: /var/robotic/yahboomcar_ws/install/arm_interface/local/lib/python3.10/dist-packages/arm_interface/_arm_interface_s.ep.rosidl_typesupport_introspection_c.c\n'}
+[16.821871] (-) TimerEvent: {}
+[16.877230] (arm_interface) StdoutLine: {'line': b"Listing '/var/robotic/yahboomcar_ws/install/arm_interface/local/lib/python3.10/dist-packages/arm_interface'...\n"}
+[16.877381] (arm_interface) StdoutLine: {'line': b"Compiling '/var/robotic/yahboomcar_ws/install/arm_interface/local/lib/python3.10/dist-packages/arm_interface/__init__.py'...\n"}
+[16.877414] (arm_interface) StdoutLine: {'line': b"Listing '/var/robotic/yahboomcar_ws/install/arm_interface/local/lib/python3.10/dist-packages/arm_interface/msg'...\n"}
+[16.877442] (arm_interface) StdoutLine: {'line': b"Compiling '/var/robotic/yahboomcar_ws/install/arm_interface/local/lib/python3.10/dist-packages/arm_interface/msg/__init__.py'...\n"}
+[16.877469] (arm_interface) StdoutLine: {'line': b"Compiling '/var/robotic/yahboomcar_ws/install/arm_interface/local/lib/python3.10/dist-packages/arm_interface/msg/_april_tag_info.py'...\n"}
+[16.877497] (arm_interface) StdoutLine: {'line': b"Compiling '/var/robotic/yahboomcar_ws/install/arm_interface/local/lib/python3.10/dist-packages/arm_interface/msg/_arm_joint.py'...\n"}
+[16.877523] (arm_interface) StdoutLine: {'line': b"Compiling '/var/robotic/yahboomcar_ws/install/arm_interface/local/lib/python3.10/dist-packages/arm_interface/msg/_center_xy.py'...\n"}
+[16.877550] (arm_interface) StdoutLine: {'line': b"Compiling '/var/robotic/yahboomcar_ws/install/arm_interface/local/lib/python3.10/dist-packages/arm_interface/msg/_cur_joints.py'...\n"}
+[16.877586] (arm_interface) StdoutLine: {'line': b"Compiling '/var/robotic/yahboomcar_ws/install/arm_interface/local/lib/python3.10/dist-packages/arm_interface/msg/_position.py'...\n"}
+[16.877612] (arm_interface) StdoutLine: {'line': b"Compiling '/var/robotic/yahboomcar_ws/install/arm_interface/local/lib/python3.10/dist-packages/arm_interface/msg/_shape_info.py'...\n"}
+[16.877638] (arm_interface) StdoutLine: {'line': b"Compiling '/var/robotic/yahboomcar_ws/install/arm_interface/local/lib/python3.10/dist-packages/arm_interface/msg/_target_xy_roll.py'...\n"}
+[16.877664] (arm_interface) StdoutLine: {'line': b"Compiling '/var/robotic/yahboomcar_ws/install/arm_interface/local/lib/python3.10/dist-packages/arm_interface/msg/_yolov5_detect.py'...\n"}
+[16.877690] (arm_interface) StdoutLine: {'line': b"Listing '/var/robotic/yahboomcar_ws/install/arm_interface/local/lib/python3.10/dist-packages/arm_interface/srv'...\n"}
+[16.877715] (arm_interface) StdoutLine: {'line': b"Compiling '/var/robotic/yahboomcar_ws/install/arm_interface/local/lib/python3.10/dist-packages/arm_interface/srv/__init__.py'...\n"}
+[16.877741] (arm_interface) StdoutLine: {'line': b"Compiling '/var/robotic/yahboomcar_ws/install/arm_interface/local/lib/python3.10/dist-packages/arm_interface/srv/_arm_kinemarics.py'...\n"}
+[16.884863] (arm_interface) StdoutLine: {'line': b'-- Installing: /var/robotic/yahboomcar_ws/install/arm_interface/local/lib/python3.10/dist-packages/arm_interface/arm_interface_s__rosidl_typesupport_fastrtps_c.cpython-310-x86_64-linux-gnu.so\n'}
+[16.885013] (arm_interface) StdoutLine: {'line': b'-- Set runtime path of "/var/robotic/yahboomcar_ws/install/arm_interface/local/lib/python3.10/dist-packages/arm_interface/arm_interface_s__rosidl_typesupport_fastrtps_c.cpython-310-x86_64-linux-gnu.so" to ""\n'}
+[16.885047] (arm_interface) StdoutLine: {'line': b'-- Installing: /var/robotic/yahboomcar_ws/install/arm_interface/local/lib/python3.10/dist-packages/arm_interface/arm_interface_s__rosidl_typesupport_introspection_c.cpython-310-x86_64-linux-gnu.so\n'}
+[16.885075] (arm_interface) StdoutLine: {'line': b'-- Set runtime path of "/var/robotic/yahboomcar_ws/install/arm_interface/local/lib/python3.10/dist-packages/arm_interface/arm_interface_s__rosidl_typesupport_introspection_c.cpython-310-x86_64-linux-gnu.so" to ""\n'}
+[16.885128] (arm_interface) StdoutLine: {'line': b'-- Installing: /var/robotic/yahboomcar_ws/install/arm_interface/local/lib/python3.10/dist-packages/arm_interface/arm_interface_s__rosidl_typesupport_c.cpython-310-x86_64-linux-gnu.so\n'}
+[16.885467] (arm_interface) StdoutLine: {'line': b'-- Set runtime path of "/var/robotic/yahboomcar_ws/install/arm_interface/local/lib/python3.10/dist-packages/arm_interface/arm_interface_s__rosidl_typesupport_c.cpython-310-x86_64-linux-gnu.so" to ""\n'}
+[16.885915] (arm_interface) StdoutLine: {'line': b'-- Installing: /var/robotic/yahboomcar_ws/install/arm_interface/lib/libarm_interface__rosidl_generator_py.so\n'}
+[16.886617] (arm_interface) StdoutLine: {'line': b'-- Set runtime path of "/var/robotic/yahboomcar_ws/install/arm_interface/lib/libarm_interface__rosidl_generator_py.so" to ""\n'}
+[16.886970] (arm_interface) StdoutLine: {'line': b'-- Installing: /var/robotic/yahboomcar_ws/install/arm_interface/share/arm_interface/srv/ArmKinemarics.idl\n'}
+[16.887387] (arm_interface) StdoutLine: {'line': b'-- Installing: /var/robotic/yahboomcar_ws/install/arm_interface/share/arm_interface/msg/ArmJoint.idl\n'}
+[16.887495] (arm_interface) StdoutLine: {'line': b'-- Installing: /var/robotic/yahboomcar_ws/install/arm_interface/share/arm_interface/msg/AprilTagInfo.idl\n'}
+[16.887828] (arm_interface) StdoutLine: {'line': b'-- Installing: /var/robotic/yahboomcar_ws/install/arm_interface/share/arm_interface/msg/CenterXY.idl\n'}
+[16.888234] (arm_interface) StdoutLine: {'line': b'-- Installing: /var/robotic/yahboomcar_ws/install/arm_interface/share/arm_interface/msg/ShapeInfo.idl\n'}
+[16.889783] (arm_interface) StdoutLine: {'line': b'-- Installing: /var/robotic/yahboomcar_ws/install/arm_interface/share/arm_interface/msg/Yolov5Detect.idl\n'}
+[16.889860] (arm_interface) StdoutLine: {'line': b'-- Installing: /var/robotic/yahboomcar_ws/install/arm_interface/share/arm_interface/msg/Position.idl\n'}
+[16.889890] (arm_interface) StdoutLine: {'line': b'-- Installing: /var/robotic/yahboomcar_ws/install/arm_interface/share/arm_interface/msg/CurJoints.idl\n'}
+[16.889917] (arm_interface) StdoutLine: {'line': b'-- Installing: /var/robotic/yahboomcar_ws/install/arm_interface/share/arm_interface/msg/TargetXYRoll.idl\n'}
+[16.889943] (arm_interface) StdoutLine: {'line': b'-- Installing: /var/robotic/yahboomcar_ws/install/arm_interface/share/arm_interface/srv/ArmKinemarics.srv\n'}
+[16.889970] (arm_interface) StdoutLine: {'line': b'-- Installing: /var/robotic/yahboomcar_ws/install/arm_interface/share/arm_interface/srv/ArmKinemarics_Request.msg\n'}
+[16.889997] (arm_interface) StdoutLine: {'line': b'-- Installing: /var/robotic/yahboomcar_ws/install/arm_interface/share/arm_interface/srv/ArmKinemarics_Response.msg\n'}
+[16.890043] (arm_interface) StdoutLine: {'line': b'-- Installing: /var/robotic/yahboomcar_ws/install/arm_interface/share/arm_interface/msg/ArmJoint.msg\n'}
+[16.890213] (arm_interface) StdoutLine: {'line': b'-- Installing: /var/robotic/yahboomcar_ws/install/arm_interface/share/arm_interface/msg/AprilTagInfo.msg\n'}
+[16.890260] (arm_interface) StdoutLine: {'line': b'-- Installing: /var/robotic/yahboomcar_ws/install/arm_interface/share/arm_interface/msg/CenterXY.msg\n'}
+[16.890413] (arm_interface) StdoutLine: {'line': b'-- Installing: /var/robotic/yahboomcar_ws/install/arm_interface/share/arm_interface/msg/ShapeInfo.msg\n'}
+[16.890526] (arm_interface) StdoutLine: {'line': b'-- Installing: /var/robotic/yahboomcar_ws/install/arm_interface/share/arm_interface/msg/Yolov5Detect.msg\n'}
+[16.893721] (arm_interface) StdoutLine: {'line': b'-- Installing: /var/robotic/yahboomcar_ws/install/arm_interface/share/arm_interface/msg/Position.msg\n'}
+[16.893822] (arm_interface) StdoutLine: {'line': b'-- Installing: /var/robotic/yahboomcar_ws/install/arm_interface/share/arm_interface/msg/CurJoints.msg\n'}
+[16.893853] (arm_interface) StdoutLine: {'line': b'-- Installing: /var/robotic/yahboomcar_ws/install/arm_interface/share/arm_interface/msg/TargetXYRoll.msg\n'}
+[16.893881] (arm_interface) StdoutLine: {'line': b'-- Installing: /var/robotic/yahboomcar_ws/install/arm_interface/share/ament_index/resource_index/package_run_dependencies/arm_interface\n'}
+[16.893913] (arm_interface) StdoutLine: {'line': b'-- Installing: /var/robotic/yahboomcar_ws/install/arm_interface/share/ament_index/resource_index/parent_prefix_path/arm_interface\n'}
+[16.893940] (arm_interface) StdoutLine: {'line': b'-- Installing: /var/robotic/yahboomcar_ws/install/arm_interface/share/arm_interface/environment/ament_prefix_path.sh\n'}
+[16.893967] (arm_interface) StdoutLine: {'line': b'-- Installing: /var/robotic/yahboomcar_ws/install/arm_interface/share/arm_interface/environment/ament_prefix_path.dsv\n'}
+[16.893994] (arm_interface) StdoutLine: {'line': b'-- Installing: /var/robotic/yahboomcar_ws/install/arm_interface/share/arm_interface/environment/path.sh\n'}
+[16.894034] (arm_interface) StdoutLine: {'line': b'-- Installing: /var/robotic/yahboomcar_ws/install/arm_interface/share/arm_interface/environment/path.dsv\n'}
+[16.894066] (arm_interface) StdoutLine: {'line': b'-- Installing: /var/robotic/yahboomcar_ws/install/arm_interface/share/arm_interface/local_setup.bash\n'}
+[16.894094] (arm_interface) StdoutLine: {'line': b'-- Installing: /var/robotic/yahboomcar_ws/install/arm_interface/share/arm_interface/local_setup.sh\n'}
+[16.894121] (arm_interface) StdoutLine: {'line': b'-- Installing: /var/robotic/yahboomcar_ws/install/arm_interface/share/arm_interface/local_setup.zsh\n'}
+[16.894147] (arm_interface) StdoutLine: {'line': b'-- Installing: /var/robotic/yahboomcar_ws/install/arm_interface/share/arm_interface/local_setup.dsv\n'}
+[16.894514] (arm_interface) StdoutLine: {'line': b'-- Installing: /var/robotic/yahboomcar_ws/install/arm_interface/share/arm_interface/package.dsv\n'}
+[16.894550] (arm_interface) StdoutLine: {'line': b'-- Installing: /var/robotic/yahboomcar_ws/install/arm_interface/share/ament_index/resource_index/packages/arm_interface\n'}
+[16.894578] (arm_interface) StdoutLine: {'line': b'-- Installing: /var/robotic/yahboomcar_ws/install/arm_interface/share/arm_interface/cmake/export_arm_interface__rosidl_generator_cExport.cmake\n'}
+[16.894606] (arm_interface) StdoutLine: {'line': b'-- Installing: /var/robotic/yahboomcar_ws/install/arm_interface/share/arm_interface/cmake/export_arm_interface__rosidl_generator_cExport-noconfig.cmake\n'}
+[16.894635] (arm_interface) StdoutLine: {'line': b'-- Installing: /var/robotic/yahboomcar_ws/install/arm_interface/share/arm_interface/cmake/export_arm_interface__rosidl_typesupport_fastrtps_cExport.cmake\n'}
+[16.894662] (arm_interface) StdoutLine: {'line': b'-- Installing: /var/robotic/yahboomcar_ws/install/arm_interface/share/arm_interface/cmake/export_arm_interface__rosidl_typesupport_fastrtps_cExport-noconfig.cmake\n'}
+[16.894690] (arm_interface) StdoutLine: {'line': b'-- Installing: /var/robotic/yahboomcar_ws/install/arm_interface/share/arm_interface/cmake/export_arm_interface__rosidl_generator_cppExport.cmake\n'}
+[16.894717] (arm_interface) StdoutLine: {'line': b'-- Installing: /var/robotic/yahboomcar_ws/install/arm_interface/share/arm_interface/cmake/export_arm_interface__rosidl_typesupport_fastrtps_cppExport.cmake\n'}
+[16.894743] (arm_interface) StdoutLine: {'line': b'-- Installing: /var/robotic/yahboomcar_ws/install/arm_interface/share/arm_interface/cmake/export_arm_interface__rosidl_typesupport_fastrtps_cppExport-noconfig.cmake\n'}
+[16.894772] (arm_interface) StdoutLine: {'line': b'-- Installing: /var/robotic/yahboomcar_ws/install/arm_interface/share/arm_interface/cmake/arm_interface__rosidl_typesupport_introspection_cExport.cmake\n'}
+[16.896216] (arm_interface) StdoutLine: {'line': b'-- Installing: /var/robotic/yahboomcar_ws/install/arm_interface/share/arm_interface/cmake/arm_interface__rosidl_typesupport_introspection_cExport-noconfig.cmake\n'}
+[16.896320] (arm_interface) StdoutLine: {'line': b'-- Installing: /var/robotic/yahboomcar_ws/install/arm_interface/share/arm_interface/cmake/arm_interface__rosidl_typesupport_cExport.cmake\n'}
+[16.897055] (arm_interface) StdoutLine: {'line': b'-- Installing: /var/robotic/yahboomcar_ws/install/arm_interface/share/arm_interface/cmake/arm_interface__rosidl_typesupport_cExport-noconfig.cmake\n'}
+[16.897123] (arm_interface) StdoutLine: {'line': b'-- Installing: /var/robotic/yahboomcar_ws/install/arm_interface/share/arm_interface/cmake/arm_interface__rosidl_typesupport_introspection_cppExport.cmake\n'}
+[16.897156] (arm_interface) StdoutLine: {'line': b'-- Installing: /var/robotic/yahboomcar_ws/install/arm_interface/share/arm_interface/cmake/arm_interface__rosidl_typesupport_introspection_cppExport-noconfig.cmake\n'}
+[16.897218] (arm_interface) StdoutLine: {'line': b'-- Installing: /var/robotic/yahboomcar_ws/install/arm_interface/share/arm_interface/cmake/arm_interface__rosidl_typesupport_cppExport.cmake\n'}
+[16.897250] (arm_interface) StdoutLine: {'line': b'-- Installing: /var/robotic/yahboomcar_ws/install/arm_interface/share/arm_interface/cmake/arm_interface__rosidl_typesupport_cppExport-noconfig.cmake\n'}
+[16.897278] (arm_interface) StdoutLine: {'line': b'-- Installing: /var/robotic/yahboomcar_ws/install/arm_interface/share/arm_interface/cmake/export_arm_interface__rosidl_generator_pyExport.cmake\n'}
+[16.897421] (arm_interface) StdoutLine: {'line': b'-- Installing: /var/robotic/yahboomcar_ws/install/arm_interface/share/arm_interface/cmake/export_arm_interface__rosidl_generator_pyExport-noconfig.cmake\n'}
+[16.897552] (arm_interface) StdoutLine: {'line': b'-- Installing: /var/robotic/yahboomcar_ws/install/arm_interface/share/arm_interface/cmake/rosidl_cmake-extras.cmake\n'}
+[16.897745] (arm_interface) StdoutLine: {'line': b'-- Installing: /var/robotic/yahboomcar_ws/install/arm_interface/share/arm_interface/cmake/ament_cmake_export_dependencies-extras.cmake\n'}
+[16.897782] (arm_interface) StdoutLine: {'line': b'-- Installing: /var/robotic/yahboomcar_ws/install/arm_interface/share/arm_interface/cmake/ament_cmake_export_include_directories-extras.cmake\n'}
+[16.897909] (arm_interface) StdoutLine: {'line': b'-- Installing: /var/robotic/yahboomcar_ws/install/arm_interface/share/arm_interface/cmake/ament_cmake_export_libraries-extras.cmake\n'}
+[16.898436] (arm_interface) StdoutLine: {'line': b'-- Installing: /var/robotic/yahboomcar_ws/install/arm_interface/share/arm_interface/cmake/ament_cmake_export_targets-extras.cmake\n'}
+[16.898503] (arm_interface) StdoutLine: {'line': b'-- Installing: /var/robotic/yahboomcar_ws/install/arm_interface/share/arm_interface/cmake/rosidl_cmake_export_typesupport_targets-extras.cmake\n'}
+[16.900241] (arm_interface) StdoutLine: {'line': b'-- Installing: /var/robotic/yahboomcar_ws/install/arm_interface/share/arm_interface/cmake/rosidl_cmake_export_typesupport_libraries-extras.cmake\n'}
+[16.900310] (arm_interface) StdoutLine: {'line': b'-- Installing: /var/robotic/yahboomcar_ws/install/arm_interface/share/arm_interface/cmake/arm_interfaceConfig.cmake\n'}
+[16.900341] (arm_interface) StdoutLine: {'line': b'-- Installing: /var/robotic/yahboomcar_ws/install/arm_interface/share/arm_interface/cmake/arm_interfaceConfig-version.cmake\n'}
+[16.900368] (arm_interface) StdoutLine: {'line': b'-- Installing: /var/robotic/yahboomcar_ws/install/arm_interface/share/arm_interface/package.xml\n'}
+[16.902888] (arm_interface) CommandEnded: {'returncode': 0}
+[16.921957] (-) TimerEvent: {}
+[16.924530] (arm_interface) JobEnded: {'identifier': 'arm_interface', 'rc': 0}
+[16.926777] (arm_kin) JobStarted: {'identifier': 'arm_kin'}
+[16.937376] (arm_kin) JobProgress: {'identifier': 'arm_kin', 'progress': 'cmake'}
+[16.937849] (arm_kin) Command: {'cmd': ['/usr/bin/cmake', '/var/robotic/yahboomcar_ws/src/arm_kin', '-DCMAKE_INSTALL_PREFIX=/var/robotic/yahboomcar_ws/install/arm_kin'], 'cwd': '/var/robotic/yahboomcar_ws/build/arm_kin', 'env': OrderedDict([('LESSOPEN', '| /usr/bin/lesspipe %s'), ('LANGUAGE', 'en_US'), ('USER', 'spen'), ('SSH_CLIENT', '192.168.50.35 2820 22'), ('LC_TIME', 'en_US.UTF-8'), ('XDG_SESSION_TYPE', 'tty'), ('GIT_ASKPASS', '/home/spen/.cursor-server/bin/linux-x64/4f2b772756b8f609e1354b3063de282ccbe7a690/extensions/git/dist/askpass.sh'), ('SHLVL', '1'), ('LD_LIBRARY_PATH', '/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib'), ('BROWSER', '/home/spen/.cursor-server/bin/linux-x64/4f2b772756b8f609e1354b3063de282ccbe7a690/bin/helpers/browser.sh'), ('MOTD_SHOWN', 'pam'), ('HOME', '/home/spen'), ('OLDPWD', '/home/spen/.cursor-server/bin/linux-x64/4f2b772756b8f609e1354b3063de282ccbe7a690'), ('TERM_PROGRAM_VERSION', '2.4.27'), ('VSCODE_IPC_HOOK_CLI', '/run/user/1000/vscode-ipc-50b4a07e-7b17-454b-8d88-90ad3090bd75.sock'), ('ROS_PYTHON_VERSION', '3'), ('VSCODE_GIT_ASKPASS_MAIN', '/home/spen/.cursor-server/bin/linux-x64/4f2b772756b8f609e1354b3063de282ccbe7a690/extensions/git/dist/askpass-main.js'), ('LC_MONETARY', 'en_US.UTF-8'), ('VSCODE_GIT_ASKPASS_NODE', '/home/spen/.cursor-server/bin/linux-x64/4f2b772756b8f609e1354b3063de282ccbe7a690/node'), ('DBUS_SESSION_BUS_ADDRESS', 'unix:path=/run/user/1000/bus'), ('COLORTERM', 'truecolor'), ('ROS_DISTRO', 'humble'), ('LOGNAME', 'spen'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('XDG_SESSION_CLASS', 'user'), ('TERM', 'xterm-256color'), ('XDG_SESSION_ID', '8'), ('ROS_LOCALHOST_ONLY', '0'), ('PATH', '/home/spen/.cursor-server/bin/linux-x64/4f2b772756b8f609e1354b3063de282ccbe7a690/bin/remote-cli:/opt/ros/humble/bin:/home/spen/.cursor-server/bin/linux-x64/4f2b772756b8f609e1354b3063de282ccbe7a690/bin/remote-cli:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin'), ('PAPERSIZE', 'letter'), ('LC_ADDRESS', 'en_US.UTF-8'), ('XDG_RUNTIME_DIR', '/run/user/1000'), ('LANG', 'en_US.UTF-8'), ('LC_TELEPHONE', 'en_US.UTF-8'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('VSCODE_GIT_IPC_HANDLE', '/run/user/1000/vscode-git-a8fce10363.sock'), ('TERM_PROGRAM', 'vscode'), ('AMENT_PREFIX_PATH', '/opt/ros/humble'), ('SHELL', '/bin/bash'), ('LC_NAME', 'en_US.UTF-8'), ('LESSCLOSE', '/usr/bin/lesspipe %s %s'), ('LC_MEASUREMENT', 'en_US.UTF-8'), ('LC_IDENTIFICATION', 'en_US.UTF-8'), ('VSCODE_GIT_IPC_AUTH_TOKEN', '12381cb96a4198e15888f3cee39506696f5f33a2c3f050a6049636ed37cdff8b'), ('VSCODE_GIT_ASKPASS_EXTRA_ARGS', ''), ('PWD', '/var/robotic/yahboomcar_ws/build/arm_kin'), ('SSH_CONNECTION', '192.168.50.35 2820 192.168.50.88 22'), ('XDG_DATA_DIRS', '/usr/share/gnome:/usr/local/share:/usr/share:/var/lib/snapd/desktop'), ('PYTHONPATH', '/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('LC_NUMERIC', 'en_US.UTF-8'), ('LC_PAPER', 'en_US.UTF-8'), ('COLCON', '1'), ('CMAKE_PREFIX_PATH', '/opt/ros/humble')]), 'shell': False}
+[17.014735] (arm_kin) StdoutLine: {'line': b'-- The C compiler identification is GNU 11.4.0\n'}
+[17.022068] (-) TimerEvent: {}
+[17.087222] (arm_kin) StdoutLine: {'line': b'-- The CXX compiler identification is GNU 11.4.0\n'}
+[17.098264] (arm_kin) StdoutLine: {'line': b'-- Detecting C compiler ABI info\n'}
+[17.122164] (-) TimerEvent: {}
+[17.195538] (arm_kin) StdoutLine: {'line': b'-- Detecting C compiler ABI info - done\n'}
+[17.201254] (arm_kin) StdoutLine: {'line': b'-- Check for working C compiler: /usr/bin/cc - skipped\n'}
+[17.203239] (arm_kin) StdoutLine: {'line': b'-- Detecting C compile features\n'}
+[17.204224] (arm_kin) StdoutLine: {'line': b'-- Detecting C compile features - done\n'}
+[17.206305] (arm_kin) StdoutLine: {'line': b'-- Detecting CXX compiler ABI info\n'}
+[17.222233] (-) TimerEvent: {}
+[17.312287] (arm_kin) StdoutLine: {'line': b'-- Detecting CXX compiler ABI info - done\n'}
+[17.320250] (arm_kin) StdoutLine: {'line': b'-- Check for working CXX compiler: /usr/bin/c++ - skipped\n'}
+[17.320346] (arm_kin) StdoutLine: {'line': b'-- Detecting CXX compile features\n'}
+[17.320378] (arm_kin) StdoutLine: {'line': b'-- Detecting CXX compile features - done\n'}
+[17.322286] (arm_kin) StdoutLine: {'line': b'-- Found ament_cmake: 1.3.12 (/opt/ros/humble/share/ament_cmake/cmake)\n'}
+[17.322396] (-) TimerEvent: {}
+[17.422569] (-) TimerEvent: {}
+[17.499735] (arm_kin) StdoutLine: {'line': b'-- Found Python3: /usr/bin/python3 (found version "3.10.12") found components: Interpreter \n'}
+[17.522665] (-) TimerEvent: {}
+[17.596276] (arm_kin) StdoutLine: {'line': b'-- Found rclcpp: 16.0.17 (/opt/ros/humble/share/rclcpp/cmake)\n'}
+[17.622767] (-) TimerEvent: {}
+[17.635832] (arm_kin) StdoutLine: {'line': b'-- Found rosidl_generator_c: 3.1.8 (/opt/ros/humble/share/rosidl_generator_c/cmake)\n'}
+[17.643240] (arm_kin) StdoutLine: {'line': b'-- Found rosidl_adapter: 3.1.8 (/opt/ros/humble/share/rosidl_adapter/cmake)\n'}
+[17.651265] (arm_kin) StdoutLine: {'line': b'-- Found rosidl_generator_cpp: 3.1.8 (/opt/ros/humble/share/rosidl_generator_cpp/cmake)\n'}
+[17.665281] (arm_kin) StdoutLine: {'line': b'-- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c\n'}
+[17.680271] (arm_kin) StdoutLine: {'line': b'-- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp\n'}
+[17.722873] (-) TimerEvent: {}
+[17.728575] (arm_kin) StdoutLine: {'line': b'-- Found rmw_implementation_cmake: 6.1.2 (/opt/ros/humble/share/rmw_implementation_cmake/cmake)\n'}
+[17.731271] (arm_kin) StdoutLine: {'line': b'-- Found rmw_fastrtps_cpp: 6.2.9 (/opt/ros/humble/share/rmw_fastrtps_cpp/cmake)\n'}
+[17.783895] (arm_kin) StdoutLine: {'line': b'-- Found OpenSSL: /usr/lib/x86_64-linux-gnu/libcrypto.so (found version "3.0.2")  \n'}
+[17.801401] (arm_kin) StdoutLine: {'line': b'-- Found FastRTPS: /opt/ros/humble/include  \n'}
+[17.813804] (MoveIt_demo) StdoutLine: {'line': b'[ 35%] \x1b[32m\x1b[1mLinking CXX executable set_target_joints\x1b[0m\n'}
+[17.822945] (-) TimerEvent: {}
+[17.829997] (arm_kin) StdoutLine: {'line': b"-- Using RMW implementation 'rmw_fastrtps_cpp' as default\n"}
+[17.838538] (arm_kin) StdoutLine: {'line': b'-- Looking for pthread.h\n'}
+[17.923083] (-) TimerEvent: {}
+[17.942991] (arm_kin) StdoutLine: {'line': b'-- Looking for pthread.h - found\n'}
+[17.944025] (arm_kin) StdoutLine: {'line': b'-- Performing Test CMAKE_HAVE_LIBC_PTHREAD\n'}
+[18.024315] (-) TimerEvent: {}
+[18.033082] (arm_kin) StdoutLine: {'line': b'-- Performing Test CMAKE_HAVE_LIBC_PTHREAD - Success\n'}
+[18.033272] (arm_kin) StdoutLine: {'line': b'-- Found Threads: TRUE  \n'}
+[18.093633] (arm_kin) StderrLine: {'line': b'\x1b[31mCMake Error at CMakeLists.txt:13 (find_package):\n'}
+[18.094165] (arm_kin) StderrLine: {'line': b'  By not providing "Findarm_interface.cmake" in CMAKE_MODULE_PATH this\n'}
+[18.094335] (arm_kin) StderrLine: {'line': b'  project has asked CMake to find a package configuration file provided by\n'}
+[18.094408] (arm_kin) StderrLine: {'line': b'  "arm_interface", but CMake did not find one.\n'}
+[18.094525] (arm_kin) StderrLine: {'line': b'\n'}
+[18.094592] (arm_kin) StderrLine: {'line': b'  Could not find a package configuration file provided by "arm_interface"\n'}
+[18.094648] (arm_kin) StderrLine: {'line': b'  with any of the following names:\n'}
+[18.094980] (arm_kin) StderrLine: {'line': b'\n'}
+[18.095234] (arm_kin) StderrLine: {'line': b'    arm_interfaceConfig.cmake\n'}
+[18.095288] (arm_kin) StderrLine: {'line': b'    arm_interface-config.cmake\n'}
+[18.095768] (arm_kin) StderrLine: {'line': b'\n'}
+[18.095800] (arm_kin) StderrLine: {'line': b'  Add the installation prefix of "arm_interface" to CMAKE_PREFIX_PATH or set\n'}
+[18.095845] (arm_kin) StderrLine: {'line': b'  "arm_interface_DIR" to a directory containing one of the above files.  If\n'}
+[18.095874] (arm_kin) StderrLine: {'line': b'  "arm_interface" provides a separate development package or SDK, be sure it\n'}
+[18.095903] (arm_kin) StderrLine: {'line': b'  has been installed.\n'}
+[18.095932] (arm_kin) StderrLine: {'line': b'\n'}
+[18.095958] (arm_kin) StderrLine: {'line': b'\x1b[0m\n'}
+[18.097280] (arm_kin) StdoutLine: {'line': b'-- Configuring incomplete, errors occurred!\n'}
+[18.097348] (arm_kin) StdoutLine: {'line': b'See also "/var/robotic/yahboomcar_ws/build/arm_kin/CMakeFiles/CMakeOutput.log".\n'}
+[18.105405] (arm_kin) CommandEnded: {'returncode': 1}
+[18.124395] (-) TimerEvent: {}
+[18.125605] (arm_kin) JobEnded: {'identifier': 'arm_kin', 'rc': 1}
+[18.224497] (-) TimerEvent: {}
+[18.324750] (-) TimerEvent: {}
+[18.408112] (MoveIt_demo) StdoutLine: {'line': b'[ 35%] Built target set_target_joints\n'}
+[18.423018] (MoveIt_demo) StdoutLine: {'line': b'[ 42%] \x1b[32mBuilding CXX object CMakeFiles/cartesian_path.dir/src/cartesian_path.cpp.o\x1b[0m\n'}
+[18.424818] (-) TimerEvent: {}
+[18.525029] (-) TimerEvent: {}
+[18.625240] (-) TimerEvent: {}
+[18.725500] (-) TimerEvent: {}
+[18.825750] (-) TimerEvent: {}
+[18.926007] (-) TimerEvent: {}
+[19.026239] (-) TimerEvent: {}
+[19.126489] (-) TimerEvent: {}
+[19.226753] (-) TimerEvent: {}
+[19.327032] (-) TimerEvent: {}
+[19.428361] (-) TimerEvent: {}
+[19.528644] (-) TimerEvent: {}
+[19.628902] (-) TimerEvent: {}
+[19.729196] (-) TimerEvent: {}
+[19.830340] (-) TimerEvent: {}
+[19.930586] (-) TimerEvent: {}
+[20.030848] (-) TimerEvent: {}
+[20.131115] (-) TimerEvent: {}
+[20.232243] (-) TimerEvent: {}
+[20.332506] (-) TimerEvent: {}
+[20.432777] (-) TimerEvent: {}
+[20.505593] (MoveIt_demo) StdoutLine: {'line': b'[ 50%] \x1b[32m\x1b[1mLinking CXX executable random_move\x1b[0m\n'}
+[20.535268] (-) TimerEvent: {}
+[20.635563] (-) TimerEvent: {}
+[20.682878] (MoveIt_demo) StdoutLine: {'line': b'[ 50%] Built target random_move\n'}
+[20.697491] (MoveIt_demo) StdoutLine: {'line': b'[ 57%] \x1b[32mBuilding CXX object CMakeFiles/multi_track_motion.dir/src/multi_track_motion.cpp.o\x1b[0m\n'}
+[20.735671] (-) TimerEvent: {}
+[20.835931] (-) TimerEvent: {}
+[20.936183] (-) TimerEvent: {}
+[21.036448] (-) TimerEvent: {}
+[21.136702] (-) TimerEvent: {}
+[21.236962] (-) TimerEvent: {}
+[21.337219] (-) TimerEvent: {}
+[21.437506] (-) TimerEvent: {}
+[21.539351] (-) TimerEvent: {}
+[21.639606] (-) TimerEvent: {}
+[21.739873] (-) TimerEvent: {}
+[21.840143] (-) TimerEvent: {}
+[21.940435] (-) TimerEvent: {}
+[22.041063] (-) TimerEvent: {}
+[22.141416] (-) TimerEvent: {}
+[22.243353] (-) TimerEvent: {}
+[22.343625] (-) TimerEvent: {}
+[22.443885] (-) TimerEvent: {}
+[22.544168] (-) TimerEvent: {}
+[22.644461] (-) TimerEvent: {}
+[22.744733] (-) TimerEvent: {}
+[22.771100] (MoveIt_demo) StderrLine: {'line': b'\x1b[01m\x1b[K/var/robotic/yahboomcar_ws/src/MoveIt_demo/src/cartesian_path.cpp:\x1b[m\x1b[K In member function \xe2\x80\x98\x1b[01m\x1b[Kvoid CartesianPathPlanning::initialize()\x1b[m\x1b[K\xe2\x80\x99:\n'}
+[22.771352] (MoveIt_demo) StderrLine: {'line': b'\x1b[01m\x1b[K/var/robotic/yahboomcar_ws/src/MoveIt_demo/src/cartesian_path.cpp:105:9:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[Kunused variable \xe2\x80\x98\x1b[01m\x1b[Kmaxtries\x1b[m\x1b[K\xe2\x80\x99 [\x1b[01;35m\x1b[K\x1b]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-variable\x07-Wunused-variable\x1b]8;;\x07\x1b[m\x1b[K]\n'}
+[22.771393] (MoveIt_demo) StderrLine: {'line': b'  105 |     int \x1b[01;35m\x1b[Kmaxtries\x1b[m\x1b[K = 1000;   //\xe6\x9c\x80\xe5\xa4\xa7\xe5\xb0\x9d\xe8\xaf\x95\xe8\xa7\x84\xe5\x88\x92\xe6\xac\xa1\xe6\x95\xb0\n'}
+[22.771530] (MoveIt_demo) StderrLine: {'line': b'      |         \x1b[01;35m\x1b[K^~~~~~~~\x1b[m\x1b[K\n'}
+[22.771585] (MoveIt_demo) StderrLine: {'line': b'\x1b[01m\x1b[K/var/robotic/yahboomcar_ws/src/MoveIt_demo/src/cartesian_path.cpp:106:9:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[Kunused variable \xe2\x80\x98\x1b[01m\x1b[Kattempts\x1b[m\x1b[K\xe2\x80\x99 [\x1b[01;35m\x1b[K\x1b]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-variable\x07-Wunused-variable\x1b]8;;\x07\x1b[m\x1b[K]\n'}
+[22.771622] (MoveIt_demo) StderrLine: {'line': b'  106 |     int \x1b[01;35m\x1b[Kattempts\x1b[m\x1b[K = 0;     //\xe5\xb7\xb2\xe7\xbb\x8f\xe5\xb0\x9d\xe8\xaf\x95\xe8\xa7\x84\xe5\x88\x92\xe6\xac\xa1\xe6\x95\xb0\n'}
+[22.771651] (MoveIt_demo) StderrLine: {'line': b'      |         \x1b[01;35m\x1b[K^~~~~~~~\x1b[m\x1b[K\n'}
+[22.847250] (-) TimerEvent: {}
+[22.947546] (-) TimerEvent: {}
+[23.047841] (-) TimerEvent: {}
+[23.148131] (-) TimerEvent: {}
+[23.248502] (-) TimerEvent: {}
+[23.348764] (-) TimerEvent: {}
+[23.449045] (-) TimerEvent: {}
+[23.549352] (-) TimerEvent: {}
+[23.649629] (-) TimerEvent: {}
+[23.749902] (-) TimerEvent: {}
+[23.852379] (-) TimerEvent: {}
+[23.952640] (-) TimerEvent: {}
+[24.052893] (-) TimerEvent: {}
+[24.153211] (-) TimerEvent: {}
+[24.254190] (-) TimerEvent: {}
+[24.354485] (-) TimerEvent: {}
+[24.454769] (-) TimerEvent: {}
+[24.555082] (-) TimerEvent: {}
+[24.655358] (-) TimerEvent: {}
+[24.755618] (-) TimerEvent: {}
+[24.856387] (-) TimerEvent: {}
+[24.956836] (-) TimerEvent: {}
+[24.978836] (MoveIt_demo) StdoutLine: {'line': b'[ 64%] \x1b[32m\x1b[1mLinking CXX executable cartesian_path\x1b[0m\n'}
+[25.056937] (-) TimerEvent: {}
+[25.157382] (-) TimerEvent: {}
+[25.257809] (-) TimerEvent: {}
+[25.359217] (-) TimerEvent: {}
+[25.365598] (MoveIt_demo) StdoutLine: {'line': b'[ 64%] Built target cartesian_path\n'}
+[25.385864] (MoveIt_demo) StdoutLine: {'line': b'[ 71%] \x1b[32mBuilding CXX object CMakeFiles/obstacle_avoidance.dir/src/obstacle_avoidance.cpp.o\x1b[0m\n'}
+[25.458356] (-) TimerEvent: {}
+[25.553314] (MoveIt_demo) StderrLine: {'line': b'\x1b[01m\x1b[K/var/robotic/yahboomcar_ws/src/MoveIt_demo/src/multi_track_motion.cpp:\x1b[m\x1b[K In member function \xe2\x80\x98\x1b[01m\x1b[Kvoid RandomMoveIt2Control::initialize()\x1b[m\x1b[K\xe2\x80\x99:\n'}
+[25.553476] (MoveIt_demo) StderrLine: {'line': b'\x1b[01m\x1b[K/var/robotic/yahboomcar_ws/src/MoveIt_demo/src/multi_track_motion.cpp:63:51:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[Kusing MoveItErrorCode = class moveit::core::MoveItErrorCode\x1b[m\x1b[K\xe2\x80\x99 is deprecated: Use moveit::core::MoveItErrorCode [\x1b[01;35m\x1b[K\x1b]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wdeprecated-declarations\x07-Wdeprecated-declarations\x1b]8;;\x07\x1b[m\x1b[K]\n'}
+[25.553512] (MoveIt_demo) StderrLine: {'line': b'   63 |       moveit::planning_interface::MoveItErrorCode \x1b[01;35m\x1b[Kexecute_result\x1b[m\x1b[K = move_group_interface_->execute(my_plan);\n'}
+[25.553541] (MoveIt_demo) StderrLine: {'line': b'      |                                                   \x1b[01;35m\x1b[K^~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[25.553569] (MoveIt_demo) StderrLine: {'line': b'In file included from \x1b[01m\x1b[K/var/robotic/yahboomcar_ws/src/MoveIt_demo/src/multi_track_motion.cpp:2\x1b[m\x1b[K:\n'}
+[25.553602] (MoveIt_demo) StderrLine: {'line': b'\x1b[01m\x1b[K/opt/ros/humble/include/moveit/move_group_interface/move_group_interface.h:71:7:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[Kdeclared here\n'}
+[25.553629] (MoveIt_demo) StderrLine: {'line': b'   71 | using \x1b[01;36m\x1b[KMoveItErrorCode\x1b[m\x1b[K [[deprecated("Use moveit::core::MoveItErrorCode")]] = moveit::core::MoveItErrorCode;\n'}
+[25.553655] (MoveIt_demo) StderrLine: {'line': b'      |       \x1b[01;36m\x1b[K^~~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[25.553680] (MoveIt_demo) StderrLine: {'line': b'\x1b[01m\x1b[K/var/robotic/yahboomcar_ws/src/MoveIt_demo/src/multi_track_motion.cpp:77:61:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[Kusing MoveItErrorCode = class moveit::core::MoveItErrorCode\x1b[m\x1b[K\xe2\x80\x99 is deprecated: Use moveit::core::MoveItErrorCode [\x1b[01;35m\x1b[K\x1b]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wdeprecated-declarations\x07-Wdeprecated-declarations\x1b]8;;\x07\x1b[m\x1b[K]\n'}
+[25.553709] (MoveIt_demo) StderrLine: {'line': b'   77 |                 moveit::planning_interface::MoveItErrorCode \x1b[01;35m\x1b[Kexecute_result_2nd\x1b[m\x1b[K = move_group_interface_->execute(my_plan);\n'}
+[25.553735] (MoveIt_demo) StderrLine: {'line': b'      |                                                             \x1b[01;35m\x1b[K^~~~~~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[25.553761] (MoveIt_demo) StderrLine: {'line': b'In file included from \x1b[01m\x1b[K/var/robotic/yahboomcar_ws/src/MoveIt_demo/src/multi_track_motion.cpp:2\x1b[m\x1b[K:\n'}
+[25.553786] (MoveIt_demo) StderrLine: {'line': b'\x1b[01m\x1b[K/opt/ros/humble/include/moveit/move_group_interface/move_group_interface.h:71:7:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[Kdeclared here\n'}
+[25.553812] (MoveIt_demo) StderrLine: {'line': b'   71 | using \x1b[01;36m\x1b[KMoveItErrorCode\x1b[m\x1b[K [[deprecated("Use moveit::core::MoveItErrorCode")]] = moveit::core::MoveItErrorCode;\n'}
+[25.553837] (MoveIt_demo) StderrLine: {'line': b'      |       \x1b[01;36m\x1b[K^~~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[25.553862] (MoveIt_demo) StderrLine: {'line': b'\x1b[01m\x1b[K/var/robotic/yahboomcar_ws/src/MoveIt_demo/src/multi_track_motion.cpp:91:77:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[Kusing MoveItErrorCode = class moveit::core::MoveItErrorCode\x1b[m\x1b[K\xe2\x80\x99 is deprecated: Use moveit::core::MoveItErrorCode [\x1b[01;35m\x1b[K\x1b]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wdeprecated-declarations\x07-Wdeprecated-declarations\x1b]8;;\x07\x1b[m\x1b[K]\n'}
+[25.553889] (MoveIt_demo) StderrLine: {'line': b'   91 |                                 moveit::planning_interface::MoveItErrorCode \x1b[01;35m\x1b[Kexecute_result_3rd\x1b[m\x1b[K = move_group_interface_->execute(my_plan);\n'}
+[25.553915] (MoveIt_demo) StderrLine: {'line': b'      |                                                                             \x1b[01;35m\x1b[K^~~~~~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[25.553940] (MoveIt_demo) StderrLine: {'line': b'In file included from \x1b[01m\x1b[K/var/robotic/yahboomcar_ws/src/MoveIt_demo/src/multi_track_motion.cpp:2\x1b[m\x1b[K:\n'}
+[25.553983] (MoveIt_demo) StderrLine: {'line': b'\x1b[01m\x1b[K/opt/ros/humble/include/moveit/move_group_interface/move_group_interface.h:71:7:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[Kdeclared here\n'}
+[25.554012] (MoveIt_demo) StderrLine: {'line': b'   71 | using \x1b[01;36m\x1b[KMoveItErrorCode\x1b[m\x1b[K [[deprecated("Use moveit::core::MoveItErrorCode")]] = moveit::core::MoveItErrorCode;\n'}
+[25.554040] (MoveIt_demo) StderrLine: {'line': b'      |       \x1b[01;36m\x1b[K^~~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[25.560240] (-) TimerEvent: {}
+[25.660645] (-) TimerEvent: {}
+[25.761077] (-) TimerEvent: {}
+[25.861587] (-) TimerEvent: {}
+[25.962008] (-) TimerEvent: {}
+[26.063240] (-) TimerEvent: {}
+[26.163654] (-) TimerEvent: {}
+[26.264059] (-) TimerEvent: {}
+[26.364343] (-) TimerEvent: {}
+[26.466253] (-) TimerEvent: {}
+[26.566654] (-) TimerEvent: {}
+[26.667080] (-) TimerEvent: {}
+[26.767539] (-) TimerEvent: {}
+[26.867993] (-) TimerEvent: {}
+[26.968433] (-) TimerEvent: {}
+[27.068848] (-) TimerEvent: {}
+[27.170411] (-) TimerEvent: {}
+[27.270819] (-) TimerEvent: {}
+[27.310813] (MoveIt_demo) StdoutLine: {'line': b'[ 78%] \x1b[32m\x1b[1mLinking CXX executable multi_track_motion\x1b[0m\n'}
+[27.370931] (-) TimerEvent: {}
+[27.471417] (-) TimerEvent: {}
+[27.572410] (-) TimerEvent: {}
+[27.672881] (-) TimerEvent: {}
+[27.683752] (MoveIt_demo) StdoutLine: {'line': b'[ 78%] Built target multi_track_motion\n'}
+[27.698714] (MoveIt_demo) StdoutLine: {'line': b'[ 85%] \x1b[32mBuilding CXX object CMakeFiles/set_scene.dir/src/set_scene.cpp.o\x1b[0m\n'}
+[27.772982] (-) TimerEvent: {}
+[27.873452] (-) TimerEvent: {}
+[27.973939] (-) TimerEvent: {}
+[28.075568] (-) TimerEvent: {}
+[28.176086] (-) TimerEvent: {}
+[28.276549] (-) TimerEvent: {}
+[28.377045] (-) TimerEvent: {}
+[28.477563] (-) TimerEvent: {}
+[28.578392] (-) TimerEvent: {}
+[28.679598] (-) TimerEvent: {}
+[28.780063] (-) TimerEvent: {}
+[28.880556] (-) TimerEvent: {}
+[28.982526] (-) TimerEvent: {}
+[29.083067] (-) TimerEvent: {}
+[29.183666] (-) TimerEvent: {}
+[29.284170] (-) TimerEvent: {}
+[29.384688] (-) TimerEvent: {}
+[29.486241] (-) TimerEvent: {}
+[29.586723] (-) TimerEvent: {}
+[29.687035] (-) TimerEvent: {}
+[29.787519] (-) TimerEvent: {}
+[29.887968] (-) TimerEvent: {}
+[29.969652] (MoveIt_demo) StdoutLine: {'line': b'[ 92%] \x1b[32m\x1b[1mLinking CXX executable obstacle_avoidance\x1b[0m\n'}
+[29.988061] (-) TimerEvent: {}
+[30.088475] (-) TimerEvent: {}
+[30.188951] (-) TimerEvent: {}
+[30.194795] (MoveIt_demo) StdoutLine: {'line': b'[ 92%] Built target obstacle_avoidance\n'}
+[30.289053] (-) TimerEvent: {}
+[30.389576] (-) TimerEvent: {}
+[30.490175] (-) TimerEvent: {}
+[30.591459] (-) TimerEvent: {}
+[30.691790] (-) TimerEvent: {}
+[30.792151] (-) TimerEvent: {}
+[30.892464] (-) TimerEvent: {}
+[30.993392] (-) TimerEvent: {}
+[31.093849] (-) TimerEvent: {}
+[31.194432] (-) TimerEvent: {}
+[31.295171] (-) TimerEvent: {}
+[31.395682] (-) TimerEvent: {}
+[31.495978] (-) TimerEvent: {}
+[31.596278] (-) TimerEvent: {}
+[31.696574] (-) TimerEvent: {}
+[31.796862] (-) TimerEvent: {}
+[31.897145] (-) TimerEvent: {}
+[31.997449] (-) TimerEvent: {}
+[32.097940] (-) TimerEvent: {}
+[32.136757] (MoveIt_demo) StdoutLine: {'line': b'[100%] \x1b[32m\x1b[1mLinking CXX executable set_scene\x1b[0m\n'}
+[32.198059] (-) TimerEvent: {}
+[32.298678] (-) TimerEvent: {}
+[32.351368] (MoveIt_demo) StdoutLine: {'line': b'[100%] Built target set_scene\n'}
+[32.359347] (MoveIt_demo) JobEnded: {'identifier': 'MoveIt_demo', 'rc': 'SIGINT'}
+[32.369958] (arm_msgs) JobSkipped: {'identifier': 'arm_msgs'}
+[32.370110] (test_config) JobSkipped: {'identifier': 'test_config'}
+[32.370149] (yahboom_M3Pro_DepthCam) JobSkipped: {'identifier': 'yahboom_M3Pro_DepthCam'}
+[32.370160] (yahboom_M3Pro_laser) JobSkipped: {'identifier': 'yahboom_M3Pro_laser'}
+[32.370168] (yahboom_yolov8) JobSkipped: {'identifier': 'yahboom_yolov8'}
+[32.370176] (yahboomcar_ctrl) JobSkipped: {'identifier': 'yahboomcar_ctrl'}
+[32.370198] (yahboomcar_mediapipe) JobSkipped: {'identifier': 'yahboomcar_mediapipe'}
+[32.370207] (yahboomcar_msgs) JobSkipped: {'identifier': 'yahboomcar_msgs'}
+[32.370214] (M3Pro_config) JobSkipped: {'identifier': 'M3Pro_config'}
+[32.370222] (test_moveit_config) JobSkipped: {'identifier': 'test_moveit_config'}
+[32.370230] (-) EventReactorShutdown: {}

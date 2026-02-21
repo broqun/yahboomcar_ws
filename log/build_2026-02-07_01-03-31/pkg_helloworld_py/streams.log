@@ -1,0 +1,27 @@
+[0.319s] Invoking command in '/var/robotic/yahboomcar_ws/src/pkg_helloworld_py': PYTHONPATH=/var/robotic/yahboomcar_ws/build/pkg_helloworld_py/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/var/robotic/yahboomcar_ws/install/pkg_helloworld_py/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/pkg_helloworld_py build --build-base /var/robotic/yahboomcar_ws/build/pkg_helloworld_py/build install --record /var/robotic/yahboomcar_ws/build/pkg_helloworld_py/install.log --single-version-externally-managed install_data
+[0.449s] running egg_info
+[0.450s] writing ../../build/pkg_helloworld_py/pkg_helloworld_py.egg-info/PKG-INFO
+[0.451s] writing dependency_links to ../../build/pkg_helloworld_py/pkg_helloworld_py.egg-info/dependency_links.txt
+[0.451s] writing entry points to ../../build/pkg_helloworld_py/pkg_helloworld_py.egg-info/entry_points.txt
+[0.451s] writing requirements to ../../build/pkg_helloworld_py/pkg_helloworld_py.egg-info/requires.txt
+[0.451s] writing top-level names to ../../build/pkg_helloworld_py/pkg_helloworld_py.egg-info/top_level.txt
+[0.451s] reading manifest file '../../build/pkg_helloworld_py/pkg_helloworld_py.egg-info/SOURCES.txt'
+[0.451s] writing manifest file '../../build/pkg_helloworld_py/pkg_helloworld_py.egg-info/SOURCES.txt'
+[0.451s] running build
+[0.451s] running build_py
+[0.452s] running install
+[0.452s] running install_lib
+[0.452s] byte-compiling /var/robotic/yahboomcar_ws/install/pkg_helloworld_py/lib/python3.10/site-packages/pkg_helloworld_py/helloworld.py to helloworld.cpython-310.pyc
+[0.452s] running install_data
+[0.452s]   File "/var/robotic/yahboomcar_ws/install/pkg_helloworld_py/lib/python3.10/site-packages/pkg_helloworld_py/helloworld.py", line 4
+[0.452s]     ​
+[0.452s]     ^
+[0.452s] SyntaxError: invalid non-printable character U+200B
+[0.452s] 
+[0.452s] running install_egg_info
+[0.454s] removing '/var/robotic/yahboomcar_ws/install/pkg_helloworld_py/lib/python3.10/site-packages/pkg_helloworld_py-0.0.0-py3.10.egg-info' (and everything under it)
+[0.454s] Copying ../../build/pkg_helloworld_py/pkg_helloworld_py.egg-info to /var/robotic/yahboomcar_ws/install/pkg_helloworld_py/lib/python3.10/site-packages/pkg_helloworld_py-0.0.0-py3.10.egg-info
+[0.454s] running install_scripts
+[0.466s] Installing helloworld script to /var/robotic/yahboomcar_ws/install/pkg_helloworld_py/lib/pkg_helloworld_py
+[0.466s] writing list of installed files to '/var/robotic/yahboomcar_ws/build/pkg_helloworld_py/install.log'
+[0.483s] Invoked command in '/var/robotic/yahboomcar_ws/src/pkg_helloworld_py' returned '0': PYTHONPATH=/var/robotic/yahboomcar_ws/build/pkg_helloworld_py/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/var/robotic/yahboomcar_ws/install/pkg_helloworld_py/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/pkg_helloworld_py build --build-base /var/robotic/yahboomcar_ws/build/pkg_helloworld_py/build install --record /var/robotic/yahboomcar_ws/build/pkg_helloworld_py/install.log --single-version-externally-managed install_data

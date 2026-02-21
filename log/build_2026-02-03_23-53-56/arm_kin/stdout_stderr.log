@@ -1,0 +1,65 @@
+-- Found ament_cmake: 1.3.12 (/opt/ros/humble/share/ament_cmake/cmake)
+-- Found rclcpp: 16.0.17 (/opt/ros/humble/share/rclcpp/cmake)
+-- Found rosidl_generator_c: 3.1.8 (/opt/ros/humble/share/rosidl_generator_c/cmake)
+-- Found rosidl_adapter: 3.1.8 (/opt/ros/humble/share/rosidl_adapter/cmake)
+-- Found rosidl_generator_cpp: 3.1.8 (/opt/ros/humble/share/rosidl_generator_cpp/cmake)
+-- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+-- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+-- Found rmw_implementation_cmake: 6.1.2 (/opt/ros/humble/share/rmw_implementation_cmake/cmake)
+-- Found rmw_fastrtps_cpp: 6.2.9 (/opt/ros/humble/share/rmw_fastrtps_cpp/cmake)
+-- Using RMW implementation 'rmw_fastrtps_cpp' as default
+-- Found arm_interface: 0.0.0 (/var/robotic/yahboomcar_ws/install/arm_interface/share/arm_interface/cmake)
+-- Found kdl_parser: 2.6.4 (/opt/ros/humble/share/kdl_parser/cmake)
+-- Found eigen3_cmake_module: 0.1.1 (/opt/ros/humble/share/eigen3_cmake_module/cmake)
+-- Ensuring Eigen3 include directory is part of orocos-kdl CMake target
+-- Found ament_lint_auto: 0.12.14 (/opt/ros/humble/share/ament_lint_auto/cmake)
+-- Added test 'cppcheck' to perform static code analysis on C / C++ code
+-- Configured cppcheck include dirs: /var/robotic/yahboomcar_ws/src/arm_kin/include;$<BUILD_INTERFACE:/var/robotic/yahboomcar_ws/src/arm_kin/include>
+-- Configured cppcheck exclude dirs and/or files: 
+-- Added test 'lint_cmake' to check CMake code style
+-- Added test 'uncrustify' to check C / C++ code style
+-- Configured uncrustify additional arguments: 
+-- Added test 'xmllint' to check XML markup files
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /var/robotic/yahboomcar_ws/build/arm_kin
+Consolidate compiler generated dependencies of target kin_srv
+[ 50%] Building CXX object CMakeFiles/kin_srv.dir/src/kin_srv.cpp.o
+/var/robotic/yahboomcar_ws/src/arm_kin/src/kin_srv.cpp: In function ‘bool arm_getFK(const char*, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&)’:
+/var/robotic/yahboomcar_ws/src/arm_kin/src/kin_srv.cpp:52:30: warning: comparison of constant ‘0’ with boolean expression is always true [-Wbool-compare]
+   52 |     return kinematics_status >= 0;
+      |            ~~~~~~~~~~~~~~~~~~^~~~
+/var/robotic/yahboomcar_ws/src/arm_kin/src/kin_srv.cpp: In function ‘bool arm_getIK(const char*, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&)’:
+/var/robotic/yahboomcar_ws/src/arm_kin/src/kin_srv.cpp:94:27: warning: comparison of constant ‘0’ with boolean expression is always true [-Wbool-compare]
+   94 |     if (kinematics_status >= 0) {
+      |         ~~~~~~~~~~~~~~~~~~^~~~
+/var/robotic/yahboomcar_ws/src/arm_kin/src/kin_srv.cpp: In function ‘void handle_service(std::shared_ptr<arm_interface::srv::ArmKinemarics_Request_<std::allocator<void> > >, std::shared_ptr<arm_interface::srv::ArmKinemarics_Response_<std::allocator<void> > >)’:
+/var/robotic/yahboomcar_ws/src/arm_kin/src/kin_srv.cpp:133:16: warning: unused variable ‘tool_param’ [-Wunused-variable]
+  133 |         double tool_param = 0.12;
+      |                ^~~~~~~~~~
+/var/robotic/yahboomcar_ws/src/arm_kin/src/kin_srv.cpp: In function ‘int main(int, char**)’:
+/var/robotic/yahboomcar_ws/src/arm_kin/src/kin_srv.cpp:177:37: warning: ignoring return value of ‘rcutils_ret_t rcutils_logging_set_logger_level(const char*, int)’ declared with attribute ‘warn_unused_result’ [-Wunused-result]
+  177 |     rcutils_logging_set_logger_level("kdl_parser", RCUTILS_LOG_SEVERITY_ERROR);
+      |     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+[100%] Linking CXX executable kin_srv
+[100%] Built target kin_srv
+-- Install configuration: ""
+-- Installing: /var/robotic/yahboomcar_ws/install/arm_kin/share/arm_kin/param
+-- Installing: /var/robotic/yahboomcar_ws/install/arm_kin/share/arm_kin/param/offset_value.yaml
+-- Installing: /var/robotic/yahboomcar_ws/install/arm_kin/lib/arm_kin/kin_srv
+-- Set runtime path of "/var/robotic/yahboomcar_ws/install/arm_kin/lib/arm_kin/kin_srv" to ""
+-- Installing: /var/robotic/yahboomcar_ws/install/arm_kin/share/ament_index/resource_index/package_run_dependencies/arm_kin
+-- Installing: /var/robotic/yahboomcar_ws/install/arm_kin/share/ament_index/resource_index/parent_prefix_path/arm_kin
+-- Installing: /var/robotic/yahboomcar_ws/install/arm_kin/share/arm_kin/environment/ament_prefix_path.sh
+-- Installing: /var/robotic/yahboomcar_ws/install/arm_kin/share/arm_kin/environment/ament_prefix_path.dsv
+-- Installing: /var/robotic/yahboomcar_ws/install/arm_kin/share/arm_kin/environment/path.sh
+-- Installing: /var/robotic/yahboomcar_ws/install/arm_kin/share/arm_kin/environment/path.dsv
+-- Installing: /var/robotic/yahboomcar_ws/install/arm_kin/share/arm_kin/local_setup.bash
+-- Installing: /var/robotic/yahboomcar_ws/install/arm_kin/share/arm_kin/local_setup.sh
+-- Installing: /var/robotic/yahboomcar_ws/install/arm_kin/share/arm_kin/local_setup.zsh
+-- Installing: /var/robotic/yahboomcar_ws/install/arm_kin/share/arm_kin/local_setup.dsv
+-- Installing: /var/robotic/yahboomcar_ws/install/arm_kin/share/arm_kin/package.dsv
+-- Installing: /var/robotic/yahboomcar_ws/install/arm_kin/share/ament_index/resource_index/packages/arm_kin
+-- Installing: /var/robotic/yahboomcar_ws/install/arm_kin/share/arm_kin/cmake/arm_kinConfig.cmake
+-- Installing: /var/robotic/yahboomcar_ws/install/arm_kin/share/arm_kin/cmake/arm_kinConfig-version.cmake
+-- Installing: /var/robotic/yahboomcar_ws/install/arm_kin/share/arm_kin/package.xml

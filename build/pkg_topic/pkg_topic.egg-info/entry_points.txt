@@ -1,0 +1,4 @@
+[console_scripts]
+publisher_demo = pkg_topic.publisher_demo:main
+subscriber_demo = pkg_topic.subscriber_demo:main
+

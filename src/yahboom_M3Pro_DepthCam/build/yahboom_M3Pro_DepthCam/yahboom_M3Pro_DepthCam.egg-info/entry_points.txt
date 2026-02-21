@@ -1,0 +1,5 @@
+[console_scripts]
+GetDepthColor = yahboom_M3Pro_DepthCam.GetDepthColor:main
+Measure_Distance = yahboom_M3Pro_DepthCam.Measure_Distance:main
+edge_detection = yahboom_M3Pro_DepthCam.Edge_Detection:main
+

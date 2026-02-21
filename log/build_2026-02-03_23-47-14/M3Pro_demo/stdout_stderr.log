@@ -1,0 +1,53 @@
+running egg_info
+writing ../../build/M3Pro_demo/M3Pro_demo.egg-info/PKG-INFO
+writing dependency_links to ../../build/M3Pro_demo/M3Pro_demo.egg-info/dependency_links.txt
+writing entry points to ../../build/M3Pro_demo/M3Pro_demo.egg-info/entry_points.txt
+writing requirements to ../../build/M3Pro_demo/M3Pro_demo.egg-info/requires.txt
+writing top-level names to ../../build/M3Pro_demo/M3Pro_demo.egg-info/top_level.txt
+reading manifest file '../../build/M3Pro_demo/M3Pro_demo.egg-info/SOURCES.txt'
+writing manifest file '../../build/M3Pro_demo/M3Pro_demo.egg-info/SOURCES.txt'
+running build
+running build_py
+running install
+running install_lib
+running install_data
+running install_egg_info
+removing '/var/robotic/yahboomcar_ws/install/M3Pro_demo/lib/python3.10/site-packages/M3Pro_demo-0.0.0-py3.10.egg-info' (and everything under it)
+Copying ../../build/M3Pro_demo/M3Pro_demo.egg-info to /var/robotic/yahboomcar_ws/install/M3Pro_demo/lib/python3.10/site-packages/M3Pro_demo-0.0.0-py3.10.egg-info
+running install_scripts
+Installing Gesture_Moving script to /var/robotic/yahboomcar_ws/install/M3Pro_demo/lib/M3Pro_demo
+Installing KCF_follow script to /var/robotic/yahboomcar_ws/install/M3Pro_demo/lib/M3Pro_demo
+Installing KCF_follow_desktop script to /var/robotic/yahboomcar_ws/install/M3Pro_demo/lib/M3Pro_demo
+Installing KCF_track script to /var/robotic/yahboomcar_ws/install/M3Pro_demo/lib/M3Pro_demo
+Installing M3Pro_Dancing script to /var/robotic/yahboomcar_ws/install/M3Pro_demo/lib/M3Pro_demo
+Installing apriltagDist_gesture script to /var/robotic/yahboomcar_ws/install/M3Pro_demo/lib/M3Pro_demo
+Installing apriltagHeight_gesture script to /var/robotic/yahboomcar_ws/install/M3Pro_demo/lib/M3Pro_demo
+Installing apriltagID_gesture script to /var/robotic/yahboomcar_ws/install/M3Pro_demo/lib/M3Pro_demo
+Installing apriltag_detect script to /var/robotic/yahboomcar_ws/install/M3Pro_demo/lib/M3Pro_demo
+Installing apriltag_follow script to /var/robotic/yahboomcar_ws/install/M3Pro_demo/lib/M3Pro_demo
+Installing apriltag_follow_2D script to /var/robotic/yahboomcar_ws/install/M3Pro_demo/lib/M3Pro_demo
+Installing apriltag_list script to /var/robotic/yahboomcar_ws/install/M3Pro_demo/lib/M3Pro_demo
+Installing apriltag_rotation script to /var/robotic/yahboomcar_ws/install/M3Pro_demo/lib/M3Pro_demo
+Installing apriltag_track script to /var/robotic/yahboomcar_ws/install/M3Pro_demo/lib/M3Pro_demo
+Installing apriltag_track_desktop script to /var/robotic/yahboomcar_ws/install/M3Pro_demo/lib/M3Pro_demo
+Installing apriltag_transport script to /var/robotic/yahboomcar_ws/install/M3Pro_demo/lib/M3Pro_demo
+Installing apriltag_transport_V2 script to /var/robotic/yahboomcar_ws/install/M3Pro_demo/lib/M3Pro_demo
+Installing arm_offset script to /var/robotic/yahboomcar_ws/install/M3Pro_demo/lib/M3Pro_demo
+Installing color_follow script to /var/robotic/yahboomcar_ws/install/M3Pro_demo/lib/M3Pro_demo
+Installing color_list script to /var/robotic/yahboomcar_ws/install/M3Pro_demo/lib/M3Pro_demo
+Installing color_recognize script to /var/robotic/yahboomcar_ws/install/M3Pro_demo/lib/M3Pro_demo
+Installing color_track script to /var/robotic/yahboomcar_ws/install/M3Pro_demo/lib/M3Pro_demo
+Installing color_track_desktop script to /var/robotic/yahboomcar_ws/install/M3Pro_demo/lib/M3Pro_demo
+Installing color_transport script to /var/robotic/yahboomcar_ws/install/M3Pro_demo/lib/M3Pro_demo
+Installing estimate_volume script to /var/robotic/yahboomcar_ws/install/M3Pro_demo/lib/M3Pro_demo
+Installing follow_line script to /var/robotic/yahboomcar_ws/install/M3Pro_demo/lib/M3Pro_demo
+Installing grasp script to /var/robotic/yahboomcar_ws/install/M3Pro_demo/lib/M3Pro_demo
+Installing grasp_desktop script to /var/robotic/yahboomcar_ws/install/M3Pro_demo/lib/M3Pro_demo
+Installing grasp_joint5 script to /var/robotic/yahboomcar_ws/install/M3Pro_demo/lib/M3Pro_demo
+Installing grasp_transport script to /var/robotic/yahboomcar_ws/install/M3Pro_demo/lib/M3Pro_demo
+Installing mediapipe_detect script to /var/robotic/yahboomcar_ws/install/M3Pro_demo/lib/M3Pro_demo
+Installing mediapipe_gesture script to /var/robotic/yahboomcar_ws/install/M3Pro_demo/lib/M3Pro_demo
+Installing shape_recognize script to /var/robotic/yahboomcar_ws/install/M3Pro_demo/lib/M3Pro_demo
+Installing test_mediapipe script to /var/robotic/yahboomcar_ws/install/M3Pro_demo/lib/M3Pro_demo
+Installing volume_calculations script to /var/robotic/yahboomcar_ws/install/M3Pro_demo/lib/M3Pro_demo
+writing list of installed files to '/var/robotic/yahboomcar_ws/build/M3Pro_demo/install.log'

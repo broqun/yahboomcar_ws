@@ -1,0 +1,3 @@
+[console_scripts]
+param_demo = pkg_param.param_demo:main
+

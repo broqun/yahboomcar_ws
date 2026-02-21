@@ -1,0 +1,10 @@
+/var/robotic/yahboomcar_ws/build/arm_kin/CMakeFiles/uninstall.dir
+/var/robotic/yahboomcar_ws/build/arm_kin/CMakeFiles/arm_kin_uninstall.dir
+/var/robotic/yahboomcar_ws/build/arm_kin/CMakeFiles/kin_srv.dir
+/var/robotic/yahboomcar_ws/build/arm_kin/CMakeFiles/test.dir
+/var/robotic/yahboomcar_ws/build/arm_kin/CMakeFiles/edit_cache.dir
+/var/robotic/yahboomcar_ws/build/arm_kin/CMakeFiles/rebuild_cache.dir
+/var/robotic/yahboomcar_ws/build/arm_kin/CMakeFiles/list_install_components.dir
+/var/robotic/yahboomcar_ws/build/arm_kin/CMakeFiles/install.dir
+/var/robotic/yahboomcar_ws/build/arm_kin/CMakeFiles/install/local.dir
+/var/robotic/yahboomcar_ws/build/arm_kin/CMakeFiles/install/strip.dir

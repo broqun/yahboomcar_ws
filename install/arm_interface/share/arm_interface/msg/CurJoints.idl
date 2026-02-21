@@ -1,0 +1,12 @@
+// generated from rosidl_adapter/resource/msg.idl.em
+// with input from arm_interface/msg/CurJoints.msg
+// generated code does not contain a copyright notice
+
+
+module arm_interface {
+  module msg {
+    struct CurJoints {
+      sequence<int16> joints;
+    };
+  };
+};

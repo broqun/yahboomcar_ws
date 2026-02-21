@@ -1,0 +1,41 @@
+[0.422s] Invoking command in '/var/robotic/yahboomcar_ws/src/learning_dds': PYTHONPATH=/var/robotic/yahboomcar_ws/build/learning_dds/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/var/robotic/yahboomcar_ws/install/learning_dds/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/learning_dds build --build-base /var/robotic/yahboomcar_ws/build/learning_dds/build install --record /var/robotic/yahboomcar_ws/build/learning_dds/install.log --single-version-externally-managed install_data
+[0.546s] running egg_info
+[0.546s] creating ../../build/learning_dds/learning_dds.egg-info
+[0.546s] writing ../../build/learning_dds/learning_dds.egg-info/PKG-INFO
+[0.547s] writing dependency_links to ../../build/learning_dds/learning_dds.egg-info/dependency_links.txt
+[0.547s] writing entry points to ../../build/learning_dds/learning_dds.egg-info/entry_points.txt
+[0.547s] writing requirements to ../../build/learning_dds/learning_dds.egg-info/requires.txt
+[0.547s] writing top-level names to ../../build/learning_dds/learning_dds.egg-info/top_level.txt
+[0.547s] writing manifest file '../../build/learning_dds/learning_dds.egg-info/SOURCES.txt'
+[0.548s] reading manifest file '../../build/learning_dds/learning_dds.egg-info/SOURCES.txt'
+[0.548s] writing manifest file '../../build/learning_dds/learning_dds.egg-info/SOURCES.txt'
+[0.548s] running build
+[0.548s] running build_py
+[0.548s] creating /var/robotic/yahboomcar_ws/build/learning_dds/build
+[0.549s] creating /var/robotic/yahboomcar_ws/build/learning_dds/build/lib
+[0.549s] creating /var/robotic/yahboomcar_ws/build/learning_dds/build/lib/learning_dds
+[0.549s] copying learning_dds/dds_controller_pub.py -> /var/robotic/yahboomcar_ws/build/learning_dds/build/lib/learning_dds
+[0.549s] copying learning_dds/dds_robot_sub.py -> /var/robotic/yahboomcar_ws/build/learning_dds/build/lib/learning_dds
+[0.550s] copying learning_dds/__init__.py -> /var/robotic/yahboomcar_ws/build/learning_dds/build/lib/learning_dds
+[0.550s] running install
+[0.550s] running install_lib
+[0.550s] creating /var/robotic/yahboomcar_ws/install/learning_dds/lib/python3.10/site-packages/learning_dds
+[0.550s] copying /var/robotic/yahboomcar_ws/build/learning_dds/build/lib/learning_dds/dds_controller_pub.py -> /var/robotic/yahboomcar_ws/install/learning_dds/lib/python3.10/site-packages/learning_dds
+[0.550s] copying /var/robotic/yahboomcar_ws/build/learning_dds/build/lib/learning_dds/dds_robot_sub.py -> /var/robotic/yahboomcar_ws/install/learning_dds/lib/python3.10/site-packages/learning_dds
+[0.550s] copying /var/robotic/yahboomcar_ws/build/learning_dds/build/lib/learning_dds/__init__.py -> /var/robotic/yahboomcar_ws/install/learning_dds/lib/python3.10/site-packages/learning_dds
+[0.551s] byte-compiling /var/robotic/yahboomcar_ws/install/learning_dds/lib/python3.10/site-packages/learning_dds/dds_controller_pub.py to dds_controller_pub.cpython-310.pyc
+[0.551s] byte-compiling /var/robotic/yahboomcar_ws/install/learning_dds/lib/python3.10/site-packages/learning_dds/dds_robot_sub.py to dds_robot_sub.cpython-310.pyc
+[0.551s] byte-compiling /var/robotic/yahboomcar_ws/install/learning_dds/lib/python3.10/site-packages/learning_dds/__init__.py to __init__.cpython-310.pyc
+[0.551s] running install_data
+[0.551s] creating /var/robotic/yahboomcar_ws/install/learning_dds/share/ament_index
+[0.551s] creating /var/robotic/yahboomcar_ws/install/learning_dds/share/ament_index/resource_index
+[0.551s] creating /var/robotic/yahboomcar_ws/install/learning_dds/share/ament_index/resource_index/packages
+[0.551s] copying resource/learning_dds -> /var/robotic/yahboomcar_ws/install/learning_dds/share/ament_index/resource_index/packages
+[0.551s] copying package.xml -> /var/robotic/yahboomcar_ws/install/learning_dds/share/learning_dds
+[0.552s] running install_egg_info
+[0.552s] Copying ../../build/learning_dds/learning_dds.egg-info to /var/robotic/yahboomcar_ws/install/learning_dds/lib/python3.10/site-packages/learning_dds-0.0.0-py3.10.egg-info
+[0.553s] running install_scripts
+[0.564s] Installing dds_controller_pub script to /var/robotic/yahboomcar_ws/install/learning_dds/lib/learning_dds
+[0.564s] Installing dds_robot_sub script to /var/robotic/yahboomcar_ws/install/learning_dds/lib/learning_dds
+[0.564s] writing list of installed files to '/var/robotic/yahboomcar_ws/build/learning_dds/install.log'
+[0.576s] Invoked command in '/var/robotic/yahboomcar_ws/src/learning_dds' returned '0': PYTHONPATH=/var/robotic/yahboomcar_ws/build/learning_dds/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/var/robotic/yahboomcar_ws/install/learning_dds/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/learning_dds build --build-base /var/robotic/yahboomcar_ws/build/learning_dds/build install --record /var/robotic/yahboomcar_ws/build/learning_dds/install.log --single-version-externally-managed install_data

@@ -1,0 +1,24 @@
+Consolidate compiler generated dependencies of target kin_srv
+[ 50%] Building CXX object CMakeFiles/kin_srv.dir/src/kin_srv.cpp.o
+[100%] Linking CXX executable kin_srv
+[100%] Built target kin_srv
+-- Install configuration: ""
+-- Up-to-date: /var/robotic/yahboomcar_ws/install/arm_kin/share/arm_kin/param
+-- Up-to-date: /var/robotic/yahboomcar_ws/install/arm_kin/share/arm_kin/param/offset_value.yaml
+-- Installing: /var/robotic/yahboomcar_ws/install/arm_kin/lib/arm_kin/kin_srv
+-- Set runtime path of "/var/robotic/yahboomcar_ws/install/arm_kin/lib/arm_kin/kin_srv" to ""
+-- Up-to-date: /var/robotic/yahboomcar_ws/install/arm_kin/share/ament_index/resource_index/package_run_dependencies/arm_kin
+-- Up-to-date: /var/robotic/yahboomcar_ws/install/arm_kin/share/ament_index/resource_index/parent_prefix_path/arm_kin
+-- Up-to-date: /var/robotic/yahboomcar_ws/install/arm_kin/share/arm_kin/environment/ament_prefix_path.sh
+-- Up-to-date: /var/robotic/yahboomcar_ws/install/arm_kin/share/arm_kin/environment/ament_prefix_path.dsv
+-- Up-to-date: /var/robotic/yahboomcar_ws/install/arm_kin/share/arm_kin/environment/path.sh
+-- Up-to-date: /var/robotic/yahboomcar_ws/install/arm_kin/share/arm_kin/environment/path.dsv
+-- Up-to-date: /var/robotic/yahboomcar_ws/install/arm_kin/share/arm_kin/local_setup.bash
+-- Up-to-date: /var/robotic/yahboomcar_ws/install/arm_kin/share/arm_kin/local_setup.sh
+-- Up-to-date: /var/robotic/yahboomcar_ws/install/arm_kin/share/arm_kin/local_setup.zsh
+-- Up-to-date: /var/robotic/yahboomcar_ws/install/arm_kin/share/arm_kin/local_setup.dsv
+-- Installing: /var/robotic/yahboomcar_ws/install/arm_kin/share/arm_kin/package.dsv
+-- Up-to-date: /var/robotic/yahboomcar_ws/install/arm_kin/share/ament_index/resource_index/packages/arm_kin
+-- Up-to-date: /var/robotic/yahboomcar_ws/install/arm_kin/share/arm_kin/cmake/arm_kinConfig.cmake
+-- Up-to-date: /var/robotic/yahboomcar_ws/install/arm_kin/share/arm_kin/cmake/arm_kinConfig-version.cmake
+-- Up-to-date: /var/robotic/yahboomcar_ws/install/arm_kin/share/arm_kin/package.xml

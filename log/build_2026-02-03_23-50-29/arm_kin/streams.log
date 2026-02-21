@@ -1,0 +1,8 @@
+[0.005s] Invoking command in '/var/robotic/yahboomcar_ws/build/arm_kin': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --build /var/robotic/yahboomcar_ws/build/arm_kin -- -j2 -l2
+[0.075s] [ 50%] [32m[1mLinking CXX executable kin_srv[0m
+[0.111s] /usr/bin/ld: cannot find -larmkin: No such file or directory
+[0.143s] collect2: error: ld returned 1 exit status
+[0.145s] gmake[2]: *** [CMakeFiles/kin_srv.dir/build.make:177: kin_srv] Error 1
+[0.145s] gmake[1]: *** [CMakeFiles/Makefile2:137: CMakeFiles/kin_srv.dir/all] Error 2
+[0.145s] gmake: *** [Makefile:146: all] Error 2
+[0.147s] Invoked command in '/var/robotic/yahboomcar_ws/build/arm_kin' returned '2': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --build /var/robotic/yahboomcar_ws/build/arm_kin -- -j2 -l2

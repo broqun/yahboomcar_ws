@@ -1,0 +1,14 @@
+{
+	"backtraceGraph" : 
+	{
+		"commands" : [],
+		"files" : [],
+		"nodes" : []
+	},
+	"installers" : [],
+	"paths" : 
+	{
+		"build" : "arm_interface__py",
+		"source" : "/var/robotic/yahboomcar_ws/build/arm_interface/arm_interface__py"
+	}
+}

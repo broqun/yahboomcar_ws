@@ -1,0 +1,6 @@
+Invoking command in '/var/robotic/yahboomcar_ws/build/pkg_interfaces': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake /var/robotic/yahboomcar_ws/src/pkg_interfaces -DCMAKE_INSTALL_PREFIX=/var/robotic/yahboomcar_ws/install/pkg_interfaces
+Invoked command in '/var/robotic/yahboomcar_ws/build/pkg_interfaces' returned '0': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake /var/robotic/yahboomcar_ws/src/pkg_interfaces -DCMAKE_INSTALL_PREFIX=/var/robotic/yahboomcar_ws/install/pkg_interfaces
+Invoking command in '/var/robotic/yahboomcar_ws/build/pkg_interfaces': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --build /var/robotic/yahboomcar_ws/build/pkg_interfaces -- -j2 -l2
+Invoked command in '/var/robotic/yahboomcar_ws/build/pkg_interfaces' returned '0': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --build /var/robotic/yahboomcar_ws/build/pkg_interfaces -- -j2 -l2
+Invoking command in '/var/robotic/yahboomcar_ws/build/pkg_interfaces': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --install /var/robotic/yahboomcar_ws/build/pkg_interfaces
+Invoked command in '/var/robotic/yahboomcar_ws/build/pkg_interfaces' returned '0': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --install /var/robotic/yahboomcar_ws/build/pkg_interfaces

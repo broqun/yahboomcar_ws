@@ -1,0 +1,3 @@
+[console_scripts]
+arm_driver = arm_driver.arm_driver:main
+

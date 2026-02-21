@@ -1,0 +1,24 @@
+// generated from rosidl_adapter/resource/msg.idl.em
+// with input from arm_msgs/msg/ArmJoints.msg
+// generated code does not contain a copyright notice
+
+
+module arm_msgs {
+  module msg {
+    struct ArmJoints {
+      int16 joint1;
+
+      int16 joint2;
+
+      int16 joint3;
+
+      int16 joint4;
+
+      int16 joint5;
+
+      int16 joint6;
+
+      int16 time;
+    };
+  };
+};

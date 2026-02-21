@@ -1,0 +1,13 @@
+/var/robotic/yahboomcar_ws/src/arm_kin/src/kin_srv.cpp: In function ‘void handle_service(std::shared_ptr<arm_interface::srv::ArmKinemarics_Request_<std::allocator<void> > >, std::shared_ptr<arm_interface::srv::ArmKinemarics_Response_<std::allocator<void> > >)’:
+/var/robotic/yahboomcar_ws/src/arm_kin/src/kin_srv.cpp:63:16: warning: unused variable ‘tool_param’ [-Wunused-variable]
+   63 |         double tool_param = 0.12;
+      |                ^~~~~~~~~~
+/var/robotic/yahboomcar_ws/src/arm_kin/src/kin_srv.cpp: In function ‘int main(int, char**)’:
+/var/robotic/yahboomcar_ws/src/arm_kin/src/kin_srv.cpp:107:37: warning: ignoring return value of ‘rcutils_ret_t rcutils_logging_set_logger_level(const char*, int)’ declared with attribute ‘warn_unused_result’ [-Wunused-result]
+  107 |     rcutils_logging_set_logger_level("kdl_parser", RCUTILS_LOG_SEVERITY_ERROR);
+      |     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/usr/bin/ld: cannot find -larmkin: No such file or directory
+collect2: error: ld returned 1 exit status
+gmake[2]: *** [CMakeFiles/kin_srv.dir/build.make:177: kin_srv] Error 1
+gmake[1]: *** [CMakeFiles/Makefile2:137: CMakeFiles/kin_srv.dir/all] Error 2
+gmake: *** [Makefile:146: all] Error 2

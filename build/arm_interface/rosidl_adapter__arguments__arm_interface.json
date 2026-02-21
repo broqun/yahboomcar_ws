@@ -1,0 +1,14 @@
+{
+  "package_name": "arm_interface",
+  "non_idl_tuples": [
+    "/var/robotic/yahboomcar_ws/src/arm_interface:srv/ArmKinemarics.srv",
+    "/var/robotic/yahboomcar_ws/src/arm_interface:msg/ArmJoint.msg",
+    "/var/robotic/yahboomcar_ws/src/arm_interface:msg/AprilTagInfo.msg",
+    "/var/robotic/yahboomcar_ws/src/arm_interface:msg/CenterXY.msg",
+    "/var/robotic/yahboomcar_ws/src/arm_interface:msg/ShapeInfo.msg",
+    "/var/robotic/yahboomcar_ws/src/arm_interface:msg/Yolov5Detect.msg",
+    "/var/robotic/yahboomcar_ws/src/arm_interface:msg/Position.msg",
+    "/var/robotic/yahboomcar_ws/src/arm_interface:msg/CurJoints.msg",
+    "/var/robotic/yahboomcar_ws/src/arm_interface:msg/TargetXYRoll.msg"
+  ]
+}

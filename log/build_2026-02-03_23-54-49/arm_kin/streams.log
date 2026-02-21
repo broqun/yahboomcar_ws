@@ -1,0 +1,28 @@
+[0.007s] Invoking command in '/var/robotic/yahboomcar_ws/build/arm_kin': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --build /var/robotic/yahboomcar_ws/build/arm_kin -- -j2 -l2
+[0.041s] Consolidate compiler generated dependencies of target kin_srv
+[0.051s] [ 50%] Building CXX object CMakeFiles/kin_srv.dir/src/kin_srv.cpp.o
+[2.388s] [100%] Linking CXX executable kin_srv
+[2.483s] [100%] Built target kin_srv
+[2.491s] Invoked command in '/var/robotic/yahboomcar_ws/build/arm_kin' returned '0': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --build /var/robotic/yahboomcar_ws/build/arm_kin -- -j2 -l2
+[2.498s] Invoking command in '/var/robotic/yahboomcar_ws/build/arm_kin': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --install /var/robotic/yahboomcar_ws/build/arm_kin
+[2.502s] -- Install configuration: ""
+[2.502s] -- Up-to-date: /var/robotic/yahboomcar_ws/install/arm_kin/share/arm_kin/param
+[2.504s] -- Up-to-date: /var/robotic/yahboomcar_ws/install/arm_kin/share/arm_kin/param/offset_value.yaml
+[2.504s] -- Installing: /var/robotic/yahboomcar_ws/install/arm_kin/lib/arm_kin/kin_srv
+[2.504s] -- Set runtime path of "/var/robotic/yahboomcar_ws/install/arm_kin/lib/arm_kin/kin_srv" to ""
+[2.504s] -- Up-to-date: /var/robotic/yahboomcar_ws/install/arm_kin/share/ament_index/resource_index/package_run_dependencies/arm_kin
+[2.504s] -- Up-to-date: /var/robotic/yahboomcar_ws/install/arm_kin/share/ament_index/resource_index/parent_prefix_path/arm_kin
+[2.504s] -- Up-to-date: /var/robotic/yahboomcar_ws/install/arm_kin/share/arm_kin/environment/ament_prefix_path.sh
+[2.504s] -- Up-to-date: /var/robotic/yahboomcar_ws/install/arm_kin/share/arm_kin/environment/ament_prefix_path.dsv
+[2.504s] -- Up-to-date: /var/robotic/yahboomcar_ws/install/arm_kin/share/arm_kin/environment/path.sh
+[2.504s] -- Up-to-date: /var/robotic/yahboomcar_ws/install/arm_kin/share/arm_kin/environment/path.dsv
+[2.504s] -- Up-to-date: /var/robotic/yahboomcar_ws/install/arm_kin/share/arm_kin/local_setup.bash
+[2.504s] -- Up-to-date: /var/robotic/yahboomcar_ws/install/arm_kin/share/arm_kin/local_setup.sh
+[2.504s] -- Up-to-date: /var/robotic/yahboomcar_ws/install/arm_kin/share/arm_kin/local_setup.zsh
+[2.504s] -- Up-to-date: /var/robotic/yahboomcar_ws/install/arm_kin/share/arm_kin/local_setup.dsv
+[2.504s] -- Installing: /var/robotic/yahboomcar_ws/install/arm_kin/share/arm_kin/package.dsv
+[2.505s] -- Up-to-date: /var/robotic/yahboomcar_ws/install/arm_kin/share/ament_index/resource_index/packages/arm_kin
+[2.505s] -- Up-to-date: /var/robotic/yahboomcar_ws/install/arm_kin/share/arm_kin/cmake/arm_kinConfig.cmake
+[2.505s] -- Up-to-date: /var/robotic/yahboomcar_ws/install/arm_kin/share/arm_kin/cmake/arm_kinConfig-version.cmake
+[2.505s] -- Up-to-date: /var/robotic/yahboomcar_ws/install/arm_kin/share/arm_kin/package.xml
+[2.505s] Invoked command in '/var/robotic/yahboomcar_ws/build/arm_kin' returned '0': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --install /var/robotic/yahboomcar_ws/build/arm_kin

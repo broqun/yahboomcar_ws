@@ -1,0 +1,45 @@
+[0.009s] Invoking command in '/var/robotic/yahboomcar_ws/build/arm_kin': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/var/robotic/yahboomcar_ws/install/yahboom_M3Pro_description:/var/robotic/yahboomcar_ws/install/arm_driver:/var/robotic/yahboomcar_ws/install/M3Pro_demo:/var/robotic/yahboomcar_ws/install/M3Pro_MoveIt_demo:/opt/ros/humble /usr/bin/cmake /var/robotic/yahboomcar_ws/src/arm_kin -DCMAKE_INSTALL_PREFIX=/var/robotic/yahboomcar_ws/install/arm_kin
+[0.015s] -- Found ament_cmake: 1.3.12 (/opt/ros/humble/share/ament_cmake/cmake)
+[0.085s] -- Found rclcpp: 16.0.17 (/opt/ros/humble/share/rclcpp/cmake)
+[0.100s] -- Found rosidl_generator_c: 3.1.8 (/opt/ros/humble/share/rosidl_generator_c/cmake)
+[0.102s] -- Found rosidl_adapter: 3.1.8 (/opt/ros/humble/share/rosidl_adapter/cmake)
+[0.105s] -- Found rosidl_generator_cpp: 3.1.8 (/opt/ros/humble/share/rosidl_generator_cpp/cmake)
+[0.110s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[0.117s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[0.134s] -- Found rmw_implementation_cmake: 6.1.2 (/opt/ros/humble/share/rmw_implementation_cmake/cmake)
+[0.135s] -- Found rmw_fastrtps_cpp: 6.2.9 (/opt/ros/humble/share/rmw_fastrtps_cpp/cmake)
+[0.189s] -- Using RMW implementation 'rmw_fastrtps_cpp' as default
+[0.214s] -- Found arm_interface: 0.0.0 (/var/robotic/yahboomcar_ws/install/arm_interface/share/arm_interface/cmake)
+[0.229s] -- Found kdl_parser: 2.6.4 (/opt/ros/humble/share/kdl_parser/cmake)
+[0.235s] -- Found eigen3_cmake_module: 0.1.1 (/opt/ros/humble/share/eigen3_cmake_module/cmake)
+[0.236s] -- Found Eigen3: TRUE (found version "3.4.0") 
+[0.237s] -- Ensuring Eigen3 include directory is part of orocos-kdl CMake target
+[0.240s] -- Found ament_lint_auto: 0.12.14 (/opt/ros/humble/share/ament_lint_auto/cmake)
+[0.290s] -- Added test 'cppcheck' to perform static code analysis on C / C++ code
+[0.290s] -- Configured cppcheck include dirs: /var/robotic/yahboomcar_ws/src/arm_kin/include;$<BUILD_INTERFACE:/var/robotic/yahboomcar_ws/src/arm_kin/include>
+[0.290s] -- Configured cppcheck exclude dirs and/or files: 
+[0.291s] -- Added test 'lint_cmake' to check CMake code style
+[0.292s] -- Added test 'uncrustify' to check C / C++ code style
+[0.292s] -- Configured uncrustify additional arguments: 
+[0.292s] -- Added test 'xmllint' to check XML markup files
+[0.293s] -- Configuring done
+[0.298s] -- Generating done
+[0.300s] -- Build files have been written to: /var/robotic/yahboomcar_ws/build/arm_kin
+[0.306s] Invoked command in '/var/robotic/yahboomcar_ws/build/arm_kin' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/var/robotic/yahboomcar_ws/install/yahboom_M3Pro_description:/var/robotic/yahboomcar_ws/install/arm_driver:/var/robotic/yahboomcar_ws/install/M3Pro_demo:/var/robotic/yahboomcar_ws/install/M3Pro_MoveIt_demo:/opt/ros/humble /usr/bin/cmake /var/robotic/yahboomcar_ws/src/arm_kin -DCMAKE_INSTALL_PREFIX=/var/robotic/yahboomcar_ws/install/arm_kin
+[0.306s] Invoking command in '/var/robotic/yahboomcar_ws/build/arm_kin': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/var/robotic/yahboomcar_ws/install/yahboom_M3Pro_description:/var/robotic/yahboomcar_ws/install/arm_driver:/var/robotic/yahboomcar_ws/install/M3Pro_demo:/var/robotic/yahboomcar_ws/install/M3Pro_MoveIt_demo:/opt/ros/humble /usr/bin/cmake --build /var/robotic/yahboomcar_ws/build/arm_kin -- -j2 -l2
+[0.341s] [ 50%] Building CXX object CMakeFiles/kin_srv.dir/src/kin_srv.cpp.o
+[2.056s] /var/robotic/yahboomcar_ws/src/arm_kin/src/kin_srv.cpp: In function ‘void handle_service(std::shared_ptr<arm_interface::srv::ArmKinemarics_Request_<std::allocator<void> > >, std::shared_ptr<arm_interface::srv::ArmKinemarics_Response_<std::allocator<void> > >)’:
+[2.056s] /var/robotic/yahboomcar_ws/src/arm_kin/src/kin_srv.cpp:63:16: warning: unused variable ‘tool_param’ [-Wunused-variable]
+[2.056s]    63 |         double tool_param = 0.12;
+[2.056s]       |                ^~~~~~~~~~
+[2.425s] /var/robotic/yahboomcar_ws/src/arm_kin/src/kin_srv.cpp: In function ‘int main(int, char**)’:
+[2.425s] /var/robotic/yahboomcar_ws/src/arm_kin/src/kin_srv.cpp:107:37: warning: ignoring return value of ‘rcutils_ret_t rcutils_logging_set_logger_level(const char*, int)’ declared with attribute ‘warn_unused_result’ [-Wunused-result]
+[2.425s]   107 |     rcutils_logging_set_logger_level("kdl_parser", RCUTILS_LOG_SEVERITY_ERROR);
+[2.425s]       |     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+[2.688s] [100%] Linking CXX executable kin_srv
+[2.704s] /usr/bin/ld: cannot find -larmkin: No such file or directory
+[2.732s] collect2: error: ld returned 1 exit status
+[2.733s] gmake[2]: *** [CMakeFiles/kin_srv.dir/build.make:177: kin_srv] Error 1
+[2.733s] gmake[1]: *** [CMakeFiles/Makefile2:137: CMakeFiles/kin_srv.dir/all] Error 2
+[2.733s] gmake: *** [Makefile:146: all] Error 2
+[2.735s] Invoked command in '/var/robotic/yahboomcar_ws/build/arm_kin' returned '2': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/var/robotic/yahboomcar_ws/install/yahboom_M3Pro_description:/var/robotic/yahboomcar_ws/install/arm_driver:/var/robotic/yahboomcar_ws/install/M3Pro_demo:/var/robotic/yahboomcar_ws/install/M3Pro_MoveIt_demo:/opt/ros/humble /usr/bin/cmake --build /var/robotic/yahboomcar_ws/build/arm_kin -- -j2 -l2

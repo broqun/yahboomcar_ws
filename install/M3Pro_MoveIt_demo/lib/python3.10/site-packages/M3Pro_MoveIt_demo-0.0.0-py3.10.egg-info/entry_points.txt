@@ -1,0 +1,4 @@
+[console_scripts]
+SimulationToMachine = M3Pro_MoveIt_demo.SimulationToMachine:main
+random_move = M3Pro_MoveIt_demo.random_move:main
+

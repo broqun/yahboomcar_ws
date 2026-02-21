@@ -1,0 +1,14 @@
+// generated from rosidl_adapter/resource/msg.idl.em
+// with input from arm_interface/msg/CenterXY.msg
+// generated code does not contain a copyright notice
+
+
+module arm_interface {
+  module msg {
+    struct CenterXY {
+      float center_x;
+
+      float center_y;
+    };
+  };
+};
