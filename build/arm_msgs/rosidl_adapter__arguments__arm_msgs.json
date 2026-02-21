@@ -1,7 +1,0 @@
-{
-  "package_name": "arm_msgs",
-  "non_idl_tuples": [
-    "/var/robotic/yahboomcar_ws/src/arm_msgs:msg/ArmJoint.msg",
-    "/var/robotic/yahboomcar_ws/src/arm_msgs:msg/ArmJoints.msg"
-  ]
-}

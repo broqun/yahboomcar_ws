@@ -1,5 +1,0 @@
-/usr/bin/ld: cannot find -larmkin: No such file or directory
-collect2: error: ld returned 1 exit status
-gmake[2]: *** [CMakeFiles/kin_srv.dir/build.make:177: kin_srv] Error 1
-gmake[1]: *** [CMakeFiles/Makefile2:137: CMakeFiles/kin_srv.dir/all] Error 2
-gmake: *** [Makefile:146: all] Error 2

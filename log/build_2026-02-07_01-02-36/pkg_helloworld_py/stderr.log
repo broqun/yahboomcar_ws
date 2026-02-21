@@ -1,5 +1,0 @@
-  File "/var/robotic/yahboomcar_ws/install/pkg_helloworld_py/lib/python3.10/site-packages/pkg_helloworld_py/helloworld.py", line 4
-    ​
-    ^
-SyntaxError: invalid non-printable character U+200B
-

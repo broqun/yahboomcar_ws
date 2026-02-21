@@ -1,4 +1,0 @@
-[console_scripts]
-dds_controller_pub = learning_dds.dds_controller_pub:main
-dds_robot_sub = learning_dds.dds_robot_sub:main
-

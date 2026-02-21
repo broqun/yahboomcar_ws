@@ -1,2 +1,0 @@
-Invoking command in '/var/robotic/yahboomcar_ws/build/arm_kin': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake /var/robotic/yahboomcar_ws/src/arm_kin -DCMAKE_INSTALL_PREFIX=/var/robotic/yahboomcar_ws/install/arm_kin
-Invoked command in '/var/robotic/yahboomcar_ws/build/arm_kin' returned '1': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake /var/robotic/yahboomcar_ws/src/arm_kin -DCMAKE_INSTALL_PREFIX=/var/robotic/yahboomcar_ws/install/arm_kin

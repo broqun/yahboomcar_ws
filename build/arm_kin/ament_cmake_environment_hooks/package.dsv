@@ -1,4 +1,0 @@
-source;share/arm_kin/local_setup.bash
-source;share/arm_kin/local_setup.dsv
-source;share/arm_kin/local_setup.sh
-source;share/arm_kin/local_setup.zsh

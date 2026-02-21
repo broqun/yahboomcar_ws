@@ -1,1 +1,0 @@
-Invoking command in '/var/robotic/yahboomcar_ws/build/arm_msgs': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake /var/robotic/yahboomcar_ws/src/arm_msgs -DCMAKE_INSTALL_PREFIX=/var/robotic/yahboomcar_ws/install/arm_msgs

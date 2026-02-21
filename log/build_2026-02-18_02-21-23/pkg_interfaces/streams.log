@@ -1,8 +1,0 @@
-[0.012s] Invoking command in '/var/robotic/yahboomcar_ws/build/pkg_interfaces': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/var/robotic/yahboomcar_ws/install/pkg_service:/var/robotic/yahboomcar_ws/install/pkg_topic:/var/robotic/yahboomcar_ws/install/yahboom_M3Pro_description:/var/robotic/yahboomcar_ws/install/pkg_helloworld_py:/var/robotic/yahboomcar_ws/install/arm_driver:/var/robotic/yahboomcar_ws/install/M3Pro_demo:/var/robotic/yahboomcar_ws/install/M3Pro_MoveIt_demo:/opt/ros/humble /usr/bin/cmake /var/robotic/yahboomcar_ws/src/pkg_interfaces -DCMAKE_INSTALL_PREFIX=/var/robotic/yahboomcar_ws/install/pkg_interfaces
-[0.016s] [31mCMake Error at CMakeLists.txt:10:
-[0.016s]   Parse error.  Expected a command name, got unquoted argument with text
-[0.016s]   "​find_package".
-[0.016s] 
-[0.016s] [0m
-[0.019s] -- Configuring incomplete, errors occurred!
-[0.020s] Invoked command in '/var/robotic/yahboomcar_ws/build/pkg_interfaces' returned '1': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/var/robotic/yahboomcar_ws/install/pkg_service:/var/robotic/yahboomcar_ws/install/pkg_topic:/var/robotic/yahboomcar_ws/install/yahboom_M3Pro_description:/var/robotic/yahboomcar_ws/install/pkg_helloworld_py:/var/robotic/yahboomcar_ws/install/arm_driver:/var/robotic/yahboomcar_ws/install/M3Pro_demo:/var/robotic/yahboomcar_ws/install/M3Pro_MoveIt_demo:/opt/ros/humble /usr/bin/cmake /var/robotic/yahboomcar_ws/src/pkg_interfaces -DCMAKE_INSTALL_PREFIX=/var/robotic/yahboomcar_ws/install/pkg_interfaces

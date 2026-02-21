@@ -1,0 +1,12 @@
+# 忽略 ROS2 编译生成的目录
+**/build/
+**/install/
+**/log/
+
+# 忽略 VS Code 配置
+.vscode/
+
+*.dat
+*.whl
+*.pth
+*.onnx

@@ -1,6 +1,0 @@
-source;share/M3Pro_MoveIt_demo/hook/pythonpath.ps1
-source;share/M3Pro_MoveIt_demo/hook/pythonpath.dsv
-source;share/M3Pro_MoveIt_demo/hook/pythonpath.sh
-source;share/M3Pro_MoveIt_demo/hook/ament_prefix_path.ps1
-source;share/M3Pro_MoveIt_demo/hook/ament_prefix_path.dsv
-source;share/M3Pro_MoveIt_demo/hook/ament_prefix_path.sh

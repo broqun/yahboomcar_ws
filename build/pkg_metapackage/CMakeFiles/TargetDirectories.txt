@@ -1,9 +1,0 @@
-/var/robotic/yahboomcar_ws/build/pkg_metapackage/CMakeFiles/uninstall.dir
-/var/robotic/yahboomcar_ws/build/pkg_metapackage/CMakeFiles/pkg_metapackage_uninstall.dir
-/var/robotic/yahboomcar_ws/build/pkg_metapackage/CMakeFiles/test.dir
-/var/robotic/yahboomcar_ws/build/pkg_metapackage/CMakeFiles/edit_cache.dir
-/var/robotic/yahboomcar_ws/build/pkg_metapackage/CMakeFiles/rebuild_cache.dir
-/var/robotic/yahboomcar_ws/build/pkg_metapackage/CMakeFiles/list_install_components.dir
-/var/robotic/yahboomcar_ws/build/pkg_metapackage/CMakeFiles/install.dir
-/var/robotic/yahboomcar_ws/build/pkg_metapackage/CMakeFiles/install/local.dir
-/var/robotic/yahboomcar_ws/build/pkg_metapackage/CMakeFiles/install/strip.dir

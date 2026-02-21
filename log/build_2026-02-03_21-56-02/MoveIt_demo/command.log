@@ -1,2 +1,0 @@
-Invoking command in '/var/robotic/yahboomcar_ws/build/MoveIt_demo': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake /var/robotic/yahboomcar_ws/src/MoveIt_demo -DCMAKE_INSTALL_PREFIX=/var/robotic/yahboomcar_ws/install/MoveIt_demo
-Invoked command in '/var/robotic/yahboomcar_ws/build/MoveIt_demo' returned '1': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake /var/robotic/yahboomcar_ws/src/MoveIt_demo -DCMAKE_INSTALL_PREFIX=/var/robotic/yahboomcar_ws/install/MoveIt_demo

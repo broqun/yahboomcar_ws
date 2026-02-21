@@ -1,9 +1,0 @@
-/var/robotic/yahboomcar_ws/build/arm_interface/rosidl_adapter/arm_interface:srv/ArmKinemarics.idl
-/var/robotic/yahboomcar_ws/build/arm_interface/rosidl_adapter/arm_interface:msg/ArmJoint.idl
-/var/robotic/yahboomcar_ws/build/arm_interface/rosidl_adapter/arm_interface:msg/AprilTagInfo.idl
-/var/robotic/yahboomcar_ws/build/arm_interface/rosidl_adapter/arm_interface:msg/CenterXY.idl
-/var/robotic/yahboomcar_ws/build/arm_interface/rosidl_adapter/arm_interface:msg/ShapeInfo.idl
-/var/robotic/yahboomcar_ws/build/arm_interface/rosidl_adapter/arm_interface:msg/Yolov5Detect.idl
-/var/robotic/yahboomcar_ws/build/arm_interface/rosidl_adapter/arm_interface:msg/Position.idl
-/var/robotic/yahboomcar_ws/build/arm_interface/rosidl_adapter/arm_interface:msg/CurJoints.idl
-/var/robotic/yahboomcar_ws/build/arm_interface/rosidl_adapter/arm_interface:msg/TargetXYRoll.idl
