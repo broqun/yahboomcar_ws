@@ -14,7 +14,6 @@ class Topic_Sub(Node):
         self.get_logger().info(msg.data)
 
 
-
 def main():
     rclpy.init() #ROS2 Python接口初始化
     sub_demo = Topic_Sub("subscriber_node") # 创建对象并进行初始化
