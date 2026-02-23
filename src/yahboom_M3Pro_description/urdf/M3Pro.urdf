@@ -1095,7 +1095,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://dofbot_M3Pro_descripton/meshes/arm_base_Link.STL" />
+          filename="package://yahboom_M3Pro_description/meshes/arm_base_Link.STL" />
       </geometry>
         
       <material
@@ -1110,7 +1110,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://dofbot_M3Pro_descripton/meshes/arm_base_Link.STL" />
+          filename="package://yahboom_M3Pro_description/meshes/arm_base_Link.STL" />
       </geometry>
     </collision>
   </link>

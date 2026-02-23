@@ -7,11 +7,13 @@ class Topic_Sub(Node):
     def __init__(self,name):
         super().__init__(name)  
         #创建订阅者使用的是create_subscription，传入的参数分别是：话题数据类型，话题名称，回调函数名称，队列长度
-        self.sub = self.create_subscription(String,"/topic_demo",self.sub_callback,1) 
+        self.sub = self.create_subscription(String,"/topic_demo",self.sub_callback,1)
+        self._count = 0
     #回调函数执行程序：打印接收的到信息
     def sub_callback(self,msg):
+        self._count += 1
         # print(msg.data,flush=True)
-        self.get_logger().info(msg.data)
+        self.get_logger().info(f"[{self._count}] {msg.data}")
 
 
 def main():

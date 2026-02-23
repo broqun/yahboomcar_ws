@@ -16,7 +16,7 @@ class Topic_Pub(Node):
     #定义中断处理函数
     def pub_msg(self):
         msg = String()  #创建一个String类型的变量msg
-        msg.data = "Hi,I send a message." #给msg里边的data赋值
+        msg.data = "This is a test message from publisher." #给msg里边的data赋值
         self.pub.publish(msg) #发布话题数据
         
 #主函数
