@@ -25,7 +25,7 @@ include_directories(
 )
 
 # ������ִ���ļ�
-add_executable(kin_srv src/kin_srv.cpp)
+add_executable(kin_srv src/kin_srv.cpp src/fk_ik_kin.cpp)
 
 # ���� ROS 2 ����
 ament_target_dependencies(kin_srv

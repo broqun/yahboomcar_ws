@@ -15,7 +15,7 @@
     name="base_link">
     <inertial>
       <origin
-        xyz="-0.023 -0.0006 0.02"
+        xyz="-0.023 -0.0006 -0.02"
         rpy="0 0 0" />
       <mass
         value="0.870994544286568" />
@@ -97,6 +97,7 @@
       link="arm1" />
     <axis
       xyz="0 0 1" />
+    <dynamics damping="10.0" friction="10.0" />
     <limit
       lower="-1.5708"
       upper="1.5708"
@@ -155,6 +156,7 @@
       link="arm2" />
     <axis
       xyz="0 -1 -6.3725E-05" />
+    <dynamics damping="10.0" friction="10.0" />
     <limit
       lower="-1.5708"
       upper="1.5708"
@@ -213,6 +215,7 @@
       link="arm3" />
     <axis
       xyz="-0.027098 -0.99963 0" />
+    <dynamics damping="10.0" friction="10.0" />
     <limit
       lower="-1.5708"
       upper="1.5708"
@@ -271,6 +274,7 @@
       link="arm4" />
     <axis
       xyz="-2.6392E-05 -1 0" />
+    <dynamics damping="10.0" friction="10.0" />
     <limit
       lower="-1.5708"
       upper="1.5708"
@@ -329,6 +333,7 @@
       link="arm5" />
     <axis
       xyz="0 0 1" />
+    <dynamics damping="10.0" friction="10.0" />
     <limit
       lower="-1.5708"
       upper="1.5708"
@@ -387,6 +392,7 @@
       link="rlink1" />
     <axis
       xyz="0 0 -1" />
+    <dynamics damping="10.0" friction="10.0" />
     <limit
       lower="-0.95"
       upper="0"
@@ -445,6 +451,7 @@
       link="rlink2" />
     <axis
       xyz="0 0 1" />
+    <dynamics damping="10.0" friction="10.0" />
     <mimic
       joint="rlink1_Joint"
       multiplier="1"
@@ -502,6 +509,7 @@
       link="llink1" />
     <axis
       xyz="0 0 1" />
+    <dynamics damping="10.0" friction="10.0" />
     <mimic
       joint="rlink1_Joint"
       multiplier="1"
@@ -559,6 +567,7 @@
       link="llink2" />
     <axis
       xyz="0 0 1" />
+    <dynamics damping="10.0" friction="10.0" />
     <mimic
       joint="rlink1_Joint"
       multiplier="-1"
@@ -616,6 +625,7 @@
       link="rlink3" />
     <axis
       xyz="0 0 1" />
+    <dynamics damping="10.0" friction="10.0" />
     <mimic
       joint="rlink1_Joint"
       multiplier="-1"
@@ -673,6 +683,7 @@
       link="llink3" />
     <axis
       xyz="0 0 1" />
+    <dynamics damping="10.0" friction="10.0" />
     <mimic
       joint="rlink1_Joint"
       multiplier="1"
@@ -1111,9 +1122,6 @@
     <material>Gazebo/Black</material>
     <mu1>0.5</mu1>
     <mu2>0.5</mu2>
-    <kp>1000000.0</kp>
-    <kd>1.0</kd>
-    <minDepth>0.001</minDepth>
   </gazebo>
   <gazebo reference="lwheel2">
     <material>Gazebo/Black</material>
@@ -1127,9 +1135,6 @@
     <material>Gazebo/Black</material>
     <mu1>0.5</mu1>
     <mu2>0.5</mu2>
-    <kp>1000000.0</kp>
-    <kd>1.0</kd>
-    <minDepth>0.001</minDepth>
   </gazebo>
   <gazebo reference="rwheel2">
     <material>Gazebo/Black</material>
@@ -1143,6 +1148,20 @@
   <gazebo reference="arm_base_Link">
     <material>Gazebo/Green</material>
   </gazebo>
+
+  <gazebo reference="arm1"><material>Gazebo/Grey</material></gazebo>
+  <gazebo reference="arm2"><material>Gazebo/Grey</material></gazebo>
+  <gazebo reference="arm3"><material>Gazebo/Grey</material></gazebo>
+  <gazebo reference="arm4"><material>Gazebo/Grey</material></gazebo>
+  <gazebo reference="arm5"><material>Gazebo/DarkGrey</material></gazebo>
+  <gazebo reference="rlink1"><material>Gazebo/Grey</material></gazebo>
+  <gazebo reference="rlink2"><material>Gazebo/Grey</material></gazebo>
+  <gazebo reference="llink1"><material>Gazebo/Grey</material></gazebo>
+  <gazebo reference="llink2"><material>Gazebo/Grey</material></gazebo>
+  <gazebo reference="rlink3"><material>Gazebo/Grey</material></gazebo>
+  <gazebo reference="llink3"><material>Gazebo/Grey</material></gazebo>
+  <gazebo reference="Gripping"><material>Gazebo/Grey</material></gazebo>
+  <gazebo reference="DCW2"><material>Gazebo/DarkGrey</material></gazebo>
 
   <gazebo reference="Camera">
     <material>Gazebo/Grey</material>
@@ -1163,8 +1182,8 @@
       <wheel_separation>0.195</wheel_separation>
       <wheel_diameter>0.08</wheel_diameter>
 
-      <max_wheel_torque>20</max_wheel_torque>
-      <max_wheel_acceleration>1.0</max_wheel_acceleration>
+      <max_wheel_torque>5</max_wheel_torque>
+      <max_wheel_acceleration>0.3</max_wheel_acceleration>
 
       <publish_odom>true</publish_odom>
       <publish_odom_tf>true</publish_odom_tf>
