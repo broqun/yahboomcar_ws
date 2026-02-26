@@ -4,21 +4,22 @@
      For more information, please see http://wiki.ros.org/sw_urdf_exporter -->
 <robot
   name="M3Pro">
+<link name="base_footprint"/>
+
+  <joint name="base_joint" type="fixed">
+  <parent link="base_footprint"/>
+  <child link="base_link"/>
+  <origin xyz="0 0 0.04" rpy="0 0 0"/> </joint>
+
   <link
     name="base_link">
     <inertial>
       <origin
-        xyz="-0.0230945655800945 -0.000624366433481225 0.0924263074305092"
+        xyz="-0.023 -0.0006 0.02"
         rpy="0 0 0" />
       <mass
         value="0.870994544286568" />
-      <inertia
-        ixx="0.000924360334406296"
-        ixy="1.83790425775432E-06"
-        ixz="-6.57330050239333E-05"
-        iyy="0.000965356496722674"
-        iyz="4.19061203028733E-07"
-        izz="0.00166592475388463" />
+      <inertia ixx="0.0009" ixy="0" ixz="0" iyy="0.0009" iyz="0" izz="0.0016" />
     </inertial>
     <visual>
       <origin
@@ -35,13 +36,13 @@
       </material>
     </visual>
     <collision>
-      <origin
-        xyz="0 0 0"
-        rpy="0 0 0" />
-      <geometry>
+    <origin xyz="-0.02 0 0.05" rpy="0 0 0" /> <geometry>
+      <box size="0.2 0.16 0.06" />
+    </geometry>
+      <!-- <geometry>
         <mesh
           filename="package://yahboom_M3Pro_description/meshes/base_link.STL" />
-      </geometry>
+      </geometry> -->
     </collision>
   </link>
   <link
@@ -861,10 +862,12 @@
       <origin
         xyz="0 0 0"
         rpy="0 0 0" />
-      <geometry>
+      <!-- <geometry>
         <mesh
           filename="package://yahboom_M3Pro_description/meshes/lwheel1.STL" />
-      </geometry>
+      </geometry> -->
+      <geometry>
+        <cylinder radius="0.04" length="0.02"/></geometry>
       <material
         name="">
         <color
@@ -876,14 +879,13 @@
         xyz="0 0 0"
         rpy="0 0 0" />
       <geometry>
-        <mesh
-          filename="package://yahboom_M3Pro_description/meshes/lwheel1.STL" />
+        <cylinder radius="0.04" length="0.02"/>
       </geometry>
     </collision>
   </link>
   <joint
     name="lwheel1_Joint"
-    type="revolute">
+    type="continuous">
     <origin
       xyz="0.0775753787975409 0.09775 0.0399999999999998"
       rpy="1.5707963267949 0 0" />
@@ -893,11 +895,6 @@
       link="lwheel1" />
     <axis
       xyz="0 0 -1" />
-    <limit
-      lower="0"
-      upper="0"
-      effort="0"
-      velocity="0" />
   </joint>
   <link
     name="lwheel2">
@@ -919,10 +916,12 @@
       <origin
         xyz="0 0 0"
         rpy="0 0 0" />
-      <geometry>
+      <!-- <geometry>
         <mesh
           filename="package://yahboom_M3Pro_description/meshes/lwheel2.STL" />
-      </geometry>
+      </geometry> -->
+      <geometry>
+        <cylinder radius="0.04" length="0.02"/></geometry>
       <material
         name="">
         <color
@@ -934,14 +933,13 @@
         xyz="0 0 0"
         rpy="0 0 0" />
       <geometry>
-        <mesh
-          filename="package://yahboom_M3Pro_description/meshes/lwheel2.STL" />
+        <cylinder radius="0.04" length="0.02"/>
       </geometry>
     </collision>
   </link>
   <joint
     name="lwheel2_Joint"
-    type="revolute">
+    type="continuous">
     <origin
       xyz="-0.0814246212024597 0.0977499999999995 0.0399976951545867"
       rpy="1.5707963267949 0 0" />
@@ -951,11 +949,6 @@
       link="lwheel2" />
     <axis
       xyz="0 0 -1" />
-    <limit
-      lower="0"
-      upper="0"
-      effort="0"
-      velocity="0" />
   </joint>
   <link
     name="rwheel1">
@@ -977,10 +970,12 @@
       <origin
         xyz="0 0 0"
         rpy="0 0 0" />
-      <geometry>
+      <!-- <geometry>
         <mesh
           filename="package://yahboom_M3Pro_description/meshes/rwheel1.STL" />
-      </geometry>
+      </geometry> -->
+      <geometry>
+        <cylinder radius="0.04" length="0.02"/></geometry>
       <material
         name="">
         <color
@@ -992,14 +987,13 @@
         xyz="0 0 0"
         rpy="0 0 0" />
       <geometry>
-        <mesh
-          filename="package://yahboom_M3Pro_description/meshes/rwheel1.STL" />
+        <cylinder radius="0.04" length="0.02"/>
       </geometry>
     </collision>
   </link>
   <joint
     name="rwheel1_Joint"
-    type="revolute">
+    type="continuous">
     <origin
       xyz="0.0775753787975429 -0.0977499999999993 0.0400000000000004"
       rpy="-1.5707963267949 0 0" />
@@ -1009,11 +1003,6 @@
       link="rwheel1" />
     <axis
       xyz="0 0 -1" />
-    <limit
-      lower="0"
-      upper="0"
-      effort="0"
-      velocity="0" />
   </joint>
   <link
     name="rwheel2">
@@ -1035,10 +1024,12 @@
       <origin
         xyz="0 0 0"
         rpy="0 0 0" />
-      <geometry>
+      <!-- <geometry>
         <mesh
           filename="package://yahboom_M3Pro_description/meshes/rwheel2.STL" />
-      </geometry>
+      </geometry> -->
+      <geometry>
+        <cylinder radius="0.04" length="0.02"/></geometry>
       <material
         name="">
         <color
@@ -1050,14 +1041,13 @@
         xyz="0 0 0"
         rpy="0 0 0" />
       <geometry>
-        <mesh
-          filename="package://yahboom_M3Pro_description/meshes/rwheel2.STL" />
+        <cylinder radius="0.04" length="0.02"/>
       </geometry>
     </collision>
   </link>
   <joint
     name="rwheel2_Joint"
-    type="revolute">
+    type="continuous">
     <origin
       xyz="-0.0814246212024577 -0.0977500000000009 0.0399976951545873"
       rpy="-1.5707963267949 0 0" />
@@ -1067,11 +1057,6 @@
       link="rwheel2" />
     <axis
       xyz="0 0 -1" />
-    <limit
-      lower="0"
-      upper="0"
-      effort="0"
-      velocity="0" />
   </joint>
   <link
     name="arm_base_Link">
@@ -1104,15 +1089,6 @@
           rgba="0 0.627450980392157 0.235294117647059 1" />
       </material>
     </visual>
-    <collision>
-      <origin
-        xyz="0 0 0"
-        rpy="0 0 0" />
-      <geometry>
-        <mesh
-          filename="package://yahboom_M3Pro_description/meshes/arm_base_Link.STL" />
-      </geometry>
-    </collision>
   </link>
   <joint
     name="arm_base_Joint"
@@ -1127,4 +1103,75 @@
     <axis
       xyz="0 0 0" />
   </joint>
+  <gazebo reference="base_link">
+    <material>Gazebo/Orange</material>
+  </gazebo>
+
+  <gazebo reference="lwheel1">
+    <material>Gazebo/Black</material>
+    <mu1>0.5</mu1>
+    <mu2>0.5</mu2>
+    <kp>1000000.0</kp>
+    <kd>1.0</kd>
+    <minDepth>0.001</minDepth>
+  </gazebo>
+  <gazebo reference="lwheel2">
+    <material>Gazebo/Black</material>
+    <mu1>0.5</mu1>
+    <mu2>0.5</mu2>
+    <kp>1000000.0</kp>
+    <kd>1.0</kd>
+    <minDepth>0.001</minDepth>
+  </gazebo>
+  <gazebo reference="rwheel1">
+    <material>Gazebo/Black</material>
+    <mu1>0.5</mu1>
+    <mu2>0.5</mu2>
+    <kp>1000000.0</kp>
+    <kd>1.0</kd>
+    <minDepth>0.001</minDepth>
+  </gazebo>
+  <gazebo reference="rwheel2">
+    <material>Gazebo/Black</material>
+    <mu1>0.5</mu1>
+    <mu2>0.5</mu2>
+    <kp>1000000.0</kp>
+    <kd>1.0</kd>
+    <minDepth>0.001</minDepth>
+  </gazebo>
+
+  <gazebo reference="arm_base_Link">
+    <material>Gazebo/Green</material>
+  </gazebo>
+
+  <gazebo reference="Camera">
+    <material>Gazebo/Grey</material>
+  </gazebo>
+  <gazebo>
+    <plugin name="m3pro_diff_drive" filename="libgazebo_ros_diff_drive.so">
+      <ros>
+        <remapping>cmd_vel:=cmd_vel</remapping>
+        <remapping>odom:=odom</remapping>
+      </ros>
+
+      <num_wheel_pairs>2</num_wheel_pairs>
+      <left_joint>lwheel1_Joint</left_joint>
+      <left_joint>lwheel2_Joint</left_joint>
+      <right_joint>rwheel1_Joint</right_joint>
+      <right_joint>rwheel2_Joint</right_joint>
+
+      <wheel_separation>0.195</wheel_separation>
+      <wheel_diameter>0.08</wheel_diameter>
+
+      <max_wheel_torque>20</max_wheel_torque>
+      <max_wheel_acceleration>1.0</max_wheel_acceleration>
+
+      <publish_odom>true</publish_odom>
+      <publish_odom_tf>true</publish_odom_tf>
+      <publish_wheel_tf>true</publish_wheel_tf>
+
+      <odometry_frame>odom</odometry_frame>
+      <robot_base_frame>base_footprint</robot_base_frame>
+    </plugin>
+  </gazebo>
 </robot>
