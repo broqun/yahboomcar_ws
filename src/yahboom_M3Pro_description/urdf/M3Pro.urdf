@@ -37,6 +37,7 @@
     </visual>
     <collision>
     <origin xyz="-0.02 0 0.05" rpy="0 0 0" /> <geometry>
+			  
       <box size="0.2 0.16 0.06" />
     </geometry>
       <!-- <geometry>
@@ -87,7 +88,7 @@
   </link>
   <joint
     name="arm1_Joint"
-    type="revolute">
+    type="fixed">
     <origin
       xyz="0.033617 -1.2421E-05 0.185"
       rpy="6.3751E-05 0 0.028395" />
@@ -97,7 +98,7 @@
       link="arm1" />
     <axis
       xyz="0 0 1" />
-    <dynamics damping="10.0" friction="10.0" />
+    <dynamics damping="0.1" friction="0.1"/>
     <limit
       lower="-1.5708"
       upper="1.5708"
@@ -146,7 +147,7 @@
   </link>
   <joint
     name="arm2_Joint"
-    type="revolute">
+    type="fixed">
     <origin
       xyz="-0.0021522 6.1185E-05 0.033"
       rpy="-6.3725E-05 0 -0.028422" />
@@ -156,7 +157,7 @@
       link="arm2" />
     <axis
       xyz="0 -1 -6.3725E-05" />
-    <dynamics damping="10.0" friction="10.0" />
+	  <dynamics damping="0.1" friction="0.2"/>
     <limit
       lower="-1.5708"
       upper="1.5708"
@@ -205,17 +206,17 @@
   </link>
   <joint
     name="arm3_Joint"
-    type="revolute">
+    type="fixed">
     <origin
       xyz="0 0 0.08285"
-      rpy="6.3702E-05 0 0.027102" />
+      rpy="6.3702E-05 0.785 0.027102" />
     <parent
       link="arm2" />
     <child
       link="arm3" />
     <axis
       xyz="-0.027098 -0.99963 0" />
-    <dynamics damping="10.0" friction="10.0" />
+	  <dynamics damping="0.1" friction="0.1"/>
     <limit
       lower="-1.5708"
       upper="1.5708"
@@ -263,18 +264,18 @@
     </collision>
   </link>
   <joint
-    name="arm4_Joiint"
-    type="revolute">
+    name="arm4_Joint"
+    type="fixed">
     <origin
       xyz="0 0 0.08285"
-      rpy="0 0 -0.027075" />
+      rpy="0 0.785 -0.027075" />
     <parent
       link="arm3" />
     <child
       link="arm4" />
     <axis
       xyz="-2.6392E-05 -1 0" />
-    <dynamics damping="10.0" friction="10.0" />
+	  <dynamics damping="0.05" friction="0.1"/>
     <limit
       lower="-1.5708"
       upper="1.5708"
@@ -323,7 +324,7 @@
   </link>
   <joint
     name="arm5_Joint"
-    type="revolute">
+    type="fixed">
     <origin
       xyz="0.00057305 0 0.074815"
       rpy="0 0 0" />
@@ -333,7 +334,7 @@
       link="arm5" />
     <axis
       xyz="0 0 1" />
-    <dynamics damping="10.0" friction="10.0" />
+	  <dynamics damping="0.05" friction="0.05"/>
     <limit
       lower="-1.5708"
       upper="1.5708"
@@ -382,7 +383,7 @@
   </link>
   <joint
     name="rlink1_Joint"
-    type="revolute">
+    type="fixed">
     <origin
       xyz="-0.0047503 -0.012625 0.029275"
       rpy="1.5708 -0.60409 -1.5708" />
@@ -392,7 +393,7 @@
       link="rlink1" />
     <axis
       xyz="0 0 -1" />
-    <dynamics damping="10.0" friction="10.0" />
+	  <dynamics damping="0.005" friction="0.005"/>
     <limit
       lower="-0.95"
       upper="0"
@@ -441,7 +442,7 @@
   </link>
   <joint
     name="rlink2_Joint"
-    type="continuous">
+    type="fixed">
     <origin
       xyz="0.03 0 0.001"
       rpy="0 0 0.9667" />
@@ -451,7 +452,7 @@
       link="rlink2" />
     <axis
       xyz="0 0 1" />
-    <dynamics damping="10.0" friction="10.0" />
+    <!-- <dynamics damping="0.005" friction="0.005"/> -->
     <mimic
       joint="rlink1_Joint"
       multiplier="1"
@@ -499,7 +500,7 @@
   </link>
   <joint
     name="llink1_Joint"
-    type="continuous">
+    type="fixed">
     <origin
       xyz="-0.0044997 0.012375 0.029275"
       rpy="-1.5708 -0.60318 1.5708" />
@@ -509,7 +510,7 @@
       link="llink1" />
     <axis
       xyz="0 0 1" />
-    <dynamics damping="10.0" friction="10.0" />
+    <!-- <dynamics damping="0.005" friction="0.005"/> -->
     <mimic
       joint="rlink1_Joint"
       multiplier="1"
@@ -557,7 +558,7 @@
   </link>
   <joint
     name="llink2_Joint"
-    type="continuous">
+    type="fixed">
     <origin
       xyz="0.03 0 0.00125"
       rpy="0 0 -0.96762" />
@@ -567,7 +568,7 @@
       link="llink2" />
     <axis
       xyz="0 0 1" />
-    <dynamics damping="10.0" friction="10.0" />
+    <!-- <dynamics damping="0.005" friction="0.005"/> -->
     <mimic
       joint="rlink1_Joint"
       multiplier="-1"
@@ -615,7 +616,7 @@
   </link>
   <joint
     name="rlink3_Joint"
-    type="continuous">
+    type="fixed">
     <origin
       xyz="-0.0045001 -0.0044999 0.047275"
       rpy="1.5708 -0.61261 -1.5708" />
@@ -625,7 +626,7 @@
       link="rlink3" />
     <axis
       xyz="0 0 1" />
-    <dynamics damping="10.0" friction="10.0" />
+    <!-- <dynamics damping="0.001" friction="0.001"/> -->
     <mimic
       joint="rlink1_Joint"
       multiplier="-1"
@@ -673,7 +674,7 @@
   </link>
   <joint
     name="llink3_Joint"
-    type="continuous">
+    type="fixed">
     <origin
       xyz="-0.0044999 0.0045001 0.047275"
       rpy="-1.5708 -0.61516 1.5708" />
@@ -683,7 +684,7 @@
       link="llink3" />
     <axis
       xyz="0 0 1" />
-    <dynamics damping="10.0" friction="10.0" />
+    <!-- <dynamics damping="0.001" friction="0.001"/> -->
     <mimic
       joint="rlink1_Joint"
       multiplier="1"
@@ -873,12 +874,12 @@
       <origin
         xyz="0 0 0"
         rpy="0 0 0" />
-      <!-- <geometry>
+      <geometry>
         <mesh
           filename="package://yahboom_M3Pro_description/meshes/lwheel1.STL" />
-      </geometry> -->
-      <geometry>
-        <cylinder radius="0.04" length="0.02"/></geometry>
+      </geometry>
+      <!-- <geometry>
+        <cylinder radius="0.04" length="0.02"/></geometry> -->
       <material
         name="">
         <color
@@ -927,12 +928,12 @@
       <origin
         xyz="0 0 0"
         rpy="0 0 0" />
-      <!-- <geometry>
+      <geometry>
         <mesh
           filename="package://yahboom_M3Pro_description/meshes/lwheel2.STL" />
-      </geometry> -->
-      <geometry>
-        <cylinder radius="0.04" length="0.02"/></geometry>
+      </geometry>
+      <!-- <geometry>
+        <cylinder radius="0.04" length="0.02"/></geometry> -->
       <material
         name="">
         <color
@@ -981,12 +982,12 @@
       <origin
         xyz="0 0 0"
         rpy="0 0 0" />
-      <!-- <geometry>
+      <geometry>
         <mesh
           filename="package://yahboom_M3Pro_description/meshes/rwheel1.STL" />
-      </geometry> -->
-      <geometry>
-        <cylinder radius="0.04" length="0.02"/></geometry>
+      </geometry>
+      <!-- <geometry>
+        <cylinder radius="0.04" length="0.02"/></geometry> -->
       <material
         name="">
         <color
@@ -1035,12 +1036,12 @@
       <origin
         xyz="0 0 0"
         rpy="0 0 0" />
-      <!-- <geometry>
+      <geometry>
         <mesh
           filename="package://yahboom_M3Pro_description/meshes/rwheel2.STL" />
-      </geometry> -->
-      <geometry>
-        <cylinder radius="0.04" length="0.02"/></geometry>
+      </geometry>
+      <!-- <geometry>
+        <cylinder radius="0.04" length="0.02"/></geometry> -->
       <material
         name="">
         <color
@@ -1114,17 +1115,52 @@
     <axis
       xyz="0 0 0" />
   </joint>
+  <gazebo reference="arm1">
+    <material>Gazebo/Red</material>
+  </gazebo>
+  <gazebo reference="arm2">
+    <material>Gazebo/Red</material>
+  </gazebo>
+  <gazebo reference="arm3">
+    <material>Gazebo/Red</material>
+  </gazebo>
+  <gazebo reference="arm4">
+    <material>Gazebo/Red</material>
+  </gazebo>
+  <gazebo reference="arm5">
+    <material>Gazebo/Red</material>
+  </gazebo>
+  <gazebo reference="rlink1">
+    <material>Gazebo/Green</material>
+  </gazebo>
+  <gazebo reference="rlink2">
+    <material>Gazebo/Green</material>
+  </gazebo>
+  <gazebo reference="rlink3">
+    <material>Gazebo/Green</material>
+  </gazebo>
+  <gazebo reference="llink1">
+    <material>Gazebo/Green</material>
+  </gazebo>
+  <gazebo reference="llink2">
+    <material>Gazebo/Green</material>
+  </gazebo>
+  <gazebo reference="llink3">
+    <material>Gazebo/Green</material>
+  </gazebo>
+  <gazebo reference="DCW2">
+    <material>Gazebo/DarkGrey</material>
+  </gazebo>
   <gazebo reference="base_link">
     <material>Gazebo/Orange</material>
   </gazebo>
-
   <gazebo reference="lwheel1">
-    <material>Gazebo/Black</material>
+    <material>Gazebo/DarkGrey</material>
     <mu1>0.5</mu1>
     <mu2>0.5</mu2>
   </gazebo>
   <gazebo reference="lwheel2">
-    <material>Gazebo/Black</material>
+    <material>Gazebo/DarkGrey</material>
     <mu1>0.5</mu1>
     <mu2>0.5</mu2>
     <kp>1000000.0</kp>
@@ -1132,12 +1168,12 @@
     <minDepth>0.001</minDepth>
   </gazebo>
   <gazebo reference="rwheel1">
-    <material>Gazebo/Black</material>
+    <material>Gazebo/DarkGrey</material>
     <mu1>0.5</mu1>
     <mu2>0.5</mu2>
   </gazebo>
   <gazebo reference="rwheel2">
-    <material>Gazebo/Black</material>
+    <material>Gazebo/DarkGrey</material>
     <mu1>0.5</mu1>
     <mu2>0.5</mu2>
     <kp>1000000.0</kp>
@@ -1164,7 +1200,7 @@
   <gazebo reference="DCW2"><material>Gazebo/DarkGrey</material></gazebo>
 
   <gazebo reference="Camera">
-    <material>Gazebo/Grey</material>
+    <material>Gazebo/DarkGrey</material>
   </gazebo>
   <gazebo>
     <plugin name="m3pro_diff_drive" filename="libgazebo_ros_diff_drive.so">
@@ -1183,7 +1219,7 @@
       <wheel_diameter>0.08</wheel_diameter>
 
       <max_wheel_torque>5</max_wheel_torque>
-      <max_wheel_acceleration>0.3</max_wheel_acceleration>
+      <max_wheel_acceleration>0.8</max_wheel_acceleration>
 
       <publish_odom>true</publish_odom>
       <publish_odom_tf>true</publish_odom_tf>
