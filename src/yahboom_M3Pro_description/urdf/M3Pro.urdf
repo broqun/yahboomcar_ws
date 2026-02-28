@@ -266,7 +266,7 @@ Stephen Brawner (brawner@gmail.com)
     type="fixed">
     <origin
       xyz="0 0 0.08285"
-      rpy="0 ${pi/4.7} -0.027075" />
+      rpy="0 ${pi/4.8} -0.027075" />
     <parent
       link="arm3" />
     <child
@@ -1200,7 +1200,7 @@ Stephen Brawner (brawner@gmail.com)
     <material>Gazebo/DarkGrey</material>
     <sensor name="dabai_dcw2" type="depth">
       <always_on>true</always_on>
-      <update_rate>15.0</update_rate>
+      <update_rate>30.0</update_rate>
       <camera name="dcw2_lens">
         <horizontal_fov>1.134</horizontal_fov>
         <image>
