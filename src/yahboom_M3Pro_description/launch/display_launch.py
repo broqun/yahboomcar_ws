@@ -12,6 +12,7 @@ def generate_launch_description():
     urdf_tutorial_path = get_package_share_path('yahboom_M3Pro_description')
     default_model_path = urdf_tutorial_path / 'urdf/M3Pro.urdf'
     default_rviz_config_path = urdf_tutorial_path / 'rviz/yahboom_M3Pro.rviz'
+    debug_rviz_config_path = urdf_tutorial_path / 'rviz/spen_debug.rviz'
 
     model_arg = DeclareLaunchArgument(
         name='model',
@@ -19,7 +20,7 @@ def generate_launch_description():
         description='Absolute path to robot urdf/xacro file'
     )
 
-    rviz_arg = DeclareLaunchArgument(name='rvizconfig', default_value=str(default_rviz_config_path),
+    rviz_arg = DeclareLaunchArgument(name='rvizconfig', default_value=str(debug_rviz_config_path),
                                      description='Absolute path to rviz config file')
 
     robot_description = ParameterValue(

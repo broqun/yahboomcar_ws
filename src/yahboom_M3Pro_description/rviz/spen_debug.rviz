@@ -1,0 +1,360 @@
+Panels:
+  - Class: rviz_common/Displays
+    Help Height: 70
+    Name: Displays
+    Property Tree Widget:
+      Expanded:
+        - /TF1
+        - /TF1/Frames1
+        - /Image1
+        - /PointCloud21
+      Splitter Ratio: 0.5
+    Tree Height: 1084
+  - Class: rviz_common/Views
+    Expanded:
+      - /Current View1
+    Name: Views
+    Splitter Ratio: 0.5
+Visualization Manager:
+  Class: ""
+  Displays:
+    - Alpha: 0.5
+      Cell Size: 1
+      Class: rviz_default_plugins/Grid
+      Color: 160; 160; 164
+      Enabled: true
+      Line Style:
+        Line Width: 0.029999999329447746
+        Value: Lines
+      Name: Grid
+      Normal Cell Count: 0
+      Offset:
+        X: 0
+        Y: 0
+        Z: 0
+      Plane: XY
+      Plane Cell Count: 10
+      Reference Frame: <Fixed Frame>
+      Value: true
+    - Alpha: 0.800000011920929
+      Class: rviz_default_plugins/RobotModel
+      Collision Enabled: false
+      Description File: ""
+      Description Source: Topic
+      Description Topic:
+        Depth: 5
+        Durability Policy: Volatile
+        History Policy: Keep Last
+        Reliability Policy: Reliable
+        Value: /robot_description
+      Enabled: true
+      Links:
+        All Links Enabled: true
+        Camera:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        DCW2:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        Expand Joint Details: false
+        Expand Link Details: false
+        Expand Tree: false
+        Gripping:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        Link Tree Style: Links in Alphabetic Order
+        arm1:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        arm2:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        arm3:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        arm4:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        arm5:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        arm_base_Link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        base_footprint:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        base_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        camera_optical_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        llink1:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        llink2:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        llink3:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        lwheel1:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        lwheel2:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        rlink1:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        rlink2:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        rlink3:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        rwheel1:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        rwheel2:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+      Mass Properties:
+        Inertia: false
+        Mass: false
+      Name: RobotModel
+      TF Prefix: ""
+      Update Interval: 0
+      Value: true
+      Visual Enabled: true
+    - Class: rviz_default_plugins/TF
+      Enabled: true
+      Frame Timeout: 15
+      Frames:
+        All Enabled: false
+        Camera:
+          Value: false
+        DCW2:
+          Value: false
+        Gripping:
+          Value: false
+        arm1:
+          Value: false
+        arm2:
+          Value: false
+        arm3:
+          Value: false
+        arm4:
+          Value: false
+        arm5:
+          Value: false
+        arm_base_Link:
+          Value: false
+        base_footprint:
+          Value: false
+        base_link:
+          Value: false
+        camera_optical_link:
+          Value: false
+        llink1:
+          Value: false
+        llink2:
+          Value: false
+        llink3:
+          Value: false
+        lwheel1:
+          Value: true
+        lwheel2:
+          Value: true
+        rlink1:
+          Value: false
+        rlink2:
+          Value: false
+        rlink3:
+          Value: false
+        rwheel1:
+          Value: true
+        rwheel2:
+          Value: true
+      Marker Scale: 1
+      Name: TF
+      Show Arrows: true
+      Show Axes: true
+      Show Names: false
+      Tree:
+        base_footprint:
+          base_link:
+            Camera:
+              {}
+            arm1:
+              arm2:
+                arm3:
+                  arm4:
+                    DCW2:
+                      camera_optical_link:
+                        {}
+                    arm5:
+                      Gripping:
+                        {}
+                      llink1:
+                        llink2:
+                          {}
+                      llink3:
+                        {}
+                      rlink1:
+                        rlink2:
+                          {}
+                      rlink3:
+                        {}
+            arm_base_Link:
+              {}
+            lwheel1:
+              {}
+            lwheel2:
+              {}
+            rwheel1:
+              {}
+            rwheel2:
+              {}
+      Update Interval: 0
+      Value: true
+    - Class: rviz_default_plugins/Image
+      Enabled: false
+      Max Value: 1
+      Median window: 5
+      Min Value: 0
+      Name: Image
+      Normalize Range: true
+      Topic:
+        Depth: 5
+        Durability Policy: Volatile
+        History Policy: Keep Last
+        Reliability Policy: Reliable
+        Value: /dabai_dcw2/dabai_dcw2/image_raw
+      Value: false
+    - Alpha: 1
+      Autocompute Intensity Bounds: true
+      Autocompute Value Bounds:
+        Max Value: 0.3832942545413971
+        Min Value: -0.01985609531402588
+        Value: true
+      Axis: Z
+      Channel Name: intensity
+      Class: rviz_default_plugins/PointCloud2
+      Color: 255; 255; 255
+      Color Transformer: FlatColor
+      Decay Time: 0
+      Enabled: true
+      Invert Rainbow: false
+      Max Color: 255; 255; 255
+      Max Intensity: 4096
+      Min Color: 0; 0; 0
+      Min Intensity: 0
+      Name: PointCloud2
+      Position Transformer: XYZ
+      Selectable: true
+      Size (Pixels): 3
+      Size (m): 0.009999999776482582
+      Style: Points
+      Topic:
+        Depth: 5
+        Durability Policy: Volatile
+        Filter size: 10
+        History Policy: Keep Last
+        Reliability Policy: Reliable
+        Value: /dabai_dcw2/dabai_dcw2/points
+      Use Fixed Frame: true
+      Use rainbow: true
+      Value: true
+  Enabled: true
+  Global Options:
+    Background Color: 48; 48; 48
+    Fixed Frame: base_link
+    Frame Rate: 30
+  Name: root
+  Tools:
+    - Class: rviz_default_plugins/MoveCamera
+  Transformation:
+    Current:
+      Class: rviz_default_plugins/TF
+  Value: true
+  Views:
+    Current:
+      Class: rviz_default_plugins/Orbit
+      Distance: 1.8765825033187866
+      Enable Stereo Rendering:
+        Stereo Eye Separation: 0.05999999865889549
+        Stereo Focal Distance: 1
+        Swap Stereo Eyes: false
+        Value: false
+      Focal Point:
+        X: 0.3092089593410492
+        Y: -0.27997198700904846
+        Z: 0.43368619680404663
+      Focal Shape Fixed Size: true
+      Focal Shape Size: 0.05000000074505806
+      Invert Z Axis: false
+      Name: Current View
+      Near Clip Distance: 0.009999999776482582
+      Pitch: 0.26000019907951355
+      Target Frame: <Fixed Frame>
+      Value: Orbit (rviz)
+      Yaw: 3.445002317428589
+    Saved: ~
+Window Geometry:
+  Displays:
+    collapsed: false
+  Height: 2096
+  Hide Left Dock: false
+  Hide Right Dock: false
+  Image:
+    collapsed: false
+  QMainWindow State: 000000ff00000000fd00000001000000000000034a000007d6fc0200000003fb000000100044006900730070006c006100790073010000003d000004bf000000c900fffffffb0000000a00560069006500770073010000050200000311000000a400fffffffb0000000a0049006d00610067006502000004cf00000341000004270000021c00000b6a000007d600000004000000040000000800000008fc0000000100000002000000010000000a0054006f006f006c00730100000000ffffffff0000000000000000
+  Views:
+    collapsed: false
+  Width: 3770
+  X: 70
+  Y: 27
