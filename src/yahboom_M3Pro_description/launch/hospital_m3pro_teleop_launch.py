@@ -106,7 +106,7 @@ def generate_launch_description():
     )
     speed_arg = DeclareLaunchArgument(
         'speed',
-        default_value='1.7',
+        default_value='1.99999',
         description='Linear speed (m/s) for forward/backward. Default 0.5 in teleop_twist_keyboard.',
     )
     turn_arg = DeclareLaunchArgument(
@@ -199,7 +199,7 @@ def generate_launch_description():
         condition=UnlessCondition(LaunchConfiguration('keyboard')),
     )
 
-    rviz_config_path = os.path.join(m3pro_share, 'rviz', 'spen_M3Pro.rviz')
+    rviz_config_path = os.path.join(m3pro_share, 'rviz', 'spen_M3Pro_depth_slam.rviz')
     # 定义 RViz2 节点
     rviz_node = Node(
         package='rviz2',

@@ -10,7 +10,3 @@
 *.whl
 *.pth
 *.onnx
-
-src/aws-robomaker-hospital-world/*
-!src/aws-robomaker-hospital-world/worlds/
-!src/aws-robomaker-hospital-world/worlds/*.world
