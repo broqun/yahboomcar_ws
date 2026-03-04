@@ -16,6 +16,7 @@ setup(
         (os.path.join('share',package_name,'meshes'),glob(os.path.join('meshes','*.*'))),
         (os.path.join('share',package_name,'launch'),glob(os.path.join('launch','*.py*'))),
         (os.path.join('share',package_name,'rviz'),glob(os.path.join('rviz','*.rviz*'))),
+        (os.path.join('share',package_name,'config'),glob(os.path.join('config','*.lua'))),
     ],
     install_requires=['setuptools'],
     zip_safe=True,

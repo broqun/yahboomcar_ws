@@ -7,6 +7,8 @@
   <maintainer email="root@todo.todo">root</maintainer>
   <license>TODO: License declaration</license>
 
+  <exec_depend>cartographer_ros</exec_depend>
+  <exec_depend>depthimage_to_laserscan</exec_depend>
   <exec_depend>gazebo_ros</exec_depend>
   <exec_depend>joint_state_publisher</exec_depend>
   <exec_depend>robot_state_publisher</exec_depend>
