@@ -1156,11 +1156,12 @@ Stephen Brawner (brawner@gmail.com)
   <gazebo reference="base_link">
     <material>Gazebo/Orange</material>
   </gazebo>
-  <gazebo reference="lwheel1">
+
+  <!-- <gazebo reference="lwheel1">
     <material>Gazebo/DarkGrey</material>
     <mu1>0.5</mu1>
     <mu2>0.5</mu2>
-    <kp>1000000.0.0</kp>
+    <kp>1000000.0</kp>
     <kd>100.0</kd>
     <minDepth>0.001</minDepth>
   </gazebo>
@@ -1168,7 +1169,7 @@ Stephen Brawner (brawner@gmail.com)
     <material>Gazebo/DarkGrey</material>
     <mu1>0.5</mu1>
     <mu2>0.5</mu2>
-    <kp>1000000.0.0</kp>
+    <kp>1000000.0</kp>
     <kd>100.0</kd>
     <minDepth>0.001</minDepth>
   </gazebo>
@@ -1176,7 +1177,7 @@ Stephen Brawner (brawner@gmail.com)
     <material>Gazebo/DarkGrey</material>
     <mu1>0.5</mu1>
     <mu2>0.5</mu2>
-    <kp>1000000.0.0</kp>
+    <kp>1000000.0</kp>
     <kd>100.0</kd>
     <minDepth>0.001</minDepth>
   </gazebo>
@@ -1184,7 +1185,37 @@ Stephen Brawner (brawner@gmail.com)
     <material>Gazebo/DarkGrey</material>
     <mu1>0.5</mu1>
     <mu2>0.5</mu2>
-    <kp>1000000.0.0</kp>
+    <kp>1000000.0</kp>
+    <kd>100.0</kd>
+    <minDepth>0.001</minDepth>
+  </gazebo> -->
+
+  <gazebo reference="lwheel1">
+    <material>Gazebo/DarkGrey</material>
+    <mu1>0.0</mu1> <mu2>0.0</mu2> <kp>1000000.0</kp> <kd>100.0</kd>
+    <minDepth>0.001</minDepth>
+  </gazebo>
+  <gazebo reference="lwheel2">
+    <material>Gazebo/DarkGrey</material>
+    <mu1>0.0</mu1>
+    <mu2>0.0</mu2>
+    <kp>1000000.0</kp>
+    <kd>100.0</kd>
+    <minDepth>0.001</minDepth>
+  </gazebo>
+  <gazebo reference="rwheel1">
+    <material>Gazebo/DarkGrey</material>
+    <mu1>0.0</mu1>
+    <mu2>0.0</mu2>
+    <kp>1000000.0</kp>
+    <kd>100.0</kd>
+    <minDepth>0.001</minDepth>
+  </gazebo>
+  <gazebo reference="rwheel2">
+    <material>Gazebo/DarkGrey</material>
+    <mu1>0.0</mu1>
+    <mu2>0.0</mu2>
+    <kp>1000000.0</kp>
     <kd>100.0</kd>
     <minDepth>0.001</minDepth>
   </gazebo>
@@ -1229,7 +1260,7 @@ Stephen Brawner (brawner@gmail.com)
     <material>Gazebo/DarkGrey</material>
   </gazebo>
   <gazebo>
-    <plugin name="m3pro_diff_drive" filename="libgazebo_ros_diff_drive.so">
+    <!-- <plugin name="m3pro_diff_drive" filename="libgazebo_ros_diff_drive.so">
       <ros>
         <remapping>cmd_vel:=cmd_vel</remapping>
         <remapping>odom:=odom</remapping>
@@ -1241,8 +1272,8 @@ Stephen Brawner (brawner@gmail.com)
       <right_joint>rwheel1_Joint</right_joint>
       <right_joint>rwheel2_Joint</right_joint>
 
-      <!-- <wheel_separation>0.1955</wheel_separation>
-      <wheel_diameter>0.08</wheel_diameter> -->
+      <wheel_separation>0.1955</wheel_separation>
+      <wheel_diameter>0.08</wheel_diameter>
 
       <max_wheel_torque>10</max_wheel_torque>
       <max_wheel_acceleration>4</max_wheel_acceleration>
@@ -1253,6 +1284,21 @@ Stephen Brawner (brawner@gmail.com)
 
       <odometry_frame>odom</odometry_frame>
       <robot_base_frame>base_footprint</robot_base_frame>
+    </plugin> -->
+    <plugin name="m3pro_planar_move" filename="libgazebo_ros_planar_move.so">
+      <ros>
+        <remapping>cmd_vel:=cmd_vel</remapping>
+        <remapping>odom:=odom</remapping>
+      </ros>
+      <robot_base_frame>base_footprint</robot_base_frame>
+      <odometry_frame>odom</odometry_frame>
+      <update_rate>50.0</update_rate>
+      <publish_odom>true</publish_odom>
+      <publish_odom_tf>true</publish_odom_tf>
+      <publish_transform>true</publish_transform>
+      <covariance_x>0.0001</covariance_x>
+      <covariance_y>0.0001</covariance_y>
+      <covariance_yaw>0.01</covariance_yaw>
     </plugin>
   </gazebo>
 </robot>
