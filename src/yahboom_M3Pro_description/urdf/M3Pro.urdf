@@ -1301,4 +1301,104 @@ Stephen Brawner (brawner@gmail.com)
       <covariance_yaw>0.01</covariance_yaw>
     </plugin>
   </gazebo>
+  <link name="laser_front_right_link">
+    <visual>
+      <geometry>
+        <cylinder radius="0.02" length="0.03"/>
+      </geometry>
+      <material name="black">
+        <color rgba="0.1 0.1 0.1 1"/>
+      </material>
+    </visual>
+  </link>
+
+  <joint name="laser_front_right_joint" type="fixed">
+    <parent link="base_link"/>
+    <child link="laser_front_right_link"/>
+    <origin xyz="0.12 -0.10 0.08" rpy="0 0 0"/>
+  </joint>
+
+  <link name="laser_rear_left_link">
+    <visual>
+      <geometry>
+        <cylinder radius="0.02" length="0.03"/>
+      </geometry>
+      <material name="black">
+        <color rgba="0.1 0.1 0.1 1"/>
+      </material>
+    </visual>
+  </link>
+
+  <joint name="laser_rear_left_joint" type="fixed">
+    <parent link="base_link"/>
+    <child link="laser_rear_left_link"/>
+    <origin xyz="-0.12 0.10 0.08" rpy="0 0 ${pi}"/>
+  </joint>
+
+  <gazebo reference="laser_front_right_link">
+    <material>Gazebo/Black</material>
+    <sensor type="ray" name="rplidar_front_right">
+      <pose>0 0 0 0 0 0</pose>
+      <visualize>true</visualize> <update_rate>10</update_rate>
+      <ray>
+        <scan>
+          <horizontal>
+            <samples>360</samples>
+            <resolution>1</resolution>
+            <min_angle>-2.356</min_angle>
+            <max_angle>2.356</max_angle>
+          </horizontal>
+        </scan>
+        <range>
+          <min>0.10</min>
+          <max>12.0</max>
+          <resolution>0.01</resolution>
+        </range>
+        <noise>
+          <type>gaussian</type>
+          <mean>0.0</mean>
+          <stddev>0.01</stddev>
+        </noise>
+      </ray>
+      <plugin name="laserscan_front_right" filename="libgazebo_ros_ray_sensor.so">
+        <ros><remapping>~/out:=scan_front</remapping></ros>
+        <output_type>sensor_msgs/LaserScan</output_type>
+        <frame_name>laser_front_right_link</frame_name>
+      </plugin>
+    </sensor>
+  </gazebo>
+
+  <gazebo reference="laser_rear_left_link">
+    <material>Gazebo/Black</material>
+    <sensor type="ray" name="rplidar_rear_left">
+      <pose>0 0 0 0 0 0</pose>
+      <visualize>true</visualize>
+      <update_rate>10</update_rate>
+      <ray>
+        <scan>
+          <horizontal>
+            <samples>360</samples>
+            <resolution>1</resolution>
+            <min_angle>-2.356</min_angle>
+            <max_angle>2.356</max_angle>
+          </horizontal>
+        </scan>
+        <range>
+          <min>0.10</min>
+          <max>12.0</max>
+          <resolution>0.01</resolution>
+        </range>
+        <noise>
+          <type>gaussian</type>
+          <mean>0.0</mean>
+          <stddev>0.01</stddev>
+        </noise>
+      </ray>
+      <plugin name="laserscan_rear_left" filename="libgazebo_ros_ray_sensor.so">
+        <ros><remapping>~/out:=scan_rear</remapping></ros>
+        <output_type>sensor_msgs/LaserScan</output_type>
+        <frame_name>laser_rear_left_link</frame_name>
+      </plugin>
+    </sensor>
+  </gazebo>
 </robot>
