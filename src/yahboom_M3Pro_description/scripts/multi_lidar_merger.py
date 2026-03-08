@@ -34,12 +34,13 @@ class MultiLidarMerger(Node):
         
         merged.angle_min = -math.pi
         merged.angle_max = math.pi
-        merged.angle_increment = math.pi / 180.0
+        # 将分母改为 360.0，使角分辨率变成 0.5度
+        merged.angle_increment = math.pi / 360.0
         merged.range_min = 0.1
         merged.range_max = 12.0
         
-        # 初始化 360 个索引位
-        ranges = [float('inf')] * 360
+        # 将数组长度翻倍到 720，用来装填更高密度的激光点
+        ranges = [float('inf')] * 720
         
         def process(msg, offset):
             for i, r in enumerate(msg.ranges):
@@ -61,9 +62,10 @@ class MultiLidarMerger(Node):
                     new_r = math.sqrt(bx**2 + by**2)
                     new_theta = math.atan2(by, bx)
                     
-                    # 5. 计算在 360 度数组中的索引位 (修正之前的变量名错误)
+                    # 5. 计算在 720 度数组中的索引位 (修正之前的变量名错误)
                     idx = int((new_theta - merged.angle_min) / merged.angle_increment)
-                    if 0 <= idx < 360:
+                    # 因为数组变成了 720 大小，所以索引的上限也要改成 720
+                    if 0 <= idx < 720:
                         if new_r < ranges[idx]:
                             ranges[idx] = new_r
 

@@ -1271,9 +1271,11 @@ Stephen Brawner (brawner@gmail.com)
       <left_joint>lwheel2_Joint</left_joint>
       <right_joint>rwheel1_Joint</right_joint>
       <right_joint>rwheel2_Joint</right_joint>
-
-      <!-- <wheel_separation>0.1955</wheel_separation>
-      <wheel_diameter>0.08</wheel_diameter> -->
+      <!-- Each separation-dismeter for a pair of wheels. -->
+      <wheel_separation>0.1955</wheel_separation>
+      <wheel_diameter>0.08</wheel_diameter>
+      <wheel_separation>0.1955</wheel_separation>
+      <wheel_diameter>0.08</wheel_diameter>
 
       <max_wheel_torque>10</max_wheel_torque>
       <max_wheel_acceleration>4</max_wheel_acceleration>

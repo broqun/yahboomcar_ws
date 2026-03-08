@@ -33,11 +33,11 @@ def generate_launch_description():
                 'minimum_travel_distance': 0.1,
                 'minimum_travel_heading': 0.05,
                 
-                'correlation_search_space_dimension': 0.3,
-                'correlation_search_space_resolution': 0.01,
+                'correlation_search_space_dimension': 0.8,
+                'correlation_search_space_resolution': 0.02,
                 
                 'scan_buffer_size': 150,
-                'loop_search_maximum_distance': 12.0, 
+                'loop_search_maximum_distance': 9.0, 
                 'loop_match_minimum_chain_size': 3,
                 'link_match_minimum_response_fine': 0.1,
             }]
