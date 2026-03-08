@@ -26,6 +26,7 @@ from launch.launch_description_sources import PythonLaunchDescriptionSource
 from launch.substitutions import Command, LaunchConfiguration
 from launch_ros.actions import Node
 from launch_ros.parameter_descriptions import ParameterValue
+import xacro
 
 
 def get_hospital_world_path():
@@ -142,23 +143,32 @@ def generate_launch_description():
         condition=IfCondition(LaunchConfiguration('gui')),
     )
 
-    # Robot description
-    robot_description = ParameterValue(
-        Command(['xacro ', LaunchConfiguration('model')]),
-        value_type=str
-    )
+    # Robot description - 拦截并切除 XML 声明的终极方案
+    try:
+        # 1. 用 xacro 库在后台解析公式 (比如 ${pi})
+        doc = xacro.process_file(str(default_urdf))
+        robot_desc_raw = doc.toxml()
+        
+        # 2. 暴力切除：无视前面的声明和注释，强制从 <robot 标签开始截取！
+        if '<robot' in robot_desc_raw:
+            robot_desc_raw = '<robot' + robot_desc_raw.split('<robot', 1)[1]
+            
+        robot_description = ParameterValue(robot_desc_raw, value_type=str)
+    except Exception as e:
+        print(f"解析 URDF 失败: {e}")
+        robot_description = ParameterValue("", value_type=str)
 
     # joint_state_publisher: 发布关节状态，robot_state_publisher 据此计算完整 TF 树（含 Camera）
     # Gazebo 的 joint_state 插件可能因 model 前缀等原因与 robot_state_publisher 不兼容，
     # 使用 ROS 节点更可靠（与 display_launch 一致）
-    joint_state_publisher = Node(
-        package='joint_state_publisher',
-        executable='joint_state_publisher',
-        name='joint_state_publisher',
-        output='screen',
-        parameters=[{'use_sim_time': True}],
-        # 无 description_file 时从 /robot_description topic 订阅（由 robot_state_publisher 发布）
-    )
+    # joint_state_publisher = Node(
+    #     package='joint_state_publisher',
+    #     executable='joint_state_publisher',
+    #     name='joint_state_publisher',
+    #     output='screen',
+    #     parameters=[{'use_sim_time': True}],
+    #     # 无 description_file 时从 /robot_description topic 订阅（由 robot_state_publisher 发布）
+    # )
 
     # Robot state publisher
     robot_state_publisher = Node(
@@ -178,6 +188,7 @@ def generate_launch_description():
         speed = context.perform_substitution(LaunchConfiguration('speed'))
         turn = context.perform_substitution(LaunchConfiguration('turn'))
         teleop_cmd = f'ros2 run teleop_twist_keyboard teleop_twist_keyboard --ros-args -p speed:={speed} -p turn:={turn} -p repeat_rate:=20'
+        teleop_cmd = f'ros2 run teleop_twist_keyboard teleop_twist_keyboard --ros-args -r cmd_vel:=/diff_drive_controller/cmd_vel_unstamped -p speed:={speed} -p turn:={turn} -p repeat_rate:=20'
         return [
             ExecuteProcess(
                 cmd=['xterm', '-geometry', '110x28', '-hold', '-e', teleop_cmd],
@@ -246,7 +257,7 @@ def generate_launch_description():
         gzserver_launch,
         gzclient_launch,
         robot_state_publisher,
-        joint_state_publisher,
+        # joint_state_publisher,
         spawn_m3pro_rviz,
         keyboard_hint,
     ]
