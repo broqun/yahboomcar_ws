@@ -1238,25 +1238,20 @@ Stephen Brawner (brawner@gmail.com)
   </gazebo>
   <gazebo reference="DCW2">
     <material>Gazebo/DarkGrey</material>
-    <sensor name="dabai_dcw2" type="depth">
+    <sensor name="dabai_dcw2" type="camera">
       <always_on>true</always_on>
       <update_rate>30.0</update_rate>
       <camera name="dcw2_lens">
         <horizontal_fov>${pi/2}</horizontal_fov>
         <image>
-          <width>1920</width>
-          <height>1080</height>
+          <width>1280</width>
+          <height>720</height>
           <format>R8G8B8</format>
         </image>
         <clip>
           <near>0.1</near>
           <far>10.0</far>
         </clip>
-        <noise>
-          <type>gaussian</type>
-          <mean>0.0</mean>
-          <stddev>0.007</stddev>
-        </noise>
       </camera>
 
       <plugin name="dcw2_driver" filename="libgazebo_ros_camera.so">
