@@ -1,0 +1,41 @@
+controller_manager:
+  ros__parameters:
+    update_rate: 50
+    use_sim_time: true
+
+    joint_state_broadcaster:
+      type: joint_state_broadcaster/JointStateBroadcaster
+
+    diff_drive_controller:
+      type: diff_drive_controller/DiffDriveController
+
+diff_drive_controller:
+  ros__parameters:
+    use_sim_time: true
+    left_wheel_names: ["lwheel1_Joint", "lwheel2_Joint"]
+    right_wheel_names: ["rwheel1_Joint", "rwheel2_Joint"]
+    wheel_separation: 0.1955
+    wheel_radius: 0.04
+    publish_rate: 50.0
+    odom_frame_id: odom
+    base_frame_id: base_footprint
+    enable_odom_tf: true
+    cmd_vel_timeout: 0.5
+    use_stamped_vel: false
+
+    # ======== 👑 核心修复：工业级防甩尾（加减速限制） ========
+    # 限制线速度（前进/后退）
+    linear.x.has_velocity_limits: true
+    linear.x.has_acceleration_limits: true
+    linear.x.max_velocity: 2.0
+    linear.x.min_velocity: -2.0
+    linear.x.max_acceleration: 1.0   # 限制起步的“抬头”现象（数值越小起步越柔和）
+    linear.x.min_acceleration: -1.5  # 限制刹车力度，绝不抱死，防止甩尾漂移！
+
+    # 限制角速度（原地旋转）
+    angular.z.has_velocity_limits: true
+    angular.z.has_acceleration_limits: true
+    angular.z.max_velocity: 3.0
+    angular.z.min_velocity: -3.0
+    angular.z.max_acceleration: 1.5
+    angular.z.min_acceleration: -1.5

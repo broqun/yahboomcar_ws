@@ -37,7 +37,7 @@ def generate_launch_description():
                 'correlation_search_space_resolution': 0.02,
                 
                 'scan_buffer_size': 150,
-                'loop_search_maximum_distance': 10.0, 
+                'loop_search_maximum_distance': 10.0, # T-mini Plus 激光雷达测距范围为0.05m至12m
                 'loop_match_minimum_chain_size': 3,
                 'link_match_minimum_response_fine': 0.1,
             }]
