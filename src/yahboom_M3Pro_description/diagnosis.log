@@ -1,0 +1,183 @@
+[gzserver-1] [Wrn] [gazebo_ros_init.cpp:178]
+[gzserver-1] #     # ####### ####### ###  #####  #######
+[gzserver-1] ##    # #     #    #     #  #     # #
+[gzserver-1] # #   # #     #    #     #  #       #
+[gzserver-1] #  #  # #     #    #     #  #       #####
+[gzserver-1] #   # # #     #    #     #  #       #
+[gzserver-1] #    ## #     #    #     #  #     # #
+[gzserver-1] #     # #######    #    ###  #####  #######
+[gzserver-1]
+[gzserver-1] This version of Gazebo, now called Gazebo classic, reaches end-of-life
+[gzserver-1] in January 2025. Users are highly encouraged to migrate to the new Gazebo
+[gzserver-1] using our migration guides (https://gazebosim.org/docs/latest/gazebo_classic_migration?utm_source=gazebo_ros_pkgs&utm_medium=cli)
+[gzserver-1]
+[gzserver-1]
+[gzserver-1] [Msg] Waiting for master.
+[gzserver-1] [Msg] Connected to gazebo master @ http://127.0.0.1:11345
+[gzserver-1] [Msg] Publicized address: 10.255.255.254
+[gzserver-1] [Msg] Loading world file [/var/robotic/yahboomcar_ws/install/aws_robomaker_hospital_world/share/aws_robomaker_hospital_world/worlds/hospital.world]
+[gzserver-1] [Wrn] [ColladaLoader.cc:1547] Unable to add material[]
+[gzserver-1] [Wrn] [ColladaLoader.cc:1547] Unable to add material[]
+[gzserver-1] [Wrn] [ColladaLoader.cc:1547] Unable to add material[]
+[gzserver-1] [Wrn] [ColladaLoader.cc:1547] Unable to add material[]
+[gzserver-1] [Wrn] [ColladaLoader.cc:1547] Unable to add material[]
+[gzserver-1] [Wrn] [ColladaLoader.cc:1547] Unable to add material[]
+[gzserver-1] [Wrn] [ColladaLoader.cc:1547] Unable to add material[]
+[gzserver-1] [Wrn] [ColladaLoader.cc:1547] Unable to add material[]
+[gzserver-1] [Wrn] [ColladaLoader.cc:1547] Unable to add material[]
+[gzserver-1] [Wrn] [ColladaLoader.cc:1547] Unable to add material[]
+[gzserver-1] [Wrn] [ColladaLoader.cc:1547] Unable to add material[]
+[gzserver-1] [Wrn] [ColladaLoader.cc:1547] Unable to add material[]
+[gzserver-1] [Wrn] [OBJLoader.cc:79] Both `d` and `Tr` parameters defined for "Chair". Use the value of `d` for dissolve (line 8 in .mtl.)
+[gzserver-1]
+[gzclient-2] [Msg] Waiting for master.
+[gzclient-2] [Msg] Connected to gazebo master @ http://127.0.0.1:11345
+[gzclient-2] [Msg] Publicized address: 10.255.255.254
+[gzclient-2] [Err] [InsertModelWidget.cc:403] Missing model.config for model "/var/robotic/yahboomcar_ws/install/yahboom_M3Pro_description/share/ament_index"
+[gzclient-2] [Err] [InsertModelWidget.cc:403] Missing model.config for model "/var/robotic/yahboomcar_ws/install/yahboom_M3Pro_description/share/colcon-core"
+[gzclient-2] [Err] [InsertModelWidget.cc:403] Missing model.config for model "/var/robotic/yahboomcar_ws/install/yahboom_M3Pro_description/share/yahboom_M3Pro_description"
+[gzclient-2] [Err] [InsertModelWidget.cc:403] Missing model.config for model "/var/robotic/yahboomcar_ws/src/M3Pro_MoveIt_demo"
+[gzclient-2] [Err] [InsertModelWidget.cc:403] Missing model.config for model "/var/robotic/yahboomcar_ws/src/M3Pro_config"
+[gzclient-2] [Err] [InsertModelWidget.cc:403] Missing model.config for model "/var/robotic/yahboomcar_ws/src/M3Pro_demo"
+[gzclient-2] [Err] [InsertModelWidget.cc:403] Missing model.config for model "/var/robotic/yahboomcar_ws/src/MoveIt_demo"
+[gzclient-2] [Err] [InsertModelWidget.cc:403] Missing model.config for model "/var/robotic/yahboomcar_ws/src/arm_driver"
+[gzclient-2] [Err] [InsertModelWidget.cc:403] Missing model.config for model "/var/robotic/yahboomcar_ws/src/arm_interface"
+[gzclient-2] [Err] [InsertModelWidget.cc:403] Missing model.config for model "/var/robotic/yahboomcar_ws/src/arm_kin"
+[gzclient-2] [Err] [InsertModelWidget.cc:403] Missing model.config for model "/var/robotic/yahboomcar_ws/src/arm_msgs"
+[gzclient-2] [Err] [InsertModelWidget.cc:403] Missing model.config for model "/var/robotic/yahboomcar_ws/src/aws-robomaker-hospital-world"
+[gzclient-2] [Err] [InsertModelWidget.cc:403] Missing model.config for model "/var/robotic/yahboomcar_ws/src/learn_launch"
+[gzclient-2] [Err] [InsertModelWidget.cc:403] Missing model.config for model "/var/robotic/yahboomcar_ws/src/learning_dds"
+[gzclient-2] [Err] [InsertModelWidget.cc:403] Missing model.config for model "/var/robotic/yahboomcar_ws/src/learning_time"
+[gzclient-2] [Err] [InsertModelWidget.cc:403] Missing model.config for model "/var/robotic/yahboomcar_ws/src/pkg_action"
+[gzclient-2] [Err] [InsertModelWidget.cc:403] Missing model.config for model "/var/robotic/yahboomcar_ws/src/pkg_helloworld_cpp"
+[gzclient-2] [Err] [InsertModelWidget.cc:403] Missing model.config for model "/var/robotic/yahboomcar_ws/src/pkg_helloworld_py"
+[gzclient-2] [Err] [InsertModelWidget.cc:403] Missing model.config for model "/var/robotic/yahboomcar_ws/src/pkg_interfaces"
+[gzclient-2] [Err] [InsertModelWidget.cc:403] Missing model.config for model "/var/robotic/yahboomcar_ws/src/pkg_metapackage"
+[gzclient-2] [Err] [InsertModelWidget.cc:403] Missing model.config for model "/var/robotic/yahboomcar_ws/src/pkg_param"
+[gzclient-2] [Err] [InsertModelWidget.cc:403] Missing model.config for model "/var/robotic/yahboomcar_ws/src/pkg_service"
+[gzclient-2] [Err] [InsertModelWidget.cc:403] Missing model.config for model "/var/robotic/yahboomcar_ws/src/pkg_topic"
+[gzclient-2] [Err] [InsertModelWidget.cc:403] Missing model.config for model "/var/robotic/yahboomcar_ws/src/test_config"
+[gzclient-2] [Err] [InsertModelWidget.cc:403] Missing model.config for model "/var/robotic/yahboomcar_ws/src/test_moveit_config"
+[gzclient-2] [Err] [InsertModelWidget.cc:403] Missing model.config for model "/var/robotic/yahboomcar_ws/src/yahboom_M3Pro_DepthCam"
+[gzclient-2] [Err] [InsertModelWidget.cc:403] Missing model.config for model "/var/robotic/yahboomcar_ws/src/yahboom_M3Pro_description"
+[gzclient-2] [Err] [InsertModelWidget.cc:403] Missing model.config for model "/var/robotic/yahboomcar_ws/src/yahboom_M3Pro_laser"
+[gzclient-2] [Err] [InsertModelWidget.cc:403] Missing model.config for model "/var/robotic/yahboomcar_ws/src/yahboom_yolov8"
+[gzclient-2] [Err] [InsertModelWidget.cc:403] Missing model.config for model "/var/robotic/yahboomcar_ws/src/yahboomcar_ctrl"
+[gzclient-2] [Err] [InsertModelWidget.cc:403] Missing model.config for model "/var/robotic/yahboomcar_ws/src/yahboomcar_description"
+[gzclient-2] [Err] [InsertModelWidget.cc:403] Missing model.config for model "/var/robotic/yahboomcar_ws/src/yahboomcar_mediapipe"
+[gzclient-2] [Err] [InsertModelWidget.cc:403] Missing model.config for model "/var/robotic/yahboomcar_ws/src/yahboomcar_msgs"
+[gzclient-2] [Wrn] [ModelDatabase.cc:212] Unable to connect to model database using [//database.config]. Only locally installed models will be available.
+[gzserver-1] [Wrn] [ColladaLoader.cc:1547] Unable to add material[]
+[gzserver-1] [Wrn] [ColladaLoader.cc:1547] Unable to add material[]
+[gzserver-1] [Wrn] [OBJLoader.cc:79] Both `d` and `Tr` parameters defined for "IVStand". Use the value of `d` for dissolve (line 8 in .mtl.)
+[gzserver-1] Both `d` and `Tr` parameters defined for "Wheels". Use the value of `d` for dissolve (line 22 in .mtl.)
+[gzserver-1]
+[gzclient-2] [Wrn] [Event.cc:61] Warning: Deleting a connection right after creation. Make sure to save the ConnectionPtr from a Connect call
+[INFO] [spawn_entity.py-6]: process started with pid [23821]
+[INFO] [rviz2-7]: process started with pid [23823]
+[INFO] [xterm-8]: process started with pid [23825]
+[gzclient-2] [Wrn] [OBJLoader.cc:79] Both `d` and `Tr` parameters defined for "Chair". Use the value of `d` for dissolve (line 8 in .mtl.)
+[gzclient-2]
+[gzclient-2] [Wrn] [OBJLoader.cc:79] Both `d` and `Tr` parameters defined for "IVStand". Use the value of `d` for dissolve (line 8 in .mtl.)
+[gzclient-2] Both `d` and `Tr` parameters defined for "Wheels". Use the value of `d` for dissolve (line 22 in .mtl.)
+[gzclient-2]
+[spawn_entity.py-6] [INFO] [1773498604.958945696] [spawn_m3pro]: Spawn Entity started
+[spawn_entity.py-6] [INFO] [1773498604.959166516] [spawn_m3pro]: Loading entity published on topic robot_description
+[spawn_entity.py-6] [INFO] [1773498604.960298494] [spawn_m3pro]: Waiting for entity xml on robot_description
+[spawn_entity.py-6] [INFO] [1773498604.972282887] [spawn_m3pro]: Waiting for service /spawn_entity, timeout = 30
+[spawn_entity.py-6] [INFO] [1773498604.972445588] [spawn_m3pro]: Waiting for service /spawn_entity
+[spawn_entity.py-6] [INFO] [1773498604.979538477] [spawn_m3pro]: Calling service /spawn_entity
+[gzserver-1] [Wrn] [Event.cc:61] Warning: Deleting a connection right after creation. Make sure to save the ConnectionPtr from a Connect call
+[gzserver-1] [INFO] [1773498605.351551442] [dcw2_driver]: Publishing camera info to [/dabai_dcw2/camera_info]
+[spawn_entity.py-6] [INFO] [1773498605.407375624] [spawn_m3pro]: Spawn status: SpawnEntity: Successfully spawned entity [M3Pro]
+[gzclient-2] [Wrn] [FuelModelDatabase.cc:313] URI not supported by Fuel [../../../../photos/PortraitA_01.jpg]
+[gzclient-2] [Wrn] [SystemPaths.cc:459] File or path does not exist [""] [../../../../photos/PortraitA_01.jpg]
+[gzclient-2] [Err] [Material.cc:91] Unable to find texture[../../../../photos/PortraitA_01.jpg] in path[/var/robotic/yahboomcar_ws/install/aws_robomaker_hospital_world/share/aws_robomaker_hospital_world/models/aws_robomaker_residential_PortraitA_01/meshes]
+[INFO] [spawn_entity.py-6]: process has finished cleanly [pid 23821]
+[gzclient-2] [Wrn] [FuelModelDatabase.cc:313] URI not supported by Fuel [../../../../photos/PortraitD_02.jpg]
+[gzclient-2] [Wrn] [SystemPaths.cc:459] File or path does not exist [""] [../../../../photos/PortraitD_02.jpg]
+[gzclient-2] [Err] [Material.cc:91] Unable to find texture[../../../../photos/PortraitD_02.jpg] in path[/var/robotic/yahboomcar_ws/install/aws_robomaker_hospital_world/share/aws_robomaker_hospital_world/models/aws_robomaker_residential_PortraitD_02/meshes]
+[gzclient-2] [Wrn] [FuelModelDatabase.cc:313] URI not supported by Fuel [../../../../photos/PortraitE_01.jpg]
+[gzclient-2] [Wrn] [SystemPaths.cc:459] File or path does not exist [""] [../../../../photos/PortraitE_01.jpg]
+[gzclient-2] [Err] [Material.cc:91] Unable to find texture[../../../../photos/PortraitE_01.jpg] in path[/var/robotic/yahboomcar_ws/install/aws_robomaker_hospital_world/share/aws_robomaker_hospital_world/models/aws_robomaker_residential_PortraitE_01/meshes]
+[rviz2-7] [INFO] [1773498605.568075564] [rviz2]: Stereo is NOT SUPPORTED
+[rviz2-7] [INFO] [1773498605.568235889] [rviz2]: OpenGl version: 4.2 (GLSL 4.2)
+[gzclient-2] [Wrn] [FuelModelDatabase.cc:313] URI not supported by Fuel [../../../../photos/PortraitD_01.jpg]
+[gzclient-2] [Wrn] [SystemPaths.cc:459] File or path does not exist [""] [../../../../photos/PortraitD_01.jpg]
+[gzclient-2] [Err] [Material.cc:91] Unable to find texture[../../../../photos/PortraitD_01.jpg] in path[/var/robotic/yahboomcar_ws/install/aws_robomaker_hospital_world/share/aws_robomaker_hospital_world/models/aws_robomaker_residential_PortraitD_01/meshes]
+[gzclient-2] [Wrn] [FuelModelDatabase.cc:313] URI not supported by Fuel [../../../../photos/PortraitE_02.jpg]
+[gzclient-2] [Wrn] [SystemPaths.cc:459] File or path does not exist [""] [../../../../photos/PortraitE_02.jpg]
+[gzclient-2] [Err] [Material.cc:91] Unable to find texture[../../../../photos/PortraitE_02.jpg] in path[/var/robotic/yahboomcar_ws/install/aws_robomaker_hospital_world/share/aws_robomaker_hospital_world/models/aws_robomaker_residential_PortraitE_02/meshes]
+[rviz2-7] [INFO] [1773498605.601017045] [rviz2]: Stereo is NOT SUPPORTED
+[gzserver-1] [Wrn] [FuelModelDatabase.cc:313] URI not supported by Fuel [../../../../photos/PortraitA_01.jpg]
+[gzserver-1] [Wrn] [SystemPaths.cc:459] File or path does not exist [""] [../../../../photos/PortraitA_01.jpg]
+[gzserver-1] [Err] [Material.cc:91] Unable to find texture[../../../../photos/PortraitA_01.jpg] in path[/var/robotic/yahboomcar_ws/install/aws_robomaker_hospital_world/share/aws_robomaker_hospital_world/models/aws_robomaker_residential_PortraitA_01/meshes]
+[gzserver-1] [Wrn] [FuelModelDatabase.cc:313] URI not supported by Fuel [../../../../photos/PortraitD_02.jpg]
+[gzserver-1] [Wrn] [SystemPaths.cc:459] File or path does not exist [""] [../../../../photos/PortraitD_02.jpg]
+[gzserver-1] [Err] [Material.cc:91] Unable to find texture[../../../../photos/PortraitD_02.jpg] in path[/var/robotic/yahboomcar_ws/install/aws_robomaker_hospital_world/share/aws_robomaker_hospital_world/models/aws_robomaker_residential_PortraitD_02/meshes]
+[gzserver-1] [Wrn] [FuelModelDatabase.cc:313] URI not supported by Fuel [../../../../photos/PortraitE_01.jpg]
+[gzserver-1] [Wrn] [SystemPaths.cc:459] File or path does not exist [""] [../../../../photos/PortraitE_01.jpg]
+[gzserver-1] [Err] [Material.cc:91] Unable to find texture[../../../../photos/PortraitE_01.jpg] in path[/var/robotic/yahboomcar_ws/install/aws_robomaker_hospital_world/share/aws_robomaker_hospital_world/models/aws_robomaker_residential_PortraitE_01/meshes]
+[gzserver-1] [Wrn] [FuelModelDatabase.cc:313] URI not supported by Fuel [../../../../photos/PortraitD_01.jpg]
+[gzserver-1] [Wrn] [SystemPaths.cc:459] File or path does not exist [""] [../../../../photos/PortraitD_01.jpg]
+[gzserver-1] [Err] [Material.cc:91] Unable to find texture[../../../../photos/PortraitD_01.jpg] in path[/var/robotic/yahboomcar_ws/install/aws_robomaker_hospital_world/share/aws_robomaker_hospital_world/models/aws_robomaker_residential_PortraitD_01/meshes]
+[gzserver-1] [Wrn] [FuelModelDatabase.cc:313] URI not supported by Fuel [../../../../photos/PortraitE_02.jpg]
+[gzserver-1] [Wrn] [SystemPaths.cc:459] File or path does not exist [""] [../../../../photos/PortraitE_02.jpg]
+[gzserver-1] [Err] [Material.cc:91] Unable to find texture[../../../../photos/PortraitE_02.jpg] in path[/var/robotic/yahboomcar_ws/install/aws_robomaker_hospital_world/share/aws_robomaker_hospital_world/models/aws_robomaker_residential_PortraitE_02/meshes]
+[INFO] [launch.user]: [Gazebo Hospital SLAM Demo] 正在加载 joint_state_broadcaster 与 diff_drive_controller ...
+[INFO] [bash-9]: process started with pid [23896]
+[gzserver-1] [INFO] [1773498607.886964534] [gazebo_ros2_control]: Loading gazebo_ros2_control plugin
+[gzserver-1] [INFO] [1773498607.893146210] [gazebo_ros2_control]: Starting gazebo_ros2_control plugin in namespace: /
+[gzserver-1] [INFO] [1773498607.893226151] [gazebo_ros2_control]: Starting gazebo_ros2_control plugin in ros 2 node: gazebo_ros2_control
+[gzserver-1] [INFO] [1773498607.896900845] [gazebo_ros2_control]: connected to service!! robot_state_publisher
+[gzserver-1] [INFO] [1773498607.897766518] [gazebo_ros2_control]: Received urdf from param server, parsing...
+[gzserver-1] [INFO] [1773498607.897872979] [gazebo_ros2_control]: Loading parameter files /var/robotic/yahboomcar_ws/src/yahboom_M3Pro_description/config/controllers.yaml
+[gzserver-1] [INFO] [1773498607.909443650] [gazebo_ros2_control]: Loading joint: lwheel1_Joint
+[gzserver-1] [INFO] [1773498607.909492124] [gazebo_ros2_control]:       State:
+[gzserver-1] [INFO] [1773498607.909497310] [gazebo_ros2_control]:                position
+[gzserver-1] [INFO] [1773498607.909501106] [gazebo_ros2_control]:                velocity
+[gzserver-1] [INFO] [1773498607.909503932] [gazebo_ros2_control]:       Command:
+[gzserver-1] [INFO] [1773498607.909849601] [gazebo_ros2_control]:                velocity
+[gzserver-1] [INFO] [1773498607.910475194] [gazebo_ros2_control]: Loading joint: lwheel2_Joint
+[gzserver-1] [INFO] [1773498607.910500818] [gazebo_ros2_control]:       State:
+[gzserver-1] [INFO] [1773498607.910504561] [gazebo_ros2_control]:                position
+[gzserver-1] [INFO] [1773498607.910507814] [gazebo_ros2_control]:                velocity
+[gzserver-1] [INFO] [1773498607.910510172] [gazebo_ros2_control]:       Command:
+[gzserver-1] [INFO] [1773498607.910520273] [gazebo_ros2_control]:                velocity
+[gzserver-1] [INFO] [1773498607.910718660] [gazebo_ros2_control]: Loading joint: rwheel1_Joint
+[gzserver-1] [INFO] [1773498607.910733167] [gazebo_ros2_control]:       State:
+[gzserver-1] [INFO] [1773498607.910736379] [gazebo_ros2_control]:                position
+[gzserver-1] [INFO] [1773498607.910739487] [gazebo_ros2_control]:                velocity
+[gzserver-1] [INFO] [1773498607.910741817] [gazebo_ros2_control]:       Command:
+[gzserver-1] [INFO] [1773498607.910749207] [gazebo_ros2_control]:                velocity
+[gzserver-1] [INFO] [1773498607.910867758] [gazebo_ros2_control]: Loading joint: rwheel2_Joint
+[gzserver-1] [INFO] [1773498607.910873719] [gazebo_ros2_control]:       State:
+[gzserver-1] [INFO] [1773498607.910876788] [gazebo_ros2_control]:                position
+[gzserver-1] [INFO] [1773498607.910879398] [gazebo_ros2_control]:                velocity
+[gzserver-1] [INFO] [1773498607.910881701] [gazebo_ros2_control]:       Command:
+[gzserver-1] [INFO] [1773498607.910886236] [gazebo_ros2_control]:                velocity
+[gzserver-1] [INFO] [1773498607.911143058] [resource_manager]: Initialize hardware 'GazeboSystem'
+[gzserver-1] [INFO] [1773498607.911362289] [resource_manager]: Successful initialization of hardware 'GazeboSystem'
+[gzserver-1] [INFO] [1773498607.911474229] [resource_manager]: 'configure' hardware 'GazeboSystem'
+[gzserver-1] [INFO] [1773498607.911483768] [resource_manager]: Successful 'configure' of hardware 'GazeboSystem'
+[gzserver-1] [INFO] [1773498607.911487691] [resource_manager]: 'activate' hardware 'GazeboSystem'
+[gzserver-1] [INFO] [1773498607.911490542] [resource_manager]: Successful 'activate' of hardware 'GazeboSystem'
+[gzserver-1] [INFO] [1773498607.911540706] [gazebo_ros2_control]: Loading controller_manager
+[gzserver-1] [WARN] [1773498607.936491997] [gazebo_ros2_control]:  Desired controller update period (0.02 s) is slower than the gazebo simulation period (0.001 s).
+[gzserver-1] [INFO] [1773498607.936777835] [gazebo_ros2_control]: Loaded gazebo_ros2_control.
+[async_slam_toolbox_node-5] [INFO] [1773498608.340197222] [slam_toolbox]: Message Filter dropping message: frame 'base_footprint' at time 2.483 for reason 'discarding message because the queue is full'
+[gzserver-1] [INFO] [1773498608.615026932] [controller_manager]: Loading controller 'joint_state_broadcaster'
+[bash-9] [INFO] [1773498608.645939895] [spawner_joint_state_broadcaster]: Loaded joint_state_broadcaster
+[gzserver-1] [INFO] [1773498608.647245590] [controller_manager]: Configuring controller 'joint_state_broadcaster'
+[gzserver-1] [INFO] [1773498608.647538439] [joint_state_broadcaster]: 'joints' or 'interfaces' parameter is empty. All available state interfaces will be published
+[bash-9] [INFO] [1773498608.699495226] [spawner_joint_state_broadcaster]: Configured and activated joint_state_broadcaster
+[gzserver-1] [INFO] [1773498609.521797429] [controller_manager]: Loading controller 'diff_drive_controller'
+[bash-9] [INFO] [1773498609.548524416] [spawner_diff_drive_controller]: Loaded diff_drive_controller
+[gzserver-1] [INFO] [1773498609.549940309] [controller_manager]: Configuring controller 'diff_drive_controller'
+[bash-9] [INFO] [1773498609.680705960] [spawner_diff_drive_controller]: Configured and activated diff_drive_controller
+[async_slam_toolbox_node-5] [WARN] [1773498609.741583333] [slam_toolbox]: minimum laser range setting (0.0 m) exceeds the capabilities of the used Lidar (0.1 m)
+[async_slam_toolbox_node-5] Registering sensor: [Custom Described Lidar]
+[INFO] [bash-9]: process has finished cleanly [pid 23896]
+[rviz2-7] [INFO] [1773498618.888189853] [rviz2]: Trying to create a map of size 413 x 317 using 1 swatches
+[rviz2-7] [ERROR] [1773498618.919281480] [rviz2]: Vertex Program:rviz/glsl120/indexed_8bit_image.vert Fragment Program:rviz/glsl120/indexed_8bit_image.frag GLSL link result :
+[rviz2-7] active samplers with a different type refer to the same texture image unit

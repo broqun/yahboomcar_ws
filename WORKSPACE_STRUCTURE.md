@@ -39,11 +39,11 @@ yahboomcar_ws/
 │   ├── aws-robomaker-hospital-world/
 │   │   ├── CMakeLists.txt
 │   │   ├── docs/
-│   │   ├── fuel_models/    # 医院场景 Gazebo 模型 (桌椅、病床、推车等)
-│   │   ├── fuel_utility.py
+│   │   ├── fuel_models/    # 医院场景 Gazebo Fuel 模型 (桌椅、病床、推车、人物等)
+│   │   ├── fuel_utility.py # 从 Ignition Fuel 下载医院附加模型
 │   │   ├── launch/         # hospital.launch, view_hospital.launch
-│   │   ├── models/         # 医院建筑、电梯、窗帘等模型
-│   │   ├── worlds/         # hospital.world 等
+│   │   ├── models/         # 医院建筑、电梯、窗帘、画像等静态模型
+│   │   ├── worlds/         # hospital.world, hospital_two_floors.world, hospital_three_floors.world
 │   │   └── LICENSE, CODE_OF_CONDUCT.md, CONTRIBUTING.md
 │   │
 │   ├── learning_dds/
@@ -160,11 +160,13 @@ yahboomcar_ws/
 │   │   └── setup.py, resource/, test/
 │   │
 │   ├── yahboom_M3Pro_description/   # M3Pro 机器人描述与仿真/SLAM
-│   │   ├── config/         # Cartographer: cartographer_m3pro_2d.lua, map_builder, pose_graph, trajectory_builder_2d/3d
-│   │   ├── launch/         # depth_cartographer, depth_slam, display, hospital_m3pro_teleop
+│   │   ├── config/         # Cartographer Lua 配置、桥接配置、控制器配置等
+│   │   ├── launch/         # display, hospital_m3pro_teleop, lidar_slam, depth_slam, depth_cartographer,
+│   │   │                   # gazebo_hospital_slam_demo 及配套 .md 说明文档
 │   │   ├── meshes/         # 机械臂/轮子/相机/底盘等 STL
-│   │   ├── urdf/           # M3Pro.urdf
-│   │   ├── rviz/           # yahboom_M3Pro, spen_M3Pro, spen_M3Pro_depth_slam 等
+│   │   ├── scripts/        # multi_lidar_merger.py（前后双雷达合并为 /scan_merged）
+│   │   ├── urdf/           # M3Pro.urdf（含 Gazebo、双雷达、ros2_control 插件配置）
+│   │   ├── rviz/           # yahboom_M3Pro, spen_M3Pro, spen_M3Pro_depth_slam, spen_M3Pro_lidar_slam 等
 │   │   ├── package.xml
 │   │   └── setup.py, resource/, test/
 │   │
