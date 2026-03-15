@@ -119,12 +119,15 @@ def generate_launch_description():
     # Set GAZEBO_MODEL_PATH: hospital models + M3Pro package (用于解析 package:///model://)
     # Gazebo 需要在此路径下找到 yahboom_M3Pro_description/meshes/xxx.STL
     m3pro_model_path = str(m3pro_share.parent)  # .../share，下有 yahboom_M3Pro_description/
+    print(f"m3pro_model_path: {m3pro_model_path}")
     all_model_paths = [m3pro_model_path]
     if hospital_models:
         all_model_paths.insert(0, hospital_models)
     existing = os.environ.get('GAZEBO_MODEL_PATH', '')
     new_path = os.pathsep.join(all_model_paths) + (os.pathsep + existing if existing else '')
+    print(f"new_path: {new_path}")
     gazebo_model_path_actions = [SetEnvironmentVariable('GAZEBO_MODEL_PATH', new_path)]
+    print(f"GAZEBO_MODEL_PATH: {existing}")
 
     gazebo_launch_dir = Path(get_package_share_path('gazebo_ros')) / 'launch'
 

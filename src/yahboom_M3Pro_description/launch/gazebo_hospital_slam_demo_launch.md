@@ -65,20 +65,32 @@ ros2 run controller_manager spawner diff_drive_controller
 为了避免每次打开终端都重复执行 `source` 和相关环境变量导出，建议把下面内容写入 `~/.bashrc`：
 
 ```bash
-# --- ROS2 & Gazebo Environment Setup ---
-source /usr/share/gazebo/setup.bash
+# ==========================================
+# 1. 基础环境加载 (ROS 2 & 底层工作空间)
+# 注：顺序很重要！先刷 ROS 2，再刷 Gazebo，最后刷自己的工作空间
+# ==========================================
 source /opt/ros/humble/setup.bash
-# 替换为你的工作空间路径
+source /usr/share/gazebo/setup.bash
 source /var/robotic/yahboomcar_ws/install/setup.bash
 
-# --- NVIDIA RTX 4090 D WSL2 Hard-Decoding ---
+# ==========================================
+# 2. 硬件加速 (NVIDIA RTX 4090D in WSL2)
+# ==========================================
 export LD_LIBRARY_PATH=/usr/lib/wsl/lib:$LD_LIBRARY_PATH
 export GALLIUM_DRIVER=d3d12
 export MESA_D3D12_DEFAULT_ADAPTER_NAME=NVIDIA
 
-# --- Gazebo Path Fixes ---
-# 禁用在线模型下载，防止卡顿
+# ==========================================
+# 3. Gazebo 仿真器优化配置
+# ==========================================
+# 禁用在线模型下载，防止启动卡顿
 export GAZEBO_MODEL_DATABASE_URI=""
+
+# ------------------------------------------
+# 已弃用
+# ------------------------------------------
+# 建议保持以下代码被注释掉！因为 Launch 脚本已经接管了动态路径。
+# export GAZEBO_MODEL_PATH=/var/robotic/yahboomcar_ws/src/aws-robomaker-hospital-world/models:/var/robotic/yahboomcar_ws/src
 ```
 
 如果你的工作空间路径不是 `/var/robotic/yahboomcar_ws`，请把上面的 `source /var/robotic/yahboomcar_ws/install/setup.bash` 改成你自己的实际路径。
