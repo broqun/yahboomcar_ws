@@ -3,6 +3,38 @@
 **/install/
 **/log/
 
+# 忽略 src 下除 aws-robomaker-hospital-world 和 yahboom_M3Pro_description 外的目录
+src/arm_driver/
+src/arm_interface/
+src/arm_kin/
+src/arm_msgs/
+src/aws-robomaker-small-house-world/
+src/gzsim_worlds/
+src/learning_dds/
+src/learning_time/
+src/learn_launch/
+src/M3Pro_config/
+src/M3Pro_demo/
+src/M3Pro_MoveIt_demo/
+src/MoveIt_demo/
+src/pkg_action/
+src/pkg_helloworld_cpp/
+src/pkg_helloworld_py/
+src/pkg_interfaces/
+src/pkg_metapackage/
+src/pkg_param/
+src/pkg_service/
+src/pkg_topic/
+src/test_config/
+src/test_moveit_config/
+src/yahboomcar_ctrl/
+src/yahboomcar_description/
+src/yahboomcar_mediapipe/
+src/yahboomcar_msgs/
+src/yahboom_M3Pro_DepthCam/
+src/yahboom_M3Pro_laser/
+src/yahboom_yolov8/
+
 # 忽略 VS Code 配置
 .vscode/
 
