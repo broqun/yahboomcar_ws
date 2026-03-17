@@ -1,13 +1,39 @@
+from pathlib import Path
+
 from launch import LaunchDescription
 from launch_ros.actions import Node
 from launch.actions import ExecuteProcess
 
+
+def get_multi_lidar_merger_script_path():
+    """Resolve multi_lidar_merger.py from source or install layout."""
+    current = Path(__file__).resolve().parent
+
+    # source layout: src/yahboom_M3Pro_description/launch/...
+    direct_candidate = current.parent / 'scripts' / 'multi_lidar_merger.py'
+    if direct_candidate.exists():
+        return direct_candidate
+
+    # install layout: install/.../share/yahboom_M3Pro_description/launch/...
+    # Walk upwards until we can locate the workspace source tree.
+    for base in current.parents:
+        candidate = base / 'src' / 'yahboom_M3Pro_description' / 'scripts' / 'multi_lidar_merger.py'
+        if candidate.exists():
+            return candidate
+
+    raise FileNotFoundError(
+        'multi_lidar_merger.py not found. Expected it under '
+        'src/yahboom_M3Pro_description/scripts/.'
+    )
+
 def generate_launch_description():
+    merger_script = get_multi_lidar_merger_script_path()
+
     return LaunchDescription([
         
         # 1. 启动打好补丁的 360° 双雷达合并 Python 节点
         ExecuteProcess(
-            cmd=['python3', '/var/robotic/yahboomcar_ws/src/yahboom_M3Pro_description/scripts/multi_lidar_merger.py'],
+            cmd=['python3', str(merger_script)],
             output='screen'
         ),
 

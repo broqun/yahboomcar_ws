@@ -1324,7 +1324,7 @@ Stephen Brawner (brawner@gmail.com)
 
   <gazebo>
     <plugin name="gazebo_ros2_control" filename="libgazebo_ros2_control.so">
-      <parameters>/var/robotic/yahboomcar_ws/src/yahboom_M3Pro_description/config/controllers.yaml</parameters>
+      <parameters>$(find yahboom_M3Pro_description)/config/controllers.yaml</parameters>
       <robot_param>robot_description</robot_param>
       <robot_param_node>robot_state_publisher</robot_param_node>
     </plugin>

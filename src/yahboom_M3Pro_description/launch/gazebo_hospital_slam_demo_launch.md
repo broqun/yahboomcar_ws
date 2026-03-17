@@ -27,16 +27,53 @@ ros2 run controller_manager spawner diff_drive_controller
 
 其中控制器加载在主 launch 中通过 `TimerAction(period=10.0)` 延迟约 10 秒执行，避免 Gazebo 和机器人尚未完全就绪时加载失败。
 
-## 2. 环境准备
+## 2. 快速启动
 
-### 2.1 依赖包（package.xml）
+如果你已经提前确认 `~/.bashrc`、依赖包、Gazebo (Classic) / ROS 2 环境都已经配置完成，那么最直接的启动方式就是在工作区根目录执行下面这条命令：
+
+```bash
+clear;clear && colcon build --packages-select yahboom_M3Pro_description && source install/setup.bash && ros2 launch yahboom_M3Pro_description gazebo_hospital_slam_demo_launch.py
+```
+
+这条命令会依次完成：
+
+1. 清空终端显示。
+2. 重新编译 `yahboom_M3Pro_description` 功能包。
+3. `source install/setup.bash` 刷新当前工作区环境。
+4. 启动 `gazebo_hospital_slam_demo_launch.py` Demo。
+
+如果你当前不在工作区根目录，请先执行：
+
+```bash
+cd /var/robotic/yahboomcar_ws
+```
+
+再运行上面的整合命令。
+
+## 3. 环境准备
+
+### 3.1 依赖包（package.xml）
 
 本包在 `src/yahboom_M3Pro_description/package.xml` 中声明的**运行依赖**（`exec_depend`）如下，运行本 launch 或同包内其它 launch 前需确保这些包已安装（如 `apt install ros-humble-<包名>` 或通过工作空间编译提供）：
+
+如果你不想手动逐个检查依赖，也可以进入 `yahboom_M3Pro_description` 功能包目录，使用 `rosdep` 根据当前包的 `package.xml` 快速检查并安装缺失依赖。常见用法如下：
+
+```bash
+cd /var/robotic/yahboomcar_ws/src/yahboom_M3Pro_description
+rosdep install --from-paths . --ignore-src -r -y
+```
+
+这条命令会基于当前目录下功能包的 `package.xml`，自动解析系统里缺失的 ROS / Ubuntu 依赖并尝试安装。这样更适合只检查 `yahboom_M3Pro_description` 本身，而不是一次处理整个工作区。
+
+需要特别注意：`rosdep` 主要处理 `package.xml` 中声明的依赖。当前 `hospital_m3pro_teleop_launch.py` 在 `keyboard:=true` 时会调用 `xterm` 自动打开键盘遥控终端，但 `xterm` 不是本包 `package.xml` 里的依赖项，因此通常不会被上面的 `rosdep` 命令自动安装。不过这**不会阻止 Demo 本体运行**，如果系统里没有 `xterm`，只需使用 `keyboard:=false` 启动，再手动在你自己的终端里运行遥控命令即可。
 
 | 依赖包 | 用途 |
 |--------|------|
 | **Launch / RViz / URDF** | |
 | `ament_index_python` | Launch 中查找包路径（如 `get_package_share_path`）。 |
+| `launch` | Python launch 脚本基础依赖。 |
+| `launch_ros` | Launch 中启动 ROS 2 节点所需。 |
+| `rclpy` | `multi_lidar_merger.py` 等 Python ROS 2 节点运行依赖。 |
 | `robot_state_publisher` | 发布机器人描述与 TF。 |
 | `rviz2` | 可视化（本 launch 使用 `spen_M3Pro_lidar_slam.rviz`）。 |
 | `xacro` | 解析 URDF 中的 xacro 表达式。 |
@@ -58,9 +95,9 @@ ros2 run controller_manager spawner diff_drive_controller
 | `message_filters` | `scripts/multi_lidar_merger.py` 中激光同步。 |
 | `sensor_msgs` | `multi_lidar_merger.py` 中 `LaserScan` 消息。 |
 
-仅运行本说明中的 `gazebo_hospital_slam_demo_launch.py` 时，与医院 + 双雷达 SLAM 直接相关的是：`gazebo_ros`、`gazebo_ros2_control`、`robot_state_publisher`、`rviz2`、`xacro`、`controller_manager`、`diff_drive_controller`、`joint_state_broadcaster`、`slam_toolbox`、`teleop_twist_keyboard`、`message_filters`、`sensor_msgs`；其余为同包其它 launch 或通用依赖。
+仅运行本说明中的 `gazebo_hospital_slam_demo_launch.py` 时，与医院 + 双雷达 SLAM 直接相关的是：`ament_index_python`、`launch`、`launch_ros`、`rclpy`、`gazebo_ros`、`gazebo_ros2_control`、`robot_state_publisher`、`rviz2`、`xacro`、`controller_manager`、`diff_drive_controller`、`joint_state_broadcaster`、`slam_toolbox`、`teleop_twist_keyboard`、`message_filters`、`sensor_msgs`；其余为同包其它 launch 或通用依赖。
 
-### 2.2 建议先在 `~/.bashrc` 中配置环境变量
+### 3.2 建议先在 `~/.bashrc` 中配置环境变量
 
 为了避免每次打开终端都重复执行 `source` 和相关环境变量导出，建议把下面内容写入 `~/.bashrc`：
 
@@ -75,6 +112,10 @@ source /var/robotic/yahboomcar_ws/install/setup.bash
 
 # ==========================================
 # 2. 硬件加速 (NVIDIA RTX 4090D in WSL2)
+# 以下 3 项属于可选优化，不是启动 Demo 的必需条件
+# 只有当你发现 Gazebo / RViz 没有正确使用 NVIDIA 显卡渲染，
+# 或怀疑当前仍在走软件渲染、界面卡顿明显时，再尝试启用
+# 如果当前显示和性能都正常，也可以先不加，避免引入额外图形兼容性变量
 # ==========================================
 export LD_LIBRARY_PATH=/usr/lib/wsl/lib:$LD_LIBRARY_PATH
 export GALLIUM_DRIVER=d3d12
@@ -85,23 +126,11 @@ export MESA_D3D12_DEFAULT_ADAPTER_NAME=NVIDIA
 # ==========================================
 # 禁用在线模型下载，防止启动卡顿
 export GAZEBO_MODEL_DATABASE_URI=""
-
-# ------------------------------------------
-# 已弃用
-# ------------------------------------------
-# 建议保持以下代码被注释掉！因为 Launch 脚本已经接管了动态路径。
-# export GAZEBO_MODEL_PATH=/var/robotic/yahboomcar_ws/src/aws-robomaker-hospital-world/models:/var/robotic/yahboomcar_ws/src
 ```
 
 如果你的工作空间路径不是 `/var/robotic/yahboomcar_ws`，请把上面的 `source /var/robotic/yahboomcar_ws/install/setup.bash` 改成你自己的实际路径。
 
-需要特别注意的是，当前仓库里的 `src/yahboom_M3Pro_description/urdf/M3Pro.urdf` 还把控制器配置文件写成了绝对路径：
-
-```text
-/var/robotic/yahboomcar_ws/src/yahboom_M3Pro_description/config/controllers.yaml
-```
-
-因此，如果你把整个工作空间移动到别的位置，仅修改 `~/.bashrc` 里的 `source .../install/setup.bash` 还不够，还需要同步修改 `M3Pro.urdf` 中这条 `controllers.yaml` 的绝对路径。
+当前仓库已把 `gazebo_ros2_control` 使用的 `controllers.yaml` 改为通过包路径解析，不再依赖固定工作空间绝对路径。也就是说，工作空间移动到别的位置后，一般不需要再手动修改 `M3Pro.urdf` 里的控制器配置路径；只要重新编译并 `source install/setup.bash` 即可。
 
 修改完成后执行：
 
@@ -111,7 +140,7 @@ source ~/.bashrc
 
 这样之后再运行 `ros2 launch yahboom_M3Pro_description gazebo_hospital_slam_demo_launch.py` 时，ROS 2、Gazebo 和 WSL2 下的图形相关环境会自动生效。这里的 `GAZEBO_MODEL_DATABASE_URI=""` 只是禁止在线模型库下载，不会影响本地 `GAZEBO_MODEL_PATH` 的设置。
 
-### 2.3 启动前快速检查
+### 3.3 启动前快速检查
 
 运行本 launch 前，建议确认以下条件：
 
@@ -119,7 +148,7 @@ source ~/.bashrc
 2. `aws_robomaker_hospital_world` 要么已经安装到 ROS 2 环境中，要么存在于当前工作区的 `src/aws-robomaker-hospital-world`。
 3. Gazebo 能找到医院场景模型和 `yahboom_M3Pro_description` 的机器人资源。
 4. `teleop_twist_keyboard`、`gazebo_ros`、`robot_state_publisher`、`xacro`、`slam_toolbox`、`controller_manager` 可用。
-5. 如果使用 `keyboard:=true`，系统中还需要有 `xterm`，否则自动弹出的键盘控制终端无法启动。
+5. `xterm` 不是 Demo 必需依赖。只有在 `keyboard:=true`、希望 launch 自动弹出键盘控制终端时才需要它；若未安装，也可以使用 `keyboard:=false` 正常启动 Demo，再手动运行遥控命令。
 6. 若使用 GUI，WSL2 或远程桌面环境的 OpenGL / Gazebo GUI 兼容性正常。
 
 建议在工作区根目录运行。可分步执行，或用一条 `&&` 整合命令一次完成：
@@ -137,11 +166,11 @@ ros2 launch yahboom_M3Pro_description gazebo_hospital_slam_demo_launch.py
 cd /var/robotic/yahboomcar_ws && colcon build --packages-select yahboom_M3Pro_description && source install/setup.bash && ros2 launch yahboom_M3Pro_description gazebo_hospital_slam_demo_launch.py
 ```
 
-## 3. 启动流程
+## 4. 启动流程
 
 本 launch 的执行逻辑如下：
 
-### 3.1 启动医院 Gazebo 场景
+### 4.1 启动医院 Gazebo 场景
 
 主 launch 先 `include` `hospital_m3pro_teleop_launch.py`，由后者负责：
 
@@ -153,10 +182,11 @@ cd /var/robotic/yahboomcar_ws && colcon build --packages-select yahboom_M3Pro_de
    - 医院场景的 `models/`
    - 医院场景的 `fuel_models/`
    - `yahboom_M3Pro_description` 的 package share 上级目录，用于解析 `package://yahboom_M3Pro_description/meshes/...`
+   - 若当前环境里已经存在 `GAZEBO_MODEL_PATH`，还会把旧值追加到新路径后面，而不是直接覆盖
 4. 启动 `gzserver`。
 5. 视 `gui` 参数决定是否启动 `gzclient`。
 
-### 3.2 发布机器人描述并生成机器人
+### 4.2 发布机器人描述并生成机器人
 
 `hospital_m3pro_teleop_launch.py` 会：
 
@@ -169,7 +199,7 @@ cd /var/robotic/yahboomcar_ws && colcon build --packages-select yahboom_M3Pro_de
 
 - 虽然该 launch 声明了 `model` 参数，但当前代码实际仍固定使用默认的 `M3Pro.urdf` 路径进行 `xacro.process_file()`，所以传入 `model:=...` 目前大概率不会真正替换机器人模型。
 
-### 3.3 启动键盘控制与 RViz
+### 4.3 启动键盘控制与 RViz
 
 机器人生成时还会一并启动：
 
@@ -186,8 +216,10 @@ cd /var/robotic/yahboomcar_ws && colcon build --packages-select yahboom_M3Pro_de
    - `turn:=0.99999`
    - `repeat_rate:=20`
 5. 如果 `keyboard:=false`，launch 不会自动创建遥控终端，只会在约 8 秒后打印一条手动启动提示。
+6. 需要注意：当前代码里打印出来的手动提示命令是简化版，未包含 `/diff_drive_controller/cmd_vel_unstamped` 重映射，也没有带上当前传入的 `speed` / `turn` 参数；实际手动运行时，建议以本文后面给出的带重映射命令为准。
+7. 因此，`xterm` 未安装时并不影响 Gazebo、机器人生成、RViz、SLAM 和控制器加载；受影响的只是“自动弹出键盘遥控终端”这一项便利功能。
 
-### 3.4 启动双雷达 SLAM
+### 4.4 启动双雷达 SLAM
 
 主 launch 同时 `include` `lidar_slam_launch.py`，后者会依次启动：
 
@@ -207,7 +239,7 @@ cd /var/robotic/yahboomcar_ws && colcon build --packages-select yahboom_M3Pro_de
 
 这个 `/scan_merged` 就是 SLAM 使用的激光输入。
 
-### 3.5 延迟加载 ros2_control 控制器
+### 4.5 延迟加载 ros2_control 控制器
 
 主 launch 在 10 秒后执行：
 
@@ -218,15 +250,15 @@ ros2 run controller_manager spawner diff_drive_controller
 
 加载顺序不能反过来。通常必须先有 `joint_state_broadcaster`，再加载 `diff_drive_controller`，否则遥操作可能无法生效。
 
-## 4. 常用启动命令
+## 5. 常用启动命令
 
-### 4.1 默认启动
+### 5.1 默认启动
 
 ```bash
 ros2 launch yahboom_M3Pro_description gazebo_hospital_slam_demo_launch.py
 ```
 
-### 4.2 无 Gazebo GUI 启动
+### 5.2 无 Gazebo GUI 启动
 
 适合 WSL2 或图形不稳定环境：
 
@@ -234,13 +266,13 @@ ros2 launch yahboom_M3Pro_description gazebo_hospital_slam_demo_launch.py
 ros2 launch yahboom_M3Pro_description gazebo_hospital_slam_demo_launch.py gui:=false
 ```
 
-### 4.3 指定初始生成位置
+### 5.3 指定初始生成位置
 
 ```bash
 ros2 launch yahboom_M3Pro_description gazebo_hospital_slam_demo_launch.py x:=0.0 y:=10.0 z:=0.01
 ```
 
-### 4.4 不自动打开键盘控制终端
+### 5.4 不自动打开键盘控制终端
 
 ```bash
 ros2 launch yahboom_M3Pro_description gazebo_hospital_slam_demo_launch.py keyboard:=false
@@ -249,16 +281,22 @@ ros2 launch yahboom_M3Pro_description gazebo_hospital_slam_demo_launch.py keyboa
 然后手动在新终端运行：
 
 ```bash
-ros2 run teleop_twist_keyboard teleop_twist_keyboard --ros-args -r cmd_vel:=/diff_drive_controller/cmd_vel_unstamped
+ros2 run teleop_twist_keyboard teleop_twist_keyboard --ros-args -r cmd_vel:=/diff_drive_controller/cmd_vel_unstamped -p speed:=1.99999 -p turn:=0.99999 -p repeat_rate:=20
 ```
 
-### 4.5 调整遥操作速度
+如果你希望使用别的速度，也可以按需改成例如：
+
+```bash
+ros2 run teleop_twist_keyboard teleop_twist_keyboard --ros-args -r cmd_vel:=/diff_drive_controller/cmd_vel_unstamped -p speed:=1.0 -p turn:=0.5 -p repeat_rate:=20
+```
+
+### 5.5 调整遥操作速度
 
 ```bash
 ros2 launch yahboom_M3Pro_description gazebo_hospital_slam_demo_launch.py speed:=1.0 turn:=0.5
 ```
 
-## 5. 可用 Launch 参数
+## 6. 可用 Launch 参数
 
 这些参数由被 `include` 的 `hospital_m3pro_teleop_launch.py` 声明，因此在启动 `gazebo_hospital_slam_demo_launch.py` 时也可直接传入。
 
@@ -269,13 +307,13 @@ ros2 launch yahboom_M3Pro_description gazebo_hospital_slam_demo_launch.py speed:
 | `x` | `0.049177` | 机器人生成的 X 坐标。 |
 | `y` | `11.755002` | 机器人生成的 Y 坐标。 |
 | `z` | `0.01` | 机器人生成的 Z 坐标。 |
-| `keyboard` | `true` | 是否自动使用 `xterm` 打开键盘遥控终端。 |
+| `keyboard` | `true` | 是否自动使用 `xterm` 打开键盘遥控终端。当前代码仍依赖 `xterm`，并未改成系统默认终端；若未安装 `xterm`，可改用 `keyboard:=false` 后手动运行遥控命令。 |
 | `speed` | `1.99999` | 键盘遥操作线速度。 |
 | `turn` | `0.99999` | 键盘遥操作角速度。 |
 
-## 6. 运行后应该看到的关键节点与话题
+## 7. 运行后应该看到的关键节点与话题
 
-### 6.1 关键节点与控制器状态
+### 7.1 关键节点与控制器状态
 
 可用以下命令检查：
 
@@ -298,7 +336,7 @@ ros2 control list_controllers
 - `joint_state_broadcaster`
 - `diff_drive_controller`
 
-### 6.2 关键话题
+### 7.2 关键话题
 
 可用以下命令检查：
 
@@ -319,7 +357,7 @@ ros2 topic list
 - `/diff_drive_controller/cmd_vel_unstamped`
 - `/joint_states`
 
-### 6.3 推荐验证顺序
+### 7.3 推荐验证顺序
 
 1. 先确认 Gazebo 场景与机器人已经生成。
 2. 确认 `/scan_front` 和 `/scan_rear` 有数据。
@@ -327,14 +365,14 @@ ros2 topic list
 4. 确认 `/map` 已发布。
 5. 用键盘遥控机器人移动，观察 RViz 中地图是否逐步增长。
 
-## 7. `lidar_slam_launch.py` 的完整说明
+## 8. `lidar_slam_launch.py` 的完整说明
 
 `lidar_slam_launch.py` 只做两件事：
 
 1. 启动双雷达合并节点。
 2. 启动 `slam_toolbox/async_slam_toolbox_node`。
 
-### 7.1 双雷达合并节点说明
+### 8.1 双雷达合并节点说明
 
 脚本路径：
 
@@ -358,11 +396,11 @@ src/yahboom_M3Pro_description/scripts/multi_lidar_merger.py
 
 因此，SLAM 实际使用的激光雷达并不是原始单个雷达话题，而是该脚本拼接后的虚拟 360 度激光。
 
-## 8. `slam_toolbox` 全部参数解释
+## 9. `slam_toolbox` 全部参数解释
 
 `lidar_slam_launch.py` 中的 `slam_toolbox` 参数均以内联字典形式传入，没有额外 YAML 文件。下面按代码顺序解释每一项。
 
-### 8.1 时间与输入输出坐标系
+### 9.1 时间与输入输出坐标系
 
 #### `use_sim_time: True`
 
@@ -423,7 +461,7 @@ src/yahboom_M3Pro_description/scripts/multi_lidar_merger.py
 
 - 对地面移动机器人来说，`base_footprint` 更适合 2D 建图，因为它通常剔除了俯仰和翻滚影响。
 
-### 8.2 激光范围与更新频率
+### 9.2 激光范围与更新频率
 
 #### `max_laser_range: 12.0`
 
@@ -455,7 +493,7 @@ src/yahboom_M3Pro_description/scripts/multi_lidar_merger.py
 - 值更小：处理更频繁，CPU 占用更高，地图更新更快。
 - 值更大：处理更稀疏，CPU 压力更低，但快速运动时可能丢失细节。
 
-### 8.3 建图模式与地图分辨率
+### 9.3 建图模式与地图分辨率
 
 #### `mode: mapping`
 
@@ -486,7 +524,7 @@ src/yahboom_M3Pro_description/scripts/multi_lidar_merger.py
 - 更小，例如 `0.02`：地图更精细，但内存和计算开销更高。
 - 更大，例如 `0.10`：计算更省，但墙体和狭窄通道会更粗糙。
 
-### 8.4 关键帧 / 触发更新阈值
+### 9.4 关键帧 / 触发更新阈值
 
 #### `minimum_travel_distance: 0.25`
 
@@ -518,7 +556,7 @@ src/yahboom_M3Pro_description/scripts/multi_lidar_merger.py
 - 原地转弯建图较多时，可适当减小。
 - 若角度更新太敏感导致计算负担重，可适当增大。
 
-### 8.5 扫描匹配搜索窗口
+### 9.5 扫描匹配搜索窗口
 
 #### `correlation_search_space_dimension: 0.8`
 
@@ -554,7 +592,7 @@ src/yahboom_M3Pro_description/scripts/multi_lidar_merger.py
 - 更小：搜索更精细，计算量增加。
 - 更大：更快，但可能错过最优匹配点。
 
-### 8.6 匹配惩罚与匹配策略
+### 9.6 匹配惩罚与匹配策略
 
 #### `angle_variance_penalty: 1.0`
 
@@ -600,7 +638,7 @@ src/yahboom_M3Pro_description/scripts/multi_lidar_merger.py
 - 该参数属于匹配策略细节，通常不需要频繁修改。
 - 若遇到特殊环境中的匹配异常，可尝试切换为 `False` 做对比。
 
-### 8.7 扫描缓存与回环检测
+### 9.7 扫描缓存与回环检测
 
 #### `scan_buffer_size: 150`
 
@@ -661,7 +699,7 @@ src/yahboom_M3Pro_description/scripts/multi_lidar_merger.py
 - 更高：更严格，更不容易接受弱匹配。
 - 更低：更宽松，但错误匹配概率增加。
 
-## 9. 当前参数组合的整体特点
+## 10. 当前参数组合的整体特点
 
 这组参数整体偏向下面的调参思路：
 
@@ -687,9 +725,9 @@ src/yahboom_M3Pro_description/scripts/multi_lidar_merger.py
 - `loop_search_maximum_distance`
 - `link_match_minimum_response_fine`
 
-## 10. 常见问题
+## 11. 常见问题
 
-### 10.1 启动后 Gazebo GUI 崩溃，但 `gzserver` 正常
+### 11.1 启动后 Gazebo GUI 崩溃，但 `gzserver` 正常
 
 这在 WSL2 中比较常见，通常是 Gazebo Classic 的 GUI / Ogre 渲染兼容问题。可尝试：
 
@@ -711,17 +749,17 @@ wsl --shutdown
 
 关闭后重新进入 WSL，在开始菜单或终端中再次启动「Windows 终端」或输入 `wsl` 即可。然后再在 WSL 里重新执行本 launch（可先 `gui:=false` 确认无 GUI 时正常，再去掉该参数试 GUI）。
 
-### 10.2 键盘控制无法生效
+### 11.2 键盘控制无法生效
 
 检查项：
 
 1. `ros2 control list_controllers` 中 `joint_state_broadcaster` 是否为 `active`。
 2. `ros2 control list_controllers` 中 `diff_drive_controller` 是否为 `active`。
 3. 键盘指令是否发往 `/diff_drive_controller/cmd_vel_unstamped`。
-4. `xterm` 是否存在，若不存在请使用 `keyboard:=false` 手动开终端运行遥控。
-5. 若工作空间不在 `/var/robotic/yahboomcar_ws`，检查 `M3Pro.urdf` 中 `controllers.yaml` 的绝对路径是否已经同步修改。
+4. 若 `keyboard:=true`，检查 `xterm` 是否存在。若不存在，不影响 Demo 本体运行；你可以安装 `xterm`，或改用 `keyboard:=false` 后手动在自己的终端里运行带 `cmd_vel` 重映射的遥控命令。
+5. 若你刚修改过 URDF、launch 或控制器配置，请先重新 `colcon build`，再 `source install/setup.bash` 后重试。
 
-### 10.3 没有地图或地图不更新
+### 11.3 没有地图或地图不更新
 
 建议按顺序检查：
 
@@ -730,7 +768,7 @@ wsl --shutdown
 3. `/slam_toolbox` 节点是否存在。
 4. `tf` 中是否存在 `map -> odom -> base_footprint` 链路。
 
-### 10.4 机器人生成失败
+### 11.4 机器人生成失败
 
 检查：
 
@@ -739,7 +777,7 @@ wsl --shutdown
 3. `robot_description` 是否正确发布。
 4. URDF 中是否包含不兼容的 XML 声明或解析错误。
 
-## 11. 推荐调试命令
+## 12. 推荐调试命令
 
 ```bash
 ros2 node list
@@ -750,7 +788,7 @@ ros2 run tf2_tools view_frames
 ros2 control list_controllers
 ```
 
-## 12. 适用场景
+## 13. 适用场景
 
 该 launch 更适合以下用途：
 
