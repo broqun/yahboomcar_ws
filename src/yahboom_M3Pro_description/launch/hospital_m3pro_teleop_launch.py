@@ -161,18 +161,6 @@ def generate_launch_description():
         print(f"解析 URDF 失败: {e}")
         robot_description = ParameterValue("", value_type=str)
 
-    # joint_state_publisher: 发布关节状态，robot_state_publisher 据此计算完整 TF 树（含 Camera）
-    # Gazebo 的 joint_state 插件可能因 model 前缀等原因与 robot_state_publisher 不兼容，
-    # 使用 ROS 节点更可靠（与 display_launch 一致）
-    # joint_state_publisher = Node(
-    #     package='joint_state_publisher',
-    #     executable='joint_state_publisher',
-    #     name='joint_state_publisher',
-    #     output='screen',
-    #     parameters=[{'use_sim_time': True}],
-    #     # 无 description_file 时从 /robot_description topic 订阅（由 robot_state_publisher 发布）
-    # )
-
     # Robot state publisher
     robot_state_publisher = Node(
         package='robot_state_publisher',
