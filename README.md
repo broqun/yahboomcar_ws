@@ -12,6 +12,12 @@ src/yahboom_M3Pro_description/launch/gazebo_hospital_slam_demo_launch.py
 - `gazebo_hospital_slam_demo_launch.py`
 - 基于医院场景的 Gazebo + M3Pro + 双雷达 SLAM 演示
 
+当前工作空间的主要技术基础为：
+
+- ROS 2
+- ROS 2 Control
+- Gazebo Classic
+
 ## 1. 依赖包安装
 
 如果只想快速检查并安装 `yahboom_M3Pro_description` 当前声明的依赖，可进入功能包目录执行：
@@ -24,8 +30,6 @@ rosdep install --from-paths . --ignore-src -r -y
 说明：
 
 - 这条命令会基于当前目录下功能包的 `package.xml` 解析缺失依赖。
-- `xterm` 不在 `package.xml` 中，因此通常不会被 `rosdep` 自动安装。
-- 即使没有安装 `xterm`，Demo 仍可运行；只是 `keyboard:=true` 时不会自动弹出键盘遥控终端，可改用 `keyboard:=false` 后手动运行遥控命令。
 
 ## 2. 环境配置
 

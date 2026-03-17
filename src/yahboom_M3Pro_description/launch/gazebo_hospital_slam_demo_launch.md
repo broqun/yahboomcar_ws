@@ -65,8 +65,6 @@ rosdep install --from-paths . --ignore-src -r -y
 
 这条命令会基于当前目录下功能包的 `package.xml`，自动解析系统里缺失的 ROS / Ubuntu 依赖并尝试安装。这样更适合只检查 `yahboom_M3Pro_description` 本身，而不是一次处理整个工作区。
 
-需要特别注意：`rosdep` 主要处理 `package.xml` 中声明的依赖。当前 `hospital_m3pro_teleop_launch.py` 在 `keyboard:=true` 时会调用 `xterm` 自动打开键盘遥控终端，但 `xterm` 不是本包 `package.xml` 里的依赖项，因此通常不会被上面的 `rosdep` 命令自动安装。不过这**不会阻止 Demo 本体运行**，如果系统里没有 `xterm`，只需使用 `keyboard:=false` 启动，再手动在你自己的终端里运行遥控命令即可。
-
 | 依赖包 | 用途 |
 |--------|------|
 | **Launch / RViz / URDF** | |
@@ -88,6 +86,7 @@ rosdep install --from-paths . --ignore-src -r -y
 | **遥操作与 SLAM** | |
 | `slam_toolbox` | 异步建图节点（本 launch 使用 `/scan_merged`）。 |
 | `teleop_twist_keyboard` | 键盘遥操作。 |
+| `xterm` | `keyboard:=true` 时用于自动打开键盘遥控终端。 |
 | **深度图相关（其它 launch）** | |
 | `cartographer_ros` | 深度图 + Cartographer 建图 launch 使用。 |
 | `depthimage_to_laserscan` | 深度图转激光话题。 |
@@ -95,7 +94,7 @@ rosdep install --from-paths . --ignore-src -r -y
 | `message_filters` | `scripts/multi_lidar_merger.py` 中激光同步。 |
 | `sensor_msgs` | `multi_lidar_merger.py` 中 `LaserScan` 消息。 |
 
-仅运行本说明中的 `gazebo_hospital_slam_demo_launch.py` 时，与医院 + 双雷达 SLAM 直接相关的是：`ament_index_python`、`launch`、`launch_ros`、`rclpy`、`gazebo_ros`、`gazebo_ros2_control`、`robot_state_publisher`、`rviz2`、`xacro`、`controller_manager`、`diff_drive_controller`、`joint_state_broadcaster`、`slam_toolbox`、`teleop_twist_keyboard`、`message_filters`、`sensor_msgs`；其余为同包其它 launch 或通用依赖。
+仅运行本说明中的 `gazebo_hospital_slam_demo_launch.py` 时，与医院 + 双雷达 SLAM 直接相关的是：`ament_index_python`、`launch`、`launch_ros`、`rclpy`、`gazebo_ros`、`gazebo_ros2_control`、`robot_state_publisher`、`rviz2`、`xacro`、`controller_manager`、`diff_drive_controller`、`joint_state_broadcaster`、`slam_toolbox`、`teleop_twist_keyboard`、`xterm`、`message_filters`、`sensor_msgs`；其余为同包其它 launch 或通用依赖。
 
 ### 3.2 建议先在 `~/.bashrc` 中配置环境变量
 
@@ -148,7 +147,7 @@ source ~/.bashrc
 2. `aws_robomaker_hospital_world` 要么已经安装到 ROS 2 环境中，要么存在于当前工作区的 `src/aws-robomaker-hospital-world`。
 3. Gazebo 能找到医院场景模型和 `yahboom_M3Pro_description` 的机器人资源。
 4. `teleop_twist_keyboard`、`gazebo_ros`、`robot_state_publisher`、`xacro`、`slam_toolbox`、`controller_manager` 可用。
-5. `xterm` 不是 Demo 必需依赖。只有在 `keyboard:=true`、希望 launch 自动弹出键盘控制终端时才需要它；若未安装，也可以使用 `keyboard:=false` 正常启动 Demo，再手动运行遥控命令。
+5. 如果使用 `keyboard:=true`，系统中需要有 `xterm`，否则自动弹出的键盘控制终端无法启动。
 6. 若使用 GUI，WSL2 或远程桌面环境的 OpenGL / Gazebo GUI 兼容性正常。
 
 建议在工作区根目录运行。可分步执行，或用一条 `&&` 整合命令一次完成：

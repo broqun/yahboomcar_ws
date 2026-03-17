@@ -29,6 +29,7 @@
   <!-- Teleop & SLAM -->
   <exec_depend>slam_toolbox</exec_depend>
   <exec_depend>teleop_twist_keyboard</exec_depend>
+  <exec_depend>xterm</exec_depend>
 
   <!-- Depth-based SLAM launches -->
   <exec_depend>cartographer_ros</exec_depend>
