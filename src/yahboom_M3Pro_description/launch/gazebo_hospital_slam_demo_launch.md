@@ -16,7 +16,7 @@
    - `joint_state_broadcaster`
    - `diff_drive_controller`
 
-从代码注释看，它等价于按顺序执行下面几步：
+它等价于按顺序执行下面几步：
 
 ```bash
 ros2 launch yahboom_M3Pro_description hospital_m3pro_teleop_launch.py
