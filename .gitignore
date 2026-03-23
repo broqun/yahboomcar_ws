@@ -38,6 +38,10 @@ src/yahboom_yolov8/
 # 忽略 VS Code 配置
 .vscode/
 
+# 忽略 Python 字节码缓存
+**/__pycache__/
+*.pyc
+
 *.dat
 *.whl
 *.pth

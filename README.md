@@ -1,25 +1,5 @@
 # `yahboomcar_ws` 简要说明
 
-当前工作空间保留 `src/aws-robomaker-hospital-world/`，主要是为了给下面这个医院 SLAM Demo 提供 Gazebo 场景：
-
-```text
-src/yahboom_m3pro_slam_demo/launch/gazebo_hospital_slam_demo_launch.py
-```
-
-当前这套演示链路由两个自维护功能包组成：
-
-- `yahboom_m3pro_slam_demo`
-  - 负责 Gazebo 医院场景、机器人生成、RViz、键盘遥操作、`slam_toolbox` 启动
-- `yahboom_m3pro_lidar_tools`
-  - 负责 C++ 双雷达融合节点 `multi_lidar_merger_node`
-
-也就是说，当前开发和验证的重点主要是：
-
-- `yahboom_m3pro_slam_demo`
-- `yahboom_m3pro_lidar_tools`
-- `gazebo_hospital_slam_demo_launch.py`
-- 基于医院场景的 Gazebo + M3Pro + 双雷达 SLAM 演示
-
 当前工作空间的主要技术基础为：
 
 - ROS 2
@@ -172,12 +152,4 @@ clear;clear && colcon build --packages-select yahboom_m3pro_slam_demo yahboom_m3
 
 ```bash
 cd /var/robotic/yahboomcar_ws
-```
-
-## 5. 更详细说明
-
-更完整的手动建图启动流程、参数说明、常见问题和调试方法，请参考：
-
-```text
-src/yahboom_m3pro_slam_demo/launch/gazebo_hospital_slam_demo_launch.md
 ```

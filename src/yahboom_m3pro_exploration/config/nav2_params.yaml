@@ -53,8 +53,11 @@ bt_navigator:
 controller_server:
   ros__parameters:
     use_sim_time: true
-    # 当前医院场景以低速稳定行为优先，先保守配置控制器频率和目标容差。
-    controller_frequency: 10.0
+    # 当前医院场景里经常会遇到“前方近障碍、需要先转再走”的情况，
+    # 因此速度策略采用“开阔区域更快、近障碍自动降速”。
+    # 下面把开放区域巡航速度适度抬高，同时保留 cost regulation，
+    # 让机器人在已探明的空旷区域更积极，在贴墙/近障碍时仍然会慢下来。
+    controller_frequency: 15.0
     min_x_velocity_threshold: 0.001
     min_y_velocity_threshold: 0.5
     min_theta_velocity_threshold: 0.001
@@ -71,26 +74,26 @@ controller_server:
     general_goal_checker:
       plugin: nav2_controller::SimpleGoalChecker
       stateful: true
-      xy_goal_tolerance: 0.20
-      yaw_goal_tolerance: 0.20
+      xy_goal_tolerance: 0.10
+      yaw_goal_tolerance: 0.15
     FollowPath:
       plugin: nav2_regulated_pure_pursuit_controller::RegulatedPurePursuitController
-      desired_linear_vel: 0.35
-      lookahead_dist: 0.6
-      min_lookahead_dist: 0.3
-      max_lookahead_dist: 0.9
+      desired_linear_vel: 0.45
+      lookahead_dist: 0.55
+      min_lookahead_dist: 0.20
+      max_lookahead_dist: 0.90
       lookahead_time: 1.5
-      rotate_to_heading_angular_vel: 0.8
+      rotate_to_heading_angular_vel: 1.0
       transform_tolerance: 0.2
       use_velocity_scaled_lookahead_dist: true
-      min_approach_linear_velocity: 0.05
-      approach_velocity_scaling_dist: 0.6
+      min_approach_linear_velocity: 0.08
+      approach_velocity_scaling_dist: 0.7
       use_collision_detection: true
       max_allowed_time_to_collision_up_to_carrot: 1.0
       use_regulated_linear_velocity_scaling: true
       use_cost_regulated_linear_velocity_scaling: true
-      regulated_linear_scaling_min_radius: 0.9
-      regulated_linear_scaling_min_speed: 0.05
+      regulated_linear_scaling_min_radius: 0.8
+      regulated_linear_scaling_min_speed: 0.08
 
 local_costmap:
   local_costmap:
@@ -132,7 +135,10 @@ global_costmap:
   global_costmap:
     ros__parameters:
       use_sim_time: true
-      # 全局代价地图挂在 map 下，直接消费 slam_toolbox 持续生成的地图。
+      # 全局代价地图直接消费 slam_toolbox 输出的 /map。
+      # 对当前这套“边建图边探索”的流程，global costmap 再叠加一层实时激光障碍，
+      # 很容易在起步阶段把机器人起点也判进 lethal space，导致 planner 一直报
+      # "Starting point in lethal space"。这里先只保留静态地图层。
       update_frequency: 1.0
       publish_frequency: 1.0
       global_frame: map
@@ -142,28 +148,14 @@ global_costmap:
       footprint: "[[0.20, 0.16], [0.20, -0.16], [-0.20, -0.16], [-0.20, 0.16]]"
       plugins:
         - static_layer
-        - obstacle_layer
         - inflation_layer
       static_layer:
         plugin: nav2_costmap_2d::StaticLayer
         map_subscribe_transient_local: true
-      obstacle_layer:
-        plugin: nav2_costmap_2d::ObstacleLayer
-        observation_sources: scan
-        scan:
-          topic: /scan_merged
-          max_obstacle_height: 2.0
-          clearing: true
-          marking: true
-          data_type: LaserScan
-          raytrace_max_range: 12.0
-          raytrace_min_range: 0.05
-          obstacle_max_range: 10.0
-          obstacle_min_range: 0.05
       inflation_layer:
         plugin: nav2_costmap_2d::InflationLayer
         cost_scaling_factor: 3.0
-        inflation_radius: 0.45
+        inflation_radius: 0.35
       always_send_full_costmap: true
 
 map_server:
@@ -180,14 +172,16 @@ map_saver:
 planner_server:
   ros__parameters:
     use_sim_time: true
-    # 先使用 Navfn 做最小可用全局规划，后续如有需要再换 A* / Smac。
+    # Smac2D 在这套启动阶段对“起点是否落在 lethal cell”更敏感，
+    # 目前日志里已经明确出现持续的 "Starting point in lethal space"。
+    # 这里先切回更宽容的 Navfn，让机器人重新具备起步能力。
     expected_planner_frequency: 5.0
     planner_plugins:
       - GridBased
     GridBased:
       plugin: nav2_navfn_planner/NavfnPlanner
       tolerance: 0.5
-      use_astar: false
+      use_astar: true
       allow_unknown: true
 
 behavior_server:
@@ -225,10 +219,11 @@ velocity_smoother:
     smoothing_frequency: 20.0
     scale_velocities: false
     feedback: "OPEN_LOOP"
-    max_velocity: [0.5, 0.0, 1.0]
+    # 给控制器更高的线速度上限，避免开放区域里还没来得及提速就被 smoother 卡住。
+    max_velocity: [0.65, 0.0, 1.2]
     min_velocity: [-0.3, 0.0, -1.0]
-    max_accel: [0.5, 0.0, 1.5]
-    max_decel: [-0.5, 0.0, -1.5]
+    max_accel: [0.8, 0.0, 1.8]
+    max_decel: [-0.8, 0.0, -1.8]
     odom_topic: /odom
     velocity_timeout: 1.0
 
