@@ -9,21 +9,21 @@ def get_multi_lidar_merger_script_path():
     """Resolve multi_lidar_merger.py from source or install layout."""
     current = Path(__file__).resolve().parent
 
-    # source layout: src/yahboom_M3Pro_description/launch/...
+    # source layout: src/yahboom_m3pro_slam_demo/launch/...
     direct_candidate = current.parent / 'scripts' / 'multi_lidar_merger.py'
     if direct_candidate.exists():
         return direct_candidate
 
-    # install layout: install/.../share/yahboom_M3Pro_description/launch/...
+    # install layout: install/.../share/yahboom_m3pro_slam_demo/launch/...
     # Walk upwards until we can locate the workspace source tree.
     for base in current.parents:
-        candidate = base / 'src' / 'yahboom_M3Pro_description' / 'scripts' / 'multi_lidar_merger.py'
+        candidate = base / 'src' / 'yahboom_m3pro_slam_demo' / 'scripts' / 'multi_lidar_merger.py'
         if candidate.exists():
             return candidate
 
     raise FileNotFoundError(
         'multi_lidar_merger.py not found. Expected it under '
-        'src/yahboom_M3Pro_description/scripts/.'
+        'src/yahboom_m3pro_slam_demo/scripts/.'
     )
 
 def generate_launch_description():
@@ -32,9 +32,15 @@ def generate_launch_description():
     return LaunchDescription([
         
         # 1. 启动打好补丁的 360° 双雷达合并 Python 节点
-        ExecuteProcess(
-            cmd=['python3', str(merger_script)],
-            output='screen'
+        # ExecuteProcess(
+        #     cmd=['python3', str(merger_script)],
+        #     output='screen'
+        # ),
+        Node(
+            package='yahboom_m3pro_lidar_tools',
+            executable='multi_lidar_merger_node',
+            name='multi_lidar_merger',
+            output='screen',
         ),
 
         # 2. 启动 SLAM Toolbox

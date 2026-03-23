@@ -33,9 +33,9 @@
 [gzclient-2] [Msg] Waiting for master.
 [gzclient-2] [Msg] Connected to gazebo master @ http://127.0.0.1:11345
 [gzclient-2] [Msg] Publicized address: 10.255.255.254
-[gzclient-2] [Err] [InsertModelWidget.cc:403] Missing model.config for model "/var/robotic/yahboomcar_ws/install/yahboom_M3Pro_description/share/ament_index"
-[gzclient-2] [Err] [InsertModelWidget.cc:403] Missing model.config for model "/var/robotic/yahboomcar_ws/install/yahboom_M3Pro_description/share/colcon-core"
-[gzclient-2] [Err] [InsertModelWidget.cc:403] Missing model.config for model "/var/robotic/yahboomcar_ws/install/yahboom_M3Pro_description/share/yahboom_M3Pro_description"
+[gzclient-2] [Err] [InsertModelWidget.cc:403] Missing model.config for model "/var/robotic/yahboomcar_ws/install/yahboom_m3pro_slam_demo/share/ament_index"
+[gzclient-2] [Err] [InsertModelWidget.cc:403] Missing model.config for model "/var/robotic/yahboomcar_ws/install/yahboom_m3pro_slam_demo/share/colcon-core"
+[gzclient-2] [Err] [InsertModelWidget.cc:403] Missing model.config for model "/var/robotic/yahboomcar_ws/install/yahboom_m3pro_slam_demo/share/yahboom_m3pro_slam_demo"
 [gzclient-2] [Err] [InsertModelWidget.cc:403] Missing model.config for model "/var/robotic/yahboomcar_ws/src/M3Pro_MoveIt_demo"
 [gzclient-2] [Err] [InsertModelWidget.cc:403] Missing model.config for model "/var/robotic/yahboomcar_ws/src/M3Pro_config"
 [gzclient-2] [Err] [InsertModelWidget.cc:403] Missing model.config for model "/var/robotic/yahboomcar_ws/src/M3Pro_demo"
@@ -59,7 +59,7 @@
 [gzclient-2] [Err] [InsertModelWidget.cc:403] Missing model.config for model "/var/robotic/yahboomcar_ws/src/test_config"
 [gzclient-2] [Err] [InsertModelWidget.cc:403] Missing model.config for model "/var/robotic/yahboomcar_ws/src/test_moveit_config"
 [gzclient-2] [Err] [InsertModelWidget.cc:403] Missing model.config for model "/var/robotic/yahboomcar_ws/src/yahboom_M3Pro_DepthCam"
-[gzclient-2] [Err] [InsertModelWidget.cc:403] Missing model.config for model "/var/robotic/yahboomcar_ws/src/yahboom_M3Pro_description"
+[gzclient-2] [Err] [InsertModelWidget.cc:403] Missing model.config for model "/var/robotic/yahboomcar_ws/src/yahboom_m3pro_slam_demo"
 [gzclient-2] [Err] [InsertModelWidget.cc:403] Missing model.config for model "/var/robotic/yahboomcar_ws/src/yahboom_M3Pro_laser"
 [gzclient-2] [Err] [InsertModelWidget.cc:403] Missing model.config for model "/var/robotic/yahboomcar_ws/src/yahboom_yolov8"
 [gzclient-2] [Err] [InsertModelWidget.cc:403] Missing model.config for model "/var/robotic/yahboomcar_ws/src/yahboomcar_ctrl"
@@ -131,7 +131,7 @@
 [gzserver-1] [INFO] [1773498607.893226151] [gazebo_ros2_control]: Starting gazebo_ros2_control plugin in ros 2 node: gazebo_ros2_control
 [gzserver-1] [INFO] [1773498607.896900845] [gazebo_ros2_control]: connected to service!! robot_state_publisher
 [gzserver-1] [INFO] [1773498607.897766518] [gazebo_ros2_control]: Received urdf from param server, parsing...
-[gzserver-1] [INFO] [1773498607.897872979] [gazebo_ros2_control]: Loading parameter files /var/robotic/yahboomcar_ws/src/yahboom_M3Pro_description/config/controllers.yaml
+[gzserver-1] [INFO] [1773498607.897872979] [gazebo_ros2_control]: Loading parameter files /var/robotic/yahboomcar_ws/src/yahboom_m3pro_slam_demo/config/controllers.yaml
 [gzserver-1] [INFO] [1773498607.909443650] [gazebo_ros2_control]: Loading joint: lwheel1_Joint
 [gzserver-1] [INFO] [1773498607.909492124] [gazebo_ros2_control]:       State:
 [gzserver-1] [INFO] [1773498607.909497310] [gazebo_ros2_control]:                position

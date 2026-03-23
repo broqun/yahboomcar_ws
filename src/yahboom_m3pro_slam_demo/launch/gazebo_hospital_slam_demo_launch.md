@@ -1,6 +1,6 @@
 # `gazebo_hospital_slam_demo_launch.py` 使用说明
 
-本文档基于当前仓库 `src/yahboom_M3Pro_description/` 下实际存在的 `launch/`、`scripts/`、`urdf/`、`config/` 文件进行整理，说明 `src/yahboom_M3Pro_description/launch/gazebo_hospital_slam_demo_launch.py` 的用途、启动流程、运行方法、可用参数，以及它所 `include` 的 `src/yahboom_M3Pro_description/launch/lidar_slam_launch.py` 中全部 SLAM 参数的含义与调参建议。
+本文档基于当前仓库 `src/yahboom_m3pro_slam_demo/` 与 `src/yahboom_m3pro_lidar_tools/` 下实际存在的 `launch/`、`urdf/`、`config/`、`src/` 文件进行整理，说明 `src/yahboom_m3pro_slam_demo/launch/gazebo_hospital_slam_demo_launch.py` 的用途、启动流程、运行方法、可用参数，以及它所 `include` 的 `src/yahboom_m3pro_slam_demo/launch/lidar_slam_launch.py` 中全部 SLAM 参数的含义与调参建议。
 
 ## 1. 文件作用
 
@@ -10,7 +10,7 @@
 2. M3Pro 机器人模型与 `robot_state_publisher`。
 3. RViz。
 4. 键盘遥操作。
-5. 双激光雷达数据合并节点。
+5. `yahboom_m3pro_lidar_tools` 包中的 C++ 双激光雷达数据合并节点。
 6. `slam_toolbox` 异步建图节点。
 7. `ros2_control` 控制器加载：
    - `joint_state_broadcaster`
@@ -19,8 +19,8 @@
 它等价于按顺序执行下面几步：
 
 ```bash
-ros2 launch yahboom_M3Pro_description hospital_m3pro_teleop_launch.py
-ros2 launch yahboom_M3Pro_description lidar_slam_launch.py
+ros2 launch yahboom_m3pro_slam_demo hospital_m3pro_teleop_launch.py
+ros2 launch yahboom_m3pro_slam_demo lidar_slam_launch.py
 ros2 run controller_manager spawner joint_state_broadcaster
 ros2 run controller_manager spawner diff_drive_controller
 ```
@@ -32,13 +32,13 @@ ros2 run controller_manager spawner diff_drive_controller
 如果你已经提前确认 `~/.bashrc`、依赖包、Gazebo (Classic) / ROS 2 环境都已经配置完成，那么最直接的启动方式就是在工作区根目录执行下面这条命令：
 
 ```bash
-clear;clear && colcon build --packages-select yahboom_M3Pro_description && source install/setup.bash && ros2 launch yahboom_M3Pro_description gazebo_hospital_slam_demo_launch.py
+clear;clear && colcon build --packages-select yahboom_m3pro_slam_demo yahboom_m3pro_lidar_tools && source install/setup.bash && ros2 launch yahboom_m3pro_slam_demo gazebo_hospital_slam_demo_launch.py
 ```
 
 这条命令会依次完成：
 
 1. 清空终端显示。
-2. 重新编译 `yahboom_M3Pro_description` 功能包。
+2. 重新编译 `yahboom_m3pro_slam_demo` 与 `yahboom_m3pro_lidar_tools` 两个功能包。
 3. `source install/setup.bash` 刷新当前工作区环境。
 4. 启动 `gazebo_hospital_slam_demo_launch.py` Demo。
 
@@ -54,16 +54,21 @@ cd /var/robotic/yahboomcar_ws
 
 ### 3.1 依赖包（package.xml）
 
-本包在 `src/yahboom_M3Pro_description/package.xml` 中声明的**运行依赖**（`exec_depend`）如下，运行本 launch 或同包内其它 launch 前需确保这些包已安装（如 `apt install ros-humble-<包名>` 或通过工作空间编译提供）：
+`gazebo_hospital_slam_demo_launch.py` 运行时至少会涉及两个功能包：
 
-如果你不想手动逐个检查依赖，也可以进入 `yahboom_M3Pro_description` 功能包目录，使用 `rosdep` 根据当前包的 `package.xml` 快速检查并安装缺失依赖。常见用法如下：
+- `yahboom_m3pro_slam_demo`
+- `yahboom_m3pro_lidar_tools`
+
+其中，`yahboom_m3pro_slam_demo` 在 `src/yahboom_m3pro_slam_demo/package.xml` 中声明的**运行依赖**（`exec_depend`）如下，运行本 launch 或同包内其它 launch 前需确保这些包已安装（如 `apt install ros-humble-<包名>` 或通过工作空间编译提供）：
+
+如果你不想手动逐个检查依赖，更建议直接在工作区根目录使用 `rosdep` 处理 `src/` 下当前所有功能包。常见用法如下：
 
 ```bash
-cd /var/robotic/yahboomcar_ws/src/yahboom_M3Pro_description
-rosdep install --from-paths . --ignore-src -r -y
+cd /var/robotic/yahboomcar_ws
+rosdep install --from-paths src --ignore-src -r -y
 ```
 
-这条命令会基于当前目录下功能包的 `package.xml`，自动解析系统里缺失的 ROS / Ubuntu 依赖并尝试安装。这样更适合只检查 `yahboom_M3Pro_description` 本身，而不是一次处理整个工作区。
+这条命令会基于 `src/` 下各功能包的 `package.xml`，自动解析系统里缺失的 ROS / Ubuntu 依赖并尝试安装。由于当前 Demo 还会启动 `yahboom_m3pro_lidar_tools` 里的 C++ 节点，所以这种方式比只检查 `yahboom_m3pro_slam_demo` 更稳妥。
 
 | 依赖包 | 用途 |
 |--------|------|
@@ -71,7 +76,7 @@ rosdep install --from-paths . --ignore-src -r -y
 | `ament_index_python` | Launch 中查找包路径（如 `get_package_share_path`）。 |
 | `launch` | Python launch 脚本基础依赖。 |
 | `launch_ros` | Launch 中启动 ROS 2 节点所需。 |
-| `rclpy` | `multi_lidar_merger.py` 等 Python ROS 2 节点运行依赖。 |
+| `rclpy` | Python launch / 同包内其它 Python ROS 2 节点运行依赖。 |
 | `robot_state_publisher` | 发布机器人描述与 TF。 |
 | `rviz2` | 可视化（本 launch 使用 `spen_M3Pro_lidar_slam.rviz`）。 |
 | `xacro` | 解析 URDF 中的 xacro 表达式。 |
@@ -90,11 +95,17 @@ rosdep install --from-paths . --ignore-src -r -y
 | **深度图相关（其它 launch）** | |
 | `cartographer_ros` | 深度图 + Cartographer 建图 launch 使用。 |
 | `depthimage_to_laserscan` | 深度图转激光话题。 |
-| **双雷达合并脚本** | |
-| `message_filters` | `scripts/multi_lidar_merger.py` 中激光同步。 |
-| `sensor_msgs` | `multi_lidar_merger.py` 中 `LaserScan` 消息。 |
+| **双雷达合并（当前由外部 C++ 包提供）** | |
+| `message_filters` | `yahboom_m3pro_lidar_tools` 中双雷达近似时间同步。 |
+| `sensor_msgs` | C++ 合并节点使用 `LaserScan` 消息。 |
 
-仅运行本说明中的 `gazebo_hospital_slam_demo_launch.py` 时，与医院 + 双雷达 SLAM 直接相关的是：`ament_index_python`、`launch`、`launch_ros`、`rclpy`、`gazebo_ros`、`gazebo_ros2_control`、`robot_state_publisher`、`rviz2`、`xacro`、`controller_manager`、`diff_drive_controller`、`joint_state_broadcaster`、`slam_toolbox`、`teleop_twist_keyboard`、`xterm`、`message_filters`、`sensor_msgs`；其余为同包其它 launch 或通用依赖。
+另外，当前 `src/yahboom_m3pro_slam_demo/launch/lidar_slam_launch.py` 实际启动的是：
+
+```text
+ros2 run yahboom_m3pro_lidar_tools multi_lidar_merger_node
+```
+
+因此，仅运行本说明中的 `gazebo_hospital_slam_demo_launch.py` 时，与医院 + 双雷达 SLAM 直接相关的是：`ament_index_python`、`launch`、`launch_ros`、`rclpy`、`gazebo_ros`、`gazebo_ros2_control`、`robot_state_publisher`、`rviz2`、`xacro`、`controller_manager`、`diff_drive_controller`、`joint_state_broadcaster`、`slam_toolbox`、`teleop_twist_keyboard`、`xterm`，以及 `yahboom_m3pro_lidar_tools` 中 C++ 节点对应的 `rclcpp`、`sensor_msgs`、`message_filters`。
 
 ### 3.2 建议先在 `~/.bashrc` 中配置环境变量
 
@@ -137,7 +148,7 @@ export GAZEBO_MODEL_DATABASE_URI=""
 source ~/.bashrc
 ```
 
-这样之后再运行 `ros2 launch yahboom_M3Pro_description gazebo_hospital_slam_demo_launch.py` 时，ROS 2、Gazebo 和 WSL2 下的图形相关环境会自动生效。这里的 `GAZEBO_MODEL_DATABASE_URI=""` 只是禁止在线模型库下载，不会影响本地 `GAZEBO_MODEL_PATH` 的设置。
+这样之后再运行 `ros2 launch yahboom_m3pro_slam_demo gazebo_hospital_slam_demo_launch.py` 时，ROS 2、Gazebo 和 WSL2 下的图形相关环境会自动生效。这里的 `GAZEBO_MODEL_DATABASE_URI=""` 只是禁止在线模型库下载，不会影响本地 `GAZEBO_MODEL_PATH` 的设置。
 
 ### 3.3 启动前快速检查
 
@@ -145,8 +156,8 @@ source ~/.bashrc
 
 1. 工作区已编译，并且当前终端已经 `source install/setup.bash`。
 2. `aws_robomaker_hospital_world` 要么已经安装到 ROS 2 环境中，要么存在于当前工作区的 `src/aws-robomaker-hospital-world`。
-3. Gazebo 能找到医院场景模型和 `yahboom_M3Pro_description` 的机器人资源。
-4. `teleop_twist_keyboard`、`gazebo_ros`、`robot_state_publisher`、`xacro`、`slam_toolbox`、`controller_manager` 可用。
+3. Gazebo 能找到医院场景模型和 `yahboom_m3pro_slam_demo` 的机器人资源。
+4. `teleop_twist_keyboard`、`gazebo_ros`、`robot_state_publisher`、`xacro`、`slam_toolbox`、`controller_manager`、`yahboom_m3pro_lidar_tools` 可用。
 5. 如果使用 `keyboard:=true`，系统中需要有 `xterm`，否则自动弹出的键盘控制终端无法启动。
 6. 若使用 GUI，WSL2 或远程桌面环境的 OpenGL / Gazebo GUI 兼容性正常。
 
@@ -154,15 +165,15 @@ source ~/.bashrc
 
 ```bash
 cd /var/robotic/yahboomcar_ws
-colcon build --packages-select yahboom_M3Pro_description
+colcon build --packages-select yahboom_m3pro_slam_demo yahboom_m3pro_lidar_tools
 source install/setup.bash
-ros2 launch yahboom_M3Pro_description gazebo_hospital_slam_demo_launch.py
+ros2 launch yahboom_m3pro_slam_demo gazebo_hospital_slam_demo_launch.py
 ```
 
 或一条命令（编译 + source + 启动）：
 
 ```bash
-cd /var/robotic/yahboomcar_ws && colcon build --packages-select yahboom_M3Pro_description && source install/setup.bash && ros2 launch yahboom_M3Pro_description gazebo_hospital_slam_demo_launch.py
+cd /var/robotic/yahboomcar_ws && colcon build --packages-select yahboom_m3pro_slam_demo yahboom_m3pro_lidar_tools && source install/setup.bash && ros2 launch yahboom_m3pro_slam_demo gazebo_hospital_slam_demo_launch.py
 ```
 
 ## 4. 启动流程
@@ -180,7 +191,7 @@ cd /var/robotic/yahboomcar_ws && colcon build --packages-select yahboom_M3Pro_de
 3. 设置 `GAZEBO_MODEL_PATH`，包含：
    - 医院场景的 `models/`
    - 医院场景的 `fuel_models/`
-   - `yahboom_M3Pro_description` 的 package share 上级目录，用于解析 `package://yahboom_M3Pro_description/meshes/...`
+   - `yahboom_m3pro_slam_demo` 的 package share 上级目录，用于解析 `package://yahboom_m3pro_slam_demo/meshes/...`
    - 若当前环境里已经存在 `GAZEBO_MODEL_PATH`，还会把旧值追加到新路径后面，而不是直接覆盖
 4. 启动 `gzserver`。
 5. 视 `gui` 参数决定是否启动 `gzclient`。
@@ -222,12 +233,14 @@ cd /var/robotic/yahboomcar_ws && colcon build --packages-select yahboom_M3Pro_de
 
 主 launch 同时 `include` `lidar_slam_launch.py`，后者会依次启动：
 
-1. `multi_lidar_merger.py`
+1. `yahboom_m3pro_lidar_tools` 包中的 `multi_lidar_merger_node`
 2. `slam_toolbox` 的 `async_slam_toolbox_node`
 
 #### 双雷达合并节点的数据流
 
-`multi_lidar_merger.py` 订阅：
+当前不是由同包 Python 脚本发布 `/scan_merged`，而是由 `yahboom_m3pro_lidar_tools` 中的 C++ 节点发布。
+
+该节点订阅：
 
 - `/scan_front`
 - `/scan_rear`
@@ -254,7 +267,7 @@ ros2 run controller_manager spawner diff_drive_controller
 ### 5.1 默认启动
 
 ```bash
-ros2 launch yahboom_M3Pro_description gazebo_hospital_slam_demo_launch.py
+ros2 launch yahboom_m3pro_slam_demo gazebo_hospital_slam_demo_launch.py
 ```
 
 ### 5.2 无 Gazebo GUI 启动
@@ -262,19 +275,19 @@ ros2 launch yahboom_M3Pro_description gazebo_hospital_slam_demo_launch.py
 适合 WSL2 或图形不稳定环境：
 
 ```bash
-ros2 launch yahboom_M3Pro_description gazebo_hospital_slam_demo_launch.py gui:=false
+ros2 launch yahboom_m3pro_slam_demo gazebo_hospital_slam_demo_launch.py gui:=false
 ```
 
 ### 5.3 指定初始生成位置
 
 ```bash
-ros2 launch yahboom_M3Pro_description gazebo_hospital_slam_demo_launch.py x:=0.0 y:=10.0 z:=0.01
+ros2 launch yahboom_m3pro_slam_demo gazebo_hospital_slam_demo_launch.py x:=0.0 y:=10.0 z:=0.01
 ```
 
 ### 5.4 不自动打开键盘控制终端
 
 ```bash
-ros2 launch yahboom_M3Pro_description gazebo_hospital_slam_demo_launch.py keyboard:=false
+ros2 launch yahboom_m3pro_slam_demo gazebo_hospital_slam_demo_launch.py keyboard:=false
 ```
 
 然后手动在新终端运行：
@@ -292,7 +305,7 @@ ros2 run teleop_twist_keyboard teleop_twist_keyboard --ros-args -r cmd_vel:=/dif
 ### 5.5 调整遥操作速度
 
 ```bash
-ros2 launch yahboom_M3Pro_description gazebo_hospital_slam_demo_launch.py speed:=1.0 turn:=0.5
+ros2 launch yahboom_m3pro_slam_demo gazebo_hospital_slam_demo_launch.py speed:=1.0 turn:=0.5
 ```
 
 ## 6. 可用 Launch 参数
@@ -368,15 +381,22 @@ ros2 topic list
 
 `lidar_slam_launch.py` 只做两件事：
 
-1. 启动双雷达合并节点。
+1. 启动 `yahboom_m3pro_lidar_tools` 中的双雷达合并节点。
 2. 启动 `slam_toolbox/async_slam_toolbox_node`。
 
 ### 8.1 双雷达合并节点说明
 
-脚本路径：
+当前启动的是下面这个 C++ 可执行文件：
 
 ```text
-src/yahboom_M3Pro_description/scripts/multi_lidar_merger.py
+src/yahboom_m3pro_lidar_tools/src/multi_lidar_merger_node.cpp
+```
+
+在 launch 中对应为：
+
+```text
+package='yahboom_m3pro_lidar_tools'
+executable='multi_lidar_merger_node'
 ```
 
 该节点的核心行为：
@@ -393,7 +413,7 @@ src/yahboom_M3Pro_description/scripts/multi_lidar_merger.py
 4. 将两路数据统一投影到 `base_footprint`。
 5. 发布角度范围 `[-pi, pi]`、长度 720 的 `/scan_merged`。
 
-因此，SLAM 实际使用的激光雷达并不是原始单个雷达话题，而是该脚本拼接后的虚拟 360 度激光。
+因此，SLAM 实际使用的激光雷达并不是原始单个雷达话题，而是该 C++ 节点拼接后的虚拟 360 度激光。
 
 ## 9. `slam_toolbox` 全部参数解释
 
@@ -733,7 +753,7 @@ src/yahboom_M3Pro_description/scripts/multi_lidar_merger.py
 **方案一：无 GUI 启动**
 
 ```bash
-ros2 launch yahboom_M3Pro_description gazebo_hospital_slam_demo_launch.py gui:=false
+ros2 launch yahboom_m3pro_slam_demo gazebo_hospital_slam_demo_launch.py gui:=false
 ```
 
 用 `RViz` 观察数据，先不依赖 `gzclient`。

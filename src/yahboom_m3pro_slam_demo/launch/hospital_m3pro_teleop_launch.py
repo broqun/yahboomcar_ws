@@ -40,8 +40,8 @@ def get_hospital_world_path():
     except Exception:
         pass
     # Try 2: 从当前文件向上查找 workspace，支持 source 与 install 两种布局
-    # source:  src/yahboom_M3Pro_description/launch/xxx.py
-    # install: install/yahboom_M3Pro_description/share/yahboom_M3Pro_description/launch/xxx.py
+    # source:  src/yahboom_m3pro_slam_demo/launch/xxx.py
+    # install: install/yahboom_m3pro_slam_demo/share/yahboom_m3pro_slam_demo/launch/xxx.py
     current = Path(__file__).resolve().parent
     for _ in range(8):
         # 当前层级下的 aws-robomaker-hospital-world（如在 src/ 内）
@@ -79,7 +79,7 @@ def get_hospital_model_paths():
 
 def generate_launch_description():
     # Paths
-    m3pro_share = get_package_share_path('yahboom_M3Pro_description')
+    m3pro_share = get_package_share_path('yahboom_m3pro_slam_demo')
     default_urdf = m3pro_share / 'urdf' / 'M3Pro.urdf'
     world_path = get_hospital_world_path()
     hospital_models = get_hospital_model_paths()
@@ -117,8 +117,8 @@ def generate_launch_description():
     )
 
     # Set GAZEBO_MODEL_PATH: hospital models + M3Pro package (用于解析 package:///model://)
-    # Gazebo 需要在此路径下找到 yahboom_M3Pro_description/meshes/xxx.STL
-    m3pro_model_path = str(m3pro_share.parent)  # .../share，下有 yahboom_M3Pro_description/
+    # Gazebo 需要在此路径下找到 yahboom_m3pro_slam_demo/meshes/xxx.STL
+    m3pro_model_path = str(m3pro_share.parent)  # .../share，下有 yahboom_m3pro_slam_demo/
     print(f"m3pro_model_path: {m3pro_model_path}")
     all_model_paths = [m3pro_model_path]
     if hospital_models:

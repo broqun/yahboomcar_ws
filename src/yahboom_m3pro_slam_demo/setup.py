@@ -2,7 +2,7 @@ from setuptools import find_packages, setup
 import os
 from glob import glob
 
-package_name = 'yahboom_M3Pro_description'
+package_name = 'yahboom_m3pro_slam_demo'
 
 setup(
     name=package_name,

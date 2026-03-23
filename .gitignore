@@ -3,7 +3,7 @@
 **/install/
 **/log/
 
-# 忽略 src 下除 aws-robomaker-hospital-world 和 yahboom_M3Pro_description 外的目录
+# 忽略 src 下除 aws-robomaker-hospital-world 和 yahboom_m3pro_slam_demo 外的目录
 src/arm_driver/
 src/arm_interface/
 src/arm_kin/

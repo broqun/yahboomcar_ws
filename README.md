@@ -1,14 +1,22 @@
 # `yahboomcar_ws` 简要说明
 
-当前工作空间中保留 `src/aws-robomaker-hospital-world/`，主要目的不是单独维护这个医院场景包本身，而是为了给下面这个 Demo 提供 Gazebo 医院仿真环境：
+当前工作空间保留 `src/aws-robomaker-hospital-world/`，主要是为了给下面这个医院 SLAM Demo 提供 Gazebo 场景：
 
 ```text
-src/yahboom_M3Pro_description/launch/gazebo_hospital_slam_demo_launch.py
+src/yahboom_m3pro_slam_demo/launch/gazebo_hospital_slam_demo_launch.py
 ```
+
+当前这套演示链路由两个自维护功能包组成：
+
+- `yahboom_m3pro_slam_demo`
+  - 负责 Gazebo 医院场景、机器人生成、RViz、键盘遥操作、`slam_toolbox` 启动
+- `yahboom_m3pro_lidar_tools`
+  - 负责 C++ 双雷达融合节点 `multi_lidar_merger_node`
 
 也就是说，当前开发和验证的重点主要是：
 
-- `yahboom_M3Pro_description`
+- `yahboom_m3pro_slam_demo`
+- `yahboom_m3pro_lidar_tools`
 - `gazebo_hospital_slam_demo_launch.py`
 - 基于医院场景的 Gazebo + M3Pro + 双雷达 SLAM 演示
 
@@ -20,16 +28,24 @@ src/yahboom_M3Pro_description/launch/gazebo_hospital_slam_demo_launch.py
 
 ## 1. 依赖包安装
 
-如果只想快速检查并安装 `yahboom_M3Pro_description` 当前声明的依赖，可进入功能包目录执行：
+如果只想快速检查并安装工作区 `src/` 下当前功能包声明的依赖，建议在工作区根目录执行：
 
 ```bash
-cd /var/robotic/yahboomcar_ws/src/yahboom_M3Pro_description
+cd /var/robotic/yahboomcar_ws
+rosdep install --from-paths src --ignore-src -r -y
+```
+
+如果你只想检查 Python Demo 包本身，也可以单独执行：
+
+```bash
+cd /var/robotic/yahboomcar_ws/src/yahboom_m3pro_slam_demo
 rosdep install --from-paths . --ignore-src -r -y
 ```
 
 说明：
 
-- 这条命令会基于当前目录下功能包的 `package.xml` 解析缺失依赖。
+- `gazebo_hospital_slam_demo_launch.py` 现在不仅依赖 `yahboom_m3pro_slam_demo`，还会启动 `yahboom_m3pro_lidar_tools` 中的 C++ 合并节点。
+- 因此，只安装 / 编译 `yahboom_m3pro_slam_demo` 而没有准备好 `yahboom_m3pro_lidar_tools` 时，`/scan_merged` 不会出现。
 
 ## 2. 环境配置
 
@@ -75,7 +91,7 @@ source ~/.bashrc
 假设环境变量和依赖包都已经就绪，那么最直接的启动方式是在工作区根目录执行：
 
 ```bash
-clear;clear && colcon build --packages-select yahboom_M3Pro_description && source install/setup.bash && ros2 launch yahboom_M3Pro_description gazebo_hospital_slam_demo_launch.py
+clear;clear && colcon build --packages-select yahboom_m3pro_slam_demo yahboom_m3pro_lidar_tools && source install/setup.bash && ros2 launch yahboom_m3pro_slam_demo gazebo_hospital_slam_demo_launch.py
 ```
 
 如果你当前不在工作区根目录，请先执行：
@@ -89,5 +105,5 @@ cd /var/robotic/yahboomcar_ws
 更完整的启动流程、参数说明、常见问题和调试方法，请参考：
 
 ```text
-src/yahboom_M3Pro_description/launch/gazebo_hospital_slam_demo_launch.md
+src/yahboom_m3pro_slam_demo/launch/gazebo_hospital_slam_demo_launch.md
 ```

@@ -8,7 +8,7 @@ from launch_ros.actions import Node
 from launch_ros.parameter_descriptions import ParameterValue
 
 def generate_launch_description():
-    urdf_tutorial_path = get_package_share_path('yahboom_M3Pro_description')
+    urdf_tutorial_path = get_package_share_path('yahboom_m3pro_slam_demo')
     default_model_path = urdf_tutorial_path / 'urdf/M3Pro.urdf'
 
     model_arg = DeclareLaunchArgument(name='model', default_value=str(default_model_path),

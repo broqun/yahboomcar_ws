@@ -1,25 +1,24 @@
-<!-- Remove xml declaration when migrate to Gazebo Sim and ROS2 Controller -->
-<!-- <?xml version="1.0" encoding="utf-8"?> -->
-<!-- This URDF was automatically created by SolidWorks to URDF Exporter! Originally created by
-Stephen Brawner (brawner@gmail.com) 
+<?xml version="1.0" encoding="utf-8"?>
+<!-- This URDF was automatically created by SolidWorks to URDF Exporter! Originally created by Stephen Brawner (brawner@gmail.com) 
      Commit Version: 1.6.0-1-g15f4949  Build Version: 1.6.7594.29634
      For more information, please see http://wiki.ros.org/sw_urdf_exporter -->
 <robot
   name="M3Pro">
-  <link name="base_footprint" />
-
-  <joint name="base_joint" type="fixed">
-    <parent link="base_footprint" />
-    <child link="base_link" />
-    <origin xyz="0 0 0.04" rpy="0 0 0" />
-  </joint>
-
   <link
     name="base_link">
     <inertial>
-      <origin xyz="-0.02 0 0.05" rpy="0 0 0" />
-      <mass value="4.0" />
-      <inertia ixx="0.0097" ixy="0.0" ixz="0.0" iyy="0.0145" iyz="0.0" izz="0.0218" />
+      <origin
+        xyz="-0.0230945655800945 -0.000624366433481225 0.0924263074305092"
+        rpy="0 0 0" />
+      <mass
+        value="0.870994544286568" />
+      <inertia
+        ixx="0.000924360334406296"
+        ixy="1.83790425775432E-06"
+        ixz="-6.57330050239333E-05"
+        iyy="0.000965356496722674"
+        iyz="4.19061203028733E-07"
+        izz="0.00166592475388463" />
     </inertial>
     <visual>
       <origin
@@ -27,7 +26,7 @@ Stephen Brawner (brawner@gmail.com)
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://yahboom_M3Pro_description/meshes/base_link.STL" />
+          filename="package://yahboom_m3pro_slam_demo/meshes/base_link.STL" />
       </geometry>
       <material
         name="">
@@ -36,9 +35,12 @@ Stephen Brawner (brawner@gmail.com)
       </material>
     </visual>
     <collision>
-      <origin xyz="-0.02 0 0.05" rpy="0 0 0" />
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
       <geometry>
-        <box size="0.2 0.16 0.06" />
+        <mesh
+          filename="package://yahboom_m3pro_slam_demo/meshes/base_link.STL" />
       </geometry>
     </collision>
   </link>
@@ -64,7 +66,7 @@ Stephen Brawner (brawner@gmail.com)
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://yahboom_M3Pro_description/meshes/arm1.STL" />
+          filename="package://yahboom_m3pro_slam_demo/meshes/arm1.STL" />
       </geometry>
       <material
         name="">
@@ -78,23 +80,22 @@ Stephen Brawner (brawner@gmail.com)
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://yahboom_M3Pro_description/meshes/arm1.STL" />
+          filename="package://yahboom_m3pro_slam_demo/meshes/arm1.STL" />
       </geometry>
     </collision>
   </link>
   <joint
     name="arm1_Joint"
-    type="fixed">
+    type="revolute">
     <origin
       xyz="0.033617 -1.2421E-05 0.185"
-      rpy="0 0 0" />
+      rpy="6.3751E-05 0 0.028395" />
     <parent
       link="base_link" />
     <child
       link="arm1" />
     <axis
       xyz="0 0 1" />
-    <dynamics damping="0.1" friction="0.1" />
     <limit
       lower="-1.5708"
       upper="1.5708"
@@ -123,7 +124,7 @@ Stephen Brawner (brawner@gmail.com)
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://yahboom_M3Pro_description/meshes/arm2.STL" />
+          filename="package://yahboom_m3pro_slam_demo/meshes/arm2.STL" />
       </geometry>
       <material
         name="">
@@ -137,23 +138,22 @@ Stephen Brawner (brawner@gmail.com)
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://yahboom_M3Pro_description/meshes/arm2.STL" />
+          filename="package://yahboom_m3pro_slam_demo/meshes/arm2.STL" />
       </geometry>
     </collision>
   </link>
   <joint
     name="arm2_Joint"
-    type="fixed">
+    type="revolute">
     <origin
       xyz="-0.0021522 6.1185E-05 0.033"
-      rpy="0 -${pi/4} 0" />
+      rpy="-6.3725E-05 0 -0.028422" />
     <parent
       link="arm1" />
     <child
       link="arm2" />
     <axis
       xyz="0 -1 -6.3725E-05" />
-    <dynamics damping="0.1" friction="0.2" />
     <limit
       lower="-1.5708"
       upper="1.5708"
@@ -182,7 +182,7 @@ Stephen Brawner (brawner@gmail.com)
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://yahboom_M3Pro_description/meshes/arm3.STL" />
+          filename="package://yahboom_m3pro_slam_demo/meshes/arm3.STL" />
       </geometry>
       <material
         name="">
@@ -196,23 +196,22 @@ Stephen Brawner (brawner@gmail.com)
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://yahboom_M3Pro_description/meshes/arm3.STL" />
+          filename="package://yahboom_m3pro_slam_demo/meshes/arm3.STL" />
       </geometry>
     </collision>
   </link>
   <joint
     name="arm3_Joint"
-    type="fixed">
+    type="revolute">
     <origin
       xyz="0 0 0.08285"
-      rpy="0 ${pi/2} 0" />
+      rpy="6.3702E-05 0 0.027102" />
     <parent
       link="arm2" />
     <child
       link="arm3" />
     <axis
       xyz="-0.027098 -0.99963 0" />
-    <dynamics damping="0.1" friction="0.1" />
     <limit
       lower="-1.5708"
       upper="1.5708"
@@ -241,7 +240,7 @@ Stephen Brawner (brawner@gmail.com)
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://yahboom_M3Pro_description/meshes/arm4.STL" />
+          filename="package://yahboom_m3pro_slam_demo/meshes/arm4.STL" />
       </geometry>
       <material
         name="">
@@ -255,23 +254,22 @@ Stephen Brawner (brawner@gmail.com)
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://yahboom_M3Pro_description/meshes/arm4.STL" />
+          filename="package://yahboom_m3pro_slam_demo/meshes/arm4.STL" />
       </geometry>
     </collision>
   </link>
   <joint
-    name="arm4_Joint"
-    type="fixed">
+    name="arm4_Joiint"
+    type="revolute">
     <origin
       xyz="0 0 0.08285"
-      rpy="0 ${pi/4} 0" />
+      rpy="0 0 -0.027075" />
     <parent
       link="arm3" />
     <child
       link="arm4" />
     <axis
       xyz="-2.6392E-05 -1 0" />
-    <dynamics damping="0.05" friction="0.1" />
     <limit
       lower="-1.5708"
       upper="1.5708"
@@ -300,7 +298,7 @@ Stephen Brawner (brawner@gmail.com)
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://yahboom_M3Pro_description/meshes/arm5.STL" />
+          filename="package://yahboom_m3pro_slam_demo/meshes/arm5.STL" />
       </geometry>
       <material
         name="">
@@ -314,13 +312,13 @@ Stephen Brawner (brawner@gmail.com)
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://yahboom_M3Pro_description/meshes/arm5.STL" />
+          filename="package://yahboom_m3pro_slam_demo/meshes/arm5.STL" />
       </geometry>
     </collision>
   </link>
   <joint
     name="arm5_Joint"
-    type="fixed">
+    type="revolute">
     <origin
       xyz="0.00057305 0 0.074815"
       rpy="0 0 0" />
@@ -330,7 +328,6 @@ Stephen Brawner (brawner@gmail.com)
       link="arm5" />
     <axis
       xyz="0 0 1" />
-    <dynamics damping="0.05" friction="0.05" />
     <limit
       lower="-1.5708"
       upper="1.5708"
@@ -359,7 +356,7 @@ Stephen Brawner (brawner@gmail.com)
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://yahboom_M3Pro_description/meshes/rlink1.STL" />
+          filename="package://yahboom_m3pro_slam_demo/meshes/rlink1.STL" />
       </geometry>
       <material
         name="">
@@ -373,13 +370,13 @@ Stephen Brawner (brawner@gmail.com)
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://yahboom_M3Pro_description/meshes/rlink1.STL" />
+          filename="package://yahboom_m3pro_slam_demo/meshes/rlink1.STL" />
       </geometry>
     </collision>
   </link>
   <joint
     name="rlink1_Joint"
-    type="fixed">
+    type="revolute">
     <origin
       xyz="-0.0047503 -0.012625 0.029275"
       rpy="1.5708 -0.60409 -1.5708" />
@@ -389,7 +386,6 @@ Stephen Brawner (brawner@gmail.com)
       link="rlink1" />
     <axis
       xyz="0 0 -1" />
-    <dynamics damping="0.005" friction="0.005" />
     <limit
       lower="-0.95"
       upper="0"
@@ -418,7 +414,7 @@ Stephen Brawner (brawner@gmail.com)
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://yahboom_M3Pro_description/meshes/rlink2.STL" />
+          filename="package://yahboom_m3pro_slam_demo/meshes/rlink2.STL" />
       </geometry>
       <material
         name="">
@@ -432,13 +428,13 @@ Stephen Brawner (brawner@gmail.com)
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://yahboom_M3Pro_description/meshes/rlink2.STL" />
+          filename="package://yahboom_m3pro_slam_demo/meshes/rlink2.STL" />
       </geometry>
     </collision>
   </link>
   <joint
     name="rlink2_Joint"
-    type="fixed">
+    type="continuous">
     <origin
       xyz="0.03 0 0.001"
       rpy="0 0 0.9667" />
@@ -448,7 +444,6 @@ Stephen Brawner (brawner@gmail.com)
       link="rlink2" />
     <axis
       xyz="0 0 1" />
-    <!-- <dynamics damping="0.005" friction="0.005"/> -->
     <mimic
       joint="rlink1_Joint"
       multiplier="1"
@@ -476,7 +471,7 @@ Stephen Brawner (brawner@gmail.com)
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://yahboom_M3Pro_description/meshes/llink1.STL" />
+          filename="package://yahboom_m3pro_slam_demo/meshes/llink1.STL" />
       </geometry>
       <material
         name="">
@@ -490,13 +485,13 @@ Stephen Brawner (brawner@gmail.com)
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://yahboom_M3Pro_description/meshes/llink1.STL" />
+          filename="package://yahboom_m3pro_slam_demo/meshes/llink1.STL" />
       </geometry>
     </collision>
   </link>
   <joint
     name="llink1_Joint"
-    type="fixed">
+    type="continuous">
     <origin
       xyz="-0.0044997 0.012375 0.029275"
       rpy="-1.5708 -0.60318 1.5708" />
@@ -506,7 +501,6 @@ Stephen Brawner (brawner@gmail.com)
       link="llink1" />
     <axis
       xyz="0 0 1" />
-    <!-- <dynamics damping="0.005" friction="0.005"/> -->
     <mimic
       joint="rlink1_Joint"
       multiplier="1"
@@ -534,7 +528,7 @@ Stephen Brawner (brawner@gmail.com)
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://yahboom_M3Pro_description/meshes/llink2.STL" />
+          filename="package://yahboom_m3pro_slam_demo/meshes/llink2.STL" />
       </geometry>
       <material
         name="">
@@ -548,13 +542,13 @@ Stephen Brawner (brawner@gmail.com)
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://yahboom_M3Pro_description/meshes/llink2.STL" />
+          filename="package://yahboom_m3pro_slam_demo/meshes/llink2.STL" />
       </geometry>
     </collision>
   </link>
   <joint
     name="llink2_Joint"
-    type="fixed">
+    type="continuous">
     <origin
       xyz="0.03 0 0.00125"
       rpy="0 0 -0.96762" />
@@ -564,7 +558,6 @@ Stephen Brawner (brawner@gmail.com)
       link="llink2" />
     <axis
       xyz="0 0 1" />
-    <!-- <dynamics damping="0.005" friction="0.005"/> -->
     <mimic
       joint="rlink1_Joint"
       multiplier="-1"
@@ -592,7 +585,7 @@ Stephen Brawner (brawner@gmail.com)
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://yahboom_M3Pro_description/meshes/rlink3.STL" />
+          filename="package://yahboom_m3pro_slam_demo/meshes/rlink3.STL" />
       </geometry>
       <material
         name="">
@@ -606,13 +599,13 @@ Stephen Brawner (brawner@gmail.com)
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://yahboom_M3Pro_description/meshes/rlink3.STL" />
+          filename="package://yahboom_m3pro_slam_demo/meshes/rlink3.STL" />
       </geometry>
     </collision>
   </link>
   <joint
     name="rlink3_Joint"
-    type="fixed">
+    type="continuous">
     <origin
       xyz="-0.0045001 -0.0044999 0.047275"
       rpy="1.5708 -0.61261 -1.5708" />
@@ -622,7 +615,6 @@ Stephen Brawner (brawner@gmail.com)
       link="rlink3" />
     <axis
       xyz="0 0 1" />
-    <!-- <dynamics damping="0.001" friction="0.001"/> -->
     <mimic
       joint="rlink1_Joint"
       multiplier="-1"
@@ -650,7 +642,7 @@ Stephen Brawner (brawner@gmail.com)
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://yahboom_M3Pro_description/meshes/llink3.STL" />
+          filename="package://yahboom_m3pro_slam_demo/meshes/llink3.STL" />
       </geometry>
       <material
         name="">
@@ -664,13 +656,13 @@ Stephen Brawner (brawner@gmail.com)
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://yahboom_M3Pro_description/meshes/llink3.STL" />
+          filename="package://yahboom_m3pro_slam_demo/meshes/llink3.STL" />
       </geometry>
     </collision>
   </link>
   <joint
     name="llink3_Joint"
-    type="fixed">
+    type="continuous">
     <origin
       xyz="-0.0044999 0.0045001 0.047275"
       rpy="-1.5708 -0.61516 1.5708" />
@@ -680,7 +672,6 @@ Stephen Brawner (brawner@gmail.com)
       link="llink3" />
     <axis
       xyz="0 0 1" />
-    <!-- <dynamics damping="0.001" friction="0.001"/> -->
     <mimic
       joint="rlink1_Joint"
       multiplier="1"
@@ -708,7 +699,7 @@ Stephen Brawner (brawner@gmail.com)
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://yahboom_M3Pro_description/meshes/Gripping.STL" />
+          filename="package://yahboom_m3pro_slam_demo/meshes/Gripping.STL" />
       </geometry>
       <material
         name="">
@@ -722,7 +713,7 @@ Stephen Brawner (brawner@gmail.com)
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://yahboom_M3Pro_description/meshes/Gripping.STL" />
+          filename="package://yahboom_m3pro_slam_demo/meshes/Gripping.STL" />
       </geometry>
     </collision>
   </link>
@@ -761,7 +752,7 @@ Stephen Brawner (brawner@gmail.com)
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://yahboom_M3Pro_description/meshes/DCW2.STL" />
+          filename="package://yahboom_m3pro_slam_demo/meshes/DCW2.STL" />
       </geometry>
       <material
         name="">
@@ -775,7 +766,7 @@ Stephen Brawner (brawner@gmail.com)
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://yahboom_M3Pro_description/meshes/DCW2.STL" />
+          filename="package://yahboom_m3pro_slam_demo/meshes/DCW2.STL" />
       </geometry>
     </collision>
   </link>
@@ -814,7 +805,7 @@ Stephen Brawner (brawner@gmail.com)
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://yahboom_M3Pro_description/meshes/Camera.STL" />
+          filename="package://yahboom_m3pro_slam_demo/meshes/Camera.STL" />
       </geometry>
       <material
         name="">
@@ -828,13 +819,13 @@ Stephen Brawner (brawner@gmail.com)
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://yahboom_M3Pro_description/meshes/Camera.STL" />
+          filename="package://yahboom_m3pro_slam_demo/meshes/Camera.STL" />
       </geometry>
     </collision>
   </link>
   <joint
     name="Camera_Joint"
-    type="fixed">
+    type="revolute">
     <origin
       xyz="0.0909154688773379 0.000198272120369507 0.0934842113675051"
       rpy="1.5707963267949 0 0" />
@@ -872,10 +863,8 @@ Stephen Brawner (brawner@gmail.com)
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://yahboom_M3Pro_description/meshes/lwheel1.STL" />
+          filename="package://yahboom_m3pro_slam_demo/meshes/lwheel1.STL" />
       </geometry>
-      <!-- <geometry>
-        <cylinder radius="0.04" length="0.02"/></geometry> -->
       <material
         name="">
         <color
@@ -887,13 +876,14 @@ Stephen Brawner (brawner@gmail.com)
         xyz="0 0 0"
         rpy="0 0 0" />
       <geometry>
-        <cylinder radius="0.04" length="0.02" />
+        <mesh
+          filename="package://yahboom_m3pro_slam_demo/meshes/lwheel1.STL" />
       </geometry>
     </collision>
   </link>
   <joint
     name="lwheel1_Joint"
-    type="continuous">
+    type="revolute">
     <origin
       xyz="0.0775753787975409 0.09775 0.0399999999999998"
       rpy="1.5707963267949 0 0" />
@@ -903,7 +893,11 @@ Stephen Brawner (brawner@gmail.com)
       link="lwheel1" />
     <axis
       xyz="0 0 -1" />
-    <limit effort="10.0" velocity="20.0" />
+    <limit
+      lower="0"
+      upper="0"
+      effort="0"
+      velocity="0" />
   </joint>
   <link
     name="lwheel2">
@@ -927,10 +921,8 @@ Stephen Brawner (brawner@gmail.com)
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://yahboom_M3Pro_description/meshes/lwheel2.STL" />
+          filename="package://yahboom_m3pro_slam_demo/meshes/lwheel2.STL" />
       </geometry>
-      <!-- <geometry>
-        <cylinder radius="0.04" length="0.02"/></geometry> -->
       <material
         name="">
         <color
@@ -942,13 +934,14 @@ Stephen Brawner (brawner@gmail.com)
         xyz="0 0 0"
         rpy="0 0 0" />
       <geometry>
-        <cylinder radius="0.04" length="0.02" />
+        <mesh
+          filename="package://yahboom_m3pro_slam_demo/meshes/lwheel2.STL" />
       </geometry>
     </collision>
   </link>
   <joint
     name="lwheel2_Joint"
-    type="continuous">
+    type="revolute">
     <origin
       xyz="-0.0814246212024597 0.0977499999999995 0.0399976951545867"
       rpy="1.5707963267949 0 0" />
@@ -958,7 +951,11 @@ Stephen Brawner (brawner@gmail.com)
       link="lwheel2" />
     <axis
       xyz="0 0 -1" />
-    <limit effort="10.0" velocity="20.0" />
+    <limit
+      lower="0"
+      upper="0"
+      effort="0"
+      velocity="0" />
   </joint>
   <link
     name="rwheel1">
@@ -982,10 +979,8 @@ Stephen Brawner (brawner@gmail.com)
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://yahboom_M3Pro_description/meshes/rwheel1.STL" />
+          filename="package://yahboom_m3pro_slam_demo/meshes/rwheel1.STL" />
       </geometry>
-      <!-- <geometry>
-        <cylinder radius="0.04" length="0.02"/></geometry> -->
       <material
         name="">
         <color
@@ -997,13 +992,14 @@ Stephen Brawner (brawner@gmail.com)
         xyz="0 0 0"
         rpy="0 0 0" />
       <geometry>
-        <cylinder radius="0.04" length="0.02" />
+        <mesh
+          filename="package://yahboom_m3pro_slam_demo/meshes/rwheel1.STL" />
       </geometry>
     </collision>
   </link>
   <joint
     name="rwheel1_Joint"
-    type="continuous">
+    type="revolute">
     <origin
       xyz="0.0775753787975429 -0.0977499999999993 0.0400000000000004"
       rpy="-1.5707963267949 0 0" />
@@ -1012,8 +1008,12 @@ Stephen Brawner (brawner@gmail.com)
     <child
       link="rwheel1" />
     <axis
-      xyz="0 0 1" />
-    <limit effort="10.0" velocity="20.0" />
+      xyz="0 0 -1" />
+    <limit
+      lower="0"
+      upper="0"
+      effort="0"
+      velocity="0" />
   </joint>
   <link
     name="rwheel2">
@@ -1037,7 +1037,7 @@ Stephen Brawner (brawner@gmail.com)
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://yahboom_M3Pro_description/meshes/rwheel2.STL" />
+          filename="package://yahboom_m3pro_slam_demo/meshes/rwheel2.STL" />
       </geometry>
       <material
         name="">
@@ -1050,13 +1050,14 @@ Stephen Brawner (brawner@gmail.com)
         xyz="0 0 0"
         rpy="0 0 0" />
       <geometry>
-        <cylinder radius="0.04" length="0.02" />
+        <mesh
+          filename="package://yahboom_m3pro_slam_demo/meshes/rwheel2.STL" />
       </geometry>
     </collision>
   </link>
   <joint
     name="rwheel2_Joint"
-    type="continuous">
+    type="revolute">
     <origin
       xyz="-0.0814246212024577 -0.0977500000000009 0.0399976951545873"
       rpy="-1.5707963267949 0 0" />
@@ -1065,8 +1066,12 @@ Stephen Brawner (brawner@gmail.com)
     <child
       link="rwheel2" />
     <axis
-      xyz="0 0 1" />
-    <limit effort="10.0" velocity="20.0" />
+      xyz="0 0 -1" />
+    <limit
+      lower="0"
+      upper="0"
+      effort="0"
+      velocity="0" />
   </joint>
   <link
     name="arm_base_Link">
@@ -1090,15 +1095,24 @@ Stephen Brawner (brawner@gmail.com)
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://yahboom_M3Pro_description/meshes/arm_base_Link.STL" />
+          filename="package://yahboom_m3pro_slam_demo/meshes/arm_base_Link.STL" />
       </geometry>
-
+        
       <material
         name="">
         <color
           rgba="0 0.627450980392157 0.235294117647059 1" />
       </material>
     </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://yahboom_m3pro_slam_demo/meshes/arm_base_Link.STL" />
+      </geometry>
+    </collision>
   </link>
   <joint
     name="arm_base_Joint"
@@ -1113,320 +1127,4 @@ Stephen Brawner (brawner@gmail.com)
     <axis
       xyz="0 0 0" />
   </joint>
-  <link name="camera_optical_link" />
-  <joint name="camera_optical_joint" type="fixed">
-    <parent link="DCW2" />
-    <child link="camera_optical_link" />
-    <origin xyz="0 0 0" rpy="${-pi/2} 0 ${-pi/2}" />
-  </joint>
-  <gazebo reference="arm1">
-    <material>Gazebo/Red</material>
-  </gazebo>
-  <gazebo reference="arm2">
-    <material>Gazebo/Red</material>
-  </gazebo>
-  <gazebo reference="arm3">
-    <material>Gazebo/Red</material>
-  </gazebo>
-  <gazebo reference="arm4">
-    <material>Gazebo/Red</material>
-  </gazebo>
-  <gazebo reference="arm5">
-    <material>Gazebo/Red</material>
-  </gazebo>
-  <gazebo reference="rlink1">
-    <material>Gazebo/Green</material>
-  </gazebo>
-  <gazebo reference="rlink2">
-    <material>Gazebo/Green</material>
-  </gazebo>
-  <gazebo reference="rlink3">
-    <material>Gazebo/Green</material>
-  </gazebo>
-  <gazebo reference="llink1">
-    <material>Gazebo/Green</material>
-  </gazebo>
-  <gazebo reference="llink2">
-    <material>Gazebo/Green</material>
-  </gazebo>
-  <gazebo reference="llink3">
-    <material>Gazebo/Green</material>
-  </gazebo>
-  <gazebo reference="DCW2">
-    <material>Gazebo/DarkGrey</material>
-  </gazebo>
-  <gazebo reference="base_link">
-    <material>Gazebo/Orange</material>
-  </gazebo>
-
-  <gazebo reference="lwheel1">
-    <material>Gazebo/DarkGrey</material>
-    <mu1>1.0</mu1>
-    <mu2>0.1</mu2>
-    <fdir1>1 0 0</fdir1>
-    <kp>1000000.0</kp>
-    <kd>100.0</kd>
-    <minDepth>0.001</minDepth>
-  </gazebo>
-
-  <gazebo reference="lwheel2">
-    <material>Gazebo/DarkGrey</material>
-    <mu1>1.0</mu1>
-    <mu2>0.1</mu2>
-    <fdir1>1 0 0</fdir1>
-    <kp>1000000.0</kp>
-    <kd>100.0</kd>
-    <minDepth>0.001</minDepth>
-  </gazebo>
-
-  <gazebo reference="rwheel1">
-    <material>Gazebo/DarkGrey</material>
-    <mu1>1.0</mu1>
-    <mu2>0.1</mu2>
-    <fdir1>1 0 0</fdir1>
-    <kp>1000000.0</kp>
-    <kd>100.0</kd>
-    <minDepth>0.001</minDepth>
-  </gazebo>
-
-  <gazebo reference="rwheel2">
-    <material>Gazebo/DarkGrey</material>
-    <mu1>1.0</mu1>
-    <mu2>0.1</mu2>
-    <fdir1>1 0 0</fdir1>
-    <kp>1000000.0</kp>
-    <kd>100.0</kd>
-    <minDepth>0.001</minDepth>
-  </gazebo>
-
-  <!-- <gazebo reference="lwheel1">
-    <material>Gazebo/DarkGrey</material>
-    <mu1>0.0</mu1> <mu2>0.0</mu2> <kp>1000000.0</kp> <kd>100.0</kd>
-    <minDepth>0.001</minDepth>
-  </gazebo>
-  <gazebo reference="lwheel2">
-    <material>Gazebo/DarkGrey</material>
-    <mu1>0.0</mu1>
-    <mu2>0.0</mu2>
-    <kp>1000000.0</kp>
-    <kd>100.0</kd>
-    <minDepth>0.001</minDepth>
-  </gazebo>
-  <gazebo reference="rwheel1">
-    <material>Gazebo/DarkGrey</material>
-    <mu1>0.0</mu1>
-    <mu2>0.0</mu2>
-    <kp>1000000.0</kp>
-    <kd>100.0</kd>
-    <minDepth>0.001</minDepth>
-  </gazebo>
-  <gazebo reference="rwheel2">
-    <material>Gazebo/DarkGrey</material>
-    <mu1>0.0</mu1>
-    <mu2>0.0</mu2>
-    <kp>1000000.0</kp>
-    <kd>100.0</kd>
-    <minDepth>0.001</minDepth>
-  </gazebo> -->
-
-  <gazebo reference="arm_base_Link">
-    <material>Gazebo/Green</material>
-  </gazebo>
-
-  <gazebo reference="Gripping">
-    <material>Gazebo/Grey</material>
-  </gazebo>
-  <gazebo reference="DCW2">
-    <material>Gazebo/DarkGrey</material>
-    <sensor name="dabai_dcw2" type="camera">
-      <always_on>true</always_on>
-      <update_rate>30.0</update_rate>
-      <camera name="dcw2_lens">
-        <horizontal_fov>${pi/2}</horizontal_fov>
-        <image>
-          <width>1280</width>
-          <height>720</height>
-          <format>R8G8B8</format>
-        </image>
-        <clip>
-          <near>0.1</near>
-          <far>10.0</far>
-        </clip>
-      </camera>
-
-      <plugin name="dcw2_driver" filename="libgazebo_ros_camera.so">
-        <frame_name>camera_optical_link</frame_name>
-        <min_depth>0.1</min_depth>
-        <max_depth>10.0</max_depth>
-      </plugin>
-    </sensor>
-  </gazebo>
-
-  <gazebo reference="Camera">
-    <material>Gazebo/DarkGrey</material>
-  </gazebo>
-  <!-- <gazebo>
-    <plugin name="m3pro_diff_drive" filename="libgazebo_ros_diff_drive.so">
-      <ros>
-        <remapping>cmd_vel:=cmd_vel</remapping>
-        <remapping>odom:=odom</remapping>
-      </ros>
-
-      <num_wheel_pairs>2</num_wheel_pairs>
-      <left_joint>lwheel1_Joint</left_joint>
-      <left_joint>lwheel2_Joint</left_joint>
-      <right_joint>rwheel1_Joint</right_joint>
-      <right_joint>rwheel2_Joint</right_joint>
-      <wheel_separation>0.1955</wheel_separation>
-      <wheel_diameter>0.08</wheel_diameter>
-      <wheel_separation>0.1955</wheel_separation>
-      <wheel_diameter>0.08</wheel_diameter>
-
-      <max_wheel_torque>10</max_wheel_torque>
-      <max_wheel_acceleration>4</max_wheel_acceleration>
-
-      <publish_odom>true</publish_odom>
-      <publish_odom_tf>true</publish_odom_tf>
-      <publish_wheel_tf>true</publish_wheel_tf>
-
-      <odometry_frame>odom</odometry_frame>
-      <robot_base_frame>base_footprint</robot_base_frame>
-    </plugin>
-  </gazebo> -->
-  <ros2_control name="GazeboSystem" type="system">
-    <hardware>
-      <plugin>gazebo_ros2_control/GazeboSystem</plugin>
-    </hardware>
-    <joint name="lwheel1_Joint">
-      <command_interface name="velocity">
-        <param name="min">-10</param>
-        <param name="max">10</param>
-      </command_interface>
-      <state_interface name="position"/>
-      <state_interface name="velocity"/>
-    </joint>
-    <joint name="lwheel2_Joint">
-      <command_interface name="velocity"/>
-      <state_interface name="position"/>
-      <state_interface name="velocity"/>
-    </joint>
-    <joint name="rwheel1_Joint">
-      <command_interface name="velocity"/>
-      <state_interface name="position"/>
-      <state_interface name="velocity"/>
-    </joint>
-    <joint name="rwheel2_Joint">
-      <command_interface name="velocity"/>
-      <state_interface name="position"/>
-      <state_interface name="velocity"/>
-    </joint>
-  </ros2_control>
-
-  <gazebo>
-    <plugin name="gazebo_ros2_control" filename="libgazebo_ros2_control.so">
-      <parameters>$(find yahboom_M3Pro_description)/config/controllers.yaml</parameters>
-      <robot_param>robot_description</robot_param>
-      <robot_param_node>robot_state_publisher</robot_param_node>
-    </plugin>
-  </gazebo>
-  <link name="laser_front_right_link">
-    <visual>
-      <geometry>
-        <cylinder radius="0.02" length="0.03"/>
-      </geometry>
-      <material name="black">
-        <color rgba="0.1 0.1 0.1 1"/>
-      </material>
-    </visual>
-  </link>
-
-  <joint name="laser_front_right_joint" type="fixed">
-    <parent link="base_link"/>
-    <child link="laser_front_right_link"/>
-    <origin xyz="0.12 -0.10 0.08" rpy="0 0 0"/>
-  </joint>
-
-  <link name="laser_rear_left_link">
-    <visual>
-      <geometry>
-        <cylinder radius="0.02" length="0.03"/>
-      </geometry>
-      <material name="black">
-        <color rgba="0.1 0.1 0.1 1"/>
-      </material>
-    </visual>
-  </link>
-
-  <joint name="laser_rear_left_joint" type="fixed">
-    <parent link="base_link"/>
-    <child link="laser_rear_left_link"/>
-    <origin xyz="-0.12 0.10 0.08" rpy="0 0 ${pi}"/>
-  </joint>
-
-  <gazebo reference="laser_front_right_link">
-    <material>Gazebo/Black</material>
-    <sensor type="ray" name="rplidar_front_right">
-      <pose>0 0 0 0 0 0</pose>
-      <visualize>true</visualize> <update_rate>10</update_rate>
-      <ray>
-        <scan>
-          <horizontal>
-            <samples>360</samples>
-            <resolution>1</resolution>
-            <min_angle>-2.356</min_angle>
-            <max_angle>2.356</max_angle>
-          </horizontal>
-        </scan>
-        <range>
-          <min>0.10</min>
-          <max>12.0</max>
-          <resolution>0.01</resolution>
-        </range>
-        <noise>
-          <type>gaussian</type>
-          <mean>0.0</mean>
-          <stddev>0.01</stddev>
-        </noise>
-      </ray>
-      <plugin name="laserscan_front_right" filename="libgazebo_ros_ray_sensor.so">
-        <ros><remapping>~/out:=scan_front</remapping></ros>
-        <output_type>sensor_msgs/LaserScan</output_type>
-        <frame_name>laser_front_right_link</frame_name>
-      </plugin>
-    </sensor>
-  </gazebo>
-
-  <gazebo reference="laser_rear_left_link">
-    <material>Gazebo/Black</material>
-    <sensor type="ray" name="rplidar_rear_left">
-      <pose>0 0 0 0 0 0</pose>
-      <visualize>true</visualize>
-      <update_rate>10</update_rate>
-      <ray>
-        <scan>
-          <horizontal>
-            <samples>360</samples>
-            <resolution>1</resolution>
-            <min_angle>-2.356</min_angle>
-            <max_angle>2.356</max_angle>
-          </horizontal>
-        </scan>
-        <range>
-          <min>0.10</min>
-          <max>12.0</max>
-          <resolution>0.01</resolution>
-        </range>
-        <noise>
-          <type>gaussian</type>
-          <mean>0.0</mean>
-          <stddev>0.01</stddev>
-        </noise>
-      </ray>
-      <plugin name="laserscan_rear_left" filename="libgazebo_ros_ray_sensor.so">
-        <ros><remapping>~/out:=scan_rear</remapping></ros>
-        <output_type>sensor_msgs/LaserScan</output_type>
-        <frame_name>laser_rear_left_link</frame_name>
-      </plugin>
-    </sensor>
-  </gazebo>
 </robot>

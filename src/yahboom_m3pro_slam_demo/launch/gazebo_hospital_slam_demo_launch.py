@@ -2,8 +2,8 @@
 一键启动：Gazebo 医院场景 + M3Pro 机器人 + 键盘遥操作 + SLAM 建图 + ros2_control 控制器。
 
 等效于按顺序执行：
-  1. ros2 launch yahboom_M3Pro_description hospital_m3pro_teleop_launch.py
-  2. ros2 launch yahboom_M3Pro_description lidar_slam_launch.py
+  1. ros2 launch yahboom_m3pro_slam_demo hospital_m3pro_teleop_launch.py
+  2. ros2 launch yahboom_m3pro_slam_demo lidar_slam_launch.py
   3. (约 10s 后) ros2 run controller_manager spawner joint_state_broadcaster
   4. ros2 run controller_manager spawner diff_drive_controller
 
@@ -25,7 +25,7 @@ def get_launch_path(package_name: str, launch_subpath: str) -> Path:
 
 
 def generate_launch_description():
-    pkg = 'yahboom_M3Pro_description'
+    pkg = 'yahboom_m3pro_slam_demo'
 
     # 1. 医院场景 + Gazebo + 生成 M3Pro + RViz + 键盘遥操作
     hospital_launch = IncludeLaunchDescription(
