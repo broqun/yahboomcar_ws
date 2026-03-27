@@ -2,17 +2,18 @@
 # 能接入当前 Gazebo + SLAM + 双雷达链路，后续再逐项调参。
 amcl:
   ros__parameters:
-    use_sim_time: true
+    use_sim_time: true  # 使用仿真时钟（/clock）；仿真环境必须开启，实机应改为 false。
 
 bt_navigator:
   ros__parameters:
-    use_sim_time: true
-    global_frame: map
-    robot_base_frame: base_footprint
-    odom_topic: /odom
-    bt_loop_duration: 10
-    default_server_timeout: 20
-    wait_for_service_timeout: 1000
+    use_sim_time: true  # 与全系统时钟保持一致，避免 BT 超时判断失真。
+    global_frame: map  # BT 导航的全局参考系；需与 global_costmap/planner 保持一致。
+    robot_base_frame: base_footprint  # 机器人底盘坐标系；需与 TF 树一致。
+    odom_topic: /odom  # 里程计来源；与 controller/velocity_smoother 使用同一来源更稳定。
+    # 略放宽 BT 周期，减轻 Gazebo+SLAM 高负载时 “tick rate exceeded” 告警。
+    bt_loop_duration: 16  # BT tick 周期(ms)；越小响应更快但 CPU 压力更高。
+    default_server_timeout: 20  # BT action/service 默认超时(s)。
+    wait_for_service_timeout: 1000  # 等待服务可用超时(ms)。
     plugin_lib_names:
       # Humble 默认的 navigate_through_poses BT 会用到 ComputePathThroughPoses；
       # 如果这里漏掉对应插件，bt_navigator 在 activate 阶段会直接报
@@ -52,84 +53,96 @@ bt_navigator:
 
 controller_server:
   ros__parameters:
-    use_sim_time: true
+    use_sim_time: true  # 与 Nav2 其他节点保持统一时基。
     # 当前医院场景里经常会遇到“前方近障碍、需要先转再走”的情况，
     # 因此速度策略采用“开阔区域更快、近障碍自动降速”。
     # 下面把开放区域巡航速度适度抬高，同时保留 cost regulation，
     # 让机器人在已探明的空旷区域更积极，在贴墙/近障碍时仍然会慢下来。
-    controller_frequency: 15.0
-    min_x_velocity_threshold: 0.001
-    min_y_velocity_threshold: 0.5
-    min_theta_velocity_threshold: 0.001
-    failure_tolerance: 0.3
-    progress_checker_plugin: progress_checker
+    controller_frequency: 15.0  # 控制器运行频率(Hz)；受 CPU 与 TF 更新速率影响。
+    min_x_velocity_threshold: 0.001  # 低于该线速度视为 0，抑制微抖动。
+    min_y_velocity_threshold: 0.5  # 差速底盘通常不走 y 向；保持默认阈值即可。
+    min_theta_velocity_threshold: 0.001  # 低于该角速度视为 0。
+    failure_tolerance: 0.3  # 局部控制临时失败容忍时间/余量，过小易频繁 fail。
+    progress_checker_plugin: progress_checker  # 进度检查器实例名，需与下方同名块一致。
     goal_checker_plugins:
       - general_goal_checker
-    controller_plugins:
+    controller_plugins:  # 局部控制器插件列表，可配置多种控制器做切换。
       - FollowPath
     progress_checker:
-      plugin: nav2_controller::SimpleProgressChecker
-      required_movement_radius: 0.2
-      movement_time_allowance: 10.0
+      plugin: nav2_controller::SimpleProgressChecker  # 进度检查算法。
+      required_movement_radius: 0.08  # 在允许时间内至少移动该距离才算有进展。
+      # 仿真负载高时位移反馈慢，过短会误报 Failed to make progress。
+      movement_time_allowance: 7.0
     general_goal_checker:
-      plugin: nav2_controller::SimpleGoalChecker
-      stateful: true
-      xy_goal_tolerance: 0.10
-      yaw_goal_tolerance: 0.15
+      plugin: nav2_controller::SimpleGoalChecker  # 目标到达判定器。
+      stateful: true  # 先达 xy 再收敛 yaw，提升实际停靠稳定性。
+      xy_goal_tolerance: 0.10  # 位置容差(m)。
+      yaw_goal_tolerance: 0.15  # 朝向容差(rad)。
     FollowPath:
       plugin: nav2_regulated_pure_pursuit_controller::RegulatedPurePursuitController
-      desired_linear_vel: 0.45
-      lookahead_dist: 0.55
-      min_lookahead_dist: 0.20
-      max_lookahead_dist: 0.90
-      lookahead_time: 1.5
-      rotate_to_heading_angular_vel: 1.0
-      transform_tolerance: 0.2
-      use_velocity_scaled_lookahead_dist: true
-      min_approach_linear_velocity: 0.08
-      approach_velocity_scaling_dist: 0.7
-      use_collision_detection: true
-      max_allowed_time_to_collision_up_to_carrot: 1.0
-      use_regulated_linear_velocity_scaling: true
-      use_cost_regulated_linear_velocity_scaling: true
-      regulated_linear_scaling_min_radius: 0.8
-      regulated_linear_scaling_min_speed: 0.08
+      # 开阔区域优先“向前巡航”，减少小角度就原地摆头的行为。
+      # 增大前视距离后，机器人在白色已探明区域会更倾向走顺直轨迹，
+      # 只有在明显偏航或进入狭窄区域时才触发更强的姿态修正与降速。
+      desired_linear_vel: 0.35  # 开阔区期望线速度上限；受 velocity_smoother.max_velocity 约束。
+      lookahead_dist: 0.45  # 固定前视距离基准。
+      min_lookahead_dist: 0.25  # 速度缩放前视距离下限。
+      max_lookahead_dist: 0.70  # 速度缩放前视距离上限。
+      lookahead_time: 1.5  # 基于速度的前视时间窗。
+      rotate_to_heading_angular_vel: 1.4  # 原地/准原地转向时角速度。
+      # 医院窄道/门口先原地转向易与局部障碍冲突，先关掉由 RPP 边走边纠偏。
+      use_rotate_to_heading: false  # 偏航角过大时先转向；与 rotate_to_heading_min_angle 联动。
+      rotate_to_heading_min_angle: 0.785  # 触发转向阈值(rad)。
+      transform_tolerance: 0.2  # TF 容忍延迟(s)；过小易 TF timeout。
+      use_velocity_scaled_lookahead_dist: true  # 启用速度缩放前视距离。
+      min_approach_linear_velocity: 0.15  # 接近目标时最小线速度。
+      approach_velocity_scaling_dist: 0.9  # 距目标该距离内开始降速。
+      use_collision_detection: true  # 启用前向碰撞时间预测。
+      max_allowed_time_to_collision_up_to_carrot: 0.15  # 允许碰撞时间阈值(s)；越小越保守。
+      use_regulated_linear_velocity_scaling: true  # 启用曲率限速。
+      use_cost_regulated_linear_velocity_scaling: true  # 启用代价限速（靠障碍自动降速）。
+      regulated_linear_scaling_min_radius: 0.22  # 曲率半径小于该值时加强限速。
+      regulated_linear_scaling_min_speed: 0.16  # 调速后的线速度下限。
 
 local_costmap:
   local_costmap:
     ros__parameters:
       use_sim_time: true
       # 局部代价地图挂在 odom 下，服务于局部避障与短距离跟踪。
-      update_frequency: 5.0
-      publish_frequency: 2.0
-      global_frame: odom
-      robot_base_frame: base_footprint
-      rolling_window: true
-      width: 6
-      height: 6
-      resolution: 0.05
-      footprint: "[[0.20, 0.16], [0.20, -0.16], [-0.20, -0.16], [-0.20, 0.16]]"
-      plugins:
+      update_frequency: 5.0  # 局部代价地图更新频率(Hz)。
+      publish_frequency: 2.0  # 局部代价地图发布频率(Hz)。
+      global_frame: odom  # 局部图挂在 odom，适合短时避障。
+      robot_base_frame: base_footprint  # 机器人基座坐标系。
+      rolling_window: true  # 以机器人为中心滚动窗口。
+      width: 6  # 局部图宽度(m)。
+      height: 6  # 局部图高度(m)。
+      resolution: 0.05  # 分辨率(m/cell)；越小越精细但更耗算力。
+      # 基于 URDF 估算的真实平面外廓：
+      # base collision 约 0.20 x 0.16 m，叠加轮子外扩后约 0.24 x 0.28 m。
+      # footprint: "[[0.12, 0.14], [0.12, -0.14], [-0.12, -0.14], [-0.12, 0.14]]"
+      robot_radius: 0.13  # 👈 [新增] 直径 30 厘米的完美保护罩
+      plugins:  # 局部代价图插件顺序。
         - obstacle_layer
         - inflation_layer
       inflation_layer:
         plugin: nav2_costmap_2d::InflationLayer
-        cost_scaling_factor: 3.0
-        inflation_radius: 0.45
+        # 开阔区希望更敢走中线、少做保守绕行；门口仍保留基本缓冲。
+        # 这里轻微收窄局部膨胀，让已探明白区的直线跟踪更干脆。
+        cost_scaling_factor: 5.0  # 衰减系数；越大代价值衰减越快。
+        inflation_radius: 0.25  # 膨胀半径(m)；需与 robot_radius 联动。
       obstacle_layer:
-        plugin: nav2_costmap_2d::ObstacleLayer
-        observation_sources: scan
+        plugin: nav2_costmap_2d::ObstacleLayer  # 障碍层。
+        observation_sources: scan  # 观测源名称列表。
         scan:
           # 直接复用现有双雷达融合结果，避免再对 /scan_front /scan_rear 分别建图。
           topic: /scan_merged
-          max_obstacle_height: 2.0
-          clearing: true
-          marking: true
-          data_type: LaserScan
-          raytrace_max_range: 12.0
-          raytrace_min_range: 0.05
-          obstacle_max_range: 10.0
-          obstacle_min_range: 0.05
+          max_obstacle_height: 2.0  # 障碍最大高度(m)。
+          clearing: true  # 用射线清除旧障碍。
+          marking: true  # 用观测标记障碍。
+          data_type: LaserScan  # 数据类型。
+          raytrace_max_range: 12.0  # 清障射线最大距离(m)。
+          raytrace_min_range: 0.05  # 清障射线最小距离(m)。
+          obstacle_max_range: 10.0  # 障碍写入最大距离(m)。
+          obstacle_min_range: 0.05  # 障碍写入最小距离(m)。
 
 global_costmap:
   global_costmap:
@@ -139,103 +152,121 @@ global_costmap:
       # 对当前这套“边建图边探索”的流程，global costmap 再叠加一层实时激光障碍，
       # 很容易在起步阶段把机器人起点也判进 lethal space，导致 planner 一直报
       # "Starting point in lethal space"。这里先只保留静态地图层。
-      update_frequency: 1.0
-      publish_frequency: 1.0
-      global_frame: map
-      robot_base_frame: base_footprint
-      track_unknown_space: true
-      resolution: 0.05
-      footprint: "[[0.20, 0.16], [0.20, -0.16], [-0.20, -0.16], [-0.20, 0.16]]"
-      plugins:
+      update_frequency: 1.0  # 全局代价地图更新频率(Hz)。
+      publish_frequency: 1.0  # 全局代价地图发布频率(Hz)。
+      global_frame: map  # 全局图坐标系；需与 bt_navigator/planner 对齐。
+      robot_base_frame: base_footprint  # 机器人基座坐标系。
+      track_unknown_space: true  # 保留未知区域，支持 frontier 探索。
+      resolution: 0.05  # 全局图分辨率。
+      # footprint: "[[0.12, 0.14], [0.12, -0.14], [-0.12, -0.14], [-0.12, 0.14]]"
+      robot_radius: 0.13  # 👈 [新增] 直径 30 厘米的完美保护罩
+      plugins:  # 全局图插件；当前仅静态层+膨胀层，避免起步 lethal 问题。
         - static_layer
         - inflation_layer
       static_layer:
-        plugin: nav2_costmap_2d::StaticLayer
-        map_subscribe_transient_local: true
+        plugin: nav2_costmap_2d::StaticLayer  # 静态地图层（消费 /map）。
+        map_subscribe_transient_local: true  # 使用 transient_local，晚订阅也可拿到最近地图。
       inflation_layer:
         plugin: nav2_costmap_2d::InflationLayer
-        cost_scaling_factor: 3.0
-        inflation_radius: 0.35
-      always_send_full_costmap: true
+        # 略减膨胀，减轻窄走廊在静态图上被“掐断”导致 Navfn 无解。
+        cost_scaling_factor: 5.0  # 全局图膨胀衰减参数。
+        inflation_radius: 0.25  # 全局图膨胀半径。
+      always_send_full_costmap: true  # 每次发布整张图，调试友好但带宽占用更高。
 
 map_server:
   ros__parameters:
-    use_sim_time: true
+    use_sim_time: true  # map_server 时钟源。
 
 map_saver:
   ros__parameters:
-    use_sim_time: true
-    save_map_timeout: 5.0
-    free_thresh_default: 0.25
-    occupied_thresh_default: 0.65
+    use_sim_time: true  # map_saver 时钟源。
+    save_map_timeout: 5.0  # 保存地图超时(s)。
+    free_thresh_default: 0.25  # 低于该概率阈值写为 free。
+    occupied_thresh_default: 0.65  # 高于该概率阈值写为 occupied。
 
 planner_server:
   ros__parameters:
-    use_sim_time: true
+    use_sim_time: true  # 规划器时钟源。
     # Smac2D 在这套启动阶段对“起点是否落在 lethal cell”更敏感，
     # 目前日志里已经明确出现持续的 "Starting point in lethal space"。
     # 这里先切回更宽容的 Navfn，让机器人重新具备起步能力。
-    expected_planner_frequency: 5.0
-    planner_plugins:
+    # 地图 resize / 负载高时放宽期望频率，少报 “Planner loop missed”。
+    expected_planner_frequency: 2.5  # 期望规划频率(Hz)；仅用于监控/告警。
+    planner_plugins:  # 全局规划插件列表。
       - GridBased
     GridBased:
-      plugin: nav2_navfn_planner/NavfnPlanner
-      tolerance: 0.5
-      use_astar: true
-      allow_unknown: true
+      plugin: nav2_navfn_planner/NavfnPlanner  # 当前选择 Navfn（对当前场景更宽容）。
+      # 目标落在膨胀边界或 SLAM 噪声上时，0.5m 往往不够，走廊目标易 “failed to create plan”。
+      tolerance: 1.2  # 目标附近容忍半径(m)，减轻边界/噪声引起的无解。
+      use_astar: true  # Navfn 使用 A*（否则是 Dijkstra）。
+      allow_unknown: true  # 允许在未知区域附近规划（探索场景通常需要）。
 
 behavior_server:
   ros__parameters:
-    use_sim_time: true
-    global_frame: odom
-    robot_base_frame: base_footprint
-    costmap_topic: local_costmap/costmap_raw
-    footprint_topic: local_costmap/published_footprint
-    cycle_frequency: 10.0
-    behavior_plugins:
+    use_sim_time: true  # 恢复行为节点时钟源。
+    global_frame: odom  # 恢复行为参考坐标系。
+    robot_base_frame: base_footprint  # 机器人坐标系。
+    costmap_topic: local_costmap/costmap_raw  # 恢复行为读取的局部代价图话题。
+    footprint_topic: local_costmap/published_footprint  # 机器人足迹话题。
+    cycle_frequency: 10.0  # 恢复行为执行循环频率。
+    max_rotational_vel: 1.8  # 恢复转向最大角速度。
+    min_rotational_vel: 0.6  # 恢复转向最小角速度。
+    rotational_acc_lim: 3.2  # 恢复转向角加速度限制。
+    behavior_plugins:  # 启用的恢复行为插件。
       - spin
       - backup
       - wait
     spin:
-      plugin: nav2_behaviors/Spin
+      plugin: nav2_behaviors/Spin  # 原地旋转恢复。
     backup:
-      plugin: nav2_behaviors/BackUp
+      plugin: nav2_behaviors/BackUp  # 后退恢复。
     wait:
-      plugin: nav2_behaviors/Wait
+      plugin: nav2_behaviors/Wait  # 等待行为。
 
 robot_state_publisher:
   ros__parameters:
-    use_sim_time: true
+    use_sim_time: true  # 机器人状态发布器时钟源。
 
 waypoint_follower:
   ros__parameters:
-    use_sim_time: true
-    loop_rate: 20
-    stop_on_failure: false
+    use_sim_time: true  # 航点跟随器时钟源。
+    loop_rate: 20  # 航点跟随循环频率(Hz)。
+    stop_on_failure: false  # 某航点失败后是否立即终止任务。
 
 velocity_smoother:
   ros__parameters:
-    use_sim_time: true
-    smoothing_frequency: 20.0
-    scale_velocities: false
-    feedback: "OPEN_LOOP"
+    use_sim_time: true  # 速度平滑器时钟源。
+    smoothing_frequency: 15.0  # 速度平滑频率(Hz)；应与 controller_frequency 同量级。
+    scale_velocities: false  # 是否按比例缩放三轴速度。
+    feedback: "OPEN_LOOP"  # 开环平滑；依赖命令而非闭环速度反馈。
     # 给控制器更高的线速度上限，避免开放区域里还没来得及提速就被 smoother 卡住。
-    max_velocity: [0.65, 0.0, 1.2]
-    min_velocity: [-0.3, 0.0, -1.0]
-    max_accel: [0.8, 0.0, 1.8]
-    max_decel: [-0.8, 0.0, -1.8]
-    odom_topic: /odom
-    velocity_timeout: 1.0
+    max_velocity: [0.55, 0.0, 1.8]  # [vx, vy, wz] 最大速度；会钳制控制器输出上限。
+    min_velocity: [-0.3, 0.0, -1.0]  # [vx, vy, wz] 最小速度（含倒车/反向角速度）。
+    max_accel: [0.6, 0.0, 2.5]  # [vx, vy, wz] 最大加速度。
+    max_decel: [-0.6, 0.0, -2.5]  # [vx, vy, wz] 最大减速度（负值）。
+    odom_topic: /odom  # 速度参考里程计话题。
+    velocity_timeout: 1.0  # 超时未收到新速度命令则置零(s)。
 
 lifecycle_manager_navigation:
   ros__parameters:
-    use_sim_time: true
-    autostart: true
+    use_sim_time: true  # 生命周期管理器时钟源。
+    autostart: true  # 启动后自动激活下列 Nav2 节点。
     # 这里只列导航主链路节点；地图仍由 slam_toolbox 负责持续生成。
-    node_names:
+    node_names:  # 由 lifecycle_manager 统一管理状态机的节点列表。
       - controller_server
       - planner_server
       - behavior_server
       - bt_navigator
       - waypoint_follower
       - velocity_smoother
+
+# 重要联动关系（跨模块）：
+# 1) `robot_radius`、`inflation_radius`、`candidate_clearance_radius(frontier_explorer)`：
+#    三者共同决定“离障碍多近算可行”。若前两者偏大而后者偏小，会出现 frontier 认为可走、
+#    Nav2 实际难通过的情况；反之会过度保守、可探索区域变少。
+# 2) `controller_server/FollowPath/desired_linear_vel` 与 `velocity_smoother/max_velocity[0]`：
+#    实际线速度上限取两者较小值；若 smoother 上限偏低，会让控制器提速意图失效。
+# 3) `goal_checker` 容差、`progress_checker` 阈值、`frontier_explorer` 的 `goal_*timeout`：
+#    到达判定与“卡住判定”需协调，过紧会频繁触发恢复，过松会导致长时间无效尝试。
+# 4) `global_frame/base_frame/odom_topic` 在 bt_navigator、costmap、behavior、explorer 中必须一致，
+#    否则会出现 TF 查询失败、路径验证失败或导航行为异常。

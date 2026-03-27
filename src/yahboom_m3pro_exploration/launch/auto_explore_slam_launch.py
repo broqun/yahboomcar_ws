@@ -53,6 +53,10 @@ def generate_launch_description():
         output='screen',
         parameters=[{
             'use_sim_time': use_sim_time,
+            # 单段别跳太远，减少 SLAM 图上“规划不到”和走廊里长路径卡死。
+            'max_navigation_goal_distance_m': 6.5,
+            # 窄处 0.9m 后退常撞局部 costmap，略缩短。
+            'escape_backup_distance': 0.55,
         }],
     )
 
@@ -85,9 +89,10 @@ def generate_launch_description():
         # 先启动现有 SLAM Demo，让 Gazebo、机器人、控制器、/scan_merged、/map 先稳定起来。
         LogInfo(msg='[auto_explore_slam_launch] Starting base SLAM demo.'),
         base_demo_launch,
-        # Nav2 依赖 map / odom / scan / controller 等链路，因此延迟拉起更稳妥。
+        # 医院世界较重，Gazebo / ros2_control / SLAM 初始阶段负载较高。
+        # 这里把 Nav2 和 explorer 再后移，降低 lifecycle bringup 在启动尖峰期超时的概率。
         TimerAction(
-            period=12.0,
+            period=18.0,
             actions=[
                 LogInfo(msg='[auto_explore_slam_launch] Starting Nav2 navigation stack.'),
                 nav2_launch,
@@ -95,7 +100,7 @@ def generate_launch_description():
         ),
         # explorer 需要在 Nav2 生命周期节点进入 active 后再启动，避免一上来就发目标失败。
         TimerAction(
-            period=14.0,
+            period=24.0,
             actions=[
                 LogInfo(msg='[auto_explore_slam_launch] Starting frontier explorer scaffold.'),
                 frontier_explorer,
