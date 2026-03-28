@@ -28,6 +28,7 @@
 
   <!-- Teleop & SLAM -->
   <exec_depend>m3pro_world_bringup</exec_depend>
+  <exec_depend>robot_localization</exec_depend>
   <exec_depend>slam_toolbox</exec_depend>
   <exec_depend>teleop_twist_keyboard</exec_depend>
   <exec_depend>xterm</exec_depend>

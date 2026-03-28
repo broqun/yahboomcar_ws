@@ -11,17 +11,19 @@ ekf_filter_node:
     world_frame: odom
 
     # 1. 轮式里程计配置 (只信任 X速度 和 偏航角速度)
-    odom0: diff_drive_controller/odom
+    odom0: /diff_drive_controller/odom
     odom0_config: [false, false, false,
                    false, false, false,
                    true,  false, false,
-                   false, false, true,
+                   false, false, false,
                    false, false, false]
 
-    # 2. IMU 配置 (只信任 偏航角速度，这是防止建图重叠的关键！)
-    imu0: imu/data
+    # 2. IMU 配置 (信任 偏航角 + 偏航角速度，增强碰撞后的姿态稳定性)
+    imu0: /imu/data
     imu0_config: [false, false, false,
-                  false, false, false,
+                  false, false, true,
                   false, false, false,
                   false, false, true,
                   false, false, false]
+    imu0_differential: false
+    imu0_relative: false
