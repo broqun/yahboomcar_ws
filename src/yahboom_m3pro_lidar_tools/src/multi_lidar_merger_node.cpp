@@ -1,23 +1,149 @@
+#include <ament_index_cpp/get_package_share_directory.hpp>
 #include <cmath>
+#include <cstddef>
+#include <fstream>
+#include <functional>
 #include <limits>
 #include <memory>
+#include <sstream>
+#include <stdexcept>
+#include <string>
 #include <vector>
-#include <functional>
 
+#include "message_filters/subscriber.h"
+#include "message_filters/sync_policies/approximate_time.h"
+#include "message_filters/synchronizer.h"
 #include "rclcpp/rclcpp.hpp"
 #include "sensor_msgs/msg/laser_scan.hpp"
-#include "message_filters/subscriber.h"
-#include "message_filters/synchronizer.h"
-#include "message_filters/sync_policies/approximate_time.h"
+#include "tinyxml2.h"
 
-// 将车头/车尾两路 2D 激光统一投影到 base_footprint，
-// 再重建成一条近似 360 度的虚拟 LaserScan，供 SLAM 直接使用。
+namespace
+{
+
+struct LaserOffset
+{
+  double x;
+  double y;
+  double yaw;
+};
+
+void replace_all(std::string * s, const std::string & from, const std::string & to)
+{
+  if (from.empty()) {
+    return;
+  }
+  std::size_t pos = 0;
+  while ((pos = s->find(from, pos)) != std::string::npos) {
+    s->replace(pos, from.length(), to);
+    pos += to.length();
+  }
+}
+
+std::string expand_urdf_xacro_constants(std::string text)
+{
+  replace_all(&text, "${-pi/2}", std::to_string(-M_PI / 2.0));
+  replace_all(&text, "${-pi/4}", std::to_string(-M_PI / 4.0));
+  replace_all(&text, "${pi/2}", std::to_string(M_PI / 2.0));
+  replace_all(&text, "${pi/4}", std::to_string(M_PI / 4.0));
+  replace_all(&text, "${pi}", std::to_string(M_PI));
+  return text;
+}
+
+std::string read_file(const std::string & path)
+{
+  std::ifstream in(path);
+  if (!in) {
+    throw std::runtime_error("failed to open URDF: " + path);
+  }
+  std::ostringstream buf;
+  buf << in.rdbuf();
+  return buf.str();
+}
+
+LaserOffset load_laser_mount_xy_yaw_from_urdf(
+  const std::string & urdf_path, const char * joint_name)
+{
+  const std::string xml = expand_urdf_xacro_constants(read_file(urdf_path));
+  tinyxml2::XMLDocument doc;
+  if (doc.Parse(xml.c_str()) != tinyxml2::XML_SUCCESS) {
+    throw std::runtime_error("URDF XML parse error: " + urdf_path);
+  }
+  const tinyxml2::XMLElement * robot = doc.FirstChildElement("robot");
+  if (!robot) {
+    throw std::runtime_error("no <robot> in " + urdf_path);
+  }
+  for (const tinyxml2::XMLElement * j = robot->FirstChildElement("joint"); j != nullptr;
+    j = j->NextSiblingElement("joint"))
+  {
+    const char * name = j->Attribute("name");
+    if (!name || std::string(name) != joint_name) {
+      continue;
+    }
+    const tinyxml2::XMLElement * origin = j->FirstChildElement("origin");
+    if (!origin) {
+      throw std::runtime_error(
+        std::string("joint \"") + joint_name + "\" has no <origin> in " + urdf_path);
+    }
+    const char * xyz_s = origin->Attribute("xyz");
+    const char * rpy_s = origin->Attribute("rpy");
+    if (!xyz_s || !rpy_s) {
+      throw std::runtime_error(
+        std::string("joint \"") + joint_name + "\" <origin> missing xyz/rpy in " + urdf_path);
+    }
+    double x = 0.0;
+    double y = 0.0;
+    double z = 0.0;
+    double rr = 0.0;
+    double pp = 0.0;
+    double yy = 0.0;
+    {
+      std::istringstream iss(xyz_s);
+      if (!(iss >> x >> y >> z)) {
+        throw std::runtime_error("bad xyz on joint \"" + std::string(joint_name) + "\"");
+      }
+    }
+    {
+      std::istringstream iss(rpy_s);
+      if (!(iss >> rr >> pp >> yy)) {
+        throw std::runtime_error("bad rpy on joint \"" + std::string(joint_name) + "\"");
+      }
+    }
+    return LaserOffset{x, y, yy};
+  }
+  throw std::runtime_error(
+    std::string("joint \"") + joint_name + "\" not found in " + urdf_path);
+}
+
+std::string m3pro_urdf_path()
+{
+  const std::string share = ament_index_cpp::get_package_share_directory("yahboom_m3pro_slam_demo");
+  return share + "/urdf/M3Pro.urdf";
+}
+
+}  // namespace
+
+// Merge front/rear 2D LaserScan into one virtual 360° scan on base_footprint for SLAM.
 class MultiLidarMerger : public rclcpp::Node
 {
 public:
   MultiLidarMerger()
   : Node("multi_lidar_merger")
   {
+    const std::string urdf_path = m3pro_urdf_path();
+    try {
+      front_ = load_laser_mount_xy_yaw_from_urdf(urdf_path, "laser_front_joint");
+      rear_ = load_laser_mount_xy_yaw_from_urdf(urdf_path, "laser_rear_joint");
+    } catch (const std::exception & e) {
+      RCLCPP_FATAL(get_logger(), "%s", e.what());
+      throw;
+    }
+    RCLCPP_INFO(
+      get_logger(),
+      "Laser mounts from URDF (%s): front (%.5f, %.5f, %.5f), rear (%.5f, %.5f, %.5f)",
+      urdf_path.c_str(),
+      front_.x, front_.y, front_.yaw,
+      rear_.x, rear_.y, rear_.yaw);
+
     auto qos = rclcpp::SensorDataQoS();
 
     // 两路雷达都使用传感器 QoS，尽量贴近底层激光数据的发布语义。
@@ -41,13 +167,6 @@ public:
   }
 
 private:
-  struct LaserOffset
-  {
-    double x;
-    double y;
-    double yaw;
-  };
-
   using LaserScan = sensor_msgs::msg::LaserScan;
   using SyncPolicy = message_filters::sync_policies::ApproximateTime<
     LaserScan, LaserScan>;
@@ -141,10 +260,8 @@ private:
   std::shared_ptr<message_filters::Synchronizer<SyncPolicy>> sync_;
   rclcpp::Publisher<LaserScan>::SharedPtr pub_merged_;
 
-  // 与现有 Python 版本保持一致的雷达安装外参。
-  // 若后续改 URDF 安装位姿，这里也必须同步更新，或者进一步改造成参数/TF 驱动。
-  LaserOffset front_{0.12, -0.10, 0.0};
-  LaserOffset rear_{-0.12, 0.10, M_PI};
+  LaserOffset front_{};
+  LaserOffset rear_{};
 };
 
 int main(int argc, char ** argv)

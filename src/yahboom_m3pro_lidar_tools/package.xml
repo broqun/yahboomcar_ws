@@ -9,9 +9,13 @@
 
   <buildtool_depend>ament_cmake</buildtool_depend>
 
+  <depend>ament_index_cpp</depend>
   <depend>rclcpp</depend>
   <depend>sensor_msgs</depend>
   <depend>message_filters</depend>
+  <depend>tinyxml2</depend>
+
+  <exec_depend>yahboom_m3pro_slam_demo</exec_depend>
 
   <exec_depend>launch</exec_depend>
   <exec_depend>launch_ros</exec_depend>

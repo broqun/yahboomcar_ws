@@ -850,9 +850,9 @@ Stephen Brawner (brawner@gmail.com)
       effort="0"
       velocity="0" />
   </joint>
-
+  
   <link
-    name="laser_rear_left">
+    name="laser_front">
     <visual>
       <origin
         xyz="0 0 0"
@@ -874,15 +874,15 @@ Stephen Brawner (brawner@gmail.com)
     </collision>
   </link>
   <joint
-    name="laser_rear_left_Joint"
+    name="laser_front_joint"
     type="fixed">
     <origin
-      xyz="-0.11867 0.09 0.1253"
+      xyz="0.10386 -0.09160 0.1253"
       rpy="0 0 0" />
     <parent
       link="base_link" />
     <child
-      link="laser_rear_left" />
+      link="laser_front" />
     <axis
       xyz="0 0 0" />
     <limit
@@ -891,9 +891,9 @@ Stephen Brawner (brawner@gmail.com)
       effort="0"
       velocity="0" />
   </joint>
-  
+
   <link
-    name="laser_front_right">
+    name="laser_rear">
     <visual>
       <origin
         xyz="0 0 0"
@@ -915,15 +915,15 @@ Stephen Brawner (brawner@gmail.com)
     </collision>
   </link>
   <joint
-    name="laser_front_right_Joint"
+    name="laser_rear_joint"
     type="fixed">
     <origin
-      xyz="0.10386 -0.09160 0.1253"
-      rpy="0 0 0" />
+      xyz="-0.11867 0.09 0.1253"
+      rpy="0 0 ${pi}" />
     <parent
       link="base_link" />
     <child
-      link="laser_front_right" />
+      link="laser_rear" />
     <axis
       xyz="0 0 0" />
     <limit
@@ -1424,7 +1424,7 @@ Stephen Brawner (brawner@gmail.com)
     </visual>
   </link>
 
-  <joint name="laser_front_right_joint" type="fixed">
+  <joint name="laser_front_right_joint_to_remove" type="fixed">
     <parent link="base_link"/>
     <child link="laser_front_right_link"/>
     <origin xyz="0.12 -0.10 0.08" rpy="0 0 0"/>
@@ -1441,14 +1441,14 @@ Stephen Brawner (brawner@gmail.com)
     </visual>
   </link>
 
-  <joint name="laser_rear_left_joint" type="fixed">
+  <joint name="laser_rear_left_joint_to_remove" type="fixed">
     <parent link="base_link"/>
     <child link="laser_rear_left_link"/>
     <origin xyz="-0.12 0.10 0.08" rpy="0 0 ${pi}"/>
   </joint>
 
-  <gazebo reference="laser_front_right_link">
-    <material>Gazebo/Black</material>
+  <gazebo reference="laser_front">
+    <material>Gazebo/Orange</material>
     <sensor type="ray" name="rplidar_front_right">
       <pose>0 0 0 0 0 0</pose>
       <visualize>true</visualize> <update_rate>10</update_rate>
@@ -1475,13 +1475,13 @@ Stephen Brawner (brawner@gmail.com)
       <plugin name="laserscan_front_right" filename="libgazebo_ros_ray_sensor.so">
         <ros><remapping>~/out:=scan_front</remapping></ros>
         <output_type>sensor_msgs/LaserScan</output_type>
-        <frame_name>laser_front_right_link</frame_name>
+        <frame_name>laser_front</frame_name>
       </plugin>
     </sensor>
   </gazebo>
 
-  <gazebo reference="laser_rear_left_link">
-    <material>Gazebo/Black</material>
+  <gazebo reference="laser_rear">
+    <material>Gazebo/Orange</material>
     <sensor type="ray" name="rplidar_rear_left">
       <pose>0 0 0 0 0 0</pose>
       <visualize>true</visualize>
@@ -1509,7 +1509,7 @@ Stephen Brawner (brawner@gmail.com)
       <plugin name="laserscan_rear_left" filename="libgazebo_ros_ray_sensor.so">
         <ros><remapping>~/out:=scan_rear</remapping></ros>
         <output_type>sensor_msgs/LaserScan</output_type>
-        <frame_name>laser_rear_left_link</frame_name>
+        <frame_name>laser_rear</frame_name>
       </plugin>
     </sensor>
   </gazebo>

@@ -1,10 +1,54 @@
 #!/usr/bin/env python3
-import rclpy
-from rclpy.node import Node
-from sensor_msgs.msg import LaserScan
-from rclpy.qos import qos_profile_sensor_data
+import os
+import xml.etree.ElementTree as ET
+
 import message_filters
 import math
+import rclpy
+from ament_index_python.packages import get_package_share_directory
+from rclpy.node import Node
+from rclpy.qos import qos_profile_sensor_data
+from sensor_msgs.msg import LaserScan
+
+
+def _expand_urdf_xacro_constants(urdf_text: str) -> str:
+    """Minimal substitutions so ElementTree can parse numeric rpy/xyz."""
+    repl = (
+        ('${-pi/2}', str(-math.pi / 2)),
+        ('${-pi/4}', str(-math.pi / 4)),
+        ('${pi/2}', str(math.pi / 2)),
+        ('${pi/4}', str(math.pi / 4)),
+        ('${pi}', str(math.pi)),
+    )
+    for old, new in repl:
+        urdf_text = urdf_text.replace(old, new)
+    return urdf_text
+
+
+def load_laser_mount_xy_yaw_from_urdf(urdf_path: str, joint_name: str) -> dict:
+    """
+    Read fixed joint origin relative to parent (base_link in M3Pro.urdf).
+    Returns offset for merge into base_footprint: same x,y as base_link (base_joint is z-only).
+    yaw is URDF rpy third component (planar lidar, roll=pitch=0).
+    """
+    with open(urdf_path, encoding='utf-8') as f:
+        root = ET.fromstring(_expand_urdf_xacro_constants(f.read()))
+    joint = None
+    for j in root.findall('joint'):
+        if j.get('name') == joint_name:
+            joint = j
+            break
+    if joint is None:
+        raise ValueError(f'joint "{joint_name}" not found in {urdf_path}')
+    origin = joint.find('origin')
+    if origin is None:
+        raise ValueError(f'joint "{joint_name}" has no <origin> in {urdf_path}')
+    xyz = [float(v) for v in origin.get('xyz', '0 0 0').split()]
+    rpy = [float(v) for v in origin.get('rpy', '0 0 0').split()]
+    if len(xyz) < 2 or len(rpy) < 3:
+        raise ValueError(f'invalid origin on "{joint_name}" in {urdf_path}')
+    return {'x': xyz[0], 'y': xyz[1], 'yaw': rpy[2]}
+
 
 class MultiLidarMerger(Node):
     def __init__(self):
@@ -20,12 +64,23 @@ class MultiLidarMerger(Node):
         
         self.pub_merged = self.create_publisher(LaserScan, '/scan_merged', 10)
         
-        # 3. 物理偏移量与安装角 (必须与 URDF 中的 laser_rear_left_joint rpy 保持一致)
-        # 前雷达朝前 (yaw=0)，后雷达在 URDF 中已转 180度 (yaw=pi)
-        self.p_front = {'x': 0.12, 'y': -0.10, 'yaw': 0.0}
-        self.p_rear = {'x': -0.12, 'y': 0.10, 'yaw': math.pi}
-        
-        self.get_logger().info("🚀 双雷达【同步纠偏修正版】已启动！正在缝合 360° 点云...")
+        urdf_path = os.path.join(
+            get_package_share_directory('yahboom_m3pro_slam_demo'),
+            'urdf',
+            'M3Pro.urdf',
+        )
+        self.p_front = load_laser_mount_xy_yaw_from_urdf(urdf_path, 'laser_front_joint')
+        self.p_rear = load_laser_mount_xy_yaw_from_urdf(urdf_path, 'laser_rear_joint')
+        self.get_logger().info(
+            f'Laser mounts from URDF ({urdf_path}): '
+            f'front xyz_yaw=({self.p_front["x"]:.5f}, {self.p_front["y"]:.5f}, {self.p_front["yaw"]:.5f}), '
+            f'rear=({self.p_rear["x"]:.5f}, {self.p_rear["y"]:.5f}, {self.p_rear["yaw"]:.5f})'
+        )
+
+        self.get_logger().info(
+            'Dual lidar merger started (approx. time sync + pose transform); '
+            'publishing merged 360° LaserScan on base_footprint.'
+        )
 
     def merge_callback(self, front_msg, rear_msg):
         merged = LaserScan()

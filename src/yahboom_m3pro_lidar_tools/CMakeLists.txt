@@ -6,19 +6,25 @@ if(CMAKE_COMPILER_IS_GNUCXX OR CMAKE_CXX_COMPILER_ID MATCHES "Clang")
 endif()
 
 find_package(ament_cmake REQUIRED)
+find_package(ament_index_cpp REQUIRED)
 find_package(rclcpp REQUIRED)
 find_package(sensor_msgs REQUIRED)
 find_package(message_filters REQUIRED)
+find_package(PkgConfig REQUIRED)
+pkg_check_modules(TINYXML2 REQUIRED IMPORTED_TARGET tinyxml2)
 
 add_executable(multi_lidar_merger_node
   src/multi_lidar_merger_node.cpp
 )
 
 ament_target_dependencies(multi_lidar_merger_node
+  ament_index_cpp
   rclcpp
   sensor_msgs
   message_filters
 )
+
+target_link_libraries(multi_lidar_merger_node PkgConfig::TINYXML2)
 
 install(TARGETS
   multi_lidar_merger_node
