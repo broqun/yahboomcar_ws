@@ -35,7 +35,7 @@ def generate_launch_description():
     slam_pkg = 'yahboom_m3pro_slam_demo'
     world_pkg = 'm3pro_world_bringup'
     slam_share = get_package_share_path(slam_pkg)
-    default_rviz = slam_share / 'rviz' / 'spen_M3Pro_lidar_slam.rviz'
+    default_rviz = slam_share / 'rviz' / 'spen_m3pro_lidar_slam.rviz'
 
     rviz_arg = DeclareLaunchArgument(
         'rvizconfig',
