@@ -15,7 +15,7 @@
   <depend>message_filters</depend>
   <depend>tinyxml2</depend>
 
-  <exec_depend>yahboom_m3pro_slam_demo</exec_depend>
+  <exec_depend>m3pro_world_bringup</exec_depend>
 
   <exec_depend>launch</exec_depend>
   <exec_depend>launch_ros</exec_depend>

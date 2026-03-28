@@ -26,7 +26,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://yahboom_m3pro_slam_demo/meshes/base_link.STL" />
+          filename="package://m3pro_world_bringup/meshes/base_link.STL" />
       </geometry>
       <material
         name="">
@@ -40,7 +40,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://yahboom_m3pro_slam_demo/meshes/base_link.STL" />
+          filename="package://m3pro_world_bringup/meshes/base_link.STL" />
       </geometry>
     </collision>
   </link>
@@ -66,7 +66,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://yahboom_m3pro_slam_demo/meshes/arm1.STL" />
+          filename="package://m3pro_world_bringup/meshes/arm1.STL" />
       </geometry>
       <material
         name="">
@@ -80,7 +80,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://yahboom_m3pro_slam_demo/meshes/arm1.STL" />
+          filename="package://m3pro_world_bringup/meshes/arm1.STL" />
       </geometry>
     </collision>
   </link>
@@ -124,7 +124,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://yahboom_m3pro_slam_demo/meshes/arm2.STL" />
+          filename="package://m3pro_world_bringup/meshes/arm2.STL" />
       </geometry>
       <material
         name="">
@@ -138,7 +138,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://yahboom_m3pro_slam_demo/meshes/arm2.STL" />
+          filename="package://m3pro_world_bringup/meshes/arm2.STL" />
       </geometry>
     </collision>
   </link>
@@ -182,7 +182,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://yahboom_m3pro_slam_demo/meshes/arm3.STL" />
+          filename="package://m3pro_world_bringup/meshes/arm3.STL" />
       </geometry>
       <material
         name="">
@@ -196,7 +196,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://yahboom_m3pro_slam_demo/meshes/arm3.STL" />
+          filename="package://m3pro_world_bringup/meshes/arm3.STL" />
       </geometry>
     </collision>
   </link>
@@ -240,7 +240,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://yahboom_m3pro_slam_demo/meshes/arm4.STL" />
+          filename="package://m3pro_world_bringup/meshes/arm4.STL" />
       </geometry>
       <material
         name="">
@@ -254,7 +254,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://yahboom_m3pro_slam_demo/meshes/arm4.STL" />
+          filename="package://m3pro_world_bringup/meshes/arm4.STL" />
       </geometry>
     </collision>
   </link>
@@ -298,7 +298,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://yahboom_m3pro_slam_demo/meshes/arm5.STL" />
+          filename="package://m3pro_world_bringup/meshes/arm5.STL" />
       </geometry>
       <material
         name="">
@@ -312,7 +312,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://yahboom_m3pro_slam_demo/meshes/arm5.STL" />
+          filename="package://m3pro_world_bringup/meshes/arm5.STL" />
       </geometry>
     </collision>
   </link>
@@ -356,7 +356,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://yahboom_m3pro_slam_demo/meshes/rlink1.STL" />
+          filename="package://m3pro_world_bringup/meshes/rlink1.STL" />
       </geometry>
       <material
         name="">
@@ -370,7 +370,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://yahboom_m3pro_slam_demo/meshes/rlink1.STL" />
+          filename="package://m3pro_world_bringup/meshes/rlink1.STL" />
       </geometry>
     </collision>
   </link>
@@ -414,7 +414,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://yahboom_m3pro_slam_demo/meshes/rlink2.STL" />
+          filename="package://m3pro_world_bringup/meshes/rlink2.STL" />
       </geometry>
       <material
         name="">
@@ -428,7 +428,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://yahboom_m3pro_slam_demo/meshes/rlink2.STL" />
+          filename="package://m3pro_world_bringup/meshes/rlink2.STL" />
       </geometry>
     </collision>
   </link>
@@ -471,7 +471,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://yahboom_m3pro_slam_demo/meshes/llink1.STL" />
+          filename="package://m3pro_world_bringup/meshes/llink1.STL" />
       </geometry>
       <material
         name="">
@@ -485,7 +485,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://yahboom_m3pro_slam_demo/meshes/llink1.STL" />
+          filename="package://m3pro_world_bringup/meshes/llink1.STL" />
       </geometry>
     </collision>
   </link>
@@ -528,7 +528,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://yahboom_m3pro_slam_demo/meshes/llink2.STL" />
+          filename="package://m3pro_world_bringup/meshes/llink2.STL" />
       </geometry>
       <material
         name="">
@@ -542,7 +542,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://yahboom_m3pro_slam_demo/meshes/llink2.STL" />
+          filename="package://m3pro_world_bringup/meshes/llink2.STL" />
       </geometry>
     </collision>
   </link>
@@ -585,7 +585,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://yahboom_m3pro_slam_demo/meshes/rlink3.STL" />
+          filename="package://m3pro_world_bringup/meshes/rlink3.STL" />
       </geometry>
       <material
         name="">
@@ -599,7 +599,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://yahboom_m3pro_slam_demo/meshes/rlink3.STL" />
+          filename="package://m3pro_world_bringup/meshes/rlink3.STL" />
       </geometry>
     </collision>
   </link>
@@ -642,7 +642,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://yahboom_m3pro_slam_demo/meshes/llink3.STL" />
+          filename="package://m3pro_world_bringup/meshes/llink3.STL" />
       </geometry>
       <material
         name="">
@@ -656,7 +656,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://yahboom_m3pro_slam_demo/meshes/llink3.STL" />
+          filename="package://m3pro_world_bringup/meshes/llink3.STL" />
       </geometry>
     </collision>
   </link>
@@ -699,7 +699,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://yahboom_m3pro_slam_demo/meshes/Gripping.STL" />
+          filename="package://m3pro_world_bringup/meshes/Gripping.STL" />
       </geometry>
       <material
         name="">
@@ -713,7 +713,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://yahboom_m3pro_slam_demo/meshes/Gripping.STL" />
+          filename="package://m3pro_world_bringup/meshes/Gripping.STL" />
       </geometry>
     </collision>
   </link>
@@ -752,7 +752,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://yahboom_m3pro_slam_demo/meshes/DCW2.STL" />
+          filename="package://m3pro_world_bringup/meshes/DCW2.STL" />
       </geometry>
       <material
         name="">
@@ -766,7 +766,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://yahboom_m3pro_slam_demo/meshes/DCW2.STL" />
+          filename="package://m3pro_world_bringup/meshes/DCW2.STL" />
       </geometry>
     </collision>
   </link>
@@ -805,7 +805,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://yahboom_m3pro_slam_demo/meshes/Camera.STL" />
+          filename="package://m3pro_world_bringup/meshes/Camera.STL" />
       </geometry>
       <material
         name="">
@@ -819,7 +819,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://yahboom_m3pro_slam_demo/meshes/Camera.STL" />
+          filename="package://m3pro_world_bringup/meshes/Camera.STL" />
       </geometry>
     </collision>
   </link>
@@ -863,7 +863,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://yahboom_m3pro_slam_demo/meshes/lwheel1.STL" />
+          filename="package://m3pro_world_bringup/meshes/lwheel1.STL" />
       </geometry>
       <material
         name="">
@@ -877,7 +877,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://yahboom_m3pro_slam_demo/meshes/lwheel1.STL" />
+          filename="package://m3pro_world_bringup/meshes/lwheel1.STL" />
       </geometry>
     </collision>
   </link>
@@ -921,7 +921,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://yahboom_m3pro_slam_demo/meshes/lwheel2.STL" />
+          filename="package://m3pro_world_bringup/meshes/lwheel2.STL" />
       </geometry>
       <material
         name="">
@@ -935,7 +935,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://yahboom_m3pro_slam_demo/meshes/lwheel2.STL" />
+          filename="package://m3pro_world_bringup/meshes/lwheel2.STL" />
       </geometry>
     </collision>
   </link>
@@ -979,7 +979,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://yahboom_m3pro_slam_demo/meshes/rwheel1.STL" />
+          filename="package://m3pro_world_bringup/meshes/rwheel1.STL" />
       </geometry>
       <material
         name="">
@@ -993,7 +993,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://yahboom_m3pro_slam_demo/meshes/rwheel1.STL" />
+          filename="package://m3pro_world_bringup/meshes/rwheel1.STL" />
       </geometry>
     </collision>
   </link>
@@ -1037,7 +1037,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://yahboom_m3pro_slam_demo/meshes/rwheel2.STL" />
+          filename="package://m3pro_world_bringup/meshes/rwheel2.STL" />
       </geometry>
       <material
         name="">
@@ -1051,7 +1051,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://yahboom_m3pro_slam_demo/meshes/rwheel2.STL" />
+          filename="package://m3pro_world_bringup/meshes/rwheel2.STL" />
       </geometry>
     </collision>
   </link>
@@ -1095,7 +1095,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://yahboom_m3pro_slam_demo/meshes/arm_base_Link.STL" />
+          filename="package://m3pro_world_bringup/meshes/arm_base_Link.STL" />
       </geometry>
         
       <material
@@ -1110,7 +1110,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://yahboom_m3pro_slam_demo/meshes/arm_base_Link.STL" />
+          filename="package://m3pro_world_bringup/meshes/arm_base_Link.STL" />
       </geometry>
     </collision>
   </link>

@@ -65,7 +65,7 @@ class MultiLidarMerger(Node):
         self.pub_merged = self.create_publisher(LaserScan, '/scan_merged', 10)
         
         urdf_path = os.path.join(
-            get_package_share_directory('yahboom_m3pro_slam_demo'),
+            get_package_share_directory('m3pro_world_bringup'),
             'urdf',
             'M3Pro.urdf',
         )

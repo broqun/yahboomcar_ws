@@ -116,7 +116,8 @@ LaserOffset load_laser_mount_xy_yaw_from_urdf(
 
 std::string m3pro_urdf_path()
 {
-  const std::string share = ament_index_cpp::get_package_share_directory("yahboom_m3pro_slam_demo");
+  const std::string share =
+    ament_index_cpp::get_package_share_directory("m3pro_world_bringup");
   return share + "/urdf/M3Pro.urdf";
 }
 

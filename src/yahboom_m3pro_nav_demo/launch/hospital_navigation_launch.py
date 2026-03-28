@@ -9,7 +9,7 @@ from launch_ros.actions import SetRemap
 def generate_launch_description():
     # --- 1. 获取各个包的绝对路径 ---
     nav_demo_dir = get_package_share_directory('yahboom_m3pro_nav_demo')
-    slam_demo_dir = get_package_share_directory('yahboom_m3pro_slam_demo')
+    world_bringup_dir = get_package_share_directory('m3pro_world_bringup')
     nav2_bringup_dir = get_package_share_directory('nav2_bringup')
 
     # --- 2. 定义关键文件路径 ---
@@ -17,9 +17,9 @@ def generate_launch_description():
     nav2_params_file = os.path.join(nav_demo_dir, 'config', 'nav2_navigation.yaml')
 
     # --- 3. 基础环境：加载 Gazebo、医院世界、机器人模型与 RViz ---
-    # 完美复用你之前的 launch，但通过参数关闭 xterm 键盘遥控终端
+    # 复用基础 bringup 包，并关闭键盘遥控终端（导航演示默认自动驾驶）。
     hospital_env_launch = IncludeLaunchDescription(
-        PythonLaunchDescriptionSource(os.path.join(slam_demo_dir, 'launch', 'hospital_m3pro_teleop_launch.py')),
+        PythonLaunchDescriptionSource(os.path.join(world_bringup_dir, 'launch', 'hospital_world_bringup_launch.py')),
         launch_arguments={'keyboard': 'false'}.items()
     )
 

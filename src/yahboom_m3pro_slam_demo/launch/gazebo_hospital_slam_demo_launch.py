@@ -14,8 +14,15 @@ from pathlib import Path
 
 from ament_index_python.packages import get_package_share_path
 from launch import LaunchDescription
-from launch.actions import ExecuteProcess, IncludeLaunchDescription, LogInfo, TimerAction
+from launch.actions import (
+    DeclareLaunchArgument,
+    ExecuteProcess,
+    IncludeLaunchDescription,
+    LogInfo,
+    TimerAction,
+)
 from launch.launch_description_sources import PythonLaunchDescriptionSource
+from launch.substitutions import LaunchConfiguration
 
 
 def get_launch_path(package_name: str, launch_subpath: str) -> Path:
@@ -25,16 +32,28 @@ def get_launch_path(package_name: str, launch_subpath: str) -> Path:
 
 
 def generate_launch_description():
-    pkg = 'yahboom_m3pro_slam_demo'
+    slam_pkg = 'yahboom_m3pro_slam_demo'
+    world_pkg = 'm3pro_world_bringup'
+    slam_share = get_package_share_path(slam_pkg)
+    default_rviz = slam_share / 'rviz' / 'spen_M3Pro_lidar_slam.rviz'
+
+    rviz_arg = DeclareLaunchArgument(
+        'rvizconfig',
+        default_value=str(default_rviz),
+        description='Path to RViz config file for SLAM demo.',
+    )
 
     # 1. 医院场景 + Gazebo + 生成 M3Pro + RViz + 键盘遥操作
     hospital_launch = IncludeLaunchDescription(
-        PythonLaunchDescriptionSource([str(get_launch_path(pkg, 'hospital_m3pro_teleop_launch.py'))]),
+        PythonLaunchDescriptionSource([str(get_launch_path(world_pkg, 'hospital_world_bringup_launch.py'))]),
+        launch_arguments={
+            'rvizconfig': LaunchConfiguration('rvizconfig'),
+        }.items(),
     )
 
     # 2. 双雷达合并 + SLAM Toolbox
     lidar_slam_launch = IncludeLaunchDescription(
-        PythonLaunchDescriptionSource([str(get_launch_path(pkg, 'lidar_slam_launch.py'))]),
+        PythonLaunchDescriptionSource([str(get_launch_path(slam_pkg, 'lidar_slam_launch.py'))]),
     )
 
     # 3. 在 Gazebo 和机器人生成后，加载 ros2_control 控制器（顺序执行）
@@ -55,6 +74,7 @@ def generate_launch_description():
     )
 
     return LaunchDescription([
+        rviz_arg,
         hospital_launch,
         lidar_slam_launch,
         delayed_spawn_controllers,

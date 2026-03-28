@@ -9,10 +9,11 @@ from launch_ros.parameter_descriptions import ParameterValue
 
 
 def generate_launch_description():
-    urdf_tutorial_path = get_package_share_path('yahboom_m3pro_slam_demo')
-    default_model_path = urdf_tutorial_path / 'urdf/M3Pro.urdf'
-    default_rviz_config_path = urdf_tutorial_path / 'rviz/yahboom_M3Pro.rviz'
-    debug_rviz_config_path = urdf_tutorial_path / 'rviz/spen_debug.rviz'
+    world_bringup_path = get_package_share_path('m3pro_world_bringup')
+    slam_demo_path = get_package_share_path('yahboom_m3pro_slam_demo')
+    default_model_path = world_bringup_path / 'urdf/M3Pro.urdf'
+    default_rviz_config_path = slam_demo_path / 'rviz/yahboom_M3Pro.rviz'
+    debug_rviz_config_path = slam_demo_path / 'rviz/spen_debug.rviz'
 
     model_arg = DeclareLaunchArgument(
         name='model',

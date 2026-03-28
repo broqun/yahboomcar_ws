@@ -1,9 +1,9 @@
 from pathlib import Path
-
 from launch import LaunchDescription
 from launch_ros.actions import Node
 from launch.actions import ExecuteProcess
-
+import os
+from ament_index_python.packages import get_package_share_directory
 
 def get_multi_lidar_merger_script_path():
     """Resolve multi_lidar_merger.py from source or install layout."""
@@ -29,19 +29,25 @@ def get_multi_lidar_merger_script_path():
 def generate_launch_description():
     merger_script = get_multi_lidar_merger_script_path()
 
+    # 获取 ekf 配置文件路径
+    ekf_config_path = os.path.join(
+        get_package_share_directory('yahboom_m3pro_slam_demo'), 
+        'config', 
+        'ekf.yaml'
+    )
+
     return LaunchDescription([
-        
         # 1. 启动打好补丁的 360° 双雷达合并 Python 节点
-        # ExecuteProcess(
-        #     cmd=['python3', str(merger_script)],
-        #     output='screen'
-        # ),
-        Node(
-            package='yahboom_m3pro_lidar_tools',
-            executable='multi_lidar_merger_node',
-            name='multi_lidar_merger',
-            output='screen',
+        ExecuteProcess(
+            cmd=['python3', str(merger_script)],
+            output='screen'
         ),
+        # Node(
+        #     package='yahboom_m3pro_lidar_tools',
+        #     executable='multi_lidar_merger_node',
+        #     name='multi_lidar_merger',
+        #     output='screen',
+        # ),
 
         # 2. 启动 SLAM Toolbox
         Node(
@@ -77,7 +83,16 @@ def generate_launch_description():
                 'scan_buffer_size': 150,
                 'loop_search_maximum_distance': 12.0, # T-mini Plus 激光雷达测距范围为0.05m至12m
                 'loop_match_minimum_chain_size': 3,
-                'link_match_minimum_response_fine': 0.1,
+                'link_match_minimum_response_fine': 0.15,
             }]
+        ),
+
+        # 3. 👑 新增：启动 robot_localization (EKF 融合)
+        Node(
+            package='robot_localization',
+            executable='ekf_node',
+            name='ekf_filter_node',
+            output='screen',
+            parameters=[ekf_config_path, {'use_sim_time': True}]
         )
     ])

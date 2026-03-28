@@ -27,6 +27,7 @@
   <exec_depend>joint_state_broadcaster</exec_depend>
 
   <!-- Teleop & SLAM -->
+  <exec_depend>m3pro_world_bringup</exec_depend>
   <exec_depend>slam_toolbox</exec_depend>
   <exec_depend>teleop_twist_keyboard</exec_depend>
   <exec_depend>xterm</exec_depend>
