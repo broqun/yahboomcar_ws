@@ -1,0 +1,342 @@
+Panels:
+  - Class: rviz_common/Displays
+    Help Height: 70
+    Name: Displays
+    Property Tree Widget:
+      Expanded:
+        - /Global Options1
+        - /Grid1
+        - /TF1/Frames1
+        - /LaserScan1/Topic1
+        - /Map1
+        - /Map1/Topic1
+        - /Camera1
+        - /Camera1/Visibility1
+      Splitter Ratio: 0.5
+    Tree Height: 310
+  - Class: rviz_common/Views
+    Expanded:
+      - /Current View1
+    Name: Views
+    Splitter Ratio: 0.5
+Visualization Manager:
+  Class: ""
+  Displays:
+    - Alpha: 0.5
+      Cell Size: 1
+      Class: rviz_default_plugins/Grid
+      Color: 160; 160; 164
+      Enabled: true
+      Line Style:
+        Line Width: 0.029999999329447746
+        Value: Lines
+      Name: Grid
+      Normal Cell Count: 0
+      Offset:
+        X: 0
+        Y: 0
+        Z: 0
+      Plane: XY
+      Plane Cell Count: 10
+      Reference Frame: <Fixed Frame>
+      Value: true
+    - Alpha: 0.800000011920929
+      Class: rviz_default_plugins/RobotModel
+      Collision Enabled: false
+      Description File: ""
+      Description Source: Topic
+      Description Topic:
+        Depth: 5
+        Durability Policy: Volatile
+        History Policy: Keep Last
+        Reliability Policy: Reliable
+        Value: /robot_description
+      Enabled: true
+      Links:
+        All Links Enabled: true
+        Camera:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        DCW2:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        Expand Joint Details: false
+        Expand Link Details: false
+        Expand Tree: false
+        Gripping:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        Link Tree Style: Links in Alphabetic Order
+        arm1:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        arm2:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        arm3:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        arm4:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        arm5:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        arm_base_Link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        base_footprint:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        base_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        camera_optical_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        laser_front_right_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        laser_rear_left_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        llink1:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        llink2:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        llink3:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        lwheel1:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        lwheel2:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        rlink1:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        rlink2:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        rlink3:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        rwheel1:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        rwheel2:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+      Mass Properties:
+        Inertia: false
+        Mass: false
+      Name: RobotModel
+      TF Prefix: ""
+      Update Interval: 0
+      Value: true
+      Visual Enabled: true
+    - Class: rviz_default_plugins/TF
+      Enabled: false
+      Frame Timeout: 15
+      Frames:
+        All Enabled: false
+      Marker Scale: 1
+      Name: TF
+      Show Arrows: true
+      Show Axes: true
+      Show Names: false
+      Tree:
+        {}
+      Update Interval: 0
+      Value: false
+    - Alpha: 1
+      Autocompute Intensity Bounds: true
+      Autocompute Value Bounds:
+        Max Value: 10
+        Min Value: -10
+        Value: true
+      Axis: Z
+      Channel Name: intensity
+      Class: rviz_default_plugins/LaserScan
+      Color: 237; 51; 59
+      Color Transformer: FlatColor
+      Decay Time: 0
+      Enabled: false
+      Invert Rainbow: false
+      Max Color: 255; 255; 255
+      Max Intensity: 4096
+      Min Color: 0; 0; 0
+      Min Intensity: 0
+      Name: LaserScan
+      Position Transformer: XYZ
+      Selectable: true
+      Size (Pixels): 2
+      Size (m): 0.10000000149011612
+      Style: Spheres
+      Topic:
+        Depth: 5
+        Durability Policy: Volatile
+        Filter size: 10
+        History Policy: Keep Last
+        Reliability Policy: Best Effort
+        Value: /scan_merged
+      Use Fixed Frame: true
+      Use rainbow: true
+      Value: false
+    - Alpha: 0.699999988079071
+      Class: rviz_default_plugins/Map
+      Color Scheme: map
+      Draw Behind: false
+      Enabled: true
+      Name: Map
+      Topic:
+        Depth: 5
+        Durability Policy: Transient Local
+        Filter size: 10
+        History Policy: Keep Last
+        Reliability Policy: Reliable
+        Value: /map
+      Update Topic:
+        Depth: 5
+        Durability Policy: Volatile
+        History Policy: Keep Last
+        Reliability Policy: Reliable
+        Value: /map_updates
+      Use Timestamp: false
+      Value: true
+    - Class: rviz_default_plugins/Camera
+      Enabled: true
+      Far Plane Distance: 100
+      Image Rendering: background and overlay
+      Name: Camera
+      Overlay Alpha: 0.5
+      Topic:
+        Depth: 5
+        Durability Policy: Volatile
+        History Policy: Keep Last
+        Reliability Policy: Reliable
+        Value: /dabai_dcw2/image_raw/compressed
+      Value: true
+      Visibility:
+        Grid: false
+        LaserScan: true
+        Map: true
+        RobotModel: false
+        TF: true
+        Value: false
+      Zoom Factor: 1
+  Enabled: true
+  Global Options:
+    Background Color: 48; 48; 48
+    Fixed Frame: map
+    Frame Rate: 30
+  Name: root
+  Tools:
+    - Class: rviz_default_plugins/MoveCamera
+    - Class: rviz_default_plugins/SetInitialPose
+      Covariance x: 0.25
+      Covariance y: 0.25
+      Covariance yaw: 0.06853891909122467
+      Topic:
+        Depth: 5
+        Durability Policy: Volatile
+        History Policy: Keep Last
+        Reliability Policy: Reliable
+        Value: initialpose
+    - Class: rviz_default_plugins/SetGoal
+      Topic:
+        Depth: 5
+        Durability Policy: Volatile
+        History Policy: Keep Last
+        Reliability Policy: Reliable
+        Value: goal_pose
+  Transformation:
+    Current:
+      Class: rviz_default_plugins/TF
+  Value: true
+  Views:
+    Current:
+      Class: rviz_default_plugins/Orbit
+      Distance: 8.275296211242676
+      Enable Stereo Rendering:
+        Stereo Eye Separation: 0.05999999865889549
+        Stereo Focal Distance: 1
+        Swap Stereo Eyes: false
+        Value: false
+      Focal Point:
+        X: 0.951880693435669
+        Y: -0.9858317971229553
+        Z: -0.2725377678871155
+      Focal Shape Fixed Size: true
+      Focal Shape Size: 0.05000000074505806
+      Invert Z Axis: false
+      Name: Current View
+      Near Clip Distance: 0.009999999776482582
+      Pitch: 1.5647963285446167
+      Target Frame: <Fixed Frame>
+      Value: Orbit (rviz_default_plugins)
+      Yaw: 3.163154125213623
+    Saved: ~
+Window Geometry:
+  Camera:
+    collapsed: false
+  Displays:
+    collapsed: false
+  Height: 531
+  Hide Left Dock: false
+  Hide Right Dock: false
+  QMainWindow State: 000000ff00000000fd000000010000000000000156000001b9fc0200000006fb000000100044006900730070006c006100790073010000003d000001b9000000c900fffffffb0000000a005600690065007700730000000109000000ed000000a400fffffffb0000000a0049006d00610067006502000000460000040a0000029c00000196fb0000000a0049006d0061006700650000000016000001e00000000000000000fb0000000c00430061006d0065007200610300000046000000200000029d00000195fb0000000c00430061006d00650072006103000000460000040b0000029e0000019500000141000001b900000004000000040000000800000008fc0000000100000002000000010000000a0054006f006f006c00730100000000ffffffff0000000000000000
+  Views:
+    collapsed: false
+  Width: 669
+  X: 70
+  Y: 435

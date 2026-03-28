@@ -201,7 +201,7 @@ def generate_launch_description():
         condition=UnlessCondition(LaunchConfiguration('keyboard')),
     )
 
-    rviz_config_path = os.path.join(m3pro_share, 'rviz', 'spen_M3Pro_lidar_slam.rviz')
+    rviz_config_path = os.path.join(m3pro_share, 'rviz', 'nav_demo.rviz')
     # 定义 RViz2 节点
     rviz_node = Node(
         package='rviz2',
