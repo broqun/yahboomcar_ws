@@ -850,6 +850,89 @@ Stephen Brawner (brawner@gmail.com)
       effort="0"
       velocity="0" />
   </joint>
+
+  <link
+    name="laser_rear_left">
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <cylinder radius="0.019" length="0.03"/>
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.298039215686275 0.298039215686275 0.298039215686275 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      
+    </collision>
+  </link>
+  <joint
+    name="laser_rear_left_Joint"
+    type="fixed">
+    <origin
+      xyz="-0.11867 0.09 0.1253"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="laser_rear_left" />
+    <axis
+      xyz="0 0 0" />
+    <limit
+      lower="0"
+      upper="0"
+      effort="0"
+      velocity="0" />
+  </joint>
+  
+  <link
+    name="laser_front_right">
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <cylinder radius="0.019" length="0.03"/>
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.298039215686275 0.298039215686275 0.298039215686275 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      
+    </collision>
+  </link>
+  <joint
+    name="laser_front_right_Joint"
+    type="fixed">
+    <origin
+      xyz="0.10386 -0.09160 0.1253"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="laser_front_right" />
+    <axis
+      xyz="0 0 0" />
+    <limit
+      lower="0"
+      upper="0"
+      effort="0"
+      velocity="0" />
+  </joint>
+
   <link
     name="lwheel1">
     <inertial>
@@ -1119,6 +1202,7 @@ Stephen Brawner (brawner@gmail.com)
     <child link="camera_optical_link" />
     <origin xyz="0 0 0" rpy="${-pi/2} 0 ${-pi/2}" />
   </joint>
+  
   <gazebo reference="arm1">
     <material>Gazebo/Red</material>
   </gazebo>
