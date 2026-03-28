@@ -23,16 +23,13 @@ diff_drive_controller:
     cmd_vel_timeout: 0.5
     use_stamped_vel: false
 
-    # ======== 👑 核心修复：工业级防甩尾（加减速限制） ========
-    # 限制线速度（前进/后退）
     linear.x.has_velocity_limits: true
     linear.x.has_acceleration_limits: true
     linear.x.max_velocity: 2.0
     linear.x.min_velocity: -2.0
-    linear.x.max_acceleration: 1.0   # 限制起步的“抬头”现象（数值越小起步越柔和）
-    linear.x.min_acceleration: -1.5  # 限制刹车力度，绝不抱死，防止甩尾漂移！
+    linear.x.max_acceleration: 1.0
+    linear.x.min_acceleration: -1.5
 
-    # 限制角速度（原地旋转）
     angular.z.has_velocity_limits: true
     angular.z.has_acceleration_limits: true
     angular.z.max_velocity: 3.0
