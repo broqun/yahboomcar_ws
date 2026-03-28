@@ -42,6 +42,12 @@ Stephen Brawner (brawner@gmail.com)
       </geometry>
     </collision>
   </link>
+  <link name="imu_link" />
+  <joint name="imu_joint" type="fixed">
+    <parent link="base_link" />
+    <child link="imu_link" />
+    <origin xyz="0 0 0" rpy="0 0 0" />
+  </joint>
   <link
     name="arm1">
     <inertial>
@@ -1494,6 +1500,7 @@ Stephen Brawner (brawner@gmail.com)
           <remapping>~/out:=imu/data</remapping>
         </ros>
         <initial_orientation_as_reference>false</initial_orientation_as_reference>
+        <frame_name>imu_link</frame_name>
       </plugin>
     </sensor>
   </gazebo>

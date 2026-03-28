@@ -5,10 +5,10 @@ include "trajectory_builder_3d.lua"
 
 options = {
   map_frame = "map",
-  tracking_frame = "base_footprint",
-  published_frame = "base_footprint",
+  tracking_frame = "imu_link",
+  published_frame = "odom",
   odom_frame = "odom",
-  provide_odom_frame = true,
+  provide_odom_frame = false,
   use_odometry = true,
   use_nav_sat = false,
   use_landmarks = false,
