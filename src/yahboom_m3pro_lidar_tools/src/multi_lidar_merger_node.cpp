@@ -152,10 +152,10 @@ public:
     sub_rear_.subscribe(this, "/scan_rear", qos.get_rmw_qos_profile());
 
     // 使用近似时间同步，而不是严格同步。
-    // 这样可以容忍前后雷达时间戳存在少量抖动，只要在 0.05s 窗口内就触发融合。
+    // 这里把窗口收紧到 0.02s，减少“前后雷达采样时间差过大”导致的形变与定位偏移。
     sync_ = std::make_shared<message_filters::Synchronizer<SyncPolicy>>(
       SyncPolicy(10), sub_front_, sub_rear_);
-    sync_->setMaxIntervalDuration(rclcpp::Duration::from_seconds(0.05));
+    sync_->setMaxIntervalDuration(rclcpp::Duration::from_seconds(0.02));
     sync_->registerCallback(
       std::bind(&MultiLidarMerger::mergeCallback, this,
       std::placeholders::_1, std::placeholders::_2));
@@ -232,8 +232,10 @@ private:
     const LaserScan::ConstSharedPtr rear_msg)
   {
     LaserScan merged;
-    // 直接沿用前雷达时间戳，保证下游节点看到的是同一时刻的融合结果。
-    merged.header.stamp = front_msg->header.stamp;
+    // 使用两路雷达中较新的时间戳，减少下游 TF 过滤时出现“消息时间戳过旧”的概率。
+    const rclcpp::Time front_stamp(front_msg->header.stamp);
+    const rclcpp::Time rear_stamp(rear_msg->header.stamp);
+    merged.header.stamp = (rear_stamp > front_stamp) ? rear_msg->header.stamp : front_msg->header.stamp;
     // 统一输出到底盘中心坐标系，方便 SLAM 直接使用。
     merged.header.frame_id = "base_footprint";
 
