@@ -1,6 +1,6 @@
 # yahboomcar_ws
 
-Yahboom M3Pro 机器人 ROS 2 仿真工作空间——在 Gazebo Classic 医院场景中完成建图、导航与自主探索。
+Yahboom M3Pro 机器人 ROS 2 仿真工作空间——在 Gazebo Classic 医院场景中完成建图与导航。
 
 **技术栈**：ROS 2 Humble · Gazebo Classic 11 · ros2_control · Nav2 · SLAM Toolbox
 
@@ -58,7 +58,6 @@ rosdep install --from-paths src --ignore-src -r -y
 ```
 
 ### 1.3 bashrc 推荐配置
-### 1.3 bashrc 推荐配置
 
 ```bash
 # ==========================================
@@ -90,38 +89,19 @@ export GAZEBO_MODEL_DATABASE_URI=""
 如果工作空间路径不同，请替换上面的路径。修改完成后执行 `source ~/.bashrc`。
 
 ---
-如果工作空间路径不同，请替换上面的路径。修改完成后执行 `source ~/.bashrc`。
 
----
-
-## 2. 编译
 ## 2. 编译
 
 ```bash
 cd /var/robotic/yahboomcar_ws
-colcon build --symlink-install
-source install/setup.bash
-```
-
-如果只想编译特定包：
-cd /var/robotic/yahboomcar_ws
-colcon build --symlink-install
+colcon build
 source install/setup.bash
 ```
 
 如果只想编译特定包：
 
 ```bash
-colcon build --symlink-install --packages-select m3pro_world_bringup yahboom_m3pro_slam_demo
-```
-
----
-
-## 3. 手动遥控 SLAM 建图
-
-使用键盘控制机器人在医院场景中手动建图。
-```bash
-colcon build --symlink-install --packages-select m3pro_world_bringup yahboom_m3pro_slam_demo
+colcon build --packages-select m3pro_world_bringup yahboom_m3pro_slam_demo
 ```
 
 ---
@@ -132,33 +112,23 @@ colcon build --symlink-install --packages-select m3pro_world_bringup yahboom_m3p
 
 ```bash
 ros2 launch yahboom_m3pro_slam_demo gazebo_hospital_slam_demo_launch.py
-ros2 launch yahboom_m3pro_slam_demo gazebo_hospital_slam_demo_launch.py
 ```
 
-启动内容：Gazebo 医院场景 → M3Pro spawn → ros2_control → 键盘遥控 → 双雷达合并 → SLAM Toolbox → RViz
-
-RViz 默认使用 `yahboom_m3pro_slam_demo/rviz/spen_m3pro_lidar_slam.rviz`，可通过参数覆盖：
 启动内容：Gazebo 医院场景 → M3Pro spawn → ros2_control → 键盘遥控 → 双雷达合并 → SLAM Toolbox → RViz
 
 RViz 默认使用 `yahboom_m3pro_slam_demo/rviz/spen_m3pro_lidar_slam.rviz`，可通过参数覆盖：
 
 ```bash
 ros2 launch yahboom_m3pro_slam_demo gazebo_hospital_slam_demo_launch.py rvizconfig:=/path/to/your.rviz
-ros2 launch yahboom_m3pro_slam_demo gazebo_hospital_slam_demo_launch.py rvizconfig:=/path/to/your.rviz
 ```
 
 ---
 
 ## 4. Nav2 自主导航
----
 
-## 4. Nav2 自主导航
-
-基于预建静态地图，使用 Nav2 进行自主导航。在 RViz 中点击 "2D Goal Pose" 设置目标。
 基于预建静态地图，使用 Nav2 进行自主导航。在 RViz 中点击 "2D Goal Pose" 设置目标。
 
 ```bash
-ros2 launch yahboom_m3pro_nav_demo hospital_navigation_launch.py
 ros2 launch yahboom_m3pro_nav_demo hospital_navigation_launch.py
 ```
 
@@ -186,21 +156,8 @@ ros2 launch yahboom_m3pro_nav_demo hospital_navigation_launch.py rvizconfig:=/pa
 ## 5. 仅启动仿真环境（不含建图/导航）
 
 如果只想加载 Gazebo 医院场景 + 机器人 + 键盘遥控 + RViz：
-如果只想加载 Gazebo 医院场景 + 机器人 + 键盘遥控 + RViz：
 
 ```bash
-ros2 launch m3pro_world_bringup hospital_world_bringup_launch.py
-```
-
-可选参数：
-
-| 参数 | 默认值 | 说明 |
-|------|--------|------|
-| `gui` | `true` | 是否启动 Gazebo GUI |
-| `keyboard` | `true` | 是否启动键盘遥控（xterm） |
-| `rvizconfig` | `m3pro_world_bringup/rviz/default_demo.rviz` | RViz 配置文件路径 |
-| `world` | `hospital.world` | Gazebo 世界文件路径 |
-| `x` / `y` / `z` | `0.049 / 11.755 / 0.01` | 机器人 spawn 位置 |
 ros2 launch m3pro_world_bringup hospital_world_bringup_launch.py
 ```
 
