@@ -68,14 +68,7 @@ def get_hospital_model_paths():
 def generate_launch_description():
     bringup_share = get_package_share_path('m3pro_world_bringup')
     default_urdf = bringup_share / 'urdf' / 'M3Pro.urdf'
-    default_rviz = bringup_share / 'rviz' / 'nav_demo.rviz'
-    try:
-        slam_demo_share = get_package_share_path('yahboom_m3pro_slam_demo')
-        legacy_rviz = slam_demo_share / 'rviz' / 'nav_demo.rviz'
-        if legacy_rviz.exists():
-            default_rviz = legacy_rviz
-    except Exception:
-        slam_demo_share = None
+    default_rviz = bringup_share / 'rviz' / 'default_demo.rviz'
     world_path = get_hospital_world_path()
     hospital_models = get_hospital_model_paths()
 

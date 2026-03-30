@@ -15,9 +15,14 @@ def generate_launch_description():
     nav2_params_file = os.path.join(nav_demo_dir, 'config', 'nav2_navigation.yaml')
     ekf_config_file = os.path.join(nav_demo_dir, 'config', 'ekf.yaml')
 
+    rviz_config = os.path.join(nav_demo_dir, 'rviz', 'nav_demo.rviz')
+
     hospital_env_launch = IncludeLaunchDescription(
         PythonLaunchDescriptionSource(os.path.join(world_bringup_dir, 'launch', 'hospital_world_bringup_launch.py')),
-        launch_arguments={'keyboard': 'false'}.items()
+        launch_arguments={
+            'keyboard': 'false',
+            'rvizconfig': rviz_config,
+        }.items()
     )
 
     lidar_merger_node = Node(
