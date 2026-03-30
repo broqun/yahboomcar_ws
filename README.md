@@ -14,8 +14,7 @@ src/
 ├── m3pro_world_bringup            # 基础 bringup：Gazebo + M3Pro spawn + RViz + 键盘遥控
 ├── yahboom_m3pro_lidar_tools      # 双雷达合并节点（C++，ament_cmake）
 ├── yahboom_m3pro_slam_demo        # 手动遥控 SLAM 建图演示
-├── yahboom_m3pro_nav_demo         # 基于静态地图的 Nav2 自主导航演示
-└── yahboom_m3pro_exploration      # 基于 frontier 的全自动探索建图
+└── yahboom_m3pro_nav_demo         # 基于静态地图的 Nav2 自主导航演示
 ```
 
 **依赖关系**：
@@ -28,9 +27,6 @@ m3pro_world_bringup ◄── yahboom_m3pro_lidar_tools
    │         │                    │
    ▼         ▼                    ▼
 yahboom_m3pro_slam_demo   yahboom_m3pro_nav_demo
-        │                         │
-        ▼                         │
-yahboom_m3pro_exploration ◄───────┘
 ```
 
 ---
@@ -61,6 +57,7 @@ cd /var/robotic/yahboomcar_ws
 rosdep install --from-paths src --ignore-src -r -y
 ```
 
+### 1.3 bashrc 推荐配置
 ### 1.3 bashrc 推荐配置
 
 ```bash
@@ -93,10 +90,20 @@ export GAZEBO_MODEL_DATABASE_URI=""
 如果工作空间路径不同，请替换上面的路径。修改完成后执行 `source ~/.bashrc`。
 
 ---
+如果工作空间路径不同，请替换上面的路径。修改完成后执行 `source ~/.bashrc`。
 
+---
+
+## 2. 编译
 ## 2. 编译
 
 ```bash
+cd /var/robotic/yahboomcar_ws
+colcon build --symlink-install
+source install/setup.bash
+```
+
+如果只想编译特定包：
 cd /var/robotic/yahboomcar_ws
 colcon build --symlink-install
 source install/setup.bash
@@ -113,26 +120,45 @@ colcon build --symlink-install --packages-select m3pro_world_bringup yahboom_m3p
 ## 3. 手动遥控 SLAM 建图
 
 使用键盘控制机器人在医院场景中手动建图。
+```bash
+colcon build --symlink-install --packages-select m3pro_world_bringup yahboom_m3pro_slam_demo
+```
+
+---
+
+## 3. 手动遥控 SLAM 建图
+
+使用键盘控制机器人在医院场景中手动建图。
 
 ```bash
+ros2 launch yahboom_m3pro_slam_demo gazebo_hospital_slam_demo_launch.py
 ros2 launch yahboom_m3pro_slam_demo gazebo_hospital_slam_demo_launch.py
 ```
 
 启动内容：Gazebo 医院场景 → M3Pro spawn → ros2_control → 键盘遥控 → 双雷达合并 → SLAM Toolbox → RViz
 
 RViz 默认使用 `yahboom_m3pro_slam_demo/rviz/spen_m3pro_lidar_slam.rviz`，可通过参数覆盖：
+启动内容：Gazebo 医院场景 → M3Pro spawn → ros2_control → 键盘遥控 → 双雷达合并 → SLAM Toolbox → RViz
+
+RViz 默认使用 `yahboom_m3pro_slam_demo/rviz/spen_m3pro_lidar_slam.rviz`，可通过参数覆盖：
 
 ```bash
+ros2 launch yahboom_m3pro_slam_demo gazebo_hospital_slam_demo_launch.py rvizconfig:=/path/to/your.rviz
 ros2 launch yahboom_m3pro_slam_demo gazebo_hospital_slam_demo_launch.py rvizconfig:=/path/to/your.rviz
 ```
 
 ---
 
 ## 4. Nav2 自主导航
+---
 
+## 4. Nav2 自主导航
+
+基于预建静态地图，使用 Nav2 进行自主导航。在 RViz 中点击 "2D Goal Pose" 设置目标。
 基于预建静态地图，使用 Nav2 进行自主导航。在 RViz 中点击 "2D Goal Pose" 设置目标。
 
 ```bash
+ros2 launch yahboom_m3pro_nav_demo hospital_navigation_launch.py
 ros2 launch yahboom_m3pro_nav_demo hospital_navigation_launch.py
 ```
 
@@ -147,27 +173,34 @@ ros2 launch yahboom_m3pro_nav_demo hospital_navigation_launch.py
 | `maps/hospital_map_v2.yaml` | 静态地图 |
 | `rviz/nav_demo.rviz` | RViz 导航显示配置 |
 
-Nav2 控制器使用 **RegulatedPurePursuitController**，当前配置为纯弧线转弯模式（`use_rotate_to_heading: False` + `allow_reversing: False`），详细调试记录见 `docs/nav2_debug_journal_2026-03-29.md`。
+Nav2 控制器使用 **RegulatedPurePursuitController**，当前配置为纯弧线转弯模式（`use_rotate_to_heading: False` + `allow_reversing: False`）。
 
----
-
-## 5. Frontier 自动探索建图
-
-在 SLAM 建图基础上，自动发现未探索区域并驱动机器人前往。
+RViz 默认使用 `yahboom_m3pro_nav_demo/rviz/nav_demo.rviz`，可通过参数覆盖：
 
 ```bash
-ros2 launch yahboom_m3pro_exploration auto_explore_slam_launch.py
+ros2 launch yahboom_m3pro_nav_demo hospital_navigation_launch.py rvizconfig:=/path/to/your.rviz
 ```
-
-启动内容：Gazebo 医院场景 → M3Pro spawn → ros2_control → 双雷达合并 → SLAM Toolbox → Nav2 → Frontier Explorer → RViz
 
 ---
 
-## 6. 仅启动仿真环境（不含建图/导航）
+## 5. 仅启动仿真环境（不含建图/导航）
 
+如果只想加载 Gazebo 医院场景 + 机器人 + 键盘遥控 + RViz：
 如果只想加载 Gazebo 医院场景 + 机器人 + 键盘遥控 + RViz：
 
 ```bash
+ros2 launch m3pro_world_bringup hospital_world_bringup_launch.py
+```
+
+可选参数：
+
+| 参数 | 默认值 | 说明 |
+|------|--------|------|
+| `gui` | `true` | 是否启动 Gazebo GUI |
+| `keyboard` | `true` | 是否启动键盘遥控（xterm） |
+| `rvizconfig` | `m3pro_world_bringup/rviz/default_demo.rviz` | RViz 配置文件路径 |
+| `world` | `hospital.world` | Gazebo 世界文件路径 |
+| `x` / `y` / `z` | `0.049 / 11.755 / 0.01` | 机器人 spawn 位置 |
 ros2 launch m3pro_world_bringup hospital_world_bringup_launch.py
 ```
 

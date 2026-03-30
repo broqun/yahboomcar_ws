@@ -1,8 +1,9 @@
 import os
 from ament_index_python.packages import get_package_share_directory
 from launch import LaunchDescription
-from launch.actions import IncludeLaunchDescription, ExecuteProcess, TimerAction, LogInfo
+from launch.actions import DeclareLaunchArgument, IncludeLaunchDescription, ExecuteProcess, TimerAction, LogInfo
 from launch.launch_description_sources import PythonLaunchDescriptionSource
+from launch.substitutions import LaunchConfiguration
 from launch_ros.actions import Node
 from launch_ros.actions import SetRemap
 
@@ -14,14 +15,19 @@ def generate_launch_description():
     map_yaml_file = os.path.join(nav_demo_dir, 'maps', 'hospital_map_v2.yaml')
     nav2_params_file = os.path.join(nav_demo_dir, 'config', 'nav2_navigation.yaml')
     ekf_config_file = os.path.join(nav_demo_dir, 'config', 'ekf.yaml')
+    default_rviz = os.path.join(nav_demo_dir, 'rviz', 'nav_demo.rviz')
 
-    rviz_config = os.path.join(nav_demo_dir, 'rviz', 'nav_demo.rviz')
+    rviz_arg = DeclareLaunchArgument(
+        'rvizconfig',
+        default_value=default_rviz,
+        description='Path to RViz config file for Nav2 demo.',
+    )
 
     hospital_env_launch = IncludeLaunchDescription(
         PythonLaunchDescriptionSource(os.path.join(world_bringup_dir, 'launch', 'hospital_world_bringup_launch.py')),
         launch_arguments={
             'keyboard': 'false',
-            'rvizconfig': rviz_config,
+            'rvizconfig': LaunchConfiguration('rvizconfig'),
         }.items()
     )
 
@@ -64,6 +70,7 @@ def generate_launch_description():
     )
 
     return LaunchDescription([
+        rviz_arg,
         SetRemap(src='/cmd_vel', dst='/diff_drive_controller/cmd_vel_unstamped'),
         hospital_env_launch,
         lidar_merger_node,
