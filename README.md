@@ -1,35 +1,67 @@
-# `yahboomcar_ws` 简要说明
+# yahboomcar_ws
 
-当前工作空间的主要技术基础为：
+Yahboom M3Pro 机器人 ROS 2 仿真工作空间——在 Gazebo Classic 医院场景中完成建图、导航与自主探索。
 
-- ROS 2
-- ROS 2 Control
-- Gazebo Classic
+**技术栈**：ROS 2 Humble · Gazebo Classic 11 · ros2_control · Nav2 · SLAM Toolbox
 
-## 1. 依赖包安装
+---
 
-如果只想快速检查并安装工作区 `src/` 下当前功能包声明的依赖，建议在工作区根目录执行：
+## 功能包一览
+
+```
+src/
+├── aws-robomaker-hospital-world   # 医院 Gazebo 世界模型（纯资源包，ament_cmake）
+├── m3pro_world_bringup            # 基础 bringup：Gazebo + M3Pro spawn + RViz + 键盘遥控
+├── yahboom_m3pro_lidar_tools      # 双雷达合并节点（C++，ament_cmake）
+├── yahboom_m3pro_slam_demo        # 手动遥控 SLAM 建图演示
+├── yahboom_m3pro_nav_demo         # 基于静态地图的 Nav2 自主导航演示
+└── yahboom_m3pro_exploration      # 基于 frontier 的全自动探索建图
+```
+
+**依赖关系**：
+
+```
+aws-robomaker-hospital-world
+        │
+        ▼
+m3pro_world_bringup ◄── yahboom_m3pro_lidar_tools
+   │         │                    │
+   ▼         ▼                    ▼
+yahboom_m3pro_slam_demo   yahboom_m3pro_nav_demo
+        │                         │
+        ▼                         │
+yahboom_m3pro_exploration ◄───────┘
+```
+
+---
+
+## 1. 环境配置
+
+### 1.1 系统依赖
+
+```bash
+sudo apt update
+sudo apt install -y \
+  ros-humble-gazebo-ros-pkgs \
+  ros-humble-ros2-control \
+  ros-humble-ros2-controllers \
+  ros-humble-robot-localization \
+  ros-humble-slam-toolbox \
+  ros-humble-navigation2 \
+  ros-humble-nav2-bringup \
+  ros-humble-teleop-twist-keyboard \
+  ros-humble-xacro \
+  xterm
+```
+
+### 1.2 工作空间依赖（一键检查）
 
 ```bash
 cd /var/robotic/yahboomcar_ws
 rosdep install --from-paths src --ignore-src -r -y
 ```
 
-如果你只想检查 Python Demo 包本身，也可以单独执行：
-
-```bash
-cd /var/robotic/yahboomcar_ws/src/yahboom_m3pro_slam_demo
-rosdep install --from-paths . --ignore-src -r -y
-```
-
-说明：
-
-- `gazebo_hospital_slam_demo_launch.py` 现在不仅依赖 `yahboom_m3pro_slam_demo`，还会启动 `yahboom_m3pro_lidar_tools` 中的 C++ 合并节点。
-- 因此，只安装 / 编译 `yahboom_m3pro_slam_demo` 而没有准备好 `yahboom_m3pro_lidar_tools` 时，`/scan_merged` 不会出现。
-
-## 2. 环境配置
-
-建议把下面内容写入 `~/.bashrc`：
+### 1.3 bashrc 推荐配置
 
 ```bash
 # ==========================================
@@ -58,98 +90,93 @@ source /var/robotic/yahboomcar_ws/install/setup.bash
 export GAZEBO_MODEL_DATABASE_URI=""
 ```
 
-如果你的工作空间路径不是 `/var/robotic/yahboomcar_ws`，请把上面的工作空间 `source` 路径改成你自己的实际路径。
+如果工作空间路径不同，请替换上面的路径。修改完成后执行 `source ~/.bashrc`。
 
-修改完成后执行：
+---
 
-```bash
-source ~/.bashrc
-```
-
-## 3. 自动探索建图
-
-当前工作区已经新增自动探索相关功能包：
-
-- `yahboom_m3pro_exploration`
-
-它会在现有医院 SLAM Demo 基础上继续启动：
-
-- Nav2
-- frontier exploration 节点
-
-自动探索链路目前大致为：
-
-```text
-Gazebo / robot / ros2_control
--> /scan_front + /scan_rear
--> /scan_merged
--> slam_toolbox
--> Nav2
--> frontier_explorer
--> /diff_drive_controller/cmd_vel_unstamped
-```
-
-### 3.1 自动探索前的额外依赖
-
-自动探索除了原有 SLAM Demo 依赖外，还需要系统中安装 Nav2，至少包括：
-
-```bash
-sudo apt update
-sudo apt install -y ros-humble-navigation2 ros-humble-nav2-bringup
-```
-
-安装完成后可用下面命令快速检查：
-
-```bash
-source /opt/ros/humble/setup.bash
-ros2 pkg prefix nav2_bringup
-```
-
-### 3.2 自动探索启动命令
-
-假设环境变量、依赖包和 Nav2 都已经就绪，那么推荐在工作区根目录执行：
-
-```bash
-clear;clear && colcon build --packages-select yahboom_m3pro_exploration yahboom_m3pro_slam_demo yahboom_m3pro_lidar_tools && source install/setup.bash && ros2 launch yahboom_m3pro_exploration auto_explore_slam_launch.py
-```
-
-说明：
-
-- 自动探索 launch 默认会把 `keyboard` 设为 `false`，不再依赖手动键盘控制。
-- `auto_explore_slam_launch.py` 会先复用原有 Gazebo + SLAM Demo，再延迟拉起 Nav2 和 `frontier_explorer`。
-- Nav2 的 `cmd_vel` 已经被重映射到 `/diff_drive_controller/cmd_vel_unstamped`，可直接驱动当前底盘控制器。
-
-### 3.3 当前自动探索状态
-
-根据最近一次实测，自动探索主链路已经可以跑通：
-
-- Nav2 生命周期节点能够进入 `active`
-- `frontier_explorer` 能收到 `/map`
-- 节点会自动发送多个 frontier 目标
-- 机器人已经多次成功自动到达探索目标并持续扩展地图
-
-不过当前仍有一些已知问题：
-
-- 偶尔会挑到不可规划或较差的 frontier 目标，导致局部规划失败或绕行时间过长
-- 手动 `Ctrl-C` 停止时，`frontier_explorer` 还存在一次 `rclpy.shutdown()` 重复调用报错
-- RViz 在当前图形环境下仍可能出现 GLSL 相关警告
-
-更详细的最近一次运行结果与下一步建议，请参考：
-
-```text
-AUTO_EXPLORE_STATUS.md
-```
-
-## 4. 手动控制建图
-
-如果你想先用最稳定的方式手动控制机器人建图，仍可使用原有手动 Demo：
-
-```bash
-clear;clear && colcon build --packages-select yahboom_m3pro_slam_demo yahboom_m3pro_lidar_tools && source install/setup.bash && ros2 launch yahboom_m3pro_slam_demo gazebo_hospital_slam_demo_launch.py
-```
-
-如果你当前不在工作区根目录，请先执行：
+## 2. 编译
 
 ```bash
 cd /var/robotic/yahboomcar_ws
+colcon build --symlink-install
+source install/setup.bash
 ```
+
+如果只想编译特定包：
+
+```bash
+colcon build --symlink-install --packages-select m3pro_world_bringup yahboom_m3pro_slam_demo
+```
+
+---
+
+## 3. 手动遥控 SLAM 建图
+
+使用键盘控制机器人在医院场景中手动建图。
+
+```bash
+ros2 launch yahboom_m3pro_slam_demo gazebo_hospital_slam_demo_launch.py
+```
+
+启动内容：Gazebo 医院场景 → M3Pro spawn → ros2_control → 键盘遥控 → 双雷达合并 → SLAM Toolbox → RViz
+
+RViz 默认使用 `yahboom_m3pro_slam_demo/rviz/spen_m3pro_lidar_slam.rviz`，可通过参数覆盖：
+
+```bash
+ros2 launch yahboom_m3pro_slam_demo gazebo_hospital_slam_demo_launch.py rvizconfig:=/path/to/your.rviz
+```
+
+---
+
+## 4. Nav2 自主导航
+
+基于预建静态地图，使用 Nav2 进行自主导航。在 RViz 中点击 "2D Goal Pose" 设置目标。
+
+```bash
+ros2 launch yahboom_m3pro_nav_demo hospital_navigation_launch.py
+```
+
+启动内容：Gazebo 医院场景 → M3Pro spawn → ros2_control → 双雷达合并 → EKF 里程计融合 → Nav2（AMCL + Planner + Controller + Recovery）→ RViz
+
+关键配置文件：
+
+| 文件 | 说明 |
+|------|------|
+| `config/nav2_navigation.yaml` | Nav2 全栈参数（AMCL、costmap、RPP controller、velocity_smoother 等） |
+| `config/ekf.yaml` | robot_localization EKF 参数（odom → base_footprint TF） |
+| `maps/hospital_map_v2.yaml` | 静态地图 |
+| `rviz/nav_demo.rviz` | RViz 导航显示配置 |
+
+Nav2 控制器使用 **RegulatedPurePursuitController**，当前配置为纯弧线转弯模式（`use_rotate_to_heading: False` + `allow_reversing: False`），详细调试记录见 `docs/nav2_debug_journal_2026-03-29.md`。
+
+---
+
+## 5. Frontier 自动探索建图
+
+在 SLAM 建图基础上，自动发现未探索区域并驱动机器人前往。
+
+```bash
+ros2 launch yahboom_m3pro_exploration auto_explore_slam_launch.py
+```
+
+启动内容：Gazebo 医院场景 → M3Pro spawn → ros2_control → 双雷达合并 → SLAM Toolbox → Nav2 → Frontier Explorer → RViz
+
+---
+
+## 6. 仅启动仿真环境（不含建图/导航）
+
+如果只想加载 Gazebo 医院场景 + 机器人 + 键盘遥控 + RViz：
+
+```bash
+ros2 launch m3pro_world_bringup hospital_world_bringup_launch.py
+```
+
+可选参数：
+
+| 参数 | 默认值 | 说明 |
+|------|--------|------|
+| `gui` | `true` | 是否启动 Gazebo GUI |
+| `keyboard` | `true` | 是否启动键盘遥控（xterm） |
+| `rvizconfig` | `m3pro_world_bringup/rviz/default_demo.rviz` | RViz 配置文件路径 |
+| `world` | `hospital.world` | Gazebo 世界文件路径 |
+| `x` / `y` / `z` | `0.049 / 11.755 / 0.01` | 机器人 spawn 位置 |

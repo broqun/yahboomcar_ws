@@ -2,20 +2,32 @@
 <?xml-model href="http://download.ros.org/schema/package_format3.xsd" schematypens="http://www.w3.org/2001/XMLSchema"?>
 <package format="3">
   <name>yahboom_m3pro_nav_demo</name>
-  <version>0.0.0</version>
-  <description>TODO: Package description</description>
+  <version>0.1.0</version>
+  <description>M3Pro 机器人在 Hospital World 中基于静态地图的 Nav2 自主导航演示</description>
   <maintainer email="broqun@yahoo.com">broqun</maintainer>
-  <license>TODO: License declaration</license>
+  <license>Apache-2.0</license>
 
   <buildtool_depend>ament_python</buildtool_depend>
 
+  <!-- Launch 基础设施 -->
   <exec_depend>launch</exec_depend>
   <exec_depend>launch_ros</exec_depend>
   <exec_depend>ament_index_python</exec_depend>
+
+  <!-- 仿真环境 + 机器人 spawn -->
   <exec_depend>m3pro_world_bringup</exec_depend>
+
+  <!-- 双雷达合并 -->
   <exec_depend>yahboom_m3pro_lidar_tools</exec_depend>
+
+  <!-- Nav2 导航栈 -->
   <exec_depend>nav2_bringup</exec_depend>
+
+  <!-- EKF 里程计融合（odom → base_footprint TF） -->
   <exec_depend>robot_localization</exec_depend>
+
+  <!-- ros2_control 控制器加载（joint_state_broadcaster + diff_drive_controller） -->
+  <exec_depend>controller_manager</exec_depend>
 
   <test_depend>ament_copyright</test_depend>
   <test_depend>ament_flake8</test_depend>
