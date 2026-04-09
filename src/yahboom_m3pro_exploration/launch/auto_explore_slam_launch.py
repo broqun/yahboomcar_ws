@@ -1,8 +1,8 @@
 from launch import LaunchDescription
-from launch.actions import DeclareLaunchArgument, GroupAction, IncludeLaunchDescription, LogInfo, TimerAction
+from launch.actions import DeclareLaunchArgument, IncludeLaunchDescription, LogInfo, TimerAction
 from launch.launch_description_sources import PythonLaunchDescriptionSource
 from launch.substitutions import LaunchConfiguration
-from launch_ros.actions import Node, SetRemap
+from launch_ros.actions import Node
 from ament_index_python.packages import get_package_share_path
 
 
@@ -28,21 +28,16 @@ def generate_launch_description():
         }.items(),
     )
 
-    # Nav2 默认输出 /cmd_vel，而当前底盘控制器实际监听
-    # /diff_drive_controller/cmd_vel_unstamped，因此这里统一做 remap。
-    nav2_launch = GroupAction([
-        SetRemap(src='cmd_vel', dst='/diff_drive_controller/cmd_vel_unstamped'),
-        IncludeLaunchDescription(
-            PythonLaunchDescriptionSource(
-                [str(nav2_bringup_share / 'launch' / 'navigation_launch.py')]
-            ),
-            launch_arguments={
-                'use_sim_time': use_sim_time,
-                'autostart': autostart,
-                'params_file': params_file,
-            }.items(),
+    nav2_launch = IncludeLaunchDescription(
+        PythonLaunchDescriptionSource(
+            [str(nav2_bringup_share / 'launch' / 'navigation_launch.py')]
         ),
-    ])
+        launch_arguments={
+            'use_sim_time': use_sim_time,
+            'autostart': autostart,
+            'params_file': params_file,
+        }.items(),
+    )
 
     # 当前 explorer 还只是“占位节点”，用于验证自动探索包本身的接线。
     # 下一步会在这里补 frontier 检测与 NavigateToPose action 调用。

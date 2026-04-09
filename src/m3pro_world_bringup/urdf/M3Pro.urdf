@@ -1359,34 +1359,6 @@ Stephen Brawner (brawner@gmail.com)
   <gazebo reference="Camera">
     <material>Gazebo/DarkGrey</material>
   </gazebo>
-  <!-- <gazebo>
-    <plugin name="m3pro_diff_drive" filename="libgazebo_ros_diff_drive.so">
-      <ros>
-        <remapping>cmd_vel:=cmd_vel</remapping>
-        <remapping>odom:=odom</remapping>
-      </ros>
-
-      <num_wheel_pairs>2</num_wheel_pairs>
-      <left_joint>lwheel1_Joint</left_joint>
-      <left_joint>lwheel2_Joint</left_joint>
-      <right_joint>rwheel1_Joint</right_joint>
-      <right_joint>rwheel2_Joint</right_joint>
-      <wheel_separation>0.1955</wheel_separation>
-      <wheel_diameter>0.08</wheel_diameter>
-      <wheel_separation>0.1955</wheel_separation>
-      <wheel_diameter>0.08</wheel_diameter>
-
-      <max_wheel_torque>10</max_wheel_torque>
-      <max_wheel_acceleration>4</max_wheel_acceleration>
-
-      <publish_odom>true</publish_odom>
-      <publish_odom_tf>true</publish_odom_tf>
-      <publish_wheel_tf>true</publish_wheel_tf>
-
-      <odometry_frame>odom</odometry_frame>
-      <robot_base_frame>base_footprint</robot_base_frame>
-    </plugin>
-  </gazebo> -->
   <ros2_control name="GazeboSystem" type="system">
     <hardware>
       <plugin>gazebo_ros2_control/GazeboSystem</plugin>
@@ -1418,7 +1390,7 @@ Stephen Brawner (brawner@gmail.com)
 
   <gazebo>
     <plugin name="gazebo_ros2_control" filename="libgazebo_ros2_control.so">
-      <parameters>$(find yahboom_m3pro_slam_demo)/config/controllers.yaml</parameters>
+      <parameters>$(find m3pro_world_bringup)/config/controllers.yaml</parameters>
       <robot_param>robot_description</robot_param>
       <robot_param_node>robot_state_publisher</robot_param_node>
     </plugin>

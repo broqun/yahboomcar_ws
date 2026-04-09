@@ -1,6 +1,6 @@
 controller_manager:
   ros__parameters:
-    update_rate: 50
+    update_rate: 200
     use_sim_time: true
 
     joint_state_broadcaster:
@@ -16,9 +16,9 @@ diff_drive_controller:
     right_wheel_names: ["rwheel1_Joint", "rwheel2_Joint"]
     wheel_separation: 0.1955
     wheel_radius: 0.04
-    publish_rate: 50.0
     odom_frame_id: odom
     base_frame_id: base_footprint
+    publish_limited_velocity: true
     enable_odom_tf: false # to avoid tf tree issue with ekf
     cmd_vel_timeout: 0.5
     use_stamped_vel: false

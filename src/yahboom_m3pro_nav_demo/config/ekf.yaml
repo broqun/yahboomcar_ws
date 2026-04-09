@@ -1,19 +1,60 @@
 ekf_filter_node:
   ros__parameters:
     use_sim_time: true
-    frequency: 50.0
+    frequency: 30.0
+    sensor_timeout: 0.1
     two_d_mode: true
-    publish_tf: true
+    transform_time_offset: 0.0
+    transform_timeout: 0.0
+    print_diagnostics: true
 
     map_frame: map
     odom_frame: odom
     base_link_frame: base_footprint
     world_frame: odom
 
-    # 仅融合底盘里程计，先保证 odom TF 稳定可用。
+    # nav_msgs/Odometry：以下 15 个布尔值与 robot_localization 文档顺序一致，表示是否把该测量分量纳入滤波。
+    # 顺序为 [x, y, z, roll, pitch, yaw, vx, vy, vz, vroll, vpitch, vyaw, ax, ay, az]。
     odom0: /diff_drive_controller/odom
-    odom0_config: [false, false, false,
-                   false, false, false,
-                   true,  false, false,
-                   false, false, true,
-                   false, false, false]
+    odom0_config:
+      - false  # [0] x：是否融合位姿在 map/odom 中的 x（米）。例：true 时直接用里程计 pose.x 约束水平位置；本配置为 false，位姿 x 由滤波器积分与其它传感器决定。
+      - false  # [1] y：是否融合位姿 y（米）。例：差速车在平面运动时常与 [0] 一起打开；此处 false，不直接用里程计 y。
+      - false  # [2] z：是否融合位姿 z（米）。two_d_mode 下通常 false；若 true 会融合 pose.position.z（无人机等才有意义）。
+      - false  # [3] roll：是否融合横滚角（弧度）。例：地面车一般 false，因里程计姿态不可靠或不存在；IMU 更常融合 roll。
+      - false  # [4] pitch：是否融合俯仰角（弧度）。例：同上，平面小车多为 false。
+      - false  # [5] yaw：是否融合航向角（弧度）。例：true 时把 odom 四元数解算出的 yaw 当观测；此处 false，航向多由 IMU/积分提供，避免与 imu0 重复约束。
+      - true   # [6] vx：是否融合本体/里程计坐标系下 x 向线速度（m/s）。例：差速底盘前进速度主要来自轮速，设为 true 可稳定水平速度估计。
+      - true   # [7] vy：是否融合 y 向线速度。例：全向轮或麦轮可非零；差速车理论上 vy≈0，融合 true 可略约束侧向滑移误差（需与坐标系一致）。
+      - false  # [8] vz：是否融合 z 向线速度。two_d_mode 下多为 false。
+      - false  # [9] vroll：是否融合绕 x 轴角速度（rad/s）。例：地面车通常不从 odom 融合；一般由 IMU 提供。
+      - false  # [10] vpitch：是否融合绕 y 轴角速度（rad/s）。例：同上，多为 false。
+      - true   # [11] vyaw：是否融合绕 z 轴角速度即 yaw 率（rad/s）。例：true 时融合 twist.angular.z，与轮速差一致时可改善转弯时姿态/速度一致性。
+      - false  # [12] ax：是否融合 x 向线加速度（m/s²）。标准 Odometry 不含加速度项，此处通常为 false。
+      - false  # [13] ay：是否融合 y 向线加速度（m/s²）。同上。
+      - false  # [14] az：是否融合 z 向线加速度（m/s²）。同上。
+    odom0_queue_size: 10
+    odom0_differential: false
+    odom0_relative: false
+
+    # sensor_msgs/Imu：同样 15 维顺序；IMU 提供 orientation、angular_velocity、linear_acceleration，无位置与线速度，故前几项多为 false。
+    imu0: /imu
+    imu0_config:
+      - false  # [0] x：IMU 无全局位置，保持 false。
+      - false  # [1] y：同上。
+      - false  # [2] z：同上。
+      - false  # [3] roll：是否融合 IMU 给出的横滚（弧度）。平面运动且 two_d_mode 时常 false，避免重力对齐误差干扰；需要全姿态时再设 true。
+      - false  # [4] pitch：是否融合俯仰（弧度）。例：与 roll 类似，小车平地多为 false。
+      - true   # [5] yaw：是否融合航向（弧度）。例：true 时用 IMU 四元数提供的 yaw 修正航向漂移；与 odom 的 [5] 勿同时为 true，以免冲突。
+      - false  # [6] vx：IMU 不直接测线速度，false。
+      - false  # [7] vy：同上。
+      - false  # [8] vz：同上。
+      - false  # [9] vroll：是否融合 IMU 角速度 x 分量（rad/s）。常与 [3] 配套；未融合 roll 姿态时多保持 false。
+      - false  # [10] vpitch：是否融合角速度 y 分量（rad/s）。例：同上。
+      - true   # [11] vyaw：是否融合 yaw 率（rad/s）。例：true 时用 gyro.z 改善快速转向时的角速度估计；若与 odom [11] 同时 true，需调噪声协方差避免过信其一。
+      - true   # [12] ax：是否融合线加速度 x（m/s²，已去重力若开启 remove_gravitational_acceleration）。例：true 可用于检测前进加减速；与轮速观测配合需合理设置协方差。
+      - false  # [13] ay：是否融合线加速度 y。例：侧向加速度；差速车侧向动态小或噪声大时常关。
+      - false  # [14] az：是否融合线加速度 z。two_d_mode 下多为 false；若关 remove_gravity 且要约束竖直方向再考虑。
+    imu0_queue_size: 10
+    imu0_differential: false
+    imu0_relative: true
+    imu0_remove_gravitational_acceleration: true

@@ -3,7 +3,7 @@ project(aws_robomaker_hospital_world)
 
 find_package(ament_cmake REQUIRED)
 
-install(DIRECTORY launch models fuel_models worlds
+install(DIRECTORY launch models fuel_models worlds photos
   DESTINATION share/${PROJECT_NAME}
 )
 

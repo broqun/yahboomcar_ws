@@ -152,12 +152,24 @@ def generate_launch_description():
         ],
     )
 
+    # Centralize Twist bridging in bringup: all publishers keep using /cmd_vel.
+    cmd_vel_relay = Node(
+        package='topic_tools',
+        executable='relay',
+        name='cmd_vel_relay',
+        output='screen',
+        parameters=[{
+            'input_topic': '/cmd_vel',
+            'output_topic': '/diff_drive_controller/cmd_vel_unstamped',
+            'type': 'geometry_msgs/msg/Twist',
+        }],
+    )
+
     def create_keyboard_teleop(context, *args, **kwargs):
         speed = context.perform_substitution(LaunchConfiguration('speed'))
         turn = context.perform_substitution(LaunchConfiguration('turn'))
         teleop_cmd = (
             'ros2 run teleop_twist_keyboard teleop_twist_keyboard '
-            '--ros-args -r cmd_vel:=/diff_drive_controller/cmd_vel_unstamped '
             f'-p speed:={speed} -p turn:={turn} -p repeat_rate:=20'
         )
         return [
@@ -177,8 +189,7 @@ def generate_launch_description():
         actions=[
             LogInfo(
                 msg='[keyboard] Run manually in a new terminal if needed: '
-                    'ros2 run teleop_twist_keyboard teleop_twist_keyboard '
-                    '--ros-args -r cmd_vel:=/diff_drive_controller/cmd_vel_unstamped'
+                    'ros2 run teleop_twist_keyboard teleop_twist_keyboard'
             ),
         ],
         condition=UnlessCondition(LaunchConfiguration('keyboard')),
@@ -229,6 +240,7 @@ def generate_launch_description():
         gzserver_launch,
         gzclient_launch,
         robot_state_publisher,
+        cmd_vel_relay,
         spawn_m3pro_rviz,
         keyboard_hint,
     ])
