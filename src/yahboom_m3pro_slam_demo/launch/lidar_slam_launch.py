@@ -1,34 +1,10 @@
-from pathlib import Path
 from launch import LaunchDescription
-from launch_ros.actions import Node
 from launch.actions import ExecuteProcess
+from launch_ros.actions import Node
 import os
 from ament_index_python.packages import get_package_share_directory
 
-def get_multi_lidar_merger_script_path():
-    """Resolve multi_lidar_merger.py from source or install layout."""
-    current = Path(__file__).resolve().parent
-
-    # source layout: src/yahboom_m3pro_slam_demo/launch/...
-    direct_candidate = current.parent / 'scripts' / 'multi_lidar_merger.py'
-    if direct_candidate.exists():
-        return direct_candidate
-
-    # install layout: install/.../share/yahboom_m3pro_slam_demo/launch/...
-    # Walk upwards until we can locate the workspace source tree.
-    for base in current.parents:
-        candidate = base / 'src' / 'yahboom_m3pro_slam_demo' / 'scripts' / 'multi_lidar_merger.py'
-        if candidate.exists():
-            return candidate
-
-    raise FileNotFoundError(
-        'multi_lidar_merger.py not found. Expected it under '
-        'src/yahboom_m3pro_slam_demo/scripts/.'
-    )
-
 def generate_launch_description():
-    merger_script = get_multi_lidar_merger_script_path()
-
     # 获取 ekf 配置文件路径
     ekf_config_path = os.path.join(
         get_package_share_directory('yahboom_m3pro_slam_demo'), 
@@ -37,16 +13,23 @@ def generate_launch_description():
     )
 
     return LaunchDescription([
-        # 1. 启动打好补丁的 360° 双雷达合并 Python 节点
-        ExecuteProcess(
-            cmd=['python3', str(merger_script)],
+        # 1. 启动 C++ 双雷达合并节点
+        Node(
+            package='yahboom_m3pro_lidar_tools',
+            executable='multi_lidar_merger_node',
+            name='multi_lidar_merger',
             output='screen'
         ),
-        # Node(
-        #     package='yahboom_m3pro_lidar_tools',
-        #     executable='multi_lidar_merger_node',
-        #     name='multi_lidar_merger',
-        #     output='screen',
+        # 如需切回 Python 合并器，可使用下面注释模板：
+        # from launch.actions import ExecuteProcess
+        # merger_script = os.path.join(
+        #     get_package_share_directory('yahboom_m3pro_slam_demo'),
+        #     'scripts',
+        #     'multi_lidar_merger.py'
+        # )
+        # ExecuteProcess(
+        #     cmd=['python3', merger_script],
+        #     output='screen'
         # ),
 
         # 2. 启动 SLAM Toolbox

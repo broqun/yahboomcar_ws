@@ -13,10 +13,12 @@ from launch.actions import (
     IncludeLaunchDescription,
     LogInfo,
     OpaqueFunction,
+    RegisterEventHandler,
     SetEnvironmentVariable,
     TimerAction,
 )
 from launch.conditions import IfCondition, UnlessCondition
+from launch.event_handlers import OnProcessExit
 from launch.launch_description_sources import PythonLaunchDescriptionSource
 from launch.substitutions import Command, LaunchConfiguration
 from launch_ros.actions import Node
@@ -127,6 +129,7 @@ def generate_launch_description():
         launch_arguments={
             'world': LaunchConfiguration('world'),
             'verbose': 'true',
+            'factory': 'true',
         }.items(),
     )
 
@@ -204,25 +207,30 @@ def generate_launch_description():
         parameters=[{'use_sim_time': True}],
     )
 
-    spawn_m3pro_rviz = TimerAction(
-        period=5.5,
-        actions=[
-            Node(
-                package='gazebo_ros',
-                executable='spawn_entity.py',
-                name='spawn_m3pro',
-                output='screen',
-                arguments=[
-                    '-topic', 'robot_description',
-                    '-entity', 'M3Pro',
-                    '-x', LaunchConfiguration('x'),
-                    '-y', LaunchConfiguration('y'),
-                    '-z', LaunchConfiguration('z'),
-                ],
-            ),
-            rviz_node,
-            keyboard_teleop,
+    spawn_m3pro = Node(
+        package='gazebo_ros',
+        executable='spawn_entity.py',
+        name='spawn_m3pro',
+        output='screen',
+        arguments=[
+            '-topic', 'robot_description',
+            '-entity', 'M3Pro',
+            '-x', LaunchConfiguration('x'),
+            '-y', LaunchConfiguration('y'),
+            '-z', LaunchConfiguration('z'),
+            '-timeout', '120.0',
         ],
+    )
+
+    start_rviz_and_teleop_after_spawn = RegisterEventHandler(
+        OnProcessExit(
+            target_action=spawn_m3pro,
+            on_exit=[
+                LogInfo(msg='[bringup] 机器人模型已提交到 Gazebo，正在启动 RViz/Teleop。'),
+                rviz_node,
+                keyboard_teleop,
+            ],
+        )
     )
 
     return LaunchDescription([
@@ -241,6 +249,7 @@ def generate_launch_description():
         gzclient_launch,
         robot_state_publisher,
         cmd_vel_relay,
-        spawn_m3pro_rviz,
+        spawn_m3pro,
+        start_rviz_and_teleop_after_spawn,
         keyboard_hint,
     ])

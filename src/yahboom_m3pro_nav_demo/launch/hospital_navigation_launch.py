@@ -3,11 +3,10 @@ from ament_index_python.packages import get_package_share_directory
 from launch import LaunchDescription
 from launch.actions import (
     DeclareLaunchArgument,
+    RegisterEventHandler,
     IncludeLaunchDescription,
     ExecuteProcess,
     LogInfo,
-    RegisterEventHandler,
-    TimerAction,
 )
 from launch.event_handlers import OnProcessExit
 from launch.launch_description_sources import PythonLaunchDescriptionSource
@@ -19,7 +18,7 @@ def generate_launch_description():
     world_bringup_dir = get_package_share_directory('m3pro_world_bringup')
     nav2_bringup_dir = get_package_share_directory('nav2_bringup')
 
-    map_yaml_file = os.path.join(nav_demo_dir, 'maps', 'hospital_map_v2.yaml')
+    map_yaml_file = os.path.join(nav_demo_dir, 'maps', 'hospital_map_v3.yaml')
     nav2_params_file = os.path.join(nav_demo_dir, 'config', 'nav2_smac2d_mppi.yaml')
     ekf_config_file = os.path.join(nav_demo_dir, 'config', 'ekf.yaml')
     default_rviz = os.path.join(nav_demo_dir, 'rviz', 'nav_demo.rviz')
@@ -54,20 +53,22 @@ def generate_launch_description():
         parameters=[ekf_config_file, {'use_sim_time': True}]
     )
 
-    spawn_controllers_cmd = (
-        'ros2 run controller_manager spawner joint_state_broadcaster '
-        '&& ros2 run controller_manager spawner diff_drive_controller'
-    )
-    spawn_controllers_process = ExecuteProcess(
-        cmd=['bash', '-c', spawn_controllers_cmd],
+    joint_state_spawner = ExecuteProcess(
+        cmd=[
+            'ros2', 'run', 'controller_manager', 'spawner', 'joint_state_broadcaster',
+            '--controller-manager', '/controller_manager',
+            '--controller-manager-timeout', '120',
+        ],
         output='screen',
     )
-    delayed_spawn_controllers = TimerAction(
-        period=10.0,
-        actions=[
-            LogInfo(msg='[Nav2 Demo] 正在加载底层车轮控制器...'),
-            spawn_controllers_process,
+
+    diff_drive_spawner = ExecuteProcess(
+        cmd=[
+            'ros2', 'run', 'controller_manager', 'spawner', 'diff_drive_controller',
+            '--controller-manager', '/controller_manager',
+            '--controller-manager-timeout', '120',
         ],
+        output='screen',
     )
 
     nav2_launch = IncludeLaunchDescription(
@@ -81,13 +82,21 @@ def generate_launch_description():
         }.items()
     )
 
-    # 必须在 joint_state_broadcaster + diff_drive_controller 加载完成（bash 退出）后再起 Nav2。
-    # 若用固定 15s 定时器，Gazebo/插件较慢时会出现 odom 尚未发布、Nav2 已激活，导致 TF 与 progress 异常。
-    start_nav2_after_controllers = RegisterEventHandler(
+    start_diff_drive_after_joint_state = RegisterEventHandler(
         OnProcessExit(
-            target_action=spawn_controllers_process,
+            target_action=joint_state_spawner,
             on_exit=[
-                LogInfo(msg='[Nav2 Demo] 正在唤醒 Nav2 自动驾驶系统...'),
+                LogInfo(msg='[Nav2 Demo] joint_state_broadcaster 完成，继续检查/加载 diff_drive_controller...'),
+                diff_drive_spawner,
+            ],
+        )
+    )
+
+    start_nav2_after_spawners = RegisterEventHandler(
+        OnProcessExit(
+            target_action=diff_drive_spawner,
+            on_exit=[
+                LogInfo(msg='[Nav2 Demo] 控制器阶段结束，启动 Nav2...'),
                 nav2_launch,
             ],
         )
@@ -98,6 +107,8 @@ def generate_launch_description():
         hospital_env_launch,
         lidar_merger_node,
         ekf_node,
-        delayed_spawn_controllers,
-        start_nav2_after_controllers,
+        LogInfo(msg='[Nav2 Demo] 使用 ROS2 spawner 顺序加载控制器，然后启动 Nav2...'),
+        joint_state_spawner,
+        start_diff_drive_after_joint_state,
+        start_nav2_after_spawners,
     ])

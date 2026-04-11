@@ -47,7 +47,7 @@ planner_server:
       max_iterations: 1000000
       max_on_approach_iterations: 1000
       max_planning_time: 2.0
-      cost_travel_multiplier: 5.0
+      cost_travel_multiplier: 7.0
       use_final_approach_orientation: false
       smoother:
         max_iterations: 1000
@@ -75,17 +75,17 @@ controller_server:
     goal_checker:
       plugin: nav2_controller::SimpleGoalChecker
       xy_goal_tolerance: 0.30
-      yaw_goal_tolerance: 0.6
+      yaw_goal_tolerance: 0.3
       stateful: true
 
     FollowPath:
       plugin: "nav2_mppi_controller::MPPIController"
-      time_steps: 56
+      time_steps: 80
       model_dt: 0.05
       batch_size: 600
-      vx_std: 0.4
+      vx_std: 0.6
       vy_std: 0.0
-      wz_std: 1.2
+      wz_std: 1.5
       vx_max: 0.65
       vx_min: -0.35
       vy_max: 0.0
