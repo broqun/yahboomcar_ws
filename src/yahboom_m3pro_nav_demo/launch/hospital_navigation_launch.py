@@ -18,7 +18,7 @@ def generate_launch_description():
     world_bringup_dir = get_package_share_directory('m3pro_world_bringup')
     nav2_bringup_dir = get_package_share_directory('nav2_bringup')
 
-    map_yaml_file = os.path.join(nav_demo_dir, 'maps', 'hospital_map_v3.yaml')
+    map_yaml_file = os.path.join(nav_demo_dir, 'maps', 'hospital_map_v2.yaml')
     nav2_params_file = os.path.join(nav_demo_dir, 'config', 'nav2_smac2d_mppi.yaml')
     ekf_config_file = os.path.join(nav_demo_dir, 'config', 'ekf.yaml')
     default_rviz = os.path.join(nav_demo_dir, 'rviz', 'nav_demo.rviz')

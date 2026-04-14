@@ -1,7 +1,7 @@
 ekf_filter_node:
   ros__parameters:
     use_sim_time: true
-    frequency: 30.0
+    frequency: 50.0
     sensor_timeout: 0.1
     two_d_mode: true
     transform_time_offset: 0.0
@@ -24,11 +24,11 @@ ekf_filter_node:
       - false  # [4] pitch：是否融合俯仰角（弧度）。例：同上，平面小车多为 false。
       - false  # [5] yaw：是否融合航向角（弧度）。例：true 时把 odom 四元数解算出的 yaw 当观测；此处 false，航向多由 IMU/积分提供，避免与 imu0 重复约束。
       - true   # [6] vx：是否融合本体/里程计坐标系下 x 向线速度（m/s）。例：差速底盘前进速度主要来自轮速，设为 true 可稳定水平速度估计。
-      - true   # [7] vy：是否融合 y 向线速度。例：全向轮或麦轮可非零；差速车理论上 vy≈0，融合 true 可略约束侧向滑移误差（需与坐标系一致）。
+      - false  # [7] vy：差速底盘在抬轮/打滑时该分量很不稳定，关闭以减少碰撞后侧向漂移。
       - false  # [8] vz：是否融合 z 向线速度。two_d_mode 下多为 false。
       - false  # [9] vroll：是否融合绕 x 轴角速度（rad/s）。例：地面车通常不从 odom 融合；一般由 IMU 提供。
       - false  # [10] vpitch：是否融合绕 y 轴角速度（rad/s）。例：同上，多为 false。
-      - true   # [11] vyaw：是否融合绕 z 轴角速度即 yaw 率（rad/s）。例：true 时融合 twist.angular.z，与轮速差一致时可改善转弯时姿态/速度一致性。
+      - false  # [11] vyaw：转由 IMU 的角速度主导，避免轮胎空转时角速度误导滤波器。
       - false  # [12] ax：是否融合 x 向线加速度（m/s²）。标准 Odometry 不含加速度项，此处通常为 false。
       - false  # [13] ay：是否融合 y 向线加速度（m/s²）。同上。
       - false  # [14] az：是否融合 z 向线加速度（m/s²）。同上。
@@ -37,7 +37,7 @@ ekf_filter_node:
     odom0_relative: false
 
     # sensor_msgs/Imu：同样 15 维顺序；IMU 提供 orientation、angular_velocity、linear_acceleration，无位置与线速度，故前几项多为 false。
-    imu0: /imu
+    imu0: /imu/data
     imu0_config:
       - false  # [0] x：IMU 无全局位置，保持 false。
       - false  # [1] y：同上。
@@ -51,10 +51,10 @@ ekf_filter_node:
       - false  # [9] vroll：是否融合 IMU 角速度 x 分量（rad/s）。常与 [3] 配套；未融合 roll 姿态时多保持 false。
       - false  # [10] vpitch：是否融合角速度 y 分量（rad/s）。例：同上。
       - true   # [11] vyaw：是否融合 yaw 率（rad/s）。例：true 时用 gyro.z 改善快速转向时的角速度估计；若与 odom [11] 同时 true，需调噪声协方差避免过信其一。
-      - true   # [12] ax：是否融合线加速度 x（m/s²，已去重力若开启 remove_gravitational_acceleration）。例：true 可用于检测前进加减速；与轮速观测配合需合理设置协方差。
+      - false  # [12] ax：碰撞冲击和抬轮时 IMU 线加速度噪声大，关闭以避免位置估计被“撞飞”。
       - false  # [13] ay：是否融合线加速度 y。例：侧向加速度；差速车侧向动态小或噪声大时常关。
       - false  # [14] az：是否融合线加速度 z。two_d_mode 下多为 false；若关 remove_gravity 且要约束竖直方向再考虑。
     imu0_queue_size: 10
     imu0_differential: false
-    imu0_relative: true
+    imu0_relative: false
     imu0_remove_gravitational_acceleration: true
