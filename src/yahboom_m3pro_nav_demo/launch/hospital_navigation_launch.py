@@ -13,6 +13,7 @@ from launch.launch_description_sources import PythonLaunchDescriptionSource
 from launch.substitutions import LaunchConfiguration
 from launch_ros.actions import Node
 
+
 def generate_launch_description():
     nav_demo_dir = get_package_share_directory('yahboom_m3pro_nav_demo')
     world_bringup_dir = get_package_share_directory('m3pro_world_bringup')
@@ -29,8 +30,11 @@ def generate_launch_description():
         description='Path to RViz config file for Nav2 demo.',
     )
 
+    hospital_world_launch = os.path.join(
+        world_bringup_dir, 'launch', 'hospital_world_bringup_launch.py'
+    )
     hospital_env_launch = IncludeLaunchDescription(
-        PythonLaunchDescriptionSource(os.path.join(world_bringup_dir, 'launch', 'hospital_world_bringup_launch.py')),
+        PythonLaunchDescriptionSource(hospital_world_launch),
         launch_arguments={
             'keyboard': 'false',
             'rvizconfig': LaunchConfiguration('rvizconfig'),
@@ -71,8 +75,11 @@ def generate_launch_description():
         output='screen',
     )
 
+    nav2_bringup_launch = os.path.join(
+        nav2_bringup_dir, 'launch', 'bringup_launch.py'
+    )
     nav2_launch = IncludeLaunchDescription(
-        PythonLaunchDescriptionSource(os.path.join(nav2_bringup_dir, 'launch', 'bringup_launch.py')),
+        PythonLaunchDescriptionSource(nav2_bringup_launch),
         launch_arguments={
             'map': map_yaml_file,
             'use_sim_time': 'true',
@@ -82,11 +89,15 @@ def generate_launch_description():
         }.items()
     )
 
+    joint_done_msg = (
+        '[Nav2 Demo] joint_state_broadcaster 完成，继续检查/加载 '
+        'diff_drive_controller...'
+    )
     start_diff_drive_after_joint_state = RegisterEventHandler(
         OnProcessExit(
             target_action=joint_state_spawner,
             on_exit=[
-                LogInfo(msg='[Nav2 Demo] joint_state_broadcaster 完成，继续检查/加载 diff_drive_controller...'),
+                LogInfo(msg=joint_done_msg),
                 diff_drive_spawner,
             ],
         )

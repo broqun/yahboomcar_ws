@@ -75,7 +75,7 @@ controller_server:
     goal_checker:
       plugin: nav2_controller::SimpleGoalChecker
       xy_goal_tolerance: 0.30
-      yaw_goal_tolerance: 0.3
+      yaw_goal_tolerance: 0.524
       stateful: true
 
     FollowPath:
@@ -210,7 +210,7 @@ local_costmap:
           clearing: true
           min_obstacle_height: 0.12
           max_obstacle_height: 1.6
-          obstacle_min_range: 0.1
+          obstacle_min_range: 0.12 # 此参数设置过小时（例如 0.1），容易把相机前端的夹爪判断为障碍物
           obstacle_max_range: 2.5
           raytrace_min_range: 0.05
           raytrace_max_range: 3.0
@@ -267,7 +267,7 @@ global_costmap:
       inflation_layer:
         plugin: nav2_costmap_2d::InflationLayer
         cost_scaling_factor: 2.5
-        inflation_radius: 0.45
+        inflation_radius: 0.4
       always_send_full_costmap: true
 
 map_server:

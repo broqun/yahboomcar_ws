@@ -22,6 +22,10 @@
 
   <!-- Nav2 导航栈 -->
   <exec_depend>nav2_bringup</exec_depend>
+  <exec_depend>nav2_simple_commander</exec_depend>
+
+  <!-- 航点 YAML（waypoint_storage） -->
+  <exec_depend>python3-yaml</exec_depend>
 
   <!-- EKF 里程计融合（odom → base_footprint TF） -->
   <exec_depend>robot_localization</exec_depend>
