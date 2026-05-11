@@ -1,12 +1,18 @@
 #!/usr/bin/env python3
-"""Visit named waypoints from YAML using Nav2 NavigateToPose (no waypoint_follower required)."""
+"""Visit named waypoints from YAML using Nav2 NavigateToPose (no waypoint_follower required).
+
+Waypoint YAML entries may set ``patrol_order`` (or ``order``) per point; when the ROS
+parameter ``waypoint_order`` is empty, patrol uses ascending ``patrol_order``, then
+name as tie-breaker. Waypoints without ``patrol_order`` sort after those that have it.
+If no waypoint defines ``patrol_order``, order is alphabetical by name (legacy).
+"""
 
 from __future__ import annotations
 
 import math
 import sys
 from pathlib import Path
-from typing import Dict, List, Tuple
+from typing import Any, Dict, List, Tuple
 
 from ament_index_python.packages import get_package_share_directory
 from geometry_msgs.msg import PoseStamped
@@ -48,9 +54,21 @@ def resolve_waypoints_path(explicit: str) -> Path:
     return packaged if packaged.is_file() else user_path
 
 
+def _patrol_sort_key(name: str, waypoints: Dict[str, Dict[str, Any]]) -> Tuple[float, str]:
+    v = waypoints[name]
+    po = v.get('patrol_order')
+    if po is None:
+        return (float('inf'), name)
+    try:
+        return (float(po), name)
+    except (TypeError, ValueError):
+        return (float('inf'), name)
+
+
 def ordered_names(
-    waypoints: Dict[str, dict], order_csv: str
-) -> Tuple[List[str], List[str]]:
+    waypoints: Dict[str, Dict[str, Any]], order_csv: str
+) -> Tuple[List[str], List[str], str]:
+    """Return (names, missing_from_csv, order_source) where order_source is 'param', 'patrol_order', or 'name'."""
     if order_csv.strip():
         requested = [s.strip() for s in order_csv.split(',') if s.strip()]
         out: List[str] = []
@@ -60,8 +78,11 @@ def ordered_names(
                 out.append(n)
             else:
                 missing.append(n)
-        return out, missing
-    return sorted(waypoints.keys()), []
+        return out, missing, 'param'
+    if any('patrol_order' in v for v in waypoints.values()):
+        names = sorted(waypoints.keys(), key=lambda n: _patrol_sort_key(n, waypoints))
+        return names, [], 'patrol_order'
+    return sorted(waypoints.keys()), [], 'name'
 
 
 def main(args=None) -> None:
@@ -88,7 +109,7 @@ def main(args=None) -> None:
         rclpy.shutdown()
         sys.exit(1)
 
-    names, missing = ordered_names(waypoints, order_csv)
+    names, missing, order_src = ordered_names(waypoints, order_csv)
     for m in missing:
         navigator.get_logger().warn(f'Skipping unknown waypoint name in waypoint_order: {m}')
 
@@ -100,7 +121,7 @@ def main(args=None) -> None:
 
     navigator.get_logger().info(
         f'Loaded {len(waypoints)} waypoint(s) from {path} (frame_id={frame_id!r}, '
-        f'patrol order: {names}, loop={do_loop})'
+        f'order_source={order_src!r}, patrol order: {names}, loop={do_loop})'
     )
 
     navigator.waitUntilNav2Active()

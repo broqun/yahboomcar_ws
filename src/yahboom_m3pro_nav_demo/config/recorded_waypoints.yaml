@@ -1,74 +1,92 @@
 frame_id: map
 waypoints:
   vip_suite_01:
-    x: 9.337
-    y: -0.545
-    yaw: -0.025
+    x: 9.621
+    y: -0.568
+    yaw: -0.006
+    patrol_order: 1.0
   vip_suite_02:
-    x: 9.26
-    y: -6.895
-    yaw: 0.018
+    x: 9.621
+    y: -6.913
+    yaw: 0.006
+    patrol_order: 2.0
   general_ward_01:
-    x: 6.939
-    y: -20.728
-    yaw: -0.012
+    x: 7.408
+    y: -20.709
+    yaw: -0.003
+    patrol_order: 3.0
   general_ward_02:
-    x: 6.947
-    y: -34.682
-    yaw: -0.013
+    x: 7.468
+    y: -34.708
+    yaw: 0.023
+    patrol_order: 4.0
   general_ward_03:
-    x: 5.506
-    y: -37.889
-    yaw: -0.462
+    x: 5.478
+    y: -38.626
+    yaw: -0.464
+    patrol_order: 5.0
   counseling_room_01:
     x: -6.744
     y: -36.666
     yaw: -0.002
+    patrol_order: 6
   general_ward_04:
     x: -7.211
     y: -34.642
     yaw: 0.002
+    patrol_order: 7
   general_ward_05:
     x: -7.345
     y: -20.64
     yaw: 0.002
+    patrol_order: 8
   vip_suite_03:
     x: -9.463
     y: -6.902
     yaw: 0.001
+    patrol_order: 9
   vip_suite_04:
     x: -9.251
     y: -0.507
     yaw: -0.002
+    patrol_order: 10
   storage_room_02:
     x: -6.745
     y: 0.812
     yaw: 0.463
+    patrol_order: 11
   storage_room_01:
     x: 6.711
     y: 0.85
     yaw: 0.469
-  "examination_room_01":
+    patrol_order: 12
+  examination_room_01:
     x: 2.714
     y: -11.987
     yaw: -0.465
+    patrol_order: 13
   examination_room_02:
     x: -2.807
     y: -11.951
     yaw: -0.465
+    patrol_order: 14
   restroom_02:
     x: -2.719
     y: -22.197
     yaw: -0.464
+    patrol_order: 15
   restroom_01:
     x: 2.786
     y: -22.18
     yaw: -0.466
+    patrol_order: 16
   operating_room_01:
     x: 2.739
     y: -28.216
     yaw: -0.462
+    patrol_order: 17
   operating_room_02:
     x: -2.705
     y: -28.151
     yaw: -0.462
+    patrol_order: 18

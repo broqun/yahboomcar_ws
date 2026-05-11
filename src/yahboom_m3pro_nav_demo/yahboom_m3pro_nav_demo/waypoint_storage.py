@@ -1,11 +1,17 @@
-"""Shared helpers for recording and loading named map-frame waypoints (YAML)."""
+"""Shared helpers for recording and loading named map-frame waypoints (YAML).
+
+Each waypoint may include optional ``patrol_order`` (float/int): lower values are
+visited first by ``waypoint_patrol`` when the ``waypoint_order`` parameter is empty.
+Alias key ``order`` is accepted when loading / merging and normalized to
+``patrol_order`` on write.
+"""
 
 from __future__ import annotations
 
 import os
 import tempfile
 from pathlib import Path
-from typing import Any, Dict, Tuple
+from typing import Any, Dict, Optional, Tuple
 
 import yaml
 
@@ -18,7 +24,36 @@ def default_record_path() -> Path:
     return ros_home / DEFAULT_REL_SUBPATH
 
 
-def load_waypoints_file(path: Path) -> Tuple[str, Dict[str, Dict[str, float]]]:
+def _parse_patrol_order(entry: Dict[str, Any]) -> Optional[float]:
+    for key in ('patrol_order', 'order'):
+        if key not in entry:
+            continue
+        try:
+            return float(entry[key])
+        except (TypeError, ValueError):
+            return None
+    return None
+
+
+def _parse_waypoint_entry(entry: Any) -> Optional[Dict[str, Any]]:
+    if not isinstance(entry, dict):
+        return None
+    try:
+        out: Dict[str, Any] = {
+            'x': float(entry['x']),
+            'y': float(entry['y']),
+            'yaw': float(entry['yaw']),
+        }
+    except (KeyError, TypeError, ValueError):
+        return None
+    po = _parse_patrol_order(entry)
+    if po is not None:
+        out['patrol_order'] = po
+    return out
+
+
+def load_waypoints_file(path: Path) -> Tuple[str, Dict[str, Dict[str, Any]]]:
+    """Return ``frame_id`` and waypoint dicts with ``x``, ``y``, ``yaw`` and optional ``patrol_order``."""
     if not path.is_file():
         return 'map', {}
     with path.open('r', encoding='utf-8') as f:
@@ -29,18 +64,11 @@ def load_waypoints_file(path: Path) -> Tuple[str, Dict[str, Dict[str, float]]]:
     raw = data.get('waypoints') or {}
     if not isinstance(raw, dict):
         return str(frame_id), {}
-    waypoints: Dict[str, Dict[str, float]] = {}
+    waypoints: Dict[str, Dict[str, Any]] = {}
     for name, entry in raw.items():
-        if not isinstance(entry, dict):
-            continue
-        try:
-            waypoints[str(name)] = {
-                'x': float(entry['x']),
-                'y': float(entry['y']),
-                'yaw': float(entry['yaw']),
-            }
-        except (KeyError, TypeError, ValueError):
-            continue
+        parsed = _parse_waypoint_entry(entry)
+        if parsed is not None:
+            waypoints[str(name)] = parsed
     return str(frame_id), waypoints
 
 
@@ -70,14 +98,45 @@ def save_waypoints_atomic(path: Path, data: Dict[str, Any]) -> None:
 def merge_waypoint(
     path: Path, name: str, x: float, y: float, yaw: float, frame_id: str = 'map'
 ) -> None:
-    """Load existing file (if any), upsert one waypoint, write atomically."""
-    existing_frame, wps = load_waypoints_file(path)
-    frame = frame_id or existing_frame
-    wps[name] = {'x': float(x), 'y': float(y), 'yaw': float(yaw)}
+    """Load existing file (if any), upsert one waypoint, write atomically.
+
+    Preserves ``patrol_order`` when updating an existing name. New names get
+    ``max(patrol_order) + 1`` among existing waypoints (default 1 if none).
+    """
+    if path.is_file():
+        with path.open('r', encoding='utf-8') as f:
+            data = yaml.safe_load(f)
+        if not isinstance(data, dict):
+            data = {}
+    else:
+        data = {}
+    raw_wps = data.get('waypoints')
+    if not isinstance(raw_wps, dict):
+        raw_wps = {}
+    frame = frame_id or data.get('frame_id') or 'map'
+
+    old = raw_wps.get(name)
+    new_entry: Dict[str, Any] = {'x': float(x), 'y': float(y), 'yaw': float(yaw)}
+
+    if isinstance(old, dict):
+        po = _parse_patrol_order(old)
+        if po is not None:
+            new_entry['patrol_order'] = po
+    else:
+        max_po = 0.0
+        for e in raw_wps.values():
+            if not isinstance(e, dict):
+                continue
+            po = _parse_patrol_order(e)
+            if po is not None:
+                max_po = max(max_po, po)
+        new_entry['patrol_order'] = max_po + 1.0
+
+    raw_wps[name] = new_entry
     save_waypoints_atomic(
         path,
         {
             'frame_id': frame,
-            'waypoints': wps,
+            'waypoints': raw_wps,
         },
     )
