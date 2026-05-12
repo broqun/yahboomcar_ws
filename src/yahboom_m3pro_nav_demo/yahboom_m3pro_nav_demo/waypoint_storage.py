@@ -49,6 +49,10 @@ def _parse_waypoint_entry(entry: Any) -> Optional[Dict[str, Any]]:
     po = _parse_patrol_order(entry)
     if po is not None:
         out['patrol_order'] = po
+    if 'behavior' in entry:
+        out['behavior'] = str(entry['behavior'])
+    if 'coverage' in entry and isinstance(entry['coverage'], dict):
+        out['coverage'] = entry['coverage']
     return out
 
 

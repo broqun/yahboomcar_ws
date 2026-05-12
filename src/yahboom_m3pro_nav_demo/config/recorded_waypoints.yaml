@@ -90,3 +90,16 @@ waypoints:
     y: -28.151
     yaw: -0.462
     patrol_order: 18
+
+  # --- room_coverage demo (adjust polygon to match actual map walls) ---
+  vip_suite_01_sweep:
+    x: 9.621
+    y: -0.568
+    yaw: -0.006
+    patrol_order: 101
+    behavior: room_coverage
+    coverage:
+      polygon: [[8.2, -2.8], [11.6, -2.8], [11.6, 1.2], [8.2, 1.2]]
+      stripe_width: 0.5
+      stripe_angle_deg: 0
+      sweep_margin: 0.25

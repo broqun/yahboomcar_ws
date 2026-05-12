@@ -145,7 +145,8 @@ yahboom_m3pro_nav_demo/
 ├── yahboom_m3pro_nav_demo/   # Python 包
 │   ├── waypoint_storage.py   # YAML 读写与默认路径（~/.ros/...）
 │   ├── waypoint_recorder.py  # 订阅 /goal_pose，交互命名并写入航点文件
-│   └── waypoint_patrol.py    # 按 YAML 顺序 NavigateToPose 巡检
+│   ├── waypoint_patrol.py    # 按 YAML 顺序 NavigateToPose 巡检（支持 goto + room_coverage）
+│   └── room_coverage.py      # 弓字形（条带式）覆盖路径生成器（纯几何，无 ROS 依赖）
 └── test/
 ```
 
@@ -305,13 +306,14 @@ ros2 launch yahboom_m3pro_nav_demo hospital_navigation_launch.py rvizconfig:=/pa
 
 ## 5. 航点：录制、保存位置与巡检
 
-工作空间提供三个协作模块（均在 `yahboom_m3pro_nav_demo` 包内）：
+工作空间提供四个协作模块（均在 `yahboom_m3pro_nav_demo` 包内）：
 
 | 组件 | 作用 |
 |------|------|
 | `waypoint_storage` | 读写 `frame_id` + `waypoints` 结构的 YAML；默认路径为 **`$ROS_HOME/yahboom_m3pro_nav_demo/recorded_waypoints.yaml`**（未设置 `ROS_HOME` 时一般为 **`~/.ros/...`**）。 |
 | `waypoint_recorder` | 订阅 RViz **「2D Goal Pose」** 发布的 `/goal_pose`，终端输入航点名称后**追加**写入文件（可用参数改输出路径）。 |
-| `waypoint_patrol` | 从 YAML 按顺序调用 Nav2 **NavigateToPose** 访问各命名点（无需 `waypoint_follower`）。 |
+| `waypoint_patrol` | 从 YAML 按顺序调用 Nav2 **NavigateToPose** 访问各命名点；支持 `goto`（点到点）与 `room_coverage`（房内弓字形覆盖）两种行为。 |
+| `room_coverage` | 纯几何模块：多边形 + 条带参数 → **有序 `(x, y, yaw)` 位姿序列**（弓字形 / 条带式覆盖路径）。无 ROS 依赖，可独立单元测试。 |
 
 **`waypoint_patrol` 选择文件的优先级**（未指定 `waypoints_file` 时）：若存在用户录制文件则用 **`~/.ros/.../recorded_waypoints.yaml`**，否则使用安装后的 **`share/yahboom_m3pro_nav_demo/config/recorded_waypoints.yaml`**（源码即 `config/recorded_waypoints.yaml`，含医院固定房间等航点）。
 
@@ -339,6 +341,85 @@ ros2 run yahboom_m3pro_nav_demo waypoint_patrol --ros-args \
 ```
 
 常用参数：`patrol_loop`（是否循环）、`waypoint_order`（逗号分隔名称列表，缺省则按名称排序）。
+
+### 5.1 房内弓字形覆盖巡逻（Room Coverage）
+
+在同一份航点 YAML 中，可将某些步骤标记为 `behavior: room_coverage`，机器人到达门口后会在指定多边形区域内执行**条带式（弓字形）覆盖扫描**，随后继续巡检后续航点。`goto` 与 `room_coverage` 可在 `patrol_order` 中自由混排，完全向后兼容。
+
+#### YAML 格式
+
+在航点条目中增加 `behavior` 和 `coverage` 字段：
+
+```yaml
+frame_id: map
+waypoints:
+  # 普通点到点导航（默认行为）
+  vip_suite_01:
+    x: 9.621
+    y: -0.568
+    yaw: -0.006
+    patrol_order: 1.0
+
+  # 房内覆盖巡逻
+  vip_suite_01_sweep:
+    x: 9.621          # 门口 / 入口位姿（先导航到此处，再开始覆盖）
+    y: -0.568
+    yaw: -0.006
+    patrol_order: 1.5
+    behavior: room_coverage
+    coverage:
+      polygon: [[8.2, -2.8], [11.6, -2.8], [11.6, 1.2], [8.2, 1.2]]
+      stripe_width: 0.5        # 条带间距（米）
+      stripe_angle_deg: 0      # 条带方向（0 = 平行于 X 轴）
+      sweep_margin: 0.25       # 边界内缩（米），避免贴墙
+```
+
+#### `coverage` 参数说明
+
+| 字段 | 类型 | 说明 |
+|------|------|------|
+| `polygon` | `[[x,y], ...]` | 闭合多边形顶点，坐标系与 `frame_id` 一致（通常为 `map`）。 |
+| `stripe_width` | float | 相邻条带间距（米），略小于传感器覆盖宽度。 |
+| `stripe_angle_deg` | float（可选） | 条带方向（度），`0` 为平行于 X 轴，`90` 为平行于 Y 轴。缺省 `0`。 |
+| `sweep_margin` | float（可选） | 边界内缩（米），避免机器人贴墙行驶。缺省 `0`。 |
+
+航点的 `x, y, yaw` 是**门口 / 入口位姿**——机器人先导航到此处，再从最近侧开始第一条扫描带。
+
+#### 失败策略
+
+通过 ROS 参数 `coverage_on_child_failure` 控制覆盖子目标失败时的行为：
+
+| 值 | 行为 |
+|----|------|
+| `abort_segment`（默认） | 中止当前房间的覆盖，跳到下一个航点继续巡检。 |
+| `abort_patrol` | 中止整个巡检。 |
+
+```bash
+ros2 run yahboom_m3pro_nav_demo waypoint_patrol --ros-args \
+  -p use_sim_time:=true \
+  -p coverage_on_child_failure:=abort_segment
+```
+
+#### 架构分层
+
+```text
+waypoint_patrol.py                    # 调度：YAML → 排序 → 逐步执行
+  ├─ step: behavior == "goto"         # NavigateToPose（现有逻辑）
+  └─ step: behavior == "room_coverage"
+        └─ room_coverage.py           # 多边形 + 参数 → (x, y, yaw) 序列
+```
+
+- `room_coverage.py` 是纯几何模块，不依赖 ROS，可独立 `pytest` 测试。
+- `waypoint_patrol.py` 负责 Nav2 调度、超时与错误处理。
+
+#### 单元测试
+
+```bash
+cd src/yahboom_m3pro_nav_demo
+python3 -m pytest test/test_room_coverage.py -v
+```
+
+测试覆盖：矩形与 L 形凹多边形的点数、边界距离、弓字交替方向、入口侧选择、角度旋转等。
 
 ---
 

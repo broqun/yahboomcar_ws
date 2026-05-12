@@ -1,10 +1,15 @@
 #!/usr/bin/env python3
-"""Visit named waypoints from YAML using Nav2 NavigateToPose (no waypoint_follower required).
+"""Visit named waypoints from YAML using Nav2 NavigateToPose.
 
-Waypoint YAML entries may set ``patrol_order`` (or ``order``) per point; when the ROS
-parameter ``waypoint_order`` is empty, patrol uses ascending ``patrol_order``, then
-name as tie-breaker. Waypoints without ``patrol_order`` sort after those that have it.
-If no waypoint defines ``patrol_order``, order is alphabetical by name (legacy).
+Supports two per-waypoint *behavior* types (set in the YAML):
+
+* ``goto`` (default) — single NavigateToPose to ``(x, y, yaw)``.
+* ``room_coverage``  — drive to ``(x, y, yaw)`` (door/entry), then execute
+  boustrophedon (zigzag) coverage inside the ``coverage.polygon``.
+
+Waypoint ordering follows ``patrol_order`` / ``order`` fields, falling back to
+alphabetical name sort.  ``goto`` and ``room_coverage`` entries can be freely
+interleaved.
 """
 
 from __future__ import annotations
@@ -19,14 +24,19 @@ from geometry_msgs.msg import PoseStamped
 from nav2_simple_commander.robot_navigator import BasicNavigator, TaskResult
 import rclpy
 
+from yahboom_m3pro_nav_demo.room_coverage import generate_coverage_poses
 from yahboom_m3pro_nav_demo.waypoint_storage import default_record_path, load_waypoints_file
 
 
-def yaw_to_orientation_zw(yaw: float) -> Tuple[float, float]:
+# ---------------------------------------------------------------------------
+# Helpers
+# ---------------------------------------------------------------------------
+
+def _yaw_to_quat_zw(yaw: float) -> Tuple[float, float]:
     return math.sin(yaw * 0.5), math.cos(yaw * 0.5)
 
 
-def make_pose_stamped(
+def _make_pose(
     navigator: BasicNavigator, frame_id: str, x: float, y: float, yaw: float
 ) -> PoseStamped:
     msg = PoseStamped()
@@ -37,13 +47,13 @@ def make_pose_stamped(
     msg.pose.position.z = 0.0
     msg.pose.orientation.x = 0.0
     msg.pose.orientation.y = 0.0
-    z, w = yaw_to_orientation_zw(yaw)
+    z, w = _yaw_to_quat_zw(yaw)
     msg.pose.orientation.z = z
     msg.pose.orientation.w = w
     return msg
 
 
-def resolve_waypoints_path(explicit: str) -> Path:
+def _resolve_waypoints_path(explicit: str) -> Path:
     if explicit.strip():
         return Path(explicit).expanduser()
     user_path = default_record_path()
@@ -54,7 +64,9 @@ def resolve_waypoints_path(explicit: str) -> Path:
     return packaged if packaged.is_file() else user_path
 
 
-def _patrol_sort_key(name: str, waypoints: Dict[str, Dict[str, Any]]) -> Tuple[float, str]:
+def _patrol_sort_key(
+    name: str, waypoints: Dict[str, Dict[str, Any]]
+) -> Tuple[float, str]:
     v = waypoints[name]
     po = v.get('patrol_order')
     if po is None:
@@ -65,38 +77,186 @@ def _patrol_sort_key(name: str, waypoints: Dict[str, Dict[str, Any]]) -> Tuple[f
         return (float('inf'), name)
 
 
-def ordered_names(
+def _ordered_names(
     waypoints: Dict[str, Dict[str, Any]], order_csv: str
 ) -> Tuple[List[str], List[str], str]:
-    """Return (names, missing_from_csv, order_source) where order_source is 'param', 'patrol_order', or 'name'."""
     if order_csv.strip():
         requested = [s.strip() for s in order_csv.split(',') if s.strip()]
         out: List[str] = []
         missing: List[str] = []
         for n in requested:
-            if n in waypoints:
-                out.append(n)
-            else:
-                missing.append(n)
+            (out if n in waypoints else missing).append(n)
         return out, missing, 'param'
     if any('patrol_order' in v for v in waypoints.values()):
-        names = sorted(waypoints.keys(), key=lambda n: _patrol_sort_key(n, waypoints))
+        names = sorted(
+            waypoints.keys(), key=lambda n: _patrol_sort_key(n, waypoints)
+        )
         return names, [], 'patrol_order'
     return sorted(waypoints.keys()), [], 'name'
 
 
+# ---------------------------------------------------------------------------
+# Nav2 single-goal execution
+# ---------------------------------------------------------------------------
+
+def _go_and_wait(
+    navigator: BasicNavigator,
+    frame_id: str,
+    x: float,
+    y: float,
+    yaw: float,
+    label: str,
+) -> TaskResult:
+    """Send *goToPose* and block until the action finishes."""
+    pose = _make_pose(navigator, frame_id, x, y, yaw)
+    navigator.get_logger().info(f'Navigating to {label} …')
+    if not navigator.goToPose(pose):
+        navigator.get_logger().error(f'Goal {label} rejected by Nav2.')
+        return TaskResult.FAILED
+    while not navigator.isTaskComplete():
+        pass
+    return navigator.getResult()
+
+
+# ---------------------------------------------------------------------------
+# Behavior executors
+# ---------------------------------------------------------------------------
+
+def _exec_goto(
+    navigator: BasicNavigator,
+    frame_id: str,
+    name: str,
+    entry: Dict[str, Any],
+) -> bool:
+    """Classic point-to-point navigation.  Returns *True* on success."""
+    result = _go_and_wait(
+        navigator, frame_id, entry['x'], entry['y'], entry['yaw'], repr(name)
+    )
+    if result == TaskResult.SUCCEEDED:
+        navigator.get_logger().info(f'Reached {name!r}.')
+        return True
+    level = 'warn' if result == TaskResult.CANCELED else 'error'
+    getattr(navigator.get_logger(), level)(
+        f'Goal {name!r} ended with {result.name}.'
+    )
+    return False
+
+
+def _exec_coverage(
+    navigator: BasicNavigator,
+    frame_id: str,
+    name: str,
+    entry: Dict[str, Any],
+    on_child_failure: str,
+) -> bool:
+    """Drive to entry pose, then execute boustrophedon coverage.
+
+    Returns *True* when the patrol loop should **continue** to the next
+    waypoint (even if coverage was only partially completed under
+    ``abort_segment`` policy).
+    """
+    # --- reach the door / entry pose first ---
+    res = _go_and_wait(
+        navigator,
+        frame_id,
+        entry['x'],
+        entry['y'],
+        entry['yaw'],
+        f'{name!r} (entry)',
+    )
+    if res != TaskResult.SUCCEEDED:
+        navigator.get_logger().error(
+            f'Cannot reach entry for coverage {name!r} ({res.name}); '
+            f'skipping segment.'
+        )
+        return on_child_failure != 'abort_patrol'
+
+    # --- generate sub-goals ---
+    cfg = entry.get('coverage') or {}
+    polygon = cfg.get('polygon', [])
+    if not polygon or len(polygon) < 3:
+        navigator.get_logger().error(
+            f'Coverage {name!r}: polygon missing or < 3 vertices.'
+        )
+        return True
+
+    poses = generate_coverage_poses(
+        polygon=polygon,
+        stripe_width=float(cfg.get('stripe_width', 0.5)),
+        stripe_angle_deg=float(cfg.get('stripe_angle_deg', 0.0)),
+        sweep_margin=float(cfg.get('sweep_margin', 0.0)),
+        entry_pose=(entry['x'], entry['y'], entry['yaw']),
+    )
+    total = len(poses)
+    navigator.get_logger().info(
+        f'Coverage {name!r}: generated {total} sub-goals '
+        f'(stripe_width={cfg.get("stripe_width")}, '
+        f'angle={cfg.get("stripe_angle_deg", 0)}°).'
+    )
+    if total == 0:
+        navigator.get_logger().warn(f'Coverage {name!r}: empty pose list.')
+        return True
+
+    # --- execute sub-goals sequentially ---
+    for idx, (sx, sy, syaw) in enumerate(poses, 1):
+        label = f'{name!r} [{idx}/{total}]'
+        res = _go_and_wait(navigator, frame_id, sx, sy, syaw, label)
+        if res == TaskResult.SUCCEEDED:
+            continue
+        if res == TaskResult.CANCELED:
+            navigator.get_logger().warn(f'Coverage {name!r} canceled at [{idx}/{total}].')
+            return False
+        navigator.get_logger().warn(
+            f'Coverage {name!r} sub-goal [{idx}/{total}] failed ({res.name}).'
+        )
+        if on_child_failure == 'abort_patrol':
+            return False
+        navigator.get_logger().info(
+            f'Policy=abort_segment → skipping rest of {name!r}, '
+            f'continuing patrol.'
+        )
+        navigator.cancelTask()
+        return True
+
+    navigator.get_logger().info(
+        f'Coverage {name!r} complete ({total} sub-goals).'
+    )
+    return True
+
+
+# ---------------------------------------------------------------------------
+# Main
+# ---------------------------------------------------------------------------
+
 def main(args=None) -> None:
     rclpy.init(args=args)
     navigator = BasicNavigator('waypoint_patrol_navigator')
+
     navigator.declare_parameter('waypoints_file', '')
     navigator.declare_parameter('patrol_loop', False)
     navigator.declare_parameter('waypoint_order', '')
+    navigator.declare_parameter('coverage_on_child_failure', 'abort_segment')
 
-    path = resolve_waypoints_path(
-        navigator.get_parameter('waypoints_file').get_parameter_value().string_value
+    path = _resolve_waypoints_path(
+        navigator.get_parameter('waypoints_file')
+        .get_parameter_value()
+        .string_value
     )
-    do_loop = navigator.get_parameter('patrol_loop').get_parameter_value().bool_value
-    order_csv = navigator.get_parameter('waypoint_order').get_parameter_value().string_value
+    do_loop = (
+        navigator.get_parameter('patrol_loop')
+        .get_parameter_value()
+        .bool_value
+    )
+    order_csv = (
+        navigator.get_parameter('waypoint_order')
+        .get_parameter_value()
+        .string_value
+    )
+    on_child_failure = (
+        navigator.get_parameter('coverage_on_child_failure')
+        .get_parameter_value()
+        .string_value
+    )
 
     frame_id, waypoints = load_waypoints_file(path)
     if not waypoints:
@@ -109,9 +269,11 @@ def main(args=None) -> None:
         rclpy.shutdown()
         sys.exit(1)
 
-    names, missing, order_src = ordered_names(waypoints, order_csv)
+    names, missing, order_src = _ordered_names(waypoints, order_csv)
     for m in missing:
-        navigator.get_logger().warn(f'Skipping unknown waypoint name in waypoint_order: {m}')
+        navigator.get_logger().warn(
+            f'Skipping unknown waypoint name in waypoint_order: {m}'
+        )
 
     if not names:
         navigator.get_logger().error('Waypoint order resolved to an empty list.')
@@ -119,9 +281,14 @@ def main(args=None) -> None:
         rclpy.shutdown()
         sys.exit(1)
 
+    behaviors = {
+        n: waypoints[n].get('behavior', 'goto') for n in names
+    }
     navigator.get_logger().info(
-        f'Loaded {len(waypoints)} waypoint(s) from {path} (frame_id={frame_id!r}, '
-        f'order_source={order_src!r}, patrol order: {names}, loop={do_loop})'
+        f'Loaded {len(waypoints)} waypoint(s) from {path} '
+        f'(frame_id={frame_id!r}, order_source={order_src!r}, '
+        f'patrol order: {names}, loop={do_loop})\n'
+        f'  behaviors: {behaviors}'
     )
 
     navigator.waitUntilNav2Active()
@@ -132,29 +299,23 @@ def main(args=None) -> None:
             cycle += 1
             navigator.get_logger().info(f'--- Patrol cycle {cycle} ---')
             aborted = False
+
             for name in names:
                 entry = waypoints[name]
-                pose = make_pose_stamped(
-                    navigator, frame_id, entry['x'], entry['y'], entry['yaw']
-                )
-                navigator.get_logger().info(f'Going to {name!r} ...')
-                if not navigator.goToPose(pose):
-                    navigator.get_logger().error(f'Goal to {name!r} was rejected.')
-                    aborted = True
-                    break
-                while not navigator.isTaskComplete():
-                    pass
-                result = navigator.getResult()
-                if result == TaskResult.SUCCEEDED:
-                    navigator.get_logger().info(f'Reached {name!r}.')
-                elif result == TaskResult.CANCELED:
-                    navigator.get_logger().warn(f'Goal {name!r} canceled.')
-                    aborted = True
-                    break
+                behavior = entry.get('behavior', 'goto')
+
+                if behavior == 'room_coverage':
+                    ok = _exec_coverage(
+                        navigator, frame_id, name, entry, on_child_failure
+                    )
+                    if not ok:
+                        aborted = True
+                        break
                 else:
-                    navigator.get_logger().error(f'Goal {name!r} failed.')
-                    aborted = True
-                    break
+                    if not _exec_goto(navigator, frame_id, name, entry):
+                        aborted = True
+                        break
+
             if aborted or not do_loop:
                 break
     except KeyboardInterrupt:
